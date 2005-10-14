@@ -1,6 +1,6 @@
 #!/usr/bin/python2.4
 
-import sys
+import sys,time,thread,os,fcntl
 import apt
 
 import pygtk; pygtk.require("2.0")
@@ -71,19 +71,60 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         print "install"
+        self.button_deb_install_close.set_sensitive(False)
+        self._term.feed(str(0x1b)+"[2J")
+        self.dialog_deb_install.show_all()
+
         # install the dependecnies
-        self._deb.installDeps()
+        pkgs = self._deb._needPkgs
+        if len(pkgs) > 0:
+
+            # build the cmd
+            (r, w) = os.pipe()
+            fcntl.fcntl(r, fcntl.F_SETFL, os.O_NONBLOCK)
+            print "fds are: %s %s" % (r, w)
+            cmd = "/usr/bin/apt-get"
+            argv = [cmd,"install",
+                    "-o", ("APT::Status-Fd=%s"%w)]
+            env = ["VTE_PTY_KEEP_FD=%s"%w]
+            for pkg in pkgs:
+                argv.append(pkg)
+
+            # create a lock
+            lock = thread.allocate_lock()
+            lock.acquire()
+            def finish_apt(term, lock):
+                print "apt finished"
+                lock.release()
+            id = self._term.connect("child-exited", finish_apt, lock)
+            # run command and wait until it's finished
+            self._term.fork_command(command=cmd,argv=argv,envv=env)
+            while lock.locked():
+                s = ""
+                while gtk.events_pending():
+                    gtk.main_iteration()
+                try:
+                    s = os.read(r,1)
+                    print s,
+                except OSError:
+                    pass
+                time.sleep(0.01)
+            self._term.disconnect(id)
+
         # install the package itself
         cmd = "/usr/bin/dpkg"
         argv = [cmd,"-i", self._deb._debfile]
-        self.button_deb_install_close.set_sensitive(False)
-        self.dialog_deb_install.show_all()
-        self._term.fork_command(command=cmd,argv=argv)
-        def finish(term, win):
+        def finish_dpkg(term, win):
+            print "dpkg finished"
             self.button_deb_install_close.set_sensitive(True)
-        self._term.connect("child-exited", finish, self.dialog_deb_install)
+        self._term.connect("child-exited", finish_dpkg,self.dialog_deb_install)
+        self._term.fork_command(command=cmd,argv=argv)
+
+    def on_button_deb_install_close_clicked(self, widget):
+        self.dialog_deb_install.hide()
 
     def create_vte(self, arg1,arg2,arg3,arg4):
         print "create_vte"
         self._term = vte.Terminal()
+        self._term.set_font_from_string("monospace 10")
         return self._term

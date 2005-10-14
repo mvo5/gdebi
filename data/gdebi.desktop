@@ -2,9 +2,10 @@
 Name=GDebi
 GenericName=Install deb files
 Comment=Install deb files
-Exec=/usr/bin/gdebi
+Exec=gdebi
 Icon=gdebi.png
 Terminal=false
 Type=Application
 Encoding=UTF-8
 Categories=Application;System;
+MimeType=application/x-deb;
