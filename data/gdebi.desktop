@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=GDebi
+GenericName=Install deb files
+Comment=Install deb files
+Exec=/usr/bin/gdebi
+Icon=gdebi.png
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Application;System;

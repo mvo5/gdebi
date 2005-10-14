@@ -1,0 +1,12 @@
+Source: gdebi
+Section: admin
+Priority: optional
+Maintainer: Michael Vogt <michael.vogt@ubuntu.com>
+Build-Depends: debhelper (>= 4.0.0), python, python-dev
+Standards-Version: 3.6.1.1
+
+Package: gdebi
+Architecture: all
+Depends: python, ${shlibs:Depends}, python2.4-gtk2, python2.4-glade2, python2.4-apt (>= 0.6.12), apt, dpkg
+Description: Simple tool to install deb files
+ Install and view deb packages directly.
