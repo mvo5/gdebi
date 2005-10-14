@@ -1,7 +1,7 @@
 #!/usr/bin/python2.4
 
-import sys,time,thread,os,fcntl
-import apt
+import sys, time, thread, os, fcntl, string
+import apt, apt_pkg
 
 import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
@@ -9,6 +9,7 @@ import vte
 
 from DebPackage import DebPackage
 from SimpleGladeApp import SimpleGladeApp
+
 
 class GDebi(SimpleGladeApp):
 
@@ -20,8 +21,9 @@ class GDebi(SimpleGladeApp):
 
         if file != "":
             self.open(file)
-            
 
+
+        
     def open(self, file):
         self._deb = deb = DebPackage(self._cache, file)
         # set name
@@ -71,60 +73,119 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         print "install"
+        self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
-        self._term.feed(str(0x1b)+"[2J")
+        # clear terminal
+        #self._term.feed(str(0x1b)+"[2J")
+        self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
         # install the dependecnies
         pkgs = self._deb._needPkgs
         if len(pkgs) > 0:
-
-            # build the cmd
-            (r, w) = os.pipe()
-            fcntl.fcntl(r, fcntl.F_SETFL, os.O_NONBLOCK)
-            print "fds are: %s %s" % (r, w)
-            cmd = "/usr/bin/apt-get"
-            argv = [cmd,"install",
-                    "-o", ("APT::Status-Fd=%s"%w)]
-            env = ["VTE_PTY_KEEP_FD=%s"%w]
+            fprogress = self.FetchProgressAdapter(self.progressbar_install)
+            iprogress = self.InstallProgressAdapter(self.progressbar_install,
+                                                    self._term)
             for pkg in pkgs:
-                argv.append(pkg)
-
-            # create a lock
-            lock = thread.allocate_lock()
-            lock.acquire()
-            def finish_apt(term, lock):
-                print "apt finished"
-                lock.release()
-            id = self._term.connect("child-exited", finish_apt, lock)
-            # run command and wait until it's finished
-            self._term.fork_command(command=cmd,argv=argv,envv=env)
-            while lock.locked():
-                s = ""
-                while gtk.events_pending():
-                    gtk.main_iteration()
-                try:
-                    s = os.read(r,1)
-                    print s,
-                except OSError:
-                    pass
-                time.sleep(0.01)
-            self._term.disconnect(id)
+                self._cache[pkg].markInstall()
+            self._cache.commit(fprogress,iprogress)
+        
 
         # install the package itself
-        cmd = "/usr/bin/dpkg"
-        argv = [cmd,"-i", self._deb._debfile]
-        def finish_dpkg(term, win):
-            print "dpkg finished"
-            self.button_deb_install_close.set_sensitive(True)
-        self._term.connect("child-exited", finish_dpkg,self.dialog_deb_install)
-        self._term.fork_command(command=cmd,argv=argv)
-
+        dprogress = self.DpkgInstallProgress(self._deb._debfile,
+                                             self.label_install_status,
+                                             self.progressbar_install,
+                                             self._term)
+        dprogress.commit()
+        self.button_deb_install_close.set_sensitive(True)
+        
     def on_button_deb_install_close_clicked(self, widget):
         self.dialog_deb_install.hide()
+        self.window_main.set_sensitive(True)
 
     def create_vte(self, arg1,arg2,arg3,arg4):
         print "create_vte"
         self._term = vte.Terminal()
         self._term.set_font_from_string("monospace 10")
         return self._term
+
+
+    # embedded classes
+    class DpkgInstallProgress(object):
+        def __init__(self, debfile, status, progress,term):
+            self.debfile = debfile
+            self.status = status
+            self.progress = progress
+            self.term = term
+        def commit(self):
+            lock = thread.allocate_lock()
+            lock.acquire()
+            cmd = "/usr/bin/dpkg"
+            argv = [cmd,"-i", self.debfile]
+            def finish_dpkg(term, lock):
+                print "dpkg finished"
+                lock.release()
+            self.status.set_text("Installing %s" % self.debfile)
+            self.progress.pulse()
+            self.progress.set_text("")
+            self.term.connect("child-exited", finish_dpkg, lock)
+            self.term.fork_command(command=cmd,argv=argv)
+            while lock.locked():
+                self.progress.pulse()
+                while gtk.events_pending():
+                    gtk.main_iteration()
+                time.sleep(0.05)
+            self.progress.set_fraction(1.0)
+    
+    class InstallProgressAdapter(apt.progress.InstallProgress):
+        def __init__(self,progress,term):
+            self.finished = False
+            self.progress = progress
+            self.term = term
+            (read, write) = os.pipe()
+            # self.writefd is the magic fd for apt where it will send it
+            # status too
+            self.writefd=write
+            self.status = os.fdopen(read, "r")
+            print "read-fd: %s" % self.status.fileno()
+            print "write-fd: %s" % self.writefd
+        def startUpdate(self):
+            print "startUpdate"
+        def updateInterface(self):
+            if self.status != None:
+                try:
+                    s = self.status.readline()
+                    if s:
+                        print s
+                        (status, pkg, percent, status_str) = string.split(s, ":")
+                        print "percent: %s %s" % (pkg, float(percent)/100.0)
+                        self.progress.set_fraction(float(percent)/100.0)
+                        self.progress.set_text(string.strip(status_str))
+                except IOError:
+                    pass
+            while gtk.events_pending():
+                gtk.main_iteration()
+        def finishUpdate(self):
+            self.finished = True
+        def fork(self):
+            print "fork"
+            env = ["VTE_PTY_KEEP_FD=%s"%self.writefd]
+            print env
+            pid = self.term.forkpty(envv=env)
+            print "After fork: %s " % pid
+            return pid
+
+
+    class FetchProgressAdapter(apt.progress.FetchProgress):
+        def __init__(self,progress):
+            self.progress = progress
+        def start(self):
+            self.progress.set_fraction(0)
+        def stop(self):
+            pass
+        def pulse(self):
+            self.progress.set_text("%s/%s (Speed: %s/s)" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS)))
+            self.progress.set_fraction(self.currentBytes/self.totalBytes)
+            while gtk.events_pending():
+                gtk.main_iteration()
+            return True
