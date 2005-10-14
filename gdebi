@@ -10,7 +10,7 @@ from GDebi import GDebi
 
 
 if __name__ == "__main__":
-    if sys.argv[1] != None:
+    if len(sys.argv) > 1:
         app = GDebi(datadir="data",file=sys.argv[1])
     else:
         app = GDebi(datadir="data")
