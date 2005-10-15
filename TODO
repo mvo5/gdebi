@@ -1,0 +1,10 @@
+* apt-progress: error reporting, conf-file prompts, media-change
+* code cleanup
+* root/non-root mode
+* deb-details: filelist, section, priority, version
+* better status support in gui: 
+  - "Package is not installed"
+  - "Package is installed and upgradable"
+  - "Package is at the same version"
+  - "Pkg on system is newer than deb"
+* basic description formating (summary, " ." lines)
