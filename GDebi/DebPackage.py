@@ -12,6 +12,7 @@ class DebPackage:
         self._sections = apt_pkg.ParseSection(control)
 
     def checkDepends(self):
+        print "checkDepends"
         depends = []
         
         arch = self._sections["Architecture"]
@@ -20,12 +21,30 @@ class DebPackage:
             self._failureString = "Wrong architecture '%s'" % arch
             return False
 
+        # FIXME: same version is not strictly a error
+        pkgname = self._sections["Package"]
+        debver = self._sections["Version"]
+        print "debver: %s" % debver
+        if self._cache.has_key(pkgname):
+            instver = self._cache[pkgname].installedVersion
+            if instver != None:
+                cmp = apt_pkg.VersionCompare(debver,instver)
+                if cmp == 0:
+                    self._failureString = "Same version is already installed"
+                    return False
+                elif cmp == -1:
+                    self._failureString = "Newer version is already installed"
+                    return False
+            
+
         # FIXME: this sort of error handling sux
         self._failureString = ""
 
-        # check depends
         # FIXME: check conflicts (replace?) as well,
         #        probably just whine and fail for now
+
+
+        # check depends
         for key in ["Depends","PreDepends"]:
             if self._sections.has_key(key):
                 depends.extend(apt_pkg.ParseDepends(self._sections[key]))

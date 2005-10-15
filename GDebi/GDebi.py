@@ -30,7 +30,10 @@ class GDebi(SimpleGladeApp):
         self.label_name.set_text(deb["Package"])
         # set description
         buf = self.textview_description.get_buffer()
-        buf.set_text(deb["Description"])
+        try:
+            buf.set_text(deb["Description"])
+        except KeyError:
+            buf.set_text("No description found in the package")
 
         # check the deps
         if not deb.checkDepends():
@@ -97,6 +100,7 @@ class GDebi(SimpleGladeApp):
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
+        self.open(self._deb._debfile)
         self.button_deb_install_close.set_sensitive(True)
         
     def on_button_deb_install_close_clicked(self, widget):

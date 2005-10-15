@@ -14,14 +14,15 @@ I18NFILES = []
 # HACK: make sure that the mo files are generated and up-to-date
 #os.system("cd po; make update-po")
     
-setup(name='gdebi',
-      version='0.1',
+setup(name='gdebi', version='0.1',
       packages=['GDebi'],
       scripts=['gdebi'],
       data_files=[('share/gdebi/',
                    ["data/gdebi.glade"]),
                   ('share/applications',
                    ["data/gdebi.desktop"]),
+                  ('share/application-registry',
+		   ["data/gdebi.applications"]),
                   ('share/pixmaps',
                    ["data/gdebi.png"])]+I18NFILES,
       )
