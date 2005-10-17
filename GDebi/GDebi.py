@@ -25,25 +25,25 @@ class GDebi(SimpleGladeApp):
 
         
     def open(self, file):
-        self._deb = deb = DebPackage(self._cache, file)
+        self._deb = DebPackage(self._cache, file)
         # set name
-        self.label_name.set_text(deb["Package"])
+        self.label_name.set_text(self._deb.pkgName)
         # set description
         buf = self.textview_description.get_buffer()
         try:
-            buf.set_text(deb["Description"])
+            buf.set_text(self._deb["Description"])
         except KeyError:
             buf.set_text("No description found in the package")
 
         # check the deps
-        if not deb.checkDepends():
+        if not self._deb.checkDepends():
             self.label_status.set_markup("<span foreground=\"red\" weight=\"bold\">"+
                                          "Error: " +
-                                         deb._failureString +
+                                         self._deb._failureString +
                                          "</span>")
             self.button_install.set_sensitive(False)
         else:
-            deps = "Need to install %s packages from the archive" % len(deb._needPkgs)
+            deps = "Need to install %s packages from the archive" % len(self._deb.missingDeps)
             self.label_status.set_text(deps)
             self.button_install.set_sensitive(True)
         
@@ -84,7 +84,7 @@ class GDebi(SimpleGladeApp):
         self.dialog_deb_install.show_all()
 
         # install the dependecnies
-        pkgs = self._deb._needPkgs
+        pkgs = self._deb.missingDeps
         if len(pkgs) > 0:
             fprogress = self.FetchProgressAdapter(self.progressbar_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
@@ -95,12 +95,12 @@ class GDebi(SimpleGladeApp):
         
 
         # install the package itself
-        dprogress = self.DpkgInstallProgress(self._deb._debfile,
+        dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
-        self.open(self._deb._debfile)
+        self.open(self._deb.file)
         self.button_deb_install_close.set_sensitive(True)
         
     def on_button_deb_install_close_clicked(self, widget):

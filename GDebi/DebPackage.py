@@ -5,14 +5,17 @@ import sys, os, subprocess
 class DebPackage:
     def __init__(self, cache, file):
         self._cache = cache
-        self._debfile = file
-        self._needPkgs = []
+        self.file = file
+        self._needPkgs = None
         # read the deb
         control = apt_inst.debExtractControl(open(file))
         self._sections = apt_pkg.ParseSection(control)
+        self.pkgName = self._sections["Package"]
 
     def checkDepends(self):
         print "checkDepends"
+        # init 
+        self._needPkgs = []
         depends = []
         
         arch = self._sections["Architecture"]
@@ -51,8 +54,11 @@ class DebPackage:
 
         # check them
         for or_group in depends:
+            print "or-gr %s " % (or_group)
             or_found = False
             for dep in or_group:
+                print "found: %s " % (type(dep))
+                print dep
                 depname = dep[0]
                 ver = dep[1]
                 oper = dep[2]
@@ -106,23 +112,12 @@ class DebPackage:
         return True
                     
 
-    def installDeps(self):
+    def missingDeps(self):
         print "Installing: %s" % self._needPkgs
-        if len(self._needPkgs) == 0:
-            return
-        cmd = ["/usr/sbin/synaptic", "--hide-main-window",
-               "--non-interactive", "--set-selections",
-               "-o","Volatile::NoStateSaving=True",
-               "-o", "Synaptic::closeZvt=True"
-               ]
-        proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-        f = proc.stdin
-        for s in self._needPkgs:
-            f.write("%s\tinstall\n" % s)
-        f.close()
-        proc.wait()
-        return
-
+        if self._needPkgs == None:
+            self.checkDepends()
+        return self._needPkgs
+    missingDeps = property(missingDeps)
  
     # properties
     def __getitem__(self,item):
