@@ -130,9 +130,9 @@ if __name__ == "__main__":
     cache = apt.Cache()
 
     d = DebPackage(cache, sys.argv[1])
-    print d["Package"]
-    if not d.checkDepends():
-        print "Dependencies can't be satifisied"
-        sys.exit(1)
-    d.installDeps()
-    d.installDeb()
+    print d.pkgName
+    print d.missingDeps
+
+    d = DebPackage(cache, sys.argv[1])
+    print d.pkgName
+    print d.missingDeps

@@ -76,6 +76,8 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         print "install"
+        # lock for install
+        apt_pkg.PkgSystemLock()
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
@@ -91,8 +93,8 @@ class GDebi(SimpleGladeApp):
                                                     self._term)
             for pkg in pkgs:
                 self._cache[pkg].markInstall()
-            self._cache.commit(fprogress,iprogress)
-        
+            res = self._cache.commit(fprogress,iprogress)
+            print "commit returd: %s" % res
 
         # install the package itself
         dprogress = self.DpkgInstallProgress(self._deb.file,
@@ -100,7 +102,10 @@ class GDebi(SimpleGladeApp):
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
+        # reopen the cache, reread the file, FIXME: add progress reporting
+        self._cache = apt.Cache()
         self.open(self._deb.file)
+        # show the button
         self.button_deb_install_close.set_sensitive(True)
         
     def on_button_deb_install_close_clicked(self, widget):
