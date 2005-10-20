@@ -1,0 +1,18 @@
+#!/usr/bin/python2.4
+
+import sys
+import apt
+import os.path
+
+#sys.path.append(os.getcwd())
+
+from GDebi import GDebi
+
+
+if __name__ == "__main__":
+    data="/usr/share/gdebi"
+    if len(sys.argv) > 1:
+        app = GDebi(datadir=data,file=sys.argv[1])
+    else:
+        app = GDebi(datadir=data)
+    app.run()

@@ -4,15 +4,16 @@ import sys
 import apt
 import os.path
 
-#sys.path.append(os.getcwd())
 
-from GDebi import GDebi
+from GDebi import GDebiCli
 
 
 if __name__ == "__main__":
-    data="/usr/share/gdebi"
-    if len(sys.argv) > 1:
-        app = GDebi(datadir=data,file=sys.argv[1])
-    else:
-        app = GDebi(datadir=data)
-    app.run()
+    debi = GDebiCli() 
+    if not debi.open(sys.argv[1]):
+        sys.exit(1)
+    print "Do you want to install it [yN]:",
+    sys.stdout.flush()
+    res = sys.stdin.readline()
+    if res.startswith("y") or res.startswith("Y"):
+        debi.install()

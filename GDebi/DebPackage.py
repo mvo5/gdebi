@@ -3,6 +3,8 @@ import apt
 import sys, os, subprocess
 
 class DebPackage:
+    debug = 0
+    
     def __init__(self, cache, file):
         self._cache = cache
         self.file = file
@@ -13,21 +15,21 @@ class DebPackage:
         self.pkgName = self._sections["Package"]
 
     def checkDepends(self):
-        print "checkDepends"
+        self._dbg(3,"checkDepends")
         # init 
         self._needPkgs = []
         depends = []
         
         arch = self._sections["Architecture"]
         if  arch != "all" and arch != apt_pkg.CPU:
-            print "ERROR: Wrong architecture dude!"
+            self._dbg(1,"ERROR: Wrong architecture dude!")
             self._failureString = "Wrong architecture '%s'" % arch
             return False
 
         # FIXME: same version is not strictly a error
         pkgname = self._sections["Package"]
         debver = self._sections["Version"]
-        print "debver: %s" % debver
+        self._dbg(1,"debver: %s" % debver)
         if self._cache.has_key(pkgname):
             instver = self._cache[pkgname].installedVersion
             if instver != None:
@@ -54,19 +56,26 @@ class DebPackage:
 
         # check them
         for or_group in depends:
-            print "or-gr %s " % (or_group)
+            # FIXME: with this trick we get get most pkgs right,
+            # but we really need to be smarter in the or-groups
+            # and figure if we already have a single dep installed
+            or_group.reverse()
+
+            self._dbg(2,"in or-gr %s " % (or_group))
             or_found = False
             for dep in or_group:
-                print "found: %s " % (type(dep))
-                print dep
+                if or_found:
+                    break
+                #if dep:
+                #    self._dbg(1,"dep found: %s " % (dep))
                 depname = dep[0]
                 ver = dep[1]
                 oper = dep[2]
 
-                print "looking at: %s" % depname
+                self._dbg(2, "looking at: %s" % depname)
                 if not self._cache.has_key(depname):
                     # check apt_pkg cache
-                    print "Depenedency %s is either virtual or not found" % (depname)
+                    self._dbg(1, "Depenedency %s is either virtual or not found" % (depname))
                     virtual_pkg = self._cache._cache[depname]
                     for pkg in self._cache:
                         v = self._cache._depcache.GetCandidateVer(pkg._pkg)
@@ -76,12 +85,13 @@ class DebPackage:
                             if depname == p[0]:
                                 # we found a pkg that provides this virtual
                                 # pkg, check if the proivdes is any good
-                                print "%s provides %s" % (pkg.name, depname)
+                                self._dbg(1,"%s provides %s" % (pkg.name, depname))
                                 cand = self._cache[pkg.name]
                                 candver = self._cache._depcache.GetCandidateVer(cand._pkg)
                                 instver = cand._pkg.CurrentVer
                                 res = apt_pkg.CheckDep(candver.VerStr,oper,ver)
                                 if res == True:
+                                    self._dbg(1,"we can use %s" % pkg.name)
                                     or_found = True
                                     break
                     continue
@@ -96,10 +106,10 @@ class DebPackage:
 
                 # check if we need to install it
                 if cand._pkg.CurrentVer == None:
-                    print "Need to get: %s" % depname
+                    self._dbg(2,"Need to get: %s" % depname)
                     self._needPkgs.append(depname)
                 else:
-                    print "Is already installed: %s" % depname
+                    self._dbg(2,"Is already installed: %s" % depname)
 
                 # ok, if we are here, we have a good version
                 or_found = True
@@ -113,7 +123,7 @@ class DebPackage:
                     
 
     def missingDeps(self):
-        print "Installing: %s" % self._needPkgs
+        self._dbg(1, "Installing: %s" % self._needPkgs)
         if self._needPkgs == None:
             self.checkDepends()
         return self._needPkgs
@@ -122,6 +132,12 @@ class DebPackage:
     # properties
     def __getitem__(self,item):
         return self._sections[item]
+
+    def _dbg(self, level, msg):
+        """Write debugging output to sys.stderr.
+        """
+        if level <= self.debug:
+            print >> sys.stderr, msg
 
 
 

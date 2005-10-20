@@ -16,7 +16,7 @@ I18NFILES = []
     
 setup(name='gdebi', version='0.1',
       packages=['GDebi'],
-      scripts=['gdebi'],
+      scripts=['gdebi','gdebi-gtk'],
       data_files=[('share/gdebi/',
                    ["data/gdebi.glade"]),
                   ('share/applications',
