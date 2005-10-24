@@ -3,7 +3,7 @@ gdebi is a simple to tool install local deb files.
 It will use apt to figure if the dependencies can be satified and
 what additonal software is required. 
 
-It needs a patched vte and python-apt--progress-reporting--0 to work.
+It needs a patched vte and the latest python-apt--mvo--0 to work.
 
 It will need root to install the deb, it's probably best to have a
 non-root bit to view the deb and a "install-mode" bit that is run

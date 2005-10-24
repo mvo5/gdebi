@@ -4,7 +4,7 @@ import sys, time, thread, os, fcntl, string
 import apt, apt_pkg
 import subprocess
 
-from DebPackage import DebPackage
+from DebPackage import DebPackage, MyCache
 
 
 class GDebiCli(object):
@@ -12,7 +12,7 @@ class GDebiCli(object):
     def __init__(self):
         # fixme, do graphic cache check
         tp = apt.progress.OpTextProgress()
-        self._cache = apt.Cache(tp)
+        self._cache = MyCache(tp)
         
     def open(self, file):
         self._deb = DebPackage(self._cache, file)
@@ -23,23 +23,31 @@ class GDebiCli(object):
             print "No description found in the package"
 
         # check the deps
-        if not self._deb.checkDepends():
+        if not self._deb.checkDeb():
+            print "This package can't be installed"
             print self._deb._failureString
-        else:
-            print "Need to install the following %s packages from the archive:" % len(self._deb.missingDeps)
-            for pkgname in self._deb.missingDeps:
-                print pkgname
+            return False
+
+        # show what changes
+        (install, remove) = self._deb.requiredChanges
+        if len(remove) > 0:
+            print "Need to REMOVE the following pkgs: " 
+            for pkgname in install:
+                print pkgname + " ",
+        print
+        if len(install) > 0:
+            print "Need to install the following pkgs: " 
+            for pkgname in install:
+                print pkgname + " ",
+        print
         return True
 
     def install(self):
         # install the dependecnies
-        pkgs = self._deb.missingDeps
-        print pkgs
-        if len(pkgs) > 0:
+        (install,remove) = self._deb.requiredChanges
+        if len(install) > 0 or len(remove) > 0:
             # lock for install
             apt_pkg.PkgSystemLock()
-            for pkg in pkgs:
-                self._cache[pkg].markInstall()
             fprogress = apt.progress.TextFetchProgress()
             iprogress = apt.progress.InstallProgress()
             res = self._cache.commit(fprogress,iprogress)
