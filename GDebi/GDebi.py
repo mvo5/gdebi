@@ -1,6 +1,6 @@
 #!/usr/bin/python2.4
 
-import sys, time, thread, os, fcntl, string
+import sys, time, thread, os, fcntl, string, posix
 import apt, apt_pkg
 
 import pygtk; pygtk.require("2.0")
@@ -157,7 +157,8 @@ class GDebi(SimpleGladeApp):
             self.progress = progress
             self.term = term
             self.finished = False
-            self.term.connect("child-exited",self.child_exited)
+            reaper = vte.vte_reaper_get()
+            reaper.connect("child-exited",self.child_exited)
             (read, write) = os.pipe()
             # self.writefd is the magic fd for apt where it will send it
             # status too
@@ -168,9 +169,10 @@ class GDebi(SimpleGladeApp):
             #print "write-fd: %s" % self.writefd
             # read from fd into this var
             self.read = ""
-        def child_exited(self,term):
+        def child_exited(self,term, pid, status):
             # FIXME: need to teach vte-terminal to give me pid+status
-            print "child_exited: %s %s" % (self,term)
+            print "child_exited: %s %s %s %s" % (self,term,pid,status)
+            self.apt_status = posix.WEXITSTATUS(status)
             self.finished = True
         def startUpdate(self):
             print "startUpdate"
@@ -209,7 +211,7 @@ class GDebi(SimpleGladeApp):
                 self.updateInterface()
             # FIXME: return the exit-status of the child
             #        get it from child_exited
-            return 0
+            return self.apt_status
 
     class FetchProgressAdapter(apt.progress.FetchProgress):
         def __init__(self,progress):
