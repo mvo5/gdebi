@@ -1,5 +1,3 @@
-#!/usr/bin/python2.4
-
 import sys, time, thread, os, fcntl, string, posix
 import apt, apt_pkg
 
