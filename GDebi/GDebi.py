@@ -157,7 +157,7 @@ class GDebi(SimpleGladeApp):
             self.progress = progress
             self.term = term
             self.finished = False
-            reaper = vte.vte_reaper_get()
+            reaper = vte.reaper_get()
             reaper.connect("child-exited",self.child_exited)
             (read, write) = os.pipe()
             # self.writefd is the magic fd for apt where it will send it
