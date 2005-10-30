@@ -13,9 +13,10 @@ class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, file=""):
         SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
+        self.window_main.show()
 
-        # fixme, do graphic cache check
-        self._cache = MyCache()
+        cprogress = self.CacheProgressAdapter(self.progressbar_cache)
+        self._cache = MyCache(cprogress)
 
         if file != "":
             self.open(file)
@@ -231,8 +232,18 @@ class GDebi(SimpleGladeApp):
             print "mediaChange %s %s" % (medium, drive)
             return False
 
-
-
+    class CacheProgressAdapter(apt.progress.FetchProgress):
+        def __init__(self, progressbar):
+            self.progressbar = progressbar
+        def update(self, percent):
+            self.progressbar.show()
+            self.progressbar.set_fraction(percent/100.0)
+            self.progressbar.set_text(self.op)
+            while gtk.events_pending():
+                gtk.main_iteration()
+        def done(self):
+            self.progressbar.hide()
+        
 if __name__ == "__main__":
     app = GDebi("data/")
 
