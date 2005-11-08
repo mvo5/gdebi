@@ -2,7 +2,7 @@
 Name=GDebi
 GenericName=Install deb files
 Comment=Install deb files
-Exec=gdebi
+Exec=gdebi-gtk
 Icon=gdebi.png
 Terminal=false
 Type=Application
