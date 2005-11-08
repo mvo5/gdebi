@@ -1,6 +1,6 @@
 
 gdebi
-	command=gdebi
+	command=gdebi-gtk
 	name=Install Package (gdebi)
 	can_open_multiple_files=false
 	expects_uris=false
