@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=GDebi
+Name=Package Installer
 GenericName=Install deb files
-Comment=Install deb files
+Comment=Install deb files directly
 Exec=gdebi-gtk
 Icon=gdebi.png
 Terminal=false
