@@ -1,6 +1,5 @@
 * apt-progress: error reporting, conf-file prompts, media-change
 * code cleanup
-* root/non-root mode
 * better status support in gui: 
   - "Package is not installed"
   - "Package is installed and upgradable"
