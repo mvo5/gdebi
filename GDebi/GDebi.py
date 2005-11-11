@@ -140,7 +140,6 @@ class GDebi(SimpleGladeApp):
             return
         
         # lock for install
-        apt_pkg.PkgSystemLock()
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
@@ -151,6 +150,7 @@ class GDebi(SimpleGladeApp):
         # install the dependecnies
         (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
+            apt_pkg.PkgSystemLock()
             fprogress = self.FetchProgressAdapter(self.progressbar_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term)
@@ -182,7 +182,7 @@ class GDebi(SimpleGladeApp):
 
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress,term):
+        def __init__(self, debfile, status, progress, term):
             self.debfile = debfile
             self.status = status
             self.progress = progress
@@ -192,16 +192,20 @@ class GDebi(SimpleGladeApp):
             lock.acquire()
             cmd = "/usr/bin/dpkg"
             argv = [cmd,"-i", self.debfile]
-            print cmd
-            print argv
-            def finish_dpkg(term, lock):
-                print "dpkg finished"
+            #print cmd
+            #print argv
+            print self.term
+            def finish_dpkg(term, pid, status, lock):
+                print "dpkg finished %s %s" % (pid,status)
+                print "exit status: %s" % posix.WEXITSTATUS(status)
+                print "was signaled %s" % posix.WIFSIGNALED(status)
                 lock.release()
             self.status.set_text("Installing %s" % self.debfile)
             self.progress.pulse()
             self.progress.set_text("")
-            self.term.connect("child-exited", finish_dpkg, lock)
-            self.term.fork_command(command=cmd,argv=argv)
+            reaper = vte.reaper_get()
+            reaper.connect("child-exited", finish_dpkg, lock)
+            pid = self.term.fork_command(command=cmd,argv=argv)
             while lock.locked():
                 self.progress.pulse()
                 while gtk.events_pending():
