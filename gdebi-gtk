@@ -6,13 +6,25 @@ import os.path
 
 #sys.path.append(os.getcwd())
 
+from optparse import OptionParser
 from GDebi import GDebi
 
 
 if __name__ == "__main__":
     data="/usr/share/gdebi"
-    if len(sys.argv) > 1:
-        app = GDebi(datadir=data,file=sys.argv[1])
+
+    parser = OptionParser()
+    parser.add_option("-n", "--non-interactive",
+                      action="store_true", dest="non_interactive",
+                      default=False,
+                      help="Run non-interactive (dangerous!)")
+    (options, args) = parser.parse_args()
+
+    if len(args) >= 1:
+        app = GDebi(datadir=data,file=args[0])
     else:
         app = GDebi(datadir=data)
+
+    if options.non_interactive == True:
+        app.on_button_install_clicked(None)
     app.run()

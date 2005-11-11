@@ -16,13 +16,10 @@ class GDebi(SimpleGladeApp):
     def __init__(self, datadir, file=""):
         SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
 
-        # change "install" button if we are not root
-        if os.getuid() != 0:
-            self.button_install.set_label("Become root")
         self.window_main.show()
 
-        cprogress = self.CacheProgressAdapter(self.progressbar_cache)
-        self._cache = MyCache(cprogress)
+        self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
+        self._cache = MyCache(self.cprogress)
 
         # setup the details treeview
         self.details_list = gtk.ListStore(gobject.TYPE_STRING)
@@ -138,7 +135,7 @@ class GDebi(SimpleGladeApp):
             dialog.set_markup(str)
             if dialog.run() == gtk.RESPONSE_YES:
                 os.execl("/usr/bin/gksudo","gksudo",
-                         "--","gdebi-gtk",self._deb.file)
+                         "--","gdebi-gtk","--non-interactive",self._deb.file)
             dialog.hide()
             return
         
@@ -195,6 +192,8 @@ class GDebi(SimpleGladeApp):
             lock.acquire()
             cmd = "/usr/bin/dpkg"
             argv = [cmd,"-i", self.debfile]
+            print cmd
+            print argv
             def finish_dpkg(term, lock):
                 print "dpkg finished"
                 lock.release()
