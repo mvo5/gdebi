@@ -63,6 +63,8 @@ class DebPackage:
             # in the cache
             cand = self._cache[depname]
             candver = self._cache._depcache.GetCandidateVer(cand._pkg)
+            if not candver:
+                continue
             if not apt_pkg.CheckDep(candver.VerStr,oper,ver):
                 continue
 
