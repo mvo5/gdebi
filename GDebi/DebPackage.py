@@ -168,9 +168,22 @@ class DebPackage:
                 remove.append(pkg.name)
         return (install,remove)
     requiredChanges = property(requiredChanges)
+
+    def filelist(self):
+        """ return the list of files in the deb """
+        files = []
+        def extract_cb(What,Name,Link,Mode,UID,GID,Size,MTime,Major,Minor):
+            #print "%s '%s','%s',%u,%u,%u,%u,%u,%u,%u"\
+            #      % (What,Name,Link,Mode,UID,GID,Size, MTime, Major, Minor)
+            files.append(Name)
+        apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
+        return files
+    filelist = property(filelist)
     
     # properties
     def __getitem__(self,item):
+        if not self._sections.has_key(item):
+            return "No entry for '%s' found" % item
         return self._sections[item]
 
     def _dbg(self, level, msg):

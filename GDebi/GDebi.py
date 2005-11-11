@@ -34,14 +34,27 @@ class GDebi(SimpleGladeApp):
         
     def open(self, file):
         self._deb = DebPackage(self._cache, file)
+
         # set name
         self.label_name.set_text(self._deb.pkgName)
+
         # set description
         buf = self.textview_description.get_buffer()
         try:
             buf.set_text(self._deb["Description"])
         except KeyError:
             buf.set_text("No description found in the package")
+
+        # set various status bits
+        self.label_version.set_text(self._deb["Version"])
+        self.label_maintainer.set_text(self._deb["Maintainer"])
+        self.label_priority.set_text(self._deb["Priority"])
+        self.label_section.set_text(self._deb["Section"])
+        self.label_size.set_text(self._deb["Installed-Size"])
+
+        # set filelist
+        buf = self.textview_filelist.get_buffer()
+        buf.set_text("\n".join(self._deb.filelist))
 
         # check the deps
         if not self._deb.checkDeb():
