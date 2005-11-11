@@ -79,7 +79,7 @@ class DebPackage:
             or_str += dep[0]
             if dep != or_group[len(or_group)-1]:
                 or_str += "|"
-        self._failureString += "Dependency not found: %s" % or_str
+        self._failureString += "Dependency not found: %s\n" % or_str
         return False
         
 
