@@ -109,6 +109,9 @@ class DebPackage:
                 elif cmp == -1:
                     self._failureString = "Newer version is already installed"
                     return False
+
+        # FIXME: this sort of error handling sux
+        self._failureString = ""
             
         # check conflicts
         key = "Conflicts"
@@ -120,12 +123,6 @@ class DebPackage:
                     self._failureString = "Conflicts with a exisiting pkg!"
                     return False
         
-        # FIXME: this sort of error handling sux
-        self._failureString = ""
-
-        # FIXME: check conflicts (replace?) as well,
-        #        probably just whine and fail for now
-
         # find depends
         for key in ["Depends","PreDepends"]:
             if self._sections.has_key(key):

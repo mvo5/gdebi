@@ -210,7 +210,7 @@ class GDebi(SimpleGladeApp):
                 self.progress.pulse()
                 while gtk.events_pending():
                     gtk.main_iteration()
-                time.sleep(0.05)
+                time.sleep(0.1)
             self.progress.set_fraction(1.0)
     
     class InstallProgressAdapter(apt.progress.InstallProgress):
