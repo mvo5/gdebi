@@ -5,6 +5,7 @@ import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
 import gobject
 import vte
+import subprocess
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -14,6 +15,10 @@ class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, file=""):
         SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
+
+        # change "install" button if we are not root
+        if os.getuid() != 0:
+            self.button_install.set_label("Become root")
         self.window_main.show()
 
         cprogress = self.CacheProgressAdapter(self.progressbar_cache)
@@ -63,6 +68,7 @@ class GDebi(SimpleGladeApp):
                                          self._deb._failureString +
                                          "</span>")
             self.button_install.set_sensitive(False)
+            self.button_details.hide()
             return
 
         (install, remove) = self._deb.requiredChanges
@@ -118,6 +124,24 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         print "install"
+        if os.getuid() != 0:
+            str = "<big><b>%s</b></big>\n\n%s" % ("Run as root",
+                                                  "To install the selected "
+                                                  "package you need to run "
+                                                  "this program as root. "
+                                                  "Do you want to do this "
+                                                  "now?")
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_QUESTION,
+                                       buttons=gtk.BUTTONS_YES_NO)
+            dialog.set_markup(str)
+            if dialog.run() == gtk.RESPONSE_YES:
+                os.execl("/usr/bin/gksudo","gksudo",
+                         "--","gdebi-gtk",self._deb.file)
+            dialog.hide()
+            return
+        
         # lock for install
         apt_pkg.PkgSystemLock()
         self.window_main.set_sensitive(False)
