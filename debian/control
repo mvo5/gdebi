@@ -9,4 +9,4 @@ Package: gdebi
 Architecture: all
 Depends: python, ${shlibs:Depends}, python2.4-gtk2, python2.4-glade2, python2.4-apt (>= 0.6.13.2), dpkg, python-vte (>= 0.11.15-0ubuntu3)
 Description: Simple tool to install deb files
- Install and view deb packages directly.
+ View and install deb packages directly.

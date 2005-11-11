@@ -3,6 +3,7 @@ import apt, apt_pkg
 
 import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
+import gobject
 import vte
 
 from DebPackage import DebPackage, MyCache
@@ -17,6 +18,15 @@ class GDebi(SimpleGladeApp):
 
         cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(cprogress)
+
+        # setup the details treeview
+        self.details_list = gtk.ListStore(gobject.TYPE_STRING)
+        column = gtk.TreeViewColumn("")
+        render = gtk.CellRendererText()
+        column.pack_start(render, True)
+        column.add_attribute(render, "markup", 0)
+        self.treeview_details.append_column(column)
+        self.treeview_details.set_model(self.details_list)
 
         if file != "":
             self.open(file)
@@ -46,13 +56,26 @@ class GDebi(SimpleGladeApp):
         deps = ""
         if len(remove) == len(install) == 0:
             deps = "All dependencies satisfied"
+            self.button_details.hide()
+        else:
+            self.button_details.show()
         if len(remove) > 0:
             deps += "Need to <b>remove</b> %s packages from the archive\n" % len(remove)
         if len(install) > 0:
             deps += "Need to install %s packages from the archive" % len(install)
         self.label_status.set_markup(deps)
         self.button_install.set_sensitive(True)
-        
+
+    def on_button_details_clicked(self, widget):
+        print "on_button_details_clicked"
+        (install, remove) = self._deb.requiredChanges
+        self.details_list.clear()
+        for rm in remove:
+            self.details_list.append(["<b>To be removed: %s</b>" % rm])
+        for inst in install:
+            self.details_list.append(["To be installed: %s" % inst])
+        self.dialog_details.run()
+        self.dialog_details.hide()
 
     def on_open_activate(self, widget):
         print "open"
