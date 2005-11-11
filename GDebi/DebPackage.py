@@ -105,10 +105,11 @@ class DebPackage:
             instver = self._cache[pkgname].installedVersion
             if instver != None:
                 cmp = apt_pkg.VersionCompare(debver,instver)
+                print "CompareVersion(debver,instver): %s" % cmp
                 if cmp == 0:
                     self._failureString = "Same version is already installed"
                     return False
-                elif cmp == -1:
+                elif cmp < 0:
                     self._failureString = "Newer version is already installed"
                     return False
 
