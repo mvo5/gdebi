@@ -82,10 +82,24 @@ class DebPackage:
         self._failureString += "Dependency not found: %s\n" % or_str
         return False
 
+    def _checkSinglePkgConflict(self, pkgname, ver, oper):
+        """ returns true if a pkg conflicts with a real installed/marked
+            pkg """
+        ver = None
+        cand = self._cache[pkgname]
+        if cand.isInstalled:
+            ver = cand.installedVersion
+        elif cand.markedInstall:
+            ver = cand.candidateVersion
+        if ver and apt_pkg.CheckDep(ver,oper,ver):
+            self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
+            return True
+        return False
+
     def _checkConflictsOrGroup(self, or_group):
         """ check the or-group for conflicts with installed pkgs """
         self._dbg(2,"_checkConflictsOrGroup(): %s " % (or_group))
-        
+
         or_found = False
         virtual_pkg = None
 
@@ -98,18 +112,14 @@ class DebPackage:
             #        checked!
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
-                    virtual_pkg = depname
+                    for pkg in self._cache.getProvidersForVirtual(depname):
+                        #print "conflicts virtual check: %s" % pkg.name
+                        if self._checkSinglePkgConflict(pkg.name,ver,oper):
+                            return True
                 continue
-
-            ver = None
-            cand = self._cache[depname]
-            if cand.isInstalled:
-                ver = cand.installedVersion
-            elif cand.markedInstall:
-                ver = cand.candidateVersion
-            if ver and apt_pkg.CheckDep(ver,oper,ver):
-                    self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
-                    return True
+            if self._checkSinglePkgConflict(depname,ver,oper):
+                return True
+            
         return False
 
     def checkConflicts(self):

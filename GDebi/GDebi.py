@@ -165,6 +165,21 @@ class GDebi(SimpleGladeApp):
         dprogress.commit()
         # reopen the cache, reread the file, FIXME: add progress reporting
         self._cache = MyCache()
+        if self._cache._depcache.BrokenCount > 0:
+            str = "<big><b>%s</b></big>\n\n%s" % ("Dependency problem",
+                                                  "After installing a "
+                                                  "dependency problem was "
+                                                  "found. This is a bug in "
+                                                  "this software, please "
+                                                  "report it.")
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_INFO,
+                                       buttons=gtk.BUTTONS_OK)
+            dialog.set_markup(str)
+            dialog.run()
+            dialog.destroy()
+            print "Autsch, please report"
         self.open(self._deb.file)
         # show the button
         self.button_deb_install_close.set_sensitive(True)
