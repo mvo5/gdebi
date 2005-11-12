@@ -30,7 +30,7 @@ class GDebiCli(object):
         (install, remove) = self._deb.requiredChanges
         if len(remove) > 0:
             print "Need to REMOVE the following pkgs: " 
-            for pkgname in install:
+            for pkgname in remove:
                 print pkgname + " ",
         print
         if len(install) > 0:

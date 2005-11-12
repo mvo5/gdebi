@@ -6,3 +6,9 @@
   - "Package is at the same version"
   - "Pkg on system is newer than deb"
 * basic description formating (summary, " ." lines)
+* check if virtual packages dependencies/conflicts work
+  -> Conflicts on virutal pkg looks broken
+
+Package that can't be handled:
+* exim4 (when postfix is installed):
+  wants to remove 8 pkgs, apt will only remove 1 (postfix)
