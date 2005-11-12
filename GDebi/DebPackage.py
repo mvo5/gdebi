@@ -81,7 +81,50 @@ class DebPackage:
                 or_str += "|"
         self._failureString += "Dependency not found: %s\n" % or_str
         return False
+
+    def _checkConflictsOrGroup(self, or_group):
+        """ check the or-group for conflicts with installed pkgs """
+        self._dbg(2,"_checkConflictsOrGroup(): %s " % (or_group))
         
+        or_found = False
+        virtual_pkg = None
+
+        for dep in or_group:
+            depname = dep[0]
+            ver = dep[1]
+            oper = dep[2]
+
+            # FIXME: conflicts with virutal pkgs needs to be
+            #        checked!
+            if not self._cache.has_key(depname):
+                if self._cache.isVirtualPkg(depname):
+                    virtual_pkg = depname
+                continue
+
+            ver = None
+            cand = self._cache[depname]
+            if cand.isInstalled:
+                ver = cand.installedVersion
+            elif cand.markedInstall:
+                ver = cand.candidateVersion
+            if ver and apt_pkg.CheckDep(ver,oper,ver):
+                    self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
+                    return True
+        return False
+
+    def checkConflicts(self):
+        """ check if the pkg conflicts with a existing or to be installed
+            package. Return True if the pkg is ok """
+        
+        key = "Conflicts"
+        if self._sections.has_key(key):
+            conflicts = apt_pkg.ParseDepends(self._sections[key])
+            for or_group in conflicts:
+                if self._checkConflictsOrGroup(or_group):
+                    #print "Conflicts with a exisiting pkg!"
+                    #self._failureString = "Conflicts with a exisiting pkg!"
+                    return False
+        return True
 
     def checkDeb(self):
         self._dbg(3,"checkDepends")
@@ -117,14 +160,8 @@ class DebPackage:
         self._failureString = ""
             
         # check conflicts
-        key = "Conflicts"
-        if self._sections.has_key(key):
-            conflicts = apt_pkg.ParseDepends(self._sections[key])
-            for or_group in conflicts:
-                if self._satisfyOrGroup(or_group):
-                    #print "Conflicts with a exisiting pkg!"
-                    self._failureString = "Conflicts with a exisiting pkg!"
-                    return False
+        if not self.checkConflicts():
+            return False
         
         # find depends
         for key in ["Depends","PreDepends"]:
@@ -142,6 +179,11 @@ class DebPackage:
         # now try it out in the cache
         for pkg in self._needPkgs:
             self._cache[pkg].markInstall()
+
+        # check for conflicts again (this time with the packages that are
+        # makeed for install)
+        if not self.checkConflicts():
+            return False
 
         if self._cache._depcache.BrokenCount > 0:
             self._failureString = "Installing the dependencies impossible (broken cache)"
