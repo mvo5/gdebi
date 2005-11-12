@@ -3,7 +3,9 @@ import apt, apt_pkg
 
 import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
+import gobject
 import vte
+import subprocess
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -13,10 +15,20 @@ class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, file=""):
         SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
+
         self.window_main.show()
 
-        cprogress = self.CacheProgressAdapter(self.progressbar_cache)
-        self._cache = MyCache(cprogress)
+        self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
+        self._cache = MyCache(self.cprogress)
+
+        # setup the details treeview
+        self.details_list = gtk.ListStore(gobject.TYPE_STRING)
+        column = gtk.TreeViewColumn("")
+        render = gtk.CellRendererText()
+        column.pack_start(render, True)
+        column.add_attribute(render, "markup", 0)
+        self.treeview_details.append_column(column)
+        self.treeview_details.set_model(self.details_list)
 
         if file != "":
             self.open(file)
@@ -24,14 +36,27 @@ class GDebi(SimpleGladeApp):
         
     def open(self, file):
         self._deb = DebPackage(self._cache, file)
+
         # set name
         self.label_name.set_text(self._deb.pkgName)
+
         # set description
         buf = self.textview_description.get_buffer()
         try:
             buf.set_text(self._deb["Description"])
         except KeyError:
             buf.set_text("No description found in the package")
+
+        # set various status bits
+        self.label_version.set_text(self._deb["Version"])
+        self.label_maintainer.set_text(self._deb["Maintainer"])
+        self.label_priority.set_text(self._deb["Priority"])
+        self.label_section.set_text(self._deb["Section"])
+        self.label_size.set_text(self._deb["Installed-Size"])
+
+        # set filelist
+        buf = self.textview_filelist.get_buffer()
+        buf.set_text("\n".join(self._deb.filelist))
 
         # check the deps
         if not self._deb.checkDeb():
@@ -40,19 +65,33 @@ class GDebi(SimpleGladeApp):
                                          self._deb._failureString +
                                          "</span>")
             self.button_install.set_sensitive(False)
+            self.button_details.hide()
             return
 
         (install, remove) = self._deb.requiredChanges
         deps = ""
         if len(remove) == len(install) == 0:
             deps = "All dependencies satisfied"
+            self.button_details.hide()
+        else:
+            self.button_details.show()
         if len(remove) > 0:
             deps += "Need to <b>remove</b> %s packages from the archive\n" % len(remove)
         if len(install) > 0:
             deps += "Need to install %s packages from the archive" % len(install)
         self.label_status.set_markup(deps)
         self.button_install.set_sensitive(True)
-        
+
+    def on_button_details_clicked(self, widget):
+        print "on_button_details_clicked"
+        (install, remove) = self._deb.requiredChanges
+        self.details_list.clear()
+        for rm in remove:
+            self.details_list.append(["<b>To be removed: %s</b>" % rm])
+        for inst in install:
+            self.details_list.append(["To be installed: %s" % inst])
+        self.dialog_details.run()
+        self.dialog_details.hide()
 
     def on_open_activate(self, widget):
         print "open"
@@ -82,8 +121,25 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         print "install"
+        if os.getuid() != 0:
+            str = "<big><b>%s</b></big>\n\n%s" % ("Run as root",
+                                                  "To install the selected "
+                                                  "package you need to run "
+                                                  "this program as root. "
+                                                  "Do you want to do this "
+                                                  "now?")
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_QUESTION,
+                                       buttons=gtk.BUTTONS_YES_NO)
+            dialog.set_markup(str)
+            if dialog.run() == gtk.RESPONSE_YES:
+                os.execl("/usr/bin/gksudo","gksudo",
+                         "--","gdebi-gtk","--non-interactive",self._deb.file)
+            dialog.hide()
+            return
+        
         # lock for install
-        apt_pkg.PkgSystemLock()
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
@@ -94,6 +150,7 @@ class GDebi(SimpleGladeApp):
         # install the dependecnies
         (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
+            apt_pkg.PkgSystemLock()
             fprogress = self.FetchProgressAdapter(self.progressbar_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term)
@@ -125,7 +182,7 @@ class GDebi(SimpleGladeApp):
 
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress,term):
+        def __init__(self, debfile, status, progress, term):
             self.debfile = debfile
             self.status = status
             self.progress = progress
@@ -135,19 +192,25 @@ class GDebi(SimpleGladeApp):
             lock.acquire()
             cmd = "/usr/bin/dpkg"
             argv = [cmd,"-i", self.debfile]
-            def finish_dpkg(term, lock):
-                print "dpkg finished"
+            #print cmd
+            #print argv
+            print self.term
+            def finish_dpkg(term, pid, status, lock):
+                print "dpkg finished %s %s" % (pid,status)
+                print "exit status: %s" % posix.WEXITSTATUS(status)
+                print "was signaled %s" % posix.WIFSIGNALED(status)
                 lock.release()
             self.status.set_text("Installing %s" % self.debfile)
             self.progress.pulse()
             self.progress.set_text("")
-            self.term.connect("child-exited", finish_dpkg, lock)
-            self.term.fork_command(command=cmd,argv=argv)
+            reaper = vte.reaper_get()
+            reaper.connect("child-exited", finish_dpkg, lock)
+            pid = self.term.fork_command(command=cmd,argv=argv)
             while lock.locked():
                 self.progress.pulse()
                 while gtk.events_pending():
                     gtk.main_iteration()
-                time.sleep(0.05)
+                time.sleep(0.1)
             self.progress.set_fraction(1.0)
     
     class InstallProgressAdapter(apt.progress.InstallProgress):

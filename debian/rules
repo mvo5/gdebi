@@ -82,7 +82,7 @@ binary-arch: build install
 #	dh_installlogrotate
 #	dh_installemacsen
 #	dh_installpam
-#	dh_installmime
+	dh_installmime
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
@@ -102,8 +102,8 @@ binary-arch: build install
 arch-build:
 	rm -rf debian/arch-build
 	mkdir -p debian/arch-build/gdebi-$(DEBVER)
-	bzr inventory  | xargs cp -a --parents --target=debian/arch-build/gdebi-$(DEBVER)
-	(cd debian/arch-build/gdebi-$(DEBVER); $(DEB_BUILD_PROG))
+	tar cf - `bzr inventory` | (cd debian/arch-build/gdebi-$(DEBVER);tar xf -)
+	(cd debian/arch-build/gdebi-$(DEBVER) && $(DEB_BUILD_PROG))
 
 
 binary: binary-indep binary-arch

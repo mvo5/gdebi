@@ -63,6 +63,8 @@ class DebPackage:
             # in the cache
             cand = self._cache[depname]
             candver = self._cache._depcache.GetCandidateVer(cand._pkg)
+            if not candver:
+                continue
             if not apt_pkg.CheckDep(candver.VerStr,oper,ver):
                 continue
 
@@ -77,7 +79,7 @@ class DebPackage:
             or_str += dep[0]
             if dep != or_group[len(or_group)-1]:
                 or_str += "|"
-        self._failureString += "Dependency not found: %s" % or_str
+        self._failureString += "Dependency not found: %s\n" % or_str
         return False
         
 
@@ -103,12 +105,16 @@ class DebPackage:
             instver = self._cache[pkgname].installedVersion
             if instver != None:
                 cmp = apt_pkg.VersionCompare(debver,instver)
+                print "CompareVersion(debver,instver): %s" % cmp
                 if cmp == 0:
                     self._failureString = "Same version is already installed"
                     return False
-                elif cmp == -1:
+                elif cmp < 0:
                     self._failureString = "Newer version is already installed"
                     return False
+
+        # FIXME: this sort of error handling sux
+        self._failureString = ""
             
         # check conflicts
         key = "Conflicts"
@@ -120,12 +126,6 @@ class DebPackage:
                     self._failureString = "Conflicts with a exisiting pkg!"
                     return False
         
-        # FIXME: this sort of error handling sux
-        self._failureString = ""
-
-        # FIXME: check conflicts (replace?) as well,
-        #        probably just whine and fail for now
-
         # find depends
         for key in ["Depends","PreDepends"]:
             if self._sections.has_key(key):
@@ -168,9 +168,22 @@ class DebPackage:
                 remove.append(pkg.name)
         return (install,remove)
     requiredChanges = property(requiredChanges)
+
+    def filelist(self):
+        """ return the list of files in the deb """
+        files = []
+        def extract_cb(What,Name,Link,Mode,UID,GID,Size,MTime,Major,Minor):
+            #print "%s '%s','%s',%u,%u,%u,%u,%u,%u,%u"\
+            #      % (What,Name,Link,Mode,UID,GID,Size, MTime, Major, Minor)
+            files.append(Name)
+        apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
+        return files
+    filelist = property(filelist)
     
     # properties
     def __getitem__(self,item):
+        if not self._sections.has_key(item):
+            return "No entry for '%s' found" % item
         return self._sections[item]
 
     def _dbg(self, level, msg):
