@@ -187,8 +187,13 @@ class DebPackage:
                     return False
 
         # now try it out in the cache
-        for pkg in self._needPkgs:
-            self._cache[pkg].markInstall()
+            for pkg in self._needPkgs:
+                try:
+                    self._cache[pkg].markInstall()
+                except SystemError:
+                    self._failureString = "Can't install '%s'" % pkg
+                    self._cache.clear()
+                    return False
 
         # check for conflicts again (this time with the packages that are
         # makeed for install)
