@@ -30,7 +30,7 @@ class GDebi(SimpleGladeApp):
         self.treeview_details.append_column(column)
         self.treeview_details.set_model(self.details_list)
 
-        if file != "":
+        if file != "" and os.path.exists(file):
             self.open(file)
 
         
@@ -169,7 +169,12 @@ class GDebi(SimpleGladeApp):
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
+        # show the button
+        self.button_deb_install_close.set_sensitive(True)
+        self.label_install_status.set_markup("<b>Installed %s</b>" % os.path.basename(self._deb.file))
+
         # reopen the cache, reread the file, FIXME: add progress reporting
+        #self._cache = MyCache(self.cprogress)
         self._cache = MyCache()
         if self._cache._depcache.BrokenCount > 0:
             str = "<big><b>%s</b></big>\n\n%s" % ("Dependency problem",
@@ -187,8 +192,6 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             print "Autsch, please report"
         self.open(self._deb.file)
-        # show the button
-        self.button_deb_install_close.set_sensitive(True)
         
     def on_button_deb_install_close_clicked(self, widget):
         self.dialog_deb_install.hide()
@@ -215,7 +218,7 @@ class GDebi(SimpleGladeApp):
             argv = [cmd,"-i", self.debfile]
             #print cmd
             #print argv
-            print self.term
+            #print self.term
             def finish_dpkg(term, pid, status, lock):
                 print "dpkg finished %s %s" % (pid,status)
                 print "exit status: %s" % posix.WEXITSTATUS(status)
