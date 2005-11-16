@@ -68,6 +68,12 @@ class GDebi(SimpleGladeApp):
             self.button_details.hide()
             return
 
+        if self._deb.compareToInstalledVersion() == DebPackage.INSTALLED_SAME_VERSION:
+            self.label_status.set_text("Version is installed")
+            self.button_install.set_sensitive(False)
+            self.button_details.hide()
+            return
+
         (install, remove) = self._deb.requiredChanges
         deps = ""
         if len(remove) == len(install) == 0:

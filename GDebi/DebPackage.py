@@ -136,6 +136,31 @@ class DebPackage:
                     return False
         return True
 
+    # some constants
+    (NOT_INSTALLED,
+     INSTALLED_OUTDATED,
+     INSTALLED_SAME_VERSION,
+     INSTALLED_IS_NEWER) = range(4)
+    
+    def compareToInstalledVersion(self):
+        """ checks if the pkg is already installed and if so in what version
+        """
+        pkgname = self._sections["Package"]
+        debver = self._sections["Version"]
+        self._dbg(1,"debver: %s" % debver)
+        if self._cache.has_key(pkgname):
+            instver = self._cache[pkgname].installedVersion
+            if instver != None:
+                cmp = apt_pkg.VersionCompare(debver,instver)
+                self._dbg(1, "CompareVersion(debver,instver): %s" % cmp)
+                if cmp == 0:
+                    return self.INSTALLED_SAME_VERSION
+                elif cmp < 0:
+                    return self.INSTALLED_IS_NEWER
+                elif cmp > 0:
+                    return self.INSTALLED_OUTDATED
+        return self.NOT_INSTALLED
+
     def checkDeb(self):
         self._dbg(3,"checkDepends")
         # init 
@@ -150,21 +175,10 @@ class DebPackage:
             return False
 
         # check version
-        # FIXME: same version is not strictly a error
-        pkgname = self._sections["Package"]
-        debver = self._sections["Version"]
-        self._dbg(1,"debver: %s" % debver)
-        if self._cache.has_key(pkgname):
-            instver = self._cache[pkgname].installedVersion
-            if instver != None:
-                cmp = apt_pkg.VersionCompare(debver,instver)
-                print "CompareVersion(debver,instver): %s" % cmp
-                if cmp == 0:
-                    self._failureString = "Same version is already installed"
-                    return False
-                elif cmp < 0:
-                    self._failureString = "Newer version is already installed"
-                    return False
+        res = self.compareToInstalledVersion()
+        if res == self.INSTALLED_IS_NEWER:
+            self._failureString = "Newer version is already installed"
+            return False
 
         # FIXME: this sort of error handling sux
         self._failureString = ""
