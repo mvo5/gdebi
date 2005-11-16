@@ -1,4 +1,16 @@
-gdebi (0.0+bzr20051111) breezy; urgency=low
+gdebi (0.0+bzr20051117) dapper; urgency=low
+
+  * fix some visual glitches
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 16 Nov 2005 12:51:13 +0100
+
+gdebi (0.0+bzr20051116) dapper; urgency=low
+
+  * fix in the problem resolver logic
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 16 Nov 2005 00:06:31 +0100
+
+gdebi (0.0+bzr20051112) dapper; urgency=low
 
   * Initial Release.
 

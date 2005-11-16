@@ -82,10 +82,24 @@ class DebPackage:
         self._failureString += "Dependency not found: %s\n" % or_str
         return False
 
+    def _checkSinglePkgConflict(self, pkgname, ver, oper):
+        """ returns true if a pkg conflicts with a real installed/marked
+            pkg """
+        ver = None
+        cand = self._cache[pkgname]
+        if cand.isInstalled:
+            ver = cand.installedVersion
+        elif cand.markedInstall:
+            ver = cand.candidateVersion
+        if ver and apt_pkg.CheckDep(ver,oper,ver):
+            self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
+            return True
+        return False
+
     def _checkConflictsOrGroup(self, or_group):
         """ check the or-group for conflicts with installed pkgs """
         self._dbg(2,"_checkConflictsOrGroup(): %s " % (or_group))
-        
+
         or_found = False
         virtual_pkg = None
 
@@ -98,18 +112,14 @@ class DebPackage:
             #        checked!
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
-                    virtual_pkg = depname
+                    for pkg in self._cache.getProvidersForVirtual(depname):
+                        #print "conflicts virtual check: %s" % pkg.name
+                        if self._checkSinglePkgConflict(pkg.name,ver,oper):
+                            return True
                 continue
-
-            ver = None
-            cand = self._cache[depname]
-            if cand.isInstalled:
-                ver = cand.installedVersion
-            elif cand.markedInstall:
-                ver = cand.candidateVersion
-            if ver and apt_pkg.CheckDep(ver,oper,ver):
-                    self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
-                    return True
+            if self._checkSinglePkgConflict(depname,ver,oper):
+                return True
+            
         return False
 
     def checkConflicts(self):
@@ -126,6 +136,31 @@ class DebPackage:
                     return False
         return True
 
+    # some constants
+    (NOT_INSTALLED,
+     INSTALLED_OUTDATED,
+     INSTALLED_SAME_VERSION,
+     INSTALLED_IS_NEWER) = range(4)
+    
+    def compareToInstalledVersion(self):
+        """ checks if the pkg is already installed and if so in what version
+        """
+        pkgname = self._sections["Package"]
+        debver = self._sections["Version"]
+        self._dbg(1,"debver: %s" % debver)
+        if self._cache.has_key(pkgname):
+            instver = self._cache[pkgname].installedVersion
+            if instver != None:
+                cmp = apt_pkg.VersionCompare(debver,instver)
+                self._dbg(1, "CompareVersion(debver,instver): %s" % cmp)
+                if cmp == 0:
+                    return self.INSTALLED_SAME_VERSION
+                elif cmp < 0:
+                    return self.INSTALLED_IS_NEWER
+                elif cmp > 0:
+                    return self.INSTALLED_OUTDATED
+        return self.NOT_INSTALLED
+
     def checkDeb(self):
         self._dbg(3,"checkDepends")
         # init 
@@ -140,21 +175,10 @@ class DebPackage:
             return False
 
         # check version
-        # FIXME: same version is not strictly a error
-        pkgname = self._sections["Package"]
-        debver = self._sections["Version"]
-        self._dbg(1,"debver: %s" % debver)
-        if self._cache.has_key(pkgname):
-            instver = self._cache[pkgname].installedVersion
-            if instver != None:
-                cmp = apt_pkg.VersionCompare(debver,instver)
-                print "CompareVersion(debver,instver): %s" % cmp
-                if cmp == 0:
-                    self._failureString = "Same version is already installed"
-                    return False
-                elif cmp < 0:
-                    self._failureString = "Newer version is already installed"
-                    return False
+        res = self.compareToInstalledVersion()
+        if res == self.INSTALLED_IS_NEWER:
+            self._failureString = "Newer version is already installed"
+            return False
 
         # FIXME: this sort of error handling sux
         self._failureString = ""
@@ -177,8 +201,13 @@ class DebPackage:
                     return False
 
         # now try it out in the cache
-        for pkg in self._needPkgs:
-            self._cache[pkg].markInstall()
+            for pkg in self._needPkgs:
+                try:
+                    self._cache[pkg].markInstall()
+                except SystemError:
+                    self._failureString = "Can't install '%s'" % pkg
+                    self._cache.clear()
+                    return False
 
         # check for conflicts again (this time with the packages that are
         # makeed for install)
