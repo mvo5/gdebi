@@ -157,18 +157,22 @@ class GDebi(SimpleGladeApp):
         (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
             apt_pkg.PkgSystemLock()
-            fprogress = self.FetchProgressAdapter(self.progressbar_install)
+            fprogress = self.FetchProgressAdapter(self.progressbar_install,
+                                                  self.label_action)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
-                                                    self._term)
+                                                    self._term,
+                                                    self.label_action)
             res = self._cache.commit(fprogress,iprogress)
             print "commit retured: %s" % res
 
         # install the package itself
+        self.label_action.set_text("Installing package ...")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
+        self.label_action.set_text("Package installed")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.label_install_status.set_markup("<b>Installed %s</b>" % os.path.basename(self._deb.file))
@@ -238,11 +242,12 @@ class GDebi(SimpleGladeApp):
             self.progress.set_fraction(1.0)
     
     class InstallProgressAdapter(apt.progress.InstallProgress):
-        def __init__(self,progress,term):
+        def __init__(self,progress,term,label):
             print "InstallProgressAdaper.__init__()"
             self.progress = progress
             self.term = term
             self.finished = False
+            self.action = label
             reaper = vte.reaper_get()
             reaper.connect("child-exited",self.child_exited)
             (read, write) = os.pipe()
@@ -262,6 +267,7 @@ class GDebi(SimpleGladeApp):
             self.finished = True
         def startUpdate(self):
             print "startUpdate"
+            self.action.set_text("Installing dependencies ...")
         def updateInterface(self):
             if self.status != None:
                 try:
@@ -300,11 +306,13 @@ class GDebi(SimpleGladeApp):
             return self.apt_status
 
     class FetchProgressAdapter(apt.progress.FetchProgress):
-        def __init__(self,progress):
+        def __init__(self,progress,action):
             print "FetchProgressAdapter.__init__()"
             self.progress = progress
+            self.action = action
         def start(self):
             print "start()"
+            self.action.set_text("Downloading ...")
             self.progress.set_fraction(0)
         def stop(self):
             print "stop()"
