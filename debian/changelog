@@ -1,3 +1,15 @@
+gdebi (0.0+bzr20051117.2) dapper; urgency=low
+
+  * add gksu to dependencies (needed to become root)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 17 Nov 2005 11:34:54 +0100
+
+gdebi (0.0+bzr20051117.1) dapper; urgency=low
+
+  * fix a bug in the versionsied conflicts detection
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 16 Nov 2005 15:59:28 +0100
+
 gdebi (0.0+bzr20051117) dapper; urgency=low
 
   * fix some visual glitches
