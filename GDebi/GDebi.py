@@ -6,6 +6,7 @@ import gtk, gtk.glade
 import gobject
 import vte
 import subprocess
+import gettext
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -128,10 +129,11 @@ class GDebi(SimpleGladeApp):
     def on_button_install_clicked(self, widget):
         print "install"
         if os.getuid() != 0:
-            str = "<big><b>%s</b></big>\n\n%s" % ("Run as root",
+            str = "<big><b>%s</b></big>\n\n%s" % ("Run as administraor",
                                                   "To install the selected "
                                                   "package you need to run "
-                                                  "this program as root. "
+                                                  "this program with "
+                                                  "administraor rights. "
                                                   "Do you want to do this "
                                                   "now?")
             dialog = gtk.MessageDialog(parent=self.window_main,
@@ -156,7 +158,25 @@ class GDebi(SimpleGladeApp):
         # install the dependecnies
         (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
-            apt_pkg.PkgSystemLock()
+            try:
+                apt_pkg.PkgSystemLock()
+            except SystemError:
+                str = "<big><b>%s</b></big>\n\n%s" % ("Unable to get exclusive lock",
+                                                      "This usually means that another "
+                                                      "package management application "
+                                                      "(like apt-get or aptitude) "
+                                                      "already running. Please close that "
+                                                      "application first.")
+                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
+                                           flags=gtk.DIALOG_MODAL,
+                                           type=gtk.MESSAGE_ERROR,
+                                           buttons=gtk.BUTTONS_OK)
+                dialog.set_markup(str)
+                dialog.run()
+                dialog.destroy()
+                self.dialog_deb_install.hide()
+                self.window_main.set_sensitive(True)
+                return
             fprogress = self.FetchProgressAdapter(self.progressbar_install,
                                                   self.label_action,
                                                   self.dialog_deb_install)
