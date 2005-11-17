@@ -158,12 +158,33 @@ class GDebi(SimpleGladeApp):
         if len(install) > 0 or len(remove) > 0:
             apt_pkg.PkgSystemLock()
             fprogress = self.FetchProgressAdapter(self.progressbar_install,
-                                                  self.label_action)
+                                                  self.label_action,
+                                                  self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term,
                                                     self.label_action)
             res = self._cache.commit(fprogress,iprogress)
             print "commit retured: %s" % res
+            if res == False:
+                # FIXME: check for errors in the install
+                str = "<big><b>%s</b></big>\n\n%s" % ("Install problem",
+                                                      "Installing the "
+                                                      "dependencies was "
+                                                      "not sucessful. This "
+                                                      "a bug in the archive "
+                                                      "please see the "
+                                                      "terminal window "
+                                                      "for details.")
+                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
+                                           flags=gtk.DIALOG_MODAL,
+                                           type=gtk.MESSAGE_INFO,
+                                           buttons=gtk.BUTTONS_OK)
+                dialog.set_markup(str)
+                dialog.run()
+                dialog.destroy()
+                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % "Error")
+                self.button_deb_install_close.set_sensitive(True)
+                return 
 
         # install the package itself
         self.label_action.set_text("Installing package ...")
@@ -306,10 +327,11 @@ class GDebi(SimpleGladeApp):
             return self.apt_status
 
     class FetchProgressAdapter(apt.progress.FetchProgress):
-        def __init__(self,progress,action):
+        def __init__(self,progress,action,main):
             print "FetchProgressAdapter.__init__()"
             self.progress = progress
             self.action = action
+            self.main = main
         def start(self):
             print "start()"
             self.action.set_text("Downloading ...")
@@ -324,7 +346,18 @@ class GDebi(SimpleGladeApp):
                 gtk.main_iteration()
             return True
         def mediaChange(self, medium, drive):
-            print "mediaChange %s %s" % (medium, drive)
+            #print "mediaChange %s %s" % (medium, drive)
+            str = "Please insert '%s' into the drive '%s'" % (medium,drive)
+            dialog = gtk.MessageDialog(parent=self.main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_QUESTION,
+                                       buttons=gtk.BUTTONS_OK_CANCEL)
+            dialog.set_markup(str)
+            res = dialog.run()
+            print res
+            dialog.destroy()
+            if  res == gtk.RESPONSE_OK:
+                return True
             return False
 
     class CacheProgressAdapter(apt.progress.FetchProgress):
