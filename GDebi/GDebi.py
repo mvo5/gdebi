@@ -69,11 +69,43 @@ class GDebi(SimpleGladeApp):
             self.button_details.hide()
             return
 
-        if self._deb.compareToInstalledVersion() == DebPackage.INSTALLED_SAME_VERSION:
+        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text("Version is installed")
             self.button_install.set_sensitive(False)
             self.button_details.hide()
             return
+
+        # check if the package is available in the normal sources as well
+        res = self._deb.compareToVersionInCache(useInstalled=False)
+        if res != DebPackage.NO_VERSION:
+            # FIXME: make this strs better, improve the dialog by
+            # providing a option to install from repo directly (when possible)
+            if res == DebPackage.VERSION_SAME:
+                title = "Same version available in repo as well"
+                msg = "The package is available in a repository as well. " \
+                      "It is recommended to install directly from the repo."
+            elif res == DebPackage.VERSION_IS_NEWER:
+                title = "Newer than in the repo"
+                msg = "The package is newer than the version in the cache. " \
+                      "While this may be desired it is still recommended to "\
+                      "use the version in the repoistory because it is "\
+                      "usually better tested."
+            elif res == DebPackage.VERSION_OUTDATED:
+                title = "Older than in the repo"
+                msg = "The package is older than the version in the cache. " \
+                      "It is strongly recommended to "\
+                      "use the version in the repoistory because it is "\
+                      "usually better tested."
+        
+            str = "<big><b>%s</b></big>\n\n%s" % (title,msg)
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_INFO,
+                                       buttons=gtk.BUTTONS_OK)
+            dialog.set_markup(str)
+            dialog.run()
+            dialog.destroy()
+
 
         (install, remove) = self._deb.requiredChanges
         deps = ""
