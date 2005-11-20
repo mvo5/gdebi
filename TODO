@@ -11,6 +11,10 @@
 * conflict/replace situation not handled correctly (refuses to do anything)
 
 * give a gui-error when the archive can't be locked
+* do the cache calculation stuff in the background o
+* support for something simialar like the n770 people (install user, 
+  installed stuff goes to /var/lib/install). makes us much more secure,
+  but less flexible
 
 Package that can't be handled:
 * exim4 (when postfix is installed):
