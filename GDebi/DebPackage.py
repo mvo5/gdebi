@@ -137,29 +137,34 @@ class DebPackage:
         return True
 
     # some constants
-    (NOT_INSTALLED,
-     INSTALLED_OUTDATED,
-     INSTALLED_SAME_VERSION,
-     INSTALLED_IS_NEWER) = range(4)
+    (NO_VERSION,
+     VERSION_OUTDATED,
+     VERSION_SAME,
+     VERSION_IS_NEWER) = range(4)
     
-    def compareToInstalledVersion(self):
-        """ checks if the pkg is already installed and if so in what version
+    def compareToVersionInCache(self, useInstalled=True):
+        """ checks if the pkg is already installed or availab ein the cache
+            and if so in what version, returns if the version of the deb
+            is not available,older,same,newer
         """
         pkgname = self._sections["Package"]
         debver = self._sections["Version"]
         self._dbg(1,"debver: %s" % debver)
         if self._cache.has_key(pkgname):
-            instver = self._cache[pkgname].installedVersion
-            if instver != None:
-                cmp = apt_pkg.VersionCompare(debver,instver)
+            if useInstalled:
+                cachever = self._cache[pkgname].installedVersion
+            else:
+                cachever = self._cache[pkgname].candidateVersion
+            if cachever != None:
+                cmp = apt_pkg.VersionCompare(cachever,debver)
                 self._dbg(1, "CompareVersion(debver,instver): %s" % cmp)
                 if cmp == 0:
-                    return self.INSTALLED_SAME_VERSION
+                    return self.VERSION_SAME
                 elif cmp < 0:
-                    return self.INSTALLED_IS_NEWER
+                    return self.VERSION_IS_NEWER
                 elif cmp > 0:
-                    return self.INSTALLED_OUTDATED
-        return self.NOT_INSTALLED
+                    return self.VERSION_OUTDATED
+        return self.NO_VERSION
 
     def checkDeb(self):
         self._dbg(3,"checkDepends")
@@ -175,8 +180,8 @@ class DebPackage:
             return False
 
         # check version
-        res = self.compareToInstalledVersion()
-        if res == self.INSTALLED_IS_NEWER:
+        res = self.compareToVersionInCache()
+        if res == self.VERSION_IS_NEWER:
             self._failureString = "Newer version is already installed"
             return False
 
