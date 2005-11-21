@@ -11,13 +11,13 @@ import gettext
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
 
-import gettext
-_ = gettext.gettext
+from gettext import gettext as _
 
 class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, options, file=""):
-        SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
+        SimpleGladeApp.__init__(self, domain="gdebi",
+                                path=datadir+"/gdebi.glade")
 
         self.window_main.show()
 

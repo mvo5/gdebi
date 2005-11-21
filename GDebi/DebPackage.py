@@ -1,13 +1,12 @@
 import apt_inst, apt_pkg
 import apt
 import sys, os, subprocess
-import gettext
+from gettext import gettext as _
+
 
 class DebPackage:
     debug = 0
 
-    _ = gettext.gettext
-    
     def __init__(self, cache, file):
         cache.clear()
         self._cache = cache
