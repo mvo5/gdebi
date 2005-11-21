@@ -1,0 +1,5 @@
+[encoding: UTF-8]
+data/gdebi.glade
+[type: gettext/rfc822deb] data/gdebi.desktop.in
+[type: python] gdebi-gtk
+GDebi/GDebi.py
