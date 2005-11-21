@@ -14,14 +14,15 @@ from SimpleGladeApp import SimpleGladeApp
 
 class GDebi(SimpleGladeApp):
 
-    def __init__(self, datadir, file=""):
+    def __init__(self, datadir, options, file=""):
         SimpleGladeApp.__init__(self,datadir+"/gdebi.glade")
 
         self.window_main.show()
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
-
+        self._options = options
+        
         # setup the details treeview
         self.details_list = gtk.ListStore(gobject.TYPE_STRING)
         column = gtk.TreeViewColumn("")
@@ -77,7 +78,7 @@ class GDebi(SimpleGladeApp):
 
         # check if the package is available in the normal sources as well
         res = self._deb.compareToVersionInCache(useInstalled=False)
-        if res != DebPackage.NO_VERSION:
+        if not self._options.non_interactive and res != DebPackage.NO_VERSION:
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repo directly (when possible)
             if res == DebPackage.VERSION_SAME:
@@ -154,18 +155,25 @@ class GDebi(SimpleGladeApp):
         fs.destroy()
 
     def on_about_activate(self, widget):
-        print "about"
+        #print "about"
         self.dialog_about.run()
         self.dialog_about.hide()
 
     def on_button_install_clicked(self, widget):
-        print "install"
+        #print "install"
         if os.getuid() != 0:
             str = "<big><b>%s</b></big>\n\n%s" % ("Run as administraor",
                                                   "To install the selected "
                                                   "package you need to run "
                                                   "this program with "
                                                   "administraor rights. "
+                                                  "\n\n"
+                                                  "<b>Note that installing "
+                                                  "deb packages directly "
+                                                  "can be a security risk! "
+                                                  "Only install from trusted "
+                                                  "sources.</b> "
+                                                  "\n\n"
                                                   "Do you want to do this "
                                                   "now?")
             dialog = gtk.MessageDialog(parent=self.window_main,
@@ -275,7 +283,7 @@ class GDebi(SimpleGladeApp):
         self.window_main.set_sensitive(True)
 
     def create_vte(self, arg1,arg2,arg3,arg4):
-        print "create_vte (for the custom glade widget"
+        #print "create_vte (for the custom glade widget)"
         self._term = vte.Terminal()
         self._term.set_font_from_string("monospace 10")
         return self._term

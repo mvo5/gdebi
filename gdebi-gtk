@@ -21,9 +21,9 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
 
     if len(args) >= 1:
-        app = GDebi(datadir=data,file=args[0])
+        app = GDebi(datadir=data,options=options,file=args[0])
     else:
-        app = GDebi(datadir=data)
+        app = GDebi(datadir=data,options=options)
 
     if options.non_interactive == True:
         app.on_button_install_clicked(None)
