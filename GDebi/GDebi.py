@@ -6,6 +6,7 @@ import gtk, gtk.glade
 import gobject
 import vte
 import subprocess
+import gettext
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -160,10 +161,11 @@ class GDebi(SimpleGladeApp):
     def on_button_install_clicked(self, widget):
         print "install"
         if os.getuid() != 0:
-            str = "<big><b>%s</b></big>\n\n%s" % ("Run as root",
+            str = "<big><b>%s</b></big>\n\n%s" % ("Run as administraor",
                                                   "To install the selected "
                                                   "package you need to run "
-                                                  "this program as root. "
+                                                  "this program with "
+                                                  "administraor rights. "
                                                   "Do you want to do this "
                                                   "now?")
             dialog = gtk.MessageDialog(parent=self.window_main,
@@ -188,19 +190,62 @@ class GDebi(SimpleGladeApp):
         # install the dependecnies
         (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
-            apt_pkg.PkgSystemLock()
-            fprogress = self.FetchProgressAdapter(self.progressbar_install)
+            try:
+                apt_pkg.PkgSystemLock()
+            except SystemError:
+                str = "<big><b>%s</b></big>\n\n%s" % ("Unable to get exclusive lock",
+                                                      "This usually means that another "
+                                                      "package management application "
+                                                      "(like apt-get or aptitude) "
+                                                      "already running. Please close that "
+                                                      "application first.")
+                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
+                                           flags=gtk.DIALOG_MODAL,
+                                           type=gtk.MESSAGE_ERROR,
+                                           buttons=gtk.BUTTONS_OK)
+                dialog.set_markup(str)
+                dialog.run()
+                dialog.destroy()
+                self.dialog_deb_install.hide()
+                self.window_main.set_sensitive(True)
+                return
+            fprogress = self.FetchProgressAdapter(self.progressbar_install,
+                                                  self.label_action,
+                                                  self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
-                                                    self._term)
+                                                    self._term,
+                                                    self.label_action)
             res = self._cache.commit(fprogress,iprogress)
             print "commit retured: %s" % res
+            if res == False:
+                # FIXME: check for errors in the install
+                str = "<big><b>%s</b></big>\n\n%s" % ("Install problem",
+                                                      "Installing the "
+                                                      "dependencies was "
+                                                      "not sucessful. This "
+                                                      "a bug in the archive "
+                                                      "please see the "
+                                                      "terminal window "
+                                                      "for details.")
+                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
+                                           flags=gtk.DIALOG_MODAL,
+                                           type=gtk.MESSAGE_INFO,
+                                           buttons=gtk.BUTTONS_OK)
+                dialog.set_markup(str)
+                dialog.run()
+                dialog.destroy()
+                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % "Error")
+                self.button_deb_install_close.set_sensitive(True)
+                return 
 
         # install the package itself
+        self.label_action.set_text("Installing package ...")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
+        self.label_action.set_text("Package installed")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.label_install_status.set_markup("<b>Installed %s</b>" % os.path.basename(self._deb.file))
@@ -270,11 +315,12 @@ class GDebi(SimpleGladeApp):
             self.progress.set_fraction(1.0)
     
     class InstallProgressAdapter(apt.progress.InstallProgress):
-        def __init__(self,progress,term):
+        def __init__(self,progress,term,label):
             print "InstallProgressAdaper.__init__()"
             self.progress = progress
             self.term = term
             self.finished = False
+            self.action = label
             reaper = vte.reaper_get()
             reaper.connect("child-exited",self.child_exited)
             (read, write) = os.pipe()
@@ -294,6 +340,7 @@ class GDebi(SimpleGladeApp):
             self.finished = True
         def startUpdate(self):
             print "startUpdate"
+            self.action.set_text("Installing dependencies ...")
         def updateInterface(self):
             if self.status != None:
                 try:
@@ -332,11 +379,14 @@ class GDebi(SimpleGladeApp):
             return self.apt_status
 
     class FetchProgressAdapter(apt.progress.FetchProgress):
-        def __init__(self,progress):
+        def __init__(self,progress,action,main):
             print "FetchProgressAdapter.__init__()"
             self.progress = progress
+            self.action = action
+            self.main = main
         def start(self):
             print "start()"
+            self.action.set_text("Downloading ...")
             self.progress.set_fraction(0)
         def stop(self):
             print "stop()"
@@ -348,7 +398,18 @@ class GDebi(SimpleGladeApp):
                 gtk.main_iteration()
             return True
         def mediaChange(self, medium, drive):
-            print "mediaChange %s %s" % (medium, drive)
+            #print "mediaChange %s %s" % (medium, drive)
+            str = "Please insert '%s' into the drive '%s'" % (medium,drive)
+            dialog = gtk.MessageDialog(parent=self.main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_QUESTION,
+                                       buttons=gtk.BUTTONS_OK_CANCEL)
+            dialog.set_markup(str)
+            res = dialog.run()
+            print res
+            dialog.destroy()
+            if  res == gtk.RESPONSE_OK:
+                return True
             return False
 
     class CacheProgressAdapter(apt.progress.FetchProgress):

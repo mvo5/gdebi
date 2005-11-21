@@ -85,13 +85,17 @@ class DebPackage:
     def _checkSinglePkgConflict(self, pkgname, ver, oper):
         """ returns true if a pkg conflicts with a real installed/marked
             pkg """
-        ver = None
+        pkgver = None
         cand = self._cache[pkgname]
         if cand.isInstalled:
-            ver = cand.installedVersion
+            pkgver = cand.installedVersion
         elif cand.markedInstall:
-            ver = cand.candidateVersion
-        if ver and apt_pkg.CheckDep(ver,oper,ver):
+            pkgver = cand.candidateVersion
+        #print "pkg: %s" % pkgname
+        #print "ver: %s" % ver
+        #print "pkgver: %s " % pkgver
+        #print "oper: %s " % oper
+        if pkgver and apt_pkg.CheckDep(pkgver,oper,ver):
             self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
             return True
         return False
