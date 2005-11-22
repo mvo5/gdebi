@@ -1,10 +1,12 @@
 import apt_inst, apt_pkg
 import apt
 import sys, os, subprocess
+from gettext import gettext as _
+
 
 class DebPackage:
     debug = 0
-    
+
     def __init__(self, cache, file):
         cache.clear()
         self._cache = cache
@@ -17,7 +19,7 @@ class DebPackage:
 
 
     def _isOrGroupSatisfied(self, or_group):
-        """ this function gets a "or_group" and analyzes if
+        """ this function gets a 'or_group' and analyzes if
             at least one dependency of this group is already satisfied """
         self._dbg(2,"_checkOrGroup(): %s " % (or_group))
 
@@ -79,7 +81,7 @@ class DebPackage:
             or_str += dep[0]
             if dep != or_group[len(or_group)-1]:
                 or_str += "|"
-        self._failureString += "Dependency not found: %s\n" % or_str
+        self._failureString += _("Dependency not found: %s\n" % or_str)
         return False
 
     def _checkSinglePkgConflict(self, pkgname, ver, oper):
@@ -96,7 +98,7 @@ class DebPackage:
         #print "pkgver: %s " % pkgver
         #print "oper: %s " % oper
         if pkgver and apt_pkg.CheckDep(pkgver,oper,ver):
-            self._failureString += "Conflicts with installed pkg: '%s'" % cand.name
+            self._failureString += _("Conflicts with installed pkg: '%s'" % cand.name)
             return True
         return False
 
@@ -180,13 +182,13 @@ class DebPackage:
         arch = self._sections["Architecture"]
         if  arch != "all" and arch != apt_pkg.CPU:
             self._dbg(1,"ERROR: Wrong architecture dude!")
-            self._failureString = "Wrong architecture '%s'" % arch
+            self._failureString = _("Wrong architecture '%s'" % arch)
             return False
 
         # check version
         res = self.compareToVersionInCache()
         if res == self.VERSION_OUTDATED: # the deb is older than the installed
-            self._failureString = "Newer version is already installed"
+            self._failureString = _("Newer version is already installed")
             return False
 
         # FIXME: this sort of error handling sux
@@ -214,7 +216,7 @@ class DebPackage:
                 try:
                     self._cache[pkg].markInstall()
                 except SystemError:
-                    self._failureString = "Can't install '%s'" % pkg
+                    self._failureString = _("Can't install '%s'" % pkg)
                     self._cache.clear()
                     return False
 
@@ -224,7 +226,7 @@ class DebPackage:
             return False
 
         if self._cache._depcache.BrokenCount > 0:
-            self._failureString = "Installing the dependencies impossible (broken cache)"
+            self._failureString = _("Installing the dependencies impossible (broken cache)")
             # clean the cache again
             self._cache.clear()
             return False
@@ -263,7 +265,7 @@ class DebPackage:
     # properties
     def __getitem__(self,item):
         if not self._sections.has_key(item):
-            return "No entry for '%s' found" % item
+            return _("No entry for '%s' found" % item)
         return self._sections[item]
 
     def _dbg(self, level, msg):

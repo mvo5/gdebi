@@ -1,7 +1,8 @@
-gdebi (0.0+bzr20051120) dapper; urgency=low
+gdebi (0.0+bzr20051121) dapper; urgency=low
 
   * add check if the package is available in the cache as well, if
     so, tell the user about it
+  * gui cleanups
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Sun, 20 Nov 2005 15:00:15 +0100
 

@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=GDebi
+_Name=Deb Package installer
 _GenericName=Install deb files
 _Comment=Install deb files
 Exec=gdebi
@@ -9,3 +9,4 @@ Type=Application
 Encoding=UTF-8
 Categories=Application;System;
 MimeType=application/x-deb;
+NoDisplay=true

@@ -1,11 +1,12 @@
 [Desktop Entry]
-Name=Package Installer
+Name=Deb Package installer
 GenericName=Install deb files
-Comment=Install deb files directly
-Exec=gdebi-gtk
+Comment=Install deb files
+Exec=gdebi
 Icon=gdebi.png
 Terminal=false
 Type=Application
 Encoding=UTF-8
 Categories=Application;System;
 MimeType=application/x-deb;
+NoDisplay=true
