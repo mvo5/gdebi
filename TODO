@@ -1,21 +1,13 @@
+* rename to "debonair" ?
 * apt-progress: error reporting, conf-file prompts, media-change
 * code cleanup
-* better status support in gui: 
-  - "Package is not installed"
-  - "Package is installed and upgradable"
-  - "Package is at the same version"
-  - "Pkg on system is newer than deb"
 * basic description formating (summary, " ." lines)
-* don't give a "error: same version already installed" after
-  installing something
 * conflict/replace situation not handled correctly (refuses to do anything)
 
-* give a gui-error when the archive can't be locked
-* do the cache calculation stuff in the background o
+Longer term:
+------------
+* do the cache calculation stuff in the background (thread)
 * support for something simialar like the n770 people (install user, 
   installed stuff goes to /var/lib/install). makes us much more secure,
   but less flexible
 
-Package that can't be handled:
-* exim4 (when postfix is installed):
-  wants to remove 8 pkgs, apt will only remove 1 (postfix)
