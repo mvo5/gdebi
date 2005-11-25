@@ -232,7 +232,7 @@ class GDebi(SimpleGladeApp):
                                                     self._term,
                                                     self.label_action)
             res = self._cache.commit(fprogress,iprogress)
-            print "commit retured: %s" % res
+            #print "commit retured: %s" % res
             if res == False:
                 # FIXME: check for errors in the install
                 str = "<big><b>%s</b></big>\n\n%s" % (_("Install problem"),
