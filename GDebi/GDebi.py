@@ -222,7 +222,9 @@ class GDebi(SimpleGladeApp):
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
                 return
-            # FIXME: use the new python-apt acquire interface here
+            # FIXME: use the new python-apt acquire interface here,
+            # or rather use it in the apt module and raise exception
+            # when stuff goes wrong!
             fprogress = self.FetchProgressAdapter(self.progressbar_install,
                                                   self.label_action,
                                                   self.dialog_deb_install)
