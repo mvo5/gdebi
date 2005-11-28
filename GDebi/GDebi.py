@@ -271,11 +271,15 @@ class GDebi(SimpleGladeApp):
         self._cache = MyCache()
         if self._cache._depcache.BrokenCount > 0:
             str = "<big><b>%s</b></big>\n\n%s" % (_("Dependency problem"),
-                                                  _("After installing a "
-                                                    "dependency problem was "
-                                                    "found. This is a bug in "
-                                                    "this software, please "
-                                                    "report it."))
+                                                  _("Internal error, please "
+                                                    "report this as a bug:\n"
+                                                    "A dependency problem "
+                                                    "was found after "
+                                                    "installation.\n"
+                                                    "You have to run: "
+                                                    "'apt-get install -f' "
+                                                    "to correct the "
+                                                    "situation"))
             dialog = gtk.MessageDialog(parent=self.window_main,
                                        flags=gtk.DIALOG_MODAL,
                                        type=gtk.MESSAGE_INFO,
