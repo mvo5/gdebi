@@ -166,7 +166,7 @@ class GDebi(SimpleGladeApp):
     def on_button_install_clicked(self, widget):
         #print "install"
         if os.getuid() != 0:
-            str = "<big><b>%s</b></big>\n\n%s" % (_("Run as administraor"),
+            str = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
                                                     "package you need to run "
                                                     "this program with "
