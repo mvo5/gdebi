@@ -380,6 +380,7 @@ class GDebi(SimpleGladeApp):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
             self.action.set_text(_("Installing dependencies ..."))
+            self.progress.set_fraction(0.0)
         def updateInterface(self):
             if self.status != None:
                 try:
