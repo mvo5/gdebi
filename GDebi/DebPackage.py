@@ -265,6 +265,8 @@ class DebPackage:
     # properties
     def __getitem__(self,item):
         if not self._sections.has_key(item):
+            # Translators: it's for missing entries in the deb package,
+            # e.g. a missing "Maintainer" field
             return _("No entry for '%s' found" % item)
         return self._sections[item]
 
