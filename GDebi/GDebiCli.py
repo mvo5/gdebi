@@ -44,8 +44,6 @@ class GDebiCli(object):
         # install the dependecnies
         (install,remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
-            # lock for install
-            apt_pkg.PkgSystemLock()
             fprogress = apt.progress.TextFetchProgress()
             iprogress = apt.progress.InstallProgress()
             res = self._cache.commit(fprogress,iprogress)
