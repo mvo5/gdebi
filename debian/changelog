@@ -1,3 +1,18 @@
+gdebi (0.0+bzr20051203) dapper urgency=low
+
+  * check if a already installed package is downloadable 
+    before displaying a message about the cache content
+  * depend on newer python-apt that has the "downloadable" check
+
+ --
+
+gdebi (0.0+bzr20051129) dapper; urgency=low
+
+  * data/gdebi.desktop:
+    - fix exec to gdebi-gtk (thanks to Ernst Persson)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 29 Nov 2005 16:08:25 +0100
+
 gdebi (0.0+bzr20051128) dapper; urgency=low
 
   * make use of the improved cache.commit() code in python-apt

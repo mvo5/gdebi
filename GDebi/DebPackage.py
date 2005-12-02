@@ -149,7 +149,7 @@ class DebPackage:
      VERSION_IS_NEWER) = range(4)
     
     def compareToVersionInCache(self, useInstalled=True):
-        """ checks if the pkg is already installed or availab ein the cache
+        """ checks if the pkg is already installed or availabe in the cache
             and if so in what version, returns if the version of the deb
             is not available,older,same,newer
         """
