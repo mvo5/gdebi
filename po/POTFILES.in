@@ -3,3 +3,4 @@ data/gdebi.glade
 [type: gettext/rfc822deb] data/gdebi.desktop.in
 [type: python] gdebi-gtk
 GDebi/GDebi.py
+GDebi/DebPackage.py

@@ -6,7 +6,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-
+PKG=gdebi
 DEBVER=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
 DEB_BUILD_PROG:=debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
 
@@ -83,6 +83,7 @@ binary-arch: build install
 #	dh_installemacsen
 #	dh_installpam
 	dh_installmime
+	dh_desktop
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
@@ -102,8 +103,8 @@ binary-arch: build install
 arch-build:
 	rm -rf debian/arch-build
 	mkdir -p debian/arch-build/gdebi-$(DEBVER)
-	tar cf - `bzr inventory` | (cd debian/arch-build/gdebi-$(DEBVER);tar xf -)
-	(cd debian/arch-build/gdebi-$(DEBVER) && $(DEB_BUILD_PROG))
+	tar cf - `bzr inventory` | (cd debian/arch-build/$(PKG)-$(DEBVER);tar xf -)
+	(cd debian/arch-build/$(PKG)-$(DEBVER) && $(DEB_BUILD_PROG))
 
 
 binary: binary-indep binary-arch

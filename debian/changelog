@@ -1,8 +1,30 @@
-gdebi (0.0+bzr20051121) dapper; urgency=low
+gdebi (0.1) dapper; urgency=low
+
+  * check if a already installed package is downloadable 
+    before displaying a message about the cache content
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon,  5 Dec 2005 18:15:17 +0100
+
+gdebi (0.0+bzr20051129) dapper; urgency=low
+
+  * data/gdebi.desktop:
+    - fix exec to gdebi-gtk (thanks to Ernst Persson)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 29 Nov 2005 16:08:25 +0100
+
+gdebi (0.0+bzr20051128) dapper; urgency=low
+
+  * make use of the improved cache.commit() code in python-apt
+  * proper error reporting when the dependency download fails
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 28 Nov 2005 14:05:21 +0100
+
+gdebi (0.0+bzr20051125) dapper; urgency=low
 
   * add check if the package is available in the cache as well, if
     so, tell the user about it
   * gui cleanups
+  * inital upload into ubuntu
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Sun, 20 Nov 2005 15:00:15 +0100
 

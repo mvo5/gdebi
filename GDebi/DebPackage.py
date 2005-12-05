@@ -149,7 +149,7 @@ class DebPackage:
      VERSION_IS_NEWER) = range(4)
     
     def compareToVersionInCache(self, useInstalled=True):
-        """ checks if the pkg is already installed or availab ein the cache
+        """ checks if the pkg is already installed or availabe in the cache
             and if so in what version, returns if the version of the deb
             is not available,older,same,newer
         """
@@ -265,6 +265,8 @@ class DebPackage:
     # properties
     def __getitem__(self,item):
         if not self._sections.has_key(item):
+            # Translators: it's for missing entries in the deb package,
+            # e.g. a missing "Maintainer" field
             return _("No entry for '%s' found" % item)
         return self._sections[item]
 
@@ -294,6 +296,16 @@ class MyCache(apt.Cache):
         if len(virtual_pkg.VersionList) == 0:
             return True
         return False
+
+    def downloadable(self, pkg, useCandidate=True):
+        " check if the given pkg can be downloaded "
+        if useCandidate:
+            ver = self._depcache.GetCandidateVer(pkg._pkg)
+        else:
+            ver = pkg._pkg.CurrentVer
+        if ver == None:
+            return False
+        return ver.Downloadable
 
     def getProvidersForVirtual(self, virtual_pkg):
         providers = []

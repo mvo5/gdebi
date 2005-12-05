@@ -81,34 +81,42 @@ class GDebi(SimpleGladeApp):
         # check if the package is available in the normal sources as well
         res = self._deb.compareToVersionInCache(useInstalled=False)
         if not self._options.non_interactive and res != DebPackage.NO_VERSION:
+            pkg = self._cache[self._deb.pkgName]
+            title = msg = ""
+            
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repo directly (when possible)
             if res == DebPackage.VERSION_SAME:
-                title = "Same version available in repo as well"
-                msg = "The package is available in a repository as well. " \
-                      "It is recommended to install directly from the repo."
+                if self._cache.downloadable(pkg,useCandidate=False):
+                    title = "Same version available in repo as well"
+                    msg = "The package is available in a repository as "\
+                          "well. It is recommended to install directly "\
+                          "from the repo."
             elif res == DebPackage.VERSION_IS_NEWER:
-                title = "Newer than in the repo"
-                msg = "The package is newer than the version in the cache. " \
-                      "While this may be desired it is still recommended to "\
-                      "use the version in the repoistory because it is "\
-                      "usually better tested."
+                if self._cache.downloadable(pkg,useCandidate=True):
+                    title = "Newer than in the repo"
+                    msg = "The package is newer than the version in the "\
+                          "cache. While this may be desired it is still "\
+                          "recommended to use the version in the repoistory "\
+                          "because it is "\
+                          "usually better tested."
             elif res == DebPackage.VERSION_OUTDATED:
-                title = "Older than in the repo"
-                msg = "The package is older than the version in the cache. " \
-                      "It is strongly recommended to "\
-                      "use the version in the repoistory because it is "\
-                      "usually better tested."
-        
-            str = "<big><b>%s</b></big>\n\n%s" % (title,msg)
-            dialog = gtk.MessageDialog(parent=self.window_main,
-                                       flags=gtk.DIALOG_MODAL,
-                                       type=gtk.MESSAGE_INFO,
-                                       buttons=gtk.BUTTONS_OK)
-            dialog.set_markup(str)
-            dialog.run()
-            dialog.destroy()
+                if self._cache.downloadable(pkg,useCandidate=True):
+                    title = "Older than in the repo"
+                    msg = "The package is older than the version in the "\
+                          "cache. It is strongly recommended to "\
+                          "use the version in the repoistory because it is "\
+                          "usually better tested."
 
+            if title != "" and msg != "":
+                msg = "<big><b>%s</b></big>\n\n%s" % (title,msg)
+                dialog = gtk.MessageDialog(parent=self.window_main,
+                                           flags=gtk.DIALOG_MODAL,
+                                           type=gtk.MESSAGE_INFO,
+                                           buttons=gtk.BUTTONS_OK)
+                dialog.set_markup(msg)
+                dialog.run()
+                dialog.destroy()
 
         (install, remove) = self._deb.requiredChanges
         deps = ""
@@ -166,7 +174,7 @@ class GDebi(SimpleGladeApp):
     def on_button_install_clicked(self, widget):
         #print "install"
         if os.getuid() != 0:
-            str = "<big><b>%s</b></big>\n\n%s" % (_("Run as administraor"),
+            msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
                                                     "package you need to run "
                                                     "this program with "
@@ -184,7 +192,7 @@ class GDebi(SimpleGladeApp):
                                        flags=gtk.DIALOG_MODAL,
                                        type=gtk.MESSAGE_QUESTION,
                                        buttons=gtk.BUTTONS_YES_NO)
-            dialog.set_markup(str)
+            dialog.set_markup(msg)
             if dialog.run() == gtk.RESPONSE_YES:
                 os.execl("/usr/bin/gksudo","gksudo","-m",
                          _("Install deb package"),
@@ -206,7 +214,7 @@ class GDebi(SimpleGladeApp):
             try:
                 apt_pkg.PkgSystemLock()
             except SystemError:
-                str = "<big><b>%s</b></big>\n\n%s" % (_("Unable to get exclusive lock"),
+                msg = "<big><b>%s</b></big>\n\n%s" % (_("Unable to get exclusive lock"),
                                                       _("This usually means that another "
                                                       "package management application "
                                                       "(like apt-get or aptitude) "
@@ -216,39 +224,60 @@ class GDebi(SimpleGladeApp):
                                            flags=gtk.DIALOG_MODAL,
                                            type=gtk.MESSAGE_ERROR,
                                            buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(str)
+                dialog.set_markup(msg)
                 dialog.run()
                 dialog.destroy()
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
                 return
-            # FIXME: use the new python-apt acquire interface here
+            # FIXME: use the new python-apt acquire interface here,
+            # or rather use it in the apt module and raise exception
+            # when stuff goes wrong!
             fprogress = self.FetchProgressAdapter(self.progressbar_install,
                                                   self.label_action,
                                                   self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term,
                                                     self.label_action)
-            res = self._cache.commit(fprogress,iprogress)
-            print "commit retured: %s" % res
+            errMsg = ""
+            try:
+                res = self._cache.commit(fprogress,iprogress)
+            except IOError, msg:
+                res = False
+                errMsg = "%s" % msg
+                primary = _("Failed to fetch dependencies")
+                secondary = _("Failed to fetch the following dependencies:")
+            except SystemError, msg:
+                res = False
+                primary = _("Install problem"),
+                secondary = _("Installing the "
+                              "dependencies was "
+                              "not sucessful. This "
+                              "a bug in the archive "
+                              "please see the "
+                              "terminal window "
+                              "for details.")
             if res == False:
-                # FIXME: check for errors in the install
-                str = "<big><b>%s</b></big>\n\n%s" % (_("Install problem"),
-                                                      _("Installing the "
-                                                        "dependencies was "
-                                                        "not sucessful. This "
-                                                        "a bug in the archive "
-                                                        "please see the "
-                                                        "terminal window "
-                                                        "for details."))
+                msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
                 dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
                                            flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_INFO,
+                                           type=gtk.MESSAGE_ERROR,
                                            buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(str)
+                dialog.set_markup(msg)
+                if errMsg != "":
+                    scrolled = gtk.ScrolledWindow()
+                    textview = gtk.TextView()
+                    textview.set_cursor_visible(False)
+                    textview.set_editable(False) 
+                    buf = textview.get_buffer()
+                    buf.set_text(errMsg)
+                    scrolled.add(textview)
+                    scrolled.show()
+                    dialog.vbox.pack_start(scrolled)
+                    textview.show()
                 dialog.run()
                 dialog.destroy()
-                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % _("Error"))
+                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
                 return 
 
@@ -268,17 +297,21 @@ class GDebi(SimpleGladeApp):
         #self._cache = MyCache(self.cprogress)
         self._cache = MyCache()
         if self._cache._depcache.BrokenCount > 0:
-            str = "<big><b>%s</b></big>\n\n%s" % (_("Dependency problem"),
-                                                  _("After installing a "
-                                                    "dependency problem was "
-                                                    "found. This is a bug in "
-                                                    "this software, please "
-                                                    "report it."))
+            msg = "<big><b>%s</b></big>\n\n%s" % (_("Dependency problem"),
+                                                  _("Internal error, please "
+                                                    "report this as a bug:\n"
+                                                    "A dependency problem "
+                                                    "was found after "
+                                                    "installation.\n"
+                                                    "You have to run: "
+                                                    "'apt-get install -f' "
+                                                    "to correct the "
+                                                    "situation"))
             dialog = gtk.MessageDialog(parent=self.window_main,
                                        flags=gtk.DIALOG_MODAL,
                                        type=gtk.MESSAGE_INFO,
                                        buttons=gtk.BUTTONS_OK)
-            dialog.set_markup(str)
+            dialog.set_markup(msg)
             dialog.run()
             dialog.destroy()
             #print "Autsch, please report"
@@ -353,7 +386,9 @@ class GDebi(SimpleGladeApp):
             self.finished = True
         def startUpdate(self):
             #print "startUpdate"
+            apt_pkg.PkgSystemUnLock()
             self.action.set_text(_("Installing dependencies ..."))
+            self.progress.set_fraction(0.0)
         def updateInterface(self):
             if self.status != None:
                 try:
@@ -363,6 +398,7 @@ class GDebi(SimpleGladeApp):
                     if errno != 11: 
                         print errstr
                 if self.read.endswith("\n"):
+                    # FIXME: add errorhandling
                     s = self.read
                     #print s
                     (status, pkg, percent, status_str) = string.split(s, ":")
@@ -375,21 +411,19 @@ class GDebi(SimpleGladeApp):
         def finishUpdate(self):
             #print "finishUpdate"
             pass
-        def fork(self):
+        def run(self, pm):
+            #print "run: %s" % pm
             env = ["VTE_PTY_KEEP_FD=%s"%self.writefd]
-            #print "fork"
-            #print env
             pid = self.term.forkpty(envv=env)
-            if pid > 0:
-                self.child_pid = pid
+            if pid == 0:
+                # child
+                res = pm.DoInstall(self.writefd)
+                #print res
+                sys.exit(res)
+            self.child_pid = pid
             #print "pid: %s " % pid
-            return pid
-        def waitChild(self,pid):
-            #print "waitChild: %s" % pid
             while not self.finished:
                 self.updateInterface()
-            # FIXME: return the exit-status of the child
-            #        get it from child_exited
             return self.apt_status
 
     class FetchProgressAdapter(apt.progress.FetchProgress):
@@ -413,14 +447,14 @@ class GDebi(SimpleGladeApp):
             return True
         def mediaChange(self, medium, drive):
             #print "mediaChange %s %s" % (medium, drive)
-            str = _("Please insert '%s' into the drive '%s'" % (medium,drive))
+            msg = _("Please insert '%s' into the drive '%s'" % (medium,drive))
             dialog = gtk.MessageDialog(parent=self.main,
                                        flags=gtk.DIALOG_MODAL,
                                        type=gtk.MESSAGE_QUESTION,
                                        buttons=gtk.BUTTONS_OK_CANCEL)
-            dialog.set_markup(str)
+            dialog.set_markup(msg)
             res = dialog.run()
-            print res
+            #print res
             dialog.destroy()
             if  res == gtk.RESPONSE_OK:
                 return True
