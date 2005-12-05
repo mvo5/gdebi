@@ -1,4 +1,4 @@
-gdebi (0.0+bzr20051203) dapper; urgency=low
+gdebi (0.1) dapper; urgency=low
 
   * check if a already installed package is downloadable 
     before displaying a message about the cache content
