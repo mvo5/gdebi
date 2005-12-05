@@ -1,10 +1,9 @@
-gdebi (0.0+bzr20051203) dapper urgency=low
+gdebi (0.0+bzr20051203) dapper; urgency=low
 
   * check if a already installed package is downloadable 
     before displaying a message about the cache content
-  * depend on newer python-apt that has the "downloadable" check
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon,  5 Dec 2005 18:15:17 +0100
 
 gdebi (0.0+bzr20051129) dapper; urgency=low
 

@@ -87,13 +87,13 @@ class GDebi(SimpleGladeApp):
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repo directly (when possible)
             if res == DebPackage.VERSION_SAME:
-                if pkg.installedDownloadable:
+                if self._cache.downloadable(pkg,useCandidate=False):
                     title = "Same version available in repo as well"
                     msg = "The package is available in a repository as "\
                           "well. It is recommended to install directly "\
                           "from the repo."
             elif res == DebPackage.VERSION_IS_NEWER:
-                if pkg.candidateDownloadable:
+                if self._cache.downloadable(pkg,useCandidate=True):
                     title = "Newer than in the repo"
                     msg = "The package is newer than the version in the "\
                           "cache. While this may be desired it is still "\
@@ -101,7 +101,7 @@ class GDebi(SimpleGladeApp):
                           "because it is "\
                           "usually better tested."
             elif res == DebPackage.VERSION_OUTDATED:
-                if pkg.candidateDownloadable:
+                if self._cache.downloadable(pkg,useCandidate=True):
                     title = "Older than in the repo"
                     msg = "The package is older than the version in the "\
                           "cache. It is strongly recommended to "\

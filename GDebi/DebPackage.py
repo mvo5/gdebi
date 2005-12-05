@@ -297,6 +297,16 @@ class MyCache(apt.Cache):
             return True
         return False
 
+    def downloadable(self, pkg, useCandidate=True):
+        " check if the given pkg can be downloaded "
+        if useCandidate:
+            ver = self._depcache.GetCandidateVer(pkg._pkg)
+        else:
+            ver = pkg._pkg.CurrentVer
+        if ver == None:
+            return False
+        return ver.Downloadable
+
     def getProvidersForVirtual(self, virtual_pkg):
         providers = []
         try:
