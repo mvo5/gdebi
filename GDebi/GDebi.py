@@ -396,6 +396,7 @@ class GDebi(SimpleGladeApp):
             while not self.finished:
                 self.updateInterface()
             return self.apt_status
+        
     class FetchProgressAdapter(apt.progress.FetchProgress):
         def __init__(self,progress,action,main):
             #print "FetchProgressAdapter.__init__()"

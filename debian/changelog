@@ -1,3 +1,9 @@
+gdebi (0.1.1) dapper; urgency=low
+
+  * rewrote the InstallProgress code, needs latest python apt now
+
+ --
+
 gdebi (0.1) dapper; urgency=low
 
   * check if a already installed package is downloadable 
