@@ -1,6 +1,8 @@
 import sys, time, thread, os, fcntl, string, posix
 import apt, apt_pkg
 
+from apt.progress import InstallProgress
+
 import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
 import gobject
@@ -361,25 +363,18 @@ class GDebi(SimpleGladeApp):
                 time.sleep(0.1)
             self.progress.set_fraction(1.0)
     
-    class InstallProgressAdapter(apt.progress.InstallProgress):
+    class InstallProgressAdapter(InstallProgress):
         def __init__(self,progress,term,label):
-            #print "InstallProgressAdaper.__init__()"
+            InstallProgress.__init__(self)
             self.progress = progress
             self.term = term
             self.finished = False
             self.action = label
             reaper = vte.reaper_get()
             reaper.connect("child-exited",self.child_exited)
-            (read, write) = os.pipe()
-            # self.writefd is the magic fd for apt where it will send it
-            # status too
-            self.writefd=write
-            self.status = os.fdopen(read, "r")
-            fcntl.fcntl(self.status.fileno(), fcntl.F_SETFL,os.O_NONBLOCK)
-            #print "read-fd: %s" % self.status.fileno()
-            #print "write-fd: %s" % self.writefd
-            # read from fd into this var
-            self.read = ""
+            self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
+                        "DEBIAN_FRONTEND=gnome",
+                        "APT_LISTCHANGES_FRONTEND=gtk"]
         def child_exited(self,term, pid, status):
             #print "child_exited: %s %s %s %s" % (self,term,pid,status)
             self.apt_status = posix.WEXITSTATUS(status)
@@ -390,42 +385,18 @@ class GDebi(SimpleGladeApp):
             self.action.set_text(_("Installing dependencies ..."))
             self.progress.set_fraction(0.0)
         def updateInterface(self):
-            if self.status != None:
-                try:
-                    self.read += os.read(self.status.fileno(),1)
-                except OSError, (errno,errstr):
-                    # resource temporarly unavailable is ignored
-                    if errno != 11: 
-                        print errstr
-                if self.read.endswith("\n"):
-                    # FIXME: add errorhandling
-                    s = self.read
-                    #print s
-                    (status, pkg, percent, status_str) = string.split(s, ":")
-                    #print "percent: %s %s" % (pkg, float(percent)/100.0)
-                    self.progress.set_fraction(float(percent)/100.0)
-                    self.progress.set_text(string.strip(status_str))
-                    self.read = ""
+            InstallProgress.updateInterface(self)
+            self.progress.set_fraction(float(self.percent)/100.0)
+            self.progress.set_text(self.status)
             while gtk.events_pending():
                 gtk.main_iteration()
-        def finishUpdate(self):
-            #print "finishUpdate"
-            pass
-        def run(self, pm):
-            #print "run: %s" % pm
-            env = ["VTE_PTY_KEEP_FD=%s"%self.writefd]
-            pid = self.term.forkpty(envv=env)
-            if pid == 0:
-                # child
-                res = pm.DoInstall(self.writefd)
-                #print res
-                sys.exit(res)
-            self.child_pid = pid
-            #print "pid: %s " % pid
+        def fork(self):
+            return self.term.forkpty(envv=self.env)
+        def waitChild(self):
             while not self.finished:
                 self.updateInterface()
             return self.apt_status
-
+        
     class FetchProgressAdapter(apt.progress.FetchProgress):
         def __init__(self,progress,action,main):
             #print "FetchProgressAdapter.__init__()"

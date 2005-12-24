@@ -1,3 +1,4 @@
+* add reinstall/downgrade
 * rename to "debonair" ?
 * apt-progress: error reporting, conf-file prompts, media-change
 * code cleanup
