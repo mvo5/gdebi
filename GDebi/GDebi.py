@@ -170,6 +170,8 @@ class GDebi(SimpleGladeApp):
 
     def on_about_activate(self, widget):
         #print "about"
+        from Version import VERSION
+        self.dialog_about.set_version(VERSION)
         self.dialog_about.run()
         self.dialog_about.hide()
 

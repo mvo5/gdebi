@@ -1,8 +1,9 @@
 gdebi (0.1.1) dapper; urgency=low
 
-  * rewrote the InstallProgress code, needs latest python apt now
+  * rewrote the InstallProgress code
+  * much improved error reporting
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Dec 2005 13:28:47 +0100
 
 gdebi (0.1) dapper; urgency=low
 

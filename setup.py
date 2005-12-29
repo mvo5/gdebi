@@ -3,6 +3,19 @@
 from distutils.core import setup
 import glob
 import os
+import re
+
+# look/set what version we have
+changelog = "debian/changelog"
+if os.path.exists(changelog):
+    head=open(changelog).readline()
+    match = re.compile(".*\((.*)\).*").match(head)
+    if match:
+        version = match.group(1)
+        f=open("GDebi/Version.py","w")
+        f.write("VERSION=\"%s\"\n" % version)
+        f.close()
+
 
 GETTEXT_NAME="gdebi"
 I18NFILES = []
@@ -14,7 +27,8 @@ for filepath in glob.glob("po/mo/*/LC_MESSAGES/*.mo"):
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     
-setup(name='gdebi', version='0.1',
+setup(name='gdebi',
+      version=version,
       packages=['GDebi'],
       scripts=['gdebi','gdebi-gtk'],
       data_files=[('share/gdebi/',
