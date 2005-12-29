@@ -1,8 +1,16 @@
+gdebi (0.1.2) dapper; urgency=low
+
+  * added danish translation (thanks to Lasse Bang Mikkelsen)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Dec 2005 23:55:52 +0100
+
 gdebi (0.1.1) dapper; urgency=low
 
-  * rewrote the InstallProgress code, needs latest python apt now
+  * rewrote the InstallProgress code
+  * much improved error reporting
+  * reinstall support
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Dec 2005 13:28:47 +0100
 
 gdebi (0.1) dapper; urgency=low
 

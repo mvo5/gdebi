@@ -70,13 +70,14 @@ class GDebi(SimpleGladeApp):
                                          "Error: " +
                                          self._deb._failureString +
                                          "</span>")
+            self.button_install.set_label(_("Install"))
             self.button_install.set_sensitive(False)
             self.button_details.hide()
             return
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Version is installed"))
-            self.button_install.set_sensitive(False)
+            self.button_install.set_label(_("Reinstall"))
             self.button_details.hide()
             return
 
@@ -133,6 +134,10 @@ class GDebi(SimpleGladeApp):
         if len(install) > 0:
             deps += _("Need to install %s packages from the archive" % len(install))
         self.label_status.set_markup(deps)
+        img = gtk.Image()
+        img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
+        self.button_install.set_image(img)
+        self.button_install.set_label(_("Install"))
         self.button_install.set_sensitive(True)
 
     def on_button_details_clicked(self, widget):
@@ -170,6 +175,8 @@ class GDebi(SimpleGladeApp):
 
     def on_about_activate(self, widget):
         #print "about"
+        from Version import VERSION
+        self.dialog_about.set_version(VERSION)
         self.dialog_about.run()
         self.dialog_about.hide()
 
