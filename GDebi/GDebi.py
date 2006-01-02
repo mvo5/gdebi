@@ -7,7 +7,6 @@ import pygtk; pygtk.require("2.0")
 import gtk, gtk.glade
 import gobject
 import vte
-import subprocess
 import gettext
 
 from DebPackage import DebPackage, MyCache
@@ -203,7 +202,7 @@ class GDebi(SimpleGladeApp):
                                        buttons=gtk.BUTTONS_YES_NO)
             dialog.set_markup(msg)
             if dialog.run() == gtk.RESPONSE_YES:
-                os.execl("/usr/bin/gksudo","gksudo","-m",
+                os.execl("/usr/bin/gksu","gksu","-m",
                          _("Install deb package"),
                          "--","gdebi-gtk","--non-interactive",self._deb.file)
             dialog.hide()

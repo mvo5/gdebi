@@ -1,6 +1,7 @@
 import apt_inst, apt_pkg
 import apt
-import sys, os, subprocess
+import sys
+import os 
 from gettext import gettext as _
 
 

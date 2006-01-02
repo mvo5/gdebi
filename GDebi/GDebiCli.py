@@ -1,6 +1,5 @@
 import sys, time, thread, os, fcntl, string
 import apt, apt_pkg
-import subprocess
 
 from DebPackage import DebPackage, MyCache
 
@@ -49,7 +48,7 @@ class GDebiCli(object):
             res = self._cache.commit(fprogress,iprogress)
 
         # install the package itself
-        subprocess.call(["dpkg", "-i", "%s"%self._deb.file])
+        os.system("dpkg -i %s"%self._deb.file)
         
 
 if __name__ == "__main__":
