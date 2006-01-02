@@ -37,7 +37,7 @@ build-stamp: configure-stamp
 
 	# Add here commands to compile the package.
 	#$(MAKE)
-	./setup.py build
+	python ./setup.py build
 
 	touch build-stamp
 
@@ -48,7 +48,7 @@ clean:
 
 	# Add here commands to clean up after the build process.
 	#-$(MAKE) clean
-	./setup.py clean --all
+	python ./setup.py clean --all
 	find . -name "*.so" -exec rm {} \;
 	find . -name "*.o" -exec rm {} \;
 	find . -name "*.pyc" -exec rm {} \;
@@ -62,7 +62,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/gdebi.
-	./setup.py install --prefix=$(CURDIR)/debian/gdebi/usr
+	python ./setup.py install --prefix=$(CURDIR)/debian/gdebi/usr
 
 
 # Build architecture-independent files here.
@@ -89,7 +89,7 @@ binary-arch: build install
 #	dh_installinfo
 	dh_installman
 	dh_link
-	dh_strip
+#	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_python

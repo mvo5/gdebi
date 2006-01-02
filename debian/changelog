@@ -2,15 +2,39 @@ gdebi (0.1.2) dapper; urgency=low
 
   * added danish translation (thanks to Lasse Bang Mikkelsen)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Dec 2005 23:55:52 +0100
+ --
+
+gdebi (0.1.1debian1) unstable; urgency=low
+
+  * Merged with Ubuntu.
+
+ -- Gustavo Franco <stratus@debian.org>  Sat, 31 Dec 2005 16:04:43 -0200
 
 gdebi (0.1.1) dapper; urgency=low
-
+  
   * rewrote the InstallProgress code
   * much improved error reporting
   * reinstall support
-
+  
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Dec 2005 13:28:47 +0100
+    
+gdebi (0.1debian2) unstable; urgency=low
+
+  * python-gtk2 dependencies downgraded to 2.6.3-2. 
+
+ -- Gustavo Franco <stratus@debian.org>  Sat, 31 Dec 2005 02:25:37 -0200
+
+gdebi (0.1debian1) unstable; urgency=low
+
+  * First Debian release. (Closes: #344549)
+  * debian/control:
+    - Maintainer field changed.
+    - Depends field cleaned up.
+    - Description extended a bit.
+    - Standards-Version updated to 3.6.2.1.
+  * debian/gdebi.manpages: reference and simple manpages added.
+  
+ -- Gustavo Franco <stratus@debian.org>  Fri, 23 Dec 2005 15:09:12 -0200
 
 gdebi (0.1) dapper; urgency=low
 
