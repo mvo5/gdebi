@@ -9,6 +9,17 @@ from GDebi import GDebiCli
 
 
 if __name__ == "__main__":
+    if not sys.argv[1:]:
+        print "Usage: %s [package.deb]" % sys.argv[0]
+        print
+        print "If would like to test gdebi graphical user interface, you could\n" \
+              "right-click on a deb package using Nautilus file manager selecting,\n" \
+              "the option: Open with \"Deb Package Installer\""
+        sys.exit(1)
+    if not os.path.exists(sys.argv[1]):
+        print "gdebi error, file not found: %s" % sys.argv[1]
+        sys.exit(1)
+
     debi = GDebiCli() 
     if not debi.open(sys.argv[1]):
         sys.exit(1)
