@@ -1,8 +1,19 @@
-gdebi (0.1.2) dapper; urgency=low
+gdebi (0.1.3) unstable; urgency=low
 
+  * [ Gustavo Franco ]
+    * manpages (removed since 0.1.1) added again.
+ -- 
+
+gdebi (0.1.2) unstable; urgency=low
+
+  [ Michael Vogt ]
   * added danish translation (thanks to Lasse Bang Mikkelsen)
-
- --
+  * replaced subprocess (python 2.4 only) related code
+  
+  [ Gustavo Franco ]
+  * debian/rules: CFLAGS references removed
+    
+ -- Gustavo Franco <stratus@debian.org>  Tue, 03 Jan 2006 00:22:05 -0200
 
 gdebi (0.1.1debian1) unstable; urgency=low
 
