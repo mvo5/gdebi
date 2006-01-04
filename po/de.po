@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "   "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005 Canonical"
@@ -111,7 +111,7 @@ msgstr ""
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:25
 msgid "translator-credits"
-msgstr ""
+msgstr "Michael Vogt"
 
 #: ../GDebi/GDebi.py:76
 msgid "Version is installed"
