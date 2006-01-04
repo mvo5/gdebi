@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "   "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005 Canonical"
