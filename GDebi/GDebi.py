@@ -77,6 +77,7 @@ class GDebi(SimpleGladeApp):
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Version is installed"))
             self.button_install.set_label(_("Reinstall"))
+            self.button_install.set_sensitive(True)
             self.button_details.hide()
             return
 
@@ -168,7 +169,7 @@ class GDebi(SimpleGladeApp):
         fs.set_filter(filter)
         # run it!
         if fs.run() == gtk.RESPONSE_OK:
-            print fs.get_filename()
+            #print fs.get_filename()
             self.open(fs.get_filename())
         fs.destroy()
 
