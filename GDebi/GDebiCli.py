@@ -26,7 +26,11 @@ class GDebiCli(object):
             return False
 
         # show what changes
-        (install, remove) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.requiredChanges
+        if len(unauthenticated) > 0:
+            print "The following packages are UNAUTHENTICATED: "
+            for pkgname in unauthenticated:
+                print pkgname + " ",
         if len(remove) > 0:
             print "Need to REMOVE the following pkgs: " 
             for pkgname in remove:
@@ -41,7 +45,7 @@ class GDebiCli(object):
 
     def install(self):
         # install the dependecnies
-        (install,remove) = self._deb.requiredChanges
+        (install,remove,unauthenticated) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
             fprogress = apt.progress.TextFetchProgress()
             iprogress = apt.progress.InstallProgress()
