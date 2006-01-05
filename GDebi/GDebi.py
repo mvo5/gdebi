@@ -121,7 +121,7 @@ class GDebi(SimpleGladeApp):
                 dialog.run()
                 dialog.destroy()
 
-        (install, remove) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.requiredChanges
         deps = ""
         if len(remove) == len(install) == 0:
             deps = _("All dependencies satisfied")
@@ -142,7 +142,7 @@ class GDebi(SimpleGladeApp):
 
     def on_button_details_clicked(self, widget):
         #print "on_button_details_clicked"
-        (install, remove) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.requiredChanges
         self.details_list.clear()
         for rm in remove:
             self.details_list.append([_("<b>To be removed: %s</b>" % rm)])
@@ -182,6 +182,39 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         #print "install"
+        (install, remove, unauthenticated) = self._deb.requiredChanges
+        if widget != None and len(unauthenticated) > 0:
+            primary = _("Unauthenticated packages")
+            secondary = _("You are about to install software that "
+                          "<b>can't be authenticated</b>! Doing "
+                          "this could allow a malicious individual "
+                          "to damage or take control of your "
+                          "system.\n\n"
+                          "The packages below are not authenticated. "
+                          "Are you sure you want to continue?")
+            msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
+            dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_WARNING,
+                                       buttons=gtk.BUTTONS_YES_NO)
+            dialog.set_markup(msg)
+            dialog.set_border_width(6)
+            scrolled = gtk.ScrolledWindow()
+            textview = gtk.TextView()
+            textview.set_cursor_visible(False)
+            textview.set_editable(False) 
+            buf = textview.get_buffer()
+            buf.set_text("\n".join(unauthenticated))
+            scrolled.add(textview)
+            scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+            scrolled.show()
+            dialog.vbox.pack_start(scrolled)
+            textview.show()
+            res = dialog.run()
+            dialog.destroy()
+            if res != gtk.RESPONSE_YES:
+                return
+        
         if os.getuid() != 0:
             msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
@@ -218,7 +251,6 @@ class GDebi(SimpleGladeApp):
         self.dialog_deb_install.show_all()
 
         # install the dependecnies
-        (install, remove) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
             try:
                 apt_pkg.PkgSystemLock()
