@@ -14,7 +14,10 @@ class DebPackage:
         self.file = file
         self._needPkgs = None
         # read the deb
-        control = apt_inst.debExtractControl(open(file))
+        try:
+            control = apt_inst.debExtractControl(open(file))
+        except SystemError:
+            print "error extracting the control information, not a valid deb file"
         self._sections = apt_pkg.ParseSection(control)
         self.pkgName = self._sections["Package"]
 
