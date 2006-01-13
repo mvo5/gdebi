@@ -102,27 +102,27 @@ class GDebi(SimpleGladeApp):
             title = msg = ""
             
             # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repo directly (when possible)
+            # providing a option to install from repository directly (when possible)
             if res == DebPackage.VERSION_SAME:
                 if self._cache.downloadable(pkg,useCandidate=False):
-                    title = "Same version available in repo as well"
-                    msg = "The package is available in a repository as "\
+                    title = "Same version available in repository as well"
+                    msg = "The package is available in a repositorysitory as "\
                           "well. It is recommended to install directly "\
-                          "from the repo."
+                          "from the repository."
             elif res == DebPackage.VERSION_IS_NEWER:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Newer than in the repo"
+                    title = "Newer than in the repository"
                     msg = "The package is newer than the version in the "\
                           "cache. While this may be desired it is still "\
-                          "recommended to use the version in the repoistory "\
+                          "recommended to use the version in the repositoryistory "\
                           "because it is "\
                           "usually better tested."
             elif res == DebPackage.VERSION_OUTDATED:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Older than in the repo"
+                    title = "Older than in the repository"
                     msg = "The package is older than the version in the "\
                           "cache. It is strongly recommended to "\
-                          "use the version in the repoistory because it is "\
+                          "use the version in the repositoryistory because it is "\
                           "usually better tested."
 
             if title != "" and msg != "":
