@@ -10,18 +10,6 @@ PKG=gdebi
 DEBVER=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
 DEB_BUILD_PROG:=debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
 
-
-CFLAGS = -Wall -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	INSTALL_PROGRAM += -s
-endif
-
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
@@ -37,7 +25,7 @@ build-stamp: configure-stamp
 
 	# Add here commands to compile the package.
 	#$(MAKE)
-	./setup.py build
+	python ./setup.py build
 
 	touch build-stamp
 
@@ -48,7 +36,7 @@ clean:
 
 	# Add here commands to clean up after the build process.
 	#-$(MAKE) clean
-	./setup.py clean --all
+	python ./setup.py clean --all
 	find . -name "*.so" -exec rm {} \;
 	find . -name "*.o" -exec rm {} \;
 	find . -name "*.pyc" -exec rm {} \;
@@ -62,7 +50,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/gdebi.
-	./setup.py install --prefix=$(CURDIR)/debian/gdebi/usr
+	python ./setup.py install --prefix=$(CURDIR)/debian/gdebi/usr
 
 
 # Build architecture-independent files here.
@@ -89,7 +77,7 @@ binary-arch: build install
 #	dh_installinfo
 	dh_installman
 	dh_link
-	dh_strip
+#	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_python

@@ -1,6 +1,7 @@
 import apt_inst, apt_pkg
 import apt
-import sys, os, subprocess
+import sys
+import os 
 from gettext import gettext as _
 
 
@@ -243,12 +244,20 @@ class DebPackage:
     def requiredChanges(self):
         install = []
         remove = []
+        unauthenticated = []
         for pkg in self._cache:
             if pkg.markedInstall or pkg.markedUpgrade:
                 install.append(pkg.name)
+                # check authentication, one authenticated origin is enough
+                # libapt will skip non-authenticated origins then
+                authenticated = False
+                for origin in pkg.candidateOrigin:
+                    authenticated |= origin.trusted
+                if not authenticated:
+                    unauthenticated.append(pkg.name)
             if pkg.markedDelete:
                 remove.append(pkg.name)
-        return (install,remove)
+        return (install,remove, unauthenticated)
     requiredChanges = property(requiredChanges)
 
     def filelist(self):
@@ -348,12 +357,10 @@ if __name__ == "__main__":
         print " %s" % pkg.name
     
     d = DebPackage(cache, sys.argv[1])
-    print d.pkgName
+    print "Deb: %s" % d.pkgName
     if not d.checkDeb():
         print "can't be satified"
         print d._failureString
-    print d.missingDeps
+    print "missing deps: %s" % d.missingDeps
+    print d.requiredChanges
 
-    #d = DebPackage(cache, sys.argv[1])
-    #print d.pkgName
-    #print d.missingDeps
