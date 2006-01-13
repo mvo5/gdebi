@@ -40,7 +40,21 @@ class GDebi(SimpleGladeApp):
 
         
     def open(self, file):
-        self._deb = DebPackage(self._cache, file)
+        try:
+            self._deb = DebPackage(self._cache, file)
+        except SystemError,e:
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_ERROR,
+                                       buttons=gtk.BUTTONS_OK)
+            msg = "<big><b>%s</b></big>\n\n%s" % \
+                  (_("Failed to open the deb package"),
+                   _("The package can't be opened, it might be "
+                     "invalid or corrupted."))
+            dialog.set_markup(msg)
+            dialog.run()
+            dialog.destroy()
+            return False
 
         # set name
         self.label_name.set_text(self._deb.pkgName)
