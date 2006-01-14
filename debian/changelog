@@ -4,9 +4,9 @@ gdebi (0.1.3) unstable; urgency=low
     * manpages (removed since 0.1.1) added again.
   * [ Michael Vogt ]
     * small ui fixes
-    * detect unauthenticated packages
-  
- -- 
+    * detect unauthenticated packages (requires python-apt 0.6.16)  
+
+ -- Gustavo Franco <stratus@debian.org>  Sat, 14 Jan 2006 19:45:11 -0200
 
 gdebi (0.1.2) unstable; urgency=low
 
