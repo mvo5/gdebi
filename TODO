@@ -1,8 +1,6 @@
-IMPORTANT: authentication support for the downloaded packages!!!
-
-* add reinstall/downgrade
+* add downgrade(?)
 * rename to "debonair" ?
-* apt-progress: error reporting, conf-file prompts, media-change
+* install-progress: error reporting, conf-file prompts
 * code cleanup
 * basic description formating (summary, " ." lines)
 * conflict/replace situation not handled correctly (refuses to do anything)

@@ -869,7 +869,7 @@
   <property name="website">www.ubuntu.com</property>
   <property name="authors">Michael Vogt</property>
   <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
-  <property name="logo">gdebi.png</property>
+  <property name="logo">/usr/share/pixmaps/gdebi.png</property>
 </widget>
 
 <widget class="GtkDialog" id="dialog_deb_install">
