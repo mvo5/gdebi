@@ -418,6 +418,12 @@ class GDebi(SimpleGladeApp):
             #print "child_exited: %s %s %s %s" % (self,term,pid,status)
             self.apt_status = posix.WEXITSTATUS(status)
             self.finished = True
+        def error(self, pkg, errormsg):
+            # FIXME: display a msg
+            pass
+        def conffile(self, current, new):
+            # FIXME: display a msg or expand terminal
+            pass
         def startUpdate(self):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
