@@ -38,9 +38,23 @@ class GDebi(SimpleGladeApp):
         if file != "" and os.path.exists(file):
             self.open(file)
 
-        
     def open(self, file):
-        self._deb = DebPackage(self._cache, file)
+        try:
+            self._deb = DebPackage(self._cache, file)
+        except (IOError,SystemError),e:
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_ERROR,
+                                       buttons=gtk.BUTTONS_OK)
+            msg = "<big><b>%s</b></big>\n\n%s" % \
+                  (_("Failed to open the deb package"),
+                   _("The package can't be opened, it may have "
+                     "improper permissions, is invalid or corrupted."))
+            dialog.set_markup(msg)
+            dialog.run()
+            dialog.destroy()
+            return False
+            
 
         # set name
         self.label_name.set_text(self._deb.pkgName)
@@ -88,27 +102,27 @@ class GDebi(SimpleGladeApp):
             title = msg = ""
             
             # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repo directly (when possible)
+            # providing a option to install from repository directly (when possible)
             if res == DebPackage.VERSION_SAME:
                 if self._cache.downloadable(pkg,useCandidate=False):
-                    title = "Same version available in repo as well"
-                    msg = "The package is available in a repository as "\
+                    title = "Same version available in repository as well"
+                    msg = "The package is available in a repositorysitory as "\
                           "well. It is recommended to install directly "\
-                          "from the repo."
+                          "from the repository."
             elif res == DebPackage.VERSION_IS_NEWER:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Newer than in the repo"
+                    title = "Newer than in the repository"
                     msg = "The package is newer than the version in the "\
                           "cache. While this may be desired it is still "\
-                          "recommended to use the version in the repoistory "\
+                          "recommended to use the version in the repositoryistory "\
                           "because it is "\
                           "usually better tested."
             elif res == DebPackage.VERSION_OUTDATED:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Older than in the repo"
+                    title = "Older than in the repository"
                     msg = "The package is older than the version in the "\
                           "cache. It is strongly recommended to "\
-                          "use the version in the repoistory because it is "\
+                          "use the version in the repositoryistory because it is "\
                           "usually better tested."
 
             if title != "" and msg != "":
