@@ -20,6 +20,7 @@
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
   <signal name="delete_event" handler="gtk_main_quit" last_modification_time="Mon, 21 Nov 2005 16:17:24 GMT"/>
+  <signal name="drag_data_received" handler="on_window_main_drag_data_received" last_modification_time="Sun, 22 Jan 2006 19:32:55 GMT"/>
 
   <child>
     <widget class="GtkVBox" id="vbox1">
@@ -1011,7 +1012,7 @@
 	    <widget class="GtkExpander" id="expander1">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="expanded">True</property>
+	      <property name="expanded">False</property>
 	      <property name="spacing">6</property>
 
 	      <child>
