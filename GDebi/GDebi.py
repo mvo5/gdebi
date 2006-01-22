@@ -8,6 +8,7 @@ import gtk, gtk.glade
 import gobject
 import vte
 import gettext
+import urllib
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -35,10 +36,21 @@ class GDebi(SimpleGladeApp):
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
         self.button_install.set_image(img)
 
-        self.window_main.show()
-
+        # setup status
 	self.context=self.statusbar_main.get_context_id("context_main_window")
 	self.statusbar_main.push(self.context,_("Opening package file..."))
+
+        # setup drag'n'drop
+        self.window_main.connect('drag_data_received',
+                                 self.on_drag_data_received)
+        self.window_main.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
+                                       gtk.DEST_DEFAULT_HIGHLIGHT |
+                                       gtk.DEST_DEFAULT_DROP,
+                                       [('text/uri-list',0,0)],
+                                       gtk.gdk.ACTION_COPY)
+
+        # show what we have
+        self.window_main.show()
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
@@ -53,9 +65,39 @@ class GDebi(SimpleGladeApp):
         column.add_attribute(render, "markup", 0)
         self.treeview_details.append_column(column)
         self.treeview_details.set_model(self.details_list)
-
+        
         if file != "" and os.path.exists(file):
+            self.window_main.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
+            while gtk.events_pending(): gtk.main_iteration()        
             self.open(file)
+            self.window_main.window.set_cursor(None)
+
+    def _get_file_path_from_dnd_dropped_uri(self, uri):
+        """ helper to get a useful path from a drop uri"""
+	path = urllib.url2pathname(uri) # escape special chars
+	path = path.strip('\r\n\x00') # remove \r\n and NULL
+	# get the path to file
+	if path.startswith('file:\\\\\\'): # windows
+		path = path[8:] # 8 is len('file:///')
+	elif path.startswith('file://'): # nautilus, rox
+		path = path[7:] # 7 is len('file://')
+	elif path.startswith('file:'): # xffm
+		path = path[5:] # 5 is len('file:')
+	return path
+    
+    def on_drag_data_received(self, widget, context, x, y,
+                              selection, target_type, timestamp):
+        """ call when we got a drop event """
+        uri = selection.data.strip()
+        uri_splitted = uri.split() # we may have more than one file dropped
+        for uri in uri_splitted:
+            path = self._get_file_path_from_dnd_dropped_uri(uri)
+            #print 'path to open', path
+            if path.endswith(".deb"):
+                self.window_main.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
+                while gtk.events_pending(): gtk.main_iteration()        
+                self.open(path)
+                self.window_main.window.set_cursor(None)
 
     def open(self, file):
         try:
