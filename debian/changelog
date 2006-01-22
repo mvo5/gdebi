@@ -1,6 +1,6 @@
 gdebi (0.1.4ubuntu1) dapper; urgency=low
 
-  * [Sebasitan Heinlein]
+  * [Sebastian Heinlein]
     - big UI improvements, HIGification
   * [Michael Vogt]
     - bugfixing
