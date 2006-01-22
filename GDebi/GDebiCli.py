@@ -12,7 +12,13 @@ class GDebiCli(object):
         self._cache = MyCache(tp)
         
     def open(self, file):
-        self._deb = DebPackage(self._cache, file)
+        try:
+            self._deb = DebPackage(self._cache, file)
+        except (IOError,SystemError),e:
+            print _("Failed to open the deb package"),
+            print _("The package can't be opened, it may have "
+                    "improper permissions, is invalid or corrupted.")
+            sys.exit(1)
         print self._deb.pkgName
         try:
             print self._deb["Description"]
