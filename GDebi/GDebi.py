@@ -41,8 +41,6 @@ class GDebi(SimpleGladeApp):
 	self.statusbar_main.push(self.context,_("Opening package file..."))
 
         # setup drag'n'drop
-        self.window_main.connect('drag_data_received',
-                                 self.on_drag_data_received)
         self.window_main.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
                                        gtk.DEST_DEFAULT_HIGHLIGHT |
                                        gtk.DEST_DEFAULT_DROP,
@@ -85,8 +83,8 @@ class GDebi(SimpleGladeApp):
 		path = path[5:] # 5 is len('file:')
 	return path
     
-    def on_drag_data_received(self, widget, context, x, y,
-                              selection, target_type, timestamp):
+    def on_window_main_drag_data_received(self, widget, context, x, y,
+                                          selection, target_type, timestamp):
         """ call when we got a drop event """
         uri = selection.data.strip()
         uri_splitted = uri.split() # we may have more than one file dropped
