@@ -101,7 +101,7 @@
       </child>
 
       <child>
-	<widget class="GtkHBox" id="hbox2">
+	<widget class="GtkHBox" id="hbox_main">
 	  <property name="border_width">6</property>
 	  <property name="visible">True</property>
 	  <property name="homogeneous">False</property>
@@ -363,7 +363,7 @@
       </child>
 
       <child>
-	<widget class="GtkNotebook" id="notebook1">
+	<widget class="GtkNotebook" id="notebook_details">
 	  <property name="border_width">6</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
@@ -867,7 +867,9 @@
   <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
   <property name="wrap_license">False</property>
   <property name="website">www.ubuntu.com</property>
-  <property name="authors">Michael Vogt</property>
+  <property name="authors">Michael Vogt
+Sebastian Heinlein
+</property>
   <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
   <property name="logo">gdebi.png</property>
 </widget>
