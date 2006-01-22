@@ -79,7 +79,8 @@ class GDebi(SimpleGladeApp):
 	self.window_main.set_sensitive(True)
 
 	# set window title
-	self.window_main.set_title(_("Package Installer")+" - "+self._deb.pkgName)
+	self.window_main.set_title(_("Package Installer - %s" %
+                                     self._deb.pkgName))
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
