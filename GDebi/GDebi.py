@@ -20,7 +20,25 @@ class GDebi(SimpleGladeApp):
         SimpleGladeApp.__init__(self, domain="gdebi",
                                 path=datadir+"/gdebi.glade")
 
+        # use a nicer default icon
+        icons = gtk.icon_theme_get_default()
+	logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
+	if logo != "":
+	    gtk.window_set_default_icon_list(logo)
+
+	# start insensitive
+	self.window_main.set_sensitive(False)
+	
+	# set image of button "install"  manually, since it is overriden 
+	#by set_label otherwise
+        img = gtk.Image()
+        img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
+        self.button_install.set_image(img)
+
         self.window_main.show()
+
+	self.context=self.statusbar1.get_context_id("context_main_window")
+	self.statusbar1.push(self.context,_("Opening package file..."))
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
@@ -55,9 +73,16 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             return False
             
+	self.statusbar1.push(self.context,_("Done."))
+
+	# grey in since we are ready for user input now
+	self.window_main.set_sensitive(True)
+
+	# set window title
+	self.window_main.set_title(_("Package Installer")+" - "+self._deb.pkgName)
 
         # set name
-        self.label_name.set_text(self._deb.pkgName)
+        self.label_name.set_markup(self._deb.pkgName)
 
         # set description
         buf = self.textview_description.get_buffer()
@@ -83,14 +108,16 @@ class GDebi(SimpleGladeApp):
                                          "Error: " +
                                          self._deb._failureString +
                                          "</span>")
-            self.button_install.set_label(_("Install"))
+	    self.button_install.set_label(_("_Install Package"))
+
             self.button_install.set_sensitive(False)
             self.button_details.hide()
             return
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Version is installed"))
-            self.button_install.set_label(_("Reinstall"))
+            self.button_install.set_label(_("_Reinstall Package"))
+            self.button_install.grab_default()
             self.button_install.set_sensitive(True)
             self.button_details.hide()
             return
@@ -151,8 +178,9 @@ class GDebi(SimpleGladeApp):
         img = gtk.Image()
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
         self.button_install.set_image(img)
-        self.button_install.set_label(_("Install"))
+        self.button_install.set_label(_("_Install Package"))
         self.button_install.set_sensitive(True)
+        self.button_install.grab_default()
 
     def on_button_details_clicked(self, widget):
         #print "on_button_details_clicked"
@@ -173,7 +201,8 @@ class GDebi(SimpleGladeApp):
                                             gtk.RESPONSE_CANCEL, 
                                             gtk.STOCK_OPEN, 
                                             gtk.RESPONSE_OK),
-                                   action=gtk.FILE_CHOOSER_ACTION_OPEN)
+                                   action=gtk.FILE_CHOOSER_ACTION_OPEN,
+				   title="Open Software Package")
         fs.set_default_response(gtk.RESPONSE_OK)
         # set filter
         filter = gtk.FileFilter()
@@ -196,6 +225,7 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         #print "install"
+	self.statusbar1.push(self.context,_("Installing package file..."))
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:
             primary = _("Unauthenticated packages")
@@ -334,19 +364,23 @@ class GDebi(SimpleGladeApp):
                 dialog.destroy()
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
+                self.button_deb_install_close.grab_default()
+		self.statusbar1.push(self.context,_("Failed to install package file"))
                 return 
 
         # install the package itself
-        self.label_action.set_text(_("Installing package ..."))
+        self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
                                              self._term)
         dprogress.commit()
-        self.label_action.set_text("Package installed")
+        #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
-        self.label_install_status.set_markup(_("<b>Installed %s</b>") % os.path.basename(self._deb.file))
+        self.button_deb_install_close.grab_default()
+        self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+        self.statusbar1.push(self.context,_("Installation complete"))
 
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = MyCache(self.cprogress)
@@ -403,7 +437,7 @@ class GDebi(SimpleGladeApp):
                 #print "exit status: %s" % posix.WEXITSTATUS(status)
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
                 lock.release()
-            self.status.set_text(_("Installing %s" % self.debfile))
+            self.status.set_markup("<i>"+_("Installing \"%s\"...") % os.path.basename(self.debfile)+"</i>")
             self.progress.pulse()
             self.progress.set_text("")
             reaper = vte.reaper_get()
@@ -441,7 +475,7 @@ class GDebi(SimpleGladeApp):
         def startUpdate(self):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
-            self.action.set_text(_("Installing dependencies ..."))
+            self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
         def updateInterface(self):
             InstallProgress.updateInterface(self)
@@ -464,7 +498,7 @@ class GDebi(SimpleGladeApp):
             self.main = main
         def start(self):
             #print "start()"
-            self.action.set_text("Downloading ...")
+            self.action.set_markup("<i>"+_("Downloading additional package files...")+"</i>")
             self.progress.set_fraction(0)
         def stop(self):
             #print "stop()"
@@ -496,7 +530,7 @@ class GDebi(SimpleGladeApp):
         def update(self, percent):
             self.progressbar.show()
             self.progressbar.set_fraction(percent/100.0)
-            self.progressbar.set_text(self.op)
+            #self.progressbar.set_text(self.op)
             while gtk.events_pending():
                 gtk.main_iteration()
         def done(self):
