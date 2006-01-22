@@ -27,7 +27,7 @@ class GDebi(SimpleGladeApp):
 	    gtk.window_set_default_icon_list(logo)
 
 	# start insensitive
-	self.window_main.set_sensitive(False)
+	#self.window_main.set_sensitive(False)
 	
 	# set image of button "install"  manually, since it is overriden 
 	#by set_label otherwise
@@ -42,6 +42,7 @@ class GDebi(SimpleGladeApp):
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
+        self.statusbar_main.push(self.context,_("Done."))
         self._options = options
         
         # setup the details treeview
