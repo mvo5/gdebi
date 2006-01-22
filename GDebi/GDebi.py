@@ -37,8 +37,8 @@ class GDebi(SimpleGladeApp):
 
         self.window_main.show()
 
-	self.context=self.statusbar1.get_context_id("context_main_window")
-	self.statusbar1.push(self.context,_("Opening package file..."))
+	self.context=self.statusbar_main.get_context_id("context_main_window")
+	self.statusbar_main.push(self.context,_("Opening package file..."))
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
@@ -73,13 +73,14 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             return False
             
-	self.statusbar1.push(self.context,_("Done."))
+	self.statusbar_main.push(self.context,_("Done."))
 
 	# grey in since we are ready for user input now
 	self.window_main.set_sensitive(True)
 
 	# set window title
-	self.window_main.set_title(_("Package Installer")+" - "+self._deb.pkgName)
+	self.window_main.set_title(_("Package Installer - %s" %
+                                     self._deb.pkgName))
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
@@ -225,7 +226,7 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         #print "install"
-	self.statusbar1.push(self.context,_("Installing package file..."))
+	self.statusbar_main.push(self.context,_("Installing package file..."))
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:
             primary = _("Unauthenticated packages")
@@ -365,7 +366,7 @@ class GDebi(SimpleGladeApp):
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
                 self.button_deb_install_close.grab_default()
-		self.statusbar1.push(self.context,_("Failed to install package file"))
+		self.statusbar_main.push(self.context,_("Failed to install package file"))
                 return 
 
         # install the package itself
@@ -380,7 +381,7 @@ class GDebi(SimpleGladeApp):
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
         self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
-        self.statusbar1.push(self.context,_("Installation complete"))
+        self.statusbar_main.push(self.context,_("Installation complete"))
 
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = MyCache(self.cprogress)
