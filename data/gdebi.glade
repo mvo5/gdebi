@@ -867,7 +867,9 @@
   <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
   <property name="wrap_license">False</property>
   <property name="website">www.ubuntu.com</property>
-  <property name="authors">Michael Vogt</property>
+  <property name="authors">Michael Vogt
+Sebastian Heinlein
+</property>
   <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
   <property name="logo">gdebi.png</property>
 </widget>
