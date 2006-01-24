@@ -19,8 +19,8 @@
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
-  <signal name="delete_event" handler="gtk_main_quit" last_modification_time="Mon, 21 Nov 2005 16:17:24 GMT"/>
   <signal name="drag_data_received" handler="on_window_main_drag_data_received" last_modification_time="Sun, 22 Jan 2006 19:32:55 GMT"/>
+  <signal name="delete_event" handler="gtk_true" last_modification_time="Tue, 24 Jan 2006 09:30:36 GMT"/>
 
   <child>
     <widget class="GtkVBox" id="vbox1">
@@ -862,7 +862,7 @@
 <widget class="GtkAboutDialog" id="dialog_about">
   <property name="destroy_with_parent">False</property>
   <property name="name" translatable="yes">gdebi</property>
-  <property name="copyright" translatable="yes">(c) 2005 Canonical</property>
+  <property name="copyright" translatable="yes">(c) 2005-2006 Canonical</property>
   <property name="comments" translatable="yes">Install deb packages directly</property>
   <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
   <property name="wrap_license">False</property>
@@ -1011,7 +1011,7 @@ Sebastian Heinlein
 	  </child>
 
 	  <child>
-	    <widget class="GtkExpander" id="expander1">
+	    <widget class="GtkExpander" id="expander_install">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="expanded">False</property>

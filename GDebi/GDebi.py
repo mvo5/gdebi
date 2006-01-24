@@ -9,6 +9,7 @@ import gobject
 import vte
 import gettext
 import urllib
+import fcntl
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -374,7 +375,8 @@ class GDebi(SimpleGladeApp):
                                                   self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term,
-                                                    self.label_action)
+                                                    self.label_action,
+                                                    self.expander_install)
             errMsg = ""
             try:
                 res = self._cache.commit(fprogress,iprogress)
@@ -424,13 +426,18 @@ class GDebi(SimpleGladeApp):
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
-                                             self._term)
+                                             self._term,
+                                             self.expander_install)
         dprogress.commit()
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
-        self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+        if dprogress.exitstatus == 0:
+            self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+        else:
+            self.label_install_status.set_markup("<b>"+_("Package \"%s\" installation failed") % os.path.basename(self._deb.file)+"</b>")
+            self.expander_install.set_expanded(True)
         self.statusbar_main.push(self.context,_("Installation complete"))
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
@@ -474,42 +481,85 @@ class GDebi(SimpleGladeApp):
 
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress, term):
+        def __init__(self, debfile, status, progress, term, expander):
             self.debfile = debfile
             self.status = status
             self.progress = progress
             self.term = term
+            self.expander = expander
+            self.expander.set_expanded(False)
         def commit(self):
-            lock = thread.allocate_lock()
-            lock.acquire()
-            cmd = "/usr/bin/dpkg"
-            argv = [cmd,"-i", self.debfile]
-            #print cmd
-            #print argv
-            #print self.term
             def finish_dpkg(term, pid, status, lock):
+                " helper "
+                self.exitstatus = posix.WEXITSTATUS(status)
                 #print "dpkg finished %s %s" % (pid,status)
-                #print "exit status: %s" % posix.WEXITSTATUS(status)
+                #print "exit status: %s" % self.exitstatus
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
                 lock.release()
-            self.status.set_markup("<i>"+_("Installing \"%s\"...") % os.path.basename(self.debfile)+"</i>")
+
+            # get a lock
+            lock = thread.allocate_lock()
+            lock.acquire()
+
+            # ui
+            self.status.set_markup("<i>"+_("Installing \"%s\"...") % \
+                                   os.path.basename(self.debfile)+"</i>")
             self.progress.pulse()
             self.progress.set_text("")
+
+            # prepare reading the pipe
+            (readfd, writefd) = os.pipe()
+            fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
+            #print "fds (%i,%i)" % (readfd,writefd)
+
+            # the command
+            cmd = "/usr/bin/dpkg"
+            argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
+            env = ["VTE_PTY_KEEP_FD=%s"% writefd]
+            #print cmd
+            #print argv
+            #print env
+            #print self.term
+
+
+            # prepare for the fork
             reaper = vte.reaper_get()
             reaper.connect("child-exited", finish_dpkg, lock)
-            pid = self.term.fork_command(command=cmd,argv=argv)
+            pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
+            read = ""
             while lock.locked():
+                while True:
+                    try:
+                        read += os.read(readfd,1)
+                    except OSError, (errno,errstr):
+                        # resource temporarly unavailable is ignored
+                        if errno != 11:
+                            print errstr
+                        break
+                    if read.endswith("\n"):
+                        statusl = string.split(read, ":")
+                        if len(statusl) < 2:
+                            print "got garbage from dpkg: '%s'" % read
+                            read = ""
+                            break
+                        status = statusl[2].strip()
+                        #print status
+                        if status == "error" or status == "conffile-prompt":
+                            self.expander.set_expanded(True)
+                        read = ""
                 self.progress.pulse()
                 while gtk.events_pending():
                     gtk.main_iteration()
-                time.sleep(0.1)
+                time.sleep(0.2)
             self.progress.set_fraction(1.0)
+            
     
     class InstallProgressAdapter(InstallProgress):
-        def __init__(self,progress,term,label):
+        def __init__(self,progress,term,label,term_expander):
             InstallProgress.__init__(self)
             self.progress = progress
             self.term = term
+            self.term_expander = term_expander
             self.finished = False
             self.action = label
             reaper = vte.reaper_get()
@@ -523,10 +573,10 @@ class GDebi(SimpleGladeApp):
             self.finished = True
         def error(self, pkg, errormsg):
             # FIXME: display a msg
-            pass
+            self.term_expander.set_expanded(True)
         def conffile(self, current, new):
-            # FIXME: display a msg or expand terminal
-            pass
+            # FIXME: display a msg or expand term
+            self.term_expander.set_expanded(True)
         def startUpdate(self):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
