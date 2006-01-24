@@ -4,6 +4,7 @@
 * code cleanup
 * basic description formating (summary, " ." lines)
 * conflict/replace situation not handled correctly (refuses to do anything)
+* list translators in data/gdebi.glade
 
 Longer term:
 ------------

@@ -1,5 +1,6 @@
 import sys, time, thread, os, fcntl, string
 import apt, apt_pkg
+from gettext import gettext as _
 
 from DebPackage import DebPackage, MyCache
 
