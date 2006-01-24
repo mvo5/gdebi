@@ -9,6 +9,7 @@ import gobject
 import vte
 import gettext
 import urllib
+import fcntl
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -26,9 +27,6 @@ class GDebi(SimpleGladeApp):
 	logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
 	if logo != "":
 	    gtk.window_set_default_icon_list(logo)
-
-	# start insensitive
-	#self.window_main.set_sensitive(False)
 	
 	# set image of button "install"  manually, since it is overriden 
 	#by set_label otherwise
@@ -38,7 +36,7 @@ class GDebi(SimpleGladeApp):
 
         # setup status
 	self.context=self.statusbar_main.get_context_id("context_main_window")
-	self.statusbar_main.push(self.context,_("Opening package file..."))
+	self.statusbar_main.push(self.context,_("Loading..."))
 
         # setup drag'n'drop
         self.window_main.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
@@ -47,12 +45,16 @@ class GDebi(SimpleGladeApp):
                                        [('text/uri-list',0,0)],
                                        gtk.gdk.ACTION_COPY)
 
+        # 
+        self.notebook_details.set_sensitive(False)
+        self.hbox_main.set_sensitive(False)
+
         # show what we have
         self.window_main.show()
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
-        self.statusbar_main.push(self.context,_("Done."))
+        self.statusbar_main.push(self.context, "")
         self._options = options
         
         # setup the details treeview
@@ -114,7 +116,7 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             return False
             
-	self.statusbar_main.push(self.context,_("Done."))
+	self.statusbar_main.push(self.context, "")
 
 	# grey in since we are ready for user input now
 	self.window_main.set_sensitive(True)
@@ -125,6 +127,10 @@ class GDebi(SimpleGladeApp):
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
+        
+        self.notebook_details.set_sensitive(True)
+        self.hbox_main.set_sensitive(True)
+
 
         # set description
         buf = self.textview_description.get_buffer()
@@ -302,6 +308,8 @@ class GDebi(SimpleGladeApp):
                 return
         
         if os.getuid() != 0:
+            
+            #Merge the gksu and the yes/no dialog
             msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
                                                     "package you need to run "
@@ -323,7 +331,9 @@ class GDebi(SimpleGladeApp):
             dialog.set_markup(msg)
             if dialog.run() == gtk.RESPONSE_YES:
                 os.execl("/usr/bin/gksu","gksu","-m",
-                         _("Install deb package"),
+                         _("<b><big>Adminstration rights are need "
+                           "for installation</big></b>\n\n"
+                           "Please enter your password."),
                          "--","gdebi-gtk","--non-interactive",self._deb.file)
             dialog.hide()
             return
@@ -365,7 +375,8 @@ class GDebi(SimpleGladeApp):
                                                   self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
                                                     self._term,
-                                                    self.label_action)
+                                                    self.label_action,
+                                                    self.expander_install)
             errMsg = ""
             try:
                 res = self._cache.commit(fprogress,iprogress)
@@ -415,14 +426,21 @@ class GDebi(SimpleGladeApp):
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
-                                             self._term)
+                                             self._term,
+                                             self.expander_install)
         dprogress.commit()
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
-        self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+        if dprogress.exitstatus == 0:
+            self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+        else:
+            self.label_install_status.set_markup("<b>"+_("Package \"%s\" installation failed") % os.path.basename(self._deb.file)+"</b>")
+            self.expander_install.set_expanded(True)
         self.statusbar_main.push(self.context,_("Installation complete"))
+        # FIXME: Doesn't stop notifying
+        #self.window_main.set_property("urgency-hint", 1)
 
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = MyCache(self.cprogress)
@@ -449,6 +467,8 @@ class GDebi(SimpleGladeApp):
         self.open(self._deb.file)
         
     def on_button_deb_install_close_clicked(self, widget):
+        # FIXME: doesn't turn it off
+        #self.window_main.set_property("urgency-hint", 0)
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
 
@@ -461,42 +481,85 @@ class GDebi(SimpleGladeApp):
 
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress, term):
+        def __init__(self, debfile, status, progress, term, expander):
             self.debfile = debfile
             self.status = status
             self.progress = progress
             self.term = term
+            self.expander = expander
+            self.expander.set_expanded(False)
         def commit(self):
-            lock = thread.allocate_lock()
-            lock.acquire()
-            cmd = "/usr/bin/dpkg"
-            argv = [cmd,"-i", self.debfile]
-            #print cmd
-            #print argv
-            #print self.term
             def finish_dpkg(term, pid, status, lock):
+                " helper "
+                self.exitstatus = posix.WEXITSTATUS(status)
                 #print "dpkg finished %s %s" % (pid,status)
-                #print "exit status: %s" % posix.WEXITSTATUS(status)
+                #print "exit status: %s" % self.exitstatus
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
                 lock.release()
-            self.status.set_markup("<i>"+_("Installing \"%s\"...") % os.path.basename(self.debfile)+"</i>")
+
+            # get a lock
+            lock = thread.allocate_lock()
+            lock.acquire()
+
+            # ui
+            self.status.set_markup("<i>"+_("Installing \"%s\"...") % \
+                                   os.path.basename(self.debfile)+"</i>")
             self.progress.pulse()
             self.progress.set_text("")
+
+            # prepare reading the pipe
+            (readfd, writefd) = os.pipe()
+            fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
+            #print "fds (%i,%i)" % (readfd,writefd)
+
+            # the command
+            cmd = "/usr/bin/dpkg"
+            argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
+            env = ["VTE_PTY_KEEP_FD=%s"% writefd]
+            #print cmd
+            #print argv
+            #print env
+            #print self.term
+
+
+            # prepare for the fork
             reaper = vte.reaper_get()
             reaper.connect("child-exited", finish_dpkg, lock)
-            pid = self.term.fork_command(command=cmd,argv=argv)
+            pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
+            read = ""
             while lock.locked():
+                while True:
+                    try:
+                        read += os.read(readfd,1)
+                    except OSError, (errno,errstr):
+                        # resource temporarly unavailable is ignored
+                        if errno != 11:
+                            print errstr
+                        break
+                    if read.endswith("\n"):
+                        statusl = string.split(read, ":")
+                        if len(statusl) < 2:
+                            print "got garbage from dpkg: '%s'" % read
+                            read = ""
+                            break
+                        status = statusl[2].strip()
+                        #print status
+                        if status == "error" or status == "conffile-prompt":
+                            self.expander.set_expanded(True)
+                        read = ""
                 self.progress.pulse()
                 while gtk.events_pending():
                     gtk.main_iteration()
-                time.sleep(0.1)
+                time.sleep(0.2)
             self.progress.set_fraction(1.0)
+            
     
     class InstallProgressAdapter(InstallProgress):
-        def __init__(self,progress,term,label):
+        def __init__(self,progress,term,label,term_expander):
             InstallProgress.__init__(self)
             self.progress = progress
             self.term = term
+            self.term_expander = term_expander
             self.finished = False
             self.action = label
             reaper = vte.reaper_get()
@@ -510,10 +573,10 @@ class GDebi(SimpleGladeApp):
             self.finished = True
         def error(self, pkg, errormsg):
             # FIXME: display a msg
-            pass
+            self.term_expander.set_expanded(True)
         def conffile(self, current, new):
-            # FIXME: display a msg or expand terminal
-            pass
+            # FIXME: display a msg or expand term
+            self.term_expander.set_expanded(True)
         def startUpdate(self):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
