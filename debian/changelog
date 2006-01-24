@@ -5,8 +5,9 @@ gdebi (0.1.4ubuntu1) dapper; urgency=low
   * [Michael Vogt]
     - bugfixing
     - added drag'n'drop
+    - detect conffile/error from dpkg and apt and expand the terminal then
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 24 Jan 2006 10:25:56 +0100
+ -- 
 
 gdebi (0.1.3) unstable; urgency=low
 
