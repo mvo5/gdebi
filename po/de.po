@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-05 18:29+0100\n"
+"POT-Creation-Date: 2006-01-24 14:38-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Michael Vogt <michael.vogt@ubuntu.com>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -21,19 +21,20 @@ msgid "  "
 msgstr "   "
 
 #: ../data/gdebi.glade.h:2
-msgid "(c) 2005 Canonical"
+msgid "(c) 2005-2006 Canonical"
 msgstr ""
 
 #: ../data/gdebi.glade.h:3
-msgid "<b>Maintainer</b>"
-msgstr "<b>Betreuer</b>"
-
-#: ../data/gdebi.glade.h:4
-msgid "<b>Package information:</b>"
+msgid "<b><big>   </big></b>"
 msgstr ""
 
+#: ../data/gdebi.glade.h:4
+#, fuzzy
+msgid "<b>Maintainer:</b>"
+msgstr "<b>Betreuer</b>"
+
 #: ../data/gdebi.glade.h:5
-msgid "<b>Priority</b>"
+msgid "<b>Priority:</b>"
 msgstr ""
 
 #: ../data/gdebi.glade.h:6
@@ -41,15 +42,17 @@ msgid "<b>Required changes:</b>"
 msgstr ""
 
 #: ../data/gdebi.glade.h:7
-msgid "<b>Section</b>"
-msgstr ""
+#, fuzzy
+msgid "<b>Section:</b>"
+msgstr "<b>Betreuer</b>"
 
 #: ../data/gdebi.glade.h:8
-msgid "<b>Size</b>"
-msgstr ""
+#, fuzzy
+msgid "<b>Size:</b>"
+msgstr "<b>Betreuer</b>"
 
 #: ../data/gdebi.glade.h:9
-msgid "<b>Version</b>"
+msgid "<b>Version:</b>"
 msgstr ""
 
 #: ../data/gdebi.glade.h:10
@@ -57,11 +60,12 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: ../data/gdebi.glade.h:11
-msgid "Details"
-msgstr ""
+#, fuzzy
+msgid "Description:"
+msgstr "Beschreibung"
 
 #: ../data/gdebi.glade.h:12
-msgid "Filelist"
+msgid "Details"
 msgstr ""
 
 #: ../data/gdebi.glade.h:13
@@ -69,7 +73,7 @@ msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr ""
 
 #: ../data/gdebi.glade.h:14
-msgid "Install"
+msgid "Included Files"
 msgstr ""
 
 #: ../data/gdebi.glade.h:15
@@ -77,7 +81,7 @@ msgid "Install deb packages directly"
 msgstr ""
 
 #: ../data/gdebi.glade.h:16
-msgid "Install progress"
+msgid "Package Installer"
 msgstr ""
 
 #: ../data/gdebi.glade.h:17
@@ -93,15 +97,15 @@ msgid "Terminal"
 msgstr ""
 
 #: ../data/gdebi.glade.h:20
-msgid "_About"
-msgstr ""
-
-#: ../data/gdebi.glade.h:21
 msgid "_File"
 msgstr ""
 
-#: ../data/gdebi.glade.h:22
+#: ../data/gdebi.glade.h:21
 msgid "_Help"
+msgstr ""
+
+#: ../data/gdebi.glade.h:22 ../GDebi/GDebi.py:159 ../GDebi/GDebi.py:229
+msgid "_Install Package"
 msgstr ""
 
 #: ../data/gdebi.glade.h:23
@@ -113,44 +117,87 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Michael Vogt"
 
-#: ../GDebi/GDebi.py:76
+#: ../GDebi/GDebi.py:39
+msgid "Loading..."
+msgstr ""
+
+#: ../GDebi/GDebi.py:111 ../GDebi/GDebiCli.py:19
+msgid "Failed to open the deb package"
+msgstr ""
+
+#: ../GDebi/GDebi.py:112 ../GDebi/GDebiCli.py:20
+msgid ""
+"The package can't be opened, it may have improper permissions, is invalid or "
+"corrupted."
+msgstr ""
+
+#. set window title
+#: ../GDebi/GDebi.py:125
+#, python-format
+msgid "Package Installer - %s"
+msgstr ""
+
+#: ../GDebi/GDebi.py:166
 msgid "Version is installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:124
+#: ../GDebi/GDebi.py:167
+msgid "_Reinstall Package"
+msgstr ""
+
+#: ../GDebi/GDebi.py:216
 msgid "All dependencies satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:130
+#: ../GDebi/GDebi.py:222
 #, python-format
 msgid "Need to <b>remove</b> %s packages from the archive\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:132
+#: ../GDebi/GDebi.py:224
 #, python-format
 msgid "Need to install %s packages from the archive"
 msgstr ""
 
-#: ../GDebi/GDebi.py:141
+#: ../GDebi/GDebi.py:238
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr ""
 
-#: ../GDebi/GDebi.py:143
+#: ../GDebi/GDebi.py:240
 #, python-format
 msgid "To be installed: %s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:160
+#: ../GDebi/GDebi.py:258
 msgid "Deb packages"
 msgstr ""
 
-#: ../GDebi/GDebi.py:177
+#. print "install"
+#: ../GDebi/GDebi.py:276
+msgid "Installing package file..."
+msgstr ""
+
+#: ../GDebi/GDebi.py:279
+msgid "Unauthenticated packages"
+msgstr ""
+
+#: ../GDebi/GDebi.py:280
+msgid ""
+"You are about to install software that <b>can't be authenticated</b>! Doing "
+"this could allow a malicious individual to damage or take control of your "
+"system.\n"
+"\n"
+"The packages below are not authenticated. Are you sure you want to continue?"
+msgstr ""
+
+#. Merge the gksu and the yes/no dialog
+#: ../GDebi/GDebi.py:313
 msgid "Run as administrator"
 msgstr ""
 
-#: ../GDebi/GDebi.py:178
+#: ../GDebi/GDebi.py:314
 msgid ""
 "To install the selected package you need to run this program with "
 "administraor rights. \n"
@@ -161,111 +208,157 @@ msgid ""
 "Do you want to do this now?"
 msgstr ""
 
-#: ../GDebi/GDebi.py:198
-msgid "Install deb package"
+#: ../GDebi/GDebi.py:334
+msgid ""
+"<b><big>Adminstration rights are need for installation</big></b>\n"
+"\n"
+"Please enter your password."
 msgstr ""
 
-#: ../GDebi/GDebi.py:217
+#: ../GDebi/GDebi.py:354
 msgid "Unable to get exclusive lock"
 msgstr ""
 
-#: ../GDebi/GDebi.py:218
+#: ../GDebi/GDebi.py:355
 msgid ""
 "This usually means that another package management application (like apt-get "
 "or aptitude) already running. Please close that application first."
 msgstr ""
 
-#: ../GDebi/GDebi.py:248
+#: ../GDebi/GDebi.py:386
 msgid "Failed to fetch dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:249
+#: ../GDebi/GDebi.py:387
 msgid "Failed to fetch the following dependencies:"
 msgstr ""
 
-#: ../GDebi/GDebi.py:252
+#: ../GDebi/GDebi.py:390
 msgid "Install problem"
 msgstr ""
 
-#: ../GDebi/GDebi.py:253
+#: ../GDebi/GDebi.py:391
 msgid ""
 "Installing the dependencies was not sucessful. This a bug in the archive "
 "please see the terminal window for details."
 msgstr ""
 
+#: ../GDebi/GDebi.py:421
+msgid "Failed to install package file"
+msgstr ""
+
 #. install the package itself
-#: ../GDebi/GDebi.py:285
-msgid "Installing package ..."
+#: ../GDebi/GDebi.py:425
+msgid "Installing package file"
 msgstr ""
 
-#: ../GDebi/GDebi.py:294
+#: ../GDebi/GDebi.py:437
 #, python-format
-msgid "<b>Installed %s</b>"
+msgid "Package \"%s\" is installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:300
+#: ../GDebi/GDebi.py:439
+#, python-format
+msgid "Package \"%s\" installation failed"
+msgstr ""
+
+#: ../GDebi/GDebi.py:441
+msgid "Installation complete"
+msgstr ""
+
+#: ../GDebi/GDebi.py:449
 msgid "Dependency problem"
 msgstr ""
 
-#: ../GDebi/GDebi.py:301
+#: ../GDebi/GDebi.py:450
 msgid ""
 "Internal error, please report this as a bug:\n"
 "A dependency problem was found after installation.\n"
 "You have to run: 'apt-get install -f' to correct the situation"
 msgstr ""
 
-#: ../GDebi/GDebi.py:351
+#. ui
+#: ../GDebi/GDebi.py:505
 #, python-format
-msgid "Installing %s"
+msgid "Installing \"%s\"..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:390
-msgid "Installing dependencies ..."
+#: ../GDebi/GDebi.py:583
+msgid "Installing dependencies..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:443
+#. print "start()"
+#: ../GDebi/GDebi.py:606
+msgid "Downloading additional package files..."
+msgstr ""
+
+#: ../GDebi/GDebi.py:612
 #, python-format
 msgid "%s/%s (Speed: %s/s)"
 msgstr ""
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:450
+#: ../GDebi/GDebi.py:619
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:84
+#: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency not found: %s\n"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:101
+#: ../GDebi/DebPackage.py:102
 #, python-format
 msgid "Conflicts with installed pkg: '%s'"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:185
+#: ../GDebi/DebPackage.py:186
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr ""
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:191
+#: ../GDebi/DebPackage.py:192
 msgid "Newer version is already installed"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:219
+#: ../GDebi/DebPackage.py:220
 #, python-format
 msgid "Can't install '%s'"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:229
+#: ../GDebi/DebPackage.py:230
 msgid "Installing the dependencies impossible (broken cache)"
 msgstr ""
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:270
+#: ../GDebi/DebPackage.py:279
 #, python-format
 msgid "No entry for '%s' found"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:27
+msgid "No description found in the package"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:31
+msgid "This package can't be installed"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:38
+msgid "The following packages are UNAUTHENTICATED: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:42
+msgid "Need to REMOVE the following pkgs: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:47
+msgid "Need to install the following pkgs: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:69
+msgid "Do you want to install it [yN]:"
 msgstr ""
