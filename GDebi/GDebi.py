@@ -26,9 +26,6 @@ class GDebi(SimpleGladeApp):
 	logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
 	if logo != "":
 	    gtk.window_set_default_icon_list(logo)
-
-	# start insensitive
-	#self.window_main.set_sensitive(False)
 	
 	# set image of button "install"  manually, since it is overriden 
 	#by set_label otherwise
@@ -38,7 +35,7 @@ class GDebi(SimpleGladeApp):
 
         # setup status
 	self.context=self.statusbar_main.get_context_id("context_main_window")
-	self.statusbar_main.push(self.context,_("Opening package file..."))
+	self.statusbar_main.push(self.context,_("Loading..."))
 
         # setup drag'n'drop
         self.window_main.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
@@ -47,12 +44,16 @@ class GDebi(SimpleGladeApp):
                                        [('text/uri-list',0,0)],
                                        gtk.gdk.ACTION_COPY)
 
+        # 
+        self.notebook_details.set_sensitive(False)
+        self.hbox_main.set_sensitive(False)
+
         # show what we have
         self.window_main.show()
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
-        self.statusbar_main.push(self.context,_("Done."))
+        self.statusbar_main.push(self.context, "")
         self._options = options
         
         # setup the details treeview
@@ -114,7 +115,7 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             return False
             
-	self.statusbar_main.push(self.context,_("Done."))
+	self.statusbar_main.push(self.context, "")
 
 	# grey in since we are ready for user input now
 	self.window_main.set_sensitive(True)
@@ -125,6 +126,10 @@ class GDebi(SimpleGladeApp):
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
+        
+        self.notebook_details.set_sensitive(True)
+        self.hbox_main.set_sensitive(True)
+
 
         # set description
         buf = self.textview_description.get_buffer()
@@ -302,6 +307,8 @@ class GDebi(SimpleGladeApp):
                 return
         
         if os.getuid() != 0:
+            
+            Merge the gksu and the yes/no dialog
             msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
                                                     "package you need to run "
@@ -323,7 +330,9 @@ class GDebi(SimpleGladeApp):
             dialog.set_markup(msg)
             if dialog.run() == gtk.RESPONSE_YES:
                 os.execl("/usr/bin/gksu","gksu","-m",
-                         _("Install deb package"),
+                         _("<b><big>Adminstration rights are need "
+                           "for installation</big></b>\n\n"
+                           "Please enter your password."),
                          "--","gdebi-gtk","--non-interactive",self._deb.file)
             dialog.hide()
             return
@@ -423,6 +432,8 @@ class GDebi(SimpleGladeApp):
         self.button_deb_install_close.grab_default()
         self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
         self.statusbar_main.push(self.context,_("Installation complete"))
+        # FIXME: Doesn't stop notifying
+        #self.window_main.set_property("urgency-hint", 1)
 
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = MyCache(self.cprogress)
@@ -449,6 +460,8 @@ class GDebi(SimpleGladeApp):
         self.open(self._deb.file)
         
     def on_button_deb_install_close_clicked(self, widget):
+        # FIXME: doesn't turn it off
+        #self.window_main.set_property("urgency-hint", 0)
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
 
