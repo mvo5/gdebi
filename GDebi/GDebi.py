@@ -308,7 +308,7 @@ class GDebi(SimpleGladeApp):
         
         if os.getuid() != 0:
             
-            Merge the gksu and the yes/no dialog
+            #Merge the gksu and the yes/no dialog
             msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
                                                   _("To install the selected "
                                                     "package you need to run "
