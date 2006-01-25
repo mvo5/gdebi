@@ -114,14 +114,14 @@ class GDebi(SimpleGladeApp):
 
             return False
             
-	self.statusbar_main.push(self.context, "")
+        self.statusbar_main.push(self.context, "")
 
-	# grey in since we are ready for user input now
-	self.window_main.set_sensitive(True)
+        # grey in since we are ready for user input now
+        self.window_main.set_sensitive(True)
 
-	# set window title
-	self.window_main.set_title(_("Package Installer - %s" %
-                                     self._deb.pkgName))
+        # set window titleasddasasdd
+        self.window_main.set_title(_("Package Installer - %s" % 
+                                   self._deb.pkgName))
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
@@ -356,18 +356,18 @@ class GDebi(SimpleGladeApp):
                                                     self._term,
                                                     self.label_action,
                                                     self.expander_install)
-            errMsg = ""
+            errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
             except IOError, msg:
                 res = False
                 errMsg = "%s" % msg
-                primary = _("Failed to fetch dependencies")
-                secondary = _("Failed to fetch the following dependencies:")
+                header = _("Failed to fetch dependencies")
+                body = _("Failed to fetch the following dependencies:")
             except SystemError, msg:
                 res = False
-                primary = _("Install problem"),
-                secondary = _("Installing the "
+                header = _("Install problem"),
+                body = _("Installing the "
                               "dependencies was "
                               "not sucessful. This "
                               "a bug in the archive "
@@ -375,25 +375,8 @@ class GDebi(SimpleGladeApp):
                               "terminal window "
                               "for details.")
             if res == False:
-                msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
-                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
-                                           flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_ERROR,
-                                           buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(msg)
-                if errMsg != "":
-                    scrolled = gtk.ScrolledWindow()
-                    textview = gtk.TextView()
-                    textview.set_cursor_visible(False)
-                    textview.set_editable(False) 
-                    buf = textview.get_buffer()
-                    buf.set_text(errMsg)
-                    scrolled.add(textview)
-                    scrolled.show()
-                    dialog.vbox.pack_start(scrolled)
-                    textview.show()
-                dialog.run()
-                dialog.destroy()
+                self.show_error(header, body, msg)
+                
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
                 self.button_deb_install_close.grab_default()
@@ -448,13 +431,19 @@ class GDebi(SimpleGladeApp):
         return self._term
 
 
-    def show_error(self, header, body=None):
+    def show_error(self, header, body=None, details=None):
         self.dialog_error.set_transient_for(self.window_main)
         errormessage="<b><big>%s</big></b>" % header
         if not body == None:
             errormessage = "%s\n\n%s" % (errormessage, body)
         self.label_error.set_markup(errormessage)
   
+        if not details == None:
+             buffer = self.textview_error.get_buffer()
+             buffer.set_text(details)
+             self.expander_error.set_expanded(False)
+             self.expander_error.show()
+             
         res = self.dialog_error.run()
         self.dialog_error.hide()
         if res == gtk.RESPONSE_CLOSE:
