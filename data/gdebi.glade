@@ -869,7 +869,7 @@
 Sebastian Heinlein
 </property>
   <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
-  <property name="logo">/usr/share/pixmaps/gdebi.png</property>
+  <property name="logo">gdebi.png</property>
 </widget>
 
 <widget class="GtkDialog" id="dialog_deb_install">
@@ -1311,7 +1311,7 @@ It is a possible security risk to install packages files manually. Please, use t
   </child>
 </widget>
 
-<widget class="GtkDialog" id="dialog_error">
+<widget class="GtkDialog" id="dialog_hig">
   <property name="border_width">6</property>
   <property name="title" translatable="yes"></property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
@@ -1368,7 +1368,7 @@ It is a possible security risk to install packages files manually. Please, use t
 	  <property name="spacing">12</property>
 
 	  <child>
-	    <widget class="GtkImage" id="image2">
+	    <widget class="GtkImage" id="image_hig">
 	      <property name="visible">True</property>
 	      <property name="stock">gtk-dialog-error</property>
 	      <property name="icon_size">6</property>
@@ -1391,7 +1391,7 @@ It is a possible security risk to install packages files manually. Please, use t
 	      <property name="spacing">12</property>
 
 	      <child>
-		<widget class="GtkLabel" id="label_error">
+		<widget class="GtkLabel" id="label_hig">
 		  <property name="visible">True</property>
 		  <property name="label" translatable="yes"></property>
 		  <property name="use_underline">False</property>
@@ -1416,9 +1416,9 @@ It is a possible security risk to install packages files manually. Please, use t
 	      </child>
 
 	      <child>
-		<widget class="GtkExpander" id="expander_error">
+		<widget class="GtkExpander" id="expander_hig">
 		  <property name="can_focus">True</property>
-		  <property name="expanded">False</property>
+		  <property name="expanded">True</property>
 		  <property name="spacing">6</property>
 
 		  <child>
@@ -1431,10 +1431,10 @@ It is a possible security risk to install packages files manually. Please, use t
 		      <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
 
 		      <child>
-			<widget class="GtkTextView" id="textview_error">
+			<widget class="GtkTextView" id="textview_hig">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="editable">True</property>
+			  <property name="editable">False</property>
 			  <property name="overwrite">False</property>
 			  <property name="accepts_tab">True</property>
 			  <property name="justification">GTK_JUSTIFY_LEFT</property>
