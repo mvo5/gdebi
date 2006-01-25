@@ -1009,7 +1009,7 @@ Sebastian Heinlein
 	  </child>
 
 	  <child>
-	    <widget class="GtkExpander" id="expander1">
+	    <widget class="GtkExpander" id="expander_install">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="expanded">False</property>
