@@ -71,9 +71,6 @@ class GDebi(SimpleGladeApp):
             while gtk.events_pending(): gtk.main_iteration()        
             self.open(file)
             self.window_main.window.set_cursor(None)
-        else:
-            self.on_open_activate()
-        
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
@@ -239,7 +236,7 @@ class GDebi(SimpleGladeApp):
         self.dialog_details.run()
         self.dialog_details.hide()
 
-    def on_open_activate(self, widget=None):
+    def on_open_activate(self, widget):
         #print "open"
         # build dialog
         fs = gtk.FileChooserDialog(parent=self.window_main,
