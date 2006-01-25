@@ -330,19 +330,11 @@ class GDebi(SimpleGladeApp):
             try:
                 apt_pkg.PkgSystemLock()
             except SystemError:
-                msg = "<big><b>%s</b></big>\n\n%s" % (_("Unable to get exclusive lock"),
-                                                      _("This usually means that another "
-                                                      "package management application "
-                                                      "(like apt-get or aptitude) "
-                                                      "already running. Please close that "
-                                                      "application first."))
-                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
-                                           flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_ERROR,
-                                           buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(msg)
-                dialog.run()
-                dialog.destroy()
+                header = _("Only one software management tool is allowed to"
+                           " run at the same time")
+                body = _("Please close the other application e.g. \"Update "
+                         "Manager\", \"aptitude\" or \"Synaptic\" at first.")
+                self.show_error(header, body)
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
                 return
