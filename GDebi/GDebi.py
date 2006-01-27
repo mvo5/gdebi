@@ -110,7 +110,7 @@ class GDebi(SimpleGladeApp):
             err_body = _("The package might be corrupted or you are not "
                          "allowed to open the file. Check the permissions "
                          "of the file.")
-            self.show_alert("error", err_header, err_body)
+            self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
 
             return False
             
@@ -334,7 +334,7 @@ class GDebi(SimpleGladeApp):
                            " run at the same time")
                 body = _("Please close the other application e.g. \"Update "
                          "Manager\", \"aptitude\" or \"Synaptic\" at first.")
-                self.show_alert("error", header, body)
+                self.show_alert(gtk.MESSAGE_ERROR, header, body)
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
                 return
@@ -367,7 +367,7 @@ class GDebi(SimpleGladeApp):
                               "terminal window "
                               "for details.")
             if res == False:
-                self.show_alert("error", header, body, msg)
+                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg)
                 
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
@@ -405,7 +405,7 @@ class GDebi(SimpleGladeApp):
                          "A dependency problem was found after "
                          "installation.\n You have to run: "
                          "'apt-get install -f' to correct the situation")
-            self.show_alert("error", err_header, err_body)
+            self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
 
             #print "Autsch, please report"
         self.open(self._deb.file)
@@ -437,11 +437,11 @@ class GDebi(SimpleGladeApp):
              self.expander_hig.set_expanded(False)
              self.expander_hig.show()
              
-        if type == "error":
+        if type == gtk.MESSAGE_ERROR:
              self.image_hig.set_property("stock", "gtk-dialog-error")
-        elif type == "warn":
+        elif type == gtk.MESSAGE_WARNING:
              self.image_hig.set_property("stock", "gtk-dialog-warning")
-        elif type == "info":
+        elif type == gtk.MESSAGE_INFO:
              self.image_hig.set_property("stock", "gtk-dialog-info")
              
         res = self.dialog_hig.run()
