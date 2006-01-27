@@ -24,19 +24,19 @@ class GDebi(SimpleGladeApp):
 
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
-	logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
-	if logo != "":
-	    gtk.window_set_default_icon_list(logo)
-	
-	# set image of button "install"  manually, since it is overriden 
-	#by set_label otherwise
+        logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
+        if logo != "":
+	        gtk.window_set_default_icon_list(logo)
+
+        # set image of button "install"  manually, since it is overriden 
+        #by set_label otherwise
         img = gtk.Image()
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
         self.button_install.set_image(img)
 
         # setup status
-	self.context=self.statusbar_main.get_context_id("context_main_window")
-	self.statusbar_main.push(self.context,_("Loading..."))
+        self.context=self.statusbar_main.get_context_id("context_main_window")
+        self.statusbar_main.push(self.context,_("Loading..."))
 
         # setup drag'n'drop
         self.window_main.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
@@ -74,16 +74,16 @@ class GDebi(SimpleGladeApp):
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
-	path = urllib.url2pathname(uri) # escape special chars
-	path = path.strip('\r\n\x00') # remove \r\n and NULL
-	# get the path to file
-	if path.startswith('file:\\\\\\'): # windows
-		path = path[8:] # 8 is len('file:///')
-	elif path.startswith('file://'): # nautilus, rox
-		path = path[7:] # 7 is len('file://')
-	elif path.startswith('file:'): # xffm
-		path = path[5:] # 5 is len('file:')
-	return path
+        path = urllib.url2pathname(uri) # escape special chars
+        path = path.strip('\r\n\x00') # remove \r\n and NULL
+        # get the path to file
+        if path.startswith('file:\\\\\\'): # windows
+            path = path[8:] # 8 is len('file:///')
+        elif path.startswith('file://'): # nautilus, rox
+            path = path[7:] # 7 is len('file://')
+        elif path.startswith('file:'): # xffm
+            path = path[5:] # 5 is len('file:')
+        return path
     
     def on_window_main_drag_data_received(self, widget, context, x, y,
                                           selection, target_type, timestamp):
@@ -103,27 +103,22 @@ class GDebi(SimpleGladeApp):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            dialog = gtk.MessageDialog(parent=self.window_main,
-                                       flags=gtk.DIALOG_MODAL,
-                                       type=gtk.MESSAGE_ERROR,
-                                       buttons=gtk.BUTTONS_OK)
-            msg = "<big><b>%s</b></big>\n\n%s" % \
-                  (_("Failed to open the deb package"),
-                   _("The package can't be opened, it may have "
-                     "improper permissions, is invalid or corrupted."))
-            dialog.set_markup(msg)
-            dialog.run()
-            dialog.destroy()
+            err_header = _("Could not open \"%s\"" % os.path.basename(file))
+            err_body = _("The package might be corrupted or you are not "
+                         "allowed to open the file. Check the permissions "
+                         "of the file.")
+            self.show_error(err_header, err_body)
+
             return False
             
-	self.statusbar_main.push(self.context, "")
+        self.statusbar_main.push(self.context, "")
 
-	# grey in since we are ready for user input now
-	self.window_main.set_sensitive(True)
+        # grey in since we are ready for user input now
+        self.window_main.set_sensitive(True)
 
-	# set window title
-	self.window_main.set_title(_("Package Installer - %s" %
-                                     self._deb.pkgName))
+        # set window titleasddasasdd
+        self.window_main.set_title(_("Package Installer - %s" % 
+                                   self._deb.pkgName))
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
@@ -308,34 +303,15 @@ class GDebi(SimpleGladeApp):
                 return
         
         if os.getuid() != 0:
-            
-            #Merge the gksu and the yes/no dialog
-            msg = "<big><b>%s</b></big>\n\n%s" % (_("Run as administrator"),
-                                                  _("To install the selected "
-                                                    "package you need to run "
-                                                    "this program with "
-                                                    "administraor rights. "
-                                                    "\n\n"
-                                                    "<b>Note that installing "
-                                                    "deb packages directly "
-                                                    "can be a security risk! "
-                                                    "Only install from "
-                                                    "trusted sources.</b> "
-                                                    "\n\n"
-                                                    "Do you want to do this "
-                                                    "now?"))
-            dialog = gtk.MessageDialog(parent=self.window_main,
-                                       flags=gtk.DIALOG_MODAL,
-                                       type=gtk.MESSAGE_QUESTION,
-                                       buttons=gtk.BUTTONS_YES_NO)
-            dialog.set_markup(msg)
-            if dialog.run() == gtk.RESPONSE_YES:
-                os.execl("/usr/bin/gksu","gksu","-m",
-                         _("<b><big>Adminstration rights are need "
-                           "for installation</big></b>\n\n"
-                           "Please enter your password."),
-                         "--","gdebi-gtk","--non-interactive",self._deb.file)
-            dialog.hide()
+            self.dialog_admin.set_transient_for(self.window_main)
+            res = self.dialog_admin.run()
+            self.dialog_admin.hide()
+            if res == gtk.RESPONSE_OK:
+                msg="<b><big>%s</big></b>" % \
+                    (_("Enter your password to install %s" % self._deb.pkgName)) 
+                os.execl("/usr/bin/gksu", "gksu", "-m", msg,
+                         "--", "gdebi-gtk", "--non-interactive", 
+                         self._deb.file)
             return
         
         # lock for install
@@ -377,18 +353,18 @@ class GDebi(SimpleGladeApp):
                                                     self._term,
                                                     self.label_action,
                                                     self.expander_install)
-            errMsg = ""
+            errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
             except IOError, msg:
                 res = False
                 errMsg = "%s" % msg
-                primary = _("Failed to fetch dependencies")
-                secondary = _("Failed to fetch the following dependencies:")
+                header = _("Failed to fetch dependencies")
+                body = _("Failed to fetch the following dependencies:")
             except SystemError, msg:
                 res = False
-                primary = _("Install problem"),
-                secondary = _("Installing the "
+                header = _("Install problem"),
+                body = _("Installing the "
                               "dependencies was "
                               "not sucessful. This "
                               "a bug in the archive "
@@ -396,25 +372,8 @@ class GDebi(SimpleGladeApp):
                               "terminal window "
                               "for details.")
             if res == False:
-                msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
-                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
-                                           flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_ERROR,
-                                           buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(msg)
-                if errMsg != "":
-                    scrolled = gtk.ScrolledWindow()
-                    textview = gtk.TextView()
-                    textview.set_cursor_visible(False)
-                    textview.set_editable(False) 
-                    buf = textview.get_buffer()
-                    buf.set_text(errMsg)
-                    scrolled.add(textview)
-                    scrolled.show()
-                    dialog.vbox.pack_start(scrolled)
-                    textview.show()
-                dialog.run()
-                dialog.destroy()
+                self.show_error(header, body, msg)
+                
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
                 self.button_deb_install_close.grab_default()
@@ -446,23 +405,13 @@ class GDebi(SimpleGladeApp):
         #self._cache = MyCache(self.cprogress)
         self._cache = MyCache()
         if self._cache._depcache.BrokenCount > 0:
-            msg = "<big><b>%s</b></big>\n\n%s" % (_("Dependency problem"),
-                                                  _("Internal error, please "
-                                                    "report this as a bug:\n"
-                                                    "A dependency problem "
-                                                    "was found after "
-                                                    "installation.\n"
-                                                    "You have to run: "
-                                                    "'apt-get install -f' "
-                                                    "to correct the "
-                                                    "situation"))
-            dialog = gtk.MessageDialog(parent=self.window_main,
-                                       flags=gtk.DIALOG_MODAL,
-                                       type=gtk.MESSAGE_INFO,
-                                       buttons=gtk.BUTTONS_OK)
-            dialog.set_markup(msg)
-            dialog.run()
-            dialog.destroy()
+            err_header = _("Dependency problem")
+            err_body = _("Internal error, please report this as a bug:\n"
+                         "A dependency problem was found after "
+                         "installation.\n You have to run: "
+                         "'apt-get install -f' to correct the situation")
+            self.show_error(err_header, err_body)
+
             #print "Autsch, please report"
         self.open(self._deb.file)
         
@@ -479,6 +428,25 @@ class GDebi(SimpleGladeApp):
         return self._term
 
 
+    def show_error(self, header, body=None, details=None):
+        self.dialog_error.set_transient_for(self.window_main)
+        errormessage="<b><big>%s</big></b>" % header
+        if not body == None:
+            errormessage = "%s\n\n%s" % (errormessage, body)
+        self.label_error.set_markup(errormessage)
+  
+        if not details == None:
+             buffer = self.textview_error.get_buffer()
+             buffer.set_text(details)
+             self.expander_error.set_expanded(False)
+             self.expander_error.show()
+             
+        res = self.dialog_error.run()
+        self.dialog_error.hide()
+        if res == gtk.RESPONSE_CLOSE:
+            return True
+
+        
     # embedded classes
     class DpkgInstallProgress(object):
         def __init__(self, debfile, status, progress, term, expander):
