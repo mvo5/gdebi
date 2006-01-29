@@ -24,7 +24,7 @@ class GDebi(SimpleGladeApp):
 
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
-        logo=icons.load_icon("gnome-settings-default-applications", 32, 0)
+        logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
         if logo != "":
 	        gtk.window_set_default_icon_list(logo)
 
@@ -45,7 +45,7 @@ class GDebi(SimpleGladeApp):
                                        [('text/uri-list',0,0)],
                                        gtk.gdk.ACTION_COPY)
 
-        # 
+        self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
 
@@ -71,6 +71,9 @@ class GDebi(SimpleGladeApp):
             while gtk.events_pending(): gtk.main_iteration()        
             self.open(file)
             self.window_main.window.set_cursor(None)
+        
+        self.window_main.set_sensitive(True)
+
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
@@ -107,7 +110,7 @@ class GDebi(SimpleGladeApp):
             err_body = _("The package might be corrupted or you are not "
                          "allowed to open the file. Check the permissions "
                          "of the file.")
-            self.show_error(err_header, err_body)
+            self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
 
             return False
             
@@ -327,19 +330,11 @@ class GDebi(SimpleGladeApp):
             try:
                 apt_pkg.PkgSystemLock()
             except SystemError:
-                msg = "<big><b>%s</b></big>\n\n%s" % (_("Unable to get exclusive lock"),
-                                                      _("This usually means that another "
-                                                      "package management application "
-                                                      "(like apt-get or aptitude) "
-                                                      "already running. Please close that "
-                                                      "application first."))
-                dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
-                                           flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_ERROR,
-                                           buttons=gtk.BUTTONS_OK)
-                dialog.set_markup(msg)
-                dialog.run()
-                dialog.destroy()
+                header = _("Only one software management tool is allowed to"
+                           " run at the same time")
+                body = _("Please close the other application e.g. \"Update "
+                         "Manager\", \"aptitude\" or \"Synaptic\" at first.")
+                self.show_alert(gtk.MESSAGE_ERROR, header, body)
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
                 return
@@ -372,7 +367,7 @@ class GDebi(SimpleGladeApp):
                               "terminal window "
                               "for details.")
             if res == False:
-                self.show_error(header, body, msg)
+                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg)
                 
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
                 self.button_deb_install_close.set_sensitive(True)
@@ -410,7 +405,7 @@ class GDebi(SimpleGladeApp):
                          "A dependency problem was found after "
                          "installation.\n You have to run: "
                          "'apt-get install -f' to correct the situation")
-            self.show_error(err_header, err_body)
+            self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
 
             #print "Autsch, please report"
         self.open(self._deb.file)
@@ -428,21 +423,29 @@ class GDebi(SimpleGladeApp):
         return self._term
 
 
-    def show_error(self, header, body=None, details=None):
-        self.dialog_error.set_transient_for(self.window_main)
-        errormessage="<b><big>%s</big></b>" % header
+    def show_alert(self, type, header, body=None, details=None):
+        self.dialog_hig.set_transient_for(self.window_main)
+
+        message = "<b><big>%s</big></b>" % header
         if not body == None:
-            errormessage = "%s\n\n%s" % (errormessage, body)
-        self.label_error.set_markup(errormessage)
+            message = "%s\n\n%s" % (message, body)
+        self.label_hig.set_markup(message)
   
         if not details == None:
-             buffer = self.textview_error.get_buffer()
+             buffer = self.textview_hig.get_buffer()
              buffer.set_text(details)
-             self.expander_error.set_expanded(False)
-             self.expander_error.show()
+             self.expander_hig.set_expanded(False)
+             self.expander_hig.show()
              
-        res = self.dialog_error.run()
-        self.dialog_error.hide()
+        if type == gtk.MESSAGE_ERROR:
+             self.image_hig.set_property("stock", "gtk-dialog-error")
+        elif type == gtk.MESSAGE_WARNING:
+             self.image_hig.set_property("stock", "gtk-dialog-warning")
+        elif type == gtk.MESSAGE_INFO:
+             self.image_hig.set_property("stock", "gtk-dialog-info")
+             
+        res = self.dialog_hig.run()
+        self.dialog_hig.hide()
         if res == gtk.RESPONSE_CLOSE:
             return True
 
