@@ -1,29 +1,30 @@
-# Danish translation of gdebi.
-# Copyright (C) 2005, 06
+# French translation of gdebi.
+# Copyright (C) 2005
 # This file is distributed under the same license as the gdebi package.
-# Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2005, 06.
+# Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-01-24 14:38-0200\n"
-"PO-Revision-Date: 2006-01-18 13:33+0100\n"
-"Last-Translator: Lasse Bang Mikkelsen <lbm@fatalerror.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"PO-Revision-Date: 2006-01-11 11:42+0100\n"
+"Last-Translator: Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr "  "
+msgstr " "
 
 #: ../data/gdebi.glade.h:2
 #, fuzzy
 msgid "(c) 2005-2006 Canonical"
-msgstr "(c) 2005 Canonical"
+msgstr "(c) 2005 Cannonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
@@ -32,26 +33,26 @@ msgstr ""
 #: ../data/gdebi.glade.h:4
 #, fuzzy
 msgid "<b>Maintainer:</b>"
-msgstr "<b>Vedligeholder</b>"
+msgstr "<b>Responsable</b>"
 
 #: ../data/gdebi.glade.h:5
 #, fuzzy
 msgid "<b>Priority:</b>"
-msgstr "<b>Prioritet</b>"
+msgstr "<p>Priorité</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Required changes:</b>"
-msgstr "<b>PÃ¥krÃ¦vede Ã¦ndringer:</b>"
+msgstr "<b>Modifications nécessaires :</b>"
 
 #: ../data/gdebi.glade.h:7
 #, fuzzy
 msgid "<b>Section:</b>"
-msgstr "<b>Sektion</b>"
+msgstr "<b>Section</b>"
 
 #: ../data/gdebi.glade.h:8
 #, fuzzy
 msgid "<b>Size:</b>"
-msgstr "<b>StÃ¸rrelse</b>"
+msgstr "<b>Taille</b>"
 
 #: ../data/gdebi.glade.h:9
 #, fuzzy
@@ -60,20 +61,20 @@ msgstr "<b>Version</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr "Description"
 
 #: ../data/gdebi.glade.h:11
 #, fuzzy
 msgid "Description:"
-msgstr "Beskrivelse"
+msgstr "Description"
 
 #: ../data/gdebi.glade.h:12
 msgid "Details"
-msgstr "Detaljer"
+msgstr "Détails"
 
 #: ../data/gdebi.glade.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL, se /usr/share/common-licenses/GPL"
+msgstr "GPL, voir /usr/share/common-licences/GPL"
 
 #: ../data/gdebi.glade.h:14
 msgid "Included Files"
@@ -81,7 +82,7 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:15
 msgid "Install deb packages directly"
-msgstr "InstallÃ©r deb-pakker direkte"
+msgstr "Installer directement des paquets deb"
 
 #: ../data/gdebi.glade.h:16
 msgid "Package Installer"
@@ -89,11 +90,11 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:17
 msgid "Package:"
-msgstr "Pakke:"
+msgstr "Paquet :"
 
 #: ../data/gdebi.glade.h:18
 msgid "Status:"
-msgstr "Status:"
+msgstr "État :"
 
 #: ../data/gdebi.glade.h:19
 msgid "Terminal"
@@ -101,16 +102,16 @@ msgstr "Terminal"
 
 #: ../data/gdebi.glade.h:20
 msgid "_File"
-msgstr "_Fil"
+msgstr "_Fichier"
 
 #: ../data/gdebi.glade.h:21
 msgid "_Help"
-msgstr "_HjÃ¦lp"
+msgstr "_Aide"
 
 #: ../data/gdebi.glade.h:22 ../GDebi/GDebi.py:159 ../GDebi/GDebi.py:229
 #, fuzzy
 msgid "_Install Package"
-msgstr "InstallÃ©r deb-pakke"
+msgstr "Installer un paquet deb"
 
 #: ../data/gdebi.glade.h:23
 msgid "gdebi"
@@ -119,27 +120,22 @@ msgstr "gdebi"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:25
 msgid "translator-credits"
-msgstr ""
-"Lasse Bang Mikkelsen\n"
-"\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+msgstr "Membres de la liste debian-l10n-french@lists.debian.org"
 
 #: ../GDebi/GDebi.py:39
 msgid "Loading..."
 msgstr ""
 
 #: ../GDebi/GDebi.py:111 ../GDebi/GDebiCli.py:19
+#, fuzzy
 msgid "Failed to open the deb package"
-msgstr "Kunne ikke Ã¥bne deb-pakke"
+msgstr "Impossible de récupérer les dépendances"
 
 #: ../GDebi/GDebi.py:112 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package can't be opened, it may have improper permissions, is invalid or "
 "corrupted."
 msgstr ""
-"Pakken kan ikke Ã¥bnes. Den kan have forkerte filrettigheder, vÃ¦re ugyldig "
-"eller beskadiget."
 
 #. set window title
 #: ../GDebi/GDebi.py:125
@@ -149,51 +145,51 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:166
 msgid "Version is installed"
-msgstr "Versionen er installeret"
+msgstr "La version est installée"
 
 #: ../GDebi/GDebi.py:167
 #, fuzzy
 msgid "_Reinstall Package"
-msgstr "InstallÃ©r deb-pakke"
+msgstr "Installer un paquet deb"
 
 #: ../GDebi/GDebi.py:216
 msgid "All dependencies satisfied"
-msgstr "Alle afhÃ¦ngigheder opfyldt"
+msgstr "Toutes les dépendances sont satisfaites"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebi.py:222
 #, python-format
 msgid "Need to <b>remove</b> %s packages from the archive\n"
-msgstr "Der vil blive <b>fjernet</b> %s pakker fra arkivet\n"
+msgstr "%s paquets doivent être <b>supprimés</b> de l'archive\n"
 
 #: ../GDebi/GDebi.py:224
 #, python-format
 msgid "Need to install %s packages from the archive"
-msgstr "Der vil blive installeret %s pakker fra arkivet"
+msgstr "%s paquets doivent être installés depuis l'archive"
 
 #: ../GDebi/GDebi.py:238
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>Vil blive fjernet: %s</b>"
+msgstr "<b>À désinstaller : %s</b>"
 
 #: ../GDebi/GDebi.py:240
 #, python-format
 msgid "To be installed: %s"
-msgstr "Vil blive installeret: %s"
+msgstr "À installer : %s"
 
 #: ../GDebi/GDebi.py:258
 msgid "Deb packages"
-msgstr "Deb-pakker"
+msgstr "Paquets deb"
 
 #. print "install"
 #: ../GDebi/GDebi.py:276
 #, fuzzy
 msgid "Installing package file..."
-msgstr "Installerer pakke ..."
+msgstr "Installation du paquet..."
 
 #: ../GDebi/GDebi.py:279
 msgid "Unauthenticated packages"
-msgstr "Ikke-godkendte pakker"
+msgstr ""
 
 #: ../GDebi/GDebi.py:280
 msgid ""
@@ -203,16 +199,11 @@ msgid ""
 "\n"
 "The packages below are not authenticated. Are you sure you want to continue?"
 msgstr ""
-"Du er ved at installere programmel som <b>ikke kan godkendes</b>! Dette "
-"kunne tillade en ondsindet person at beskadige eller tage kontrollen over "
-"dit system.\n"
-"\n"
-"Pakkerne nedenfor er ikke godkendt. Er du sikker pÃ¥ du vil fortsÃ¦tte?"
 
 #. Merge the gksu and the yes/no dialog
 #: ../GDebi/GDebi.py:313
 msgid "Run as administrator"
-msgstr "KÃ¸r som administrator"
+msgstr "Exécuter avec les droits du superutilisateur"
 
 #: ../GDebi/GDebi.py:314
 msgid ""
@@ -224,13 +215,13 @@ msgid ""
 "\n"
 "Do you want to do this now?"
 msgstr ""
-"For at installere den valgte pakke, skal du kÃ¸re dette program med "
-"administrator-rettigheder. \n"
+"Pour installer les paquets sélectionnés, vous devez lancer ce programme avec "
+"les droits de l'administrateur.\n"
 "\n"
-"<b>BemÃ¦rk at direkte installation af deb-pakker kan udgÃ¸re en "
-"sikkerhedsrisiko! InstallÃ©r kun fra trovÃ¦rdige kilder.</b> \n"
-"\n"
-"Vil du installere nu?"
+"<b>Remarquez que l'installation directe de paquets deb peut présenter des "
+"problèmes de sécurité ! N'effectuez d'installation que depuis des sources de "
+"confiance.</b>\n"
+"Voulez-vous le faire maintenant ?"
 
 #: ../GDebi/GDebi.py:334
 msgid ""
@@ -241,51 +232,53 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:354
 msgid "Unable to get exclusive lock"
-msgstr "Kan ikke opnÃ¥ eksklusiv lÃ¥s"
+msgstr "Impossible d'obtenir un verrou exclusif"
 
 #: ../GDebi/GDebi.py:355
 msgid ""
 "This usually means that another package management application (like apt-get "
 "or aptitude) already running. Please close that application first."
 msgstr ""
-"Det skyldes sandsynligvis at et andet pakkehÃ¥ndterings-program (sÃ¥som apt-"
-"get eller aptitude) allerede kÃ¸rer. Luk venligst det program fÃ¸rst."
+"Ceci signifie généralement qu'une autre application de gestion de paquets "
+"(telle que apt-get ou aptitude) est en cours d'exécution. Veuillez d'abord "
+"fermer cette application."
 
 #: ../GDebi/GDebi.py:386
 msgid "Failed to fetch dependencies"
-msgstr "Kunne ikke hente afhÃ¦ngigheder"
+msgstr "Impossible de récupérer les dépendances"
 
 #: ../GDebi/GDebi.py:387
 msgid "Failed to fetch the following dependencies:"
-msgstr "Kunne ikke hente fÃ¸lgende afhÃ¦ngigheder:"
+msgstr "Impossible de récupérer les dépendances suivantes :"
 
 #: ../GDebi/GDebi.py:390
 msgid "Install problem"
-msgstr "Installations-fejl"
+msgstr "Problème d'installation"
 
 #: ../GDebi/GDebi.py:391
 msgid ""
 "Installing the dependencies was not sucessful. This a bug in the archive "
 "please see the terminal window for details."
 msgstr ""
-"Problemer under installation af afhÃ¦ngigheder. Det skyldes en fejl i "
-"arkivet, se venligst terminal-vinduet for detaljer."
+"L'installation des dépendances a échoué. Il s'agit d'un bogue dans "
+"l'archive, veuillez consulter les messages de la fenêtre du terminal pour "
+"les détails."
 
 #: ../GDebi/GDebi.py:421
 #, fuzzy
 msgid "Failed to install package file"
-msgstr "Der vil blive installeret %s pakker fra arkivet"
+msgstr "%s paquets doivent être installés depuis l'archive"
 
 #. install the package itself
 #: ../GDebi/GDebi.py:425
 #, fuzzy
 msgid "Installing package file"
-msgstr "Installerer pakke ..."
+msgstr "Installation du paquet..."
 
 #: ../GDebi/GDebi.py:437
 #, fuzzy, python-format
 msgid "Package \"%s\" is installed"
-msgstr "Versionen er installeret"
+msgstr "La version est installée"
 
 #: ../GDebi/GDebi.py:439
 #, python-format
@@ -295,11 +288,11 @@ msgstr ""
 #: ../GDebi/GDebi.py:441
 #, fuzzy
 msgid "Installation complete"
-msgstr "Installations-fejl"
+msgstr "Problème d'installation"
 
 #: ../GDebi/GDebi.py:449
 msgid "Dependency problem"
-msgstr "AfhÃ¦ngigheds-problem"
+msgstr "Problème de dépendance"
 
 #: ../GDebi/GDebi.py:450
 msgid ""
@@ -307,20 +300,20 @@ msgid ""
 "A dependency problem was found after installation.\n"
 "You have to run: 'apt-get install -f' to correct the situation"
 msgstr ""
-"Intern fejl, rapportÃ©r venligst denne fejl:\n"
-"Et afhÃ¦ngigheds-problem blev fundet efter installation.\n"
-"Du skal kÃ¸re: 'apt-get -f install' for at rette fejlen"
+"Erreur interne, veuillez le signaler comme bogue :\n"
+"Un problème de dépendances a été découvert après l'installation.\n"
+"Il vous faut lancer : « apt-get install -f » pour corriger cette situation."
 
 #. ui
 #: ../GDebi/GDebi.py:505
 #, fuzzy, python-format
 msgid "Installing \"%s\"..."
-msgstr "Installerer %s"
+msgstr "Installation de %s"
 
 #: ../GDebi/GDebi.py:583
 #, fuzzy
 msgid "Installing dependencies..."
-msgstr "Installerer afhÃ¦ngigheder ..."
+msgstr "Installation des dépendances..."
 
 #. print "start()"
 #: ../GDebi/GDebi.py:606
@@ -330,49 +323,50 @@ msgstr ""
 #: ../GDebi/GDebi.py:612
 #, python-format
 msgid "%s/%s (Speed: %s/s)"
-msgstr "%s/%s (Hastighed: %s/s)"
+msgstr "%s/%s (vitesse : %s/s)"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:619
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "IndsÃ¦t venligst '%s' i drevet '%s'"
+msgstr ""
+"Veuillez insérer le disque dont le nom est « %s » dans le lecteur « %s »"
 
 #: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency not found: %s\n"
-msgstr "AfhÃ¦ngighed ikke fundet: %s\n"
+msgstr "Dépendance introuvable : %s\n"
 
 #: ../GDebi/DebPackage.py:102
 #, python-format
 msgid "Conflicts with installed pkg: '%s'"
-msgstr "Konflikt med installeret pakke: '%s'"
+msgstr "Conflit avec le paquet installé : « %s »"
 
 #: ../GDebi/DebPackage.py:186
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr "Forkert arkitektur '%s'"
+msgstr "Architecture « %s » incorrecte"
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:192
 msgid "Newer version is already installed"
-msgstr "Nyere version er allerede installeret"
+msgstr "Une version plus récente est déjà installée"
 
 #: ../GDebi/DebPackage.py:220
 #, python-format
 msgid "Can't install '%s'"
-msgstr "Kan ikke installere '%s'"
+msgstr "Impossible d'installer « %s »"
 
 #: ../GDebi/DebPackage.py:230
 msgid "Installing the dependencies impossible (broken cache)"
-msgstr "Installation af afhÃ¦ngigheder ikke muligt (Ã¸delagt mellemlager)"
+msgstr "Installation des dépendances impossible (le cache est corrompu)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:279
 #, python-format
 msgid "No entry for '%s' found"
-msgstr "Feltet '%s' ikke fundet"
+msgstr "Pas d'entrée trouvée pour « %s »"
 
 #: ../GDebi/GDebiCli.py:27
 msgid "No description found in the package"
@@ -389,34 +383,34 @@ msgstr ""
 #: ../GDebi/GDebiCli.py:42
 #, fuzzy
 msgid "Need to REMOVE the following pkgs: "
-msgstr "Kunne ikke hente fÃ¸lgende afhÃ¦ngigheder:"
+msgstr "Impossible de récupérer les dépendances suivantes :"
 
 #: ../GDebi/GDebiCli.py:47
 #, fuzzy
 msgid "Need to install the following pkgs: "
-msgstr "Kunne ikke hente fÃ¸lgende afhÃ¦ngigheder:"
+msgstr "Impossible de récupérer les dépendances suivantes :"
 
 #: ../GDebi/GDebiCli.py:69
 msgid "Do you want to install it [yN]:"
 msgstr ""
 
 #~ msgid "<b>Package information:</b>"
-#~ msgstr "<b>Pakke-information:</b>"
+#~ msgstr "<b>Informations concernant le paquet :</b>"
 
 #~ msgid "Filelist"
-#~ msgstr "Fil-liste"
+#~ msgstr "Liste des fichiers"
 
 #~ msgid "Install"
-#~ msgstr "InstallÃ©r"
+#~ msgstr "Installer"
 
 #~ msgid "Install progress"
-#~ msgstr "Installations-fremgang"
+#~ msgstr "Avancement de l'installation"
 
 #~ msgid "_About"
-#~ msgstr "_Om"
+#~ msgstr "_À propos"
 
 #~ msgid "Reinstall"
-#~ msgstr "GeninstallÃ©r"
+#~ msgstr "Réinstaller"
 
 #~ msgid "<b>Installed %s</b>"
-#~ msgstr "<b>Installerede %s</b>"
+#~ msgstr "<b>Installé %s</b>"
