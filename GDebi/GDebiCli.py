@@ -24,27 +24,27 @@ class GDebiCli(object):
         try:
             print self._deb["Description"]
         except KeyError:
-            print "No description found in the package"
+            print _("No description found in the package")
 
         # check the deps
         if not self._deb.checkDeb():
-            print "This package can't be installed"
+            print _("This package can't be installed")
             print self._deb._failureString
             return False
 
         # show what changes
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if len(unauthenticated) > 0:
-            print "The following packages are UNAUTHENTICATED: "
+            print _("The following packages are UNAUTHENTICATED: ")
             for pkgname in unauthenticated:
                 print pkgname + " ",
         if len(remove) > 0:
-            print "Need to REMOVE the following pkgs: " 
+            print _("Need to REMOVE the following pkgs: ")
             for pkgname in remove:
                 print pkgname + " ",
         print
         if len(install) > 0:
-            print "Need to install the following pkgs: " 
+            print _("Need to install the following pkgs: ") 
             for pkgname in install:
                 print pkgname + " ",
         print
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     app = GDebiCli()
     if not app.open(sys.argv[1]):
         sys.exit(1)
-    print "Do you want to install it [yN]:",
+    print _("Do you want to install it [yN]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()
     if res.startswith("y") or res.startswith("Y"):
