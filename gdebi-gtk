@@ -4,10 +4,9 @@ import sys
 import apt
 import os.path
 
-#sys.path.append(os.getcwd())
 
 from optparse import OptionParser
-from GDebi import GDebi
+from GDebi.GDebi import GDebi
 
 
 if __name__ == "__main__":
