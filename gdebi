@@ -5,7 +5,7 @@ import apt
 import os.path
 
 
-from GDebi import GDebiCli
+from GDebi.GDebiCli import GDebiCli
 
 
 if __name__ == "__main__":

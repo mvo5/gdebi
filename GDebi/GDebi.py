@@ -416,6 +416,13 @@ class GDebi(SimpleGladeApp):
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
 
+    def on_window_main_delete_event(self, *args):
+        if self.window_main.get_property("sensitive") == True:
+            gtk.main_quit()
+            return False
+        else: 
+            return True
+
     def create_vte(self, arg1,arg2,arg3,arg4):
         #print "create_vte (for the custom glade widget)"
         self._term = vte.Terminal()

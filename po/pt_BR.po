@@ -1,21 +1,20 @@
-# French translation of gdebi.
-# Copyright (C) 2005
+# Portuguese (Brazil) translation for gdebi
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
 # This file is distributed under the same license as the gdebi package.
-# Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>, 2005.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To:\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2005-12-05 18:29+0100\n"
-"PO-Revision-Date: 2006-01-11 11:42+0100\n"
-"Last-Translator: Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
-"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese (Brazil) <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: FRANCE\n"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
@@ -23,71 +22,71 @@ msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005 Canonical"
-msgstr "(c) 2005 Cannonical"
+msgstr "(c) 2005 Canonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b>Maintainer</b>"
-msgstr "<b>Responsable</b>"
+msgstr "<b>Mantenedor</b>"
 
 #: ../data/gdebi.glade.h:4
 msgid "<b>Package information:</b>"
-msgstr "<b>Informations concernant le paquet :</b>"
+msgstr "<b>InformaÃ§Ãµes do Pacote:</b>"
 
 #: ../data/gdebi.glade.h:5
 msgid "<b>Priority</b>"
-msgstr "<p>Priorité</b>"
+msgstr "<b>Prioridade</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Required changes:</b>"
-msgstr "<b>Modifications nécessaires :</b>"
+msgstr "<b>MudanÃ§as necessÃ¡rias:</b>"
 
 #: ../data/gdebi.glade.h:7
 msgid "<b>Section</b>"
-msgstr "<b>Section</b>"
+msgstr "<b>SeÃ§Ã£o</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>Size</b>"
-msgstr "<b>Taille</b>"
+msgstr "<b>Tamanho</b>"
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version</b>"
-msgstr "<b>Version</b>"
+msgstr "<b>VersÃ£o</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid "Description"
-msgstr "Description"
+msgstr "DescriÃ§Ã£o"
 
 #: ../data/gdebi.glade.h:11
 msgid "Details"
-msgstr "Détails"
+msgstr "Detalhes"
 
 #: ../data/gdebi.glade.h:12
 msgid "Filelist"
-msgstr "Liste des fichiers"
+msgstr "Lista de arquivos"
 
 #: ../data/gdebi.glade.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL, voir /usr/share/common-licences/GPL"
+msgstr "GPL, leia /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.glade.h:14
 msgid "Install"
-msgstr "Installer"
+msgstr "Instalar"
 
 #: ../data/gdebi.glade.h:15
 msgid "Install deb packages directly"
-msgstr "Installer directement des paquets deb"
+msgstr "Instala pacotes deb diretamente"
 
 #: ../data/gdebi.glade.h:16
 msgid "Install progress"
-msgstr "Avancement de l'installation"
+msgstr "Progresso da instalaÃ§Ã£o"
 
 #: ../data/gdebi.glade.h:17
 msgid "Package:"
-msgstr "Paquet :"
+msgstr "Pacote:"
 
 #: ../data/gdebi.glade.h:18
 msgid "Status:"
-msgstr "État :"
+msgstr "Estado:"
 
 #: ../data/gdebi.glade.h:19
 msgid "Terminal"
@@ -95,15 +94,15 @@ msgstr "Terminal"
 
 #: ../data/gdebi.glade.h:20
 msgid "_About"
-msgstr "_À propos"
+msgstr "_Sobre"
 
 #: ../data/gdebi.glade.h:21
 msgid "_File"
-msgstr "_Fichier"
+msgstr "_Arquivo"
 
 #: ../data/gdebi.glade.h:22
 msgid "_Help"
-msgstr "_Aide"
+msgstr "_Ajuda"
 
 #: ../data/gdebi.glade.h:23
 msgid "gdebi"
@@ -111,43 +110,43 @@ msgstr "gdebi"
 
 #: ../data/gdebi.glade.h:25
 msgid "translator-credits"
-msgstr "Membres de la liste debian-l10n-french@lists.debian.org"
+msgstr "Gustavo Franco"
 
 #: ../GDebi/GDebi.py:76
 msgid "Version is installed"
-msgstr "La version est installée"
+msgstr "VersÃ£o estÃ¡ instalada"
 
 #: ../GDebi/GDebi.py:124
 msgid "All dependencies satisfied"
-msgstr "Toutes les dépendances sont satisfaites"
+msgstr "Todas dependÃªncias satisfeitas"
 
 #: ../GDebi/GDebi.py:130
 #, python-format
 msgid "Need to <b>remove</b> %s packages from the archive\n"
-msgstr "%s paquets doivent être <b>supprimés</b> de l'archive\n"
+msgstr "Preciso <b>remover</b> %s pacotes do repositÃ³rio\n"
 
 #: ../GDebi/GDebi.py:132
 #, python-format
 msgid "Need to install %s packages from the archive"
-msgstr "%s paquets doivent être installés depuis l'archive"
+msgstr "Preciso instalar %s pacotes do repositÃ³rio"
 
 #: ../GDebi/GDebi.py:141
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>À désinstaller : %s</b>"
+msgstr "<b>A ser removido: %s</b>"
 
 #: ../GDebi/GDebi.py:143
 #, python-format
 msgid "To be installed: %s"
-msgstr "À installer : %s"
+msgstr "A ser instalado: %s"
 
 #: ../GDebi/GDebi.py:160
 msgid "Deb packages"
-msgstr "Paquets deb"
+msgstr "Pacotes deb"
 
 #: ../GDebi/GDebi.py:177
 msgid "Run as administrator"
-msgstr "Exécuter avec les droits du superutilisateur"
+msgstr "Execute como administrador"
 
 #: ../GDebi/GDebi.py:178
 msgid ""
@@ -159,64 +158,63 @@ msgid ""
 "\n"
 "Do you want to do this now?"
 msgstr ""
-"Pour installer les paquets sélectionnés, vous devez lancer ce programme avec "
-"les droits de l'administrateur.\n"
+"Para instalar o pacote selecionado vocÃª precisa executar este programa com "
+"privilÃ©gios de administrador. \n"
 "\n"
-"<b>Remarquez que l'installation directe de paquets deb peut présenter des "
-"problèmes de sécurité ! N'effectuez d'installation que depuis des sources de "
-"confiance.</b>\n"
-"Voulez-vous le faire maintenant ?"
+"<b>Note que instalar pacotes deb diretamente pode ser um risco de seguranÃ§a! "
+"SÃ³ instale de fontes confiÃ¡veis.</b> \n"
+"\n"
+"VocÃª quer fazer isto agora?"
 
 #: ../GDebi/GDebi.py:198
 msgid "Install deb package"
-msgstr "Installer un paquet deb"
+msgstr "Instala pacote deb"
 
 #: ../GDebi/GDebi.py:217
 msgid "Unable to get exclusive lock"
-msgstr "Impossible d'obtenir un verrou exclusif"
+msgstr "NÃ£o foi possÃ­vel obter lock exclusivo"
 
 #: ../GDebi/GDebi.py:218
 msgid ""
 "This usually means that another package management application (like apt-get "
 "or aptitude) already running. Please close that application first."
 msgstr ""
-"Ceci signifie généralement qu'une autre application de gestion de paquets "
-"(telle que apt-get ou aptitude) est en cours d'exécution. Veuillez d'abord "
-"fermer cette application."
+"Isso normalmente significa que uma outra aplicaÃ§Ã£o de gerenciamento de "
+"pacotes (como o apt-get ou o aptitude) jÃ¡ estÃ¡ em execuÃ§Ã£o. Por favor, feche "
+"essa aplicaÃ§Ã£o primeiro."
 
 #: ../GDebi/GDebi.py:248
 msgid "Failed to fetch dependencies"
-msgstr "Impossible de récupérer les dépendances"
+msgstr "Falha ao baixar dependÃªncias"
 
 #: ../GDebi/GDebi.py:249
 msgid "Failed to fetch the following dependencies:"
-msgstr "Impossible de récupérer les dépendances suivantes :"
+msgstr "Falha ao baixar as seguintes dependÃªncias:"
 
 #: ../GDebi/GDebi.py:252
 msgid "Install problem"
-msgstr "Problème d'installation"
+msgstr "Problema de instalaÃ§Ã£o"
 
 #: ../GDebi/GDebi.py:253
 msgid ""
 "Installing the dependencies was not sucessful. This a bug in the archive "
 "please see the terminal window for details."
 msgstr ""
-"L'installation des dépendances a échoué. Il s'agit d'un bogue dans "
-"l'archive, veuillez consulter les messages de la fenêtre du terminal pour "
-"les détails."
+"NÃ£o obtive sucesso ao instalar as dependÃªncias. Isto Ã© uma falha no "
+"repositÃ³rio, por favor veja a janela do terminal para detalhes."
 
 #: ../GDebi/GDebi.py:285
 msgid "Installing package ..."
-msgstr "Installation du paquet..."
+msgstr "Instalando pacote ..."
 
 #: ../GDebi/GDebi.py:294
 #, python-format
 msgid "<b>Installed %s</b>"
-msgstr "<b>Installé %s</b>"
+msgstr "<b>Instalado %s</b>"
 
 #: ../GDebi/GDebi.py:300
 msgid "Dependency problem"
-msgstr "Problème de dépendance"
+msgstr "Problema de dependÃªncia"
 
 #: ../GDebi/GDebi.py:301
 msgid ""
@@ -224,63 +222,61 @@ msgid ""
 "A dependency problem was found after installation.\n"
 "You have to run: 'apt-get install -f' to correct the situation"
 msgstr ""
-"Erreur interne, veuillez le signaler comme bogue :\n"
-"Un problème de dépendances a été découvert après l'installation.\n"
-"Il vous faut lancer : « apt-get install -f » pour corriger cette situation."
+"Erro interno, por favor reporte isto como uma falha:\n"
+"\n"
+"Um problema de dependÃªncia foi encontrado apÃ³s a instalaÃ§Ã£o.\n"
+"\n"
+"VocÃª precisa executar: 'apt-get install -f' para corrigir a situaÃ§Ã£o"
 
 #: ../GDebi/GDebi.py:351
 #, python-format
 msgid "Installing %s"
-msgstr "Installation de %s"
+msgstr "Instalando %s"
 
 #: ../GDebi/GDebi.py:390
 msgid "Installing dependencies ..."
-msgstr "Installation des dépendances..."
+msgstr "Instalando dependÃªncias ..."
 
 #: ../GDebi/GDebi.py:443
 #, python-format
 msgid "%s/%s (Speed: %s/s)"
-msgstr "%s/%s (vitesse : %s/s)"
+msgstr "%s/%s (Velocidade: %s/s)"
 
 #: ../GDebi/GDebi.py:450
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
-"Veuillez insérer le disque dont le nom est « %s » dans le lecteur « %s »"
+msgstr "Por favor insira '%s' no drive '%s'"
 
 #: ../GDebi/DebPackage.py:84
 #, python-format
 msgid "Dependency not found: %s\n"
-msgstr "Dépendance introuvable : %s\n"
+msgstr "DependÃªncia nÃ£o encontrada: %s\n"
 
 #: ../GDebi/DebPackage.py:101
 #, python-format
 msgid "Conflicts with installed pkg: '%s'"
-msgstr "Conflit avec le paquet installé : « %s »"
+msgstr "Conflita com pacote instalado: '%s'"
 
 #: ../GDebi/DebPackage.py:185
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr "Architecture « %s » incorrecte"
+msgstr "Arquitetura errada '%s'"
 
 #: ../GDebi/DebPackage.py:191
 msgid "Newer version is already installed"
-msgstr "Une version plus récente est déjà installée"
+msgstr "VersÃ£o mais nova jÃ¡ esta instalada"
 
 #: ../GDebi/DebPackage.py:219
 #, python-format
 msgid "Can't install '%s'"
-msgstr "Impossible d'installer « %s »"
+msgstr "NÃ£o posso instalar '%s'"
 
 #: ../GDebi/DebPackage.py:229
 msgid "Installing the dependencies impossible (broken cache)"
-msgstr "Installation des dépendances impossible (le cache est corrompu)"
+msgstr "ImpossÃ­vel instalar as dependÃªncias (cache quebrado)"
 
 #. Translators: it's for missing entries in the deb package,
 #: ../GDebi/DebPackage.py:270
 #, python-format
 msgid "No entry for '%s' found"
-msgstr "Pas d'entrée trouvée pour « %s »"
-
-#~ msgid "Reinstall"
-#~ msgstr "Réinstaller"
+msgstr "Campo '%s' faltando"
