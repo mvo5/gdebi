@@ -1,4 +1,7 @@
 gdebi (0.1.5) unstable; urgency=low
+ 
+  * make the window closable again
+  * don't require a display in the cli version (wrong imports)
   
  -- 
 
