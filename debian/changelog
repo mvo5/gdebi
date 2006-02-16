@@ -1,9 +1,9 @@
-gdebi (0.1.5) unstable; urgency=low
+gdebi (0.1.4ubuntu2) dapper; urgency=low
  
   * make the window closable again
   * don't require a display in the cli version (wrong imports)
   
- -- 
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Feb 2006 20:34:29 +0100
 
 gdebi (0.1.4ubuntu1) dapper; urgency=low
 
