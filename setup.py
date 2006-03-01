@@ -37,6 +37,8 @@ setup(name='gdebi',
                    ["data/gdebi.desktop"]),
                   ('share/application-registry',
 		   ["data/gdebi.applications"]),
+                  ('share/mime/packages/',
+                   ["data/gdebi.xml"]),
                   ('share/pixmaps',
                    ["data/gdebi.png"])]+I18NFILES,
       )
