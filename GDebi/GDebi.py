@@ -11,6 +11,9 @@ import gobject
 import vte
 import urllib
 import fcntl
+import posix
+import time
+import thread
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
