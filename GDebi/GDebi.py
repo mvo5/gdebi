@@ -1,18 +1,20 @@
-import sys, time, thread, os, fcntl, string, posix
-import apt, apt_pkg
+import sys
+import os
+import string
+import apt
+import apt_pkg
 
-from apt.progress import InstallProgress
-
-import pygtk; pygtk.require("2.0")
+import pygtk
+pygtk.require("2.0")
 import gtk, gtk.glade
 import gobject
 import vte
-import gettext
 import urllib
 import fcntl
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
+from apt.progress import InstallProgress
 
 from gettext import gettext as _
 
@@ -175,28 +177,29 @@ class GDebi(SimpleGladeApp):
             title = msg = ""
             
             # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repository directly (when possible)
+            # providing a option to install from repository directly
+            # (when possible)
             if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,useCandidate=False):
-                    title = "Same version available in repository as well"
-                    msg = "The package is available in a repositorysitory as "\
-                          "well. It is recommended to install directly "\
-                          "from the repository."
+                if self._cache.downloadable(pkg,useCandidate=True):
+                    title = _("Same version available in repository as well")
+                    msg = _("The package is available in a repositorysitory "
+                            "as well. It is recommended to install directly "
+                            "from the repository.")
             elif res == DebPackage.VERSION_IS_NEWER:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Newer than in the repository"
-                    msg = "The package is newer than the version in the "\
-                          "cache. While this may be desired it is still "\
-                          "recommended to use the version in the repositoryistory "\
-                          "because it is "\
-                          "usually better tested."
+                    title = _("Newer than in the repository")
+                    msg = _("The package is newer than the version in the "
+                            "cache. While this may be desired it is still "
+                            "recommended to use the version in the "
+                            "repositoryistory because it is usually "
+                            "better tested.")
             elif res == DebPackage.VERSION_OUTDATED:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = "Older than in the repository"
-                    msg = "The package is older than the version in the "\
-                          "cache. It is strongly recommended to "\
-                          "use the version in the repositoryistory because it is "\
-                          "usually better tested."
+                    title = _("Older than in the repository")
+                    msg = _("The package is older than the version in the "
+                            "cache. It is strongly recommended to "
+                            "use the version in the repositoryistory "
+                            "because it is usually better tested.")
 
             if title != "" and msg != "":
                 msg = "<big><b>%s</b></big>\n\n%s" % (title,msg)
@@ -366,7 +369,7 @@ class GDebi(SimpleGladeApp):
                               "please see the "
                               "terminal window "
                               "for details.")
-            if res == False:
+            if not res:
                 self.show_alert(gtk.MESSAGE_ERROR, header, body, msg)
                 
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
@@ -417,7 +420,7 @@ class GDebi(SimpleGladeApp):
         self.window_main.set_sensitive(True)
 
     def on_window_main_delete_event(self, *args):
-        if self.window_main.get_property("sensitive") == True:
+        if self.window_main.get_property("sensitive"):
             gtk.main_quit()
             return False
         else: 
@@ -560,10 +563,11 @@ class GDebi(SimpleGladeApp):
             apt_pkg.PkgSystemUnLock()
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
+        def statusChange(self, pkg, percent, status):
+            self.progress.set_fraction(percent/100.0)
+            self.progress.set_text(status)
         def updateInterface(self):
             InstallProgress.updateInterface(self)
-            self.progress.set_fraction(float(self.percent)/100.0)
-            self.progress.set_text(self.status)
             while gtk.events_pending():
                 gtk.main_iteration()
         def fork(self):
@@ -620,7 +624,7 @@ class GDebi(SimpleGladeApp):
             self.progressbar.hide()
         
 if __name__ == "__main__":
-    app = GDebi("data/")
+    app = GDebi("data/",None)
 
     pkgs = ["3ddesktop"]
     for pkg in pkgs:

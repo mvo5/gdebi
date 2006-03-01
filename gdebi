@@ -9,7 +9,7 @@ from GDebi.GDebiCli import GDebiCli
 
 
 if __name__ == "__main__":
-    if not sys.argv[1:]:
+    if not sys.argv[1:] or sys.argv[1] == "-h" or sys.argv[1] == "--help":
         print "Usage: %s [package.deb]" % sys.argv[0]
         print
         print "If would like to test gdebi graphical user interface, you could\n" \

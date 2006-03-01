@@ -5,7 +5,7 @@ import os
 from gettext import gettext as _
 
 
-class DebPackage:
+class DebPackage(object):
     debug = 0
 
     def __init__(self, cache, file):
@@ -154,6 +154,7 @@ class DebPackage:
             and if so in what version, returns if the version of the deb
             is not available,older,same,newer
         """
+        self._dbg(3,"compareToVersionInCache")
         pkgname = self._sections["Package"]
         debver = self._sections["Version"]
         self._dbg(1,"debver: %s" % debver)
