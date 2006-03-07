@@ -256,7 +256,7 @@ class GDebi(SimpleGladeApp):
         # set filter
         filter = gtk.FileFilter()
         filter.add_pattern("*.deb")
-        filter.set_name(_("Deb packages"))
+        filter.set_name(_("Software packages"))
         #fs.add_filter(filter)
         fs.set_filter(filter)
         # run it!
@@ -278,10 +278,10 @@ class GDebi(SimpleGladeApp):
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:
             primary = _("Install unauthenticated software?")
-            secondary = _("Malicous code can damage your data "
-                          "and take over the control of your system.\n\n"
+            secondary = _("Malicous software can damage your data "
+                          "and take control of your system.\n\n"
                           "The packages below are not authenticated and "
-                          "could contain malicous code.")
+                          "could therefor be of malicous nature.")
             msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
             dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
                                        flags=gtk.DIALOG_MODAL,

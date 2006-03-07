@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-07 21:27+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2006-03-07 23:04+0100\n"
 "PO-Revision-Date: 2006-01-29 14:04+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -20,7 +20,8 @@ msgid "  "
 msgstr "  "
 
 #: ../data/gdebi.glade.h:2
-msgid "(c) 2005 Canonical"
+#, fuzzy
+msgid "(c) 2005-2006 Canonical"
 msgstr "(c) 2005 Canonical"
 
 #: ../data/gdebi.glade.h:3
@@ -61,8 +62,8 @@ msgid ""
 "<big><b>You need to grand adminstration rights to install software</b></"
 "big>\n"
 "\n"
-"It is a possible security risk to install packages files manually. Please, "
-"use the sofware from your trusted software distributor."
+"It is a possible security risk to install packages files manually. Install "
+"software from trustworthy software distributors, only."
 msgstr ""
 
 #: ../data/gdebi.glade.h:13
@@ -87,7 +88,8 @@ msgid "Included Files"
 msgstr ""
 
 #: ../data/gdebi.glade.h:18
-msgid "Install deb packages directly"
+#, fuzzy
+msgid "Install and view software packages"
 msgstr "Installera Debianpaket direkt"
 
 #: ../data/gdebi.glade.h:19
@@ -107,30 +109,40 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: ../data/gdebi.glade.h:23
+#, fuzzy
+msgid "_Details"
+msgstr "Detaljer"
+
+#: ../data/gdebi.glade.h:24
 msgid "_File"
 msgstr "_Arkiv"
 
-#: ../data/gdebi.glade.h:24
+#: ../data/gdebi.glade.h:25
 msgid "_Grant"
 msgstr ""
 
-#: ../data/gdebi.glade.h:25
+#: ../data/gdebi.glade.h:26
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../data/gdebi.glade.h:26 ../GDebi/GDebi.py:162 ../GDebi/GDebi.py:230
+#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:162 ../GDebi/GDebi.py:230
 #, fuzzy
 msgid "_Install Package"
 msgstr "Installera Debianpaket"
 
-#: ../data/gdebi.glade.h:27
+#: ../data/gdebi.glade.h:28
 msgid "gdebi"
 msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../data/gdebi.glade.h:29
+#: ../data/gdebi.glade.h:30
 msgid "translator-credits"
 msgstr "Daniel Nylander <po@danielnylander.se>"
+
+#: ../data/gdebi.xml.in.h:1
+#, fuzzy
+msgid "Software package"
+msgstr "Debianpaket"
 
 #: ../GDebi/GDebi.py:44
 msgid "Loading..."
@@ -218,7 +230,8 @@ msgid "To be installed: %s"
 msgstr "Att installeras: %s"
 
 #: ../GDebi/GDebi.py:259
-msgid "Deb packages"
+#, fuzzy
+msgid "Software packages"
 msgstr "Debianpaket"
 
 #. print "install"
@@ -233,10 +246,10 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:281
 msgid ""
-"Malicous code can damage your data and take over the control of your "
-"system.\n"
+"Malicous software can damage your data and take control of your system.\n"
 "\n"
-"The packages below are not authenticated and could contain malicous code."
+"The packages below are not authenticated and could therefor be of malicous "
+"nature."
 msgstr ""
 
 #: ../GDebi/GDebi.py:314
