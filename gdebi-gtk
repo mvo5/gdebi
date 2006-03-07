@@ -8,15 +8,23 @@ import os.path
 from optparse import OptionParser
 from GDebi.GDebi import GDebi
 
+from gettext import gettext as _
+import gettext
+
 
 if __name__ == "__main__":
     data="/usr/share/gdebi"
+
+    localesApp="gdebi"
+    localesDir="/usr/share/locale"
+    gettext.bindtextdomain(localesApp, localesDir)
+    gettext.textdomain(localesApp)
 
     parser = OptionParser()
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
-                      help="Run non-interactive (dangerous!)")
+                      help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
 
     if len(args) >= 1:

@@ -1,4 +1,6 @@
 [encoding: UTF-8]
+gdebi
+gdebi-gtk
 data/gdebi.glade
 data/gdebi.xml.in
 [type: gettext/rfc822deb] data/gdebi.desktop.in

@@ -24,6 +24,11 @@ from gettext import gettext as _
 class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, options, file=""):
+        localesApp="gdebi"
+        localesDir="/usr/share/locale"
+        gtk.glade.bindtextdomain(localesApp, localesDir)
+        gtk.glade.textdomain(localesApp)
+
         SimpleGladeApp.__init__(self, domain="gdebi",
                                 path=datadir+"/gdebi.glade")
 
