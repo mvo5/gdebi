@@ -1,10 +1,40 @@
-gdebi (0.1.5) unstable; urgency=low
+gdebi (0.1.4ubuntu5) dapper; urgency=low
 
-  * [Michael Vogt]  
+  * data/gdebi.xml: added shared-mime-info description file
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed,  1 Mar 2006 12:30:43 +0100
+
+gdebi (0.1.4ubuntu4) dapper; urgency=low
+
+  * gdebi: added --help
+  * GDebi/*.py: pychecker warnings fixed, cleanups
+  * GDebi/GDebi.py: 
+    - fix the detection of packages already in the repo
+    - fix some non-translatable strings
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed,  1 Mar 2006 10:30:03 +0100
+
+gdebi (0.1.4ubuntu3) dapper; urgency=low
+
+  * GDebi/GDebi.py: use the improved InstallProgress api
+  * debian/control: require the latest python-apt
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 28 Feb 2006 12:43:14 +0100
+
+gdebi (0.1.4ubuntu2) dapper; urgency=low
+ 
+  * make the window closable again
+  * don't require a display in the cli version (wrong imports)
+  
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Feb 2006 20:34:29 +0100
+
+gdebi (0.1.4ubuntu1) dapper; urgency=low
+
+  * [Michael Vogt]
     - detect conffile/error from dpkg and apt and expand the terminal then
   
- -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 25 Jan 2006 17:21:19 +0100
-  
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 24 Jan 2006 11:28:01 +0100
+    
 gdebi (0.1.4) unstable; urgency=low
 
   * [Sebastian Heinlein]

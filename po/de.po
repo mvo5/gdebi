@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To:\n"
 "POT-Creation-Date: 2005-12-05 18:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Michael Vogt <michael.vogt@ubuntu.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr "   "
+msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005 Canonical"
@@ -108,7 +108,6 @@ msgstr ""
 msgid "gdebi"
 msgstr ""
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:25
 msgid "translator-credits"
 msgstr "Michael Vogt"
@@ -121,7 +120,6 @@ msgstr ""
 msgid "All dependencies satisfied"
 msgstr ""
 
-#. FIXME: use ngettext here
 #: ../GDebi/GDebi.py:130
 #, python-format
 msgid "Need to <b>remove</b> %s packages from the archive\n"
@@ -193,7 +191,6 @@ msgid ""
 "please see the terminal window for details."
 msgstr ""
 
-#. install the package itself
 #: ../GDebi/GDebi.py:285
 msgid "Installing package ..."
 msgstr ""
@@ -228,7 +225,6 @@ msgstr ""
 msgid "%s/%s (Speed: %s/s)"
 msgstr ""
 
-#. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:450
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
@@ -249,7 +245,6 @@ msgstr ""
 msgid "Wrong architecture '%s'"
 msgstr ""
 
-#. the deb is older than the installed
 #: ../GDebi/DebPackage.py:191
 msgid "Newer version is already installed"
 msgstr ""
@@ -264,7 +259,6 @@ msgid "Installing the dependencies impossible (broken cache)"
 msgstr ""
 
 #. Translators: it's for missing entries in the deb package,
-#. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:270
 #, python-format
 msgid "No entry for '%s' found"
