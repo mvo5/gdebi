@@ -3,27 +3,34 @@
 import sys
 import apt
 import os.path
+import gettext
+from gettext import gettext as _
 
 
 from GDebi.GDebiCli import GDebiCli
 
 
 if __name__ == "__main__":
-    if not sys.argv[1:]:
-        print "Usage: %s [package.deb]" % sys.argv[0]
+    localesApp="gdebi"
+    localesDir="/usr/share/locale"
+    gettext.bindtextdomain(localesApp, localesDir)
+    gettext.textdomain(localesApp)
+
+    if not sys.argv[1:] or sys.argv[1] == "-h" or sys.argv[1] == "--help":
+        print _("Usage: %s [package.deb]" % sys.argv[0])
         print
-        print "If would like to test gdebi graphical user interface, you could\n" \
-              "right-click on a deb package using Nautilus file manager selecting,\n" \
-              "the option: Open with \"Deb Package Installer\""
+        print _("To use the graphical user interface, right-click\n" \
+                "on a '.deb' software package in the file browser\n" \
+                "and select: Open with 'GDebi Package Installer'.")
         sys.exit(1)
     if not os.path.exists(sys.argv[1]):
-        print "gdebi error, file not found: %s" % sys.argv[1]
+        print _("gdebi error, file not found: %s" % sys.argv[1])
         sys.exit(1)
 
     debi = GDebiCli() 
     if not debi.open(sys.argv[1]):
         sys.exit(1)
-    print "Do you want to install it [yN]:",
+    print _("Do you want to install the software package? [y/N]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()
     if res.startswith("y") or res.startswith("Y"):

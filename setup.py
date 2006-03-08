@@ -24,6 +24,11 @@ for filepath in glob.glob("po/mo/*/LC_MESSAGES/*.mo"):
     targetpath = os.path.dirname(os.path.join("share/locale",lang))
     I18NFILES.append((targetpath, [filepath]))
 
+os.system("intltool-merge -x po data/gdebi.xml.in"\
+                       " build/gdebi.xml")
+os.system("intltool-merge -d po data/gdebi.desktop.in"\
+                       " build/gdebi.desktop")
+
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     
@@ -34,9 +39,11 @@ setup(name='gdebi',
       data_files=[('share/gdebi/',
                    ["data/gdebi.glade"]),
                   ('share/applications',
-                   ["data/gdebi.desktop"]),
+                   ["build/gdebi.desktop"]),
                   ('share/application-registry',
 		   ["data/gdebi.applications"]),
+                  ('share/mime/packages/',
+                   ["build/gdebi.xml"]),
                   ('share/pixmaps',
                    ["data/gdebi.png"])]+I18NFILES,
       )
