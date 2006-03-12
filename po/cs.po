@@ -1,0 +1,347 @@
+# Czech translation for gdebi
+# Copyright (C) 2006
+# This file is distributed under the same license as the gdebi package.
+# Miroslav Kure <kurem@debian.cz>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gdebi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-12 18:26+0100\n"
+"PO-Revision-Date: 2006-03-12 08:43+0100\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gdebi.glade.h:1
+msgid "  "
+msgstr "  "
+
+#: ../data/gdebi.glade.h:2
+msgid "(c) 2005 Canonical"
+msgstr "(c) 2005 Canonical"
+
+#: ../data/gdebi.glade.h:3
+msgid "<b><big>   </big></b>"
+msgstr "<b><big>   </big></b>"
+
+#: ../data/gdebi.glade.h:4
+msgid "<b>Maintainer:</b>"
+msgstr "<b>Správce:</b>"
+
+#: ../data/gdebi.glade.h:5
+msgid "<b>Priority:</b>"
+msgstr "<b>Priorita:</b>"
+
+#: ../data/gdebi.glade.h:6
+msgid "<b>Required changes:</b>"
+msgstr "<b>Vyžadované změny:</b>"
+
+#: ../data/gdebi.glade.h:7
+msgid "<b>Section:</b>"
+msgstr "<b>Sekce:</b>"
+
+#: ../data/gdebi.glade.h:8
+msgid "<b>Size:</b>"
+msgstr "<b>Velikost:</b>"
+
+#: ../data/gdebi.glade.h:9
+msgid "<b>Version:</b>"
+msgstr "<b>Verze:</b>"
+
+#: ../data/gdebi.glade.h:10
+msgid "Description"
+msgstr "Popis"
+
+#: ../data/gdebi.glade.h:11
+msgid "Description:"
+msgstr "Popis:"
+
+#: ../data/gdebi.glade.h:12
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: ../data/gdebi.glade.h:13
+msgid "GPL, see /usr/share/common-licenses/GPL"
+msgstr "GPL, viz /usr/share/common-licenses/GPL"
+
+#: ../data/gdebi.glade.h:14
+msgid "Included Files"
+msgstr "Obsažené soubory"
+
+#: ../data/gdebi.glade.h:15
+msgid "Install deb packages directly"
+msgstr "Instaluje přímo deb balíky"
+
+#: ../data/gdebi.glade.h:16
+msgid "Package Installer"
+msgstr "Nástroj pro instalaci balíků"
+
+#: ../data/gdebi.glade.h:17
+msgid "Package:"
+msgstr "Balík:"
+
+#: ../data/gdebi.glade.h:18
+msgid "Status:"
+msgstr "Stav:"
+
+#: ../data/gdebi.glade.h:19
+msgid "Terminal"
+msgstr "Terminál"
+
+#: ../data/gdebi.glade.h:20
+msgid "_File"
+msgstr "_Soubor"
+
+#: ../data/gdebi.glade.h:21
+msgid "_Help"
+msgstr "Nápo_věda"
+
+#: ../data/gdebi.glade.h:22 ../GDebi/GDebi.py:153 ../GDebi/GDebi.py:223
+msgid "_Install Package"
+msgstr "_Instalovat balík"
+
+#: ../data/gdebi.glade.h:23
+msgid "gdebi"
+msgstr "gdebi"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../data/gdebi.glade.h:25
+msgid "translator-credits"
+msgstr "Miroslav Kuře"
+
+#: ../GDebi/GDebi.py:41
+msgid "Opening package file..."
+msgstr "Otevírám soubor s balíkem..."
+
+#: ../GDebi/GDebi.py:55 ../GDebi/GDebi.py:117
+msgid "Done."
+msgstr "Hotovo."
+
+#: ../GDebi/GDebi.py:109
+msgid "Failed to open the deb package"
+msgstr "Otevření deb balíku selhalo"
+
+#: ../GDebi/GDebi.py:110
+msgid ""
+"The package can't be opened, it may have improper permissions, is invalid or "
+"corrupted."
+msgstr ""
+"Balík nemohl být otevřen, což může znamenat, že má chybná práva, je chybný "
+"a/nebo porušený."
+
+#. set window title
+#: ../GDebi/GDebi.py:123
+#, python-format
+msgid "Package Installer - %s"
+msgstr "Nástroj pro instalaci balíků - %s"
+
+#: ../GDebi/GDebi.py:160
+msgid "Version is installed"
+msgstr "Verze je nainstalovaná"
+
+#: ../GDebi/GDebi.py:161
+msgid "_Reinstall Package"
+msgstr "_Přeinstalovat balík"
+
+#: ../GDebi/GDebi.py:210
+msgid "All dependencies satisfied"
+msgstr "Všechny závislosti splněny"
+
+#. FIXME: use ngettext here
+#: ../GDebi/GDebi.py:216
+#, python-format
+msgid "Need to <b>remove</b> %s packages from the archive\n"
+msgstr "Z archivu musím <b>odstranit</b> několik balíků (%s)\n"
+
+#: ../GDebi/GDebi.py:218
+#, python-format
+msgid "Need to install %s packages from the archive"
+msgstr "Potřebuji nainstalovat balíky z archivu (%s)"
+
+#: ../GDebi/GDebi.py:232
+#, python-format
+msgid "<b>To be removed: %s</b>"
+msgstr "<b>K odstranění: %s</b>"
+
+#: ../GDebi/GDebi.py:234
+#, python-format
+msgid "To be installed: %s"
+msgstr "K instalaci: %s"
+
+#: ../GDebi/GDebi.py:252
+msgid "Deb packages"
+msgstr "Deb balíky"
+
+#. print "install"
+#: ../GDebi/GDebi.py:270
+msgid "Installing package file..."
+msgstr "Instaluji balík..."
+
+#: ../GDebi/GDebi.py:273
+msgid "Unauthenticated packages"
+msgstr "Neověřené balíky"
+
+#: ../GDebi/GDebi.py:274
+msgid ""
+"You are about to install software that <b>can't be authenticated</b>! Doing "
+"this could allow a malicious individual to damage or take control of your "
+"system.\n"
+"\n"
+"The packages below are not authenticated. Are you sure you want to continue?"
+msgstr ""
+"Chystáte se instalovat software, který <b>není ověřený</b>! Pokračováním umožníte zlovolnému jedinci porušit systém nebo nad ním získat kontrolu.\n"
+"\n"
+"Níže uvedené balíky se nepodařilo ověřit. Jste si jisti, že chcete pokračovat?"
+
+#: ../GDebi/GDebi.py:305
+msgid "Run as administrator"
+msgstr "Spustit jako administrátor"
+
+#: ../GDebi/GDebi.py:306
+msgid ""
+"To install the selected package you need to run this program with "
+"administraor rights. \n"
+"\n"
+"<b>Note that installing deb packages directly can be a security risk! Only "
+"install from trusted sources.</b> \n"
+"\n"
+"Do you want to do this now?"
+msgstr ""
+"Pro instalaci zvoleného balíku musíte mít administrátorská oprávnění. \n"
+"\n"
+"<b>Pamatujte, že přímá instalace deb balíků může představovat bezpečnostní "
+"riziko! Instalujte pouze balíky z důvěryhodných zdrojů.</b> \n"
+"\n"
+"Chcete to nyní provést?"
+
+#: ../GDebi/GDebi.py:326
+msgid "Install deb package"
+msgstr "Instalovat deb balík"
+
+#: ../GDebi/GDebi.py:344
+msgid "Unable to get exclusive lock"
+msgstr "Nemohu získat výlučný zámek"
+
+#: ../GDebi/GDebi.py:345
+msgid ""
+"This usually means that another package management application (like apt-get "
+"or aptitude) already running. Please close that application first."
+msgstr ""
+"To obvykle znamená, že již běží jiný nástroj pro správu balíků (například "
+"apt-get nebo aptitude). Nejprve prosím danou aplikaci ukončete."
+
+#: ../GDebi/GDebi.py:375
+msgid "Failed to fetch dependencies"
+msgstr "Stažení závislostí selhalo"
+
+#: ../GDebi/GDebi.py:376
+msgid "Failed to fetch the following dependencies:"
+msgstr "Nepodařilo se stáhnout následující závislosti:"
+
+#: ../GDebi/GDebi.py:379
+msgid "Install problem"
+msgstr "Problém při instalaci"
+
+#: ../GDebi/GDebi.py:380
+msgid ""
+"Installing the dependencies was not sucessful. This a bug in the archive "
+"please see the terminal window for details."
+msgstr ""
+"Instalace závislostí se nepodařila. To může být způsobeno chybou v archivu. "
+"Podrobnosti naleznete v okně terminálu."
+
+#: ../GDebi/GDebi.py:410
+msgid "Failed to install package file"
+msgstr "Instalace balíku selhala"
+
+#. install the package itself
+#: ../GDebi/GDebi.py:414
+msgid "Installing package file"
+msgstr "Instaluji balík"
+
+#: ../GDebi/GDebi.py:424
+#, python-format
+msgid "Package \"%s\" is installed"
+msgstr "Balík \"%s\" je nainstalován"
+
+#: ../GDebi/GDebi.py:425
+msgid "Installation complete"
+msgstr "Instalace je kompletní"
+
+#: ../GDebi/GDebi.py:431
+msgid "Dependency problem"
+msgstr "Problém se závislostmi"
+
+#: ../GDebi/GDebi.py:432
+msgid ""
+"Internal error, please report this as a bug:\n"
+"A dependency problem was found after installation.\n"
+"You have to run: 'apt-get install -f' to correct the situation"
+msgstr ""
+"Vnitřní chyba, nahlaste to prosím vývojářům:\n"
+"Po instalaci byl nalezen problém v závislostech.\n"
+"Pro nápravu musíte spustit: 'apt-get install -f'"
+
+#: ../GDebi/GDebi.py:482
+#, python-format
+msgid "Installing \"%s\"..."
+msgstr "Instaluji \"%s\"..."
+
+#: ../GDebi/GDebi.py:520
+msgid "Installing dependencies..."
+msgstr "Instaluji závislosti..."
+
+#. print "start()"
+#: ../GDebi/GDebi.py:543
+msgid "Downloading additional package files..."
+msgstr "Stahuji dodatečné balíky..."
+
+#: ../GDebi/GDebi.py:549
+#, python-format
+msgid "%s/%s (Speed: %s/s)"
+msgstr "%s/%s (Rychlost: %s/s)"
+
+#. print "mediaChange %s %s" % (medium, drive)
+#: ../GDebi/GDebi.py:556
+#, python-format
+msgid "Please insert '%s' into the drive '%s'"
+msgstr "Vložte prosím '%s' do mechaniky '%s'"
+
+#: ../GDebi/DebPackage.py:85
+#, python-format
+msgid "Dependency not found: %s\n"
+msgstr "Závislost nebyla nalezena: %s\n"
+
+#: ../GDebi/DebPackage.py:102
+#, python-format
+msgid "Conflicts with installed pkg: '%s'"
+msgstr "Konflikty s nainstalovaným balíkem: '%s'"
+
+#: ../GDebi/DebPackage.py:186
+#, python-format
+msgid "Wrong architecture '%s'"
+msgstr "Chybná architektura '%s'"
+
+#. the deb is older than the installed
+#: ../GDebi/DebPackage.py:192
+msgid "Newer version is already installed"
+msgstr "Novější verze je již nainstalována"
+
+#: ../GDebi/DebPackage.py:220
+#, python-format
+msgid "Can't install '%s'"
+msgstr "Nemohu nainstalovat '%s'"
+
+#: ../GDebi/DebPackage.py:230
+msgid "Installing the dependencies impossible (broken cache)"
+msgstr "Instalace závislostí není možná (porušená cache)"
+
+#. Translators: it's for missing entries in the deb package,
+#. e.g. a missing "Maintainer" field
+#: ../GDebi/DebPackage.py:279
+#, python-format
+msgid "No entry for '%s' found"
+msgstr "Položka pro '%s' nebyla nalezena"
