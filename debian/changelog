@@ -1,3 +1,9 @@
+gdebi (0.1.4ubuntu6) dapper; urgency=low
+
+  * spelling and i18n fixes
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed,  8 Mar 2006 10:57:29 +0000
+
 gdebi (0.1.4ubuntu5) dapper; urgency=low
 
   * data/gdebi.xml: added shared-mime-info description file
