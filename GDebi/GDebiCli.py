@@ -16,19 +16,20 @@ class GDebiCli(object):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            print _("Failed to open the deb package"),
-            print _("The package can't be opened, it may have "
-                    "improper permissions, is invalid or corrupted.")
+            print _("Failed to open the software package"),
+            print _("The package might be corrupted or you are not "
+                    "allowed to open the file. Check the permissions "
+                    "of the file.")
             sys.exit(1)
         print self._deb.pkgName
         try:
             print self._deb["Description"]
         except KeyError:
-            print _("No description found in the package")
+            print _("No description is available")
 
         # check the deps
         if not self._deb.checkDeb():
-            print _("This package can't be installed")
+            print _("This package is uninstallable")
             print self._deb._failureString
             return False
 
@@ -39,12 +40,12 @@ class GDebiCli(object):
             for pkgname in unauthenticated:
                 print pkgname + " ",
         if len(remove) > 0:
-            print _("Need to REMOVE the following pkgs: ")
+            print _("Requires the REMOVAL of the following packages: ")
             for pkgname in remove:
                 print pkgname + " ",
         print
         if len(install) > 0:
-            print _("Need to install the following pkgs: ") 
+            print _("Requires the installation of the following packages: ") 
             for pkgname in install:
                 print pkgname + " ",
         print
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     app = GDebiCli()
     if not app.open(sys.argv[1]):
         sys.exit(1)
-    print _("Do you want to install it [yN]:"),
+    print _("Do you want to install the software package? [y/N]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()
     if res.startswith("y") or res.startswith("Y"):
