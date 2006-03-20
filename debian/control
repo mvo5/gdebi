@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Gustavo Franco <stratus@debian.org>, Michael Vogt <mvo@debian.org>
-Build-Depends-Indep: debhelper (>= 5.0.0), python-dev
+Build-Depends-Indep: debhelper (>= 5.0.0), python-dev, intltool
 Standards-Version: 3.6.2.1
 
 Package: gdebi
