@@ -276,6 +276,7 @@ class GDebi(SimpleGladeApp):
             self.details_list.append([_("<b>To be removed: %s</b>") % rm])
         for inst in install:
             self.details_list.append([_("To be installed: %s") % inst])
+        self.dialog_details.set_transient_for(self.window_main)
         self.dialog_details.run()
         self.dialog_details.hide()
 
