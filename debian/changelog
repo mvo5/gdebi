@@ -1,3 +1,9 @@
+gdebi (0.1.4ubuntu9) dapper; urgency=low
+
+  * fix some missing i18n strings
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 27 Mar 2006 21:05:27 +0200
+
 gdebi (0.1.4ubuntu8) dapper; urgency=low
 
   * more polish (strings, ui), thanks to Sebastian Heinlein
