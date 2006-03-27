@@ -7,6 +7,7 @@ import apt_pkg
 import pygtk
 pygtk.require("2.0")
 import gtk, gtk.glade
+import pango
 import gobject
 import vte
 import urllib
@@ -14,6 +15,7 @@ import fcntl
 import posix
 import time
 import thread
+import re
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -130,8 +132,8 @@ class GDebi(SimpleGladeApp):
         self.window_main.set_sensitive(True)
 
         # set window title
-        self.window_main.set_title(_("Package Installer - %s" % 
-                                   self._deb.pkgName))
+        self.window_main.set_title(_("Package Installer - %s") % 
+                                   self._deb.pkgName)
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
@@ -143,7 +145,37 @@ class GDebi(SimpleGladeApp):
         # set description
         buf = self.textview_description.get_buffer()
         try:
-            buf.set_text(self._deb["Description"])
+            long_desc = ""
+            raw_desc = string.split(self._deb["Description"], "\n")
+            # append a newline to the summary in the first line
+            summary = raw_desc[0]
+            raw_desc[0] = ""
+            long_desc = "%s\n" % summary
+            for line in raw_desc:
+                tmp = string.strip(line)
+                if tmp == ".":
+                    long_desc += "\n"
+                else:
+                    long_desc += tmp + "\n"
+            print long_desc
+            # do some regular expression magic on the description
+            # Add a newline before each bullet
+            p = re.compile(r'^(\s|\t)*(\*|0|-)',re.MULTILINE)
+            long_desc = p.sub('\n*', long_desc)
+            # replace all newlines by spaces
+            p = re.compile(r'\n', re.MULTILINE)
+            long_desc = p.sub(" ", long_desc)
+            # replace all multiple spaces by
+            # newlines
+            p = re.compile(r'\s\s+', re.MULTILINE)
+            long_desc = p.sub("\n", long_desc)
+            # write the descr string to the buffer
+            buf.set_text(long_desc)
+            # tag the first line with a bold font
+            tag = buf.create_tag(None, weight=pango.WEIGHT_BOLD)
+            iter = buf.get_iter_at_offset(0)
+            (start, end) = iter.forward_search("\n", gtk.TEXT_SEARCH_TEXT_ONLY,None)
+            buf.apply_tag(tag , iter, end)
         except KeyError:
             buf.set_text("No description is available")
 
@@ -225,9 +257,9 @@ class GDebi(SimpleGladeApp):
             self.button_details.show()
         if len(remove) > 0:
             # FIXME: use ngettext here
-            deps += _("Requires the <b>removal</b> of %s packages\n" % len(remove))
+            deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
         if len(install) > 0:
-            deps += _("Requires the installation of %s packages" % len(install))
+            deps += _("Requires the installation of %s packages") % len(install)
         self.label_status.set_markup(deps)
         img = gtk.Image()
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
@@ -241,9 +273,10 @@ class GDebi(SimpleGladeApp):
         (install, remove, unauthenticated) = self._deb.requiredChanges
         self.details_list.clear()
         for rm in remove:
-            self.details_list.append([_("<b>To be removed: %s</b>" % rm)])
+            self.details_list.append([_("<b>To be removed: %s</b>") % rm])
         for inst in install:
-            self.details_list.append([_("To be installed: %s" % inst)])
+            self.details_list.append([_("To be installed: %s") % inst])
+        self.dialog_details.set_transient_for(self.window_main)
         self.dialog_details.run()
         self.dialog_details.hide()
 
@@ -256,7 +289,7 @@ class GDebi(SimpleGladeApp):
                                             gtk.STOCK_OPEN, 
                                             gtk.RESPONSE_OK),
                                    action=gtk.FILE_CHOOSER_ACTION_OPEN,
-				   title="Open Software Package")
+                                   title=_("Open Software Package"))
         fs.set_default_response(gtk.RESPONSE_OK)
         # set filter
         filter = gtk.FileFilter()
@@ -316,7 +349,7 @@ class GDebi(SimpleGladeApp):
             self.dialog_admin.hide()
             if res == gtk.RESPONSE_OK:
                 msg="<b><big>%s</big></b>" % \
-                    (_("Enter your password to install '%s'" % self._deb.pkgName)) 
+                    (_("Enter your password to install '%s'") % self._deb.pkgName)
                 os.execl("/usr/bin/gksu", "gksu", "-m", msg,
                          "--", "gdebi-gtk", "--non-interactive", 
                          self._deb.file)
