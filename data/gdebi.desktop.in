@@ -8,6 +8,6 @@ Terminal=false
 Type=Application
 Encoding=UTF-8
 Categories=Application;System;
-MimeType=application/x-deb;
+MimeType=application/x-deb;application/x-debian-package;
 NoDisplay=true
 X-Ubuntu-Gettext-Domain=gdebi
