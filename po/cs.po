@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-12 18:26+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2006-04-11 17:18-0300\n"
 "PO-Revision-Date: 2006-03-12 08:43+0100\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -15,12 +15,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../gdebi:20
+#, c-format
+msgid "Usage: %s [package.deb]"
+msgstr ""
+
+#: ../gdebi:22
+msgid ""
+"To use the graphical user interface, right-click\n"
+"on a '.deb' software package in the file browser\n"
+"and select: Open with 'GDebi Package Installer'."
+msgstr ""
+
+#: ../gdebi:27
+#, fuzzy, c-format
+msgid "gdebi error, file not found: %s"
+msgstr "Závislost nebyla nalezena: %s\n"
+
+#: ../gdebi:33 ../GDebi/GDebiCli.py:70
+msgid "Do you want to install the software package? [y/N]:"
+msgstr ""
+
+#: ../gdebi-gtk:27
+msgid "Run non-interactive (dangerous!)"
+msgstr ""
+
 #: ../data/gdebi.glade.h:1
 msgid "  "
 msgstr "  "
 
 #: ../data/gdebi.glade.h:2
-msgid "(c) 2005 Canonical"
+#, fuzzy
+msgid "(c) 2005-2006 Canonical"
 msgstr "(c) 2005 Canonical"
 
 #: ../data/gdebi.glade.h:3
@@ -36,222 +62,256 @@ msgid "<b>Priority:</b>"
 msgstr "<b>Priorita:</b>"
 
 #: ../data/gdebi.glade.h:6
-msgid "<b>Required changes:</b>"
-msgstr "<b>Vyžadované změny:</b>"
-
-#: ../data/gdebi.glade.h:7
 msgid "<b>Section:</b>"
 msgstr "<b>Sekce:</b>"
 
-#: ../data/gdebi.glade.h:8
+#: ../data/gdebi.glade.h:7
 msgid "<b>Size:</b>"
 msgstr "<b>Velikost:</b>"
+
+#: ../data/gdebi.glade.h:8
+msgid "<b>To install the following changes are required:</b>"
+msgstr ""
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version:</b>"
 msgstr "<b>Verze:</b>"
 
 #: ../data/gdebi.glade.h:10
+msgid ""
+"<big><b>You need to grant adminstrative rights to install software</b></"
+"big>\n"
+"\n"
+"It is a possible security risk to install packages files manually. Install "
+"software from trustworthy software distributors only."
+msgstr ""
+
+#: ../data/gdebi.glade.h:13
 msgid "Description"
 msgstr "Popis"
 
-#: ../data/gdebi.glade.h:11
+#: ../data/gdebi.glade.h:14
 msgid "Description:"
 msgstr "Popis:"
 
-#: ../data/gdebi.glade.h:12
+#: ../data/gdebi.glade.h:15
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../data/gdebi.glade.h:13
+#: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, viz /usr/share/common-licenses/GPL"
 
-#: ../data/gdebi.glade.h:14
+#: ../data/gdebi.glade.h:17
 msgid "Included Files"
 msgstr "Obsažené soubory"
 
-#: ../data/gdebi.glade.h:15
-msgid "Install deb packages directly"
-msgstr "Instaluje přímo deb balíky"
+#: ../data/gdebi.glade.h:18
+#, fuzzy
+msgid "Install and view software packages"
+msgstr "Instalovat deb balík"
 
-#: ../data/gdebi.glade.h:16
+#: ../data/gdebi.glade.h:19
 msgid "Package Installer"
 msgstr "Nástroj pro instalaci balíků"
 
-#: ../data/gdebi.glade.h:17
+#: ../data/gdebi.glade.h:20
 msgid "Package:"
 msgstr "Balík:"
 
-#: ../data/gdebi.glade.h:18
+#: ../data/gdebi.glade.h:21
 msgid "Status:"
 msgstr "Stav:"
 
-#: ../data/gdebi.glade.h:19
+#: ../data/gdebi.glade.h:22
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../data/gdebi.glade.h:20
+#: ../data/gdebi.glade.h:23
+#, fuzzy
+msgid "_Details"
+msgstr "Podrobnosti"
+
+#: ../data/gdebi.glade.h:24
 msgid "_File"
 msgstr "_Soubor"
 
-#: ../data/gdebi.glade.h:21
+#: ../data/gdebi.glade.h:25
+msgid "_Grant"
+msgstr ""
+
+#: ../data/gdebi.glade.h:26
 msgid "_Help"
 msgstr "Nápo_věda"
 
-#: ../data/gdebi.glade.h:22 ../GDebi/GDebi.py:153 ../GDebi/GDebi.py:223
+#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:199 ../GDebi/GDebi.py:267
 msgid "_Install Package"
 msgstr "_Instalovat balík"
 
-#: ../data/gdebi.glade.h:23
+#: ../data/gdebi.glade.h:28
 msgid "gdebi"
 msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../data/gdebi.glade.h:25
+#: ../data/gdebi.glade.h:30
 msgid "translator-credits"
 msgstr "Miroslav Kuře"
 
-#: ../GDebi/GDebi.py:41
-msgid "Opening package file..."
-msgstr "Otevírám soubor s balíkem..."
+#: ../data/gdebi.xml.in.h:1
+#, fuzzy
+msgid "Software package"
+msgstr "Deb balíky"
 
-#: ../GDebi/GDebi.py:55 ../GDebi/GDebi.py:117
-msgid "Done."
-msgstr "Hotovo."
-
-#: ../GDebi/GDebi.py:109
-msgid "Failed to open the deb package"
-msgstr "Otevření deb balíku selhalo"
-
-#: ../GDebi/GDebi.py:110
-msgid ""
-"The package can't be opened, it may have improper permissions, is invalid or "
-"corrupted."
+#: ../GDebi/GDebi.py:51
+msgid "Loading..."
 msgstr ""
-"Balík nemohl být otevřen, což může znamenat, že má chybná práva, je chybný "
-"a/nebo porušený."
+
+#: ../GDebi/GDebi.py:121
+#, python-format
+msgid "Could not open '%s'"
+msgstr ""
+
+#: ../GDebi/GDebi.py:122 ../GDebi/GDebiCli.py:20
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file."
+msgstr ""
 
 #. set window title
-#: ../GDebi/GDebi.py:123
+#: ../GDebi/GDebi.py:135
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Nástroj pro instalaci balíků - %s"
 
-#: ../GDebi/GDebi.py:160
-msgid "Version is installed"
-msgstr "Verze je nainstalovaná"
+#: ../GDebi/GDebi.py:206
+#, fuzzy
+msgid "Same version is already installed"
+msgstr "Novější verze je již nainstalována"
 
-#: ../GDebi/GDebi.py:161
+#: ../GDebi/GDebi.py:207
 msgid "_Reinstall Package"
 msgstr "_Přeinstalovat balík"
 
-#: ../GDebi/GDebi.py:210
-msgid "All dependencies satisfied"
+#: ../GDebi/GDebi.py:224
+msgid "Same version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:225
+msgid "You are recommended to install the software from the channel instead."
+msgstr ""
+
+#: ../GDebi/GDebi.py:229
+msgid "An older version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:230
+msgid ""
+"Generally you are recommended to install the version from the software "
+"channel, since it is usually better supported."
+msgstr ""
+
+#: ../GDebi/GDebi.py:235
+msgid "A later version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:237
+msgid ""
+"You are strongly advised to install the version from the software channel, "
+"since it is usually better supported."
+msgstr ""
+
+#: ../GDebi/GDebi.py:254
+#, fuzzy
+msgid "All dependencies are satisfied"
 msgstr "Všechny závislosti splněny"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:216
-#, python-format
-msgid "Need to <b>remove</b> %s packages from the archive\n"
+#: ../GDebi/GDebi.py:260
+#, fuzzy, python-format
+msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Z archivu musím <b>odstranit</b> několik balíků (%s)\n"
 
-#: ../GDebi/GDebi.py:218
+#: ../GDebi/GDebi.py:262
 #, python-format
-msgid "Need to install %s packages from the archive"
-msgstr "Potřebuji nainstalovat balíky z archivu (%s)"
+msgid "Requires the installation of %s packages"
+msgstr ""
 
-#: ../GDebi/GDebi.py:232
+#: ../GDebi/GDebi.py:276
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>K odstranění: %s</b>"
 
-#: ../GDebi/GDebi.py:234
+#: ../GDebi/GDebi.py:278
 #, python-format
 msgid "To be installed: %s"
 msgstr "K instalaci: %s"
 
-#: ../GDebi/GDebi.py:252
-msgid "Deb packages"
+#: ../GDebi/GDebi.py:292
+#, fuzzy
+msgid "Open Software Package"
+msgstr "_Přeinstalovat balík"
+
+#: ../GDebi/GDebi.py:297
+#, fuzzy
+msgid "Software packages"
 msgstr "Deb balíky"
 
 #. print "install"
-#: ../GDebi/GDebi.py:270
+#: ../GDebi/GDebi.py:315
 msgid "Installing package file..."
 msgstr "Instaluji balík..."
 
-#: ../GDebi/GDebi.py:273
-msgid "Unauthenticated packages"
-msgstr "Neověřené balíky"
-
-#: ../GDebi/GDebi.py:274
-msgid ""
-"You are about to install software that <b>can't be authenticated</b>! Doing "
-"this could allow a malicious individual to damage or take control of your "
-"system.\n"
-"\n"
-"The packages below are not authenticated. Are you sure you want to continue?"
+#: ../GDebi/GDebi.py:318
+msgid "Install unauthenticated software?"
 msgstr ""
-"Chystáte se instalovat software, který <b>není ověřený</b>! Pokračováním umožníte zlovolnému jedinci porušit systém nebo nad ním získat kontrolu.\n"
-"\n"
-"Níže uvedené balíky se nepodařilo ověřit. Jste si jisti, že chcete pokračovat?"
 
-#: ../GDebi/GDebi.py:305
-msgid "Run as administrator"
-msgstr "Spustit jako administrátor"
-
-#: ../GDebi/GDebi.py:306
+#: ../GDebi/GDebi.py:319
+#, fuzzy
 msgid ""
-"To install the selected package you need to run this program with "
-"administraor rights. \n"
+"Malicous software can damage your data and take control of your system.\n"
 "\n"
-"<b>Note that installing deb packages directly can be a security risk! Only "
-"install from trusted sources.</b> \n"
-"\n"
-"Do you want to do this now?"
+"The packages below are not authenticated and could therefor be of malicous "
+"nature."
 msgstr ""
-"Pro instalaci zvoleného balíku musíte mít administrátorská oprávnění. \n"
+"Chystáte se instalovat software, který <b>není ověřený</b>! Pokračováním "
+"umožníte zlovolnému jedinci porušit systém nebo nad ním získat kontrolu.\n"
 "\n"
-"<b>Pamatujte, že přímá instalace deb balíků může představovat bezpečnostní "
-"riziko! Instalujte pouze balíky z důvěryhodných zdrojů.</b> \n"
-"\n"
-"Chcete to nyní provést?"
+"Níže uvedené balíky se nepodařilo ověřit. Jste si jisti, že chcete "
+"pokračovat?"
 
-#: ../GDebi/GDebi.py:326
-msgid "Install deb package"
-msgstr "Instalovat deb balík"
+#: ../GDebi/GDebi.py:352
+#, python-format
+msgid "Enter your password to install '%s'"
+msgstr ""
 
-#: ../GDebi/GDebi.py:344
-msgid "Unable to get exclusive lock"
-msgstr "Nemohu získat výlučný zámek"
+#: ../GDebi/GDebi.py:371
+msgid "Only one software management tool is allowed to run at the same time"
+msgstr ""
 
-#: ../GDebi/GDebi.py:345
+#: ../GDebi/GDebi.py:373
 msgid ""
-"This usually means that another package management application (like apt-get "
-"or aptitude) already running. Please close that application first."
+"Please close the other application e.g. 'Update Manager', 'aptitude' or "
+"'Synaptic' first."
 msgstr ""
-"To obvykle znamená, že již běží jiný nástroj pro správu balíků (například "
-"apt-get nebo aptitude). Nejprve prosím danou aplikaci ukončete."
 
-#: ../GDebi/GDebi.py:375
-msgid "Failed to fetch dependencies"
-msgstr "Stažení závislostí selhalo"
+#: ../GDebi/GDebi.py:395
+msgid "Could not download all required files"
+msgstr ""
 
-#: ../GDebi/GDebi.py:376
-msgid "Failed to fetch the following dependencies:"
-msgstr "Nepodařilo se stáhnout následující závislosti:"
+#: ../GDebi/GDebi.py:396
+msgid "Please check your internet connection or installation medium."
+msgstr ""
 
-#: ../GDebi/GDebi.py:379
-msgid "Install problem"
-msgstr "Problém při instalaci"
+#: ../GDebi/GDebi.py:400
+#, fuzzy
+msgid "Could not install all dependencies"
+msgstr "Instaluji závislosti..."
 
-#: ../GDebi/GDebi.py:380
+#: ../GDebi/GDebi.py:401
 msgid ""
-"Installing the dependencies was not sucessful. This a bug in the archive "
-"please see the terminal window for details."
+"Usually this is related to an error of the software distributor. See the "
+"terminal window for more details."
 msgstr ""
-"Instalace závislostí se nepodařila. To může být způsobeno chybou v archivu. "
-"Podrobnosti naleznete v okně terminálu."
 
 #: ../GDebi/GDebi.py:410
 msgid "Failed to install package file"
@@ -262,86 +322,204 @@ msgstr "Instalace balíku selhala"
 msgid "Installing package file"
 msgstr "Instaluji balík"
 
-#: ../GDebi/GDebi.py:424
-#, python-format
-msgid "Package \"%s\" is installed"
+#: ../GDebi/GDebi.py:426
+#, fuzzy, python-format
+msgid "Package '%s' was installed"
 msgstr "Balík \"%s\" je nainstalován"
 
-#: ../GDebi/GDebi.py:425
+#: ../GDebi/GDebi.py:428
+#, fuzzy, python-format
+msgid "Failed to install package '%s'"
+msgstr "Instalace balíku selhala"
+
+#: ../GDebi/GDebi.py:430
 msgid "Installation complete"
 msgstr "Instalace je kompletní"
 
-#: ../GDebi/GDebi.py:431
-msgid "Dependency problem"
-msgstr "Problém se závislostmi"
+#: ../GDebi/GDebi.py:438
+#, fuzzy
+msgid "Failed to completely install all dependencies"
+msgstr "Stažení závislostí selhalo"
 
-#: ../GDebi/GDebi.py:432
-msgid ""
-"Internal error, please report this as a bug:\n"
-"A dependency problem was found after installation.\n"
-"You have to run: 'apt-get install -f' to correct the situation"
+#: ../GDebi/GDebi.py:439
+msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
-"Vnitřní chyba, nahlaste to prosím vývojářům:\n"
-"Po instalaci byl nalezen problém v závislostech.\n"
-"Pro nápravu musíte spustit: 'apt-get install -f'"
 
-#: ../GDebi/GDebi.py:482
-#, python-format
-msgid "Installing \"%s\"..."
+#. ui
+#: ../GDebi/GDebi.py:516
+#, fuzzy, python-format
+msgid "Installing '%s'..."
 msgstr "Instaluji \"%s\"..."
 
-#: ../GDebi/GDebi.py:520
+#: ../GDebi/GDebi.py:594
 msgid "Installing dependencies..."
 msgstr "Instaluji závislosti..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:543
+#: ../GDebi/GDebi.py:618
 msgid "Downloading additional package files..."
 msgstr "Stahuji dodatečné balíky..."
 
-#: ../GDebi/GDebi.py:549
+#: ../GDebi/GDebi.py:624
 #, python-format
-msgid "%s/%s (Speed: %s/s)"
-msgstr "%s/%s (Rychlost: %s/s)"
+msgid "File %s of %s at %s/s"
+msgstr ""
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:556
+#: ../GDebi/GDebi.py:631
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Vložte prosím '%s' do mechaniky '%s'"
 
 #: ../GDebi/DebPackage.py:85
-#, python-format
-msgid "Dependency not found: %s\n"
+#, fuzzy, python-format
+msgid "Dependency is not satisfiable: %s\n"
 msgstr "Závislost nebyla nalezena: %s\n"
 
 #: ../GDebi/DebPackage.py:102
-#, python-format
-msgid "Conflicts with installed pkg: '%s'"
+#, fuzzy, python-format
+msgid "Conflicts with the installed package '%s'"
 msgstr "Konflikty s nainstalovaným balíkem: '%s'"
 
-#: ../GDebi/DebPackage.py:186
+#: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "Chybná architektura '%s'"
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:192
-msgid "Newer version is already installed"
+#: ../GDebi/DebPackage.py:193
+#, fuzzy
+msgid "A later version is already installed"
 msgstr "Novější verze je již nainstalována"
 
-#: ../GDebi/DebPackage.py:220
-#, python-format
-msgid "Can't install '%s'"
+#: ../GDebi/DebPackage.py:221
+#, fuzzy, python-format
+msgid "Cannot install '%s'"
 msgstr "Nemohu nainstalovat '%s'"
 
-#: ../GDebi/DebPackage.py:230
-msgid "Installing the dependencies impossible (broken cache)"
+#: ../GDebi/DebPackage.py:231
+#, fuzzy
+msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr "Instalace závislostí není možná (porušená cache)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:279
+#: ../GDebi/DebPackage.py:280
 #, python-format
-msgid "No entry for '%s' found"
-msgstr "Položka pro '%s' nebyla nalezena"
+msgid "%s is not available"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:19
+#, fuzzy
+msgid "Failed to open the software package"
+msgstr "Otevření deb balíku selhalo"
+
+#: ../GDebi/GDebiCli.py:28
+msgid "No description is available"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:32
+#, fuzzy
+msgid "This package is uninstallable"
+msgstr "Balík \"%s\" je nainstalován"
+
+#: ../GDebi/GDebiCli.py:39
+msgid "The following packages are UNAUTHENTICATED: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:43
+msgid "Requires the REMOVAL of the following packages: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:48
+msgid "Requires the installation of the following packages: "
+msgstr ""
+
+#~ msgid "<b>Required changes:</b>"
+#~ msgstr "<b>Vyžadované změny:</b>"
+
+#~ msgid "Install deb packages directly"
+#~ msgstr "Instaluje přímo deb balíky"
+
+#~ msgid "Opening package file..."
+#~ msgstr "Otevírám soubor s balíkem..."
+
+#~ msgid "Done."
+#~ msgstr "Hotovo."
+
+#~ msgid ""
+#~ "The package can't be opened, it may have improper permissions, is invalid "
+#~ "or corrupted."
+#~ msgstr ""
+#~ "Balík nemohl být otevřen, což může znamenat, že má chybná práva, je "
+#~ "chybný a/nebo porušený."
+
+#~ msgid "Version is installed"
+#~ msgstr "Verze je nainstalovaná"
+
+#~ msgid "Need to install %s packages from the archive"
+#~ msgstr "Potřebuji nainstalovat balíky z archivu (%s)"
+
+#~ msgid "Unauthenticated packages"
+#~ msgstr "Neověřené balíky"
+
+#~ msgid "Run as administrator"
+#~ msgstr "Spustit jako administrátor"
+
+#~ msgid ""
+#~ "To install the selected package you need to run this program with "
+#~ "administraor rights. \n"
+#~ "\n"
+#~ "<b>Note that installing deb packages directly can be a security risk! "
+#~ "Only install from trusted sources.</b> \n"
+#~ "\n"
+#~ "Do you want to do this now?"
+#~ msgstr ""
+#~ "Pro instalaci zvoleného balíku musíte mít administrátorská oprávnění. \n"
+#~ "\n"
+#~ "<b>Pamatujte, že přímá instalace deb balíků může představovat "
+#~ "bezpečnostní riziko! Instalujte pouze balíky z důvěryhodných zdrojů.</"
+#~ "b> \n"
+#~ "\n"
+#~ "Chcete to nyní provést?"
+
+#~ msgid "Unable to get exclusive lock"
+#~ msgstr "Nemohu získat výlučný zámek"
+
+#~ msgid ""
+#~ "This usually means that another package management application (like apt-"
+#~ "get or aptitude) already running. Please close that application first."
+#~ msgstr ""
+#~ "To obvykle znamená, že již běží jiný nástroj pro správu balíků (například "
+#~ "apt-get nebo aptitude). Nejprve prosím danou aplikaci ukončete."
+
+#~ msgid "Failed to fetch the following dependencies:"
+#~ msgstr "Nepodařilo se stáhnout následující závislosti:"
+
+#~ msgid "Install problem"
+#~ msgstr "Problém při instalaci"
+
+#~ msgid ""
+#~ "Installing the dependencies was not sucessful. This a bug in the archive "
+#~ "please see the terminal window for details."
+#~ msgstr ""
+#~ "Instalace závislostí se nepodařila. To může být způsobeno chybou v "
+#~ "archivu. Podrobnosti naleznete v okně terminálu."
+
+#~ msgid "Dependency problem"
+#~ msgstr "Problém se závislostmi"
+
+#~ msgid ""
+#~ "Internal error, please report this as a bug:\n"
+#~ "A dependency problem was found after installation.\n"
+#~ "You have to run: 'apt-get install -f' to correct the situation"
+#~ msgstr ""
+#~ "Vnitřní chyba, nahlaste to prosím vývojářům:\n"
+#~ "Po instalaci byl nalezen problém v závislostech.\n"
+#~ "Pro nápravu musíte spustit: 'apt-get install -f'"
+
+#~ msgid "%s/%s (Speed: %s/s)"
+#~ msgstr "%s/%s (Rychlost: %s/s)"
+
+#~ msgid "No entry for '%s' found"
+#~ msgstr "Položka pro '%s' nebyla nalezena"
