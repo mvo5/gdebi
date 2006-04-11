@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To:\n"
-"POT-Creation-Date: 2005-12-05 18:29+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2006-03-07 23:56+0100\n"
 "PO-Revision-Date: 2006-01-11 11:42+0100\n"
 "Last-Translator: Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -17,270 +17,508 @@ msgstr ""
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 
+#: ../gdebi:20
+#, c-format
+msgid "Usage: %s [package.deb]"
+msgstr ""
+
+#: ../gdebi:22
+msgid ""
+"To use the graphical user interface, right-click\n"
+"on a '.deb' software package in the file browser\n"
+"and select: Open with 'GDebi Package Installer'."
+msgstr ""
+
+#: ../gdebi:27
+#, c-format
+msgid "gdebi error, file not found: %s"
+msgstr ""
+
+#: ../gdebi:33 ../GDebi/GDebiCli.py:70
+msgid "Do you want to install the software package? [y/N]:"
+msgstr ""
+
+#: ../gdebi-gtk:27
+msgid "Run non-interactive (dangerous!)"
+msgstr ""
+
 #: ../data/gdebi.glade.h:1
 msgid "  "
 msgstr "  "
 
 #: ../data/gdebi.glade.h:2
-msgid "(c) 2005 Canonical"
+#, fuzzy
+msgid "(c) 2005-2006 Canonical"
 msgstr "(c) 2005 Cannonical"
 
 #: ../data/gdebi.glade.h:3
-msgid "<b>Maintainer</b>"
-msgstr "<b>Responsable</b>"
+msgid "<b><big>   </big></b>"
+msgstr ""
 
 #: ../data/gdebi.glade.h:4
-msgid "<b>Package information:</b>"
-msgstr "<b>Informations concernant le paquet :</b>"
+#, fuzzy
+msgid "<b>Maintainer:</b>"
+msgstr "<b>Responsable</b>"
 
 #: ../data/gdebi.glade.h:5
-msgid "<b>Priority</b>"
+#, fuzzy
+msgid "<b>Priority:</b>"
 msgstr "<p>Priorité</b>"
 
 #: ../data/gdebi.glade.h:6
-msgid "<b>Required changes:</b>"
-msgstr "<b>Modifications nécessaires :</b>"
-
-#: ../data/gdebi.glade.h:7
-msgid "<b>Section</b>"
+#, fuzzy
+msgid "<b>Section:</b>"
 msgstr "<b>Section</b>"
 
-#: ../data/gdebi.glade.h:8
-msgid "<b>Size</b>"
+#: ../data/gdebi.glade.h:7
+#, fuzzy
+msgid "<b>Size:</b>"
 msgstr "<b>Taille</b>"
 
+#: ../data/gdebi.glade.h:8
+msgid "<b>To install the following changes are required:</b>"
+msgstr ""
+
 #: ../data/gdebi.glade.h:9
-msgid "<b>Version</b>"
+#, fuzzy
+msgid "<b>Version:</b>"
 msgstr "<b>Version</b>"
 
 #: ../data/gdebi.glade.h:10
+msgid ""
+"<big><b>You need to grand adminstration rights to install software</b></"
+"big>\n"
+"\n"
+"It is a possible security risk to install packages files manually. Install "
+"software from trustworthy software distributors, only."
+msgstr ""
+
+#: ../data/gdebi.glade.h:13
 msgid "Description"
 msgstr "Description"
 
-#: ../data/gdebi.glade.h:11
+#: ../data/gdebi.glade.h:14
+#, fuzzy
+msgid "Description:"
+msgstr "Description"
+
+#: ../data/gdebi.glade.h:15
 msgid "Details"
 msgstr "Détails"
 
-#: ../data/gdebi.glade.h:12
-msgid "Filelist"
-msgstr "Liste des fichiers"
-
-#: ../data/gdebi.glade.h:13
+#: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, voir /usr/share/common-licences/GPL"
 
-#: ../data/gdebi.glade.h:14
-msgid "Install"
-msgstr "Installer"
+#: ../data/gdebi.glade.h:17
+msgid "Included Files"
+msgstr ""
 
-#: ../data/gdebi.glade.h:15
-msgid "Install deb packages directly"
+#: ../data/gdebi.glade.h:18
+#, fuzzy
+msgid "Install and view software packages"
 msgstr "Installer directement des paquets deb"
 
-#: ../data/gdebi.glade.h:16
-msgid "Install progress"
-msgstr "Avancement de l'installation"
+#: ../data/gdebi.glade.h:19
+msgid "Package Installer"
+msgstr ""
 
-#: ../data/gdebi.glade.h:17
+#: ../data/gdebi.glade.h:20
 msgid "Package:"
 msgstr "Paquet :"
 
-#: ../data/gdebi.glade.h:18
+#: ../data/gdebi.glade.h:21
 msgid "Status:"
 msgstr "État :"
 
-#: ../data/gdebi.glade.h:19
+#: ../data/gdebi.glade.h:22
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../data/gdebi.glade.h:20
-msgid "_About"
-msgstr "_À propos"
+#: ../data/gdebi.glade.h:23
+#, fuzzy
+msgid "_Details"
+msgstr "Détails"
 
-#: ../data/gdebi.glade.h:21
+#: ../data/gdebi.glade.h:24
 msgid "_File"
 msgstr "_Fichier"
 
-#: ../data/gdebi.glade.h:22
+#: ../data/gdebi.glade.h:25
+msgid "_Grant"
+msgstr ""
+
+#: ../data/gdebi.glade.h:26
 msgid "_Help"
 msgstr "_Aide"
 
-#: ../data/gdebi.glade.h:23
+#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:167 ../GDebi/GDebi.py:235
+#, fuzzy
+msgid "_Install Package"
+msgstr "Installer un paquet deb"
+
+#: ../data/gdebi.glade.h:28
 msgid "gdebi"
 msgstr "gdebi"
 
-#: ../data/gdebi.glade.h:25
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../data/gdebi.glade.h:30
 msgid "translator-credits"
 msgstr "Membres de la liste debian-l10n-french@lists.debian.org"
 
-#: ../GDebi/GDebi.py:76
-msgid "Version is installed"
-msgstr "La version est installée"
+#: ../data/gdebi.xml.in.h:1
+#, fuzzy
+msgid "Software package"
+msgstr "Paquets deb"
 
-#: ../GDebi/GDebi.py:124
-msgid "All dependencies satisfied"
+#: ../GDebi/GDebi.py:49
+msgid "Loading..."
+msgstr ""
+
+#: ../GDebi/GDebi.py:119
+#, python-format
+msgid "Could not open '%s'"
+msgstr ""
+
+#: ../GDebi/GDebi.py:120 ../GDebi/GDebiCli.py:20
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file."
+msgstr ""
+
+#. set window title
+#: ../GDebi/GDebi.py:133
+#, python-format
+msgid "Package Installer - %s"
+msgstr ""
+
+#: ../GDebi/GDebi.py:174
+#, fuzzy
+msgid "Same version is already installed"
+msgstr "Une version plus récente est déjà installée"
+
+#: ../GDebi/GDebi.py:175
+#, fuzzy
+msgid "_Reinstall Package"
+msgstr "Installer un paquet deb"
+
+#: ../GDebi/GDebi.py:192
+msgid "Same version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:193
+msgid "You are recommended to install the software from the channel instead."
+msgstr ""
+
+#: ../GDebi/GDebi.py:197
+msgid "An older version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:198
+msgid ""
+"Generally you are recommended to install the version from the software "
+"channel, since it is usually better supported."
+msgstr ""
+
+#: ../GDebi/GDebi.py:203
+msgid "A later version is available in a software channel"
+msgstr ""
+
+#: ../GDebi/GDebi.py:205
+msgid ""
+"You are strongly advised to install the version from the software channel, "
+"since it is usually better supported."
+msgstr ""
+
+#: ../GDebi/GDebi.py:222
+#, fuzzy
+msgid "All dependencies are satisfied"
 msgstr "Toutes les dépendances sont satisfaites"
 
-#: ../GDebi/GDebi.py:130
-#, python-format
-msgid "Need to <b>remove</b> %s packages from the archive\n"
+#. FIXME: use ngettext here
+#: ../GDebi/GDebi.py:228
+#, fuzzy, python-format
+msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "%s paquets doivent être <b>supprimés</b> de l'archive\n"
 
-#: ../GDebi/GDebi.py:132
+#: ../GDebi/GDebi.py:230
 #, python-format
-msgid "Need to install %s packages from the archive"
-msgstr "%s paquets doivent être installés depuis l'archive"
+msgid "Requires the installation of %s packages"
+msgstr ""
 
-#: ../GDebi/GDebi.py:141
+#: ../GDebi/GDebi.py:244
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>À désinstaller : %s</b>"
 
-#: ../GDebi/GDebi.py:143
+#: ../GDebi/GDebi.py:246
 #, python-format
 msgid "To be installed: %s"
 msgstr "À installer : %s"
 
-#: ../GDebi/GDebi.py:160
-msgid "Deb packages"
+#: ../GDebi/GDebi.py:264
+#, fuzzy
+msgid "Software packages"
 msgstr "Paquets deb"
 
-#: ../GDebi/GDebi.py:177
-msgid "Run as administrator"
-msgstr "Exécuter avec les droits du superutilisateur"
-
-#: ../GDebi/GDebi.py:178
-msgid ""
-"To install the selected package you need to run this program with "
-"administraor rights. \n"
-"\n"
-"<b>Note that installing deb packages directly can be a security risk! Only "
-"install from trusted sources.</b> \n"
-"\n"
-"Do you want to do this now?"
-msgstr ""
-"Pour installer les paquets sélectionnés, vous devez lancer ce programme avec "
-"les droits de l'administrateur.\n"
-"\n"
-"<b>Remarquez que l'installation directe de paquets deb peut présenter des "
-"problèmes de sécurité ! N'effectuez d'installation que depuis des sources de "
-"confiance.</b>\n"
-"Voulez-vous le faire maintenant ?"
-
-#: ../GDebi/GDebi.py:198
-msgid "Install deb package"
-msgstr "Installer un paquet deb"
-
-#: ../GDebi/GDebi.py:217
-msgid "Unable to get exclusive lock"
-msgstr "Impossible d'obtenir un verrou exclusif"
-
-#: ../GDebi/GDebi.py:218
-msgid ""
-"This usually means that another package management application (like apt-get "
-"or aptitude) already running. Please close that application first."
-msgstr ""
-"Ceci signifie généralement qu'une autre application de gestion de paquets "
-"(telle que apt-get ou aptitude) est en cours d'exécution. Veuillez d'abord "
-"fermer cette application."
-
-#: ../GDebi/GDebi.py:248
-msgid "Failed to fetch dependencies"
-msgstr "Impossible de récupérer les dépendances"
-
-#: ../GDebi/GDebi.py:249
-msgid "Failed to fetch the following dependencies:"
-msgstr "Impossible de récupérer les dépendances suivantes :"
-
-#: ../GDebi/GDebi.py:252
-msgid "Install problem"
-msgstr "Problème d'installation"
-
-#: ../GDebi/GDebi.py:253
-msgid ""
-"Installing the dependencies was not sucessful. This a bug in the archive "
-"please see the terminal window for details."
-msgstr ""
-"L'installation des dépendances a échoué. Il s'agit d'un bogue dans "
-"l'archive, veuillez consulter les messages de la fenêtre du terminal pour "
-"les détails."
-
-#: ../GDebi/GDebi.py:285
-msgid "Installing package ..."
+#. print "install"
+#: ../GDebi/GDebi.py:282
+#, fuzzy
+msgid "Installing package file..."
 msgstr "Installation du paquet..."
 
-#: ../GDebi/GDebi.py:294
-#, python-format
-msgid "<b>Installed %s</b>"
-msgstr "<b>Installé %s</b>"
-
-#: ../GDebi/GDebi.py:300
-msgid "Dependency problem"
-msgstr "Problème de dépendance"
-
-#: ../GDebi/GDebi.py:301
-msgid ""
-"Internal error, please report this as a bug:\n"
-"A dependency problem was found after installation.\n"
-"You have to run: 'apt-get install -f' to correct the situation"
+#: ../GDebi/GDebi.py:285
+msgid "Install unauthenticated software?"
 msgstr ""
-"Erreur interne, veuillez le signaler comme bogue :\n"
-"Un problème de dépendances a été découvert après l'installation.\n"
-"Il vous faut lancer : « apt-get install -f » pour corriger cette situation."
 
-#: ../GDebi/GDebi.py:351
+#: ../GDebi/GDebi.py:286
+msgid ""
+"Malicous software can damage your data and take control of your system.\n"
+"\n"
+"The packages below are not authenticated and could therefor be of malicous "
+"nature."
+msgstr ""
+
+#: ../GDebi/GDebi.py:319
 #, python-format
-msgid "Installing %s"
-msgstr "Installation de %s"
+msgid "Enter your password to install '%s'"
+msgstr ""
 
-#: ../GDebi/GDebi.py:390
-msgid "Installing dependencies ..."
+#: ../GDebi/GDebi.py:338
+msgid "Only one software management tool is allowed to run at the same time"
+msgstr ""
+
+#: ../GDebi/GDebi.py:340
+msgid ""
+"Please close the other application e.g. 'Update Manager', 'aptitude' or "
+"'Synaptic' first."
+msgstr ""
+
+#: ../GDebi/GDebi.py:362
+msgid "Could not download all required files"
+msgstr ""
+
+#: ../GDebi/GDebi.py:363
+msgid "Please check your internet connection or installation medium."
+msgstr ""
+
+#: ../GDebi/GDebi.py:367
+#, fuzzy
+msgid "Could not install all dependencies"
 msgstr "Installation des dépendances..."
 
-#: ../GDebi/GDebi.py:443
-#, python-format
-msgid "%s/%s (Speed: %s/s)"
-msgstr "%s/%s (vitesse : %s/s)"
+#: ../GDebi/GDebi.py:368
+msgid ""
+"Usually this is related to an error of the software distributor. See the "
+"terminal window for more details."
+msgstr ""
 
-#: ../GDebi/GDebi.py:450
+#: ../GDebi/GDebi.py:377
+#, fuzzy
+msgid "Failed to install package file"
+msgstr "%s paquets doivent être installés depuis l'archive"
+
+#. install the package itself
+#: ../GDebi/GDebi.py:381
+#, fuzzy
+msgid "Installing package file"
+msgstr "Installation du paquet..."
+
+#: ../GDebi/GDebi.py:393
+#, fuzzy, python-format
+msgid "Package '%s' was installed"
+msgstr "La version est installée"
+
+#: ../GDebi/GDebi.py:395
+#, fuzzy, python-format
+msgid "Failed to install package '%s'"
+msgstr "Conflit avec le paquet installé : « %s »"
+
+#: ../GDebi/GDebi.py:397
+#, fuzzy
+msgid "Installation complete"
+msgstr "Problème d'installation"
+
+#: ../GDebi/GDebi.py:405
+#, fuzzy
+msgid "Failed to completely install all dependencies"
+msgstr "Impossible de récupérer les dépendances"
+
+#: ../GDebi/GDebi.py:406
+msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
+msgstr ""
+
+#. ui
+#: ../GDebi/GDebi.py:483
+#, fuzzy, python-format
+msgid "Installing '%s'..."
+msgstr "Installation de %s"
+
+#: ../GDebi/GDebi.py:561
+#, fuzzy
+msgid "Installing dependencies..."
+msgstr "Installation des dépendances..."
+
+#. print "start()"
+#: ../GDebi/GDebi.py:585
+msgid "Downloading additional package files..."
+msgstr ""
+
+#: ../GDebi/GDebi.py:591
+#, python-format
+msgid "File %s of %s at %s/s"
+msgstr ""
+
+#. print "mediaChange %s %s" % (medium, drive)
+#: ../GDebi/GDebi.py:598
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr ""
 "Veuillez insérer le disque dont le nom est « %s » dans le lecteur « %s »"
 
-#: ../GDebi/DebPackage.py:84
-#, python-format
-msgid "Dependency not found: %s\n"
+#: ../GDebi/DebPackage.py:85
+#, fuzzy, python-format
+msgid "Dependency is not satisfiable: %s\n"
 msgstr "Dépendance introuvable : %s\n"
 
-#: ../GDebi/DebPackage.py:101
-#, python-format
-msgid "Conflicts with installed pkg: '%s'"
+#: ../GDebi/DebPackage.py:102
+#, fuzzy, python-format
+msgid "Conflicts with the installed package '%s'"
 msgstr "Conflit avec le paquet installé : « %s »"
 
-#: ../GDebi/DebPackage.py:185
+#: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "Architecture « %s » incorrecte"
 
-#: ../GDebi/DebPackage.py:191
-msgid "Newer version is already installed"
+#. the deb is older than the installed
+#: ../GDebi/DebPackage.py:193
+#, fuzzy
+msgid "A later version is already installed"
 msgstr "Une version plus récente est déjà installée"
 
-#: ../GDebi/DebPackage.py:219
-#, python-format
-msgid "Can't install '%s'"
+#: ../GDebi/DebPackage.py:221
+#, fuzzy, python-format
+msgid "Cannot install '%s'"
 msgstr "Impossible d'installer « %s »"
 
-#: ../GDebi/DebPackage.py:229
-msgid "Installing the dependencies impossible (broken cache)"
+#: ../GDebi/DebPackage.py:231
+#, fuzzy
+msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr "Installation des dépendances impossible (le cache est corrompu)"
 
 #. Translators: it's for missing entries in the deb package,
-#: ../GDebi/DebPackage.py:270
+#. e.g. a missing "Maintainer" field
+#: ../GDebi/DebPackage.py:280
 #, python-format
-msgid "No entry for '%s' found"
-msgstr "Pas d'entrée trouvée pour « %s »"
+msgid "%s is not available"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:19
+msgid "Failed to open the software package"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:28
+msgid "No description is available"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:32
+msgid "This package is uninstallable"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:39
+msgid "The following packages are UNAUTHENTICATED: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:43
+msgid "Requires the REMOVAL of the following packages: "
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:48
+msgid "Requires the installation of the following packages: "
+msgstr ""
+
+#~ msgid "<b>Package information:</b>"
+#~ msgstr "<b>Informations concernant le paquet :</b>"
+
+#~ msgid "<b>Required changes:</b>"
+#~ msgstr "<b>Modifications nécessaires :</b>"
+
+#~ msgid "Filelist"
+#~ msgstr "Liste des fichiers"
+
+#~ msgid "Install"
+#~ msgstr "Installer"
+
+#~ msgid "Install progress"
+#~ msgstr "Avancement de l'installation"
+
+#~ msgid "_About"
+#~ msgstr "_À propos"
+
+#~ msgid "Run as administrator"
+#~ msgstr "Exécuter avec les droits du superutilisateur"
+
+#~ msgid ""
+#~ "To install the selected package you need to run this program with "
+#~ "administraor rights. \n"
+#~ "\n"
+#~ "<b>Note that installing deb packages directly can be a security risk! "
+#~ "Only install from trusted sources.</b> \n"
+#~ "\n"
+#~ "Do you want to do this now?"
+#~ msgstr ""
+#~ "Pour installer les paquets sélectionnés, vous devez lancer ce programme "
+#~ "avec les droits de l'administrateur.\n"
+#~ "\n"
+#~ "<b>Remarquez que l'installation directe de paquets deb peut présenter des "
+#~ "problèmes de sécurité ! N'effectuez d'installation que depuis des sources "
+#~ "de confiance.</b>\n"
+#~ "Voulez-vous le faire maintenant ?"
+
+#~ msgid "Unable to get exclusive lock"
+#~ msgstr "Impossible d'obtenir un verrou exclusif"
+
+#~ msgid ""
+#~ "This usually means that another package management application (like apt-"
+#~ "get or aptitude) already running. Please close that application first."
+#~ msgstr ""
+#~ "Ceci signifie généralement qu'une autre application de gestion de paquets "
+#~ "(telle que apt-get ou aptitude) est en cours d'exécution. Veuillez "
+#~ "d'abord fermer cette application."
+
+#~ msgid "Failed to fetch the following dependencies:"
+#~ msgstr "Impossible de récupérer les dépendances suivantes :"
+
+#~ msgid ""
+#~ "Installing the dependencies was not sucessful. This a bug in the archive "
+#~ "please see the terminal window for details."
+#~ msgstr ""
+#~ "L'installation des dépendances a échoué. Il s'agit d'un bogue dans "
+#~ "l'archive, veuillez consulter les messages de la fenêtre du terminal pour "
+#~ "les détails."
+
+#~ msgid "<b>Installed %s</b>"
+#~ msgstr "<b>Installé %s</b>"
+
+#~ msgid "Dependency problem"
+#~ msgstr "Problème de dépendance"
+
+#~ msgid ""
+#~ "Internal error, please report this as a bug:\n"
+#~ "A dependency problem was found after installation.\n"
+#~ "You have to run: 'apt-get install -f' to correct the situation"
+#~ msgstr ""
+#~ "Erreur interne, veuillez le signaler comme bogue :\n"
+#~ "Un problème de dépendances a été découvert après l'installation.\n"
+#~ "Il vous faut lancer : « apt-get install -f » pour corriger cette "
+#~ "situation."
+
+#~ msgid "%s/%s (Speed: %s/s)"
+#~ msgstr "%s/%s (vitesse : %s/s)"
+
+#~ msgid "No entry for '%s' found"
+#~ msgstr "Pas d'entrée trouvée pour « %s »"
 
 #~ msgid "Reinstall"
 #~ msgstr "Réinstaller"

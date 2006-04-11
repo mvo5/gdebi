@@ -1,3 +1,27 @@
+gdebi (0.1.4ubuntu9) dapper; urgency=low
+
+  * fix some missing i18n strings
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 27 Mar 2006 21:05:27 +0200
+
+gdebi (0.1.4ubuntu8) dapper; urgency=low
+
+  * more polish (strings, ui), thanks to Sebastian Heinlein
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 20 Mar 2006 11:40:41 +0100
+
+gdebi (0.1.4ubuntu7) dapper; urgency=low
+
+  * Add missing build-depends on intltool to resolve current FTBFS.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 20 Mar 2006 18:21:22 +1100
+
+gdebi (0.1.4ubuntu6) dapper; urgency=low
+
+  * spelling and i18n fixes
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed,  8 Mar 2006 10:57:29 +0000
+
 gdebi (0.1.4ubuntu5) dapper; urgency=low
 
   * data/gdebi.xml: added shared-mime-info description file

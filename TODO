@@ -4,7 +4,6 @@
 * code cleanup
 * basic description formating (summary, " ." lines)
 * conflict/replace situation not handled correctly (refuses to do anything)
-* list translators in data/gdebi.glade
 
 Longer term:
 ------------
@@ -12,4 +11,5 @@ Longer term:
 * support for something simialar like the n770 people (install user, 
   installed stuff goes to /var/lib/install). makes us much more secure,
   but less flexible
+* support remote location of packages - gnomevfs vs urllib
 

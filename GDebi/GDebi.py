@@ -7,6 +7,7 @@ import apt_pkg
 import pygtk
 pygtk.require("2.0")
 import gtk, gtk.glade
+import pango
 import gobject
 import vte
 import urllib
@@ -14,6 +15,7 @@ import fcntl
 import posix
 import time
 import thread
+import re
 
 from DebPackage import DebPackage, MyCache
 from SimpleGladeApp import SimpleGladeApp
@@ -24,6 +26,11 @@ from gettext import gettext as _
 class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, options, file=""):
+        localesApp="gdebi"
+        localesDir="/usr/share/locale"
+        gtk.glade.bindtextdomain(localesApp, localesDir)
+        gtk.glade.textdomain(localesApp)
+
         SimpleGladeApp.__init__(self, domain="gdebi",
                                 path=datadir+"/gdebi.glade")
 
@@ -111,7 +118,7 @@ class GDebi(SimpleGladeApp):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            err_header = _("Could not open \"%s\"" % os.path.basename(file))
+            err_header = _("Could not open '%s'" % os.path.basename(file))
             err_body = _("The package might be corrupted or you are not "
                          "allowed to open the file. Check the permissions "
                          "of the file.")
@@ -124,9 +131,9 @@ class GDebi(SimpleGladeApp):
         # grey in since we are ready for user input now
         self.window_main.set_sensitive(True)
 
-        # set window titleasddasasdd
-        self.window_main.set_title(_("Package Installer - %s" % 
-                                   self._deb.pkgName))
+        # set window title
+        self.window_main.set_title(_("Package Installer - %s") % 
+                                   self._deb.pkgName)
 
         # set name
         self.label_name.set_markup(self._deb.pkgName)
@@ -138,9 +145,39 @@ class GDebi(SimpleGladeApp):
         # set description
         buf = self.textview_description.get_buffer()
         try:
-            buf.set_text(self._deb["Description"])
+            long_desc = ""
+            raw_desc = string.split(self._deb["Description"], "\n")
+            # append a newline to the summary in the first line
+            summary = raw_desc[0]
+            raw_desc[0] = ""
+            long_desc = "%s\n" % summary
+            for line in raw_desc:
+                tmp = string.strip(line)
+                if tmp == ".":
+                    long_desc += "\n"
+                else:
+                    long_desc += tmp + "\n"
+            print long_desc
+            # do some regular expression magic on the description
+            # Add a newline before each bullet
+            p = re.compile(r'^(\s|\t)*(\*|0|-)',re.MULTILINE)
+            long_desc = p.sub('\n*', long_desc)
+            # replace all newlines by spaces
+            p = re.compile(r'\n', re.MULTILINE)
+            long_desc = p.sub(" ", long_desc)
+            # replace all multiple spaces by
+            # newlines
+            p = re.compile(r'\s\s+', re.MULTILINE)
+            long_desc = p.sub("\n", long_desc)
+            # write the descr string to the buffer
+            buf.set_text(long_desc)
+            # tag the first line with a bold font
+            tag = buf.create_tag(None, weight=pango.WEIGHT_BOLD)
+            iter = buf.get_iter_at_offset(0)
+            (start, end) = iter.forward_search("\n", gtk.TEXT_SEARCH_TEXT_ONLY,None)
+            buf.apply_tag(tag , iter, end)
         except KeyError:
-            buf.set_text("No description found in the package")
+            buf.set_text("No description is available")
 
         # set various status bits
         self.label_version.set_text(self._deb["Version"])
@@ -166,7 +203,7 @@ class GDebi(SimpleGladeApp):
             return
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
-            self.label_status.set_text(_("Version is installed"))
+            self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
             self.button_install.grab_default()
             self.button_install.set_sensitive(True)
@@ -184,32 +221,29 @@ class GDebi(SimpleGladeApp):
             # (when possible)
             if res == DebPackage.VERSION_SAME:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("Same version available in repository as well")
-                    msg = _("The package is available in a repositorysitory "
-                            "as well. It is recommended to install directly "
-                            "from the repository.")
+                    title = _("Same version is available in a software channel")
+                    msg = _("You are recommended to install the software "
+                            "from the channel instead.")
             elif res == DebPackage.VERSION_IS_NEWER:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("Newer than in the repository")
-                    msg = _("The package is newer than the version in the "
-                            "cache. While this may be desired it is still "
-                            "recommended to use the version in the "
-                            "repositoryistory because it is usually "
-                            "better tested.")
+                    title = _("An older version is available in a software channel")
+                    msg = _("Generally you are recommended to install "
+                            "the version from the software channel, since "
+                            "it is usually better supported.")
             elif res == DebPackage.VERSION_OUTDATED:
                 if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("Older than in the repository")
-                    msg = _("The package is older than the version in the "
-                            "cache. It is strongly recommended to "
-                            "use the version in the repositoryistory "
-                            "because it is usually better tested.")
+                    title = _("A later version is available in a software "
+                              "channel")
+                    msg = _("You are strongly advised to install "
+                            "the version from the software channel, since "
+                            "it is usually better supported.")
 
             if title != "" and msg != "":
                 msg = "<big><b>%s</b></big>\n\n%s" % (title,msg)
                 dialog = gtk.MessageDialog(parent=self.window_main,
                                            flags=gtk.DIALOG_MODAL,
                                            type=gtk.MESSAGE_INFO,
-                                           buttons=gtk.BUTTONS_OK)
+                                           buttons=gtk.BUTTONS_CLOSE)
                 dialog.set_markup(msg)
                 dialog.run()
                 dialog.destroy()
@@ -217,15 +251,15 @@ class GDebi(SimpleGladeApp):
         (install, remove, unauthenticated) = self._deb.requiredChanges
         deps = ""
         if len(remove) == len(install) == 0:
-            deps = _("All dependencies satisfied")
+            deps = _("All dependencies are satisfied")
             self.button_details.hide()
         else:
             self.button_details.show()
         if len(remove) > 0:
             # FIXME: use ngettext here
-            deps += _("Need to <b>remove</b> %s packages from the archive\n" % len(remove))
+            deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
         if len(install) > 0:
-            deps += _("Need to install %s packages from the archive" % len(install))
+            deps += _("Requires the installation of %s packages") % len(install)
         self.label_status.set_markup(deps)
         img = gtk.Image()
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
@@ -239,9 +273,10 @@ class GDebi(SimpleGladeApp):
         (install, remove, unauthenticated) = self._deb.requiredChanges
         self.details_list.clear()
         for rm in remove:
-            self.details_list.append([_("<b>To be removed: %s</b>" % rm)])
+            self.details_list.append([_("<b>To be removed: %s</b>") % rm])
         for inst in install:
-            self.details_list.append([_("To be installed: %s" % inst)])
+            self.details_list.append([_("To be installed: %s") % inst])
+        self.dialog_details.set_transient_for(self.window_main)
         self.dialog_details.run()
         self.dialog_details.hide()
 
@@ -254,12 +289,12 @@ class GDebi(SimpleGladeApp):
                                             gtk.STOCK_OPEN, 
                                             gtk.RESPONSE_OK),
                                    action=gtk.FILE_CHOOSER_ACTION_OPEN,
-				   title="Open Software Package")
+                                   title=_("Open Software Package"))
         fs.set_default_response(gtk.RESPONSE_OK)
         # set filter
         filter = gtk.FileFilter()
         filter.add_pattern("*.deb")
-        filter.set_name(_("Deb packages"))
+        filter.set_name(_("Software packages"))
         #fs.add_filter(filter)
         fs.set_filter(filter)
         # run it!
@@ -280,14 +315,11 @@ class GDebi(SimpleGladeApp):
 	self.statusbar_main.push(self.context,_("Installing package file..."))
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:
-            primary = _("Unauthenticated packages")
-            secondary = _("You are about to install software that "
-                          "<b>can't be authenticated</b>! Doing "
-                          "this could allow a malicious individual "
-                          "to damage or take control of your "
-                          "system.\n\n"
-                          "The packages below are not authenticated. "
-                          "Are you sure you want to continue?")
+            primary = _("Install unauthenticated software?")
+            secondary = _("Malicous software can damage your data "
+                          "and take control of your system.\n\n"
+                          "The packages below are not authenticated and "
+                          "could therefor be of malicous nature.")
             msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
             dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
                                        flags=gtk.DIALOG_MODAL,
@@ -317,7 +349,7 @@ class GDebi(SimpleGladeApp):
             self.dialog_admin.hide()
             if res == gtk.RESPONSE_OK:
                 msg="<b><big>%s</big></b>" % \
-                    (_("Enter your password to install %s" % self._deb.pkgName)) 
+                    (_("Enter your password to install '%s'") % self._deb.pkgName)
                 os.execl("/usr/bin/gksu", "gksu", "-m", msg,
                          "--", "gdebi-gtk", "--non-interactive", 
                          self._deb.file)
@@ -338,8 +370,8 @@ class GDebi(SimpleGladeApp):
             except SystemError:
                 header = _("Only one software management tool is allowed to"
                            " run at the same time")
-                body = _("Please close the other application e.g. \"Update "
-                         "Manager\", \"aptitude\" or \"Synaptic\" at first.")
+                body = _("Please close the other application e.g. 'Update "
+                         "Manager', 'aptitude' or 'Synaptic' first.")
                 self.show_alert(gtk.MESSAGE_ERROR, header, body)
                 self.dialog_deb_install.hide()
                 self.window_main.set_sensitive(True)
@@ -360,18 +392,15 @@ class GDebi(SimpleGladeApp):
             except IOError, msg:
                 res = False
                 errMsg = "%s" % msg
-                header = _("Failed to fetch dependencies")
-                body = _("Failed to fetch the following dependencies:")
+                header = _("Could not download all required files")
+                body = _("Please check your internet connection or "
+                         "installation medium.")
             except SystemError, msg:
                 res = False
-                header = _("Install problem"),
-                body = _("Installing the "
-                              "dependencies was "
-                              "not sucessful. This "
-                              "a bug in the archive "
-                              "please see the "
-                              "terminal window "
-                              "for details.")
+                header = _("Could not install all dependencies"),
+                body = _("Usually this is related to an error of the "
+                         "software distributor. See the terminal window for "
+                         "more details.")
             if not res:
                 self.show_alert(gtk.MESSAGE_ERROR, header, body, msg)
                 
@@ -394,9 +423,9 @@ class GDebi(SimpleGladeApp):
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
         if dprogress.exitstatus == 0:
-            self.label_install_status.set_markup("<i>"+_("Package \"%s\" is installed") % os.path.basename(self._deb.file)+"</i>")
+            self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
         else:
-            self.label_install_status.set_markup("<b>"+_("Package \"%s\" installation failed") % os.path.basename(self._deb.file)+"</b>")
+            self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
             self.expander_install.set_expanded(True)
         self.statusbar_main.push(self.context,_("Installation complete"))
         # FIXME: Doesn't stop notifying
@@ -406,11 +435,9 @@ class GDebi(SimpleGladeApp):
         #self._cache = MyCache(self.cprogress)
         self._cache = MyCache()
         if self._cache._depcache.BrokenCount > 0:
-            err_header = _("Dependency problem")
-            err_body = _("Internal error, please report this as a bug:\n"
-                         "A dependency problem was found after "
-                         "installation.\n You have to run: "
-                         "'apt-get install -f' to correct the situation")
+            err_header = _("Failed to completely install all dependencies")
+            err_body = _("To fix this run 'sudo apt-get install -f' in a "
+                         "terminal window.")
             self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
 
             #print "Autsch, please report"
@@ -486,7 +513,7 @@ class GDebi(SimpleGladeApp):
             lock.acquire()
 
             # ui
-            self.status.set_markup("<i>"+_("Installing \"%s\"...") % \
+            self.status.set_markup("<i>"+_("Installing '%s'...") % \
                                    os.path.basename(self.debfile)+"</i>")
             self.progress.pulse()
             self.progress.set_text("")
@@ -594,7 +621,7 @@ class GDebi(SimpleGladeApp):
             #print "stop()"
             pass
         def pulse(self):
-            self.progress.set_text(_("%s/%s (Speed: %s/s)" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+            self.progress.set_text(_("File %s of %s at %s/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
             while gtk.events_pending():
                 gtk.main_iteration()
