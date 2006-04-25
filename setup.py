@@ -24,11 +24,12 @@ for filepath in glob.glob("po/mo/*/LC_MESSAGES/*.mo"):
     targetpath = os.path.dirname(os.path.join("share/locale",lang))
     I18NFILES.append((targetpath, [filepath]))
 
+# we should probably only run those os.system() stuff when "build" is
+# the cmndline argument
 os.system("intltool-merge -x po data/gdebi.xml.in"\
                        " build/gdebi.xml")
 os.system("intltool-merge -d po data/gdebi.desktop.in"\
                        " build/gdebi.desktop")
-
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     
