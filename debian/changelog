@@ -1,3 +1,14 @@
+gdebi (0.1.5) unstable; urgency=low
+
+  * Sync with Ubuntu
+    - add depends on gnome-icon-theme (Closes: #358874)
+    - pofiles updated (Closes: #352562)
+    - swedish translation included (Closes: #350394)
+    - french translation included (Closes: #354112)
+    - czech translation included (Closes: #356465)
+  
+ -- Gustavo Franco <stratus@debian.org>  Tue, 11 Apr 2006 17:40:13 -0300
+
 gdebi (0.1.4ubuntu10) dapper; urgency=low
 
   * add the application/x-debian-package mimetype (apache likes to use this
