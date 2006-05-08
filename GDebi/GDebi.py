@@ -348,10 +348,9 @@ class GDebi(SimpleGladeApp):
             res = self.dialog_admin.run()
             self.dialog_admin.hide()
             if res == gtk.RESPONSE_OK:
-                msg="<b><big>%s</big></b>" % \
-                    (_("Enter your password to install '%s'") % self._deb.pkgName)
-                os.execl("/usr/bin/gksu", "gksu", "-m", msg,
-                         "--", "gdebi-gtk", "--non-interactive", 
+                os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                         "/usr/share/applications/gdebi.desktop",
+                         "--", "gdebi-gtk", "--non-interactive",
                          self._deb.file)
             return
         
