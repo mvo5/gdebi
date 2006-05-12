@@ -3,8 +3,8 @@ gdebi
 gdebi-gtk
 data/gdebi.glade
 data/gdebi.xml.in
-[type: gettext/rfc822deb] data/gdebi.desktop.in
-[type: python] gdebi-gtk
+data/gdebi.desktop.in
+gdebi-gtk
 GDebi/GDebi.py
 GDebi/DebPackage.py
 GDebi/GDebiCli.py
