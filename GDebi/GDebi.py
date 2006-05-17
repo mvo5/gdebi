@@ -312,7 +312,7 @@ class GDebi(SimpleGladeApp):
 
     def on_button_install_clicked(self, widget):
         #print "install"
-	self.statusbar_main.push(self.context,_("Installing package file..."))
+        self.statusbar_main.push(self.context,_("Installing package file..."))
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:
             primary = _("Install unauthenticated software?")
@@ -350,6 +350,20 @@ class GDebi(SimpleGladeApp):
                      self._deb.file)
             return
         
+
+        # check if we can lock the apt database
+        try:
+            apt_pkg.PkgSystemLock()
+        except SystemError:
+            header = _("Only one software management tool is allowed to"
+                       " run at the same time")
+            body = _("Please close the other application e.g. 'Update "
+                     "Manager', 'aptitude' or 'Synaptic' first.")
+            self.show_alert(gtk.MESSAGE_ERROR, header, body)
+            self.dialog_deb_install.hide()
+            self.window_main.set_sensitive(True)
+            return
+
         # lock for install
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
@@ -360,17 +374,6 @@ class GDebi(SimpleGladeApp):
 
         # install the dependecnies
         if len(install) > 0 or len(remove) > 0:
-            try:
-                apt_pkg.PkgSystemLock()
-            except SystemError:
-                header = _("Only one software management tool is allowed to"
-                           " run at the same time")
-                body = _("Please close the other application e.g. 'Update "
-                         "Manager', 'aptitude' or 'Synaptic' first.")
-                self.show_alert(gtk.MESSAGE_ERROR, header, body)
-                self.dialog_deb_install.hide()
-                self.window_main.set_sensitive(True)
-                return
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
             # when stuff goes wrong!
