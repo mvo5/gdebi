@@ -23,6 +23,9 @@ from apt.progress import InstallProgress
 
 from gettext import gettext as _
 
+def utf8(str):
+  return unicode(str, 'latin1').encode('utf-8')
+
 class GDebi(SimpleGladeApp):
 
     def __init__(self, datadir, options, file=""):
@@ -146,7 +149,7 @@ class GDebi(SimpleGladeApp):
         buf = self.textview_description.get_buffer()
         try:
             long_desc = ""
-            raw_desc = string.split(self._deb["Description"], "\n")
+            raw_desc = string.split(utf8(self._deb["Description"]), "\n")
             # append a newline to the summary in the first line
             summary = raw_desc[0]
             raw_desc[0] = ""
@@ -183,9 +186,9 @@ class GDebi(SimpleGladeApp):
 
         # set various status bits
         self.label_version.set_text(self._deb["Version"])
-        self.label_maintainer.set_text(self._deb["Maintainer"])
+        self.label_maintainer.set_text(utf8(self._deb["Maintainer"]))
         self.label_priority.set_text(self._deb["Priority"])
-        self.label_section.set_text(self._deb["Section"])
+        self.label_section.set_text(utf8(self._deb["Section"]))
         self.label_size.set_text(self._deb["Installed-Size"])
 
         # set filelist
