@@ -344,14 +344,17 @@ class GDebi(SimpleGladeApp):
             dialog.destroy()
             if res != gtk.RESPONSE_YES:
                 return
-        
+
         if os.getuid() != 0:
-            os.execl("/usr/bin/gksu", "gksu", "--desktop",
-                     "/usr/share/applications/gdebi.desktop",
-                     "--", "gdebi-gtk", "--non-interactive",
-                     self._deb.file)
+            self.dialog_admin.set_transient_for(self.window_main)
+            res = self.dialog_admin.run()
+            self.dialog_admin.hide()
+            if res == gtk.RESPONSE_OK:
+                os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                         "/usr/share/applications/gdebi.desktop",
+                         "--", "gdebi-gtk", "--non-interactive",
+                         self._deb.file)
             return
-        
 
         # check if we can lock the apt database
         try:
@@ -362,9 +365,8 @@ class GDebi(SimpleGladeApp):
             body = _("Please close the other application e.g. 'Update "
                      "Manager', 'aptitude' or 'Synaptic' first.")
             self.show_alert(gtk.MESSAGE_ERROR, header, body)
-            self.dialog_deb_install.hide()
-            self.window_main.set_sensitive(True)
             return
+        apt_pkg.PkgSystemUnLock()
 
         # lock for install
         self.window_main.set_sensitive(False)
@@ -376,6 +378,17 @@ class GDebi(SimpleGladeApp):
 
         # install the dependecnies
         if len(install) > 0 or len(remove) > 0:
+            # check if we can lock the apt database
+            try:
+                apt_pkg.PkgSystemLock()
+            except SystemError:
+                header = _("Only one software management tool is allowed to"
+                           " run at the same time")
+                body = _("Please close the other application e.g. 'Update "
+                         "Manager', 'aptitude' or 'Synaptic' first.")
+                self.show_alert(gtk.MESSAGE_ERROR, header, body)
+                self.dialog_deb_install.hide()
+                return
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
             # when stuff goes wrong!
