@@ -1,25 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Indonesian translation for gdebi
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gdebi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2006-05-17 16:14+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-05-16 08:00+0000\n"
+"Last-Translator: Andy Apdhani <imtheface@gmail.com>\n"
+"Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../gdebi:20
 #, c-format
 msgid "Usage: %s [package.deb]"
-msgstr ""
+msgstr "Penggunaan: %s [paket.deb]"
 
 #: ../gdebi:22
 msgid ""
@@ -27,55 +26,58 @@ msgid ""
 "on a '.deb' software package in the file browser\n"
 "and select: Open with 'GDebi Package Installer'."
 msgstr ""
+"Untuk menggunakan antarmuka berbasis grafik, klik kanan\n"
+"pada paket perangkat lunak '.deb' dalam peramban berkas \n"
+"dan pilih: Open with 'GDebi Package Installer'."
 
 #: ../gdebi:27
 #, c-format
 msgid "gdebi error, file not found: %s"
-msgstr ""
+msgstr "gdebi ada kesalahan, berkas tidak ditemukan: %s"
 
 #: ../gdebi:33 ../GDebi/GDebiCli.py:70
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "Apakah anda ingin menginstal paket perangkat lunak? [y/N]:"
 
 #: ../gdebi-gtk:27
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Jalankan non-interaktif (berbahaya!)"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005-2006 Canonical"
-msgstr ""
+msgstr "(c) 2005-2006 Canonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.glade.h:4
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>Pengurus:</b>"
 
 #: ../data/gdebi.glade.h:5
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>Prioritas:</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>Bagian:</b>"
 
 #: ../data/gdebi.glade.h:7
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>Ukuran:</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>Untuk menginstal diperlukan perubahan berikut:</b>"
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>Versi:</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid ""
@@ -85,182 +87,194 @@ msgid ""
 "It is a possible security risk to install packages files manually. Install "
 "software from trustworthy software distributors only."
 msgstr ""
+"<big><b>Anda harus memberikan hak izin pengelolaan untuk menginstal "
+"perangkat lunak</b></big>\n"
+"\n"
+"Ada resiko keamanan bila anda menginstal berkas paket secara manual. Harap "
+"instal perangkat lunak dari distributor yang terpercaya."
 
 #: ../data/gdebi.glade.h:13
 msgid "Description"
-msgstr ""
+msgstr "Deskripsi"
 
 #: ../data/gdebi.glade.h:14
 msgid "Description:"
-msgstr ""
+msgstr "Deskripsi:"
 
 #: ../data/gdebi.glade.h:15
 msgid "Details"
-msgstr ""
+msgstr "Perincian"
 
 #: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr ""
+msgstr "GPL, lihat /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.glade.h:17
 msgid "Included Files"
-msgstr ""
+msgstr "Berkas yang disertakan"
 
 #: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "Instal dan tilik paket perangkat lunak"
 
 #: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "Penginstal Paket"
 
 #: ../data/gdebi.glade.h:20
 msgid "Package:"
-msgstr ""
+msgstr "Paket:"
 
 #: ../data/gdebi.glade.h:21
 msgid "Status:"
-msgstr ""
+msgstr "Status:"
 
 #: ../data/gdebi.glade.h:22
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: ../data/gdebi.glade.h:23
 msgid "_Details"
-msgstr ""
+msgstr "_Detil"
 
 #: ../data/gdebi.glade.h:24
 msgid "_File"
-msgstr ""
+msgstr "_Berkas"
 
 #: ../data/gdebi.glade.h:25
 msgid "_Grant"
-msgstr ""
+msgstr "_Izinkan"
 
 #: ../data/gdebi.glade.h:26
 msgid "_Help"
-msgstr ""
+msgstr "_Bantuan"
 
 #: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
 msgid "_Install Package"
-msgstr ""
+msgstr "_Instal Paket"
 
 #: ../data/gdebi.glade.h:28
 msgid "gdebi"
-msgstr ""
+msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:30
 msgid "translator-credits"
-msgstr ""
+msgstr "Andy Apdhani <imtheface@gmail.com>, 2006"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr ""
+msgstr "Paket perangkat lunak"
 
 #: ../data/gdebi.desktop.in.h:1
+#, fuzzy
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "Penginstal Paket"
 
 #: ../GDebi/GDebi.py:54
 msgid "Loading..."
-msgstr ""
+msgstr "Memuat..."
 
 #: ../GDebi/GDebi.py:124
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Tidak dapat membuka '%s'"
 
 #: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
+"Paket mungkin rusak atau anda tidak diizinkan untuk membuka berkas. Periksa "
+"hak izin dari berkas."
 
 #. set window title
 #: ../GDebi/GDebi.py:138
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "Penginstal Paket - %s"
 
 #: ../GDebi/GDebi.py:211
 msgid "Same version is already installed"
-msgstr ""
+msgstr "Versi yang sama sudah terinstal"
 
 #: ../GDebi/GDebi.py:212
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "_Instal-Ulang Paket"
 
 #: ../GDebi/GDebi.py:229
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "Versi yang sama tersedia di dalam kanal perangkat lunak"
 
 #: ../GDebi/GDebi.py:230
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "Anda dianjurkan untuk menginstal perangkat lunak dari kanal"
 
 #: ../GDebi/GDebi.py:234
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "Versi lama tersedia di dalam kanal perangkat lunak"
 
 #: ../GDebi/GDebi.py:235
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Umumnya anda dianjurkan untuk menginstal versi dari kanal perangkat lunak, "
+"karena hal ini biasanya disokong dengan baik."
 
 #: ../GDebi/GDebi.py:240
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "Versi baru tersedia di dalam kanal perangkat lunak"
 
 #: ../GDebi/GDebi.py:242
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"Anda disarankan untuk menginstal versi dari kanal perangkat lunak, karena "
+"hal ini biasanya disokong dengan baik."
 
 #: ../GDebi/GDebi.py:259
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "Semua ketergantungan terpenuhi"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebi.py:265
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "Butuh <b>penghapusan</b> paket %s\n"
 
 #: ../GDebi/GDebi.py:267
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "Butuh instalasi paket %s"
 
 #: ../GDebi/GDebi.py:281
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr ""
+msgstr "<b>Akan dihapus: %s</b>"
 
 #: ../GDebi/GDebi.py:283
 #, python-format
 msgid "To be installed: %s"
-msgstr ""
+msgstr "Akan diinstal: %s"
 
 #: ../GDebi/GDebi.py:297
 msgid "Open Software Package"
-msgstr ""
+msgstr "Buka Paket Perangkat Lunak"
 
 #: ../GDebi/GDebi.py:302
 msgid "Software packages"
-msgstr ""
+msgstr "Paket perangkat lunak"
 
 #. print "install"
 #: ../GDebi/GDebi.py:320
 msgid "Installing package file..."
-msgstr ""
+msgstr "menginstal berkas paket..."
 
 #: ../GDebi/GDebi.py:323
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "Instal perangkat lunak yang belum diotentifikasi?"
 
 #: ../GDebi/GDebi.py:324
 msgid ""
@@ -269,148 +283,160 @@ msgid ""
 "The packages below are not authenticated and could therefor be of malicous "
 "nature."
 msgstr ""
+"Program perusak dapat menghancurkan data dan mengambil alih sistem anda.\n"
+"\n"
+"Paket berikut belum di otentifikasi dan untuk itu dapat mengandung hal yang "
+"dapat merusak."
 
 #: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
+"Hanya dapat menjalankan satu alat manajemen perangkat lunak di saat yang "
+"bersamaan."
 
 #: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
+"Silakan tutup dulu alplikasi lain seperti 'Update Manager', 'aptitude' atau "
+"'Synaptic' first.\""
 
 #: ../GDebi/GDebi.py:412
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Tidak dapat mengunduh semua berkas yang dibutuhkan"
 
 #: ../GDebi/GDebi.py:413
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "Silakan periksa koneksi internet atau medium instalasi anda."
 
 #: ../GDebi/GDebi.py:417
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "Tidak dapat menginstal semua ketergantungan"
 
 #: ../GDebi/GDebi.py:418
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Biasanya hal ini berhubungan ke kesalahan dari distributor perangkat lunak. "
+"Lihat jendela terminal untuk perincian lebih lanjut."
 
 #: ../GDebi/GDebi.py:427
 msgid "Failed to install package file"
-msgstr ""
+msgstr "Gagal menginstal berkas paket"
 
 #. install the package itself
 #: ../GDebi/GDebi.py:431
 msgid "Installing package file"
-msgstr ""
+msgstr "Menginstal berkas paket"
 
 #: ../GDebi/GDebi.py:443
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "Paket '%s' telah diinstal"
 
 #: ../GDebi/GDebi.py:445
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "Gagal menginstal paket '%s'"
 
 #: ../GDebi/GDebi.py:447
 msgid "Installation complete"
-msgstr ""
+msgstr "Instalasi selesai"
 
 #: ../GDebi/GDebi.py:455
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "Gagal meyelesaikan instalasi semua ketergantungan"
 
 #: ../GDebi/GDebi.py:456
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
+"Untuk memperbaiki ini jalankan  'sudo apt-get install -f' di dalam jendela "
+"terminal."
 
 #. ui
 #: ../GDebi/GDebi.py:533
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "Menginstal '%s'..."
 
 #: ../GDebi/GDebi.py:611
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "Menginstal ketergantungan..."
 
 #. print "start()"
 #: ../GDebi/GDebi.py:635
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "Mengunduh berkas paket tambahan..."
 
 #: ../GDebi/GDebi.py:641
 #, python-format
 msgid "File %s of %s at %s/s"
-msgstr ""
+msgstr "Berkas %s dari %s di %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:648
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
+msgstr "Silakan masukan '%s' ke dalam penggerak '%s'"
 
 #: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
-msgstr ""
+msgstr "Ketergantungan tidak terpenuhi: %s\n"
 
 #: ../GDebi/DebPackage.py:102
 #, python-format
 msgid "Conflicts with the installed package '%s'"
-msgstr ""
+msgstr "Konflik dengan paket terinstal '%s'"
 
 #: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr ""
+msgstr "Arsitektur salah '%s'"
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:193
 msgid "A later version is already installed"
-msgstr ""
+msgstr "Versi terbaru sudah terinstal"
 
 #: ../GDebi/DebPackage.py:221
 #, python-format
 msgid "Cannot install '%s'"
-msgstr ""
+msgstr "Tidak dapat instal '%s'"
 
 #: ../GDebi/DebPackage.py:231
 msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr ""
+msgstr "Gagal memenuhi semua ketergantungan (cache rusak)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s tidak tersedia"
 
 #: ../GDebi/GDebiCli.py:19
 msgid "Failed to open the software package"
-msgstr ""
+msgstr "Gagal membuka paket perangkat lunak"
 
 #: ../GDebi/GDebiCli.py:28
 msgid "No description is available"
-msgstr ""
+msgstr "Deskripsi tidak tersedia"
 
 #: ../GDebi/GDebiCli.py:32
 msgid "This package is uninstallable"
-msgstr ""
+msgstr "Paket ini tidak dapat diunistal"
 
 #: ../GDebi/GDebiCli.py:39
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "Paket berikut belum DIOTENTIFIKASI: "
 
 #: ../GDebi/GDebiCli.py:43
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "Membutuhkan PENGHAPUSAN dari paket berikut: "
 
 #: ../GDebi/GDebiCli.py:48
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Membutuhkan instalasi dari paket berikut: "

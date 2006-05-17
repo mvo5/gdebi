@@ -1,25 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Finnish translation for gdebi
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gdebi package.
+# Ilkka Tuohela <hile@iki.fi>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2006-05-17 16:14+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-04-08 12:18+0000\n"
+"Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../gdebi:20
 #, c-format
 msgid "Usage: %s [package.deb]"
-msgstr ""
+msgstr "Käyttö: %s [paketti.deb]"
 
 #: ../gdebi:22
 msgid ""
@@ -27,55 +26,58 @@ msgid ""
 "on a '.deb' software package in the file browser\n"
 "and select: Open with 'GDebi Package Installer'."
 msgstr ""
+"Jos haluat käyttää graafista käyttöliittymää\n"
+"napsauta \".deb\"-tiedostoa tiedostoselaimesta ja\n"
+"valitse \"Avaa GDebi-paketinasentajalla\"."
 
 #: ../gdebi:27
 #, c-format
 msgid "gdebi error, file not found: %s"
-msgstr ""
+msgstr "gdebin virhe, tiedostoa ei löydy: %s"
 
 #: ../gdebi:33 ../GDebi/GDebiCli.py:70
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "Haluatko asentaa tämän ohjelmistopaketin? [y/N]:"
 
 #: ../gdebi-gtk:27
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Suorita piilotetussa tilassa (vaarallista!)"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005-2006 Canonical"
-msgstr ""
+msgstr "(©) 2005-2006 Canonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.glade.h:4
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>Ylläpitäjä:</b>"
 
 #: ../data/gdebi.glade.h:5
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>Tärkeys:</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>Osio:</b>"
 
 #: ../data/gdebi.glade.h:7
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>Koko:</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>Asennus vaatii seuraavia muutoksia:</b>"
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>Versio:</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid ""
@@ -85,182 +87,197 @@ msgid ""
 "It is a possible security risk to install packages files manually. Install "
 "software from trustworthy software distributors only."
 msgstr ""
+"<big><b>Sinun täytyy myöntää ylläpitäjän oikeudet tälle ohjelmalle, jotta "
+"voit asentaa ohjelmia</b></big>\n"
+"\n"
+"Ohjelmapakettien asentaminen käsin verkosta voi olla tietoturvariski. Asenna "
+"ohjelmia vain luotettavista lähteistä."
 
 #: ../data/gdebi.glade.h:13
 msgid "Description"
-msgstr ""
+msgstr "Kuvaus"
 
 #: ../data/gdebi.glade.h:14
 msgid "Description:"
-msgstr ""
+msgstr "Kuvaus:"
 
 #: ../data/gdebi.glade.h:15
 msgid "Details"
-msgstr ""
+msgstr "Yksityiskohdat"
 
 #: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr ""
+msgstr "GPL, lue /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.glade.h:17
 msgid "Included Files"
-msgstr ""
+msgstr "Paketin tiedostot"
 
 #: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "Asenna ja katsele ohjelmistopaketteja"
 
 #: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "Paketinasentaja"
 
 #: ../data/gdebi.glade.h:20
 msgid "Package:"
-msgstr ""
+msgstr "Paketti:"
 
 #: ../data/gdebi.glade.h:21
 msgid "Status:"
-msgstr ""
+msgstr "Tila:"
 
 #: ../data/gdebi.glade.h:22
 msgid "Terminal"
-msgstr ""
+msgstr "Pääte"
 
 #: ../data/gdebi.glade.h:23
 msgid "_Details"
-msgstr ""
+msgstr "_Yksityiskohdat"
 
 #: ../data/gdebi.glade.h:24
 msgid "_File"
-msgstr ""
+msgstr "_Tiedosto"
 
 #: ../data/gdebi.glade.h:25
 msgid "_Grant"
-msgstr ""
+msgstr "_Salli"
 
 #: ../data/gdebi.glade.h:26
 msgid "_Help"
-msgstr ""
+msgstr "O_hje"
 
 #: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
 msgid "_Install Package"
-msgstr ""
+msgstr "_Asenna paketti"
 
 #: ../data/gdebi.glade.h:28
 msgid "gdebi"
-msgstr ""
+msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:30
 msgid "translator-credits"
 msgstr ""
+"Ilkka Tuohela, 2006\n"
+"\n"
+"http://gnome.fi"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr ""
+msgstr "Ohjelmistopaketti"
 
 #: ../data/gdebi.desktop.in.h:1
+#, fuzzy
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "Paketinasentaja"
 
 #: ../GDebi/GDebi.py:54
 msgid "Loading..."
-msgstr ""
+msgstr "Ladataan..."
 
 #: ../GDebi/GDebi.py:124
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Tiedostoa \"%s\" ei voi avata"
 
 #: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
+"Paketti voi olla viallinen tai oikeutesi eivät riitä tiedoston avaamiseen. "
+"Tarkista tiedoston oikeudet."
 
 #. set window title
 #: ../GDebi/GDebi.py:138
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "Paketin asentaja - %s"
 
 #: ../GDebi/GDebi.py:211
 msgid "Same version is already installed"
-msgstr ""
+msgstr "Sama paketin versio on jo asennettu"
 
 #: ../GDebi/GDebi.py:212
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "_Asenna paketti uudestaan"
 
 #: ../GDebi/GDebi.py:229
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "Sama versio on saatavilla ohjelmistokanavan kautta"
 
 #: ../GDebi/GDebi.py:230
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "On suositeltavaa asentaa ohjelmia ohjelmistokanavan kautta."
 
 #: ../GDebi/GDebi.py:234
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "Vanhempi versio on saatavilla ohjelmistokanavan kautta"
 
 #: ../GDebi/GDebi.py:235
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Yleensä on suositeltavaa asentaa järjestelmän ohjelmistokanavilta, koska "
+"tällöin ohjelmistot ovat paremmin tuettuja."
 
 #: ../GDebi/GDebi.py:240
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "Uudempi versio on saatavilla ohjelmistokanavan kautta"
 
 #: ../GDebi/GDebi.py:242
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"On erittäin suositeltavaa käyttää ohjelmistokanavalta löytyvää paketin "
+"versiota, koska se on yleensä paremmin tuettu."
 
 #: ../GDebi/GDebi.py:259
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "Kaikki riippuvuudet on täytetty"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebi.py:265
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "Vaatii pakettien %s <b>poistamista</b>\n"
 
 #: ../GDebi/GDebi.py:267
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "Vaatii %s pakettien asentamista"
 
 #: ../GDebi/GDebi.py:281
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr ""
+msgstr "<b>Poistetaan: %s</b>"
 
 #: ../GDebi/GDebi.py:283
 #, python-format
 msgid "To be installed: %s"
-msgstr ""
+msgstr "Asennetaan: %s"
 
 #: ../GDebi/GDebi.py:297
 msgid "Open Software Package"
-msgstr ""
+msgstr "Avaa ohjelmistopaketti"
 
 #: ../GDebi/GDebi.py:302
 msgid "Software packages"
-msgstr ""
+msgstr "Ohjelmistopaketit"
 
 #. print "install"
 #: ../GDebi/GDebi.py:320
 msgid "Installing package file..."
-msgstr ""
+msgstr "Asennetaan pakettitiedostoa..."
 
 #: ../GDebi/GDebi.py:323
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "Asennetaanko tunnistamaton ohjelmisto?"
 
 #: ../GDebi/GDebi.py:324
 msgid ""
@@ -269,148 +286,160 @@ msgid ""
 "The packages below are not authenticated and could therefor be of malicous "
 "nature."
 msgstr ""
+"Haitalliset ohjelmistot voivat vaurioittaa tietojasi ja ottaa\n"
+"tietokoneesi haltuunsa\n"
+"\n"
+"Alla olevien pakettien lähdettä ei voida varmistaa ja ne voivat siten olla "
+"haittaohjelmia."
 
 #: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "Vain yksi pakettienhallintatyökalu voi olla kerralla käytössä"
 
 #: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
+"Sulje ensin muut pakettienhallintatyökalut kuten \"päivitysten hallinta\", "
+"\"aptitude\" tai \"synaptic\"."
 
 #: ../GDebi/GDebi.py:412
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Kaikkia vaadittuja tiedostoja ei voitu noutaa"
 
 #: ../GDebi/GDebi.py:413
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "Tarkista Internet-yhteytesi tai asennusmediasi."
 
 #: ../GDebi/GDebi.py:417
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "Kaikkia riippuvuuksia ei voitu asentaa"
 
 #: ../GDebi/GDebi.py:418
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Yleensä tämä johtuu ohjelman toimittajan tekemästä virheestä. Voit lukea "
+"pääteikkunasta lisätietoja virheestä."
 
 #: ../GDebi/GDebi.py:427
 msgid "Failed to install package file"
-msgstr ""
+msgstr "Paketin asennus epäonnistui"
 
 #. install the package itself
 #: ../GDebi/GDebi.py:431
 msgid "Installing package file"
-msgstr ""
+msgstr "Asennetaan pakettia"
 
 #: ../GDebi/GDebi.py:443
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "Asennettiin paketti \"%s\""
 
 #: ../GDebi/GDebi.py:445
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "Paketin \"%s\" asennus epäonnistui"
 
 #: ../GDebi/GDebi.py:447
 msgid "Installation complete"
-msgstr ""
+msgstr "Asennus on valmis"
 
 #: ../GDebi/GDebi.py:455
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "Kaikkien riippuvuuksien asennus ei onnistunut"
 
 #: ../GDebi/GDebi.py:456
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
+msgstr "Korjaa tämä suorittamalla \"sudo apt-get install -f\" päätteessä."
 
 #. ui
 #: ../GDebi/GDebi.py:533
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "Asennetaan \"%s\"..."
 
 #: ../GDebi/GDebi.py:611
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "Asennetaan riippuvuuksia..."
 
 #. print "start()"
 #: ../GDebi/GDebi.py:635
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "Noudetaan tarvittavia lisäpaketteja..."
 
 #: ../GDebi/GDebi.py:641
 #, python-format
 msgid "File %s of %s at %s/s"
-msgstr ""
+msgstr "Tiedosto %s/%s nopeudella %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:648
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
+msgstr "Laita levy \"%s\" asemaan \"%s\""
 
 #: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
-msgstr ""
+msgstr "Riippuvuutta ei voi täyttää: %s\n"
 
 #: ../GDebi/DebPackage.py:102
 #, python-format
 msgid "Conflicts with the installed package '%s'"
-msgstr ""
+msgstr "On ristiriidassa asennetun paketin \"%s\" kanssa"
 
 #: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr ""
+msgstr "Virheellinen järjestelmäalusta \"%s\""
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:193
 msgid "A later version is already installed"
-msgstr ""
+msgstr "Uudempi versio on jo asennettu"
 
 #: ../GDebi/DebPackage.py:221
 #, python-format
 msgid "Cannot install '%s'"
-msgstr ""
+msgstr "Pakettia \"%s\" ei voi asentaa"
 
 #: ../GDebi/DebPackage.py:231
 msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr ""
+msgstr "Kaikkia riippuvuuksia ei voitu täyttää (virheellinen välimuisti)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s ei ole saatavilla"
 
 #: ../GDebi/GDebiCli.py:19
 msgid "Failed to open the software package"
-msgstr ""
+msgstr "Ohjelmistopaketia ei voitu avata"
 
 #: ../GDebi/GDebiCli.py:28
 msgid "No description is available"
-msgstr ""
+msgstr "Kuvausta ei ole saatavilla"
 
 #: ../GDebi/GDebiCli.py:32
 msgid "This package is uninstallable"
-msgstr ""
+msgstr "Tämä paketti ei ole asennuskelpoinen"
 
 #: ../GDebi/GDebiCli.py:39
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "Seuraavien pakettien tekijää ei voida varmistaa: "
 
 #: ../GDebi/GDebiCli.py:43
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "Vaatii seuraavien pakettien poistamista: "
 
 #: ../GDebi/GDebiCli.py:48
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Vaatii seuraavien pakettien asentamista: "
+
+#~ msgid "Enter your password to install '%s'"
+#~ msgstr "Syötä salasanasi, jotta voit asentaa paketin \"%s\""

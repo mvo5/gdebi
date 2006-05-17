@@ -1,25 +1,25 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Bengali translation for gdebi
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gdebi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2006-05-17 16:14+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-05-06 09:57+0000\n"
+"Last-Translator: Khandakar Mujahidul Islam <suzan@bengalinux.org>\n"
+"Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../gdebi:20
 #, c-format
 msgid "Usage: %s [package.deb]"
-msgstr ""
+msgstr "ব্যবহার: %s [package.deb]"
 
 #: ../gdebi:22
 msgid ""
@@ -31,11 +31,11 @@ msgstr ""
 #: ../gdebi:27
 #, c-format
 msgid "gdebi error, file not found: %s"
-msgstr ""
+msgstr "gdebi সমস্যা, ফাইল পাওয়া যায় নি: %s"
 
 #: ../gdebi:33 ../GDebi/GDebiCli.py:70
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "আপনি কি সফটওয়্যার প্যাকেজটি ইনস্টল করতে চান? [y/N]:"
 
 #: ../gdebi-gtk:27
 msgid "Run non-interactive (dangerous!)"
@@ -43,31 +43,31 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005-2006 Canonical"
-msgstr ""
+msgstr "(c) ২০০৫-২০০৬ ক্যানোনিকাল"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big> </big></b>"
 
 #: ../data/gdebi.glade.h:4
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>মেইনটেইনার:</b>"
 
 #: ../data/gdebi.glade.h:5
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>অগ্রাধিকার:</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>সেকশন:</b>"
 
 #: ../data/gdebi.glade.h:7
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>আকার:</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>To install the following changes are required:</b>"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>সংস্করণ:</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid ""
@@ -88,51 +88,51 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:13
 msgid "Description"
-msgstr ""
+msgstr "বর্ণনা"
 
 #: ../data/gdebi.glade.h:14
 msgid "Description:"
-msgstr ""
+msgstr "বর্ণনা:"
 
 #: ../data/gdebi.glade.h:15
 msgid "Details"
-msgstr ""
+msgstr "বিস্তারিত"
 
 #: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr ""
+msgstr "জিপিএল, /usr/share/common-licenses/GPL দেখুন"
 
 #: ../data/gdebi.glade.h:17
 msgid "Included Files"
-msgstr ""
+msgstr "সংযুক্ত ফাইলসমূহ"
 
 #: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "সফটওয়্যার প্যাকেজ ইনস্টল করুন এবং দেখুন"
 
 #: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "প্যাকেজ ইনস্টলার"
 
 #: ../data/gdebi.glade.h:20
 msgid "Package:"
-msgstr ""
+msgstr "প্যাকেজ:"
 
 #: ../data/gdebi.glade.h:21
 msgid "Status:"
-msgstr ""
+msgstr "অবস্থা:"
 
 #: ../data/gdebi.glade.h:22
 msgid "Terminal"
-msgstr ""
+msgstr "টার্মিনাল"
 
 #: ../data/gdebi.glade.h:23
 msgid "_Details"
-msgstr ""
+msgstr "বিস্তারিত(_D)"
 
 #: ../data/gdebi.glade.h:24
 msgid "_File"
-msgstr ""
+msgstr "ফাইল(_F)"
 
 #: ../data/gdebi.glade.h:25
 msgid "_Grant"
@@ -140,37 +140,38 @@ msgstr ""
 
 #: ../data/gdebi.glade.h:26
 msgid "_Help"
-msgstr ""
+msgstr "সহায়িকা(_H)"
 
 #: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
 msgid "_Install Package"
-msgstr ""
+msgstr "ইনস্টল প্যাকেজ(_I)"
 
 #: ../data/gdebi.glade.h:28
 msgid "gdebi"
-msgstr ""
+msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:30
 msgid "translator-credits"
-msgstr ""
+msgstr "খন্দকার মুজাহিদুল ইসলাম সুজন <suzan@bengalinux.org> অঙ্কুর গ্রুপের পক্ষ থেকে"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr ""
+msgstr "সফটওয়্যার প্যাকেজ"
 
 #: ../data/gdebi.desktop.in.h:1
+#, fuzzy
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "প্যাকেজ ইনস্টলার"
 
 #: ../GDebi/GDebi.py:54
 msgid "Loading..."
-msgstr ""
+msgstr "লোড হচ্ছে..."
 
 #: ../GDebi/GDebi.py:124
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "'%s' খুলতে পারছে না"
 
 #: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
 msgid ""
@@ -182,19 +183,19 @@ msgstr ""
 #: ../GDebi/GDebi.py:138
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "প্যাকেজ ইনস্টলার - %s"
 
 #: ../GDebi/GDebi.py:211
 msgid "Same version is already installed"
-msgstr ""
+msgstr "একই সংস্করণ ইতিমধ্যেই ইনস্টল করা আছে"
 
 #: ../GDebi/GDebi.py:212
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "প্যাকেজ পুনরায় ইনস্টল(_R)"
 
 #: ../GDebi/GDebi.py:229
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "একই সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
 #: ../GDebi/GDebi.py:230
 msgid "You are recommended to install the software from the channel instead."
@@ -202,7 +203,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:234
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "একটি পুরোনো সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
 #: ../GDebi/GDebi.py:235
 msgid ""
@@ -212,7 +213,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:240
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "একটি পরের সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
 #: ../GDebi/GDebi.py:242
 msgid ""
@@ -238,25 +239,25 @@ msgstr ""
 #: ../GDebi/GDebi.py:281
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr ""
+msgstr "<b>মুছে ফেলা হবে: %s</b>"
 
 #: ../GDebi/GDebi.py:283
 #, python-format
 msgid "To be installed: %s"
-msgstr ""
+msgstr "ইনস্টল করতে হবে: %s"
 
 #: ../GDebi/GDebi.py:297
 msgid "Open Software Package"
-msgstr ""
+msgstr "সফটওয়্যার প্যাকেজ খোলো"
 
 #: ../GDebi/GDebi.py:302
 msgid "Software packages"
-msgstr ""
+msgstr "সফটওয়্যার প্যাকেজসমূহ"
 
 #. print "install"
 #: ../GDebi/GDebi.py:320
 msgid "Installing package file..."
-msgstr ""
+msgstr "প্যাকেজ ফাইল ইনস্টল করা হচ্ছে..."
 
 #: ../GDebi/GDebi.py:323
 msgid "Install unauthenticated software?"
@@ -272,7 +273,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "শুধুমাত্র একটি সফটওয়্যার ম্যানেজমেন্ট টুল একসময়ে চালানো যাবে"
 
 #: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
 msgid ""
@@ -282,15 +283,15 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:412
 msgid "Could not download all required files"
-msgstr ""
+msgstr "সকল প্রয়োজনীয় ফাইল ডাউনলোড করতে পারে নি"
 
 #: ../GDebi/GDebi.py:413
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "দয়াা করে আপনার ইন্টারনেট সংযুক্তি অথবা ইনস্টলেশন মিডিয়াম পরীক্ষা করুন।"
 
 #: ../GDebi/GDebi.py:417
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "সকল নির্ভরতা ইনস্টল করতে পারে নি"
 
 #: ../GDebi/GDebi.py:418
 msgid ""
@@ -300,65 +301,67 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:427
 msgid "Failed to install package file"
-msgstr ""
+msgstr "প্যাকেজ ফাইল ইনস্টল করতে ব্যর্থ"
 
 #. install the package itself
 #: ../GDebi/GDebi.py:431
 msgid "Installing package file"
-msgstr ""
+msgstr "প্যাকেজ ফাইল ইনস্টল করা হচ্ছে"
 
 #: ../GDebi/GDebi.py:443
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "'%s' প্যাকেজ ইনস্টল হয়েছে"
 
 #: ../GDebi/GDebi.py:445
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "'%s' প্যাকেজ ইনস্টল করতে ব্যর্থ"
 
 #: ../GDebi/GDebi.py:447
 msgid "Installation complete"
-msgstr ""
+msgstr "ইনস্টলেশন সম্পূর্ণ"
 
 #: ../GDebi/GDebi.py:455
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "সম্পূর্ণভাবে সকল নির্ভরতা ইনস্টল করতে ব্যর্থ"
 
 #: ../GDebi/GDebi.py:456
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
+"এই সমস্যা নির্দিষ্ট করতে একটি টার্মিনাল উইন্ডোতে 'sudo apt-get install -f' কমান্ড "
+"চালান।"
 
 #. ui
 #: ../GDebi/GDebi.py:533
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "'%s' ইনস্টল করা হচ্ছে..."
 
 #: ../GDebi/GDebi.py:611
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "নির্বরতা ইনস্টল করা হচ্ছে..."
 
 #. print "start()"
 #: ../GDebi/GDebi.py:635
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "অতিরিক্ত প্যাকেজ ফাইল ডাউনলোড করা হচ্ছে..."
 
 #: ../GDebi/GDebi.py:641
 #, python-format
 msgid "File %s of %s at %s/s"
-msgstr ""
+msgstr "%s/s তে %s এর %s ফাইল"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:648
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
+msgstr "দয়া করে '%s' ড্রাইভে '%s' প্রবেশ করান"
 
 #: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
-msgstr ""
+msgstr "নির্বরতা মেটাতে পারে নি: %s\n"
 
 #: ../GDebi/DebPackage.py:102
 #, python-format
@@ -368,36 +371,36 @@ msgstr ""
 #: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr ""
+msgstr "ভুল আর্কিটেকচার '%s'"
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:193
 msgid "A later version is already installed"
-msgstr ""
+msgstr "ইতিমধ্যেই একটি পরবর্তী সংস্করণ ইনস্টল করা আছে"
 
 #: ../GDebi/DebPackage.py:221
 #, python-format
 msgid "Cannot install '%s'"
-msgstr ""
+msgstr "'%s' ইনস্টল করতে পারে নি"
 
 #: ../GDebi/DebPackage.py:231
 msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr ""
+msgstr "সকল নির্ভরতা পূরণ করতে ব্যর্থ (ভাঙা ক্যাশ)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s পাওয়া যায় নি"
 
 #: ../GDebi/GDebiCli.py:19
 msgid "Failed to open the software package"
-msgstr ""
+msgstr "সফটওয়্যার প্যাকেজটি খুলতে ব্যর্থ"
 
 #: ../GDebi/GDebiCli.py:28
 msgid "No description is available"
-msgstr ""
+msgstr "কোন বর্ননা পাওয়া যায় নি"
 
 #: ../GDebi/GDebiCli.py:32
 msgid "This package is uninstallable"

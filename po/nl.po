@@ -1,25 +1,26 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translation for gdebi
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gdebi package.
+# Jan Claeys <ubuntu@janc.be>, 2006.
+# , fuzzy
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2006-05-17 16:14+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-04-11 19:00+0000\n"
+"Last-Translator: Jan Claeys <ubuntu@janc.be>\n"
+"Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../gdebi:20
 #, c-format
 msgid "Usage: %s [package.deb]"
-msgstr ""
+msgstr "Gebruik: %s [pakket.deb]"
 
 #: ../gdebi:22
 msgid ""
@@ -27,55 +28,58 @@ msgid ""
 "on a '.deb' software package in the file browser\n"
 "and select: Open with 'GDebi Package Installer'."
 msgstr ""
+"Om de grafische interface te gebruiken, moet u met uw rechter-\n"
+"muisknop klikken op een '.deb'-softwarepakket in de bestands-\n"
+"browser, en selecteren: Openen met 'GDebi Pakketinstallatie'."
 
 #: ../gdebi:27
 #, c-format
 msgid "gdebi error, file not found: %s"
-msgstr ""
+msgstr "gdebi-fout, bestand niet gevonden: %s"
 
 #: ../gdebi:33 ../GDebi/GDebiCli.py:70
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "Wilt u het softwarepakket installeren? [j/N]:"
 
 #: ../gdebi-gtk:27
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Niet-interactief uitvoeren (gevaarlijk!)"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
-msgstr ""
+msgstr "  "
 
 #: ../data/gdebi.glade.h:2
 msgid "(c) 2005-2006 Canonical"
-msgstr ""
+msgstr "(c) 2005-2006 Canonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big> </big></b>"
 
 #: ../data/gdebi.glade.h:4
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>Beheerder:</b>"
 
 #: ../data/gdebi.glade.h:5
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>Prioriteit:</b>"
 
 #: ../data/gdebi.glade.h:6
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>Onderdeel:</b>"
 
 #: ../data/gdebi.glade.h:7
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>Grootte:</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>De volgende wijzigingen zijn nodig om te kunnen installeren:</b>"
 
 #: ../data/gdebi.glade.h:9
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>Versie:</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid ""
@@ -85,182 +89,194 @@ msgid ""
 "It is a possible security risk to install packages files manually. Install "
 "software from trustworthy software distributors only."
 msgstr ""
+"<big><b>U moet administratieve rechten toekennen om software te installeren</"
+"b></big>\n"
+"\n"
+"Het is een mogelijk beveiligingsrisico om pakketbestanden manueel te "
+"installeren. Installeer alleen software van vertrouwde softwaredistributeurs."
 
 #: ../data/gdebi.glade.h:13
 msgid "Description"
-msgstr ""
+msgstr "Omschrijving"
 
 #: ../data/gdebi.glade.h:14
 msgid "Description:"
-msgstr ""
+msgstr "Omschrijving:"
 
 #: ../data/gdebi.glade.h:15
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: ../data/gdebi.glade.h:16
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr ""
+msgstr "GPL, zie /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.glade.h:17
 msgid "Included Files"
-msgstr ""
+msgstr "Bijgevoegde Bestanden"
 
 #: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "Softwarepakketten installeren en bekijken"
 
 #: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "Pakketinstallatie"
 
 #: ../data/gdebi.glade.h:20
 msgid "Package:"
-msgstr ""
+msgstr "Pakket:"
 
 #: ../data/gdebi.glade.h:21
 msgid "Status:"
-msgstr ""
+msgstr "Status:"
 
 #: ../data/gdebi.glade.h:22
 msgid "Terminal"
-msgstr ""
+msgstr "Terminalvenster"
 
 #: ../data/gdebi.glade.h:23
 msgid "_Details"
-msgstr ""
+msgstr "_Details"
 
 #: ../data/gdebi.glade.h:24
 msgid "_File"
-msgstr ""
+msgstr "_Bestand"
 
 #: ../data/gdebi.glade.h:25
 msgid "_Grant"
-msgstr ""
+msgstr "_Toekennen"
 
 #: ../data/gdebi.glade.h:26
 msgid "_Help"
-msgstr ""
+msgstr "_Hulp"
 
 #: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
 msgid "_Install Package"
-msgstr ""
+msgstr "Pakket _Installeren"
 
 #: ../data/gdebi.glade.h:28
 msgid "gdebi"
-msgstr ""
+msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:30
 msgid "translator-credits"
-msgstr ""
+msgstr "JW <JW00000@gmail.com>Jan Claeys <vertaling@janc.be>"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr ""
+msgstr "Softwarepakket"
 
 #: ../data/gdebi.desktop.in.h:1
+#, fuzzy
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "Pakketinstallatie"
 
 #: ../GDebi/GDebi.py:54
 msgid "Loading..."
-msgstr ""
+msgstr "Bezig met laden..."
 
 #: ../GDebi/GDebi.py:124
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Kon '%s' niet openen"
 
 #: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
+"Het pakket kan corrupt zijn, of u hebt niet genoeg rechten om het bestand te "
+"openen. Controleer de rechten van het bestand."
 
 #. set window title
 #: ../GDebi/GDebi.py:138
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "Pakketinstallatie - %s"
 
 #: ../GDebi/GDebi.py:211
 msgid "Same version is already installed"
-msgstr ""
+msgstr "Dezelfde versie is al geïnstalleerd"
 
 #: ../GDebi/GDebi.py:212
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "Pakket He_rinstalleren"
 
 #: ../GDebi/GDebi.py:229
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "Dezelfde versie is beschikbaar in een softwarekanaal"
 
 #: ../GDebi/GDebi.py:230
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "Het is aangeraden de software uit het softwarekanaal te installeren."
 
 #: ../GDebi/GDebi.py:234
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "Een oudere versie is beschikbaar in een softwarekanaal"
 
 #: ../GDebi/GDebi.py:235
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Het is algemeen aangeraden om de versie uit het softwarekanaal te "
+"installeren, daar deze meestal beter ondersteund wordt."
 
 #: ../GDebi/GDebi.py:240
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "Een nieuwere versie is beschikbaar in een softwarekanaal"
 
 #: ../GDebi/GDebi.py:242
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"Het wordt sterk aangeraden de versie uit het softwarekanaal te installeren, "
+"daar deze meestal beter ondersteund wordt."
 
 #: ../GDebi/GDebi.py:259
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "Aan alle benodigdheden is voldaan"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebi.py:265
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "Vereist de <b>verwijdering</b> van %s pakketen\n"
 
 #: ../GDebi/GDebi.py:267
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "Vereist de installatie van %s pakketen"
 
 #: ../GDebi/GDebi.py:281
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr ""
+msgstr "<b>Te verwijderen: %s</b>"
 
 #: ../GDebi/GDebi.py:283
 #, python-format
 msgid "To be installed: %s"
-msgstr ""
+msgstr "Te installeren: %s"
 
 #: ../GDebi/GDebi.py:297
 msgid "Open Software Package"
-msgstr ""
+msgstr "Softwarepakket openen"
 
 #: ../GDebi/GDebi.py:302
 msgid "Software packages"
-msgstr ""
+msgstr "Softwarepakketten"
 
 #. print "install"
 #: ../GDebi/GDebi.py:320
 msgid "Installing package file..."
-msgstr ""
+msgstr "Het pakket wordt geïnstalleerd..."
 
 #: ../GDebi/GDebi.py:323
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "Ongeauthoriseerde software installeren?"
 
 #: ../GDebi/GDebi.py:324
 msgid ""
@@ -269,148 +285,162 @@ msgid ""
 "The packages below are not authenticated and could therefor be of malicous "
 "nature."
 msgstr ""
+"Kwaadaardige software kan uw data beschadigen en de controle over uw systeem "
+"overnemen.\n"
+"\n"
+"De pakketten hieronder zijn niet geauthoriseerd en zouden daarom kwaadaardig "
+"kunnen zijn."
 
 #: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "Er kan maar één softwarebeheerder tegelijkertijd uitgevoerd worden."
 
 #: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
+"Sluit eerst de andere toepassing af (bijvoorbeeld 'Updatebeheerder', "
+"'aptitude' of 'Synaptic')."
 
 #: ../GDebi/GDebi.py:412
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Niet alle vereiste bestanden konden gedownload worden"
 
 #: ../GDebi/GDebi.py:413
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "Controleer a.u.b. uw internetverbinding of installatiemedium."
 
 #: ../GDebi/GDebi.py:417
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "Niet alle benodigdheden konden geïnstalleerd worden"
 
 #: ../GDebi/GDebi.py:418
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Normaal wordt dit veroorzaakt door een fout van de softwaredistributeur. Zie "
+"het terminalvenster voor meer details."
 
 #: ../GDebi/GDebi.py:427
 msgid "Failed to install package file"
-msgstr ""
+msgstr "Kon het pakketbestand niet installeren"
 
 #. install the package itself
 #: ../GDebi/GDebi.py:431
 msgid "Installing package file"
-msgstr ""
+msgstr "Pakketbestand wordt geïnstalleerd"
 
 #: ../GDebi/GDebi.py:443
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "Pakket '%s' werd geïnstalleerd"
 
 #: ../GDebi/GDebi.py:445
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "Kon pakket '%s' niet installeren"
 
 #: ../GDebi/GDebi.py:447
 msgid "Installation complete"
-msgstr ""
+msgstr "Installatie voltooid"
 
 #: ../GDebi/GDebi.py:455
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "Niet alle benodigdheden konden geïnstalleerd worden"
 
 #: ../GDebi/GDebi.py:456
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
+"Om dit op te lossen, moet u 'sudo apt-get install -f' uitvoeren in een "
+"terminalvenster."
 
 #. ui
 #: ../GDebi/GDebi.py:533
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "'%s' wordt geïnstalleerd..."
 
 #: ../GDebi/GDebi.py:611
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "Benodigdheden worden geïnstalleerd..."
 
 #. print "start()"
 #: ../GDebi/GDebi.py:635
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "Bijkomende pakketbestanden worden gedownload..."
 
 #: ../GDebi/GDebi.py:641
 #, python-format
 msgid "File %s of %s at %s/s"
-msgstr ""
+msgstr "Bestand %s van %s aan %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:648
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
+msgstr "Plaats '%s' in station '%s'"
 
 #: ../GDebi/DebPackage.py:85
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
-msgstr ""
+msgstr "Aan de volgende benodigdheid kon niet voldaan worden: %s\n"
 
 #: ../GDebi/DebPackage.py:102
 #, python-format
 msgid "Conflicts with the installed package '%s'"
-msgstr ""
+msgstr "Conflicten met het geïnstalleerde pakket '%s'"
 
 #: ../GDebi/DebPackage.py:187
 #, python-format
 msgid "Wrong architecture '%s'"
-msgstr ""
+msgstr "Foute architectuur '%s'"
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:193
 msgid "A later version is already installed"
-msgstr ""
+msgstr "Een nieuwere versie is al geïnstalleerd"
 
 #: ../GDebi/DebPackage.py:221
 #, python-format
 msgid "Cannot install '%s'"
-msgstr ""
+msgstr "Kan '%s' niet installeren"
 
 #: ../GDebi/DebPackage.py:231
 msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr ""
+msgstr "Kon niet aan alle benodigdheden voldoen (defecte cache)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s is niet beschibaar"
 
 #: ../GDebi/GDebiCli.py:19
 msgid "Failed to open the software package"
-msgstr ""
+msgstr "Kon het softwarepakket niet openen"
 
 #: ../GDebi/GDebiCli.py:28
 msgid "No description is available"
-msgstr ""
+msgstr "Geen omschrijving beschikbaar"
 
 #: ../GDebi/GDebiCli.py:32
 msgid "This package is uninstallable"
-msgstr ""
+msgstr "Dit pakket is niet installeerbaar"
 
 #: ../GDebi/GDebiCli.py:39
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "De volgende pakketten zijn ONGEAUTHORISEERD: "
 
 #: ../GDebi/GDebiCli.py:43
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "Vereist de VERWIJDERING van de volgende pakketen: "
 
 #: ../GDebi/GDebiCli.py:48
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Vereist de installatie van de volgende pakketen: "
+
+#~ msgid "Enter your password to install '%s'"
+#~ msgstr "Geef uw wachtwoord om '%s' te installeren"

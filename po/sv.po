@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-04-25 09:16+0200\n"
-"PO-Revision-Date: 2006-01-29 14:04+0100\n"
+"POT-Creation-Date: 2006-05-17 16:14+0200\n"
+"PO-Revision-Date: 2006-04-23 13:00+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: ../gdebi:20
 #, c-format
 msgid "Usage: %s [package.deb]"
-msgstr ""
+msgstr "Användning: %s [paket.deb]"
 
 #: ../gdebi:22
 msgid ""
@@ -26,79 +26,80 @@ msgid ""
 "on a '.deb' software package in the file browser\n"
 "and select: Open with 'GDebi Package Installer'."
 msgstr ""
+"För att använda det grafiska användargränssnittet,\n"
+"högerklicka på ett \".deb\"-paket i filbläddraren och\n"
+"välj: Öppna med \"Paketinstallatören GDebi\"."
 
 #: ../gdebi:27
 #, c-format
 msgid "gdebi error, file not found: %s"
-msgstr ""
+msgstr "gdebi-fel, filen hittades inte: %s"
 
 #: ../gdebi:33 ../GDebi/GDebiCli.py:70
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "Vill du installera programvarupaketet? [j/N]:"
 
 #: ../gdebi-gtk:27
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Kör icke-interaktivt (farligt!)"
 
 #: ../data/gdebi.glade.h:1
 msgid "  "
 msgstr "  "
 
 #: ../data/gdebi.glade.h:2
-#, fuzzy
 msgid "(c) 2005-2006 Canonical"
-msgstr "(c) 2005 Canonical"
+msgstr "© 2005-2006 Canonical"
 
 #: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.glade.h:4
-#, fuzzy
 msgid "<b>Maintainer:</b>"
-msgstr "<b>Underhållare</b>"
+msgstr "<b>Underhållare:</b>"
 
 #: ../data/gdebi.glade.h:5
-#, fuzzy
 msgid "<b>Priority:</b>"
-msgstr "<b>Prioritet</b>"
+msgstr "<b>Prioritet:</b>"
 
 #: ../data/gdebi.glade.h:6
-#, fuzzy
 msgid "<b>Section:</b>"
-msgstr "<b>Sektion</b>"
+msgstr "<b>Sektion:</b>"
 
 #: ../data/gdebi.glade.h:7
-#, fuzzy
 msgid "<b>Size:</b>"
-msgstr "<b>Storlek</b>"
+msgstr "<b>Storlek:</b>"
 
 #: ../data/gdebi.glade.h:8
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>För att installera krävs följande ändringar:</b>"
 
 #: ../data/gdebi.glade.h:9
-#, fuzzy
 msgid "<b>Version:</b>"
-msgstr "<b>Version</b>"
+msgstr "<b>Version:</b>"
 
 #: ../data/gdebi.glade.h:10
 msgid ""
-"<big><b>You need to grant adminstrative rights to install software</b></"
+"<big><b>You need to grant administrative rights to install software</b></"
 "big>\n"
 "\n"
 "It is a possible security risk to install packages files manually. Install "
 "software from trustworthy software distributors only."
 msgstr ""
+"<big><b>Du behöver tillåta användningen av administrativa rättigheter för "
+"att installera programvara</b></big>\n"
+"\n"
+"Det är en möjlig säkerhetsrisk att manuellt installera paketfiler. "
+"Installera endast programvara från pålitliga programvarudistributörer."
 
 #: ../data/gdebi.glade.h:13
 msgid "Description"
 msgstr "Beskrivning"
 
 #: ../data/gdebi.glade.h:14
-#, fuzzy
 msgid "Description:"
-msgstr "Beskrivning"
+msgstr "Beskrivning:"
 
 #: ../data/gdebi.glade.h:15
 msgid "Details"
@@ -110,16 +111,15 @@ msgstr "GPL, se /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.glade.h:17
 msgid "Included Files"
-msgstr ""
+msgstr "Inkluderade filer"
 
-#: ../data/gdebi.glade.h:18
-#, fuzzy
+#: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr "Installera Debianpaket direkt"
+msgstr "Installera och visa programvarupaket"
 
-#: ../data/gdebi.glade.h:19
+#: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "Paketinstallatör"
 
 #: ../data/gdebi.glade.h:20
 msgid "Package:"
@@ -134,9 +134,8 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: ../data/gdebi.glade.h:23
-#, fuzzy
 msgid "_Details"
-msgstr "Detaljer"
+msgstr "_Detaljer"
 
 #: ../data/gdebi.glade.h:24
 msgid "_File"
@@ -144,16 +143,15 @@ msgstr "_Arkiv"
 
 #: ../data/gdebi.glade.h:25
 msgid "_Grant"
-msgstr ""
+msgstr "_Tillåt"
 
 #: ../data/gdebi.glade.h:26
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:199 ../GDebi/GDebi.py:267
-#, fuzzy
+#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
 msgid "_Install Package"
-msgstr "Installera Debianpaket"
+msgstr "_Installera paket"
 
 #: ../data/gdebi.glade.h:28
 msgid "gdebi"
@@ -165,228 +163,231 @@ msgid "translator-credits"
 msgstr "Daniel Nylander <po@danielnylander.se>"
 
 #: ../data/gdebi.xml.in.h:1
-#, fuzzy
 msgid "Software package"
-msgstr "Debianpaket"
+msgstr "Programvarupaket"
 
-#: ../GDebi/GDebi.py:51
+#: ../data/gdebi.desktop.in.h:1
+#, fuzzy
+msgid "GDebi Package Installer"
+msgstr "Paketinstallatör"
+
+#: ../GDebi/GDebi.py:54
 msgid "Loading..."
-msgstr ""
+msgstr "Läser in..."
 
-#: ../GDebi/GDebi.py:121
+#: ../GDebi/GDebi.py:124
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Kunde inte öppna \"%s\""
 
-#: ../GDebi/GDebi.py:122 ../GDebi/GDebiCli.py:20
+#: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
+"Paketet kan vara skadat eller så tillåts du inte att öppna filen. "
+"Kontrollera rättigheterna på filen."
 
 #. set window title
-#: ../GDebi/GDebi.py:135
+#: ../GDebi/GDebi.py:138
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "Paketinstallatör - %s"
 
-#: ../GDebi/GDebi.py:206
-#, fuzzy
+#: ../GDebi/GDebi.py:211
 msgid "Same version is already installed"
-msgstr "Nyare version är redan installerad"
+msgstr "Samma version är redan installerad"
 
-#: ../GDebi/GDebi.py:207
-#, fuzzy
+#: ../GDebi/GDebi.py:212
 msgid "_Reinstall Package"
-msgstr "Installera Debianpaket"
-
-#: ../GDebi/GDebi.py:224
-msgid "Same version is available in a software channel"
-msgstr ""
-
-#: ../GDebi/GDebi.py:225
-msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "_Ominstallera paket"
 
 #: ../GDebi/GDebi.py:229
-msgid "An older version is available in a software channel"
-msgstr ""
+msgid "Same version is available in a software channel"
+msgstr "Samma version finns tillgänglig i en programvarukanal"
 
 #: ../GDebi/GDebi.py:230
+msgid "You are recommended to install the software from the channel instead."
+msgstr "Du rekommenderas att istället installera programvaran från kanalen."
+
+#: ../GDebi/GDebi.py:234
+msgid "An older version is available in a software channel"
+msgstr "En äldre version finns tillgänglig i en programvarukanal"
+
+#: ../GDebi/GDebi.py:235
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Generellt sett rekommenderas du att installera versionen från "
+"programvarukanalen, eftersom den normalt sett har bättre stöd."
 
-#: ../GDebi/GDebi.py:235
+#: ../GDebi/GDebi.py:240
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "En senare version finns tillgänglig i en programvarukanal"
 
-#: ../GDebi/GDebi.py:237
+#: ../GDebi/GDebi.py:242
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"Du rekommenderas starkt att installera versionen från programvarukanalen, "
+"eftersom den normalt sett har bättre stöd."
 
-#: ../GDebi/GDebi.py:254
-#, fuzzy
+#: ../GDebi/GDebi.py:259
 msgid "All dependencies are satisfied"
 msgstr "Alla beroenden är tillfredsställda"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:260
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:265
+#, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr "Behöver <b>ta bort</b> %s paket från arkivet\n"
+msgstr "Kräver <b>borttagning</b> av %s paket\n"
 
-#: ../GDebi/GDebi.py:262
+#: ../GDebi/GDebi.py:267
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "Kräver installationen av %s paket"
 
-#: ../GDebi/GDebi.py:276
+#: ../GDebi/GDebi.py:281
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Att tas bort: %s</b>"
 
-#: ../GDebi/GDebi.py:278
+#: ../GDebi/GDebi.py:283
 #, python-format
 msgid "To be installed: %s"
 msgstr "Att installeras: %s"
 
-#: ../GDebi/GDebi.py:292
-#, fuzzy
-msgid "Open Software Package"
-msgstr "Debianpaket"
-
 #: ../GDebi/GDebi.py:297
-#, fuzzy
+msgid "Open Software Package"
+msgstr "Fria programvarupaket"
+
+#: ../GDebi/GDebi.py:302
 msgid "Software packages"
-msgstr "Debianpaket"
+msgstr "Programvarupaket"
 
 #. print "install"
-#: ../GDebi/GDebi.py:315
-#, fuzzy
+#: ../GDebi/GDebi.py:320
 msgid "Installing package file..."
-msgstr "Installerar paket ..."
+msgstr "Installerar paketfil..."
 
-#: ../GDebi/GDebi.py:318
+#: ../GDebi/GDebi.py:323
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "Installera programvara som inte har autentiserats?"
 
-#: ../GDebi/GDebi.py:319
+#: ../GDebi/GDebi.py:324
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
 "The packages below are not authenticated and could therefor be of malicous "
 "nature."
 msgstr ""
+"Ondsint programvara kan skada ditt data och ta över kontrollen av ditt "
+"system.\n"
+"\n"
+"Paketen nedan är inte autentiserade och kan därför vara av ondsint karaktär."
 
-#: ../GDebi/GDebi.py:352
-#, python-format
-msgid "Enter your password to install '%s'"
-msgstr ""
-
-#: ../GDebi/GDebi.py:371
+#: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "Endast körning av ett samtidigt programvaruhanteringsverktyg tillåts"
 
-#: ../GDebi/GDebi.py:373
+#: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
+"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", \"aptitude"
+"\" eller \"Synaptic\" först."
 
-#: ../GDebi/GDebi.py:395
+#: ../GDebi/GDebi.py:412
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Kunde inte hämta alla nödvändiga filer"
 
-#: ../GDebi/GDebi.py:396
+#: ../GDebi/GDebi.py:413
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "Vänligen kontrollera din Internetanslutning eller installationsmedium."
 
-#: ../GDebi/GDebi.py:400
-#, fuzzy
+#: ../GDebi/GDebi.py:417
 msgid "Could not install all dependencies"
-msgstr "Installerar beroenden ..."
+msgstr "Kunde inte installera alla beroenden"
 
-#: ../GDebi/GDebi.py:401
+#: ../GDebi/GDebi.py:418
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Normalt sett är detta relaterat till ett fel hos programvarudistributören. "
+"Se terminalfönstret för fler detaljer."
 
-#: ../GDebi/GDebi.py:410
-#, fuzzy
+#: ../GDebi/GDebi.py:427
 msgid "Failed to install package file"
-msgstr "Behöver installera %s paket från arkivet"
+msgstr "Misslyckades med att installera paketfil"
 
 #. install the package itself
-#: ../GDebi/GDebi.py:414
-#, fuzzy
+#: ../GDebi/GDebi.py:431
 msgid "Installing package file"
-msgstr "Installerar paket ..."
+msgstr "Installerar paketfil"
 
-#: ../GDebi/GDebi.py:426
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:443
+#, python-format
 msgid "Package '%s' was installed"
-msgstr "Version är installerad"
+msgstr "Paketet \"%s\" blev installerat"
 
-#: ../GDebi/GDebi.py:428
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:445
+#, python-format
 msgid "Failed to install package '%s'"
-msgstr "Konfliktar med installerat paket: \"%s\""
+msgstr "Misslyckades med att installera paketet \"%s\""
 
-#: ../GDebi/GDebi.py:430
-#, fuzzy
+#: ../GDebi/GDebi.py:447
 msgid "Installation complete"
-msgstr "Installationsproblem"
+msgstr "Installationen färdig"
 
-#: ../GDebi/GDebi.py:438
-#, fuzzy
+#: ../GDebi/GDebi.py:455
 msgid "Failed to completely install all dependencies"
-msgstr "Misslyckades att hämta beroenden"
+msgstr "Misslyckades med att installera alla beroenden"
 
-#: ../GDebi/GDebi.py:439
+#: ../GDebi/GDebi.py:456
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
+"För att rätta till detta, kör \"sudo apt-get install -f\" i ett "
+"terminalfönster."
 
 #. ui
-#: ../GDebi/GDebi.py:516
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:533
+#, python-format
 msgid "Installing '%s'..."
-msgstr "Installerar %s"
+msgstr "Installerar \"%s\"..."
 
-#: ../GDebi/GDebi.py:594
-#, fuzzy
+#: ../GDebi/GDebi.py:611
 msgid "Installing dependencies..."
-msgstr "Installerar beroenden ..."
+msgstr "Installerar beroenden..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:618
+#: ../GDebi/GDebi.py:635
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "Hämtar ytterligare paketfiler..."
 
-#: ../GDebi/GDebi.py:624
+#: ../GDebi/GDebi.py:641
 #, python-format
 msgid "File %s of %s at %s/s"
-msgstr ""
+msgstr "Fil %s av %s i %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:631
+#: ../GDebi/GDebi.py:648
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Mata in \"%s\" i enheten \"%s\""
 
 #: ../GDebi/DebPackage.py:85
-#, fuzzy, python-format
+#, python-format
 msgid "Dependency is not satisfiable: %s\n"
-msgstr "Beroende hittades inte: %s\n"
+msgstr "Beroendet tillfredsställs inte: %s\n"
 
 #: ../GDebi/DebPackage.py:102
-#, fuzzy, python-format
+#, python-format
 msgid "Conflicts with the installed package '%s'"
-msgstr "Konfliktar med installerat paket: \"%s\""
+msgstr "Konfliktar med det installerade paketet \"%s\""
 
 #: ../GDebi/DebPackage.py:187
 #, python-format
@@ -395,50 +396,51 @@ msgstr "Fel arkitektur \"%s\""
 
 #. the deb is older than the installed
 #: ../GDebi/DebPackage.py:193
-#, fuzzy
 msgid "A later version is already installed"
-msgstr "Nyare version är redan installerad"
+msgstr "En senare version är redan installerad"
 
 #: ../GDebi/DebPackage.py:221
-#, fuzzy, python-format
+#, python-format
 msgid "Cannot install '%s'"
 msgstr "Kan inte installera \"%s\""
 
 #: ../GDebi/DebPackage.py:231
-#, fuzzy
 msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr "Installation av beroenden är omöjligt (trasig cache)"
+msgstr "Misslyckades med att tillfredsställa alla beroenden (trasig cache)"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s finns inte tillgänglig"
 
 #: ../GDebi/GDebiCli.py:19
 msgid "Failed to open the software package"
-msgstr ""
+msgstr "Misslyckades med att öppna programvarupaketet"
 
 #: ../GDebi/GDebiCli.py:28
 msgid "No description is available"
-msgstr ""
+msgstr "Ingen beskrivning finns tillgänglig"
 
 #: ../GDebi/GDebiCli.py:32
 msgid "This package is uninstallable"
-msgstr ""
+msgstr "Detta paket är inte installerbart"
 
 #: ../GDebi/GDebiCli.py:39
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "Följande paket är INTE AUTENTISERADE: "
 
 #: ../GDebi/GDebiCli.py:43
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "Kräver BORTTAGNING av följande paket: "
 
 #: ../GDebi/GDebiCli.py:48
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Kräver installation av följande paket: "
+
+#~ msgid "Enter your password to install '%s'"
+#~ msgstr "Ange ditt lösenord för att installera \"%s\""
 
 #~ msgid "<b>Package information:</b>"
 #~ msgstr "<b>Paketinformation:</b>"

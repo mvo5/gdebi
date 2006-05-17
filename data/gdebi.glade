@@ -1278,7 +1278,7 @@ Sebastian Heinlein
 	  <child>
 	    <widget class="GtkLabel" id="label25">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;You need to grant adminstrative rights to install software&lt;/b&gt;&lt;/big&gt;
+	      <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;You need to grant administrative rights to install software&lt;/b&gt;&lt;/big&gt;
 
 It is a possible security risk to install packages files manually. Install software from trustworthy software distributors only.</property>
 	      <property name="use_underline">False</property>

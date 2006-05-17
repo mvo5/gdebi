@@ -160,7 +160,7 @@ class GDebi(SimpleGladeApp):
                     long_desc += "\n"
                 else:
                     long_desc += tmp + "\n"
-            print long_desc
+            #print long_desc
             # do some regular expression magic on the description
             # Add a newline before each bullet
             p = re.compile(r'^(\s|\t)*(\*|0|-)',re.MULTILINE)
