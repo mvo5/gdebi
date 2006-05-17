@@ -174,9 +174,11 @@ class GDebi(SimpleGladeApp):
             # tag the first line with a bold font
             tag = buf.create_tag(None, weight=pango.WEIGHT_BOLD)
             iter = buf.get_iter_at_offset(0)
-            (start, end) = iter.forward_search("\n", gtk.TEXT_SEARCH_TEXT_ONLY,None)
+            (start, end) = iter.forward_search("\n",
+                                               gtk.TEXT_SEARCH_TEXT_ONLY,
+                                               None)
             buf.apply_tag(tag , iter, end)
-        except KeyError:
+        except:
             buf.set_text("No description is available")
 
         # set various status bits
