@@ -388,6 +388,7 @@ class GDebi(SimpleGladeApp):
                          "Manager', 'aptitude' or 'Synaptic' first.")
                 self.show_alert(gtk.MESSAGE_ERROR, header, body)
                 self.dialog_deb_install.hide()
+                self.window_main.set_sensitive(True)
                 return
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
