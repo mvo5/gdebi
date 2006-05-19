@@ -1,3 +1,14 @@
+gdebi (0.1.4ubuntu13) dapper; urgency=low
+
+  * data/gdebi.glade:
+    - "Included Files" text area is not editable (#44293)
+    - make some labels selectable (Maintainer, Section, etc)
+     (ubuntu #44295)
+  * GDebi/GDebi.py:
+    - add "KB" for the size (#44286)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 19 May 2006 02:00:23 +0200
+
 gdebi (0.1.4ubuntu12) dapper; urgency=low
 
   * GDebi/GDebi.py:
