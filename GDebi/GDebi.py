@@ -349,14 +349,10 @@ class GDebi(SimpleGladeApp):
                 return
 
         if os.getuid() != 0:
-            self.dialog_admin.set_transient_for(self.window_main)
-            res = self.dialog_admin.run()
-            self.dialog_admin.hide()
-            if res == gtk.RESPONSE_OK:
-                os.execl("/usr/bin/gksu", "gksu", "--desktop",
-                         "/usr/share/applications/gdebi.desktop",
-                         "--", "gdebi-gtk", "--non-interactive",
-                         self._deb.file)
+            os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                     "/usr/share/applications/gdebi.desktop",
+                     "--", "gdebi-gtk", "--non-interactive",
+                     self._deb.file)
             return
 
         # check if we can lock the apt database
