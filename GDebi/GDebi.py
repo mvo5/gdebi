@@ -435,6 +435,7 @@ class GDebi(SimpleGladeApp):
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
+        self.label_action.set_markup("<b><big>"+_("Finished installing")+"</big></b>")
         if dprogress.exitstatus == 0:
             self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
         else:

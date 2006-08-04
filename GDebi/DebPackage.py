@@ -292,8 +292,7 @@ class MyCache(apt.Cache):
 
     def clear(self):
         """ unmark all pkgs """
-        for pkg in self:
-            pkg.markKeep()
+        self._depcache.Init()
 
     def isVirtualPkg(self, pkgname):
         """ this function returns true if pkgname is a virtual
