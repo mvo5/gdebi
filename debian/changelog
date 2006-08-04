@@ -2,6 +2,7 @@ gdebi (0.1.6) edgy; urgency=low
 
   * show a better finish message (ubuntu: #37651)
   * fixes for the new auto-dependency removal apt
+  * check for broken packages early (ubuntu: #40050)
 
  -- 
 

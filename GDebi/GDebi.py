@@ -69,6 +69,16 @@ class GDebi(SimpleGladeApp):
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         self._cache = MyCache(self.cprogress)
+        if self._cache._depcache.BrokenCount > 0:
+                err_header = _("Broken dependencies")
+                err_body = _("Your system has broken dependencies. "
+                             "This application can not continue until "
+                             "this is fixed. "
+                             "To fix it run 'sudo synaptic' or "
+                             "'sudo apt-get install -f' "
+                             "in a terminal window.")
+                self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
+                sys.exit(1)
         self.statusbar_main.push(self.context, "")
         self._options = options
         
