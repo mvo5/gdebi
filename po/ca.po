@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-05-17 16:14+0200\n"
+"POT-Creation-Date: 2006-08-04 13:46+0200\n"
 "PO-Revision-Date: 2006-03-27 21:18+0000\n"
 "Last-Translator: Rosetta Administrators <rosetta@launchpad.net>\n"
 "Language-Team: Catalan <ca@li.org>\n"
@@ -84,84 +84,71 @@ msgid "<b>Version:</b>"
 msgstr "<b>Versió</b>"
 
 #: ../data/gdebi.glade.h:10
-msgid ""
-"<big><b>You need to grant administrative rights to install software</b></"
-"big>\n"
-"\n"
-"It is a possible security risk to install packages files manually. Install "
-"software from trustworthy software distributors only."
-msgstr ""
-
-#: ../data/gdebi.glade.h:13
 msgid "Description"
 msgstr "Descripció"
 
-#: ../data/gdebi.glade.h:14
+#: ../data/gdebi.glade.h:11
 #, fuzzy
 msgid "Description:"
 msgstr "Descripció"
 
-#: ../data/gdebi.glade.h:15
+#: ../data/gdebi.glade.h:12
 msgid "Details"
 msgstr "Detalls"
 
-#: ../data/gdebi.glade.h:16
+#: ../data/gdebi.glade.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, vegeu /usr/share/common-licenses/GPL"
 
-#: ../data/gdebi.glade.h:17
+#: ../data/gdebi.glade.h:14
 msgid "Included Files"
 msgstr ""
 
-#: ../data/gdebi.glade.h:18 ../data/gdebi.desktop.in.h:2
+#: ../data/gdebi.glade.h:15 ../data/gdebi.desktop.in.h:2
 #, fuzzy
 msgid "Install and view software packages"
 msgstr "Instal·la els paquets deb directament"
 
-#: ../data/gdebi.glade.h:19 ../data/gdebi.desktop.in.h:3
+#: ../data/gdebi.glade.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
 msgstr ""
 
-#: ../data/gdebi.glade.h:20
+#: ../data/gdebi.glade.h:17
 msgid "Package:"
 msgstr "Paquet:"
 
-#: ../data/gdebi.glade.h:21
+#: ../data/gdebi.glade.h:18
 msgid "Status:"
 msgstr "Estat:"
 
-#: ../data/gdebi.glade.h:22
+#: ../data/gdebi.glade.h:19
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../data/gdebi.glade.h:23
+#: ../data/gdebi.glade.h:20
 #, fuzzy
 msgid "_Details"
 msgstr "Detalls"
 
-#: ../data/gdebi.glade.h:24
+#: ../data/gdebi.glade.h:21
 msgid "_File"
 msgstr "_Fitxer"
 
-#: ../data/gdebi.glade.h:25
-msgid "_Grant"
-msgstr ""
-
-#: ../data/gdebi.glade.h:26
+#: ../data/gdebi.glade.h:22
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../data/gdebi.glade.h:27 ../GDebi/GDebi.py:204 ../GDebi/GDebi.py:272
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:214 ../GDebi/GDebi.py:282
 #, fuzzy
 msgid "_Install Package"
 msgstr "Instal·la el paquet deb"
 
-#: ../data/gdebi.glade.h:28
+#: ../data/gdebi.glade.h:24
 msgid "gdebi"
 msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../data/gdebi.glade.h:30
+#: ../data/gdebi.glade.h:26
 msgid "translator-credits"
 msgstr "Jordi Mallach <jordi@sindominio.net>"
 
@@ -178,108 +165,120 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:124
+#: ../GDebi/GDebi.py:73
+#, fuzzy
+msgid "Broken dependencies"
+msgstr "S'estan instal·lant les dependències..."
+
+#: ../GDebi/GDebi.py:74
+msgid ""
+"Your system has broken dependencies. This application can not continue until "
+"this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
+"a terminal window."
+msgstr ""
+
+#: ../GDebi/GDebi.py:134
 #, python-format
 msgid "Could not open '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:125 ../GDebi/GDebiCli.py:20
+#: ../GDebi/GDebi.py:135 ../GDebi/GDebiCli.py:20
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
 
 #. set window title
-#: ../GDebi/GDebi.py:138
+#: ../GDebi/GDebi.py:148
 #, python-format
 msgid "Package Installer - %s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:211
+#: ../GDebi/GDebi.py:221
 #, fuzzy
 msgid "Same version is already installed"
 msgstr "La versió nova ja està instal·lada"
 
-#: ../GDebi/GDebi.py:212
+#: ../GDebi/GDebi.py:222
 #, fuzzy
 msgid "_Reinstall Package"
 msgstr "Instal·la el paquet deb"
 
-#: ../GDebi/GDebi.py:229
+#: ../GDebi/GDebi.py:239
 msgid "Same version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebi.py:230
+#: ../GDebi/GDebi.py:240
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
 
-#: ../GDebi/GDebi.py:234
+#: ../GDebi/GDebi.py:244
 msgid "An older version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebi.py:235
+#: ../GDebi/GDebi.py:245
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebi.py:240
+#: ../GDebi/GDebi.py:250
 msgid "A later version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebi.py:242
+#: ../GDebi/GDebi.py:252
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebi.py:259
+#: ../GDebi/GDebi.py:269
 #, fuzzy
 msgid "All dependencies are satisfied"
 msgstr "Totes les dependències estan satisfetes"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:265
+#: ../GDebi/GDebi.py:275
 #, fuzzy, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Es necessita <b>suprimir</b> %s paquets de l'arxiu\n"
 
-#: ../GDebi/GDebi.py:267
+#: ../GDebi/GDebi.py:277
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebi.py:281
+#: ../GDebi/GDebi.py:291
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>A suprimir: %s</b>"
 
-#: ../GDebi/GDebi.py:283
+#: ../GDebi/GDebi.py:293
 #, python-format
 msgid "To be installed: %s"
 msgstr "A instal·lar: %s"
 
-#: ../GDebi/GDebi.py:297
+#: ../GDebi/GDebi.py:307
 #, fuzzy
 msgid "Open Software Package"
 msgstr "Paquets deb"
 
-#: ../GDebi/GDebi.py:302
+#: ../GDebi/GDebi.py:312
 #, fuzzy
 msgid "Software packages"
 msgstr "Paquets deb"
 
 #. print "install"
-#: ../GDebi/GDebi.py:320
+#: ../GDebi/GDebi.py:330
 #, fuzzy
 msgid "Installing package file..."
 msgstr "S'està instal·lant el paquet..."
 
-#: ../GDebi/GDebi.py:323
+#: ../GDebi/GDebi.py:333
 msgid "Install unauthenticated software?"
 msgstr ""
 
-#: ../GDebi/GDebi.py:324
+#: ../GDebi/GDebi.py:334
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
@@ -287,93 +286,98 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:366 ../GDebi/GDebi.py:388
+#: ../GDebi/GDebi.py:372 ../GDebi/GDebi.py:394
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 
-#: ../GDebi/GDebi.py:368 ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:374 ../GDebi/GDebi.py:396
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
 
-#: ../GDebi/GDebi.py:412
+#: ../GDebi/GDebi.py:418
 msgid "Could not download all required files"
 msgstr ""
 
-#: ../GDebi/GDebi.py:413
+#: ../GDebi/GDebi.py:419
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 
-#: ../GDebi/GDebi.py:417
+#: ../GDebi/GDebi.py:423
 #, fuzzy
 msgid "Could not install all dependencies"
 msgstr "S'estan instal·lant les dependències..."
 
-#: ../GDebi/GDebi.py:418
+#: ../GDebi/GDebi.py:424
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
 
-#: ../GDebi/GDebi.py:427
+#: ../GDebi/GDebi.py:433
 #, fuzzy
 msgid "Failed to install package file"
 msgstr "Es necessita instal·lar %s paquets de l'arxiu"
 
 #. install the package itself
-#: ../GDebi/GDebi.py:431
+#: ../GDebi/GDebi.py:437
 #, fuzzy
 msgid "Installing package file"
 msgstr "S'està instal·lant el paquet..."
 
-#: ../GDebi/GDebi.py:443
+#: ../GDebi/GDebi.py:448
+#, fuzzy
+msgid "Installation finished"
+msgstr "Problema d'instal·lació"
+
+#: ../GDebi/GDebi.py:450
 #, python-format
 msgid "Package '%s' was installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:445
+#: ../GDebi/GDebi.py:452
 #, fuzzy, python-format
 msgid "Failed to install package '%s'"
 msgstr "Hi ha un conflicte amb un paquet instal·lat: «%s»"
 
-#: ../GDebi/GDebi.py:447
+#: ../GDebi/GDebi.py:454
 #, fuzzy
 msgid "Installation complete"
 msgstr "Problema d'instal·lació"
 
-#: ../GDebi/GDebi.py:455
+#: ../GDebi/GDebi.py:462
 #, fuzzy
 msgid "Failed to completely install all dependencies"
 msgstr "No s'ha pogut obtenir les dependències"
 
-#: ../GDebi/GDebi.py:456
+#: ../GDebi/GDebi.py:463
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 
 #. ui
-#: ../GDebi/GDebi.py:533
+#: ../GDebi/GDebi.py:540
 #, fuzzy, python-format
 msgid "Installing '%s'..."
 msgstr "S'està instal·lant %s"
 
-#: ../GDebi/GDebi.py:611
+#: ../GDebi/GDebi.py:618
 #, fuzzy
 msgid "Installing dependencies..."
 msgstr "S'estan instal·lant les dependències..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:635
+#: ../GDebi/GDebi.py:642
 msgid "Downloading additional package files..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:641
+#: ../GDebi/GDebi.py:648
 #, python-format
 msgid "File %s of %s at %s/s"
 msgstr ""
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:648
+#: ../GDebi/GDebi.py:655
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Inseriu «%s» a la unitat «%s»"

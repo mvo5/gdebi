@@ -1,10 +1,22 @@
-gdebi (0.1.6) edgy; urgency=low
+gdebi (0.1.6ubuntu1) edgy; urgency=low
 
   * show a better finish message (ubuntu: #37651)
   * fixes for the new auto-dependency removal apt (ubuntu: #53655)
   * check for broken packages early (ubuntu: #40050)
+  * merged the debian changes
 
- -- 
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  4 Aug 2006 13:45:16 +0200
+
+gdebi (0.1.5) unstable; urgency=low
+
+  * Sync with Ubuntu
+    - add depends on gnome-icon-theme (Closes: #358874)
+    - pofiles updated (Closes: #352562)
+    - swedish translation included (Closes: #350394)
+    - french translation included (Closes: #354112)
+    - czech translation included (Closes: #356465)
+
+ -- Gustavo Franco <stratus@debian.org>  Tue, 11 Apr 2006 17:40:13 -0300
 
 gdebi (0.1.4ubuntu13) dapper; urgency=low
 

@@ -191,7 +191,7 @@ class GDebi(SimpleGladeApp):
                                                gtk.TEXT_SEARCH_TEXT_ONLY,
                                                None)
             buf.apply_tag(tag , iter, end)
-        except:
+        except KeyError:
             buf.set_text("No description is available")
 
         # set various status bits
