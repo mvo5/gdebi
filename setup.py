@@ -45,7 +45,7 @@ setup(name='gdebi',
 		   ["data/gdebi.applications"]),
                   ('share/mime/packages/',
                    ["build/gdebi.xml"]),
-                  ('share/pixmaps',
+                  ('share/gdebi/',
                    ["data/gdebi.png"])]+I18NFILES,
       )
 

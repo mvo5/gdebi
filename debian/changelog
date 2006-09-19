@@ -1,3 +1,9 @@
+gdebi (0.1.6ubuntu2) edgy; urgency=low
+
+  * filter out python-apt future warnings
+
+ --
+
 gdebi (0.1.6ubuntu1) edgy; urgency=low
 
   * show a better finish message (ubuntu: #37651)

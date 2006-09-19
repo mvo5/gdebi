@@ -1,6 +1,8 @@
 import sys
 import os
 import string
+from warnings import warn
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt
 import apt_pkg
 
