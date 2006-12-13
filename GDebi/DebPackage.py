@@ -5,19 +5,26 @@ import os
 from gettext import gettext as _
 
 
+                    
+
 class DebPackage(object):
     debug = 0
 
-    def __init__(self, cache, file):
+    def __init__(self, cache, file=None):
         cache.clear()
         self._cache = cache
         self.file = file
-        self._needPkgs = None
-        # read the deb
+        self._needPkgs = []
+        self._sections = {}
+        if file != None:
+            self.open(file)
+            
+    def open(self, file):
+        """ read a deb """
         control = apt_inst.debExtractControl(open(file))
         self._sections = apt_pkg.ParseSection(control)
         self.pkgName = self._sections["Package"]
-
+        
 
     def _isOrGroupSatisfied(self, or_group):
         """ this function gets a 'or_group' and analyzes if
@@ -126,21 +133,31 @@ class DebPackage(object):
                 continue
             if self._checkSinglePkgConflict(depname,ver,oper):
                 return True
-            
         return False
+
+    def getConflicts(self):
+        conflicts = []
+        key = "Conflicts"
+        if self._sections.has_key(key):
+            conflicts = apt_pkg.ParseDepends(self._sections[key])
+        return conflicts
+
+    def getDepends(self):
+        depends = []
+        # find depends
+        for key in ["Depends","PreDepends"]:
+            if self._sections.has_key(key):
+                depends.extend(apt_pkg.ParseDepends(self._sections[key]))
+        return depends
 
     def checkConflicts(self):
         """ check if the pkg conflicts with a existing or to be installed
             package. Return True if the pkg is ok """
-        
-        key = "Conflicts"
-        if self._sections.has_key(key):
-            conflicts = apt_pkg.ParseDepends(self._sections[key])
-            for or_group in conflicts:
-                if self._checkConflictsOrGroup(or_group):
-                    #print "Conflicts with a exisiting pkg!"
-                    #self._failureString = "Conflicts with a exisiting pkg!"
-                    return False
+        for or_group in self.getConflicts():
+            if self._checkConflictsOrGroup(or_group):
+                #print "Conflicts with a exisiting pkg!"
+                #self._failureString = "Conflicts with a exisiting pkg!"
+                return False
         return True
 
     # some constants
@@ -176,9 +193,6 @@ class DebPackage(object):
 
     def checkDeb(self):
         self._dbg(3,"checkDepends")
-        # init 
-        self._needPkgs = []
-        depends = []
 
         # check arch
         arch = self._sections["Architecture"]
@@ -195,32 +209,15 @@ class DebPackage(object):
 
         # FIXME: this sort of error handling sux
         self._failureString = ""
-            
+
         # check conflicts
         if not self.checkConflicts():
             return False
-        
-        # find depends
-        for key in ["Depends","PreDepends"]:
-            if self._sections.has_key(key):
-                depends.extend(apt_pkg.ParseDepends(self._sections[key]))
 
-        # check depends
-        for or_group in depends:
-            #print "or_group: %s" % or_group
-            #print "or_group satified: %s" % self._isOrGroupSatisfied(or_group)
-            if not self._isOrGroupSatisfied(or_group):
-                if not self._satisfyOrGroup(or_group):
-                    return False
-
-        # now try it out in the cache
-            for pkg in self._needPkgs:
-                try:
-                    self._cache[pkg].markInstall()
-                except SystemError:
-                    self._failureString = _("Cannot install '%s'" % pkg)
-                    self._cache.clear()
-                    return False
+        # try to satisfy the dependencies
+        res = self._satisfyDepends(self.getDepends())
+        if not res:
+            return False
 
         # check for conflicts again (this time with the packages that are
         # makeed for install)
@@ -232,7 +229,27 @@ class DebPackage(object):
             # clean the cache again
             self._cache.clear()
             return False
+        return True
 
+    def satifyDependsStr(self, dependsstr):
+        self._satifyDepends(apt_pkg.ParseDepends(dependsstr))
+
+    def _satisfyDepends(self, depends):
+        # check depends
+        for or_group in depends:
+            #print "or_group: %s" % or_group
+            #print "or_group satified: %s" % self._isOrGroupSatisfied(or_group)
+            if not self._isOrGroupSatisfied(or_group):
+                if not self._satisfyOrGroup(or_group):
+                    return False
+        # now try it out in the cache
+            for pkg in self._needPkgs:
+                try:
+                    self._cache[pkg].markInstall()
+                except SystemError:
+                    self._failureString = _("Cannot install '%s'" % pkg)
+                    self._cache.clear()
+                    return False
         return True
 
     def missingDeps(self):

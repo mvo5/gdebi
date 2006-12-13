@@ -3,7 +3,7 @@ import apt, apt_pkg
 from gettext import gettext as _
 
 from DebPackage import DebPackage, MyCache
-
+from DscSrcPackage import DscSrcPackage
 
 class GDebiCli(object):
 
@@ -14,7 +14,12 @@ class GDebiCli(object):
         
     def open(self, file):
         try:
-            self._deb = DebPackage(self._cache, file)
+            if file.endswith(".deb"):
+                self._deb = DebPackage(self._cache, file)
+            elif file.endswith(".dsc"):
+                self._deb = DscSrcPackage(self._cache, file)
+            else:
+                raise Exception
         except (IOError,SystemError),e:
             print _("Failed to open the software package"),
             print _("The package might be corrupted or you are not "
