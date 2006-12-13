@@ -32,8 +32,13 @@ class DscSrcPackage(DebPackage):
             if line.startswith("Source"):
                 self.pkgName = line.split(":")[1].strip()
     def checkDeb(self):
-        # FIXME: we want to fix conflicts via removal, implement this
-        #self.checkConflicts():
+        if not self.checkConflicts():
+            for pkgname in self._installedConflicts:
+                if self._cache[pkgname]._pkg.Essential:
+                    raise Exception, _("A essential package would be removed")
+                self._cache[pkgname].markDelete()
+        # FIXME: a additional run of the checkConflicts()
+        #        after _satisfyDepends() should probably be done
         return self._satisfyDepends(self.depends)
 
 if __name__ == "__main__":

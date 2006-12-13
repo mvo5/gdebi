@@ -16,6 +16,8 @@ class DebPackage(object):
         self.file = file
         self._needPkgs = []
         self._sections = {}
+        self._installedConflicts = set()
+        self._failureString = ""
         if file != None:
             self.open(file)
             
@@ -122,18 +124,17 @@ class DebPackage(object):
             ver = dep[1]
             oper = dep[2]
 
-            # FIXME: conflicts with virutal pkgs needs to be
-            #        checked!
+            # check conflicts with virtual pkgs
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
                     for pkg in self._cache.getProvidersForVirtual(depname):
                         #print "conflicts virtual check: %s" % pkg.name
                         if self._checkSinglePkgConflict(pkg.name,ver,oper):
-                            return True
+                            self._installedConflicts.add(pkg.name)
                 continue
             if self._checkSinglePkgConflict(depname,ver,oper):
-                return True
-        return False
+                self._installedConflicts.add(depname)
+        return len(self._installedConflicts) != 0
 
     def getConflicts(self):
         conflicts = []
@@ -153,12 +154,13 @@ class DebPackage(object):
     def checkConflicts(self):
         """ check if the pkg conflicts with a existing or to be installed
             package. Return True if the pkg is ok """
+        res = True
         for or_group in self.getConflicts():
             if self._checkConflictsOrGroup(or_group):
                 #print "Conflicts with a exisiting pkg!"
                 #self._failureString = "Conflicts with a exisiting pkg!"
-                return False
-        return True
+                res = False
+        return res
 
     # some constants
     (NO_VERSION,
