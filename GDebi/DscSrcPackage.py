@@ -4,7 +4,8 @@ import apt
 import sys
 import os 
 from gettext import gettext as _
-from DebPackage import DebPackage, MyCache
+from DebPackage import DebPackage
+from Cache import Cache
 
 class DscSrcPackage(DebPackage):
     def __init__(self, cache, file=None):
@@ -43,7 +44,7 @@ class DscSrcPackage(DebPackage):
 
 if __name__ == "__main__":
 
-    cache = MyCache()
+    cache = Cache()
     s = DscSrcPackage(cache, "../tests/3ddesktop_0.2.9-6.dsc")
     s.checkDep()
     print "Missing deps: ",s.missingDeps

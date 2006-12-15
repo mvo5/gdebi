@@ -2,7 +2,7 @@ import sys, time, thread, os, fcntl, string
 import apt, apt_pkg
 from gettext import gettext as _
 
-from DebPackage import DebPackage, MyCache
+from DebPackage import DebPackage, Cache
 from DscSrcPackage import DscSrcPackage
 
 class GDebiCli(object):
@@ -10,7 +10,7 @@ class GDebiCli(object):
     def __init__(self):
         # fixme, do graphic cache check
         tp = apt.progress.OpTextProgress()
-        self._cache = MyCache(tp)
+        self._cache = Cache(tp)
         
     def open(self, file):
         try:

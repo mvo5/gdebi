@@ -3,7 +3,7 @@ gdebi (0.2ubuntu1) feisty; urgency=low
   * filter out python-apt future warnings
   * support for build-dep resolving on .dsc files added
 
- -- 
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 15 Dec 2006 11:46:06 +0100
 
 gdebi (0.1.6ubuntu1) edgy; urgency=low
 

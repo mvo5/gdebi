@@ -1,6 +1,7 @@
 import sys
 import os
 import string
+import warnings
 from warnings import warn
 warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt
@@ -19,7 +20,7 @@ import time
 import thread
 import re
 
-from DebPackage import DebPackage, MyCache
+from DebPackage import DebPackage, Cache
 from SimpleGladeApp import SimpleGladeApp
 from apt.progress import InstallProgress
 
@@ -70,7 +71,7 @@ class GDebi(SimpleGladeApp):
         self.window_main.show()
 
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
-        self._cache = MyCache(self.cprogress)
+        self._cache = Cache(self.cprogress)
         if self._cache._depcache.BrokenCount > 0:
                 err_header = _("Broken dependencies")
                 err_body = _("Your system has broken dependencies. "
@@ -458,8 +459,8 @@ class GDebi(SimpleGladeApp):
         #self.window_main.set_property("urgency-hint", 1)
 
         # reopen the cache, reread the file, FIXME: add progress reporting
-        #self._cache = MyCache(self.cprogress)
-        self._cache = MyCache()
+        #self._cache = Cache(self.cprogress)
+        self._cache = Cache()
         if self._cache._depcache.BrokenCount > 0:
             err_header = _("Failed to completely install all dependencies")
             err_body = _("To fix this run 'sudo apt-get install -f' in a "

@@ -1,3 +1,5 @@
+* add "--assume-yes" option
+* add check for removal of essential packages
 * add downgrade(?)
 * rename to "debonair" ?
 * install-progress: error reporting, conf-file prompts

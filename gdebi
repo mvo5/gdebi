@@ -9,6 +9,8 @@ from gettext import gettext as _
 
 from GDebi.GDebiCli import GDebiCli
 
+# FIXME: - add "--assume-yes" option
+#        - add check for removal of essential packages
 
 if __name__ == "__main__":
     localesApp="gdebi"
