@@ -1,0 +1,5 @@
+debian/tmp/usr/bin/gdebi-gtk
+debian/tmp/usr/share/gdebi
+debian/tmp/usr/share/applications
+debian/tmp/usr/share/application-registry
+debian/tmp/usr/share/mime

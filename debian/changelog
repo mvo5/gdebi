@@ -1,3 +1,11 @@
+gdebi (0.2ubuntu4) feisty; urgency=low
+
+  * Make split into two packages build on feisty, where
+    debian/tmp/usr/share/locale isn't created during setup.py.
+  * Use dh_install instead of dh_movefiles.
+
+ -- Ian Jackson <iwj@ubuntu.com>  Wed, 24 Jan 2007 16:01:42 +0000
+
 gdebi (0.2ubuntu3) feisty; urgency=low
 
   * Split into two packages: gdebi and gdebi-core.

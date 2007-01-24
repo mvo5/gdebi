@@ -50,7 +50,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/gdebi.
-	python ./setup.py install --prefix=$(CURDIR)/debian/gdebi/usr
+	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
 
 
 # Build architecture-independent files here.
@@ -78,25 +78,27 @@ binary-arch: build install
 	dh_installman
 
 	# We split the GDebi python module across the two packages:
-	set -e; cd debian/gdebi; for s in usr/lib/python*; do		\
+	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
 		d=../gdebi-core/$$s; p=site-packages/GDebi;		\
-		mkdir -p $$d/$$p;					\
-		mv $$s/$$p/* $$d/$$p/.;					\
+		g=../gdebi/$$s;						\
+		mkdir -p $$d/$$p $$g/$$p;				\
+		cp $$s/$$p/* $$d/$$p/.;					\
 		for f in SimpleGladeApp GDebi; do			\
-			mv $$d/$$p/$$f.* $$s/$$p/.;			\
+			mv $$d/$$p/$$f.* $$g/$$p/.;			\
 		done;							\
 	done
 
-	dh_movefiles --sourcedir=debian/gdebi
-
-	find debian/gdebi debian/gdebi-core -type d -print0 | xargs -0 \
-		rmdir -p --ignore-fail-on-non-empty --
+	dh_install -Xsite-packages/GDebi --list-missing
 
 	dh_link
 #	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_pycentral
+   
+	find debian/gdebi debian/gdebi-core -type d -print0 | xargs -0 \
+		rmdir -p --ignore-fail-on-non-empty --
+
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
