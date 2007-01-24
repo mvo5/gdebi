@@ -1,3 +1,9 @@
+gdebi (0.2ubuntu3) feisty; urgency=low
+
+  * Split into two packages: gdebi and gdebi-core.
+
+ -- Ian Jackson <iwj@ubuntu.com>  Wed, 24 Jan 2007 11:20:09 +0000
+
 gdebi (0.2ubuntu2) feisty; urgency=low
 
   * updated to the latest python policy (lp: #79190)
