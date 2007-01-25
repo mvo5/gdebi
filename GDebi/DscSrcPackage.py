@@ -19,19 +19,19 @@ class DscSrcPackage(DebPackage):
     def getDepends(self):
         return self.depends
     def open(self, file):
-        depends_tags = ["Build-Depends", "Build-Depends-Indep"]
-        conflicts_tags = ["Build-Conflicts", "Build-Conflicts-Indep"]
+        depends_tags = ["Build-Depends:", "Build-Depends-Indep:"]
+        conflicts_tags = ["Build-Conflicts:", "Build-Conflicts-Indep:"]
         for line in open(file):
             for tag in depends_tags:
                 if line.startswith(tag):
-                    key = line.split(":")[1].strip()
+                    key = line[len(tag):].strip()
                     self.depends.extend(apt_pkg.ParseDepends(key))
             for tag in conflicts_tags:
                 if line.startswith(tag):
-                    key = line.split(":")[1].strip()
+                    key = line[len(tag):].strip()
                     self.conflicts.extend(apt_pkg.ParseDepends(key))
             if line.startswith("Source"):
-                self.pkgName = line.split(":")[1].strip()
+                self.pkgName = line[len(tag):].strip()
     def checkDeb(self):
         if not self.checkConflicts():
             for pkgname in self._installedConflicts:

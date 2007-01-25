@@ -234,9 +234,11 @@ class DebPackage(object):
         return True
 
     def satisfyDependsStr(self, dependsstr):
+        # turn off MarkAndSweep via a action group
         return self._satisfyDepends(apt_pkg.ParseDepends(dependsstr))
 
     def _satisfyDepends(self, depends):
+        _actiongroup = apt_pkg.GetPkgActionGroup(self._cache._depcache)
         # check depends
         for or_group in depends:
             #print "or_group: %s" % or_group
