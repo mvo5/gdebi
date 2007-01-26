@@ -1,3 +1,11 @@
+gdebi (0.2ubuntu6) feisty; urgency=low
+
+  * fully support automatic dependencies (lp: #66382)
+  * debian/control: 
+    - depend on python-apt that supports automatic-dependencies
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 26 Jan 2007 17:14:00 +0100
+
 gdebi (0.2ubuntu5) feisty; urgency=low
 
   * fix bug in DscFile parser

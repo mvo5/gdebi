@@ -249,7 +249,7 @@ class DebPackage(object):
         # now try it out in the cache
             for pkg in self._needPkgs:
                 try:
-                    self._cache[pkg].markInstall()
+                    self._cache[pkg].markInstall(fromUser=False)
                 except SystemError:
                     self._failureString = _("Cannot install '%s'" % pkg)
                     self._cache.clear()
