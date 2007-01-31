@@ -1,3 +1,25 @@
+# Copyright (c) 2005-2007 Canonical
+#
+# AUTHOR:
+# Michael Vogt <mvo@ubuntu.com>
+#
+# This file is part of GDebi
+#
+# GDebi is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published
+# by the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# GDebi is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GDebi; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
 import apt_inst, apt_pkg
 import apt
 import sys
@@ -129,6 +151,10 @@ class DebPackage(object):
                 if self._cache.isVirtualPkg(depname):
                     for pkg in self._cache.getProvidersForVirtual(depname):
                         #print "conflicts virtual check: %s" % pkg.name
+                        # P/C/R on virtal pkg, e.g. ftpd
+                        if self.pkgName == pkg.name:
+                            #print "conflict on self, ignoring"
+                            continue
                         if self._checkSinglePkgConflict(pkg.name,ver,oper):
                             self._installedConflicts.add(pkg.name)
                 continue
@@ -234,10 +260,10 @@ class DebPackage(object):
         return True
 
     def satisfyDependsStr(self, dependsstr):
-        # turn off MarkAndSweep via a action group
         return self._satisfyDepends(apt_pkg.ParseDepends(dependsstr))
 
     def _satisfyDepends(self, depends):
+        # turn off MarkAndSweep via a action group
         _actiongroup = apt_pkg.GetPkgActionGroup(self._cache._depcache)
         # check depends
         for or_group in depends:

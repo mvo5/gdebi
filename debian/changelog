@@ -1,3 +1,21 @@
+gdebi (0.2ubuntu8) feisty; urgency=low
+
+  * fully support automatic dependencies (lp: #66382)
+  * debian/control: 
+    - depend on python-apt that supports automatic-dependencies
+  * fix P/C/R handline bug for certain virtual packages
+  * fix python version
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 31 Jan 2007 10:59:25 +0100
+
+gdebi (0.2ubuntu7) feisty; urgency=low
+
+  * added missing Conflicts/Replaces when the package split was done
+  * undo the automatic-dependencies change for herd-3 as python-apt
+    is not yet ready (will be re-added once herd-3 was released)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 31 Jan 2007 10:15:25 +0100
+
 gdebi (0.2ubuntu6) feisty; urgency=low
 
   * fully support automatic dependencies (lp: #66382)
