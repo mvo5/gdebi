@@ -146,7 +146,8 @@ msgstr "gdebi"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../data/gdebi.glade.h:26
 msgid "translator-credits"
-msgstr "Christian Bjälevik <nafallo@ubuntu.com>\n"
+msgstr ""
+"Christian Bjälevik <nafallo@ubuntu.com>\n"
 "Daniel Nylander <po@danielnylander.se>"
 
 #: ../data/gdebi.xml.in.h:1
@@ -154,18 +155,16 @@ msgid "Software package"
 msgstr "Programvarupaket"
 
 #: ../data/gdebi.desktop.in.h:1
-#, fuzzy
 msgid "GDebi Package Installer"
-msgstr "Paketinstallatör"
+msgstr "GDebi paketinstallatör"
 
 #: ../GDebi/GDebi.py:80
 msgid "Loading..."
 msgstr "Läser in..."
 
 #: ../GDebi/GDebi.py:99
-#, fuzzy
 msgid "Broken dependencies"
-msgstr "Brutna beroenden..."
+msgstr "Trasiga beroenden"
 
 #: ../GDebi/GDebi.py:100
 msgid ""
@@ -173,7 +172,7 @@ msgid ""
 "this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
 "a terminal window."
 msgstr ""
-"Ditt system har brutna beroenden. Programmet kan inte fortsätta förrens du "
+"Ditt system har trasiga beroenden. Programmet kan inte fortsätta förrens du "
 "lagat dessa. Kör \"sudo synaptic\" eller \"sudo apt-get install -f\" i ett "
 "terminalfönster för att laga dem."
 
@@ -332,7 +331,6 @@ msgid "Installing package file"
 msgstr "Installerar paketfil"
 
 #: ../GDebi/GDebi.py:474
-#, fuzzy
 msgid "Installation finished"
 msgstr "Installationen färdig"
 
