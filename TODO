@@ -1,7 +1,5 @@
 * add "--assume-yes" option
 * add check for removal of essential packages
-* deal with packages that conflict with their own provides 
-  (e.g. C/P/R: ftp-server)
 * add downgrade(?)
 * rename to "debonair" ?
 * install-progress: error reporting, conf-file prompts
@@ -17,3 +15,8 @@ Longer term:
   but less flexible
 * support remote location of packages - gnomevfs vs urllib
 
+
+Done:
+-----
+* deal with packages that conflict with their own provides 
+  (e.g. C/P/R: ftp-server) [DONE]

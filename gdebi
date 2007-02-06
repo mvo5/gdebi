@@ -57,5 +57,6 @@ if __name__ == "__main__":
     print _("Do you want to install the software package? [y/N]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()
-    if res.startswith("y") or res.startswith("Y"):
+    # TRANSLATORS: the first char in a "Yes" word
+    if res.upper().startswith(_("Y")):
         debi.install()
