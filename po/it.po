@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-08-04 13:46+0200\n"
+"POT-Creation-Date: 2007-02-06 22:16+0100\n"
 "PO-Revision-Date: 2006-05-08 15:32+0000\n"
 "Last-Translator: Luca Ferretti <elle.uca@libero.it>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../gdebi:20
+#: ../gdebi:44
 #, c-format
 msgid "Usage: %s [package.deb]"
 msgstr "Uso: %s [pacchetto.deb]"
 
-#: ../gdebi:22
+#: ../gdebi:46
 msgid ""
 "To use the graphical user interface, right-click\n"
 "on a '.deb' software package in the file browser\n"
@@ -31,16 +31,20 @@ msgstr ""
 "su un pacchetto software '.deb' nel file manager\n"
 "e selezionare: Apri con «GDebi - Installatore pacchetto»."
 
-#: ../gdebi:27
+#: ../gdebi:51
 #, c-format
 msgid "gdebi error, file not found: %s"
 msgstr "errore di gdebi, file non trovato: %s"
 
-#: ../gdebi:33 ../GDebi/GDebiCli.py:70
+#: ../gdebi:57 ../GDebi/GDebiCli.py:98
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "Installare il pacchetto software? [y/N]:"
 
-#: ../gdebi-gtk:27
+#: ../gdebi:61
+msgid "Y"
+msgstr ""
+
+#: ../gdebi-gtk:49
 msgid "Run non-interactive (dangerous!)"
 msgstr "Esecuzione non-interattiva (pericoloso!)"
 
@@ -132,7 +136,7 @@ msgstr "_File"
 msgid "_Help"
 msgstr "A_iuto"
 
-#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:214 ../GDebi/GDebi.py:282
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:240 ../GDebi/GDebi.py:308
 msgid "_Install Package"
 msgstr "Installa _pacchetto"
 
@@ -154,28 +158,28 @@ msgstr "Pacchetto software"
 msgid "GDebi Package Installer"
 msgstr "Installatore pacchetto"
 
-#: ../GDebi/GDebi.py:54
+#: ../GDebi/GDebi.py:80
 msgid "Loading..."
 msgstr "Caricamento..."
 
-#: ../GDebi/GDebi.py:73
+#: ../GDebi/GDebi.py:99
 #, fuzzy
 msgid "Broken dependencies"
 msgstr "Installazione delle dipendenze..."
 
-#: ../GDebi/GDebi.py:74
+#: ../GDebi/GDebi.py:100
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
 "a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebi.py:134
+#: ../GDebi/GDebi.py:160
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Impossibile aprire \"%s\""
 
-#: ../GDebi/GDebi.py:135 ../GDebi/GDebiCli.py:20
+#: ../GDebi/GDebi.py:161 ../GDebi/GDebiCli.py:48
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
@@ -184,32 +188,32 @@ msgstr ""
 "aprire il file. Verificare i permessi sul file."
 
 #. set window title
-#: ../GDebi/GDebi.py:148
+#: ../GDebi/GDebi.py:174
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Installatore pacchetto - %s"
 
-#: ../GDebi/GDebi.py:221
+#: ../GDebi/GDebi.py:247
 msgid "Same version is already installed"
 msgstr "La stessa versione è già installata"
 
-#: ../GDebi/GDebi.py:222
+#: ../GDebi/GDebi.py:248
 msgid "_Reinstall Package"
 msgstr "_Reinstalla pacchetto"
 
-#: ../GDebi/GDebi.py:239
+#: ../GDebi/GDebi.py:265
 msgid "Same version is available in a software channel"
 msgstr "La stessa versione è disponibile in un canale software"
 
-#: ../GDebi/GDebi.py:240
+#: ../GDebi/GDebi.py:266
 msgid "You are recommended to install the software from the channel instead."
 msgstr "È consigliato installare il software dal canale."
 
-#: ../GDebi/GDebi.py:244
+#: ../GDebi/GDebi.py:270
 msgid "An older version is available in a software channel"
 msgstr "È disponibile una versione più vecchia in un canale software"
 
-#: ../GDebi/GDebi.py:245
+#: ../GDebi/GDebi.py:271
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
@@ -217,11 +221,11 @@ msgstr ""
 "Generalmente è consigliato di installare la versione dal canale software, "
 "poichè spesso è supportata in modo migliore."
 
-#: ../GDebi/GDebi.py:250
+#: ../GDebi/GDebi.py:276
 msgid "A later version is available in a software channel"
 msgstr "È disponibile una versione più recente in un canale software"
 
-#: ../GDebi/GDebi.py:252
+#: ../GDebi/GDebi.py:278
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
@@ -229,49 +233,49 @@ msgstr ""
 "È fortemente raccomandata l'installazione della versione dal canale "
 "software, poichè spesso è supportato in modo migliore."
 
-#: ../GDebi/GDebi.py:269
+#: ../GDebi/GDebi.py:295
 msgid "All dependencies are satisfied"
 msgstr "Tutte le dipendenze sono soddisfatte"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:275
+#: ../GDebi/GDebi.py:301
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Richiede la <b>rimozione</b> di %s pacchetti\n"
 
-#: ../GDebi/GDebi.py:277
+#: ../GDebi/GDebi.py:303
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Richiesta l'installazione di %s pacchetti"
 
-#: ../GDebi/GDebi.py:291
+#: ../GDebi/GDebi.py:317
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Da rimuovere: %s</b>"
 
-#: ../GDebi/GDebi.py:293
+#: ../GDebi/GDebi.py:319
 #, python-format
 msgid "To be installed: %s"
 msgstr "Da installare: %s"
 
-#: ../GDebi/GDebi.py:307
+#: ../GDebi/GDebi.py:333
 msgid "Open Software Package"
 msgstr "Apri pacchetto software"
 
-#: ../GDebi/GDebi.py:312
+#: ../GDebi/GDebi.py:338
 msgid "Software packages"
 msgstr "Pacchetti Software"
 
 #. print "install"
-#: ../GDebi/GDebi.py:330
+#: ../GDebi/GDebi.py:356
 msgid "Installing package file..."
 msgstr "Installazione file pacchetto..."
 
-#: ../GDebi/GDebi.py:333
+#: ../GDebi/GDebi.py:359
 msgid "Install unauthenticated software?"
 msgstr "Installare software non autentificato?"
 
-#: ../GDebi/GDebi.py:334
+#: ../GDebi/GDebi.py:360
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
@@ -284,13 +288,13 @@ msgstr ""
 "I pacchetti elencati qui sotto non sono autenticati e potrebbero quindi "
 "avere una natura malevola."
 
-#: ../GDebi/GDebi.py:372 ../GDebi/GDebi.py:394
+#: ../GDebi/GDebi.py:398 ../GDebi/GDebi.py:420
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "È consentita l'esecuzione di un solo strumento di gestione software alla "
 "volta"
 
-#: ../GDebi/GDebi.py:374 ../GDebi/GDebi.py:396
+#: ../GDebi/GDebi.py:400 ../GDebi/GDebi.py:422
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -298,20 +302,20 @@ msgstr ""
 "Chiudere prima l'altra applicazione es. «Update Manager», «aptitude» o "
 "«Synaptic»."
 
-#: ../GDebi/GDebi.py:418
+#: ../GDebi/GDebi.py:444
 msgid "Could not download all required files"
 msgstr "Impossibile scaricare tutti i file richiesti"
 
-#: ../GDebi/GDebi.py:419
+#: ../GDebi/GDebi.py:445
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 "Verificare la propria connessione a Internet o il supporto di installazione."
 
-#: ../GDebi/GDebi.py:423
+#: ../GDebi/GDebi.py:449
 msgid "Could not install all dependencies"
 msgstr "Impossibile installare tutte le dipendenze"
 
-#: ../GDebi/GDebi.py:424
+#: ../GDebi/GDebi.py:450
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -319,127 +323,127 @@ msgstr ""
 "Solitamente ciò è dovuto a un errore del distributore di software. "
 "Consultare la finestra del terminale per maggiori dettagli."
 
-#: ../GDebi/GDebi.py:433
+#: ../GDebi/GDebi.py:459
 msgid "Failed to install package file"
 msgstr "Installazione del file pacchetto fallita"
 
 #. install the package itself
-#: ../GDebi/GDebi.py:437
+#: ../GDebi/GDebi.py:463
 msgid "Installing package file"
 msgstr "Installazione file pacchetto"
 
-#: ../GDebi/GDebi.py:448
+#: ../GDebi/GDebi.py:474
 #, fuzzy
 msgid "Installation finished"
 msgstr "Installazione completa"
 
-#: ../GDebi/GDebi.py:450
+#: ../GDebi/GDebi.py:476
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Il pacchetto «%s» è stato installato"
 
-#: ../GDebi/GDebi.py:452
+#: ../GDebi/GDebi.py:478
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Installazione pacchetto «%s» fallita"
 
-#: ../GDebi/GDebi.py:454
+#: ../GDebi/GDebi.py:480
 msgid "Installation complete"
 msgstr "Installazione completa"
 
-#: ../GDebi/GDebi.py:462
+#: ../GDebi/GDebi.py:488
 msgid "Failed to completely install all dependencies"
 msgstr "Istallazione completa di tutte le dipendenze fallita"
 
-#: ../GDebi/GDebi.py:463
+#: ../GDebi/GDebi.py:489
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "Per correggere questo problema, eseguire 'sudo apt-get install -f' in una "
 "finestra di terminale."
 
 #. ui
-#: ../GDebi/GDebi.py:540
+#: ../GDebi/GDebi.py:566
 #, python-format
 msgid "Installing '%s'..."
 msgstr "Installazione di  «%s»..."
 
-#: ../GDebi/GDebi.py:618
+#: ../GDebi/GDebi.py:644
 msgid "Installing dependencies..."
 msgstr "Installazione delle dipendenze..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:642
+#: ../GDebi/GDebi.py:668
 msgid "Downloading additional package files..."
 msgstr "Scaricamento file pacchetti aggiuntivi..."
 
-#: ../GDebi/GDebi.py:648
+#: ../GDebi/GDebi.py:674
 #, python-format
 msgid "File %s of %s at %s/s"
 msgstr "File %s di %s a %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:655
+#: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Inserire «%s» nell'unità «%s»"
 
-#: ../GDebi/DebPackage.py:85
+#: ../GDebi/DebPackage.py:114
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
 msgstr "La dipendenza non può essere soddifatta: %s\n"
 
-#: ../GDebi/DebPackage.py:102
+#: ../GDebi/DebPackage.py:133
 #, python-format
 msgid "Conflicts with the installed package '%s'"
 msgstr "Conflitti con pacchetto installato «%s»"
 
-#: ../GDebi/DebPackage.py:187
+#: ../GDebi/DebPackage.py:229
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "Architettura «%s» errata"
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:193
+#: ../GDebi/DebPackage.py:235
 msgid "A later version is already installed"
 msgstr "Una versione più recente è installata"
 
-#: ../GDebi/DebPackage.py:221
+#: ../GDebi/DebPackage.py:256
+msgid "Failed to satisfy all dependencies (broken cache)"
+msgstr "Soddisfacimento di tutte le dipendenze fallito (cache danneggiata)"
+
+#: ../GDebi/DebPackage.py:280
 #, python-format
 msgid "Cannot install '%s'"
 msgstr "Impossibile installare «%s»"
 
-#: ../GDebi/DebPackage.py:231
-msgid "Failed to satisfy all dependencies (broken cache)"
-msgstr "Soddisfacimento di tutte le dipendenze fallito (cache danneggiata)"
-
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:280
+#: ../GDebi/DebPackage.py:330
 #, python-format
 msgid "%s is not available"
 msgstr "%s non è disponibile"
 
-#: ../GDebi/GDebiCli.py:19
+#: ../GDebi/GDebiCli.py:47
 msgid "Failed to open the software package"
 msgstr "Apertura del pacchetto software fallita"
 
-#: ../GDebi/GDebiCli.py:28
+#: ../GDebi/GDebiCli.py:56
 msgid "No description is available"
 msgstr "Nessuna descrizione disponibile"
 
-#: ../GDebi/GDebiCli.py:32
+#: ../GDebi/GDebiCli.py:60
 msgid "This package is uninstallable"
 msgstr "Questo pacchetto non è installabile"
 
-#: ../GDebi/GDebiCli.py:39
+#: ../GDebi/GDebiCli.py:67
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr "I seguenti pacchetti NON SONO AUTENTICATI: "
 
-#: ../GDebi/GDebiCli.py:43
+#: ../GDebi/GDebiCli.py:71
 msgid "Requires the REMOVAL of the following packages: "
 msgstr "Richiede la RIMOZIONE dei seguenti pacchetti: "
 
-#: ../GDebi/GDebiCli.py:48
+#: ../GDebi/GDebiCli.py:76
 msgid "Requires the installation of the following packages: "
 msgstr "Richiede l'installazione dei seguenti pacchetti: "
 

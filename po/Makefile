@@ -5,6 +5,8 @@ CONTACT=sebastian.heinlein@web.de
 
 all: update-po
 
+top_srcdir=../
+
 # update the pot
 $(DOMAIN).pot:
 	XGETTEXT_ARGS=--msgid-bugs-address=$(CONTACT) intltool-update -p -g $(DOMAIN)
