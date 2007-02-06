@@ -1,8 +1,14 @@
 gdebi (0.2ubuntu9) feisty; urgency=low
 
+  [ Michael Vogt ]
   * fixed i18n in yes/no question
 
- --
+  [ Christian Bjälevik ]
+  * po/*:
+    - Updated gdebi.pot and all .po.
+    - Translated sv.po.
+
+ -- Christian Bjälevik <nafallo@ubuntu.com>  Tue,  6 Feb 2007 21:04:49 +0100
 
 gdebi (0.2ubuntu8) feisty; urgency=low
 
