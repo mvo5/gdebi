@@ -46,11 +46,11 @@ class DscSrcPackage(DebPackage):
             for tag in depends_tags:
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
-                    self.depends.extend(apt_pkg.ParseDepends(key))
+                    self.depends.extend(apt_pkg.ParseSrcDepends(key))
             for tag in conflicts_tags:
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
-                    self.conflicts.extend(apt_pkg.ParseDepends(key))
+                    self.conflicts.extend(apt_pkg.ParseSrcDepends(key))
             if line.startswith("Source"):
                 self.pkgName = line[len(tag):].strip()
     def checkDeb(self):
