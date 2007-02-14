@@ -88,13 +88,14 @@ class GDebiCli(object):
 
         # install the package itself
         if self._deb.file.endswith(".dsc"): 
-            # FIXME: finish this code and add option to only install
-            #        build-dependencies (or build+install the deb)
+            # FIXME: add option to only install build-dependencies
+            #        (or build+install the deb) and then enable
+            #        this code
             #dir = self._deb.pkgName + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
             #os.system("dpkg-source -x %s" % self._deb.file)
             #os.system("cd %s && dpkg-buildpackage -b -uc" % dir)
             #for i in self._deb.binaries:
-            #    os.system("gdebi %s" % i)
+            #    os.system("gdebi %s_%s_*.deb" % (i,self._deb["Version"]))
             pass
         else:
             os.system("dpkg -i %s"%self._deb.file)
