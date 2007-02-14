@@ -31,6 +31,7 @@ from Cache import Cache
 class DscSrcPackage(DebPackage):
     def __init__(self, cache, file=None):
         DebPackage.__init__(self, cache)
+        self.file = file
         self.depends = []
         self.conflicts = []
         if file != None:
@@ -43,6 +44,7 @@ class DscSrcPackage(DebPackage):
         depends_tags = ["Build-Depends:", "Build-Depends-Indep:"]
         conflicts_tags = ["Build-Conflicts:", "Build-Conflicts-Indep:"]
         for line in open(file):
+            # check b-d and b-c
             for tag in depends_tags:
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
@@ -51,8 +53,21 @@ class DscSrcPackage(DebPackage):
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
                     self.conflicts.extend(apt_pkg.ParseSrcDepends(key))
-            if line.startswith("Source"):
-                self.pkgName = line[len(tag):].strip()
+            # check binary and source and version
+            if line.startswith("Source:"):
+                self.pkgName = line[len("Source:"):].strip()
+            if line.startswith("Binary:"):
+                self.binaries = [pkg.strip() for pkg in line[len("Binary:"):].split(",")]
+            if line.startswith("Version:"):
+                self._sections["Version"] = line[len("Version:"):].strip()
+            # we are at the end 
+            if line.startswith("-----BEGIN PGP SIGNATURE-"):
+                break
+        s = _("Install Build-Dependencies for "
+              "source package '%s' that builds %s\n"
+              ) % (self.pkgName, " ".join(self.binaries))
+        self._sections["Description"] = s
+        
     def checkDeb(self):
         if not self.checkConflicts():
             for pkgname in self._installedConflicts:

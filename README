@@ -1,4 +1,5 @@
-gdebi is a simple to tool install local deb files.
+gdebi is a simple to tool install local deb files or install the
+build-dependencies of .dsc files.
 
 It will use apt to figure if the dependencies can be satified and
 what additonal software is required. 

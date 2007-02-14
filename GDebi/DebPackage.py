@@ -46,7 +46,6 @@ class DebPackage(object):
         control = apt_inst.debExtractControl(open(file))
         self._sections = apt_pkg.ParseSection(control)
         self.pkgName = self._sections["Package"]
-        
 
     def _isOrGroupSatisfied(self, or_group):
         """ this function gets a 'or_group' and analyzes if
