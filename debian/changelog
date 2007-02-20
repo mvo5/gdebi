@@ -2,6 +2,9 @@ gdebi (0.2ubuntu11) feisty; urgency=low
 
   * gdebi:
     - show help message when run without arguments (LP#86481)
+  * data/gdebi.glade:
+    - make the text non-selectable to work-around initial selection bug
+      (LP#63629)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 20 Feb 2007 16:14:39 +0100
 
