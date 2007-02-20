@@ -8,6 +8,7 @@ gdebi (0.2ubuntu11) feisty; urgency=low
   * GDebi/GDebi.py:
     - fix exception string on install/fetch errors
     - fix dialog parent problem (LP#71051)
+    - fix fetchprogress download speed string (LP#59630)
   * GDebi/DebPackages.py:
     - fix .bz2 package reading (LP#83076)
 
