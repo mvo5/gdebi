@@ -22,6 +22,9 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
+import warnings
+from warnings import warn
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import sys
 import apt
 import os.path
@@ -40,12 +43,18 @@ if __name__ == "__main__":
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
 
-    parser = OptionParser()
+    usage = _("usage: %prog [options] filename\n"
+              "For a graphical version run gdebi-gtk\n")
+    parser = OptionParser(usage=usage)
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
                       help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
+
+    if len(args) == 0:
+        parser.print_help()
+        sys.exit(1)
 
     if not os.path.exists(args[0]):
         print _("gdebi error, file not found: %s" % sys.argv[1])

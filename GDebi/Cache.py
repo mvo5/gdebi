@@ -20,6 +20,9 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
+import warnings
+from warnings import warn
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt
 
 class Cache(apt.Cache):

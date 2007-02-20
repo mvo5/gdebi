@@ -22,7 +22,11 @@
 
 
 import sys, time, thread, os, fcntl, string
-import apt, apt_pkg
+import warnings
+from warnings import warn
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+import apt
+import apt_pkg
 from gettext import gettext as _
 
 from DebPackage import DebPackage, Cache
