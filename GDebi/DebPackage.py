@@ -320,7 +320,13 @@ class DebPackage(object):
             #print "%s '%s','%s',%u,%u,%u,%u,%u,%u,%u"\
             #      % (What,Name,Link,Mode,UID,GID,Size, MTime, Major, Minor)
             files.append(Name)
-        apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
+        try:
+            apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
+        except SystemError, e:
+            try:
+                apt_inst.debExtract(open(self.file), extract_cb, "data.tar.bz2")
+            except SystemError, e:
+                return [_("List of files could not be read, please report this as a bug")]
         return files
     filelist = property(filelist)
     
