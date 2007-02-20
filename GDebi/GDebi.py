@@ -451,9 +451,10 @@ class GDebi(SimpleGladeApp):
                          "software distributor. See the terminal window for "
                          "more details.")
             if not res:
-                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg)
+                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
+                                parent=self.dialog_deb_install)
                 
-                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % primary)
+                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
                 self.button_deb_install_close.set_sensitive(True)
                 self.button_deb_install_close.grab_default()
 		self.statusbar_main.push(self.context,_("Failed to install package file"))
@@ -513,17 +514,20 @@ class GDebi(SimpleGladeApp):
         return self._term
 
 
-    def show_alert(self, type, header, body=None, details=None):
-        self.dialog_hig.set_transient_for(self.window_main)
+    def show_alert(self, type, header, body=None, details=None, parent=None):
+        if parent is not None:
+             self.dialog_hig.set_transient_for(parent)
+        else:
+             self.dialog_hig.set_transient_for(self.window_main)
 
         message = "<b><big>%s</big></b>" % header
         if not body == None:
-            message = "%s\n\n%s" % (message, body)
+             message = "%s\n\n%s" % (message, body)
         self.label_hig.set_markup(message)
   
         if not details == None:
              buffer = self.textview_hig.get_buffer()
-             buffer.set_text(details)
+             buffer.set_text(str(details))
              self.expander_hig.set_expanded(False)
              self.expander_hig.show()
              
