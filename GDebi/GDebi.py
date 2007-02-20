@@ -675,7 +675,10 @@ class GDebi(SimpleGladeApp):
             #print "stop()"
             pass
         def pulse(self):
-            self.progress.set_text(_("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+            if self.currentCPS > 0:
+                self.progress.set_text(_("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+            else:
+                self.progress.set_text(_("File %s of %s" % (self.currentItems,self.totalItems)))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
             while gtk.events_pending():
                 gtk.main_iteration()
