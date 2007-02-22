@@ -1,4 +1,4 @@
-gdebi (0.2ubuntu12) unstable; urgency=low
+gdebi (0.2ubuntu12) feisty; urgency=low
 
   * GDebi/DebPackages.py:
     - properly init binaries when reading a .dsc file
@@ -8,7 +8,7 @@ gdebi (0.2ubuntu12) unstable; urgency=low
     - disconnect child_exited from the VteReaper after dpkg
       was run to prevent multiple invocations (LP#87029)
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 22 Feb 2007 16:05:49 +0100
 
 gdebi (0.2ubuntu11) feisty; urgency=low
 
