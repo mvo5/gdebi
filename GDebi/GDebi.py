@@ -586,10 +586,9 @@ class GDebi(SimpleGladeApp):
             #print env
             #print self.term
 
-
             # prepare for the fork
             reaper = vte.reaper_get()
-            reaper.connect("child-exited", finish_dpkg, lock)
+            signal_id = reaper.connect("child-exited", finish_dpkg, lock)
             pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
             read = ""
             while lock.locked():
@@ -617,7 +616,7 @@ class GDebi(SimpleGladeApp):
                     gtk.main_iteration()
                 time.sleep(0.2)
             self.progress.set_fraction(1.0)
-            
+            reaper.disconnect(signal_id)
     
     class InstallProgressAdapter(InstallProgress):
         def __init__(self,progress,term,label,term_expander):

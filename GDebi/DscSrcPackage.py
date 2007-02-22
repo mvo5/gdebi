@@ -34,6 +34,7 @@ class DscSrcPackage(DebPackage):
         self.file = file
         self.depends = []
         self.conflicts = []
+        self.binaries = []
         if file != None:
             self.open(file)
     def getConflicts(self):

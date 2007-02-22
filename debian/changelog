@@ -1,3 +1,15 @@
+gdebi (0.2ubuntu12) unstable; urgency=low
+
+  * GDebi/DebPackages.py:
+    - properly init binaries when reading a .dsc file
+  * data/gdebi.glade:
+    - make the install dialog modal
+  * GDebi/GDebi.py:
+    - disconnect child_exited from the VteReaper after dpkg
+      was run to prevent multiple invocations (LP#87029)
+
+ --
+
 gdebi (0.2ubuntu11) feisty; urgency=low
 
   * gdebi:
