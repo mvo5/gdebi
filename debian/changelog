@@ -1,3 +1,10 @@
+gdebi (0.2ubuntu13) feisty; urgency=low
+
+  * do not crash when a deb file could not be opened in non-interactive
+    mode (LP#87696)
+
+ --
+
 gdebi (0.2ubuntu12) feisty; urgency=low
 
   * GDebi/DebPackages.py:

@@ -86,6 +86,7 @@ class GDebi(SimpleGladeApp):
                                        [('text/uri-list',0,0)],
                                        gtk.gdk.ACTION_COPY)
 
+        self._deb = None
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
@@ -311,6 +312,9 @@ class GDebi(SimpleGladeApp):
 
     def on_button_details_clicked(self, widget):
         #print "on_button_details_clicked"
+        # sanity check
+        if not self._deb:
+          return
         (install, remove, unauthenticated) = self._deb.requiredChanges
         self.details_list.clear()
         for rm in remove:
