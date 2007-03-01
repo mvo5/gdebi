@@ -50,6 +50,16 @@ if __name__ == "__main__":
                       action="store_true", dest="non_interactive",
                       default=False,
                       help=_("Run non-interactive (dangerous!)"))
+    parser.add_option("-q", "--quiet",
+                      action="store_true", dest="quiet",
+                      default=False,
+                      help=_("Do not show progress information"))
+    parser.add_option("--apt-line",
+                      action="store_true", dest="apt_line",
+                      default=False,
+                      help=_("Simulate only and print a apt-get install compatible line to stderr"))
+    parser.add_option("--root", dest="rootdir", default="/",
+                      help=_("Use alternative root dir"))
     (options, args) = parser.parse_args()
 
     if len(args) == 0:
@@ -57,17 +67,26 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if not os.path.exists(args[0]):
-        print _("gdebi error, file not found: %s" % sys.argv[1])
+        print _("gdebi error, file not found: %s" % args[0])
         sys.exit(1)
 
-    debi = GDebiCli() 
+    debi = GDebiCli(options) 
     if not debi.open(args[0]):
         sys.exit(1)
+
+    if options.apt_line == True:
+        (install, remove, unauthenticated) = debi._deb.requiredChanges
+        print " ".join(install)
+        print " ".join([pkg+"-" for pkg in remove])
+        sys.exit(0)
 
     if options.non_interactive == True:
         debi.install()
         sys.exit(0)
-        
+
+    # show information
+    debi.show_dependencies()
+    debi.show_description()
     print _("Do you want to install the software package? [y/N]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()

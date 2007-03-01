@@ -2,8 +2,12 @@ gdebi (0.2ubuntu13) feisty; urgency=low
 
   * do not crash when a deb file could not be opened in non-interactive
     mode (LP#87696)
+  * support debian/control files too (for pbuilder support)
+  * added --apt-line switch to generate a apt compatiable commandline 
+    (for pbuilder support)
+  * added --quiet commandline switch
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  1 Mar 2007 13:20:30 +0100
 
 gdebi (0.2ubuntu12) feisty; urgency=low
 

@@ -34,16 +34,21 @@ from DscSrcPackage import DscSrcPackage
 
 class GDebiCli(object):
 
-    def __init__(self):
+    def __init__(self, options):
         # fixme, do graphic cache check
-        tp = apt.progress.OpTextProgress()
-        self._cache = Cache(tp)
-        
+        self.options = options
+        if options.quiet:
+            tp = apt.progress.OpProgress()
+        else:
+            tp = apt.progress.OpTextProgress()
+        self._cache = Cache(tp, rootdir=options.rootdir)
+
     def open(self, file):
         try:
             if file.endswith(".deb"):
                 self._deb = DebPackage(self._cache, file)
-            elif file.endswith(".dsc"):
+            elif (file.endswith(".dsc") or
+                  os.path.basename(file) == "control"):
                 self._deb = DscSrcPackage(self._cache, file)
             else:
                 raise Exception
@@ -53,17 +58,20 @@ class GDebiCli(object):
                     "allowed to open the file. Check the permissions "
                     "of the file.")
             sys.exit(1)
-        try:
-            print self._deb["Description"]
-        except KeyError:
-            print _("No description is available")
-
         # check the deps
         if not self._deb.checkDeb():
             print _("This package is uninstallable")
             print self._deb._failureString
             return False
+        return True
+            
+    def show_description(self):
+        try:
+            print self._deb["Description"]
+        except KeyError:
+            print _("No description is available")
 
+    def show_dependencies(self):
         # show what changes
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if len(unauthenticated) > 0:
@@ -80,7 +88,6 @@ class GDebiCli(object):
             for pkgname in install:
                 print pkgname + " ",
         print
-        return True
 
     def install(self):
         # install the dependecnies
