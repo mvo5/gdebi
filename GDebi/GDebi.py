@@ -388,12 +388,18 @@ class GDebi(SimpleGladeApp):
             if res != gtk.RESPONSE_YES:
                 return
 
+        msg_hdr = _("You need to grant administrative rights to install software")
+        msg_bdy = _("""
+It is a possible security risk to install packages files manually.
+Install software from trustworthy software distributors only.
+""")
         if os.getuid() != 0:
             os.execl("/usr/bin/gksu", "gksu", "--desktop",
                      "/usr/share/applications/gdebi.desktop",
+                     "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
+                     "--always-ask-pass",
                      "--", "gdebi-gtk", "--non-interactive",
                      self._deb.file)
-            return
 
         # check if we can lock the apt database
         try:
@@ -546,7 +552,7 @@ class GDebi(SimpleGladeApp):
         self.dialog_hig.hide()
         if res == gtk.RESPONSE_CLOSE:
             return True
-
+        return False
         
     # embedded classes
     class DpkgInstallProgress(object):

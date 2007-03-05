@@ -1,3 +1,13 @@
+gdebi (0.2ubuntu14) feisty; urgency=low
+
+  * GDebi/GDebi.py:
+    - warn about security implication in gksu prompt and 
+      run gksu with --always-ask-pass
+  * debian/control:
+    - depend on gksu with --always-ask-pass switch
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon,  5 Mar 2007 10:49:14 +0100
+
 gdebi (0.2ubuntu13) feisty; urgency=low
 
   * do not crash when a deb file could not be opened in non-interactive
