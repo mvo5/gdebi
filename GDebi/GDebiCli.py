@@ -60,8 +60,8 @@ class GDebiCli(object):
             sys.exit(1)
         # check the deps
         if not self._deb.checkDeb():
-            print _("This package is uninstallable")
-            print self._deb._failureString
+            sys.stderr.write(_("This package is uninstallable\n"))
+            sys.stderr.write(self._deb._failureString)
             return False
         return True
             

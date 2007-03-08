@@ -1,3 +1,10 @@
+gdebi (0.2ubuntu15) feisty; urgency=low
+
+  * GDebi/GDebiCli.py:
+    - write errors to stderr (thanks to dholbach for noticing)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  8 Mar 2007 10:29:08 +0100
+
 gdebi (0.2ubuntu14) feisty; urgency=low
 
   * GDebi/GDebi.py:
