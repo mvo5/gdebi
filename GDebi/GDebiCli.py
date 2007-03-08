@@ -53,10 +53,10 @@ class GDebiCli(object):
             else:
                 raise Exception
         except (IOError,SystemError),e:
-            print _("Failed to open the software package"),
-            print _("The package might be corrupted or you are not "
-                    "allowed to open the file. Check the permissions "
-                    "of the file.")
+            sys.stderr.write(_("Failed to open the software package\n"))
+            sys.stderr.write(_("The package might be corrupted or you are not "
+                           "allowed to open the file. Check the permissions "
+                           "of the file.\n"))
             sys.exit(1)
         # check the deps
         if not self._deb.checkDeb():
