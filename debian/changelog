@@ -1,3 +1,10 @@
+gdebi (0.2ubuntu16) feisty; urgency=low
+
+  * deal with virtual packages with a single provider in the same
+    way as apt and select that the provider (LP#90714)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  9 Mar 2007 11:01:00 +0100
+
 gdebi (0.2ubuntu15) feisty; urgency=low
 
   * GDebi/GDebiCli.py:

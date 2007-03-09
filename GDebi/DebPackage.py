@@ -90,8 +90,13 @@ class DebPackage(object):
 
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
-                    virtual_pkg = depname
-                continue
+                    providers = self._cache.getProvidersForVirtual(depname)
+                    # if we have a single provider for a virtual pkg
+                    # and no alternative, select the provider
+                    if (len(or_group) == 1 and len(providers) == 1):
+                        depname = providers[0].name
+                else:
+                    continue
                 
             # now check if we can satisfy the deps with the candidate(s)
             # in the cache
@@ -107,7 +112,7 @@ class DebPackage(object):
             self._needPkgs.append(depname)
             return True
 
-        # check if this or group was ok
+        # if we reach this point, we failed
         or_str = ""
         for dep in or_group:
             or_str += dep[0]
@@ -278,7 +283,7 @@ class DebPackage(object):
             for pkg in self._needPkgs:
                 try:
                     self._cache[pkg].markInstall(fromUser=False)
-                except SystemError:
+                except SystemError, e:
                     self._failureString = _("Cannot install '%s'" % pkg)
                     self._cache.clear()
                     return False
