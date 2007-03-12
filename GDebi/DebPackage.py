@@ -91,8 +91,9 @@ class DebPackage(object):
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
                     providers = self._cache.getProvidersForVirtual(depname)
-                    # if we have a single provider for a virtual pkg
-                    # and no alternative, select the provider
+                    # nothing provides this, exit
+                    if not providers:
+                        continue
                     if (len(or_group) == 1 and len(providers) == 1):
                         depname = providers[0].name
                 else:

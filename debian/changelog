@@ -1,3 +1,10 @@
+gdebi (0.2.1ubuntu1) feisty; urgency=low
+
+  * GDebi/DebPackage.py:
+    - deal with virtual packages that have no provider (LP#90909)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 12 Mar 2007 13:52:39 +0100
+
 gdebi (0.2ubuntu16) feisty; urgency=low
 
   * deal with virtual packages with a single provider in the same
