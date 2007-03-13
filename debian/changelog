@@ -1,3 +1,11 @@
+gdebi (0.2.2ubuntu1) feisty; urgency=low
+
+  * GDebi/GDebiCli:
+    - if run with a different rootdir, check the architecture
+      used there
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 13 Mar 2007 09:43:15 +0100
+
 gdebi (0.2.1ubuntu1) feisty; urgency=low
 
   * GDebi/DebPackage.py:

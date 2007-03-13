@@ -32,6 +32,8 @@ from gettext import gettext as _
 from DebPackage import DebPackage, Cache
 from DscSrcPackage import DscSrcPackage
 
+from subprocess import PIPE, Popen
+
 class GDebiCli(object):
 
     def __init__(self, options):
@@ -41,6 +43,11 @@ class GDebiCli(object):
             tp = apt.progress.OpProgress()
         else:
             tp = apt.progress.OpTextProgress()
+        # set architecture to architecture in root-dir
+        if options.rootdir and os.path.exists(options.rootdir+"/usr/bin/dpkg"):
+            arch = Popen([options.rootdir+"/usr/bin/dpkg","--print-architecture"], stdout=PIPE).communicate()[0]
+            if arch:
+                apt_pkg.Config.Set("APT::Architecture",arch.strip())
         self._cache = Cache(tp, rootdir=options.rootdir)
 
     def open(self, file):
