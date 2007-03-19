@@ -88,16 +88,16 @@ class DebPackage(object):
             ver = dep[1]
             oper = dep[2]
 
+            # if we don't have it in the cache, it may be virtual
             if not self._cache.has_key(depname):
-                if self._cache.isVirtualPkg(depname):
-                    providers = self._cache.getProvidersForVirtual(depname)
-                    # nothing provides this, exit
-                    if not providers:
-                        continue
-                    if (len(or_group) == 1 and len(providers) == 1):
-                        depname = providers[0].name
-                else:
+                if not self._cache.isVirtualPkg(depname):
                     continue
+                providers = self._cache.getProvidersForVirtual(depname)
+                # if a package just has a single virtual provider, we
+                # just pick that (just like apt)
+                if len(providers) != 1:
+                    continue
+                depname = providers[0].name
                 
             # now check if we can satisfy the deps with the candidate(s)
             # in the cache

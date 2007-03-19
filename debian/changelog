@@ -1,3 +1,11 @@
+gdebi (0.2.3ubuntu1) feisty; urgency=low
+
+  * GDebi/DebPackage.py:
+    - improve the dependency handling for virtual packages
+      (thanks to Rheinhard Tartler for reporting)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 19 Mar 2007 20:07:06 +0100
+
 gdebi (0.2.2ubuntu1) feisty; urgency=low
 
   * GDebi/GDebiCli:
