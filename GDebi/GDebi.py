@@ -65,9 +65,14 @@ class GDebi(SimpleGladeApp):
 
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
-        logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
-        if logo != "":
-	        gtk.window_set_default_icon_list(logo)
+        try:
+          logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
+          if logo != "":
+            gtk.window_set_default_icon_list(logo)
+        except Exception, e:
+          print "Error loading logo"
+          pass
+          
 
         # set image of button "install"  manually, since it is overriden 
         #by set_label otherwise
