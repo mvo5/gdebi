@@ -81,12 +81,19 @@ if __name__ == "__main__":
         sys.exit(0)
 
     if options.non_interactive == True:
+        if os.getuid() != 0:
+            print _("Need to be root to install packages")
+            sys.exit(1)
         debi.install()
         sys.exit(0)
 
     # show information
     debi.show_dependencies()
     debi.show_description()
+    # check if we actually can install it
+    if os.getuid() != 0:
+        print _("Need to be root to install packages")
+        sys.exit(1)
     print _("Do you want to install the software package? [y/N]:"),
     sys.stdout.flush()
     res = sys.stdin.readline()

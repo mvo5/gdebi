@@ -2,8 +2,10 @@ gdebi (0.2.4ubuntu1) feisty; urgency=low
 
   * GDebi/GDebi.py:
     - do not crash if the logo can't be loaded
+  * gdebi:
+    - do not crash when runing as non-root (LP#93786)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 21 Mar 2007 18:12:51 +0100
+ --
 
 gdebi (0.2.3ubuntu1) feisty; urgency=low
 
