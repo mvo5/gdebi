@@ -361,7 +361,10 @@ class GDebi(SimpleGladeApp):
         self.dialog_about.hide()
 
     def on_button_install_clicked(self, widget):
-        #print "install"
+        # sanity check
+        if self._deb is None:
+          return
+        # do it
         self.statusbar_main.push(self.context,_("Installing package file..."))
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if widget != None and len(unauthenticated) > 0:

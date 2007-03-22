@@ -2,6 +2,8 @@ gdebi (0.2.4ubuntu1) feisty; urgency=low
 
   * GDebi/GDebi.py:
     - do not crash if the logo can't be loaded
+    - do not crash in non-interactive mode when the deb can't
+      be read (LP#94551)
   * gdebi:
     - do not crash when runing as non-root (LP#93786)
 
