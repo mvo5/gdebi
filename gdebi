@@ -70,7 +70,11 @@ if __name__ == "__main__":
         sys.stderr.write(_("gdebi error, file not found: %s\n" % args[0]))
         sys.exit(1)
 
-    debi = GDebiCli(options) 
+    try:
+        debi = GDebiCli(options)
+    except SystemError, e:
+        print "Error opening the cache:\n%s" % e
+        sys.exit(1)
     if not debi.open(args[0]):
         sys.exit(1)
 

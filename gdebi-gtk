@@ -49,11 +49,24 @@ if __name__ == "__main__":
                       help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
 
+    afile = ""
     if len(args) >= 1:
-        app = GDebi(datadir=data,options=options,file=args[0])
-    else:
-        app = GDebi(datadir=data,options=options)
-
+        afile = args[0]
+        
+    try:
+        app = GDebi(datadir=data,options=options,file=afile)
+    except SystemError, e:
+        err_header = _("Software index is broken")
+        err_body = _("This is a major failure of your software " 
+                    "management system. Please check for broken packages "
+                    "with synaptic, check the file permissions and "
+                    "correctness of the file '/etc/apt/sources.list' and "
+                    "reload the software information with: "
+                    "'sudo apt-get update' and 'sudo apt-get install -f'."
+                    )
+        self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
+        sys.exit(1)
+        
     if options.non_interactive == True:
         app.on_button_install_clicked(None)
     app.run()
