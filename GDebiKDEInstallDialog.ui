@@ -1,0 +1,72 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>installDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>installDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>515</width>
+            <height>82</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Installing</string>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>7</x>
+                <y>14</y>
+                <width>490</width>
+                <height>53</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>installingLabel</cstring>
+                </property>
+                <property name="text">
+                    <string>Installing...</string>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout5</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QProgressBar">
+                        <property name="name">
+                            <cstring>installationProgres</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>showDetailsButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Show &amp;Details</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+D</string>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </vbox>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
