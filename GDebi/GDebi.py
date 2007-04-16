@@ -163,6 +163,7 @@ class GDebi(SimpleGladeApp):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
+            print "system error - open()"
             err_header = _("Could not open '%s'" % os.path.basename(file))
             err_body = _("The package might be corrupted or you are not "
                          "allowed to open the file. Check the permissions "
