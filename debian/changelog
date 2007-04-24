@@ -8,7 +8,7 @@ gdebi (0.2.4ubuntu1) feisty; urgency=low
     - do not crash when runing as non-root (LP#93786)
     - do not crash if the cache can not be opened (LP#95650)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 26 Mar 2007 12:34:58 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  5 Apr 2007 18:25:36 +0200
 
 gdebi (0.2.3ubuntu1) feisty; urgency=low
 
