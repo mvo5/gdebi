@@ -188,27 +188,27 @@ gdebi (0.2ubuntu1) feisty; urgency=low
 
 debi (0.1.6debian1) unstable; urgency=low
 
- * Non-maintainer upload.
- * Update program translations:
-   - Swedish (Closes: #364418)
-   - French (Closes: #364992)
-   - Czech (Closes: #366251)
+  * Non-maintainer upload.
+  * Update program translations:
+    - Swedish (Closes: #364418)
+    - French (Closes: #364992)
+    - Czech (Closes: #366251)
 
--- Thomas Huriaux <thomas.huriaux@gmail.com>  Sat, 27 Jan 2007 15:22:50 +0100
+ -- Thomas Huriaux <thomas.huriaux@gmail.com>  Sat, 27 Jan 2007 15:22:50 +0100
 
 debi (0.1.6) unstable; urgency=low
 
- * New Python Policy release. (Closes: #380810)
-   - Bump up Standards-Version to 3.7.2
-   - Move debhelper and python-all-dev to Build-Depends field
-   - Add python-support to Build-Depends-Indep field
-     [debian/control]
-   - debian/rules: Add dh_pysupport call before dh_python
-   - Add debian/pycompat and debian/pyversions
- * Merge 0.1.6ubuntu1 changes.
- * updated to new upstream version
+  * New Python Policy release. (Closes: #380810)
+    - Bump up Standards-Version to 3.7.2
+    - Move debhelper and python-all-dev to Build-Depends field
+    - Add python-support to Build-Depends-Indep field
+      [debian/control]
+    - debian/rules: Add dh_pysupport call before dh_python
+    - Add debian/pycompat and debian/pyversions
+  * Merge 0.1.6ubuntu1 changes.
+  * updated to new upstream version
 
--- Gustavo Franco <stratus@debian.org>  Tue, 22 Aug 2006 15:52:22 -0300
+ -- Gustavo Franco <stratus@debian.org>  Tue, 22 Aug 2006 15:52:22 -0300
   
 gdebi (0.1.6ubuntu1) edgy; urgency=low
 
