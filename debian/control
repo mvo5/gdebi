@@ -1,8 +1,7 @@
 Source: gdebi
 Section: admin
 Priority: optional
-Maintainer: Michael Vogt <mvo@ubuntu.com>
-XSBC-Original-Maintainer: Gustavo Franco <stratus@debian.org>
+Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Gustavo Franco <stratus@debian.org>, Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 5.0.38), python-dev, python-central (>= 0.5.6), intltool
 XS-Python-Version: current
@@ -10,7 +9,7 @@ Standards-Version: 3.7.2
 
 Package: gdebi-core
 Architecture: all
-Depends: ${python:Depends}, ${shlibs:Depends}, python-apt (>= 0.6.20ubuntu2)
+Depends: ${python:Depends}, ${shlibs:Depends}, python-apt (>= 0.6.21)
 Replaces: gdebi (<< 0.2ubuntu3)
 Conflicts: gdebi (<< 0.2ubuntu3)
 XB-Python-Version: ${python:Versions}
