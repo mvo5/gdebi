@@ -405,7 +405,8 @@ Install software from trustworthy software distributors only.
             os.execl("/usr/bin/gksu", "gksu", "--desktop",
                      "/usr/share/applications/gdebi.desktop",
                      "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
-                     "--always-ask-pass",
+# FIXME: not yet supported in debian
+#                     "--always-ask-pass",
                      "--", "gdebi-gtk", "--non-interactive",
                      self._deb.file)
 

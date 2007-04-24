@@ -286,7 +286,9 @@ class DebPackage(object):
         # now try it out in the cache
             for pkg in self._needPkgs:
                 try:
-                    self._cache[pkg].markInstall(fromUser=False)
+                    # FIXME: debian does not support this yet
+                    #self._cache[pkg].markInstall(fromUser=False)
+                    self._cache[pkg].markInstall()
                 except SystemError, e:
                     self._failureString = _("Cannot install '%s'" % pkg)
                     self._cache.clear()
