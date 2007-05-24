@@ -1,3 +1,10 @@
+gdebi (0.2.5ubuntu1) gutsy; urgency=low
+
+  * GDebi/GDebiCli.py:
+    - do not crash on unknown file types (LP#113094)
+
+ --
+
 gdebi (0.2.4ubuntu1) feisty; urgency=low
 
   * GDebi/GDebi.py:
