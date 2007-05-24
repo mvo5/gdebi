@@ -598,7 +598,9 @@ Install software from trustworthy software distributors only.
             # the command
             cmd = "/usr/bin/dpkg"
             argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
-            env = ["VTE_PTY_KEEP_FD=%s"% writefd]
+            env = ["VTE_PTY_KEEP_FD=%s"% writefd,
+                   "DEBIAN_FRONTEND=gnome",
+                   "APT_LISTCHANGES_FRONTEND=gtk"]
             #print cmd
             #print argv
             #print env
@@ -664,6 +666,7 @@ Install software from trustworthy software distributors only.
             apt_pkg.PkgSystemUnLock()
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
+            self.progress.set_text("")
         def statusChange(self, pkg, percent, status):
             self.progress.set_fraction(percent/100.0)
             self.progress.set_text(status)
@@ -692,10 +695,11 @@ Install software from trustworthy software distributors only.
             #print "stop()"
             pass
         def pulse(self):
+            at_item = min(self.currentItems + 1, self.totalItems)
             if self.currentCPS > 0:
-                self.progress.set_text(_("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+                self.progress.set_text(_("File %s of %s at %sB/s" % (at_item,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
             else:
-                self.progress.set_text(_("File %s of %s" % (self.currentItems,self.totalItems)))
+                self.progress.set_text(_("File %s of %s" % (at_item,self.totalItems)))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
             while gtk.events_pending():
                 gtk.main_iteration()

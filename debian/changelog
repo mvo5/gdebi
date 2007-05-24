@@ -1,5 +1,9 @@
-gdebi (0.2.5ubuntu1) gutsy; urgency=low
+gdebi (0.2.5ubuntu1) gusty; urgency=low
 
+  * cosmetic fixes in progress reporting
+  * updated fi.po (thanks to Timo Jyrinki!)
+  * pass DEBIAN_FRONTEND and APT_LISTCHANGES_FRONTEND 
+    environment to dpkg too
   * GDebi/GDebiCli.py:
     - do not crash on unknown file types (LP#113094)
 
