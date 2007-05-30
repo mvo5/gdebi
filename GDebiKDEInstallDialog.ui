@@ -1,15 +1,15 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>installDialog</class>
+<class>GDebiKDEInstallDialog</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>installDialog</cstring>
+        <cstring>GDebiKDEInstallDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>515</width>
-            <height>82</height>
+            <width>503</width>
+            <height>326</height>
         </rect>
     </property>
     <property name="caption">
@@ -66,6 +66,25 @@
                 </hbox>
             </widget>
         </vbox>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>konsoleFrame</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>80</y>
+                <width>481</width>
+                <height>1</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

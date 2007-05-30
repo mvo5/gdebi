@@ -27,6 +27,8 @@ import sys
 import apt
 import os.path
 from qt import *
+from kdeui import *
+from kdecore import *
 
 from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
@@ -49,16 +51,14 @@ if __name__ == "__main__":
                       default=False,
                       help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
-
     afile = ""
     if len(args) >= 1:
-        afile = args[0]
-        
+        afile = args[0]        
     try:
-        app = QApplication(sys.argv)
+        app = KApplication(["gdebi-kde"],"Kdefile")
 	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
-	gdebi.show()
 	app.setMainWidget(gdebi)
+	gdebi.show()
         if options.non_interactive == True:
             gdebi.installButtonClicked()
 
@@ -75,5 +75,4 @@ if __name__ == "__main__":
                     )
         self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
         sys.exit(1)
-        
     app.run()
