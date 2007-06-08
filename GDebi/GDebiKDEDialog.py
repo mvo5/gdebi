@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'GDebiKDE.ui'
+# Form implementation generated from reading ui file './GDebiKDEDialog.ui'
 #
-# Created: Út kvě 29 15:27:30 2007
+# Created: Čt kvě 31 01:39:46 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -187,35 +187,55 @@ class GDebiKDEDialog(QDialog):
         self.image1 = QPixmap()
         self.image1.loadFromData(image1_data,"PNG")
         if not name:
-            self.setName("GDebiKDE")
+            self.setName("GDebiKDEDialog")
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.sizePolicy().hasHeightForWidth()))
         self.setIcon(self.image0)
         self.setSizeGripEnabled(0)
 
 
-        LayoutWidget = QWidget(self,"Layout1")
-        LayoutWidget.setGeometry(QRect(20,287,476,33))
-        Layout1 = QHBoxLayout(LayoutWidget,0,6,"Layout1")
+        self.PackageProgressBar = QProgressBar(self,"PackageProgressBar")
+        self.PackageProgressBar.setGeometry(QRect(402,10,110,25))
 
-        self.buttonHelp = QPushButton(LayoutWidget,"buttonHelp")
-        self.buttonHelp.setAutoDefault(1)
-        Layout1.addWidget(self.buttonHelp)
+        LayoutWidget = QWidget(self,"Layout1")
+        LayoutWidget.setGeometry(QRect(30,310,476,33))
+        Layout1 = QHBoxLayout(LayoutWidget,0,6,"Layout1")
         Horizontal_Spacing2 = QSpacerItem(20,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
         Layout1.addItem(Horizontal_Spacing2)
 
-        self.buttonOk = QPushButton(LayoutWidget,"buttonOk")
-        self.buttonOk.setAutoDefault(1)
-        self.buttonOk.setDefault(1)
-        self.buttonOk.setIconSet(QIconSet(self.image1))
-        Layout1.addWidget(self.buttonOk)
+        self.installButton = QPushButton(LayoutWidget,"installButton")
+        self.installButton.setAutoDefault(1)
+        self.installButton.setDefault(1)
+        self.installButton.setIconSet(QIconSet(self.image1))
+        Layout1.addWidget(self.installButton)
 
-        self.buttonCancel = QPushButton(LayoutWidget,"buttonCancel")
-        self.buttonCancel.setAutoDefault(1)
-        Layout1.addWidget(self.buttonCancel)
+        self.cancelButton = QPushButton(LayoutWidget,"cancelButton")
+        self.cancelButton.setAutoDefault(1)
+        Layout1.addWidget(self.cancelButton)
 
-        self.PackageProgressBar = QProgressBar(self,"PackageProgressBar")
-        self.PackageProgressBar.setGeometry(QRect(402,10,110,25))
+        LayoutWidget_2 = QWidget(self,"layout4")
+        LayoutWidget_2.setGeometry(QRect(30,10,270,50))
+        layout4 = QGridLayout(LayoutWidget_2,1,1,11,6,"layout4")
+
+        self.textLabel1_2 = QLabel(LayoutWidget_2,"textLabel1_2")
+        self.textLabel1_2.setMaximumSize(QSize(80,32767))
+
+        layout4.addWidget(self.textLabel1_2,1,0)
+
+        self.textLabel1 = QLabel(LayoutWidget_2,"textLabel1")
+        self.textLabel1.setMaximumSize(QSize(80,32767))
+
+        layout4.addWidget(self.textLabel1,0,0)
+
+        self.textLabel1_3 = QLabel(LayoutWidget_2,"textLabel1_3")
+        self.textLabel1_3.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,1,self.textLabel1_3.sizePolicy().hasHeightForWidth()))
+
+        layout4.addWidget(self.textLabel1_3,0,1)
+
+        self.textLabel1_3_2 = QLabel(LayoutWidget_2,"textLabel1_3_2")
+        self.textLabel1_3_2.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,1,self.textLabel1_3_2.sizePolicy().hasHeightForWidth()))
+
+        layout4.addWidget(self.textLabel1_3_2,1,1)
 
         self.tabWidget2 = QTabWidget(self,"tabWidget2")
         self.tabWidget2.setGeometry(QRect(30,80,430,190))
@@ -229,59 +249,59 @@ class GDebiKDEDialog(QDialog):
 
         self.tab_2 = QWidget(self.tabWidget2,"tab_2")
 
-        LayoutWidget_2 = QWidget(self.tab_2,"layout3")
-        LayoutWidget_2.setGeometry(QRect(0,10,340,140))
-        layout3 = QGridLayout(LayoutWidget_2,1,1,11,6,"layout3")
+        LayoutWidget_3 = QWidget(self.tab_2,"layout3")
+        LayoutWidget_3.setGeometry(QRect(0,10,340,140))
+        layout3 = QGridLayout(LayoutWidget_3,1,1,11,6,"layout3")
 
-        self.DetailsSectionLabel = QLabel(LayoutWidget_2,"DetailsSectionLabel")
+        self.DetailsSectionLabel = QLabel(LayoutWidget_3,"DetailsSectionLabel")
         DetailsSectionLabel_font = QFont(self.DetailsSectionLabel.font())
         DetailsSectionLabel_font.setBold(1)
         self.DetailsSectionLabel.setFont(DetailsSectionLabel_font)
 
         layout3.addWidget(self.DetailsSectionLabel,3,0)
 
-        self.DetailsPriorityLabel = QLabel(LayoutWidget_2,"DetailsPriorityLabel")
+        self.DetailsPriorityLabel = QLabel(LayoutWidget_3,"DetailsPriorityLabel")
         DetailsPriorityLabel_font = QFont(self.DetailsPriorityLabel.font())
         DetailsPriorityLabel_font.setBold(1)
         self.DetailsPriorityLabel.setFont(DetailsPriorityLabel_font)
 
         layout3.addWidget(self.DetailsPriorityLabel,2,0)
 
-        self.DetailsPriority = QLabel(LayoutWidget_2,"DetailsPriority")
+        self.DetailsPriority = QLabel(LayoutWidget_3,"DetailsPriority")
 
         layout3.addWidget(self.DetailsPriority,2,1)
 
-        self.DetailsSection = QLabel(LayoutWidget_2,"DetailsSection")
+        self.DetailsSection = QLabel(LayoutWidget_3,"DetailsSection")
 
         layout3.addWidget(self.DetailsSection,3,1)
 
-        self.DetailsVersionLabel = QLabel(LayoutWidget_2,"DetailsVersionLabel")
+        self.DetailsVersionLabel = QLabel(LayoutWidget_3,"DetailsVersionLabel")
         DetailsVersionLabel_font = QFont(self.DetailsVersionLabel.font())
         DetailsVersionLabel_font.setBold(1)
         self.DetailsVersionLabel.setFont(DetailsVersionLabel_font)
 
         layout3.addWidget(self.DetailsVersionLabel,0,0)
 
-        self.DetailsSize = QLabel(LayoutWidget_2,"DetailsSize")
+        self.DetailsSize = QLabel(LayoutWidget_3,"DetailsSize")
 
         layout3.addWidget(self.DetailsSize,4,1)
 
-        self.DetailsVersion = QLabel(LayoutWidget_2,"DetailsVersion")
+        self.DetailsVersion = QLabel(LayoutWidget_3,"DetailsVersion")
 
         layout3.addWidget(self.DetailsVersion,0,1)
 
-        self.DetailsSizeLabel = QLabel(LayoutWidget_2,"DetailsSizeLabel")
+        self.DetailsSizeLabel = QLabel(LayoutWidget_3,"DetailsSizeLabel")
         DetailsSizeLabel_font = QFont(self.DetailsSizeLabel.font())
         DetailsSizeLabel_font.setBold(1)
         self.DetailsSizeLabel.setFont(DetailsSizeLabel_font)
 
         layout3.addWidget(self.DetailsSizeLabel,4,0)
 
-        self.DetailsMaintainer = QLabel(LayoutWidget_2,"DetailsMaintainer")
+        self.DetailsMaintainer = QLabel(LayoutWidget_3,"DetailsMaintainer")
 
         layout3.addWidget(self.DetailsMaintainer,1,1)
 
-        self.DetailsMaintainerLabel = QLabel(LayoutWidget_2,"DetailsMaintainerLabel")
+        self.DetailsMaintainerLabel = QLabel(LayoutWidget_3,"DetailsMaintainerLabel")
         DetailsMaintainerLabel_font = QFont(self.DetailsMaintainerLabel.font())
         DetailsMaintainerLabel_font.setBold(1)
         self.DetailsMaintainerLabel.setFont(DetailsMaintainerLabel_font)
@@ -296,43 +316,25 @@ class GDebiKDEDialog(QDialog):
         self.IncFilesEdit.setReadOnly(1)
         self.tabWidget2.insertTab(self.TabPage,QString.fromLatin1(""))
 
-        LayoutWidget_3 = QWidget(self,"layout4")
-        LayoutWidget_3.setGeometry(QRect(30,10,270,50))
-        layout4 = QGridLayout(LayoutWidget_3,1,1,11,6,"layout4")
-
-        self.textLabel1_2 = QLabel(LayoutWidget_3,"textLabel1_2")
-
-        layout4.addWidget(self.textLabel1_2,1,0)
-
-        self.textLabel1 = QLabel(LayoutWidget_3,"textLabel1")
-
-        layout4.addWidget(self.textLabel1,0,0)
-
-        self.textLabel1_3 = QLabel(LayoutWidget_3,"textLabel1_3")
-
-        layout4.addWidget(self.textLabel1_3,0,1)
-
-        self.textLabel1_3_2 = QLabel(LayoutWidget_3,"textLabel1_3_2")
-
-        layout4.addWidget(self.textLabel1_3_2,1,1)
-
         self.languageChange()
 
-        self.resize(QSize(529,340).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(627,489).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
-        self.connect(self.buttonOk,SIGNAL("clicked()"),self.accept)
-        self.connect(self.buttonCancel,SIGNAL("clicked()"),self.reject)
+        self.connect(self.installButton,SIGNAL("clicked()"),self.installButtonClicked)
+        self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelButtonClicked)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("Package Installer"))
-        self.buttonHelp.setText(self.__tr("&Help"))
-        self.buttonHelp.setAccel(QKeySequence(self.__tr("F1")))
-        self.buttonOk.setText(self.__tr("&Install"))
-        self.buttonOk.setAccel(QKeySequence(self.__tr("Alt+I")))
-        self.buttonCancel.setText(self.__tr("&Cancel"))
-        self.buttonCancel.setAccel(QKeySequence(QString.null))
+        self.installButton.setText(self.__tr("&Install"))
+        self.installButton.setAccel(QKeySequence(self.__tr("Alt+I")))
+        self.cancelButton.setText(self.__tr("&Cancel"))
+        self.cancelButton.setAccel(QKeySequence(QString.null))
+        self.textLabel1_2.setText(self.__tr("Status:"))
+        self.textLabel1.setText(self.__tr("Package:"))
+        self.textLabel1_3.setText(self.__tr("empty"))
+        self.textLabel1_3_2.setText(self.__tr("empty"))
         self.tabWidget2.changeTab(self.tab,self.__tr("&Description"))
         self.DetailsSectionLabel.setText(self.__tr("Section:"))
         self.DetailsPriorityLabel.setText(self.__tr("Priority:"))
@@ -346,11 +348,19 @@ class GDebiKDEDialog(QDialog):
         self.DetailsMaintainerLabel.setText(self.__tr("Maintainer:"))
         self.tabWidget2.changeTab(self.tab_2,self.__tr("Det&ails"))
         self.tabWidget2.changeTab(self.TabPage,self.__tr("I&ncluded Files"))
-        self.textLabel1_2.setText(self.__tr("Status:"))
-        self.textLabel1.setText(self.__tr("Package:"))
-        self.textLabel1_3.setText(self.__tr("empty"))
-        self.textLabel1_3_2.setText(self.__tr("empty"))
 
+
+    def installButtonClicked(self):
+        print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
+
+    def buttonCancelClicked(self):
+        print "GDebiKDEDialog.buttonCancelClicked(): Not implemented yet"
+
+    def cancelButtonclicked(self):
+        print "GDebiKDEDialog.cancelButtonclicked(): Not implemented yet"
+
+    def cancelButtonClicked(self):
+        print "GDebiKDEDialog.cancelButtonClicked(): Not implemented yet"
 
     def __tr(self,s,c = None):
-        return qApp.translate("GDebiKDE",s,c)
+        return qApp.translate("GDebiKDEDialog",s,c)

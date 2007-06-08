@@ -20,6 +20,7 @@
 
 import sys
 import os
+import subprocess
 import string
 import warnings
 from warnings import warn
@@ -29,7 +30,7 @@ import apt_pkg
 from qt import *
 from kdeui import *
 from kdecore import *
-from kparts import konsolePart
+from kparts import konsolePart,TerminalInterface
 from kfile import *
 
 import urllib
@@ -55,6 +56,7 @@ class GDebiKDE(GDebiKDEDialog):
 	
 	self._deb = None	
         self.setDisabled(True)
+
         self.cprogress = self.CacheProgressAdapter(self.PackageProgressBar)
         self._cache = Cache(self.cprogress)
         self._options = options
@@ -62,6 +64,7 @@ class GDebiKDE(GDebiKDEDialog):
         if file != "" and os.path.exists(file):
             self.open(file)
         self.setEnabled(True)
+	
     def open(self, file):
         try:
             self._deb = DebPackage(self._cache, file)
@@ -110,19 +113,19 @@ class GDebiKDE(GDebiKDEDialog):
         
         # check the deps
         if not self._deb.checkDeb():
-            self.textLabel1_3_2.set_markup("<span foreground=\"red\" weight=\"bold\">"+
-                                         "Error: " +
-                                         self._deb._failureString +
-                                         "</span>")
-	    self.button_install.set_label(_("_Install Package"))
+            #self.textLabel1_3_2.set_markup("<span foreground=\"red\" weight=\"bold\">"+
+            #                             "Error: " +
+            #                             self._deb._failureString +
+            #                             "</span>")
+	    self.installButton.setText(_("&Install Package"))
 
-            self.button_install.set_sensitive(False)
-            self.button_details.hide()
+            #self.button_install.set_sensitive(False)
+            #self.button_details.hide()
             return
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
-            self.textLabel1_3_2.setText(_("Same version is already installed"))
-            self.buttonOk.setLabel(_("_Reinstall Package"))
+            #self.textLabel1_3_2.setText(_("Same version is already installed"))
+            self.installButton.setText(_("&Reinstall Package"))
             #self.button_install.grab_default()
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
@@ -200,10 +203,13 @@ class GDebiKDE(GDebiKDEDialog):
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.buttonOk.setText(_("Reinstall Package"))
 	
-
+    def cancelButtonClicked(self):
+	self.close()
+	
     def installButtonClicked(self):
         
         print "click" # mhb debug
+	print self._deb.file
         # sanity check
         if self._deb is None:
             return
@@ -220,9 +226,10 @@ class GDebiKDE(GDebiKDEDialog):
         except SystemError:
             print "cannot be locked" # mhb debug
         apt_pkg.PkgSystemUnLock()
-        installDialog = GDebiKDEInstall()
-	print "dbg-here"
-        installDialog.show()
+	
+        self.installDialog = GDebiKDEInstall(self)
+        self.installDialog.show()
+
         (install, remove, unauthenticated) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
             # check if we can lock the apt database
@@ -274,10 +281,9 @@ class GDebiKDE(GDebiKDEDialog):
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,
-                                             installDialog.installingLabel,
-                                             installDialog.installationProgres,
-                                             None,
-                                             None)
+                                             self.installDialog.installingLabel,
+                                             self.installDialog.installationProgres,
+                                             self.installDialog.konsole)
         dprogress.commit()
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
@@ -308,57 +314,27 @@ class GDebiKDE(GDebiKDEDialog):
         self.open(self._deb.file)
 
 
-    def languageChange(self):
-        self.setCaption(self.__tr("Package Installer"))
-        self.buttonHelp.setText(self.__tr("&Help"))
-        self.buttonHelp.setAccel(QKeySequence(self.__tr("F1")))
-        self.buttonOk.setText(self.__tr("&Install"))
-        self.buttonOk.setAccel(QKeySequence(self.__tr("Alt+I")))
-        self.buttonCancel.setText(self.__tr("&Cancel"))
-        self.buttonCancel.setAccel(QKeySequence(QString.null))
-        self.textLabel1_2.setText(self.__tr("Status:"))
-        self.textLabel1.setText(self.__tr("Package:"))
-        self.textLabel1_3.setText(self.__tr("empty"))
-        self.textLabel1_3_2.setText(self.__tr("empty"))
-        self.tabWidget2.changeTab(self.tab,self.__tr("Description"))
-        self.DetailsSectionLabel.setText(self.__tr("Section:"))
-        self.DetailsPriorityLabel.setText(self.__tr("Priority:"))
-        self.DetailsPriority.setText(QString.null)
-        self.DetailsSection.setText(QString.null)
-        self.DetailsVersionLabel.setText(self.__tr("Version:"))
-        self.DetailsSize.setText(QString.null)
-        self.DetailsVersion.setText(QString.null)
-        self.DetailsSizeLabel.setText(self.__tr("Size:"))
-        self.DetailsMaintainer.setText(QString.null)
-        self.DetailsMaintainerLabel.setText(self.__tr("Maintainer:"))
-        self.tabWidget2.changeTab(self.tab_2,self.__tr("Details"))
-        self.tabWidget2.changeTab(self.TabPage,self.__tr("Included Files"))
-
-
-    def __tr(self,s,c = None):
-        return qApp.translate("GDebiKDE",s,c)
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress, term, expander):
+        def __init__(self, debfile, status, progress, konsole):
+	    # an expander would be handy, sadly we don't have one in KDE3
             self.debfile = debfile
             self.status = status
             self.progress = progress
-            self.term = term
-            self.expander = expander
+            self.konsole = konsole
+            #self.expander = expander
             #self.expander.set_expanded(False)
-        
         def commit(self):
-            def finish_dpkg(term, pid, status, lock):
-                " helper "
-                self.exitstatus = posix.WEXITSTATUS(status)
+            def finish_dpkg(self):
+                #" helper "
+                #self.exitstatus = posix.WEXITSTATUS(status)
                 #print "dpkg finished %s %s" % (pid,status)
                 #print "exit status: %s" % self.exitstatus
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
-                lock.release()
-
+                self.lock.release()
             # get a lock
-            lock = thread.allocate_lock()
-            lock.acquire()
+            self.lock = thread.allocate_lock()
+            self.lock.acquire()
 
             # ui
             self.status.setText("<i>"+_("Installing '%s'...") % \
@@ -367,33 +343,43 @@ class GDebiKDE(GDebiKDEDialog):
             #self.progress.set_text("")
 
             # prepare reading the pipe
-            (readfd, writefd) = os.pipe()
-            fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
+            #(readfd, writefd) = os.pipe()
+            #fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
             #print "fds (%i,%i)" % (readfd,writefd)
 
             # the command
             cmd = "/usr/bin/dpkg"
-            argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
-            env = ["VTE_PTY_KEEP_FD=%s"% writefd]
-            #print cmd
-            #print argv
-            #print env
-            #print self.term
+            argv = [cmd,"--status-fd", "-i", self.debfile]
+            #env = ["VTE_PTY_KEEP_FD=%s"% writefd]
+            print cmd
+            print argv
+    	    #print env
+            print self.konsole
 
             # prepare for the fork
+	    #self.konsole.startProgram(cmd,argv)
             #reaper = vte.reaper_get()
             #signal_id = reaper.connect("child-exited", finish_dpkg, lock)
             #pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
-            read = ""
-            while lock.locked():
-                while True:
+	    # the communication process is as follows:
+	    # child installs the package and sends all lines to the parent
+            
+	    process = subprocess.Popen(argv,1,'/bin/bash',None,subprocess.PIPE,subprocess.PIPE, None, False,True)
+	    readfd = process.stdout
+	    # okay, we're the parent
+    	    #print "někde tady"
+	    read = ''
+            while True:
                     try:
                         read += os.read(readfd,1)
+           		print read
                     except OSError, (errno,errstr):
                         # resource temporarly unavailable is ignored
                         if errno != 11:
                             print errstr
                         break
+		    
+			print "exited"
                     if read.endswith("\n"):
                         statusl = string.split(read, ":")
                         if len(statusl) < 2:
@@ -405,28 +391,32 @@ class GDebiKDE(GDebiKDEDialog):
                         if status == "error" or status == "conffile-prompt":
                             self.expander.set_expanded(True)
                         read = ""
-                self.progress.pulse()
-                while gtk.events_pending():
-                    gtk.main_iteration()
-                time.sleep(0.2)
-            self.progress.setPercent(1.0)
-            reaper.disconnect(signal_id)
+            	    #self.progress.pulse()
+            	    #while gtk.events_pending():
+            	    #    gtk.main_iteration()
+            	    time.sleep(0.2)
+            self.progress.setFinished(true)
+            #reaper.disconnect(signal_id)
     
     class InstallProgressAdapter(InstallProgress):
-        def __init__(self,progress,term,label,term_expander):
+        def __init__(self, app, master, slave):
             # TODO: implement the term
             InstallProgress.__init__(self)
-            self.progress = progress
-            self.term = term
-            self.term_expander = term_expander
+            self.app = app
+            self.master = master
+            self.slave = slave
             self.finished = False
-            self.action = label
             #reaper = vte.reaper_get()
             #reaper.connect("child-exited",self.child_exited)
             #self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
                         #"DEBIAN_FRONTEND=gnome",
                         #"APT_LISTCHANGES_FRONTEND=gtk"]
-        def child_exited(self,term, pid, status):
+        def child_exited(self,process):
+            print "processExited(self):"
+	    print "exit status: " + str(process.exitStatus())
+    	    self.finished = True
+    	    self.apt_status = process.exitStatus()
+
             #print "child_exited: %s %s %s %s" % (self,term,pid,status)
             #self.apt_status = posix.WEXITSTATUS(status)
             self.finished = True
@@ -452,13 +442,22 @@ class GDebiKDE(GDebiKDEDialog):
                 #gtk.main_iteration()
             passs
         def fork(self):
-            #return self.term.forkpty(envv=self.env)
+            self.child_pid = os.fork()
+	    if self.child_pid == 0:
+    	        os.setsid()
+        	#os.environ["TERM"] = "linux"
+                os.environ["DEBIAN_FRONTEND"] = "kde"
+                os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
+	        os.dup2(self.parent.slave, 0)
+    	        os.dup2(self.parent.slave, 1)
+        	os.dup2(self.parent.slave, 2)
+	    return self.child_pid
             pass
         def waitChild(self):
-            #while not self.finished:
-                #self.updateInterface()
-            #return self.apt_status
-            pass
+            while not self.finished:
+                self.updateInterface()
+            return self.apt_status
+
     class FetchProgressAdapter(apt.progress.FetchProgress):
         def __init__(self,progress,action,main):
             #print "FetchProgressAdapter.__init__()"
@@ -515,25 +514,32 @@ class GDebiKDE(GDebiKDEDialog):
 class GDebiKDEInstall(GDebiKDEInstallDialog):
     def __init__(self,parent=None):
 	GDebiKDEInstallDialog.__init__(self,parent)
+	self.parent = parent
 	self.konsole = None
 	self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
 	self.konsoleFrame.hide()
 	self.newKonsole()
+	self.connect(self.konsole,SIGNAL("processExited()"),self.unlock)
+    def unlock(self,number):
+	self.parent.dprogress.lock.unlock()
     def newKonsole(self):
+	# this one belong elsewhere, but we need it here for debug
+	self.konsoleFrame.show()
         if self.konsole is not None:
             self.konsole.widget().hide()
 	print "az tady"
         self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
 	print "az tady"
         self.konsoleFrame.setMinimumSize(500, 400)
-        self.konsole.setAutoStartShell(True)
+        self.konsole.setAutoStartShell(False)
+	self.konsole.setAutoDestroy(False)
         self.konsoleWidget = self.konsole.widget()
-        self.konsoleFrameLayout.addWidget(self.konsoleWidget)
         self.konsoleWidget.show()
+        self.konsoleFrameLayout.addWidget(self.konsoleWidget)
 
         #prepare for dpkg pty being attached to konsole
-        (self.master, self.slave) = pty.openpty()
-        self.konsole.setPtyFd(self.master)
+        #(self.master, self.slave) = pty.openpty()
+        #self.konsole.setPtyFd(self.master)
 
         #self.window_main.showTerminalButton.setEnabled(True)
     

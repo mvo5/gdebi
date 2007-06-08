@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../GDebiKDEInstallDialog.ui'
+# Form implementation generated from reading ui file './GDebiKDEInstallDialog.ui'
 #
-# Created: Út kvě 29 16:43:39 2007
+# Created: Čt kvě 31 01:39:46 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -20,8 +20,13 @@ class GDebiKDEInstallDialog(QDialog):
 
 
 
+        self.konsoleFrame = QFrame(self,"konsoleFrame")
+        self.konsoleFrame.setGeometry(QRect(10,100,481,1))
+        self.konsoleFrame.setFrameShape(QFrame.StyledPanel)
+        self.konsoleFrame.setFrameShadow(QFrame.Raised)
+
         LayoutWidget = QWidget(self,"layout6")
-        LayoutWidget.setGeometry(QRect(7,14,490,53))
+        LayoutWidget.setGeometry(QRect(10,20,490,53))
         layout6 = QVBoxLayout(LayoutWidget,11,6,"layout6")
 
         self.installingLabel = QLabel(LayoutWidget,"installingLabel")
@@ -36,14 +41,9 @@ class GDebiKDEInstallDialog(QDialog):
         layout5.addWidget(self.showDetailsButton)
         layout6.addLayout(layout5)
 
-        self.konsoleFrame = QFrame(self,"konsoleFrame")
-        self.konsoleFrame.setGeometry(QRect(10,80,481,1))
-        self.konsoleFrame.setFrameShape(QFrame.StyledPanel)
-        self.konsoleFrame.setFrameShadow(QFrame.Raised)
-
         self.languageChange()
 
-        self.resize(QSize(503,326).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(525,167).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
 

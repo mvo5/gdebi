@@ -75,4 +75,4 @@ if __name__ == "__main__":
                     )
         self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
         sys.exit(1)
-    app.run()
+    #app.run()
