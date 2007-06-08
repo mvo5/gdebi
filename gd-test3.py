@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 import os,subprocess
 
-cmd = ["sleep","100000"]
+cmd = ["ls","-la"]
 
 output = subprocess.Popen(cmd).stdout
-print "mama"
-print output
+while True:
+	try:
+		print output.read(1)
+	except AttributeError:
+		break
+	

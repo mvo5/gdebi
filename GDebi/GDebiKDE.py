@@ -283,7 +283,7 @@ class GDebiKDE(GDebiKDEDialog):
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.installDialog.installingLabel,
                                              self.installDialog.installationProgres,
-                                             self.installDialog.konsole)
+                                             self.installDialog.konsole, self.installDialog)
         dprogress.commit()
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
@@ -316,19 +316,20 @@ class GDebiKDE(GDebiKDEDialog):
 
     # embedded classes
     class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress, konsole):
+        def __init__(self, debfile, status, progress, konsole, parent):
 	    # an expander would be handy, sadly we don't have one in KDE3
             self.debfile = debfile
             self.status = status
             self.progress = progress
             self.konsole = konsole
+	    self.parent = parent
             #self.expander = expander
             #self.expander.set_expanded(False)
         def commit(self):
-            def finish_dpkg(self):
+            def finish_ff(self):
                 #" helper "
                 #self.exitstatus = posix.WEXITSTATUS(status)
-                #print "dpkg finished %s %s" % (pid,status)
+                #print " finished %s %s" % (pid,status)
                 #print "exit status: %s" % self.exitstatus
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
                 self.lock.release()
@@ -349,14 +350,27 @@ class GDebiKDE(GDebiKDEDialog):
 
             # the command
             cmd = "/usr/bin/dpkg"
-            argv = [cmd,"--status-fd", "-i", self.debfile]
+            argv = [cmd, "-i", self.debfile]
             #env = ["VTE_PTY_KEEP_FD=%s"% writefd]
             print cmd
             print argv
     	    #print env
             print self.konsole
 
-            # prepare for the fork
+            # prepare for the fork 
+	    self.child_pid = os.fork()
+            if self.child_pid == 0:
+                os.setsid()
+                #os.environ["TERM"] = "linux"
+                os.environ["DEBIAN_FRONTEND"] = "kde"
+                os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
+                os.dup2(self.parent.slave, 0)
+                os.dup2(self.parent.slave, 1)
+                os.dup2(self.parent.slave, 2)
+	        # we're the offspring, let's install like we should
+		subprocess.Popen(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
+		os._exit(0)
+	    
 	    #self.konsole.startProgram(cmd,argv)
             #reaper = vte.reaper_get()
             #signal_id = reaper.connect("child-exited", finish_dpkg, lock)
@@ -364,14 +378,20 @@ class GDebiKDE(GDebiKDEDialog):
 	    # the communication process is as follows:
 	    # child installs the package and sends all lines to the parent
             
-	    process = subprocess.Popen(argv,1,'/bin/bash',None,subprocess.PIPE,subprocess.PIPE, None, False,True)
-	    readfd = process.stdout
+	    #process = 
+	    #readfd = process.stdout
+	    #errfd = process.stderr
+	    #for line in errfd:
+		    #print line
+	    #print "readfd"
+	    #print readfd
 	    # okay, we're the parent
-    	    #print "někde tady"
+    	    # now that's what I call an infinite loop
+	    # better clean that up soon
 	    read = ''
             while True:
                     try:
-                        read += os.read(readfd,1)
+                        #read += readfd.read(1)
            		print read
                     except OSError, (errno,errstr):
                         # resource temporarly unavailable is ignored
@@ -538,8 +558,8 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         self.konsoleFrameLayout.addWidget(self.konsoleWidget)
 
         #prepare for dpkg pty being attached to konsole
-        #(self.master, self.slave) = pty.openpty()
-        #self.konsole.setPtyFd(self.master)
+        (self.master, self.slave) = pty.openpty()
+        self.konsole.setPtyFd(self.master)
 
         #self.window_main.showTerminalButton.setEnabled(True)
     
