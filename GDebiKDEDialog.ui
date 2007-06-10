@@ -1,0 +1,423 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>GDebiKDEDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>GDebiKDEDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>627</width>
+            <height>489</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="caption">
+        <string>Package Installer</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>false</bool>
+    </property>
+    <widget class="QProgressBar">
+        <property name="name">
+            <cstring>PackageProgressBar</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>402</x>
+                <y>10</y>
+                <width>110</width>
+                <height>25</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>10</y>
+                <width>270</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLabel" row="1" column="0">
+                <property name="name">
+                    <cstring>textLabel1_2</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>80</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>Status:</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>textLabel1</cstring>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>80</width>
+                        <height>32767</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>Package:</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="1">
+                <property name="name">
+                    <cstring>textLabel1_3</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>1</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>empty</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="1" column="1">
+                <property name="name">
+                    <cstring>textLabel1_3_2</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>1</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>empty</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QTabWidget">
+        <property name="name">
+            <cstring>tabWidget2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>80</y>
+                <width>430</width>
+                <height>190</height>
+            </rect>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>&amp;Description</string>
+            </attribute>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>DecriptionEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>3</x>
+                        <y>3</y>
+                        <width>420</width>
+                        <height>150</height>
+                    </rect>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>Det&amp;ails</string>
+            </attribute>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>10</y>
+                        <width>340</width>
+                        <height>140</height>
+                    </rect>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>DetailsSectionLabel</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Section:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>DetailsPriorityLabel</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Priority:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="1">
+                        <property name="name">
+                            <cstring>DetailsPriority</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="1">
+                        <property name="name">
+                            <cstring>DetailsSection</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>DetailsVersionLabel</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Version:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="1">
+                        <property name="name">
+                            <cstring>DetailsSize</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="1">
+                        <property name="name">
+                            <cstring>DetailsVersion</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>DetailsSizeLabel</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Size:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="1">
+                        <property name="name">
+                            <cstring>DetailsMaintainer</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>DetailsMaintainerLabel</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Maintainer:</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>TabPage</cstring>
+            </property>
+            <attribute name="title">
+                <string>I&amp;ncluded Files</string>
+            </attribute>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>IncFilesEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>3</x>
+                        <y>3</y>
+                        <width>420</width>
+                        <height>150</height>
+                    </rect>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>Layout1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>310</y>
+                <width>476</width>
+                <height>33</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <spacer>
+                <property name="name">
+                    <cstring>Horizontal Spacing2</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>installButton</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Install</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+I</string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+                <property name="default">
+                    <bool>true</bool>
+                </property>
+                <property name="iconSet">
+                    <iconset>image1</iconset>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>cancelButton</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Cancel</string>
+                </property>
+                <property name="accel">
+                    <string></string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </hbox>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="832">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000030749444154388d8d934b6854571cc6bf73cf9db99947268f3113eae4a5b11a1f686c313451a7a1ade6818f162ae8422222e84a14379aad4aa922085d16da6eba1054ba2a7d5074d106138a28924c4c341acdbc3293c9e4de7bee63cedc73baa9687c80dff6ff7dbfd5ef0fbc4754407dd78dbe5126a0831f570f04fd086497bc5c7f67a47ff8c8a6e15acd8be886a3ebb6342420df0aa80fa2eedcd0c6b3df5e3a7a795b7b5d4f30d6d570f2d4e9b33d035f7fbe2bd1beefc0b6e0fead31d1e917654db72abac5a545008000646393b6fec299de8b7b0e0eee95cca186d88a706b028aaa81311bf9ec2cc2e91b682c8da09c4ef1f147c58913d732c7150058b54269fdf19bc19ff60f7df525cda7a89905aae2db411415b665c3620c8aaf0659e5239879037e56f44da6ed8964be324101c0e1d26d0c89864f56d21ef2645265f59f418b6f06334d64d22930664148c0f134906777e0d7e79cdb69ff3fedb5fe0eaaa9d042554ab0b86814bb1aecae98f03e305af600357164d3299466ef80e98b80af0edc03a8f51c0d2db5a8ad0eaff8eddfd4afeae12e7ae88b9d1dbb77f42512b1f8ca180a0b08902c787116aee30252c0f3381cb78c7a6f16cd511b4f1f16d2c7aefc3d349a7247e8d4bc9c1e9d2c8d4d269f2543dc087dd8b9614d60e11e0924af2334ff009c5443d6b421cec7d196bf892a670e0f92b9a9ab7f652e7381b26aba60668ecf3cce656698c5eddea1c37d05ad97067d771136c6b12e380dee3e866fee1e88e7402a04a2ec1285100590af192689acd85c32ac4521ba0581681e75a99f115db80d621621a4002702a4e211f2d2d2572204ca4b0e145f099295c000844d1730750887c1f138400988505fec5f07482a8a592a310a95c6c16904c4c800960ed766f044053ebf06dd84e149883700f945a790bb3f32d3dc78bfcd9301aa57a2082ddc85704d88b203091ffe98c2adf3b78ac356459aff5bbcec91d4a6086de96e0befdcd5513dd0dd42bb9b8356935f254a7ec9337f182b7fffdd18bb34ef88ec8bcd32c03218a0b646e8eaedcddaa73b5685137f4e9bbfff32655de312fcd5de7fc1f96fcb881593720000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="1131">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000043249444154388db5955b88565514c77f6bed7dcef7cd38371ba73473f252a6dd843429e8a1060dbbbcf910f592c988412ffa32414551513d041211798140d31289524b84e846a62959568c3a968a9946493aa839f37de73bdfdeab8733cee4d8ab6bb3396cd6e2cffffcff6bef2566c695080f204b130802f5144c8a4c08b74bb04dd3c65e3f3df109569722670a118e9dfaf35496876e7c693b5891cb3d04b0cf7e2b802f8b18521fe307cf2c7c767a775737cda526628c00880879c8d9bc7bdb849e35cfbd7f3eabdd86f3274643e8a5a70002d4b35b3adb274d7beafe27197fd538facef672e4c2218e0efccaa17ff623a5c8d2058f3367e6dc56aa035dc408e152a8518c0d240016529f9a57cfaee3bbe87ab78b72a94cea53cee5e758316f05cb672fa7b1a109901c7323125e061c8327cbef23925065fa85ea050921a022a49a926a4aa2095e3d4e1c00839501a80cce81b49f200e5fde8d24fd23c0d16e76b84fa64f9a31a5943410ab39d7b74f91d427448b88c825db283ae9a6eba6717ae69c655a6e5e16f3c8e113c74e576af545c0f6a22bea717dcf434f4f5d76ff32da1adb0831e0c4912609be3f19259651d212006f76bf466d512e4e95ac9ef1de979b3b7ade7a612d70b50798d07aedcc25f72ea1a3651cdb0f6d0705415051f6fdb50f270ea1609a6842ef995e3e3ffe395102a24a2070f784bb58bce051567fbcbe7d588a443d4e1d474e1fe1e1771e0607e204f142922434961a0b09cc684e9ad97870231bfa36205e50a70cda201f3df821f3ae5e8073c9887966468c1115a59494102738e750a7882f98cad0328cc425a49aa25e51a760e0c46116318bffd76e202aa8eaf0166474098a1675a25c5ca3a3300f41440916a80e56c10d651cb8d4d1d2d0326c9cc351a957c8ea19ea14f58514b9e588282232021c2c086274b675b2e691d5880a2078ef39f0f70156ed5b45a2092aca407d80853316327ff27c72725495bae5cc6ebf0351b0a1ab8f99e19ff0075fddf69a556a151b1d3b8fefb4f22b656b7bbdcd3adee830ffbab7953fadbcaccea2d97b5f6cb1d60537f49b59c1b8ae71f18b9b5ffa70f3f71f4f18536e91ac5a65f2d849acec7e9b9ad586c4bff811b29001d0b3f66576fefc2d69b9997aadc6fec37d67cf65834f8d9827ba27ab576fdcfbcbeef9182d5498fafbf8cee7b33c5327971b73d1d0bd877f64f79e4f57d3d0ba83408e6fd881fa53977685f383946d2be681ecd6a68631cf39751a62a05aab12359258429ee7e43107a0a9dc048d63bea2dcb88920600e82fd4fbb993204dc10429048e4ce8973d9fad8169c3a54955acc9975cd2c00b23c03ac1189200efe338c46012745d2957a4f9e39f1c7baafd77776772de681a90f11cdc00c11a51eeb6cfa660b3ff47d3748a97107aac5cb5e65185ccc0c599214efe9f06812a8d7ee4949debf69fc8c89892f636168fc50fceed193c7ce9daf5496e3d375c3c4a214536adbc902f84ac4bf3d8de5e8fa47c8170000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>installButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GDebiKDEDialog</receiver>
+        <slot>installButtonClicked()</slot>
+    </connection>
+    <connection>
+        <sender>cancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GDebiKDEDialog</receiver>
+        <slot>cancelButtonClicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">GDebiKDEDialog.ui.h</include>
+</includes>
+<slots>
+    <slot>installButtonClicked()</slot>
+    <slot>buttonCancelClicked()</slot>
+    <slot>cancelButtonclicked()</slot>
+    <slot>cancelButtonClicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
