@@ -43,12 +43,18 @@ import pty
 
 from DebPackage import DebPackage, Cache
 from apt.progress import InstallProgress
-from gettext import gettext as _
+from gettext import gettext as gett
 from GDebiKDEInstallDialog import GDebiKDEInstallDialog
 from GDebiKDEDialog import GDebiKDEDialog
- 
+
+def _(str):
+    return unicode(gett(str), 'UTF-8')
+
+
 def utf8(str):
-  return unicode(str, 'latin1').encode('utf-8')
+  if isinstance(str, unicode):
+      return str
+  return unicode(str, 'UTF-8')
 
 class GDebiKDE(GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
@@ -219,7 +225,7 @@ class GDebiKDE(GDebiKDEDialog):
         # if not root, start a new instance
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
-                     "/home/martin/processing/soc/gdebi-kde/branch/gdebi-kde/gdebi-kde -n " + self._deb.file)
+                     "gdebi-kde -n " + self._deb.file)
         # check if we can lock the apt database
         try:
             apt_pkg.PkgSystemLock()
@@ -245,13 +251,12 @@ class GDebiKDE(GDebiKDEDialog):
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
             # when stuff goes wrong!
-            fprogress = self.FetchProgressAdapter(installDialog.installationProgres,
-                                                  installDialog.installingLabel,
-                                                  installDialog)
-            iprogress = self.InstallProgressAdapter(installDialog.installationProgres,
-                                                    None,
-                                                    installDialog.installingLabel,
-                                                    None)
+            fprogress = self.FetchProgressAdapter(self.installDialog.installationProgres,
+                                                  self.installDialog.installingLabel,
+                                                  self.installDialog)
+            iprogress = self.InstallProgressAdapter(self.installDialog.installationProgres,
+	    					    self.installDialog.installingLabel,
+						    self.installDialog)
             errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
@@ -316,6 +321,8 @@ class GDebiKDE(GDebiKDEDialog):
 
     # embedded classes
     class DpkgInstallProgress(object):
+	# this one is the frontend for dpkg -i
+	# there is only 0/100 state for the progress bar
         def __init__(self, debfile, status, progress, konsole, parent):
 	    # an expander would be handy, sadly we don't have one in KDE3
             self.debfile = debfile
@@ -323,108 +330,31 @@ class GDebiKDE(GDebiKDEDialog):
             self.progress = progress
             self.konsole = konsole
 	    self.parent = parent
-            #self.expander = expander
-            #self.expander.set_expanded(False)
-        def commit(self):
-            def finish_ff(self):
-                #" helper "
-                #self.exitstatus = posix.WEXITSTATUS(status)
-                #print " finished %s %s" % (pid,status)
-                #print "exit status: %s" % self.exitstatus
-                #print "was signaled %s" % posix.WIFSIGNALED(status)
-                self.lock.release()
-            # get a lock
-            self.lock = thread.allocate_lock()
-            self.lock.acquire()
-
+	
+	    # in case there was some progress left from the deps
+	    self.progress.setProgress(0)
+        
+	def commit(self):
             # ui
             self.status.setText("<i>"+_("Installing '%s'...") % \
                                    os.path.basename(self.debfile)+"</i>")
-            #self.progress.pulse()
-            #self.progress.set_text("")
-
-            # prepare reading the pipe
-            #(readfd, writefd) = os.pipe()
-            #fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
-            #print "fds (%i,%i)" % (readfd,writefd)
-
             # the command
             cmd = "/usr/bin/dpkg"
             argv = [cmd, "-i", self.debfile]
-            #env = ["VTE_PTY_KEEP_FD=%s"% writefd]
             print cmd
             print argv
-    	    #print env
             print self.konsole
-
-            # prepare for the fork 
-	    self.child_pid = os.fork()
-            if self.child_pid == 0:
-                os.setsid()
-                #os.environ["TERM"] = "linux"
-                os.environ["DEBIAN_FRONTEND"] = "kde"
-                os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
-                os.dup2(self.parent.slave, 0)
-                os.dup2(self.parent.slave, 1)
-                os.dup2(self.parent.slave, 2)
-	        # we're the offspring, let's install like we should
-		subprocess.Popen(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
-		os._exit(0)
-	    
-	    #self.konsole.startProgram(cmd,argv)
-            #reaper = vte.reaper_get()
-            #signal_id = reaper.connect("child-exited", finish_dpkg, lock)
-            #pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
-	    # the communication process is as follows:
-	    # child installs the package and sends all lines to the parent
-            
-	    #process = 
-	    #readfd = process.stdout
-	    #errfd = process.stderr
-	    #for line in errfd:
-		    #print line
-	    #print "readfd"
-	    #print readfd
-	    # okay, we're the parent
-    	    # now that's what I call an infinite loop
-	    # better clean that up soon
-	    read = ''
-            while True:
-                    try:
-                        #read += readfd.read(1)
-           		print read
-                    except OSError, (errno,errstr):
-                        # resource temporarly unavailable is ignored
-                        if errno != 11:
-                            print errstr
-                        break
-		    
-			print "exited"
-                    if read.endswith("\n"):
-                        statusl = string.split(read, ":")
-                        if len(statusl) < 2:
-                            print "got garbage from dpkg: '%s'" % read
-                            read = ""
-                            break
-                        status = statusl[2].strip()
-                        #print status
-                        if status == "error" or status == "conffile-prompt":
-                            self.expander.set_expanded(True)
-                        read = ""
-            	    #self.progress.pulse()
-            	    #while gtk.events_pending():
-            	    #    gtk.main_iteration()
-            	    time.sleep(0.2)
-            self.progress.setFinished(true)
-            #reaper.disconnect(signal_id)
-    
+	    self.exitstatus=-1
+	    self.exitstatus = subprocess.call(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
+            self.progress.setProgress(100)
+    	    
     class InstallProgressAdapter(InstallProgress):
-        def __init__(self, app, master, slave):
+        def __init__(self, progress, action, parent):
             # TODO: implement the term
             InstallProgress.__init__(self)
-            self.app = app
-            self.master = master
-            self.slave = slave
+            self.progress = progress
+            self.action = action
+            self.parent = parent
             self.finished = False
             #reaper = vte.reaper_get()
             #reaper.connect("child-exited",self.child_exited)
@@ -452,15 +382,15 @@ class GDebiKDE(GDebiKDEDialog):
             #print "startUpdate"
             apt_pkg.PkgSystemUnLock()
             self.action.setText("<i>"+_("Installing dependencies...")+"</i>")
-            self.progress.setPercent(0.0)
+            self.progress.setProgress(0)
         def statusChange(self, pkg, percent, status):
-            self.progress.setPercent(percent/100.0)
+            self.progress.setProgress(percent)
             self.progress.setText(status)
         def updateInterface(self):
             #InstallProgress.updateInterface(self)
             #while gtk.events_pending():
                 #gtk.main_iteration()
-            passs
+            pass
         def fork(self):
             self.child_pid = os.fork()
 	    if self.child_pid == 0:
@@ -487,7 +417,7 @@ class GDebiKDE(GDebiKDEDialog):
         def start(self):
             #print "start()"
             self.action.setText("<i>"+_("Downloading additional package files...")+"</i>")
-            self.progress.setPercent(0)
+            self.progress.setProgress(0)
         def stop(self):
             #print "stop()"
             pass
@@ -498,7 +428,7 @@ class GDebiKDE(GDebiKDEDialog):
             else:
                 pass
                 #self.progress.setText(_("File %s of %s" % (self.currentItems,self.totalItems)))
-            self.progress.setPercent(self.currentBytes/self.totalBytes)
+            self.progress.setProgress(self.currentBytes/self.totalBytes)
             #while gtk.events_pending():
                 #gtk.main_iteration()
             return True
@@ -544,17 +474,14 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
 	self.parent.dprogress.lock.unlock()
     def newKonsole(self):
 	# this one belong elsewhere, but we need it here for debug
-	self.konsoleFrame.show()
+	self.konsoleFrame.hide()
         if self.konsole is not None:
             self.konsole.widget().hide()
-	print "az tady"
         self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
-	print "az tady"
         self.konsoleFrame.setMinimumSize(500, 400)
         self.konsole.setAutoStartShell(False)
 	self.konsole.setAutoDestroy(False)
         self.konsoleWidget = self.konsole.widget()
-        self.konsoleWidget.show()
         self.konsoleFrameLayout.addWidget(self.konsoleWidget)
 
         #prepare for dpkg pty being attached to konsole
@@ -564,9 +491,10 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         #self.window_main.showTerminalButton.setEnabled(True)
     
     def showTerminal(self):
-        if self.konsole_frame.isVisible():
-            self.konsole_frame.hide()
+	print "click"
+        if self.konsoleFrame.isVisible():
+            self.konsoleFrame.hide()
             self.showTerminalButton.setText(_("Show Terminal"))
         else:
-            self.konsole_frame.show()
+            self.konsoleFrame.show()
             self.showTerminalButton.setText(_("Hide Terminal"))
