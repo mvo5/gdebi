@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './GDebiKDEInstallDialog.ui'
+# Form implementation generated from reading ui file 'gdebi-kde/GDebiKDEInstallDialog.ui'
 #
-# Created: So čen 9 02:35:32 2007
+# Created: So čen 16 23:46:41 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -19,31 +19,41 @@ class GDebiKDEInstallDialog(QDialog):
             self.setName("GDebiKDEInstallDialog")
 
 
+        GDebiKDEInstallDialogLayout = QVBoxLayout(self,11,6,"GDebiKDEInstallDialogLayout")
 
-        LayoutWidget = QWidget(self,"layout2")
-        LayoutWidget.setGeometry(QRect(9,20,490,70))
-        layout2 = QVBoxLayout(LayoutWidget,11,6,"layout2")
+        layout2 = QVBoxLayout(None,0,6,"layout2")
 
-        self.installingLabel = QLabel(LayoutWidget,"installingLabel")
+        self.installingLabel = QLabel(self,"installingLabel")
+        self.installingLabel.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Maximum,0,0,self.installingLabel.sizePolicy().hasHeightForWidth()))
         layout2.addWidget(self.installingLabel)
 
         layout3 = QHBoxLayout(None,0,6,"layout3")
 
-        self.installationProgres = QProgressBar(LayoutWidget,"installationProgres")
+        self.installationProgres = QProgressBar(self,"installationProgres")
         layout3.addWidget(self.installationProgres)
 
-        self.showDetailsButton = QPushButton(LayoutWidget,"showDetailsButton")
+        self.showDetailsButton = QPushButton(self,"showDetailsButton")
         layout3.addWidget(self.showDetailsButton)
         layout2.addLayout(layout3)
+        GDebiKDEInstallDialogLayout.addLayout(layout2)
 
         self.konsoleFrame = QFrame(self,"konsoleFrame")
-        self.konsoleFrame.setGeometry(QRect(10,100,481,1))
+        self.konsoleFrame.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.konsoleFrame.sizePolicy().hasHeightForWidth()))
         self.konsoleFrame.setFrameShape(QFrame.StyledPanel)
         self.konsoleFrame.setFrameShadow(QFrame.Raised)
+        GDebiKDEInstallDialogLayout.addWidget(self.konsoleFrame)
+
+        layout10 = QHBoxLayout(None,0,6,"layout10")
+        spacer6 = QSpacerItem(291,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout10.addItem(spacer6)
+
+        self.closeButton = QPushButton(self,"closeButton")
+        layout10.addWidget(self.closeButton)
+        GDebiKDEInstallDialogLayout.addLayout(layout10)
 
         self.languageChange()
 
-        self.resize(QSize(525,167).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(424,192).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.connect(self.showDetailsButton,SIGNAL("clicked()"),self.showTerminal)
@@ -54,6 +64,8 @@ class GDebiKDEInstallDialog(QDialog):
         self.installingLabel.setText(self.__tr("Installing..."))
         self.showDetailsButton.setText(self.__tr("Show &Details"))
         self.showDetailsButton.setAccel(QKeySequence(self.__tr("Alt+D")))
+        self.closeButton.setText(self.__tr("&Close"))
+        self.closeButton.setAccel(QKeySequence(self.__tr("Alt+C")))
 
 
     def showDetailsButton_clicked(self):

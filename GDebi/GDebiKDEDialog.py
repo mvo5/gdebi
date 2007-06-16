@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './GDebiKDEDialog.ui'
+# Form implementation generated from reading ui file 'gdebi-kde/GDebiKDEDialog.ui'
 #
-# Created: Čt kvě 31 01:39:46 2007
+# Created: Ne čen 17 00:30:27 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
 
 
+import sys
 from qt import *
+from kdecore import *
+from kdeui import *
+
 
 image0_data = \
     "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d" \
@@ -81,102 +85,264 @@ image0_data = \
     "\x65\x5d\xe3\x12\xfc\xd5\xde\x7f\xc1\xf9\x6f\xcb" \
     "\x88\x15\x93\x72\x00\x00\x00\x00\x49\x45\x4e\x44" \
     "\xae\x42\x60\x82"
-image1_data = \
-    "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d" \
-    "\x49\x48\x44\x52\x00\x00\x00\x16\x00\x00\x00\x16" \
-    "\x08\x06\x00\x00\x00\xc4\xb4\x6c\x3b\x00\x00\x04" \
-    "\x32\x49\x44\x41\x54\x38\x8d\xb5\x95\x5b\x88\x56" \
-    "\x55\x14\xc7\x7f\x6b\xed\x7d\xce\xf7\xcd\x38\x37" \
-    "\x1b\xa7\x34\x73\xf2\x52\xa6\xdd\x84\x34\x29\xe8" \
-    "\xa1\x06\x0d\xbb\xbc\xf9\x10\xf5\x92\xc9\x88\x41" \
-    "\x2f\xfa\x32\x41\x45\x51\x51\x3d\x04\x12\x11\x79" \
-    "\x81\x40\xd3\x12\x89\x52\x4b\x84\xe8\x46\xa6\x29" \
-    "\x59\x56\x8c\x3a\x96\x8a\x99\x46\x49\x3a\xa8\x39" \
-    "\xf3\x7d\xe7\x3b\xdf\xde\xab\x87\x33\xce\xe4\xd8" \
-    "\xab\x6b\xb3\x39\x6c\xd6\xe2\xcf\xff\xfc\xff\x6b" \
-    "\xef\x25\x66\xc6\x95\x08\x0f\x20\x4b\x13\x08\x02" \
-    "\xf5\x14\x4c\x8a\x4c\x08\xb7\x4b\xb0\x4d\xd3\xc6" \
-    "\x5e\x3f\x3d\xf1\x09\x56\x97\x22\x67\x0a\x11\x8e" \
-    "\x9d\xfa\xf3\x54\x96\x87\x6e\x7c\x69\x3b\x58\x91" \
-    "\xcb\x3d\x04\xb0\xcf\x7e\x2b\x80\x2f\x8b\x18\x52" \
-    "\x1f\xe3\x07\xcf\x2c\x7c\x76\x7a\x77\x57\x37\xcd" \
-    "\xa5\x26\x62\x8c\x00\x88\x08\x79\xc8\xd9\xbc\x7b" \
-    "\xdb\x84\x9e\x35\xcf\xbd\x7f\x3e\xab\xdd\x86\xf3" \
-    "\x27\x46\x43\xe8\xa5\xa7\x00\x02\xd4\xb3\x5b\x3a" \
-    "\xdb\x27\x4d\x7b\xea\xfe\x27\x19\x7f\xd5\x38\xfa" \
-    "\xce\xf6\x72\xe4\xc2\x21\x8e\x0e\xfc\xca\xa1\x7f" \
-    "\xf6\x23\xa5\xc8\xd2\x05\x8f\x33\x67\xe6\xdc\x56" \
-    "\xaa\x03\x5d\xc4\x08\xe1\x52\xa8\x51\x8c\x0d\x24" \
-    "\x00\x16\x52\x9f\x9a\x57\xcf\xae\xe3\xbb\xe8\x7a" \
-    "\xb7\x8b\x72\xa9\x4c\xea\x53\xce\xe5\xe7\x58\x31" \
-    "\x6f\x05\xcb\x67\x2f\xa7\xb1\xa1\x09\x90\x1c\x73" \
-    "\x23\x12\x5e\x06\x1c\x83\x27\xcb\xef\x23\x92\x50" \
-    "\x65\xfa\x85\xea\x05\x09\x21\xa0\x22\xa4\x9a\x92" \
-    "\x6a\x4a\xa2\x09\x5e\x3d\x4e\x1c\x00\x83\x95\x01" \
-    "\xa8\x0c\xce\x81\xb4\x9f\x20\x0e\x5f\xde\x8d\x24" \
-    "\xfd\x23\xc0\xd1\x6e\x76\xb8\x4f\xa6\x4f\x9a\x31" \
-    "\xa5\x94\x34\x10\xab\x39\xd7\xb7\x4f\x91\xd4\x27" \
-    "\x44\x8b\x88\xc8\x25\xdb\x28\x3a\xe9\xa6\xeb\xa6" \
-    "\x71\x7a\xe6\x9c\x65\x5a\x6e\x5e\x16\xf3\xc8\xe1" \
-    "\x13\xc7\x4e\x57\x6a\xf5\x45\xc0\xf6\xa2\x2b\xea" \
-    "\x71\x7d\xcf\x43\x4f\x4f\x5d\x76\xff\x32\xda\x1a" \
-    "\xdb\x08\x31\xe0\xc4\x91\x26\x09\xbe\x3f\x19\x25" \
-    "\x96\x51\xd2\x12\x00\x6f\x76\xbf\x46\x6d\x51\x2e" \
-    "\x4e\x95\xac\x9e\xf1\xde\x97\x9b\x3b\x7a\xde\x7a" \
-    "\x61\x2d\x70\xb5\x07\x98\xd0\x7a\xed\xcc\x25\xf7" \
-    "\x2e\xa1\xa3\x65\x1c\xdb\x0f\x6d\x07\x05\x41\x50" \
-    "\x51\xf6\xfd\xb5\x0f\x27\x0e\xa1\x60\x9a\x68\x42" \
-    "\xef\x99\x5e\x3e\x3f\xfe\x39\x51\x02\xa2\x4a\x20" \
-    "\x70\xf7\x84\xbb\x58\xbc\xe0\x51\x56\x7f\xbc\xbe" \
-    "\x7d\x58\x8a\x44\x3d\x4e\x1d\x47\x4e\x1f\xe1\xe1" \
-    "\x77\x1e\x06\x07\xe2\x04\xf1\x42\x92\x24\x34\x96" \
-    "\x1a\x0b\x09\xcc\x68\x4e\x9a\xd9\x78\x70\x23\x1b" \
-    "\xfa\x36\x20\x5e\x50\xa7\x0c\xda\x20\x1f\x3d\xf8" \
-    "\x21\xf3\xae\x5e\x80\x73\xc9\x88\x79\x66\x46\x8c" \
-    "\x11\x15\xa5\x94\x94\x10\x27\x38\xe7\x50\xa7\x88" \
-    "\x2f\x98\xca\xd0\x32\x8c\xc4\x25\xa4\x9a\xa2\x5e" \
-    "\x51\xa7\x60\xe0\xc4\x61\x16\x31\x8b\xff\xd7\x6e" \
-    "\x20\x2a\xa8\xea\xf0\x16\x64\x74\x09\x8a\x16\x75" \
-    "\xa2\x5c\x5c\xa3\xa3\x30\x0f\x41\x44\x09\x16\xa8" \
-    "\x0e\x56\xc1\x0d\x65\x1c\xb8\xd4\xd1\xd2\xd0\x32" \
-    "\x6c\x9c\xc3\x51\xa9\x57\xc8\xea\x19\xea\x14\xf5" \
-    "\x85\x14\xb9\xe5\x88\x28\x22\x32\x02\x1c\x2c\x08" \
-    "\x62\x74\xb6\x75\xb2\xe6\x91\xd5\x88\x0a\x20\x78" \
-    "\xef\x39\xf0\xf7\x01\x56\xed\x5b\x45\xa2\x09\x2a" \
-    "\xca\x40\x7d\x80\x85\x33\x16\x32\x7f\xf2\x7c\x72" \
-    "\x72\x54\x95\xba\xe5\xcc\x6e\xbf\x03\x51\xb0\xa1" \
-    "\xab\x8f\x99\xe1\x9f\xf0\x07\x5f\xdd\xf6\x9a\x55" \
-    "\x6a\x15\x1b\x1d\x3b\x8f\xef\xb4\xf2\x2b\x65\x6b" \
-    "\x7b\xbd\xcd\x3a\xde\xe8\x30\xff\xba\xb7\x95\x3f" \
-    "\xad\xbc\xac\xce\xa2\xd9\x7b\x5f\x6c\xb1\xd6\x05" \
-    "\x37\xf4\x9b\x59\xc1\xb8\xae\x71\xf1\x8b\x9b\x5f" \
-    "\xfa\x70\xf3\xf7\x1f\x4f\x18\x53\x6e\x91\xac\x5a" \
-    "\x65\xf2\xd8\x49\xac\xec\x7e\x9b\x9a\xd5\x86\xc4" \
-    "\xbf\xf8\x11\xb2\x90\x01\xd0\xb3\xf6\x65\x76\xfe" \
-    "\xfc\x2d\x69\xb9\x99\x7a\xad\xc6\xfe\xc3\x7d\x67" \
-    "\xcf\x65\x83\x4f\x8d\x98\x27\xba\x27\xab\x57\x6f" \
-    "\xdc\xfb\xcb\xee\xf9\x18\x2d\x54\x98\xfa\xfb\xf8" \
-    "\xce\xe7\xb3\x3c\x53\x27\x97\x1b\x73\xd1\xd0\xbd" \
-    "\x87\x7f\x64\xf7\x9e\x4f\x57\xd3\xd0\xba\x83\x40" \
-    "\x8e\x6f\xd8\x81\xfa\x53\x97\x76\x85\xf3\x83\x94" \
-    "\x6d\x2b\xe6\x81\xec\xd6\xa6\x86\x31\xcf\x39\x75" \
-    "\x1a\x62\xa0\x5a\xab\x12\x35\x92\x58\x42\x9e\xe7" \
-    "\xe4\x31\x07\xa0\xa9\xdc\x04\x8d\x63\xbe\xa2\xdc" \
-    "\xb8\x89\x20\x60\x0e\x82\xfd\x4f\xbb\x99\x32\x04" \
-    "\xdc\x10\x42\x90\x48\xe4\xce\x89\x73\xd9\xfa\xd8" \
-    "\x16\x9c\x3a\x54\x95\x5a\xcc\x99\x75\xcd\x2c\x00" \
-    "\xb2\x3c\x03\xac\x11\x89\x20\x0e\xfe\x33\x8c\x46" \
-    "\x01\x27\x45\xd2\x95\x7a\x4f\x9e\x39\xf1\xc7\xba" \
-    "\xaf\xd7\x77\x76\x77\x2d\xe6\x81\xa9\x0f\x11\xcd" \
-    "\xc0\x0c\x11\xa5\x1e\xeb\x6c\xfa\x66\x0b\x3f\xf4" \
-    "\x7d\x37\x48\xa9\x71\x07\xaa\xc5\xcb\x5e\x65\x18" \
-    "\x5c\xcc\x0c\x59\x92\x14\xef\xe9\xf0\x68\x12\xa8" \
-    "\xd7\xee\x49\x49\xde\xbf\x69\xfc\x8c\x89\x89\x2f" \
-    "\x63\x61\x68\xfc\x50\xfc\xee\xd1\x93\xc7\xce\x9d" \
-    "\xaf\x54\x96\xe3\xd3\x75\xc3\xc4\xa2\x14\x53\x6a" \
-    "\xdb\xc9\x02\xf8\x4a\xc4\xbf\x3d\x8d\xe5\xe8\xfa" \
-    "\x47\xc8\x17\x00\x00\x00\x00\x49\x45\x4e\x44\xae" \
-    "\x42\x60\x82"
+image1_data = [
+"22 22 233 2",
+".I c #000103",
+"#V c #010002",
+"a4 c #010102",
+"br c #010103",
+"#Z c #010105",
+"ai c #010202",
+"a# c #010203",
+".H c #010204",
+"#D c #020104",
+"aB c #020105",
+"#J c #020106",
+"#5 c #020107",
+"aM c #020202",
+"bq c #020203",
+".G c #020204",
+"b. c #020205",
+"## c #020206",
+"aW c #020207",
+".J c #020209",
+".K c #02020a",
+"bs c #020304",
+"#Q c #020305",
+".V c #020306",
+".W c #020307",
+"aG c #020407",
+".U c #020408",
+"bt c #030103",
+".F c #030203",
+"bj c #030205",
+".P c #030209",
+"#u c #030303",
+".2 c #030304",
+"aj c #030306",
+"a9 c #030307",
+"#6 c #030308",
+"#a c #030403",
+"av c #030406",
+"bk c #030602",
+"a3 c #030604",
+"aN c #030606",
+"bv c #030800",
+"aQ c #040205",
+"aP c #040302",
+"ax c #040405",
+"aw c #040407",
+"aL c #040505",
+"#P c #040506",
+"#R c #040605",
+"ah c #040608",
+"#z c #04060a",
+"#4 c #040703",
+"au c #04070b",
+".3 c #050203",
+"aI c #050706",
+"bu c #080c03",
+".L c #080e0a",
+"#q c #090b05",
+"bp c #090b06",
+"#i c #090c06",
+"a5 c #090d04",
+".E c #0a0b09",
+"aV c #0b0c0a",
+"#U c #111705",
+"#K c #12150b",
+"bi c #12170a",
+"#p c #12180a",
+"b# c #121909",
+".T c #12190a",
+".Q c #131608",
+"#j c #131709",
+"aA c #13170a",
+"as c #13180a",
+"bh c #131906",
+".4 c #14170b",
+"#. c #14180b",
+"#Y c #151b06",
+".s c #151b07",
+"bB c #161a08",
+"bA c #161a0a",
+"ao c #161b08",
+"aa c #161b09",
+".t c #161c07",
+"ar c #283210",
+".r c #29320f",
+"#I c #29330f",
+".u c #293310",
+"bz c #2b330e",
+"#W c #2b330f",
+"aC c #2b3411",
+"bC c #2c3411",
+".R c #2c3512",
+"#0 c #2c3514",
+"ae c #2c3612",
+".S c #2c3613",
+"a. c #2d3611",
+"an c #2d3711",
+"#A c #323f11",
+"aO c #373f1b",
+"bd c #374114",
+"bc c #383f1c",
+".O c #3f4c12",
+".X c #414e14",
+"bg c #424c15",
+"aF c #566816",
+".M c #56691a",
+"#t c #57661c",
+".q c #57671c",
+".v c #576814",
+"by c #58651d",
+"#E c #58651e",
+"aR c #586817",
+".D c #58681b",
+"a8 c #59671a",
+"bD c #596817",
+"#b c #59681a",
+".1 c #596919",
+"a2 c #5a6d1d",
+"ay c #5a6e1a",
+"bw c #5a6f19",
+"ag c #5b6c1f",
+"#y c #5b6d1f",
+"#O c #5c6e1b",
+"#3 c #5c6e1d",
+"bE c #5c701b",
+"bl c #5c711b",
+"#7 c #5d6b1d",
+"aJ c #5e6b1e",
+"ak c #5e6b20",
+"aK c #5f6c21",
+".9 c #6c8220",
+"ba c #6d821d",
+"#C c #6d821e",
+".5 c #6e8018",
+"#S c #6e871b",
+"aZ c #6e871c",
+"#m c #6e8815",
+"at c #6e8916",
+"#v c #6f8119",
+"aX c #8ba823",
+"#o c #8ca823",
+"#k c #8da824",
+"a6 c #90ae19",
+".w c #90ae1f",
+".p c #92ad1b",
+"#h c #92ad1c",
+"bx c #93ab20",
+"#r c #93ab21",
+"aU c #93ad20",
+"#B c #9aba1b",
+"aY c #9abb1a",
+"#n c #9bbc22",
+"aH c #9cbc22",
+".8 c #9ebf1e",
+"az c #9fbc21",
+"#T c #9fbd20",
+"bb c #9fbe1d",
+"a1 c #9fc315",
+"a0 c #9fc318",
+"al c #9fc412",
+".C c #a0c117",
+".N c #a0c119",
+"#N c #a0c311",
+"am c #a0c317",
+"#8 c #a0c319",
+".B c #a0c610",
+".Y c #a1c115",
+"ad c #a1c11d",
+"#c c #a1c11f",
+".i c #a1c218",
+".j c #a1c21e",
+".g c #a1c412",
+".l c #a1c413",
+"bM c #a1c414",
+"aT c #a1c416",
+".n c #a1c511",
+".x c #a1c512",
+"aE c #a1c513",
+".z c #a1c514",
+".y c #a1c517",
+".m c #a1c60f",
+".A c #a1c611",
+".6 c #a2bc1e",
+"ab c #a2c01d",
+"#X c #a2c312",
+".k c #a2c320",
+".o c #a2c411",
+".0 c #a2c412",
+"#G c #a2c413",
+"#f c #a2c414",
+"#2 c #a2c415",
+"bK c #a2c416",
+"#H c #a2c417",
+"af c #a2c41b",
+"#w c #a2c50d",
+"bL c #a2c50e",
+".e c #a2c50f",
+".# c #a2c510",
+"Qt c #a2c511",
+".a c #a2c512",
+".b c #a2c513",
+".c c #a2c514",
+".d c #a2c515",
+"#9 c #a2c516",
+"#l c #a2c51b",
+"#L c #a2c60c",
+"#M c #a2c60e",
+"#e c #a2c60f",
+".f c #a2c610",
+".Z c #a2c611",
+"ac c #a2c612",
+"#x c #a2c70c",
+"bf c #a3be1a",
+"bo c #a3c117",
+"#F c #a3c312",
+"bI c #a3c313",
+"#1 c #a3c316",
+"aq c #a3c31d",
+"bm c #a3c412",
+".h c #a3c417",
+"bF c #a3c41c",
+"#d c #a3c517",
+"#g c #a3c610",
+"bG c #a3c611",
+"ap c #a4c220",
+".7 c #a4c316",
+"bJ c #a4c31a",
+"aD c #a4c31b",
+"bn c #a4c410",
+"a7 c #a4c412",
+"bH c #a4c511",
+"#s c #a4c512",
+"aS c #a4c513",
+"be c #a5c418",
+"QtQtQtQtQtQtQt.#Qt.a.b.c.b.#QtQtQtQtQtQtQtQt",
+"QtQtQtQtQtQtQt.d.c.a.aQt.e.aQtQtQtQtQtQtQtQt",
+"QtQtQtQtQtQtQt.f.g.h.i.j.k.lQtQtQtQtQtQtQtQt",
+"QtQtQt.m.n.c.o.p.q.r.s.t.u.v.w.x.y.z.b.aQtQt",
+"QtQtQt.A.B.C.D.E.F.G.H.I.J.K.L.M.N.c.#.#QtQt",
+"QtQtQt.c.C.O.F.P.K.Q.R.S.T.U.V.W.X.Y.ZQtQtQt",
+"QtQtQt.0.1.2.3.4.5.6.7.d.8.9#.###a#b#c#d#e.#",
+".e#f#g#h#i.F#j#kQt.e.f#l#m#n#o#p.H#q#r#s.zQt",
+"Qt.b.0#t#u.J#v#w.l#x.a#y#z#A#B#C.V#D#E#F.z.a",
+"#G.0#H#I#J#K.6#L#M#N#O#P#Q#R#S#T#U#V#W#X.x.a",
+".b.a.i#Y#Z#0#1.##2#3#4#5#6#7#8#9a.a#aaab.nQt",
+".bacad.t.Iae.zafagah#Jaiajakalaman.Haoap.nQt",
+".b.aaqar.Kas.8atauavawaj#5axayazaAaBaCaDaE.a",
+"#e#2.eaF.KaG.9aH#AaIaJaKaLaMaNaOaPaQaRaSaTQt",
+".#.a.#aUaVaW.4aXaYaZa0a1a2a3a4a4a4a5a6.a.#.a",
+"QtQtQta7a8a9b.b#babb.baEazbca4aM#ubd#H#G#MQt",
+"QtQtQtbebfbgaL.H.Wbha.a.bibja4#uaMbkbl.d.#.#",
+"QtQtQtbmbnbo.Dbpbqbrbs.H.Gbtbubdbkbvbw#f.#Qt",
+"QtQtQt.a.##fadbxbybzbAbBbCbDa6#HbEbwbF#GQtQt",
+"QtQtQt.b#2.bbGbHbI#FabapbJbm.a#G#2bK#2.bQtQt",
+"QtQtQtbL.##f.ebM.z.x.n.n.xaT.#.e.#.a#2.b.#.e",
+"QtQtQtQtQt.aQtQt.a.aQtQt.aQtQtQt.#Qt.aQt.e.#"
+]
 
 class GDebiKDEDialog(QDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
@@ -184,141 +350,178 @@ class GDebiKDEDialog(QDialog):
 
         self.image0 = QPixmap()
         self.image0.loadFromData(image0_data,"PNG")
-        self.image1 = QPixmap()
-        self.image1.loadFromData(image1_data,"PNG")
+        self.image1 = QPixmap(image1_data)
+
         if not name:
             self.setName("GDebiKDEDialog")
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.sizePolicy().hasHeightForWidth()))
-        self.setIcon(self.image0)
+        self.setMinimumSize(QSize(0,0))
+        self.setBaseSize(QSize(64,64))
+        self.setIcon(KGlobal.iconLoader().loadIcon("adept_manager",KIcon.NoGroup,KIcon.SizeMedium))
         self.setSizeGripEnabled(0)
 
+        GDebiKDEDialogLayout = QVBoxLayout(self,11,6,"GDebiKDEDialogLayout")
 
-        self.PackageProgressBar = QProgressBar(self,"PackageProgressBar")
-        self.PackageProgressBar.setGeometry(QRect(402,10,110,25))
+        layout14 = QVBoxLayout(None,0,6,"layout14")
 
-        LayoutWidget = QWidget(self,"Layout1")
-        LayoutWidget.setGeometry(QRect(30,310,476,33))
-        Layout1 = QHBoxLayout(LayoutWidget,0,6,"Layout1")
-        Horizontal_Spacing2 = QSpacerItem(20,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        Layout1.addItem(Horizontal_Spacing2)
+        layout6 = QHBoxLayout(None,0,6,"layout6")
 
-        self.installButton = QPushButton(LayoutWidget,"installButton")
-        self.installButton.setAutoDefault(1)
-        self.installButton.setDefault(1)
-        self.installButton.setIconSet(QIconSet(self.image1))
-        Layout1.addWidget(self.installButton)
+        layout4 = QGridLayout(None,1,1,0,6,"layout4")
 
-        self.cancelButton = QPushButton(LayoutWidget,"cancelButton")
-        self.cancelButton.setAutoDefault(1)
-        Layout1.addWidget(self.cancelButton)
-
-        LayoutWidget_2 = QWidget(self,"layout4")
-        LayoutWidget_2.setGeometry(QRect(30,10,270,50))
-        layout4 = QGridLayout(LayoutWidget_2,1,1,11,6,"layout4")
-
-        self.textLabel1_2 = QLabel(LayoutWidget_2,"textLabel1_2")
-        self.textLabel1_2.setMaximumSize(QSize(80,32767))
+        self.textLabel1_2 = QLabel(self,"textLabel1_2")
+        self.textLabel1_2.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.textLabel1_2.sizePolicy().hasHeightForWidth()))
 
         layout4.addWidget(self.textLabel1_2,1,0)
 
-        self.textLabel1 = QLabel(LayoutWidget_2,"textLabel1")
+        self.textLabel1 = QLabel(self,"textLabel1")
         self.textLabel1.setMaximumSize(QSize(80,32767))
 
         layout4.addWidget(self.textLabel1,0,0)
 
-        self.textLabel1_3 = QLabel(LayoutWidget_2,"textLabel1_3")
-        self.textLabel1_3.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,1,self.textLabel1_3.sizePolicy().hasHeightForWidth()))
+        self.textLabel1_3 = QLabel(self,"textLabel1_3")
+        self.textLabel1_3.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.textLabel1_3.sizePolicy().hasHeightForWidth()))
 
         layout4.addWidget(self.textLabel1_3,0,1)
 
-        self.textLabel1_3_2 = QLabel(LayoutWidget_2,"textLabel1_3_2")
-        self.textLabel1_3_2.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,1,self.textLabel1_3_2.sizePolicy().hasHeightForWidth()))
+        self.textLabel1_3_2 = QLabel(self,"textLabel1_3_2")
+        self.textLabel1_3_2.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.textLabel1_3_2.sizePolicy().hasHeightForWidth()))
 
         layout4.addWidget(self.textLabel1_3_2,1,1)
+        layout6.addLayout(layout4)
+
+        self.PackageProgressBar = QProgressBar(self,"PackageProgressBar")
+        self.PackageProgressBar.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed,0,0,self.PackageProgressBar.sizePolicy().hasHeightForWidth()))
+        layout6.addWidget(self.PackageProgressBar)
+        layout14.addLayout(layout6)
+        spacer3 = QSpacerItem(20,15,QSizePolicy.Minimum,QSizePolicy.Fixed)
+        layout14.addItem(spacer3)
 
         self.tabWidget2 = QTabWidget(self,"tabWidget2")
-        self.tabWidget2.setGeometry(QRect(30,80,430,190))
+        self.tabWidget2.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,160,0,self.tabWidget2.sizePolicy().hasHeightForWidth()))
 
         self.tab = QWidget(self.tabWidget2,"tab")
+        tabLayout = QHBoxLayout(self.tab,11,6,"tabLayout")
 
         self.DecriptionEdit = QTextEdit(self.tab,"DecriptionEdit")
-        self.DecriptionEdit.setGeometry(QRect(3,3,420,150))
+        self.DecriptionEdit.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.DecriptionEdit.sizePolicy().hasHeightForWidth()))
         self.DecriptionEdit.setReadOnly(1)
+        tabLayout.addWidget(self.DecriptionEdit)
         self.tabWidget2.insertTab(self.tab,QString.fromLatin1(""))
 
         self.tab_2 = QWidget(self.tabWidget2,"tab_2")
+        tabLayout_2 = QHBoxLayout(self.tab_2,11,6,"tabLayout_2")
 
-        LayoutWidget_3 = QWidget(self.tab_2,"layout3")
-        LayoutWidget_3.setGeometry(QRect(0,10,340,140))
-        layout3 = QGridLayout(LayoutWidget_3,1,1,11,6,"layout3")
+        layout3 = QGridLayout(None,1,1,0,6,"layout3")
 
-        self.DetailsSectionLabel = QLabel(LayoutWidget_3,"DetailsSectionLabel")
+        self.DetailsSectionLabel = QLabel(self.tab_2,"DetailsSectionLabel")
+        self.DetailsSectionLabel.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.DetailsSectionLabel.sizePolicy().hasHeightForWidth()))
         DetailsSectionLabel_font = QFont(self.DetailsSectionLabel.font())
         DetailsSectionLabel_font.setBold(1)
         self.DetailsSectionLabel.setFont(DetailsSectionLabel_font)
 
         layout3.addWidget(self.DetailsSectionLabel,3,0)
 
-        self.DetailsPriorityLabel = QLabel(LayoutWidget_3,"DetailsPriorityLabel")
+        self.DetailsPriorityLabel = QLabel(self.tab_2,"DetailsPriorityLabel")
+        self.DetailsPriorityLabel.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.DetailsPriorityLabel.sizePolicy().hasHeightForWidth()))
         DetailsPriorityLabel_font = QFont(self.DetailsPriorityLabel.font())
         DetailsPriorityLabel_font.setBold(1)
         self.DetailsPriorityLabel.setFont(DetailsPriorityLabel_font)
 
         layout3.addWidget(self.DetailsPriorityLabel,2,0)
 
-        self.DetailsPriority = QLabel(LayoutWidget_3,"DetailsPriority")
+        self.DetailsPriority = QLabel(self.tab_2,"DetailsPriority")
 
         layout3.addWidget(self.DetailsPriority,2,1)
 
-        self.DetailsSection = QLabel(LayoutWidget_3,"DetailsSection")
+        self.DetailsSection = QLabel(self.tab_2,"DetailsSection")
 
         layout3.addWidget(self.DetailsSection,3,1)
 
-        self.DetailsVersionLabel = QLabel(LayoutWidget_3,"DetailsVersionLabel")
+        self.DetailsVersionLabel = QLabel(self.tab_2,"DetailsVersionLabel")
+        self.DetailsVersionLabel.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.DetailsVersionLabel.sizePolicy().hasHeightForWidth()))
         DetailsVersionLabel_font = QFont(self.DetailsVersionLabel.font())
         DetailsVersionLabel_font.setBold(1)
         self.DetailsVersionLabel.setFont(DetailsVersionLabel_font)
 
         layout3.addWidget(self.DetailsVersionLabel,0,0)
 
-        self.DetailsSize = QLabel(LayoutWidget_3,"DetailsSize")
+        self.DetailsSize = QLabel(self.tab_2,"DetailsSize")
 
         layout3.addWidget(self.DetailsSize,4,1)
 
-        self.DetailsVersion = QLabel(LayoutWidget_3,"DetailsVersion")
+        self.DetailsVersion = QLabel(self.tab_2,"DetailsVersion")
 
         layout3.addWidget(self.DetailsVersion,0,1)
 
-        self.DetailsSizeLabel = QLabel(LayoutWidget_3,"DetailsSizeLabel")
+        self.DetailsSizeLabel = QLabel(self.tab_2,"DetailsSizeLabel")
+        self.DetailsSizeLabel.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.DetailsSizeLabel.sizePolicy().hasHeightForWidth()))
         DetailsSizeLabel_font = QFont(self.DetailsSizeLabel.font())
         DetailsSizeLabel_font.setBold(1)
         self.DetailsSizeLabel.setFont(DetailsSizeLabel_font)
 
         layout3.addWidget(self.DetailsSizeLabel,4,0)
 
-        self.DetailsMaintainer = QLabel(LayoutWidget_3,"DetailsMaintainer")
+        self.DetailsMaintainer = QLabel(self.tab_2,"DetailsMaintainer")
 
         layout3.addWidget(self.DetailsMaintainer,1,1)
 
-        self.DetailsMaintainerLabel = QLabel(LayoutWidget_3,"DetailsMaintainerLabel")
+        self.DetailsMaintainerLabel = QLabel(self.tab_2,"DetailsMaintainerLabel")
+        self.DetailsMaintainerLabel.setSizePolicy(QSizePolicy(QSizePolicy.Maximum,QSizePolicy.Maximum,0,0,self.DetailsMaintainerLabel.sizePolicy().hasHeightForWidth()))
         DetailsMaintainerLabel_font = QFont(self.DetailsMaintainerLabel.font())
         DetailsMaintainerLabel_font.setBold(1)
         self.DetailsMaintainerLabel.setFont(DetailsMaintainerLabel_font)
 
         layout3.addWidget(self.DetailsMaintainerLabel,1,0)
+        tabLayout_2.addLayout(layout3)
         self.tabWidget2.insertTab(self.tab_2,QString.fromLatin1(""))
 
         self.TabPage = QWidget(self.tabWidget2,"TabPage")
+        TabPageLayout = QHBoxLayout(self.TabPage,11,6,"TabPageLayout")
 
         self.IncFilesEdit = QTextEdit(self.TabPage,"IncFilesEdit")
-        self.IncFilesEdit.setGeometry(QRect(3,3,420,150))
+        self.IncFilesEdit.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.IncFilesEdit.sizePolicy().hasHeightForWidth()))
         self.IncFilesEdit.setReadOnly(1)
+        TabPageLayout.addWidget(self.IncFilesEdit)
         self.tabWidget2.insertTab(self.TabPage,QString.fromLatin1(""))
+        layout14.addWidget(self.tabWidget2)
+
+        layout6_2 = QHBoxLayout(None,0,6,"layout6_2")
+        spacer5 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        layout6_2.addItem(spacer5)
+
+        self.infoIcon = QLabel(self,"infoIcon")
+        self.infoIcon.setEnabled(1)
+        self.infoIcon.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.infoIcon.sizePolicy().hasHeightForWidth()))
+        self.infoIcon.setMaximumSize(QSize(32,32))
+        self.infoIcon.setPixmap(self.image1)
+        self.infoIcon.setScaledContents(1)
+        layout6_2.addWidget(self.infoIcon)
+
+        self.infoBox = QLabel(self,"infoBox")
+        self.infoBox.setEnabled(1)
+        layout6_2.addWidget(self.infoBox)
+        spacer4 = QSpacerItem(51,31,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        layout6_2.addItem(spacer4)
+        layout14.addLayout(layout6_2)
+        spacer2 = QSpacerItem(20,40,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout14.addItem(spacer2)
+
+        layout11 = QHBoxLayout(None,0,6,"layout11")
+        Horizontal_Spacing2_2 = QSpacerItem(360,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout11.addItem(Horizontal_Spacing2_2)
+
+        self.installButton = KPushButton(self,"installButton")
+        layout11.addWidget(self.installButton)
+
+        self.cancelButton = KPushButton(self,"cancelButton")
+        layout11.addWidget(self.cancelButton)
+        layout14.addLayout(layout11)
+        GDebiKDEDialogLayout.addLayout(layout14)
 
         self.languageChange()
 
-        self.resize(QSize(627,489).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(622,350).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.connect(self.installButton,SIGNAL("clicked()"),self.installButtonClicked)
@@ -327,10 +530,6 @@ class GDebiKDEDialog(QDialog):
 
     def languageChange(self):
         self.setCaption(self.__tr("Package Installer"))
-        self.installButton.setText(self.__tr("&Install"))
-        self.installButton.setAccel(QKeySequence(self.__tr("Alt+I")))
-        self.cancelButton.setText(self.__tr("&Cancel"))
-        self.cancelButton.setAccel(QKeySequence(QString.null))
         self.textLabel1_2.setText(self.__tr("Status:"))
         self.textLabel1.setText(self.__tr("Package:"))
         self.textLabel1_3.setText(self.__tr("empty"))
@@ -348,10 +547,12 @@ class GDebiKDEDialog(QDialog):
         self.DetailsMaintainerLabel.setText(self.__tr("Maintainer:"))
         self.tabWidget2.changeTab(self.tab_2,self.__tr("Det&ails"))
         self.tabWidget2.changeTab(self.TabPage,self.__tr("I&ncluded Files"))
+        self.infoBox.setText(QString.null)
+        self.installButton.setText(self.__tr("&Install"))
+        self.installButton.setAccel(QKeySequence(self.__tr("Alt+I")))
+        self.cancelButton.setText(self.__tr("&Cancel"))
+        self.cancelButton.setAccel(QKeySequence(self.__tr("Alt+C")))
 
-
-    def installButtonClicked(self):
-        print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
 
     def buttonCancelClicked(self):
         print "GDebiKDEDialog.buttonCancelClicked(): Not implemented yet"
@@ -362,5 +563,22 @@ class GDebiKDEDialog(QDialog):
     def cancelButtonClicked(self):
         print "GDebiKDEDialog.cancelButtonClicked(): Not implemented yet"
 
+    def installButtonClicked(self):
+        print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
+
     def __tr(self,s,c = None):
         return qApp.translate("GDebiKDEDialog",s,c)
+
+if __name__ == "__main__":
+    appname     = ""
+    description = ""
+    version     = ""
+
+    KCmdLineArgs.init (sys.argv, appname, description, version)
+    a = KApplication ()
+
+    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
+    w = GDebiKDEDialog()
+    a.setMainWidget(w)
+    w.show()
+    a.exec_loop()
