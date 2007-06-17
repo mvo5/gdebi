@@ -373,10 +373,10 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
 	print "click"
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
-            self.showTerminalButton.setText(_("Show Terminal"))
+            self.showDetailsButton.setText(_("Show Details"))
         else:
             self.konsoleFrame.show()
-            self.showTerminalButton.setText(_("Hide Terminal"))
+            self.showDetailsButton.setText(_("Hide Details"))
     
     def closeButtonClicked(self):
 	self.close()
