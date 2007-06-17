@@ -79,7 +79,7 @@ class GDebiKDE(GDebiKDEDialog):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            print "system error - open()"
+            #print "system error - open()"
             return False
         # set name
         self.setCaption(_("Package Installer - %s") % self._deb.pkgName)
@@ -188,8 +188,8 @@ class GDebiKDE(GDebiKDEDialog):
 
         (install, remove, unauthenticated) = self._deb.requiredChanges
         deps = ""
-	print len(remove)
-	print len(install)
+	#print len(remove)
+	#print len(install)
         if len(remove) == len(install) == 0:
             deps += _("All dependencies are satisfied")
             #self.button_details.hide()
@@ -224,8 +224,8 @@ class GDebiKDE(GDebiKDEDialog):
 	
     def installButtonClicked(self):
         
-        print "click" # mhb debug
-	print self._deb.file
+        #print "click" # mhb debug
+	#print self._deb.file
         # sanity check
         if self._deb is None:
             return
@@ -241,7 +241,8 @@ class GDebiKDE(GDebiKDEDialog):
         try:
             apt_pkg.PkgSystemLock()
         except SystemError:
-            print "cannot be locked" # mhb debug
+            #print "cannot be locked" # mhb debug
+	    pass
         apt_pkg.PkgSystemUnLock()
 	
         self.installDialog = GDebiKDEInstall(self)
