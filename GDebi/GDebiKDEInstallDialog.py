@@ -2,13 +2,17 @@
 
 # Form implementation generated from reading ui file 'gdebi-kde/GDebiKDEInstallDialog.ui'
 #
-# Created: So čen 16 23:46:41 2007
+# Created: Ne čen 17 02:12:11 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
 
 
+import sys
 from qt import *
+from kdecore import KCmdLineArgs, KApplication
+from kdeui import *
+
 
 
 class GDebiKDEInstallDialog(QDialog):
@@ -53,15 +57,16 @@ class GDebiKDEInstallDialog(QDialog):
 
         self.languageChange()
 
-        self.resize(QSize(424,192).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(442,110).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.connect(self.showDetailsButton,SIGNAL("clicked()"),self.showTerminal)
+        self.connect(self.closeButton,SIGNAL("clicked()"),self.closeButtonClicked)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("Installing"))
-        self.installingLabel.setText(self.__tr("Installing..."))
+        self.installingLabel.setText(QString.null)
         self.showDetailsButton.setText(self.__tr("Show &Details"))
         self.showDetailsButton.setAccel(QKeySequence(self.__tr("Alt+D")))
         self.closeButton.setText(self.__tr("&Close"))
@@ -74,5 +79,22 @@ class GDebiKDEInstallDialog(QDialog):
     def showTerminal(self):
         print "GDebiKDEInstallDialog.showTerminal(): Not implemented yet"
 
+    def closeButtonClicked(self):
+        print "GDebiKDEInstallDialog.closeButtonClicked(): Not implemented yet"
+
     def __tr(self,s,c = None):
         return qApp.translate("GDebiKDEInstallDialog",s,c)
+
+if __name__ == "__main__":
+    appname     = ""
+    description = ""
+    version     = ""
+
+    KCmdLineArgs.init (sys.argv, appname, description, version)
+    a = KApplication ()
+
+    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
+    w = GDebiKDEInstallDialog()
+    a.setMainWidget(w)
+    w.show()
+    a.exec_loop()

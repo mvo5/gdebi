@@ -62,6 +62,8 @@ class GDebiKDE(GDebiKDEDialog):
 	GDebiKDEDialog.__init__(self,parent,name,modal,fl)
 	self._deb = None	
         self.setDisabled(True)
+	self.installButton.setText(_("&Install Package"))
+   	self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
 	self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
         self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
         self._cache = Cache(self.cprogress)
@@ -326,8 +328,8 @@ class GDebiKDE(GDebiKDEDialog):
             #self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
             
             print "Autsch, please report"
-	print "running open"
-        self.open(self._deb.file)
+	#print "running open"
+        #self.open(self._deb.file)
 
 
 class GDebiKDEInstall(GDebiKDEInstallDialog):
@@ -374,6 +376,9 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         else:
             self.konsoleFrame.show()
             self.showTerminalButton.setText(_("Hide Terminal"))
-    def close(self,argument):
-	#self.parent.open(self.parent._deb.file)
+    
+    def closeButtonClicked(self):
+	self.close()
+    def close(self,argument=False):
 	GDebiKDEInstallDialog.close(self, argument)
+	KApplication.kApplication().exit()

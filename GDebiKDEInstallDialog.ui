@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>424</width>
-            <height>192</height>
+            <width>442</width>
+            <height>110</height>
         </rect>
     </property>
     <property name="caption">
@@ -40,7 +40,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>Installing...</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="QLayoutWidget">
@@ -137,10 +137,20 @@
         <receiver>GDebiKDEInstallDialog</receiver>
         <slot>showTerminal()</slot>
     </connection>
+    <connection>
+        <sender>closeButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GDebiKDEInstallDialog</receiver>
+        <slot>closeButtonClicked()</slot>
+    </connection>
 </connections>
+<includes>
+    <include location="local" impldecl="in implementation">GDebiKDEInstallDialog.ui.h</include>
+</includes>
 <slots>
     <slot>showDetailsButton_clicked()</slot>
     <slot>showTerminal()</slot>
+    <slot>closeButtonClicked()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
