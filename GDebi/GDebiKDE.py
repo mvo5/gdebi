@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 # This file is part of GDebi
@@ -23,9 +24,8 @@ import subprocess
 import string
 import re
 import pty
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
-#import apt
+#import warnings
+#warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt_pkg
 
 from qt import *
@@ -34,14 +34,7 @@ from kdecore import *
 from kparts import konsolePart,TerminalInterface
 from kfile import *
 
-#import urllib
-#import fcntl
-#import posix
-#import time
-#import thread
-
 from DebPackage import DebPackage, Cache
-#from apt.progress import InstallProgress
 from gettext import gettext as gett
 
 from GDebiKDEInstallDialog import GDebiKDEInstallDialog
@@ -65,11 +58,12 @@ class GDebiKDE(GDebiKDEDialog):
 	self.installButton.setText(_("&Install Package"))
    	self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
 	self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
-        self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
-        self._cache = Cache(self.cprogress)
-        self._options = options
 	self.kapp = KApplication.kApplication()
         self.kapp.processEvents()
+	self.show()
+        self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
+        self._cache = Cache()
+        self._options = options
 	# try to open the file
         if file != "" and os.path.exists(file):
             self.open(file)
@@ -88,7 +82,6 @@ class GDebiKDE(GDebiKDEDialog):
         # set description
         buf = self.DecriptionEdit
         try:
-            #print self._deb["Description"] # mhb debug
             long_desc = ""
             raw_desc = string.split(utf8(self._deb["Description"]), "\n")
             # append a newline to the summary in the first line
@@ -119,7 +112,7 @@ class GDebiKDE(GDebiKDEDialog):
             # write the descr string to the buffer
             buf.setText(long_desc)
         except KeyError:
-            buf.set_text("No description is available")
+            buf.set_text(_("No description is available"))
         
         # check the s
 
@@ -171,25 +164,13 @@ class GDebiKDE(GDebiKDEDialog):
                             "it is usually better supported.")
 
             if title != "" and msg != "":
-                # we should wait for the usability review to finish before setting this up
-                #print title
-                #print msg
+		
 		icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
 		self.infoIcon.setPixmap(icon)
 		self.infoBox.setText(title + '\n' + msg)
-                #msg = "<big><b>%s</b></big>\n\n%s" % (title,msg)
-                #dialog = gtk.MessageDialog(parent=self.window_main,
-                                           #flags=gtk.DIALOG_MODAL,
-                                           #type=gtk.MESSAGE_INFO,
-                                           #buttons=gtk.BUTTONS_CLOSE)
-                #dialog.set_markup(msg)
-                #dialog.run()
-                #dialog.destroy()
 
         (install, remove, unauthenticated) = self._deb.requiredChanges
         deps = ""
-	#print len(remove)
-	#print len(install)
         if len(remove) == len(install) == 0:
             deps += _("All dependencies are satisfied")
             #self.button_details.hide()
@@ -254,11 +235,11 @@ class GDebiKDE(GDebiKDEDialog):
             try:
                 apt_pkg.PkgSystemLock()
             except SystemError:
-                #header = _("Only one software management tool is allowed to"
-                           #" run at the same time")
-                #body = _("Please close the other application e.g. 'Update "
-                         #"Manager', 'aptitude' or 'Synaptic' first.")
-                print "only one sw management tool..."
+                header = _("Only one software management tool is allowed to"
+                           " run at the same time")
+                body = _("Please close the other application e.g. 'Update "
+                         "Manager', 'aptitude' or 'Synaptic' first.")
+                #print "only one sw management tool..."
                 return
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
@@ -272,7 +253,6 @@ class GDebiKDE(GDebiKDEDialog):
             errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-		print "we've passed"
             except IOError, msg:
                 res = False
                 errMsg = "%s" % msg
@@ -286,6 +266,7 @@ class GDebiKDE(GDebiKDEDialog):
                          "software distributor. See the terminal window for "
                          "more details.")
             if not res:
+		self.errorReport = KMessageBox.error(None,header + text, header)
                 #self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
                                 #parent=self.dialog_deb_install)
                 print body
@@ -307,14 +288,12 @@ class GDebiKDE(GDebiKDEDialog):
         # show the button
         #self.button_deb_install_close.set_sensitive(True)
         #self.button_deb_install_close.grab_default()
-        #self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
+        self.installDialog.setCaption(_("Installation finished"))
         if dprogress.exitstatus == 0:
-            #self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
-            print "was installed"
+            self.installDialog.installingLabel.setText("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
         else:
-            #self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
-            #self.expander_install.set_expanded(True)
-            print "was not installed"
+            self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
+            self.installDialog.konsoleFrame.show()
         #self.statusbar_main.push(self.context,_("Installation complete"))
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
@@ -344,7 +323,6 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
 	self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
 	self.konsoleFrame.hide()
 	self.newKonsole()
-	self.connect(self.konsole,SIGNAL("processExited()"),self.unlock)
 	self.show()
 	kapp = KApplication.kApplication()
         kapp.processEvents()

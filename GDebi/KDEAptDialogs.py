@@ -36,6 +36,7 @@ import time
 import thread
 import re
 import pty
+import select
 
 from DebPackage import DebPackage, Cache
 from apt.progress import InstallProgress
@@ -58,6 +59,9 @@ def utf8(str):
 class KDEDpkgInstallProgress(object):
     # this one is the frontend for dpkg -i
     # there is only 0/100 state for the progress bar
+    
+    # ok, this is rather nasty. In order to update the interface more often, we
+    # need to timeout the os.read() function. Somehow it is waiting for input from the pipe, which is not so good.
     def __init__(self, debfile, status, progress, konsole, parent):
 	# an expander would be handy, sadly we don't have one in KDE3
 	self.debfile = debfile
@@ -68,7 +72,10 @@ class KDEDpkgInstallProgress(object):
 	
 	# in case there was some progress left from the deps
 	self.progress.setProgress(0)
-	
+    def timeoutHandler(self,signum, frame):
+        print 'Stopped waiting for I/O ', signum
+        raise IOError, "Stopped waiting for I/O."
+
     def commit(self):
 	# ui
 	self.status.setText("<i>"+_("Installing '%s'...") % \
@@ -79,31 +86,38 @@ class KDEDpkgInstallProgress(object):
 	print cmd
 	print argv
 	print self.konsole
-	(self.child_pid, fd) = pty.fork()
+	# we'
+	(rNum,wNum) = os.pipe()
+	self.child_pid = os.fork()
+	
 	if self.child_pid == 0:
-		# we need to initialize the fd operations, otherwise we get stuck
-		print -1
 		# we're the child, call a subprocess, wait for the exit status, use the parent Konsole fd's as stdin/stdout
 		exitstatus = subprocess.call(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
-		print exitstatus
+		os.write(wNum,str(exitstatus))
+		#print "!!!! FINISHED !!!!!" # mhb debug
 		os._exit(0)
 	else:
 		self.exitstatus = -5
 		while self.exitstatus < 0:
-			#if self.exitstatus < 0:
-			#	print "exitstatus is " + str(self.exitstatus)
+			# okay, so what we're doing now:
+			# we're using the select check to see if the pipe is readable. If it is, we're reading it
+			# see select(2) or select at libref for more info
+			# TODO: implement error checking
+			
+			#print "running" # mhb debug
 			try:
-				self.exitstatus = int(os.read(fd,2))
-				print "exitstatus " + str(self.exitstatus)
-			except (OSError, ValueError):
+				readable = select.select([rNum],[],[],0.001)
+				if len(readable[0]) > 0:
+					self.exitstatus = int(os.read(rNum,2))
+
+				#print "exitstatus " + str(self.exitstatus) # mhb debug
+			except (OSError, IOError):
+				#print "error"
 				pass
 			KApplication.kApplication().processEvents()
-			time.sleep(0.1)
-		if self.exitstatus == 0:
-			self.status.setText("<i>"+_("Installed '%s'.") % \
-				os.path.basename(self.debfile)+"</i>")
-			self.progress.setProgress(100)
-    			self.parent.closeButton.setEnabled(True)
+			time.sleep(0.0000001)			
+		self.progress.setProgress(100)
+    		self.parent.closeButton.setEnabled(True)
 		
 class KDEInstallProgressAdapter(InstallProgress):
     def __init__(self, progress, action, parent):
@@ -180,30 +194,31 @@ class KDEInstallProgressAdapter(InstallProgress):
             if pid == self.child_pid:
                 break
         return os.WEXITSTATUS(res)
-	
+
 class KDEFetchProgressAdapter(apt.progress.FetchProgress):
-    def __init__(self,progress,action,main):
-	#print "FetchProgressAdapter.__init__()"
+    def __init__(self,progress,label,parent):
+	#print "FetchProgressAdapter.__init__()" # mhb debug
 	self.progress = progress
-	self.action = action
-	self.main = main
+	self.label = label
+	self.parent = parent
     def start(self):
 	#print "start()"
-	self.action.setText("<i>"+_("Downloading additional package files...")+"</i>")
+	self.label.setText("<i>"+_("Downloading additional package files...")+"</i>")
 	self.progress.setProgress(0)
     def stop(self):
 	#print "stop()"
 	pass
     def pulse(self):
+	apt.progress.FetchProgress.pulse(self)
+        self.progress.setProgress(self.percent)
+        currentItem = self.currentItems + 1
+        if currentItem > self.totalItems:
+            currentItem = self.totalItems
 	if self.currentCPS > 0:
-	    #pass # improve once we migrate to KProgressbar
-	    self.progress.setText(_("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+	    self.label.setText("<i>"+_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))) + "</i>")		
 	else:
-	    pass
-		#self.progress.setText(_("File %s of %s" % (self.currentItems,self.totalItems)))
-	self.progress.setProgress(self.currentBytes/self.totalBytes)
-	#while gtk.events_pending():
-		#gtk.main_iteration()
+	    self.label.setText("<i>"+_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)) + "</i>")
+	KApplication.kApplication().processEvents()
 	return True
     def mediaChange(self, medium, drive):
         msg = _("Please insert '%s' into the drive '%s'") % (medium,drive)

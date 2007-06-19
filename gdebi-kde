@@ -24,6 +24,26 @@
 #
 
 import sys
+import os
+import subprocess
+import string
+import apt
+import apt_pkg
+from qt import *
+from kdeui import *
+from kdecore import *
+from kfile import *
+
+import urllib
+import fcntl
+import posix
+import time
+import thread
+import re
+import pty
+import select
+
+import sys
 import apt
 import os.path
 from qt import *
@@ -41,10 +61,10 @@ if __name__ == "__main__":
     data="/usr/share/gdebi"
 
     localesApp="gdebi"
+    localesAppKdelibs="kdelibs"
     localesDir="/usr/share/locale"
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
-
     parser = OptionParser()
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
@@ -61,8 +81,6 @@ if __name__ == "__main__":
 	gdebi.show()
         if options.non_interactive == True:
             gdebi.installButtonClicked()
-
-        #app.run()
 	app.exec_loop()
     except SystemError, e:
         err_header = _("Software index is broken")
@@ -73,6 +91,5 @@ if __name__ == "__main__":
                     "reload the software information with: "
                     "'sudo apt-get update' and 'sudo apt-get install -f'."
                     )
-        self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
+	errorReport = KMessageBox.error(None, '<b>' + err_header + '</b><br>' + err_body, err_header)
         sys.exit(1)
-    #app.run()
