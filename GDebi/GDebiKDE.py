@@ -35,16 +35,15 @@ from kparts import konsolePart,TerminalInterface
 from kfile import *
 
 from DebPackage import DebPackage, Cache
-from gettext import gettext as gett
-
+import gettext
 from GDebiKDEInstallDialog import GDebiKDEInstallDialog
 from GDebiKDEDialog import GDebiKDEDialog
 from KDEAptDialogs import *
 
 def _(str):
-    return unicode(gett(str), 'UTF-8')
-
-
+    return unicode(gettext.gettext(str), 'UTF-8')
+def __(catalog,str):
+    return unicode(gettext.dgettext(catalog, str), 'UTF-8')
 def utf8(str):
   if isinstance(str, unicode):
       return str
@@ -52,26 +51,41 @@ def utf8(str):
 
 class GDebiKDE(GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
-	GDebiKDEDialog.__init__(self,parent,name,modal,fl)
-	self._deb = None	
+        GDebiKDEDialog.__init__(self,parent,name,modal,fl)
+        # first, we load all the default descriptions -- pyuic doesn't use
+        # gettext as default
+        self.textLabel1.setText(_("Package:"))
+        self.textLabel1_2.setText(_("Status:"))
+        self.detailsButton.setText(_("Details"))
+        self.tabWidget2.setTabLabel(self.desc,_("Description"))
+        self.tabWidget2.setTabLabel(self.det,_("Details"))
+        self.tabWidget2.setTabLabel(self.incl,_("Included Files"))
+        self.cancelButton.setText(__("kdelibs","&Cancel"))
+        self.installButton.setText(_("&Install Package"))
+        self.DetailsVersionLabel.setText(_("<b>Version:</b>"))
+        self.DetailsMaintainerLabel.setText(_("<b>Maintainer:</b>"))
+        self.DetailsPriorityLabel.setText(_("<b>Priority:</b>"))
+        self.DetailsSectionLabel.setText(_("<b>Section:</b>"))
+        self.DetailsSizeLabel.setText(_("<b>Size:</b>"))
+        # translation finished
+        self._deb = None
         self.setDisabled(True)
-	self.installButton.setText(_("&Install Package"))
-   	self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
-	self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
-	self.kapp = KApplication.kApplication()
+        self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
+        self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
+        self.kapp = KApplication.kApplication()
         self.kapp.processEvents()
-	self.show()
+        self.show()
         self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
         self._cache = Cache()
         self._options = options
-	# try to open the file
+        # try to open the file
         if file != "" and os.path.exists(file):
             self.open(file)
-	else:
-	    header = _("The package file does not exist")
-	    body = _("A nonexistent file has been selected for installation. Please select an existing .deb package file.")
-	    KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
-	    sys.exit(1)
+        else:
+            header = _("The package file does not exist")
+            body = _("A nonexistent file has been selected for installation. Please select an existing .deb package file.")
+            KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
+            sys.exit(1)
 
         self.setEnabled(True)
 	
@@ -79,10 +93,11 @@ class GDebiKDE(GDebiKDEDialog):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-	    header = _("Package extraction error")
-	    body = _("The selected file is not a valid .deb package.")
-	    KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
-	    sys.exit(1)
+            header = _("Package extraction error")
+            body = _("The selected file is not a valid .deb package or the "
+                     "package may be corrupted.")
+            KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
+            sys.exit(1)
             #return False
         # set name
         self.setCaption(_("Package Installer - %s") % self._deb.pkgName)
@@ -123,13 +138,13 @@ class GDebiKDE(GDebiKDEDialog):
         except KeyError:
             buf.set_text(_("No description is available"))
 
-	if not self._deb.checkDeb():
+        if not self._deb.checkDeb():
             #self.textLabel1_3_2.set_markup("<span foreground=\"red\" weight=\"bold\">"+
             #                             "Error: " +
             #                             self._deb._failureString +
             #                             "</span>")
-	    self.installButton.setText(_("&Install Package"))
-   	    self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
+	        self.installButton.setText(_("&Install Package"))
+   	        self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
 
             #self.button_install.set_sensitive(False)
             #self.button_details.hide()
@@ -171,10 +186,9 @@ class GDebiKDE(GDebiKDEDialog):
                             "it is usually better supported.")
 
             if title != "" and msg != "":
-		
-		icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
-		self.infoIcon.setPixmap(icon)
-		self.infoBox.setText(title + '\n' + msg)
+                icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
+                self.infoIcon.setPixmap(icon)
+                self.infoBox.setText(title + '\n' + msg)
 
         (install, remove, unauthenticated) = self._deb.requiredChanges
         deps = ""
@@ -264,16 +278,14 @@ class GDebiKDE(GDebiKDEDialog):
                          "software distributor. See the terminal window for "
                          "more details.")
             if not res:
-		self.errorReport = KMessageBox.error(None,header + text, header)
+                self.errorReport = KMessageBox.error(None,header + text, header)
                 #self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
-                                #parent=self.dialog_deb_install)
-                print body
-                
+                #parent=self.dialog_deb_install)                
                 #self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
                 #self.button_deb_install_close.set_sensitive(True)
                 #self.button_deb_install_close.grab_default()
-		#self.statusbar_main.push(self.context,_("Failed to install package file"))
-                return 
+                #self.statusbar_main.push(self.context,_("Failed to install package file"))
+                return
 
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
@@ -288,7 +300,7 @@ class GDebiKDE(GDebiKDEDialog):
         #self.button_deb_install_close.grab_default()
         self.installDialog.setCaption(_("Installation finished"))
         if dprogress.exitstatus == 0:
-            self.installDialog.installingLabel.setText("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
+            self.installDialog.installingLabel.setText(_("Package '%s' was installed") % os.path.basename(self._deb.file))
         else:
             self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
             self.installDialog.konsoleFrame.show()
@@ -306,36 +318,40 @@ class GDebiKDE(GDebiKDEDialog):
             #self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
             
             print "Autsch, please report"
-	#print "running open"
-        #self.open(self._deb.file)
+        	#print "running open"
+            #self.open(self._deb.file)
 
 
 class GDebiKDEInstall(GDebiKDEInstallDialog):
     def __init__(self,parent=None):
-	GDebiKDEInstallDialog.__init__(self,parent)
-	self.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
-	self.closeButton.setIconSet(KGlobal.iconLoader().loadIconSet("fileclose",KIcon.NoGroup,KIcon.SizeSmall))
-	self.closeButton.setEnabled(False)
-	self.parent = parent
-	self.konsole = None
-	self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
-	self.konsoleFrame.hide()
-	self.newKonsole()
-	self.show()
-	kapp = KApplication.kApplication()
+        GDebiKDEInstallDialog.__init__(self,parent)
+        # load the translations first
+        self.showDetailsButton.setText(__("libept","Show Details"))
+        self.closeButton.setText(__("kdelibs","&Close"))
+        # end
+        self.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
+        self.closeButton.setIconSet(KGlobal.iconLoader().loadIconSet("fileclose",KIcon.NoGroup,KIcon.SizeSmall))
+        self.closeButton.setEnabled(False)
+        self.parent = parent
+        self.konsole = None
+        self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
+        self.konsoleFrame.hide()
+        self.newKonsole()
+        self.show()
+        kapp = KApplication.kApplication()
         kapp.processEvents()
 
     def unlock(self,number):
-	self.parent.dprogress.lock.unlock()
+        self.parent.dprogress.lock.unlock()
     def newKonsole(self):
-	# this one belong elsewhere, but we need it here for debug
-	self.konsoleFrame.hide()
+    	# this one belong elsewhere, but we need it here for debug
+        self.konsoleFrame.hide()
         if self.konsole is not None:
             self.konsole.widget().hide()
         self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
         self.konsoleFrame.setMinimumSize(500, 400)
         self.konsole.setAutoStartShell(False)
-	self.konsole.setAutoDestroy(False)
+        self.konsole.setAutoDestroy(False)
         self.konsoleWidget = self.konsole.widget()
         self.konsoleFrameLayout.addWidget(self.konsoleWidget)
 
@@ -347,13 +363,13 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         print "click"
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
-            self.showDetailsButton.setText(_("Show Details"))
+            self.showDetailsButton.setText(__("libept","Show Details"))
         else:
             self.konsoleFrame.show()
-            self.showDetailsButton.setText(_("Hide Details"))
+            self.showDetailsButton.setText(__("libept","Hide Details"))
 
     def closeButtonClicked(self):
         self.close()
     def close(self,argument=False):
-	GDebiKDEInstallDialog.close(self, argument)
-	KApplication.kApplication().exit()
+        GDebiKDEInstallDialog.close(self, argument)
+        KApplication.kApplication().exit()

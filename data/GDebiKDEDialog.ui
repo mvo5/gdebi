@@ -35,9 +35,6 @@
     <property name="caption">
         <string>Package Installer</string>
     </property>
-    <property name="icon">
-        <pixmap>image0</pixmap>
-    </property>
     <property name="sizeGripEnabled">
         <bool>false</bool>
     </property>
@@ -72,7 +69,7 @@
                                 </size>
                             </property>
                             <property name="text">
-                                <string>Package:</string>
+                                <string></string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="1">
@@ -145,7 +142,7 @@
                                         </sizepolicy>
                                     </property>
                                     <property name="text">
-                                        <string>Details</string>
+                                        <string></string>
                                     </property>
                                 </widget>
                                 <spacer>
@@ -180,7 +177,7 @@
                                 </sizepolicy>
                             </property>
                             <property name="text">
-                                <string>Status:</string>
+                                <string></string>
                             </property>
                         </widget>
                     </grid>
@@ -231,7 +228,7 @@
             </property>
             <widget class="QWidget">
                 <property name="name">
-                    <cstring>tab</cstring>
+                    <cstring>desc</cstring>
                 </property>
                 <attribute name="title">
                     <string>&amp;Description</string>
@@ -260,7 +257,7 @@
             </widget>
             <widget class="QWidget">
                 <property name="name">
-                    <cstring>tab</cstring>
+                    <cstring>det</cstring>
                 </property>
                 <attribute name="title">
                     <string>Det&amp;ails</string>
@@ -428,7 +425,7 @@
             </widget>
             <widget class="QWidget">
                 <property name="name">
-                    <cstring>TabPage</cstring>
+                    <cstring>incl</cstring>
                 </property>
                 <attribute name="title">
                     <string>I&amp;ncluded Files</string>
@@ -604,11 +601,6 @@
         </widget>
     </vbox>
 </widget>
-<images>
-    <image name="image0">
-        <data format="PNG" length="832">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000030749444154388d8d934b6854571cc6bf73cf9db99947268f3113eae4a5b11a1f686c313451a7a1ade6818f162ae8422222e84a14379aad4aa922085d16da6eba1054ba2a7d5074d106138a28924c4c341acdbc3293c9e4de7bee63cedc73baa9687c80dff6ff7dbfd5ef0fbc4754407dd78dbe5126a0831f570f04fd086497bc5c7f67a47ff8c8a6e15acd8be886a3ebb6342420df0aa80fa2eedcd0c6b3df5e3a7a795b7b5d4f30d6d570f2d4e9b33d035f7fbe2bd1beefc0b6e0fead31d1e917654db72abac5a545008000646393b6fec299de8b7b0e0eee95cca186d88a706b028aaa81311bf9ec2cc2e91b682c8da09c4ef1f147c58913d732c7150058b54269fdf19bc19ff60f7df525cda7a89905aae2db411415b665c3620c8aaf0659e5239879037e56f44da6ed8964be324101c0e1d26d0c89864f56d21ef2645265f59f418b6f06334d64d22930664148c0f134906777e0d7e79cdb69ff3fedb5fe0eaaa9d042554ab0b86814bb1aecae98f03e305af600357164d3299466ef80e98b80af0edc03a8f51c0d2db5a8ad0eaff8eddfd4afeae12e7ae88b9d1dbb77f42512b1f8ca180a0b08902c787116aee30252c0f3381cb78c7a6f16cd511b4f1f16d2c7aefc3d349a7247e8d4bc9c1e9d2c8d4d269f2543dc087dd8b9614d60e11e0924af2334ff009c5443d6b421cec7d196bf892a670e0f92b9a9ab7f652e7381b26aba60668ecf3cce656698c5eddea1c37d05ad97067d771136c6b12e380dee3e866fee1e88e7402a04a2ec1285100590af192689acd85c32ac4521ba0581681e75a99f115db80d621621a4002702a4e211f2d2d2572204ca4b0e145f099295c000844d1730750887c1f138400988505fec5f07482a8a592a310a95c6c16904c4c800960ed766f044053ebf06dd84e149883700f945a790bb3f32d3dc78bfcd9301aa57a2082ddc85704d88b203091ffe98c2adf3b78ac356459aff5bbcec91d4a6086de96e0befdcd5513dd0dd42bb9b8356935f254a7ec9337f182b7fffdd18bb34ef88ec8bcd32c03218a0b646e8eaedcddaa73b5685137f4e9bbfff32655de312fcd5de7fc1f96fcb881593720000000049454e44ae426082</data>
-    </image>
-</images>
 <connections>
     <connection>
         <sender>installButton</sender>
@@ -623,9 +615,6 @@
         <slot>cancelButtonClicked()</slot>
     </connection>
 </connections>
-<includes>
-    <include location="local" impldecl="in implementation">GDebiKDEDialog.ui.h</include>
-</includes>
 <slots>
     <slot>buttonCancelClicked()</slot>
     <slot>cancelButtonclicked()</slot>

@@ -71,20 +71,16 @@ class KDEDpkgInstallProgress(object):
 	# in case there was some progress left from the deps
 	self.progress.setProgress(0)
     def timeoutHandler(self,signum, frame):
-        print 'Stopped waiting for I/O ', signum
+        # print 'Stopped waiting for I/O ', signum
         raise IOError, "Stopped waiting for I/O."
 
     def commit(self):
 	# ui
-	self.status.setText("<i>"+_("Installing '%s'...") % \
-				os.path.basename(self.debfile)+"</i>")
+	self.status.setText(_("Installing '%s'...") % \
+				os.path.basename(self.debfile))
 	# the command
 	cmd = "/usr/bin/dpkg"
 	argv = [cmd, "-i", self.debfile]
-	print cmd
-	print argv
-	print self.konsole
-	# we'
 	(rNum,wNum) = os.pipe()
 	self.child_pid = os.fork()
 	
@@ -142,14 +138,15 @@ class KDEInstallProgressAdapter(InstallProgress):
     def startUpdate(self):
 	#print "startUpdate"
 	apt_pkg.PkgSystemUnLock()
-	self.action.setText("<i>"+_("Installing dependencies...")+"</i>")
+	self.action.setText(_("Installing dependencies..."))
 	self.progress.setProgress(0)
     def statusChange(self, pkg, percent, status):
 	self.progress.setProgress(percent)
 	print status # mhb debug
 	#self.progress.setText(status)
     def finishUpdate(self):
-	print "finished"
+	#print "finished"
+	pass
     def updateInterface(self):
 	try:
 	    InstallProgress.updateInterface(self)
@@ -192,7 +189,7 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
 	self.parent = parent
     def start(self):
 	#print "start()"
-	self.label.setText("<i>"+_("Downloading additional package files...")+"</i>")
+	self.label.setText(_("Downloading additional package files..."))
 	self.progress.setProgress(0)
     def stop(self):
 	#print "stop()"
@@ -204,9 +201,9 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
         if currentItem > self.totalItems:
             currentItem = self.totalItems
 	if self.currentCPS > 0:
-	    self.label.setText("<i>"+_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))) + "</i>")		
+	    self.label.setText(_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
 	else:
-	    self.label.setText("<i>"+_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)) + "</i>")
+	    self.label.setText(_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)))
 	KApplication.kApplication().processEvents()
 	return True
     def mediaChange(self, medium, drive):
