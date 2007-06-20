@@ -60,8 +60,6 @@ class KDEDpkgInstallProgress(object):
     # this one is the frontend for dpkg -i
     # there is only 0/100 state for the progress bar
     
-    # ok, this is rather nasty. In order to update the interface more often, we
-    # need to timeout the os.read() function. Somehow it is waiting for input from the pipe, which is not so good.
     def __init__(self, debfile, status, progress, konsole, parent):
 	# an expander would be handy, sadly we don't have one in KDE3
 	self.debfile = debfile
@@ -94,7 +92,6 @@ class KDEDpkgInstallProgress(object):
 		# we're the child, call a subprocess, wait for the exit status, use the parent Konsole fd's as stdin/stdout
 		exitstatus = subprocess.call(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
 		os.write(wNum,str(exitstatus))
-		#print "!!!! FINISHED !!!!!" # mhb debug
 		os._exit(0)
 	else:
 		self.exitstatus = -5
@@ -104,15 +101,12 @@ class KDEDpkgInstallProgress(object):
 			# see select(2) or select at libref for more info
 			# TODO: implement error checking
 			
-			#print "running" # mhb debug
 			try:
 				readable = select.select([rNum],[],[],0.001)
 				if len(readable[0]) > 0:
 					self.exitstatus = int(os.read(rNum,2))
 
-				#print "exitstatus " + str(self.exitstatus) # mhb debug
 			except (OSError, IOError):
-				#print "error"
 				pass
 			KApplication.kApplication().processEvents()
 			time.sleep(0.0000001)			
@@ -127,11 +121,7 @@ class KDEInstallProgressAdapter(InstallProgress):
 	self.action = action
 	self.parent = parent
 	self.finished = False
-	#reaper = vte.reaper_get()
-	#reaper.connect("child-exited",self.child_exited)
-	#self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
-			#"DEBIAN_FRONTEND=gnome",
-			#"APT_LISTCHANGES_FRONTEND=gtk"]
+
     def child_exited(self,process):
 	print "processExited(self):"
 	print "exit status: " + str(process.exitStatus())
@@ -197,7 +187,6 @@ class KDEInstallProgressAdapter(InstallProgress):
 
 class KDEFetchProgressAdapter(apt.progress.FetchProgress):
     def __init__(self,progress,label,parent):
-	#print "FetchProgressAdapter.__init__()" # mhb debug
 	self.progress = progress
 	self.label = label
 	self.parent = parent
@@ -233,10 +222,6 @@ class CacheProgressAdapter(apt.progress.FetchProgress):
     def update(self, percent):
 	self.progressbar.show()
 	self.progressbar.setProgress(percent)
-	#self.progressbar.set_text(self.op)
-	#while gtk.events_pending():
-		#gtk.main_iteration()
     def done(self):
-	#self.progressbar.hide()
 	pass
 

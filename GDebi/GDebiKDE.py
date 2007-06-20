@@ -67,14 +67,23 @@ class GDebiKDE(GDebiKDEDialog):
 	# try to open the file
         if file != "" and os.path.exists(file):
             self.open(file)
+	else:
+	    header = _("The package file does not exist")
+	    body = _("A nonexistent file has been selected for installation. Please select an existing .deb package file.")
+	    KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
+	    sys.exit(1)
+
         self.setEnabled(True)
 	
     def open(self, file):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            #print "system error - open()"
-            return False
+	    header = _("Package extraction error")
+	    body = _("The selected file is not a valid .deb package.")
+	    KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
+	    sys.exit(1)
+            #return False
         # set name
         self.setCaption(_("Package Installer - %s") % self._deb.pkgName)
         self.textLabel1_3.setText(self._deb.pkgName)
@@ -113,8 +122,6 @@ class GDebiKDE(GDebiKDEDialog):
             buf.setText(long_desc)
         except KeyError:
             buf.set_text(_("No description is available"))
-        
-        # check the s
 
 	if not self._deb.checkDeb():
             #self.textLabel1_3_2.set_markup("<span foreground=\"red\" weight=\"bold\">"+
@@ -205,7 +212,6 @@ class GDebiKDE(GDebiKDEDialog):
 	
     def installButtonClicked(self):
         
-        #print "click" # mhb debug
 	#print self._deb.file
         # sanity check
         if self._deb is None:
@@ -218,14 +224,6 @@ class GDebiKDE(GDebiKDEDialog):
             os.execl("/usr/bin/kdesu", "kdesu",
                      "gdebi-kde -n " + self._deb.file)
 	    self.kapp.exit()
-        # check if we can lock the apt database
-        try:
-            apt_pkg.PkgSystemLock()
-        except SystemError:
-            #print "cannot be locked" # mhb debug
-	    pass
-        apt_pkg.PkgSystemUnLock()
-	
         self.installDialog = GDebiKDEInstall(self)
         self.installDialog.show()
 
@@ -345,19 +343,17 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         (self.master, self.slave) = pty.openpty()
         self.konsole.setPtyFd(self.master)
 
-        #self.window_main.showTerminalButton.setEnabled(True)
-    
     def showTerminal(self):
-	print "click"
+        print "click"
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
             self.showDetailsButton.setText(_("Show Details"))
         else:
             self.konsoleFrame.show()
             self.showDetailsButton.setText(_("Hide Details"))
-    
+
     def closeButtonClicked(self):
-	self.close()
+        self.close()
     def close(self,argument=False):
 	GDebiKDEInstallDialog.close(self, argument)
 	KApplication.kApplication().exit()
