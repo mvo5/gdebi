@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../data/GDebiKDEDialog.ui'
+# Form implementation generated from reading ui file 'data/GDebiKDEDialog.ui'
 #
-# Created: Pá čen 22 12:16:53 2007
+# Created: Pá čen 22 15:23:29 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,9 +22,7 @@ class GDebiKDEDialog(QDialog):
         if not name:
             self.setName("GDebiKDEDialog")
 
-        self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.sizePolicy().hasHeightForWidth()))
-        self.setMinimumSize(QSize(0,0))
-        self.setBaseSize(QSize(64,64))
+        self.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.sizePolicy().hasHeightForWidth()))
         self.setSizeGripEnabled(0)
 
         GDebiKDEDialogLayout = QVBoxLayout(self,11,6,"GDebiKDEDialogLayout")
@@ -46,7 +44,7 @@ class GDebiKDEDialog(QDialog):
         layout15 = QHBoxLayout(None,0,6,"layout15")
 
         self.textLabel1_3_2 = QLabel(self,"textLabel1_3_2")
-        self.textLabel1_3_2.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Preferred,0,0,self.textLabel1_3_2.sizePolicy().hasHeightForWidth()))
+        self.textLabel1_3_2.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding,QSizePolicy.Preferred,0,0,self.textLabel1_3_2.sizePolicy().hasHeightForWidth()))
         layout15.addWidget(self.textLabel1_3_2)
         spacer7 = QSpacerItem(31,21,QSizePolicy.Fixed,QSizePolicy.Minimum)
         layout15.addItem(spacer7)
@@ -54,7 +52,7 @@ class GDebiKDEDialog(QDialog):
         self.detailsButton = KPushButton(self,"detailsButton")
         self.detailsButton.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Minimum,0,0,self.detailsButton.sizePolicy().hasHeightForWidth()))
         layout15.addWidget(self.detailsButton)
-        spacer6 = QSpacerItem(310,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        spacer6 = QSpacerItem(40,20,QSizePolicy.MinimumExpanding,QSizePolicy.Minimum)
         layout15.addItem(spacer6)
 
         layout17.addLayout(layout15,1,1)
@@ -194,7 +192,7 @@ class GDebiKDEDialog(QDialog):
 
         self.languageChange()
 
-        self.resize(QSize(702,377).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(699,350).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.connect(self.installButton,SIGNAL("clicked()"),self.installButtonClicked)
@@ -229,17 +227,11 @@ class GDebiKDEDialog(QDialog):
         self.cancelButton.setAccel(QKeySequence(QString.null))
 
 
-    def buttonCancelClicked(self):
-        print "GDebiKDEDialog.buttonCancelClicked(): Not implemented yet"
-
-    def cancelButtonclicked(self):
-        print "GDebiKDEDialog.cancelButtonclicked(): Not implemented yet"
+    def installButtonClicked(self):
+        print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
 
     def cancelButtonClicked(self):
         print "GDebiKDEDialog.cancelButtonClicked(): Not implemented yet"
-
-    def installButtonClicked(self):
-        print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
 
     def detailsButtonClicked(self):
         print "GDebiKDEDialog.detailsButtonClicked(): Not implemented yet"

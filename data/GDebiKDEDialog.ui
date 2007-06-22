@@ -8,29 +8,17 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>702</width>
-            <height>377</height>
+            <width>699</width>
+            <height>350</height>
         </rect>
     </property>
     <property name="sizePolicy">
         <sizepolicy>
-            <hsizetype>5</hsizetype>
-            <vsizetype>5</vsizetype>
+            <hsizetype>1</hsizetype>
+            <vsizetype>1</vsizetype>
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
         </sizepolicy>
-    </property>
-    <property name="minimumSize">
-        <size>
-            <width>0</width>
-            <height>0</height>
-        </size>
-    </property>
-    <property name="baseSize">
-        <size>
-            <width>64</width>
-            <height>64</height>
-        </size>
     </property>
     <property name="caption">
         <string>GDebiKDEDialog</string>
@@ -102,7 +90,7 @@
                                     </property>
                                     <property name="sizePolicy">
                                         <sizepolicy>
-                                            <hsizetype>1</hsizetype>
+                                            <hsizetype>3</hsizetype>
                                             <vsizetype>5</vsizetype>
                                             <horstretch>0</horstretch>
                                             <verstretch>0</verstretch>
@@ -153,11 +141,11 @@
                                         <enum>Horizontal</enum>
                                     </property>
                                     <property name="sizeType">
-                                        <enum>Expanding</enum>
+                                        <enum>MinimumExpanding</enum>
                                     </property>
                                     <property name="sizeHint">
                                         <size>
-                                            <width>310</width>
+                                            <width>40</width>
                                             <height>20</height>
                                         </size>
                                     </property>
@@ -625,10 +613,8 @@
     <include location="local" impldecl="in implementation">GDebiKDEDialog.ui.h</include>
 </includes>
 <slots>
-    <slot>buttonCancelClicked()</slot>
-    <slot>cancelButtonclicked()</slot>
-    <slot>cancelButtonClicked()</slot>
     <slot>installButtonClicked()</slot>
+    <slot>cancelButtonClicked()</slot>
     <slot>detailsButtonClicked()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>

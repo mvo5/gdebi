@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../data/GDebiKDEInstallDialog.ui'
 #
-# Created: Pá čen 22 12:16:58 2007
+# Created: Pá čen 22 14:29:09 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,7 +22,7 @@ class GDebiKDEInstallDialog(QDialog):
         if not name:
             self.setName("GDebiKDEInstallDialog")
 
-        self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Minimum,0,0,self.sizePolicy().hasHeightForWidth()))
+        self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.sizePolicy().hasHeightForWidth()))
 
         GDebiKDEInstallDialogLayout = QVBoxLayout(self,11,6,"GDebiKDEInstallDialogLayout")
 

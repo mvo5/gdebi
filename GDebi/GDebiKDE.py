@@ -248,7 +248,7 @@ class GDebiKDE(GDebiKDEDialog):
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
                      "gdebi-kde -n " + self._deb.file)
-        self.kapp.exit()
+            self.kapp.exit()
         self.installDialog = GDebiKDEInstall(self)
         self.installDialog.show()
 
