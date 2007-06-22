@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'gdebi-kde/GDebiKDEInstallDialog.ui'
+# Form implementation generated from reading ui file '../data/GDebiKDEInstallDialog.ui'
 #
-# Created: Ne čen 17 13:21:12 2007
+# Created: Pá čen 22 12:16:58 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -68,10 +68,10 @@ class GDebiKDEInstallDialog(QDialog):
     def languageChange(self):
         self.setCaption(self.__tr("Installing"))
         self.installingLabel.setText(QString.null)
-        self.showDetailsButton.setText(self.__tr("Show &Details"))
-        self.showDetailsButton.setAccel(QKeySequence(self.__tr("Alt+D")))
-        self.closeButton.setText(self.__tr("&Close"))
-        self.closeButton.setAccel(QKeySequence(self.__tr("Alt+C")))
+        self.showDetailsButton.setText(QString.null)
+        self.showDetailsButton.setAccel(QKeySequence(QString.null))
+        self.closeButton.setText(QString.null)
+        self.closeButton.setAccel(QKeySequence(QString.null))
 
 
     def showDetailsButton_clicked(self):

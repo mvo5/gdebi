@@ -69,10 +69,10 @@
                                 <cstring>showDetailsButton</cstring>
                             </property>
                             <property name="text">
-                                <string>Show &amp;Details</string>
+                                <string></string>
                             </property>
                             <property name="accel">
-                                <string>Alt+D</string>
+                                <string></string>
                             </property>
                         </widget>
                     </hbox>
@@ -128,10 +128,10 @@
                         <cstring>closeButton</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Close</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+C</string>
+                        <string></string>
                     </property>
                 </widget>
             </hbox>
@@ -152,9 +152,6 @@
         <slot>closeButtonClicked()</slot>
     </connection>
 </connections>
-<includes>
-    <include location="local" impldecl="in implementation">GDebiKDEInstallDialog.ui.h</include>
-</includes>
 <slots>
     <slot>showDetailsButton_clicked()</slot>
     <slot>showTerminal()</slot>

@@ -33,7 +33,7 @@
         </size>
     </property>
     <property name="caption">
-        <string>Package Installer</string>
+        <string>GDebiKDEDialog</string>
     </property>
     <property name="sizeGripEnabled">
         <bool>false</bool>
@@ -85,7 +85,7 @@
                                 </sizepolicy>
                             </property>
                             <property name="text">
-                                <string>empty</string>
+                                <string></string>
                             </property>
                         </widget>
                         <widget class="QLayoutWidget" row="1" column="1">
@@ -109,7 +109,7 @@
                                         </sizepolicy>
                                     </property>
                                     <property name="text">
-                                        <string>empty</string>
+                                        <string></string>
                                     </property>
                                 </widget>
                                 <spacer>
@@ -231,7 +231,7 @@
                     <cstring>desc</cstring>
                 </property>
                 <attribute name="title">
-                    <string>&amp;Description</string>
+                    <string></string>
                 </attribute>
                 <hbox>
                     <property name="name">
@@ -260,7 +260,7 @@
                     <cstring>det</cstring>
                 </property>
                 <attribute name="title">
-                    <string>Det&amp;ails</string>
+                    <string></string>
                 </attribute>
                 <hbox>
                     <property name="name">
@@ -292,7 +292,7 @@
                                     </font>
                                 </property>
                                 <property name="text">
-                                    <string>Section:</string>
+                                    <string></string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="2" column="0">
@@ -313,7 +313,7 @@
                                     </font>
                                 </property>
                                 <property name="text">
-                                    <string>Priority:</string>
+                                    <string></string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="2" column="1">
@@ -350,7 +350,7 @@
                                     </font>
                                 </property>
                                 <property name="text">
-                                    <string>Version:</string>
+                                    <string></string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="4" column="1">
@@ -387,7 +387,7 @@
                                     </font>
                                 </property>
                                 <property name="text">
-                                    <string>Size:</string>
+                                    <string></string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="1" column="1">
@@ -416,7 +416,7 @@
                                     </font>
                                 </property>
                                 <property name="text">
-                                    <string>Maintainer:</string>
+                                    <string></string>
                                 </property>
                             </widget>
                         </grid>
@@ -428,7 +428,7 @@
                     <cstring>incl</cstring>
                 </property>
                 <attribute name="title">
-                    <string>I&amp;ncluded Files</string>
+                    <string></string>
                 </attribute>
                 <hbox>
                     <property name="name">
@@ -580,10 +580,10 @@
                         <cstring>installButton</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Install</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+I</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="KPushButton">
@@ -591,10 +591,10 @@
                         <cstring>cancelButton</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Cancel</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+C</string>
+                        <string></string>
                     </property>
                 </widget>
             </hbox>
@@ -614,12 +614,22 @@
         <receiver>GDebiKDEDialog</receiver>
         <slot>cancelButtonClicked()</slot>
     </connection>
+    <connection>
+        <sender>detailsButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GDebiKDEDialog</receiver>
+        <slot>detailsButtonClicked()</slot>
+    </connection>
 </connections>
+<includes>
+    <include location="local" impldecl="in implementation">GDebiKDEDialog.ui.h</include>
+</includes>
 <slots>
     <slot>buttonCancelClicked()</slot>
     <slot>cancelButtonclicked()</slot>
     <slot>cancelButtonClicked()</slot>
     <slot>installButtonClicked()</slot>
+    <slot>detailsButtonClicked()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

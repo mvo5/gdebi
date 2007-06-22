@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'data/GDebiKDEDialog.ui'
+# Form implementation generated from reading ui file '../data/GDebiKDEDialog.ui'
 #
-# Created: St čen 20 21:38:58 2007
+# Created: Pá čen 22 12:16:53 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -199,33 +199,34 @@ class GDebiKDEDialog(QDialog):
 
         self.connect(self.installButton,SIGNAL("clicked()"),self.installButtonClicked)
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelButtonClicked)
+        self.connect(self.detailsButton,SIGNAL("clicked()"),self.detailsButtonClicked)
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Package Installer"))
+        self.setCaption(self.__tr("GDebiKDEDialog"))
         self.textLabel1.setText(QString.null)
-        self.textLabel1_3.setText(self.__tr("empty"))
-        self.textLabel1_3_2.setText(self.__tr("empty"))
+        self.textLabel1_3.setText(QString.null)
+        self.textLabel1_3_2.setText(QString.null)
         self.detailsButton.setText(QString.null)
         self.textLabel1_2.setText(QString.null)
-        self.tabWidget2.changeTab(self.desc,self.__tr("&Description"))
-        self.DetailsSectionLabel.setText(self.__tr("Section:"))
-        self.DetailsPriorityLabel.setText(self.__tr("Priority:"))
+        self.tabWidget2.changeTab(self.desc,QString.null)
+        self.DetailsSectionLabel.setText(QString.null)
+        self.DetailsPriorityLabel.setText(QString.null)
         self.DetailsPriority.setText(QString.null)
         self.DetailsSection.setText(QString.null)
-        self.DetailsVersionLabel.setText(self.__tr("Version:"))
+        self.DetailsVersionLabel.setText(QString.null)
         self.DetailsSize.setText(QString.null)
         self.DetailsVersion.setText(QString.null)
-        self.DetailsSizeLabel.setText(self.__tr("Size:"))
+        self.DetailsSizeLabel.setText(QString.null)
         self.DetailsMaintainer.setText(QString.null)
-        self.DetailsMaintainerLabel.setText(self.__tr("Maintainer:"))
-        self.tabWidget2.changeTab(self.det,self.__tr("Det&ails"))
-        self.tabWidget2.changeTab(self.incl,self.__tr("I&ncluded Files"))
+        self.DetailsMaintainerLabel.setText(QString.null)
+        self.tabWidget2.changeTab(self.det,QString.null)
+        self.tabWidget2.changeTab(self.incl,QString.null)
         self.infoBox.setText(QString.null)
-        self.installButton.setText(self.__tr("&Install"))
-        self.installButton.setAccel(QKeySequence(self.__tr("Alt+I")))
-        self.cancelButton.setText(self.__tr("&Cancel"))
-        self.cancelButton.setAccel(QKeySequence(self.__tr("Alt+C")))
+        self.installButton.setText(QString.null)
+        self.installButton.setAccel(QKeySequence(QString.null))
+        self.cancelButton.setText(QString.null)
+        self.cancelButton.setAccel(QKeySequence(QString.null))
 
 
     def buttonCancelClicked(self):
@@ -239,6 +240,9 @@ class GDebiKDEDialog(QDialog):
 
     def installButtonClicked(self):
         print "GDebiKDEDialog.installButtonClicked(): Not implemented yet"
+
+    def detailsButtonClicked(self):
+        print "GDebiKDEDialog.detailsButtonClicked(): Not implemented yet"
 
     def __tr(self,s,c = None):
         return qApp.translate("GDebiKDEDialog",s,c)

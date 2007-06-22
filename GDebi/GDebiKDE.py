@@ -52,6 +52,8 @@ def utf8(str):
 class GDebiKDE(GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
         GDebiKDEDialog.__init__(self,parent,name,modal,fl)
+        # load the icon
+        self.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
         # gettext as default
         self.textLabel1.setText(_("Package:"))
@@ -70,6 +72,7 @@ class GDebiKDE(GDebiKDEDialog):
         # translation finished
         self._deb = None
         self.setDisabled(True)
+	self.detailsButton.hide()
         self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
         self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
         self.kapp = KApplication.kApplication()
@@ -138,16 +141,15 @@ class GDebiKDE(GDebiKDEDialog):
         except KeyError:
             buf.set_text(_("No description is available"))
 
+        # check deps
         if not self._deb.checkDeb():
-            #self.textLabel1_3_2.set_markup("<span foreground=\"red\" weight=\"bold\">"+
-            #                             "Error: " +
-            #                             self._deb._failureString +
-            #                             "</span>")
-	        self.installButton.setText(_("&Install Package"))
-   	        self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
-
+            icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
+            self.installButton.setText(_("&Install Package"))
+            self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
+            self.infoBox.setText(self._deb._failureString)
+            self.detailsButton.hide()
+            return
             #self.button_install.set_sensitive(False)
-            #self.button_details.hide()
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
@@ -196,8 +198,7 @@ class GDebiKDE(GDebiKDEDialog):
             deps += _("All dependencies are satisfied")
             #self.button_details.hide()
         else:
-            pass
-            #self.button_details.show()
+            self.detailsButton.show()
         if len(remove) > 0:
             # FIXME: use ngettext here
             deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
@@ -216,14 +217,24 @@ class GDebiKDE(GDebiKDEDialog):
         buf.setText("\n".join(self._deb.filelist))
 
         if not self._deb.checkDeb():
-	    self.installButton.setText(_("Install Package"))
+            self.installButton.setText(_("&Install Package"))
         
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
-            self.installButton.setText(_("Reinstall Package"))
+            self.installButton.setText(_("Re&install Package"))
 	
     def cancelButtonClicked(self):
-	self.close()
-	
+        self.close()
+    def detailsButtonClicked(self):
+        changedList = QStringList()
+        (install, remove, unauthenticated) = self._deb.requiredChanges
+        for i in install:
+            changedList.append(_("To be installed: %s") % i)
+        for r in remove:
+            changedList.append(_("To be removed: %s") % r)
+
+        infoReport = KMessageBox.informationList(self,
+                      _("<b>To install the following changes are required:</b>"),
+                      changedList, _("Details"))
     def installButtonClicked(self):
         
 	#print self._deb.file
@@ -237,7 +248,7 @@ class GDebiKDE(GDebiKDEDialog):
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
                      "gdebi-kde -n " + self._deb.file)
-	    self.kapp.exit()
+        self.kapp.exit()
         self.installDialog = GDebiKDEInstall(self)
         self.installDialog.show()
 
@@ -251,6 +262,7 @@ class GDebiKDE(GDebiKDEDialog):
                            " run at the same time")
                 body = _("Please close the other application e.g. 'Update "
                          "Manager', 'aptitude' or 'Synaptic' first.")
+                self.errorReport = KMessageBox.error(None,header + text, header)
                 #print "only one sw management tool..."
                 return
             # FIXME: use the new python-apt acquire interface here,
@@ -312,14 +324,12 @@ class GDebiKDE(GDebiKDEDialog):
         #self._cache = Cache(self.cprogress)
         self._cache = Cache()
         if self._cache._depcache.BrokenCount > 0:
-            #err_header = _("Failed to completely install all dependencies")
-            #err_body = _("To fix this run 'sudo apt-get install -f' in a "
-                         #"terminal window.")
-            #self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
-            
+            header = _("Failed to completely install all dependencies")
+            text = _("To fix this run 'sudo apt-get install -f' in a "
+                         "terminal window.")
+            self.errorReport = KMessageBox.error(None,header + text, header)
+	    sys.exit(1)
             print "Autsch, please report"
-        	#print "running open"
-            #self.open(self._deb.file)
 
 
 class GDebiKDEInstall(GDebiKDEInstallDialog):
@@ -337,7 +347,6 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
         self.konsoleFrame.hide()
         self.newKonsole()
-        self.show()
         kapp = KApplication.kApplication()
         kapp.processEvents()
 
