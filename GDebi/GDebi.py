@@ -46,13 +46,13 @@ import re
 from DebPackage import DebPackage, Cache
 from SimpleGladeApp import SimpleGladeApp
 from apt.progress import InstallProgress
-
+from GDebiCommon import GDebiCommon
 from gettext import gettext as _
 
 def utf8(str):
   return unicode(str, 'latin1').encode('utf-8')
 
-class GDebi(SimpleGladeApp):
+class GDebi(SimpleGladeApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         localesApp="gdebi"
@@ -91,28 +91,19 @@ class GDebi(SimpleGladeApp):
                                        [('text/uri-list',0,0)],
                                        gtk.gdk.ACTION_COPY)
 
-        self._deb = None
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
 
         # show what we have
         self.window_main.show()
-
+        
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
-        self._cache = Cache(self.cprogress)
-        if self._cache._depcache.BrokenCount > 0:
-                err_header = _("Broken dependencies")
-                err_body = _("Your system has broken dependencies. "
-                             "This application can not continue until "
-                             "this is fixed. "
-                             "To fix it run 'sudo synaptic' or "
-                             "'sudo apt-get install -f' "
-                             "in a terminal window.")
-                self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
-                sys.exit(1)
+        res = GDebiCommon.__init__(self,datadir,options,file)
+        if res == False:
+            self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+            sys.exit(1)
         self.statusbar_main.push(self.context, "")
-        self._options = options
         
         # setup the details treeview
         self.details_list = gtk.ListStore(gobject.TYPE_STRING)
@@ -160,15 +151,9 @@ class GDebi(SimpleGladeApp):
                 self.window_main.window.set_cursor(None)
 
     def open(self, file):
-        try:
-            self._deb = DebPackage(self._cache, file)
-        except (IOError,SystemError),e:
-            err_header = _("Could not open '%s'" % os.path.basename(file))
-            err_body = _("The package might be corrupted or you are not "
-                         "allowed to open the file. Check the permissions "
-                         "of the file.")
-            self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
-
+        res = GDebiCommon.open(self, file)
+        if res == False:
+            self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
             return False
             
         self.statusbar_main.push(self.context, "")
@@ -257,57 +242,23 @@ class GDebi(SimpleGladeApp):
             self.button_details.hide()
             return
 
-        # check if the package is available in the normal sources as well
-        res = self._deb.compareToVersionInCache(useInstalled=False)
-        if not self._options.non_interactive and res != DebPackage.NO_VERSION:
-            pkg = self._cache[self._deb.pkgName]
-            title = msg = ""
-            
-            # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repository directly
-            # (when possible)
-            if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("Same version is available in a software channel")
-                    msg = _("You are recommended to install the software "
-                            "from the channel instead.")
-            elif res == DebPackage.VERSION_IS_NEWER:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("An older version is available in a software channel")
-                    msg = _("Generally you are recommended to install "
-                            "the version from the software channel, since "
-                            "it is usually better supported.")
-            elif res == DebPackage.VERSION_OUTDATED:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("A later version is available in a software "
-                              "channel")
-                    msg = _("You are strongly advised to install "
-                            "the version from the software channel, since "
-                            "it is usually better supported.")
+        if self.version_info_title != "" and self.version_info_msg != "":
+            msg = "<big><b>%s</b></big>\n\n%s" % (self.version_info_title,
+              self.version_info_msg)
+            dialog = gtk.MessageDialog(parent=self.window_main,
+                                       flags=gtk.DIALOG_MODAL,
+                                       type=gtk.MESSAGE_INFO,
+                                       buttons=gtk.BUTTONS_CLOSE)
+            dialog.set_markup(msg)
+            dialog.run()
+            dialog.destroy()
 
-            if title != "" and msg != "":
-                msg = "<big><b>%s</b></big>\n\n%s" % (title,msg)
-                dialog = gtk.MessageDialog(parent=self.window_main,
-                                           flags=gtk.DIALOG_MODAL,
-                                           type=gtk.MESSAGE_INFO,
-                                           buttons=gtk.BUTTONS_CLOSE)
-                dialog.set_markup(msg)
-                dialog.run()
-                dialog.destroy()
-
-        (install, remove, unauthenticated) = self._deb.requiredChanges
-        deps = ""
-        if len(remove) == len(install) == 0:
-            deps = _("All dependencies are satisfied")
+        if len(self.remove) == len(self.install) == 0:
             self.button_details.hide()
         else:
             self.button_details.show()
-        if len(remove) > 0:
-            # FIXME: use ngettext here
-            deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
-        if len(install) > 0:
-            deps += _("Requires the installation of %s packages") % len(install)
-        self.label_status.set_markup(deps)
+            
+        self.label_status.set_markup(self.deps)
         img = gtk.Image()
         img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
         self.button_install.set_image(img)
@@ -320,11 +271,10 @@ class GDebi(SimpleGladeApp):
         # sanity check
         if not self._deb:
           return
-        (install, remove, unauthenticated) = self._deb.requiredChanges
         self.details_list.clear()
-        for rm in remove:
+        for rm in self.remove:
             self.details_list.append([_("<b>To be removed: %s</b>") % rm])
-        for inst in install:
+        for inst in self.install:
             self.details_list.append([_("To be installed: %s") % inst])
         self.dialog_details.set_transient_for(self.window_main)
         self.dialog_details.run()
@@ -361,13 +311,9 @@ class GDebi(SimpleGladeApp):
         self.dialog_about.hide()
 
     def on_button_install_clicked(self, widget):
-        # sanity check
-        if self._deb is None:
-          return
         # do it
         self.statusbar_main.push(self.context,_("Installing package file..."))
-        (install, remove, unauthenticated) = self._deb.requiredChanges
-        if widget != None and len(unauthenticated) > 0:
+        if widget != None and len(self.unauthenticated) > 0:
             primary = _("Install unauthenticated software?")
             secondary = _("Malicous software can damage your data "
                           "and take control of your system.\n\n"
@@ -385,7 +331,7 @@ class GDebi(SimpleGladeApp):
             textview.set_cursor_visible(False)
             textview.set_editable(False) 
             buf = textview.get_buffer()
-            buf.set_text("\n".join(unauthenticated))
+            buf.set_text("\n".join(self.unauthenticated))
             scrolled.add(textview)
             scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
             scrolled.show()
@@ -408,19 +354,11 @@ Install software from trustworthy software distributors only.
                      "--always-ask-pass",
                      "--", "gdebi-gtk", "--non-interactive",
                      self._deb.file)
-
-        # check if we can lock the apt database
-        try:
-            apt_pkg.PkgSystemLock()
-        except SystemError:
-            header = _("Only one software management tool is allowed to"
-                       " run at the same time")
-            body = _("Please close the other application e.g. 'Update "
-                     "Manager', 'aptitude' or 'Synaptic' first.")
-            self.show_alert(gtk.MESSAGE_ERROR, header, body)
-            return
-        apt_pkg.PkgSystemUnLock()
-
+        res = GDebiCommon.on_button_install_clicked(self)
+        if res == False:
+            self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+            return False
+            
         # lock for install
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
@@ -429,54 +367,40 @@ Install software from trustworthy software distributors only.
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
-        # install the dependecnies
-        if len(install) > 0 or len(remove) > 0:
-            # check if we can lock the apt database
-            try:
-                apt_pkg.PkgSystemLock()
-            except SystemError:
-                header = _("Only one software management tool is allowed to"
-                           " run at the same time")
-                body = _("Please close the other application e.g. 'Update "
-                         "Manager', 'aptitude' or 'Synaptic' first.")
-                self.show_alert(gtk.MESSAGE_ERROR, header, body)
-                self.dialog_deb_install.hide()
-                self.window_main.set_sensitive(True)
-                return
-            # FIXME: use the new python-apt acquire interface here,
-            # or rather use it in the apt module and raise exception
-            # when stuff goes wrong!
-            fprogress = self.FetchProgressAdapter(self.progressbar_install,
-                                                  self.label_action,
-                                                  self.dialog_deb_install)
-            iprogress = self.InstallProgressAdapter(self.progressbar_install,
-                                                    self._term,
-                                                    self.label_action,
-                                                    self.expander_install)
-            errMsg = None
-            try:
-                res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
-                res = False
-                errMsg = "%s" % msg
-                header = _("Could not download all required files")
-                body = _("Please check your internet connection or "
-                         "installation medium.")
-            except SystemError, msg:
-                res = False
-                header = _("Could not install all dependencies"),
-                body = _("Usually this is related to an error of the "
-                         "software distributor. See the terminal window for "
-                         "more details.")
-            if not res:
-                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
-                                parent=self.dialog_deb_install)
+        # FIXME: use the new python-apt acquire interface here,
+        # or rather use it in the apt module and raise exception
+        # when stuff goes wrong!
+        fprogress = self.FetchProgressAdapter(self.progressbar_install,
+                                              self.label_action,
+                                              self.dialog_deb_install)
+        iprogress = self.InstallProgressAdapter(self.progressbar_install,
+                                                self._term,
+                                                self.label_action,
+                                                self.expander_install)
+        errMsg = None
+        try:
+            res = self._cache.commit(fprogress,iprogress)
+        except IOError, msg:
+            res = False
+            errMsg = "%s" % msg
+            header = _("Could not download all required files")
+            body = _("Please check your internet connection or "
+                     "installation medium.")
+        except SystemError, msg:
+            res = False
+            header = _("Could not install all dependencies"),
+            body = _("Usually this is related to an error of the "
+                     "software distributor. See the terminal window for "
+                     "more details.")
+        if not res:
+            self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
+                            parent=self.dialog_deb_install)
                 
-                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
-                self.button_deb_install_close.set_sensitive(True)
-                self.button_deb_install_close.grab_default()
-		self.statusbar_main.push(self.context,_("Failed to install package file"))
-                return 
+            self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
+            self.button_deb_install_close.set_sensitive(True)
+            self.button_deb_install_close.grab_default()
+            self.statusbar_main.push(self.context,_("Failed to install package file"))
+            return 
 
         # install the package itself
         self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")

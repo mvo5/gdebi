@@ -24,8 +24,8 @@ import subprocess
 import string
 import re
 import pty
-#import warnings
-#warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+import warnings
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt_pkg
 
 from qt import *
@@ -36,6 +36,7 @@ from kfile import *
 
 from DebPackage import DebPackage, Cache
 import gettext
+from GDebiCommon import GDebiCommon
 from GDebiKDEInstallDialog import GDebiKDEInstallDialog
 from GDebiKDEDialog import GDebiKDEDialog
 from KDEAptDialogs import *
@@ -49,7 +50,7 @@ def utf8(str):
       return str
   return unicode(str, 'UTF-8')
 
-class GDebiKDE(GDebiKDEDialog):
+class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
         GDebiKDEDialog.__init__(self,parent,name,modal,fl)
         # load the icon
@@ -70,17 +71,20 @@ class GDebiKDE(GDebiKDEDialog):
         self.DetailsSectionLabel.setText(_("<b>Section:</b>"))
         self.DetailsSizeLabel.setText(_("<b>Size:</b>"))
         # translation finished
-        self._deb = None
         self.setDisabled(True)
-	self.detailsButton.hide()
+        self.PackageProgressBar.setEnabled(True)
+        self.detailsButton.hide()
         self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
         self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
+        self.show()
         self.kapp = KApplication.kApplication()
         self.kapp.processEvents()
-        self.show()
         self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
-        self._cache = Cache()
-        self._options = options
+        res = GDebiCommon.__init__(self,datadir,options,file)
+        if res == False:
+            KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
+                self.error_header)
+	    sys.exit(1)	
         # try to open the file
         if file != "" and os.path.exists(file):
             self.open(file)
@@ -91,17 +95,15 @@ class GDebiKDE(GDebiKDEDialog):
             sys.exit(1)
 
         self.setEnabled(True)
-	
+        self.PackageProgressBar.hide()
     def open(self, file):
-        try:
-            self._deb = DebPackage(self._cache, file)
-        except (IOError,SystemError),e:
-            header = _("Package extraction error")
-            body = _("The selected file is not a valid .deb package or the "
-                     "package may be corrupted.")
-            KMessageBox.error(None, '<b>' + header + '</b><br>' + body, header)
-            sys.exit(1)
-            #return False
+        # load the common core
+	res = GDebiCommon.open(self,file)
+	if res == False:
+	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
+			       self.error_header)
+	    return False
+
         # set name
         self.setCaption(_("Package Installer - %s") % self._deb.pkgName)
         self.textLabel1_3.setText(self._deb.pkgName)
@@ -143,12 +145,12 @@ class GDebiKDE(GDebiKDEDialog):
 
         # check deps
         if not self._deb.checkDeb():
-            icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
-            self.installButton.setText(_("&Install Package"))
-            self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
-            self.infoBox.setText(self._deb._failureString)
+            #icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
+            self.installButton.setEnabled(False)
+            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " +
+				 self._deb._failureString + "</font>")
             self.detailsButton.hide()
-            return
+            return False
             #self.button_install.set_sensitive(False)
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
@@ -159,52 +161,17 @@ class GDebiKDE(GDebiKDEDialog):
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
 
-        # check if the package is available in the normal sources as well
-        res = self._deb.compareToVersionInCache(useInstalled=False)
-        if not self._options.non_interactive and res != DebPackage.NO_VERSION:
-            pkg = self._cache[self._deb.pkgName]
-            title = msg = ""
-            
-            # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repository directly
-            # (when possible)
-            if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("Same version is available in a software channel")
-                    msg = _("You are recommended to install the software "
-                            "from the channel instead.")
-            elif res == DebPackage.VERSION_IS_NEWER:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("An older version is available in a software channel")
-                    msg = _("Generally you are recommended to install "
-                            "the version from the software channel, since "
-                            "it is usually better supported.")
-            elif res == DebPackage.VERSION_OUTDATED:
-                if self._cache.downloadable(pkg,useCandidate=True):
-                    title = _("A later version is available in a software "
-                              "channel")
-                    msg = _("You are strongly advised to install "
-                            "the version from the software channel, since "
-                            "it is usually better supported.")
+        if self.version_info_title != "" and self.version_info_msg != "":
+            icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
+            self.infoIcon.setPixmap(icon)
+            self.infoBox.setText(self.version_info_title + '\n' + self.version_info_msg)
 
-            if title != "" and msg != "":
-                icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
-                self.infoIcon.setPixmap(icon)
-                self.infoBox.setText(title + '\n' + msg)
-
-        (install, remove, unauthenticated) = self._deb.requiredChanges
-        deps = ""
-        if len(remove) == len(install) == 0:
-            deps += _("All dependencies are satisfied")
-            #self.button_details.hide()
+        if len(self.remove) == len(self.install) == 0:
+	    pass # handled by common core
         else:
             self.detailsButton.show()
-        if len(remove) > 0:
-            # FIXME: use ngettext here
-            deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
-        if len(install) > 0:
-            deps += _("Requires the installation of %s packages") % len(install)
-        self.textLabel1_3_2.setText(deps)
+
+        self.textLabel1_3_2.setText(self.deps)
         # set various status bits
         self.DetailsVersion.setText(self._deb["Version"])
         self.DetailsMaintainer.setText(utf8(self._deb["Maintainer"]))
@@ -236,68 +203,49 @@ class GDebiKDE(GDebiKDEDialog):
                       _("<b>To install the following changes are required:</b>"),
                       changedList, _("Details"))
     def installButtonClicked(self):
-        
-	#print self._deb.file
-        # sanity check
-        if self._deb is None:
-            return
-        # do it
-        # set the window as disabled
-        self.setDisabled(True)
         # if not root, start a new instance
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
                      "gdebi-kde -n " + self._deb.file)
             self.kapp.exit()
+
+        res = self.on_button_install_clicked(self)
+	if res == False:
+	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
+			       self.error_header)
+	    return False
+        # set the window as disabled
+        self.setDisabled(True)
         self.installDialog = GDebiKDEInstall(self)
         self.installDialog.show()
 
-        (install, remove, unauthenticated) = self._deb.requiredChanges
-        if len(install) > 0 or len(remove) > 0:
-            # check if we can lock the apt database
-            try:
-                apt_pkg.PkgSystemLock()
-            except SystemError:
-                header = _("Only one software management tool is allowed to"
-                           " run at the same time")
-                body = _("Please close the other application e.g. 'Update "
-                         "Manager', 'aptitude' or 'Synaptic' first.")
-                self.errorReport = KMessageBox.error(None,header + text, header)
-                #print "only one sw management tool..."
-                return
-            # FIXME: use the new python-apt acquire interface here,
-            # or rather use it in the apt module and raise exception
-            # when stuff goes wrong!
-            fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
-                                                  self.installDialog.installingLabel,
-                                                  self.installDialog)
-            iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
-	    					    self.installDialog.installingLabel,
+        # FIXME: use the new python-apt acquire interface here,
+        # or rather use it in the apt module and raise exception
+        # when stuff goes wrong!
+        fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
+                                              self.installDialog.installingLabel,
+                                              self.installDialog)
+        iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
+						    self.installDialog.installingLabel,
 						    self.installDialog)
-            errMsg = None
-            try:
-                res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
-                res = False
-                errMsg = "%s" % msg
-                header = _("Could not download all required files")
-                body = _("Please check your internet connection or "
+        errMsg = None
+        try:
+            res = self._cache.commit(fprogress,iprogress)
+        except IOError, msg:
+            res = False
+            errMsg = "%s" % msg
+            header = _("Could not download all required files")
+            body = _("Please check your internet connection or "
                          "installation medium.")
-            except SystemError, msg:
-                res = False
-                header = _("Could not install all dependencies"),
-                body = _("Usually this is related to an error of the "
-                         "software distributor. See the terminal window for "
-                         "more details.")
-            if not res:
-                self.errorReport = KMessageBox.error(None,header + text, header)
-                #self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
-                #parent=self.dialog_deb_install)                
-                #self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
-                #self.button_deb_install_close.set_sensitive(True)
-                #self.button_deb_install_close.grab_default()
-                #self.statusbar_main.push(self.context,_("Failed to install package file"))
-                return
+        except SystemError, msg:
+            res = False
+            header = _("Could not install all dependencies"),
+            body = _("Usually this is related to an error of the "
+                     "software distributor. See the terminal window for "
+                     "more details.")
+        if not res:
+            self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
+            return
 
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
