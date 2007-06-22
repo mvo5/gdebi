@@ -1,3 +1,18 @@
+gdebi (0.2.4ubuntu2) gutsy; urgency=low
+
+  * GDebi/GDebiKDE.py
+    GDebi/KDEAptDialogs.py
+    gdebi-kde
+    data/GDebiKDEDialog.ui
+    data/GDebiKDEInstallDialog.ui
+    - added a KDE frontend for gdebi
+  * GDebi/GDebiCommon.py:
+    - added a common class for KDE and GNOME frontends
+  * GDebi/GDebi.py:
+    - the GNOME frontend is now using the common class as well
+
+ -- Martin Böhm <martin.bohm@kubuntu.org>  Fri, 22 Jun 2007 22:16:22 +0200
+
 gdebi (0.2.4ubuntu1) feisty; urgency=low
 
   * GDebi/GDebi.py:

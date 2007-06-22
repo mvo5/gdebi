@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2007-03-05 11:02+0100\n"
+"POT-Creation-Date: 2007-06-22 23:12+0200\n"
 "PO-Revision-Date: 2006-04-11 20:19+0000\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -39,16 +39,33 @@ msgid "Use alternative root dir"
 msgstr ""
 
 #: ../gdebi:70
-#, c-format
-msgid "gdebi error, file not found: %s"
+#, fuzzy, c-format
+msgid "gdebi error, file not found: %s\n"
 msgstr "gdebi hiba, nem található a következő fájl: %s"
 
-#: ../gdebi:90 ../GDebi/GDebiCli.py:119
+#: ../gdebi:89 ../gdebi:99
+#, fuzzy
+msgid "Need to be root to install packages"
+msgstr "Nem sikerült telepíteni a következő csomagot: \"%s\""
+
+#: ../gdebi:101 ../GDebi/GDebiCli.py:126
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "Kívánja telepíteni a szoftvercsomagot? [y/N]:"
 
-#: ../gdebi:94
+#: ../gdebi:105
 msgid "Y"
+msgstr ""
+
+#: ../gdebi-gtk:59
+msgid "Software index is broken"
+msgstr ""
+
+#: ../gdebi-gtk:60
+msgid ""
+"This is a major failure of your software management system. Please check for "
+"broken packages with synaptic, check the file permissions and correctness of "
+"the file '/etc/apt/sources.list' and reload the software information with: "
+"'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 
 #: ../data/gdebi.glade.h:1
@@ -139,7 +156,7 @@ msgstr "_Fájl"
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:241 ../GDebi/GDebi.py:309
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:231 ../GDebi/GDebi.py:265
 msgid "_Install Package"
 msgstr "_Csomag telepítése"
 
@@ -163,124 +180,52 @@ msgstr "Szoftvercsomag"
 msgid "GDebi Package Installer"
 msgstr "Csomagtelepítő"
 
-#: ../GDebi/GDebi.py:80
+#: ../GDebi/GDebi.py:85
 msgid "Loading..."
 msgstr "Betöltés..."
 
-#: ../GDebi/GDebi.py:100
-#, fuzzy
-msgid "Broken dependencies"
-msgstr "Függőségek telepítése..."
-
-#: ../GDebi/GDebi.py:101
-msgid ""
-"Your system has broken dependencies. This application can not continue until "
-"this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
-"a terminal window."
-msgstr ""
-
-#: ../GDebi/GDebi.py:161
-#, python-format
-msgid "Could not open '%s'"
-msgstr "\"%s\" nem nyitható meg"
-
-#: ../GDebi/GDebi.py:162 ../GDebi/GDebiCli.py:57
-msgid ""
-"The package might be corrupted or you are not allowed to open the file. "
-"Check the permissions of the file."
-msgstr ""
-"A csomag sérült lehet vagy nincs joga a fájl megnyitásához. Ellenőrizze a "
-"fájl jogosultságait."
-
 #. set window title
-#: ../GDebi/GDebi.py:175
+#: ../GDebi/GDebi.py:165
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Csomagkezelő - %s"
 
-#: ../GDebi/GDebi.py:248
+#: ../GDebi/GDebi.py:238
 msgid "Same version is already installed"
 msgstr "Már telepítve van ugyanez a verzió"
 
-#: ../GDebi/GDebi.py:249
+#: ../GDebi/GDebi.py:239
 msgid "_Reinstall Package"
 msgstr "Csomag új_ratelepítése"
 
-#: ../GDebi/GDebi.py:266
-msgid "Same version is available in a software channel"
-msgstr "Ugyanez a verzió elérhető egy szoftvercsatornán át is"
-
-#: ../GDebi/GDebi.py:267
-msgid "You are recommended to install the software from the channel instead."
-msgstr "A csomag telepítése inkább a szoftvercsatornán keresztül ajánlott."
-
-#: ../GDebi/GDebi.py:271
-msgid "An older version is available in a software channel"
-msgstr "Egy régebbi verzió érhető el egy szoftvercsatornán keresztül."
-
-#: ../GDebi/GDebi.py:272
-msgid ""
-"Generally you are recommended to install the version from the software "
-"channel, since it is usually better supported."
-msgstr ""
-"A szoftvercsatornából származó csomagverzió telepítése ajánlott, mivel az "
-"általában jobban támogatott."
-
-#: ../GDebi/GDebi.py:277
-msgid "A later version is available in a software channel"
-msgstr "Egy újabb verzió érhető el egy szoftvercsatornán keresztül."
-
-#: ../GDebi/GDebi.py:279
-msgid ""
-"You are strongly advised to install the version from the software channel, "
-"since it is usually better supported."
-msgstr ""
-"Erősen ajánlott a szoftvercsatornából származó csomagverzió telepítése, "
-"mivel az általában jobban támogatott."
-
-#: ../GDebi/GDebi.py:296
-msgid "All dependencies are satisfied"
-msgstr "Minden függőség kielégítve"
-
-#. FIXME: use ngettext here
-#: ../GDebi/GDebi.py:302
-#, python-format
-msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr "%s csomag <b>eltávolítását</b> igényli\n"
-
-#: ../GDebi/GDebi.py:304
-#, python-format
-msgid "Requires the installation of %s packages"
-msgstr "%s csomag telepítését igényli"
-
-#: ../GDebi/GDebi.py:321
+#: ../GDebi/GDebi.py:276
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Eltávolítandó: %s</b>"
 
-#: ../GDebi/GDebi.py:323
+#: ../GDebi/GDebi.py:278
 #, python-format
 msgid "To be installed: %s"
 msgstr "Telepítendő: %s"
 
-#: ../GDebi/GDebi.py:337
+#: ../GDebi/GDebi.py:292
 msgid "Open Software Package"
 msgstr "Szoftvercsomag megnyitása"
 
-#: ../GDebi/GDebi.py:342
+#: ../GDebi/GDebi.py:297
 msgid "Software packages"
 msgstr "Szoftvercsomagok"
 
-#. print "install"
-#: ../GDebi/GDebi.py:360
+#. do it
+#: ../GDebi/GDebi.py:315
 msgid "Installing package file..."
 msgstr "Csomagfájl telepítése..."
 
-#: ../GDebi/GDebi.py:363
+#: ../GDebi/GDebi.py:317
 msgid "Install unauthenticated software?"
 msgstr "Kíván hitelesítés nélküli szoftvert telepíteni?"
 
-#: ../GDebi/GDebi.py:364
+#: ../GDebi/GDebi.py:318
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
@@ -293,11 +238,11 @@ msgstr ""
 "Az alábbi csomagok hitelesítés nélküliek és ennek megfelelően akár "
 "rosszindulatúak is lehetnek."
 
-#: ../GDebi/GDebi.py:391
+#: ../GDebi/GDebi.py:345
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:392
+#: ../GDebi/GDebi.py:346
 #, fuzzy
 msgid ""
 "\n"
@@ -310,32 +255,20 @@ msgstr ""
 "A csomagfájlok saját kezű telepítése biztonsági kockázatot jelent. Csak "
 "megbízható szoftverterjesztőktől származó szoftvert telepítsen."
 
-#: ../GDebi/GDebi.py:408 ../GDebi/GDebi.py:430
-msgid "Only one software management tool is allowed to run at the same time"
-msgstr "Csak egy szoftverkezelő eszköz futhat egyidejűleg"
-
-#: ../GDebi/GDebi.py:410 ../GDebi/GDebi.py:432
-msgid ""
-"Please close the other application e.g. 'Update Manager', 'aptitude' or "
-"'Synaptic' first."
-msgstr ""
-"Először zárja be a másik alkalmazást (például: Frissítéskezelő, aptitude, "
-"Synaptic)."
-
-#: ../GDebi/GDebi.py:454
+#: ../GDebi/GDebi.py:386
 msgid "Could not download all required files"
 msgstr "Nem sikerült letölteni minden szükséges fájlt"
 
-#: ../GDebi/GDebi.py:455
+#: ../GDebi/GDebi.py:387
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 "Kérem ellenőrizze az internetkapcsolatát vagy a telepítési adathordozót."
 
-#: ../GDebi/GDebi.py:459
+#: ../GDebi/GDebi.py:391
 msgid "Could not install all dependencies"
 msgstr "Nem telepíthető minden függőség"
 
-#: ../GDebi/GDebi.py:460
+#: ../GDebi/GDebi.py:392
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -343,139 +276,203 @@ msgstr ""
 "Általában ez a szoftverterjesztő hibájával kapcsolatos. További részletekért "
 "tekintse meg a terminálablakot."
 
-#: ../GDebi/GDebi.py:470
+#: ../GDebi/GDebi.py:402
 msgid "Failed to install package file"
 msgstr "A csomagfájl telepítése meghiúsult"
 
 #. install the package itself
-#: ../GDebi/GDebi.py:474
+#: ../GDebi/GDebi.py:406
 msgid "Installing package file"
 msgstr "Csomagfájl telepítése"
 
-#: ../GDebi/GDebi.py:485
+#: ../GDebi/GDebi.py:417
 #, fuzzy
 msgid "Installation finished"
 msgstr "A telepítés befejezve"
 
-#: ../GDebi/GDebi.py:487
+#: ../GDebi/GDebi.py:419
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "A következő csomag telepítve volt: %s"
 
-#: ../GDebi/GDebi.py:489
+#: ../GDebi/GDebi.py:421
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Nem sikerült telepíteni a következő csomagot: \"%s\""
 
-#: ../GDebi/GDebi.py:491
+#: ../GDebi/GDebi.py:423
 msgid "Installation complete"
 msgstr "A telepítés befejezve"
 
-#: ../GDebi/GDebi.py:499
+#: ../GDebi/GDebi.py:431
 msgid "Failed to completely install all dependencies"
 msgstr "Az összes függőség teljes telepítése meghiúsult"
 
-#: ../GDebi/GDebi.py:500
+#: ../GDebi/GDebi.py:432
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "Ennek javításához futtassa a \"sudo apt-get install -f\" parancsot egy "
 "terminálablakból."
 
 #. ui
-#: ../GDebi/GDebi.py:580
+#: ../GDebi/GDebi.py:512
 #, python-format
 msgid "Installing '%s'..."
 msgstr "\"%s\" telepítése..."
 
-#: ../GDebi/GDebi.py:657
+#: ../GDebi/GDebi.py:589
 msgid "Installing dependencies..."
 msgstr "Függőségek telepítése..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:681
+#: ../GDebi/GDebi.py:613
 msgid "Downloading additional package files..."
 msgstr "További csomagfájlok letöltése..."
 
-#: ../GDebi/GDebi.py:688
+#: ../GDebi/GDebi.py:620
 #, fuzzy, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "%s. fájl, összesen %s. Sebesség: %s/mp"
 
-#: ../GDebi/GDebi.py:690
+#: ../GDebi/GDebi.py:622
 #, fuzzy, python-format
 msgid "File %s of %s"
 msgstr "%s. fájl, összesen %s. Sebesség: %s/mp"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:697
+#: ../GDebi/GDebi.py:629
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr ""
 "Helyezze be a következő adathordozót: \"%s\", ebbe a meghajtóba: \"%s\""
 
-#: ../GDebi/DebPackage.py:116
+#: ../GDebi/DebPackage.py:122
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
 msgstr "A következő függőség nem elégíthető ki: %s\n"
 
-#: ../GDebi/DebPackage.py:135
+#: ../GDebi/DebPackage.py:141
 #, python-format
 msgid "Conflicts with the installed package '%s'"
 msgstr "Ütközik a következő telepített csomaggal: \"%s\""
 
-#: ../GDebi/DebPackage.py:231
+#: ../GDebi/DebPackage.py:237
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "Rossz architektúra: \"%s\""
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:237
+#: ../GDebi/DebPackage.py:243
 msgid "A later version is already installed"
 msgstr "Már telepítve van egy újabb verzió"
 
-#: ../GDebi/DebPackage.py:258
+#: ../GDebi/DebPackage.py:264
 msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr "Nem sikerült kielégíteni minden függőséget (a gyorsítótár sérült)"
 
-#: ../GDebi/DebPackage.py:282
+#: ../GDebi/DebPackage.py:288
 #, python-format
 msgid "Cannot install '%s'"
 msgstr "Nem telepíthető: \"%s\""
 
-#: ../GDebi/DebPackage.py:329
+#: ../GDebi/DebPackage.py:335
 msgid "List of files could not be read, please report this as a bug"
 msgstr ""
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:338
+#: ../GDebi/DebPackage.py:344
 #, python-format
 msgid "%s is not available"
 msgstr "%s nem érhető el"
 
-#: ../GDebi/GDebiCli.py:56
-msgid "Failed to open the software package"
+#: ../GDebi/GDebiCli.py:63
+#, fuzzy
+msgid "Failed to open the software package\n"
 msgstr "A szoftvercsomag megnyitása meghiúsult"
 
-#: ../GDebi/GDebiCli.py:63
-msgid "This package is uninstallable"
+#: ../GDebi/GDebiCli.py:64
+#, fuzzy
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file.\n"
+msgstr ""
+"A csomag sérült lehet vagy nincs joga a fájl megnyitásához. Ellenőrizze a "
+"fájl jogosultságait."
+
+#: ../GDebi/GDebiCli.py:70
+#, fuzzy
+msgid "This package is uninstallable\n"
 msgstr "Ez a csomag telepíthetetlen"
 
-#: ../GDebi/GDebiCli.py:72
+#: ../GDebi/GDebiCli.py:79
 msgid "No description is available"
 msgstr "Nem érhető el leírás"
 
-#: ../GDebi/GDebiCli.py:78
+#: ../GDebi/GDebiCli.py:85
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr "Az alábbi csomagok NINCSENEK HITELESÍTVE: "
 
-#: ../GDebi/GDebiCli.py:82
+#: ../GDebi/GDebiCli.py:89
 msgid "Requires the REMOVAL of the following packages: "
 msgstr "A következő csomagok ELTÁVOLÍTÁSA szükséges: "
 
-#: ../GDebi/GDebiCli.py:87
+#: ../GDebi/GDebiCli.py:94
 msgid "Requires the installation of the following packages: "
 msgstr "A következő csomagok telepítése szükséges: "
+
+#, fuzzy
+#~ msgid "Broken dependencies"
+#~ msgstr "Függőségek telepítése..."
+
+#~ msgid "Could not open '%s'"
+#~ msgstr "\"%s\" nem nyitható meg"
+
+#~ msgid "Same version is available in a software channel"
+#~ msgstr "Ugyanez a verzió elérhető egy szoftvercsatornán át is"
+
+#~ msgid ""
+#~ "You are recommended to install the software from the channel instead."
+#~ msgstr "A csomag telepítése inkább a szoftvercsatornán keresztül ajánlott."
+
+#~ msgid "An older version is available in a software channel"
+#~ msgstr "Egy régebbi verzió érhető el egy szoftvercsatornán keresztül."
+
+#~ msgid ""
+#~ "Generally you are recommended to install the version from the software "
+#~ "channel, since it is usually better supported."
+#~ msgstr ""
+#~ "A szoftvercsatornából származó csomagverzió telepítése ajánlott, mivel az "
+#~ "általában jobban támogatott."
+
+#~ msgid "A later version is available in a software channel"
+#~ msgstr "Egy újabb verzió érhető el egy szoftvercsatornán keresztül."
+
+#~ msgid ""
+#~ "You are strongly advised to install the version from the software "
+#~ "channel, since it is usually better supported."
+#~ msgstr ""
+#~ "Erősen ajánlott a szoftvercsatornából származó csomagverzió telepítése, "
+#~ "mivel az általában jobban támogatott."
+
+#~ msgid "All dependencies are satisfied"
+#~ msgstr "Minden függőség kielégítve"
+
+#~ msgid "Requires the <b>removal</b> of %s packages\n"
+#~ msgstr "%s csomag <b>eltávolítását</b> igényli\n"
+
+#~ msgid "Requires the installation of %s packages"
+#~ msgstr "%s csomag telepítését igényli"
+
+#~ msgid "Only one software management tool is allowed to run at the same time"
+#~ msgstr "Csak egy szoftverkezelő eszköz futhat egyidejűleg"
+
+#~ msgid ""
+#~ "Please close the other application e.g. 'Update Manager', 'aptitude' or "
+#~ "'Synaptic' first."
+#~ msgstr ""
+#~ "Először zárja be a másik alkalmazást (például: Frissítéskezelő, aptitude, "
+#~ "Synaptic)."
 
 #~ msgid "Usage: %s [package.deb]"
 #~ msgstr "Használat: %s [csomag.deb]"

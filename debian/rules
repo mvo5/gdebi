@@ -22,6 +22,8 @@ build: build-stamp
 
 build-stamp: configure-stamp 
 	dh_testdir
+	kdepyuic data/GDebiKDEDialog.ui
+	kdepyuic data/GDebiKDEInstallDialog.ui
 
 	# Add here commands to compile the package.
 	#$(MAKE)
@@ -40,6 +42,9 @@ clean:
 	find . -name "*.so" -exec rm {} \;
 	find . -name "*.o" -exec rm {} \;
 	find . -name "*.pyc" -exec rm {} \;
+	find . -name "GDebiKDEDialog.py" -exec rm {} \;
+	find . -name "GDebiKDEInstallDialog.py" -exec rm {} \;
+
 
 	dh_clean 
 
@@ -51,6 +56,9 @@ install: build
 
 	# Add here commands to install the package into debian/gdebi.
 	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
+	cp GDebiKDEDialog.py $(CURDIR)/debian/tmp/usr/lib/python2.5/site-packages/GDebi/GDebiKDEDialog.py
+	cp GDebiKDEInstallDialog.py $(CURDIR)/debian/tmp/usr/lib/python2.5/site-packages/GDebi/GDebiKDEInstallDialog.py
+	
 
 
 # Build architecture-independent files here.
