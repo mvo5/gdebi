@@ -366,42 +366,43 @@ Install software from trustworthy software distributors only.
         #self._term.feed(str(0x1b)+"[2J")
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
-
-        # FIXME: use the new python-apt acquire interface here,
-        # or rather use it in the apt module and raise exception
-        # when stuff goes wrong!
-        fprogress = self.FetchProgressAdapter(self.progressbar_install,
-                                              self.label_action,
-                                              self.dialog_deb_install)
-        iprogress = self.InstallProgressAdapter(self.progressbar_install,
-                                                self._term,
+        
+        if len(self.install) > 0 or len(self.remove) > 0:
+            # FIXME: use the new python-apt acquire interface here,
+            # or rather use it in the apt module and raise exception
+            # when stuff goes wrong!
+            fprogress = self.FetchProgressAdapter(self.progressbar_install,
                                                 self.label_action,
-                                                self.expander_install)
-        errMsg = None
-        try:
-            res = self._cache.commit(fprogress,iprogress)
-        except IOError, msg:
-            res = False
-            errMsg = "%s" % msg
-            header = _("Could not download all required files")
-            body = _("Please check your internet connection or "
-                     "installation medium.")
-        except SystemError, msg:
-            res = False
-            header = _("Could not install all dependencies"),
-            body = _("Usually this is related to an error of the "
-                     "software distributor. See the terminal window for "
-                     "more details.")
-        if not res:
-            self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
-                            parent=self.dialog_deb_install)
-                
-            self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
-            self.button_deb_install_close.set_sensitive(True)
-            self.button_deb_install_close.grab_default()
-            self.statusbar_main.push(self.context,_("Failed to install package file"))
-            return 
-
+                                                self.dialog_deb_install)
+            iprogress = self.InstallProgressAdapter(self.progressbar_install,
+                                                    self._term,
+                                                    self.label_action,
+                                                    self.expander_install)
+            errMsg = None
+            try:
+                res = self._cache.commit(fprogress,iprogress)
+            except IOError, msg:
+                res = False
+                errMsg = "%s" % msg
+                header = _("Could not download all required files")
+                body = _("Please check your internet connection or "
+                        "installation medium.")
+            except SystemError, msg:
+                res = False
+                header = _("Could not install all dependencies"),
+                body = _("Usually this is related to an error of the "
+                        "software distributor. See the terminal window for "
+                        "more details.")
+            if not res:
+                self.show_alert(gtk.MESSAGE_ERROR, header, body, msg,
+                                parent=self.dialog_deb_install)
+                    
+                self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
+                self.button_deb_install_close.set_sensitive(True)
+                self.button_deb_install_close.grab_default()
+                self.statusbar_main.push(self.context,_("Failed to install package file"))
+                return 
+    
         # install the package itself
         self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,

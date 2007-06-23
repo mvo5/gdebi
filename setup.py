@@ -30,6 +30,9 @@ os.system("intltool-merge -x po data/gdebi.xml.in"\
                        " build/gdebi.xml")
 os.system("intltool-merge -d po data/gdebi.desktop.in"\
                        " build/gdebi.desktop")
+os.system("intltool-merge -d po data/gdebi-kde.desktop.in"\
+                       " build/gdebi-kde.desktop")
+
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     
@@ -40,7 +43,9 @@ setup(name='gdebi',
       data_files=[('share/gdebi/',
                    ["data/gdebi.glade"]),
                   ('share/applications',
-                   ["build/gdebi.desktop", "build/gdebi-kde.desktop"]),
+                   ["build/gdebi.desktop"]),
+		  ('share/applications/kde',
+		   ["build/gdebi-kde.desktop"]),
                   ('share/application-registry',
 		   ["data/gdebi.applications"]),
                   ('share/mime/packages/',

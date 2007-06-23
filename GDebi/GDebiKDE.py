@@ -209,7 +209,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                      "gdebi-kde -n " + self._deb.file)
             self.kapp.exit()
 
-        res = self.on_button_install_clicked(self)
+        res = GDebiCommon.on_button_install_clicked(self)
 	if res == False:
 	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
 			       self.error_header)
@@ -222,31 +222,32 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # FIXME: use the new python-apt acquire interface here,
         # or rather use it in the apt module and raise exception
         # when stuff goes wrong!
-        fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
-                                              self.installDialog.installingLabel,
-                                              self.installDialog)
-        iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
-						    self.installDialog.installingLabel,
-						    self.installDialog)
-        errMsg = None
-        try:
-            res = self._cache.commit(fprogress,iprogress)
-        except IOError, msg:
-            res = False
-            errMsg = "%s" % msg
-            header = _("Could not download all required files")
-            body = _("Please check your internet connection or "
-                         "installation medium.")
-        except SystemError, msg:
-            res = False
-            header = _("Could not install all dependencies"),
-            body = _("Usually this is related to an error of the "
-                     "software distributor. See the terminal window for "
-                     "more details.")
-        if not res:
-            self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
-            return
-
+        if len(self.install) > 0 or len(self.remove) > 0:
+            fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
+                                                self.installDialog.installingLabel,
+                                                self.installDialog)
+            iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
+                                                        self.installDialog.installingLabel,
+                                                        self.installDialog)
+            errMsg = None
+            try:
+                res = self._cache.commit(fprogress,iprogress)
+            except IOError, msg:
+                res = False
+                errMsg = "%s" % msg
+                header = _("Could not download all required files")
+                body = _("Please check your internet connection or "
+                            "installation medium.")
+            except SystemError, msg:
+                res = False
+                header = _("Could not install all dependencies"),
+                body = _("Usually this is related to an error of the "
+                        "software distributor. See the terminal window for "
+                        "more details.")
+            if not res:
+                self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
+                return
+    
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = KDEDpkgInstallProgress(self._deb.file,
