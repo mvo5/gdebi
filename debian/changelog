@@ -1,5 +1,6 @@
-gdebi (0.2.4ubuntu2) gutsy; urgency=low
+gdebi (0.2.6ubuntu1) gutsy; urgency=low
 
+  [Martin Böhm]
   * GDebi/GDebiKDE.py
     GDebi/KDEAptDialogs.py
     gdebi-kde
@@ -10,8 +11,26 @@ gdebi (0.2.4ubuntu2) gutsy; urgency=low
     - added a common class for KDE and GNOME frontends
   * GDebi/GDebi.py:
     - the GNOME frontend is now using the common class as well
+  [Michael Vogt]
+  * debian/rules, debian/gdebi-kde.install:
+    - install into the gdebi-core, gdebi, gdebi-kde packages
+  * debian/control:
+    - added XS-Vcs-Bzr header
+    - adjusted python-apt dependency
 
- -- Martin Böhm <martin.bohm@kubuntu.org>  Fri, 22 Jun 2007 22:16:22 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 25 Jun 2007 10:20:02 +0200
+
+gdebi (0.2.5ubuntu1) gutsy; urgency=low
+
+  * cosmetic fixes in progress reporting
+  * updated fi.po (thanks to Timo Jyrinki!)
+  * pass DEBIAN_FRONTEND and APT_LISTCHANGES_FRONTEND 
+    environment to dpkg too 
+  * Recommend libgnome2-perl for gnome debconf 
+  * GDebi/GDebiCli.py:
+    - do not crash on unknown file types (LP#113094)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 24 May 2007 12:14:48 +0200
 
 gdebi (0.2.4ubuntu1) feisty; urgency=low
 
@@ -23,7 +42,7 @@ gdebi (0.2.4ubuntu1) feisty; urgency=low
     - do not crash when runing as non-root (LP#93786)
     - do not crash if the cache can not be opened (LP#95650)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 26 Mar 2007 12:34:58 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  5 Apr 2007 18:25:36 +0200
 
 gdebi (0.2.3ubuntu1) feisty; urgency=low
 

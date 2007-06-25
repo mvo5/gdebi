@@ -53,6 +53,7 @@ def utf8(str):
 class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
         GDebiKDEDialog.__init__(self,parent,name,modal,fl)
+        GDebiCommon.__init__(self,datadir,options,file)
         # load the icon
         self.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
@@ -80,8 +81,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.kapp = KApplication.kApplication()
         self.kapp.processEvents()
         self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
-        res = GDebiCommon.__init__(self,datadir,options,file)
-        if res == False:
+        if not self.openCache():
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
                 self.error_header)
 	    sys.exit(1)	
@@ -153,6 +153,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             return False
             #self.button_install.set_sensitive(False)
 
+        # set version_info_{msg,title} strings
+        self.compareDebWithCache()
+			
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
@@ -160,6 +163,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             #self.button_install.grab_default()
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
+
+        # load changes into (self.install, self.remove, self.unauthenticated)
+        self.getChanges()
 
         if self.version_info_title != "" and self.version_info_msg != "":
             icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
@@ -209,8 +215,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                      "gdebi-kde -n " + self._deb.file)
             self.kapp.exit()
 
-        res = GDebiCommon.on_button_install_clicked(self)
-	if res == False:
+        if not self.try_acquire_lock():
 	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
 			       self.error_header)
 	    return False
@@ -223,6 +228,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # or rather use it in the apt module and raise exception
         # when stuff goes wrong!
         if len(self.install) > 0 or len(self.remove) > 0:
+            if not self.acquire_lock():
+              self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+              return False
             fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
                                                 self.installDialog.installingLabel,
                                                 self.installDialog)

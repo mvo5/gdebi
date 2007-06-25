@@ -55,6 +55,7 @@ def utf8(str):
 class GDebi(SimpleGladeApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
+        GDebiCommon.__init__(self,datadir,options,file)
         localesApp="gdebi"
         localesDir="/usr/share/locale"
         gtk.glade.bindtextdomain(localesApp, localesDir)
@@ -62,7 +63,6 @@ class GDebi(SimpleGladeApp, GDebiCommon):
 
         SimpleGladeApp.__init__(self, domain="gdebi",
                                 path=datadir+"/gdebi.glade")
-
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
         try:
@@ -72,8 +72,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         except Exception, e:
           print "Error loading logo"
           pass
-          
-
+  
         # set image of button "install"  manually, since it is overriden 
         #by set_label otherwise
         img = gtk.Image()
@@ -99,8 +98,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         self.window_main.show()
         
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
-        res = GDebiCommon.__init__(self,datadir,options,file)
-        if res == False:
+        if not self.openCache():
             self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
             sys.exit(1)
         self.statusbar_main.push(self.context, "")
@@ -234,6 +232,9 @@ class GDebi(SimpleGladeApp, GDebiCommon):
             self.button_details.hide()
             return
 
+        # set version_info_{msg,title} strings
+        self.compareDebWithCache()
+
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
@@ -253,6 +254,8 @@ class GDebi(SimpleGladeApp, GDebiCommon):
             dialog.run()
             dialog.destroy()
 
+        # load changes into (self.install, self.remove, self.unauthenticated)
+        self.getChanges()
         if len(self.remove) == len(self.install) == 0:
             self.button_details.hide()
         else:
@@ -354,8 +357,8 @@ Install software from trustworthy software distributors only.
                      "--always-ask-pass",
                      "--", "gdebi-gtk", "--non-interactive",
                      self._deb.file)
-        res = GDebiCommon.on_button_install_clicked(self)
-        if res == False:
+
+        if not self.try_acquire_lock():
             self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
             return False
             
@@ -371,6 +374,9 @@ Install software from trustworthy software distributors only.
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
             # when stuff goes wrong!
+            if not self.acquire_lock():
+              self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+              return False
             fprogress = self.FetchProgressAdapter(self.progressbar_install,
                                                 self.label_action,
                                                 self.dialog_deb_install)
@@ -523,7 +529,9 @@ Install software from trustworthy software distributors only.
             # the command
             cmd = "/usr/bin/dpkg"
             argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
-            env = ["VTE_PTY_KEEP_FD=%s"% writefd]
+            env = ["VTE_PTY_KEEP_FD=%s"% writefd,
+                   "DEBIAN_FRONTEND=gnome",
+                   "APT_LISTCHANGES_FRONTEND=gtk"]
             #print cmd
             #print argv
             #print env
@@ -589,6 +597,7 @@ Install software from trustworthy software distributors only.
             apt_pkg.PkgSystemUnLock()
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
+            self.progress.set_text("")
         def statusChange(self, pkg, percent, status):
             self.progress.set_fraction(percent/100.0)
             self.progress.set_text(status)
@@ -617,10 +626,11 @@ Install software from trustworthy software distributors only.
             #print "stop()"
             pass
         def pulse(self):
+            at_item = min(self.currentItems + 1, self.totalItems)
             if self.currentCPS > 0:
-                self.progress.set_text(_("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+                self.progress.set_text(_("File %s of %s at %sB/s" % (at_item,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
             else:
-                self.progress.set_text(_("File %s of %s" % (self.currentItems,self.totalItems)))
+                self.progress.set_text(_("File %s of %s" % (at_item,self.totalItems)))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
             while gtk.events_pending():
                 gtk.main_iteration()

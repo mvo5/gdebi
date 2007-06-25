@@ -82,7 +82,12 @@ class DscSrcPackage(DebPackage):
 if __name__ == "__main__":
 
     cache = Cache()
-    s = DscSrcPackage(cache, "../tests/3ddesktop_0.2.9-6.dsc")
-    s.checkDep()
-    print "Missing deps: ",s.missingDeps
-    print "Print required changes: ", s.requiredChanges
+    #s = DscSrcPackage(cache, "../tests/3ddesktop_0.2.9-6.dsc")
+    #s.checkDep()
+    #print "Missing deps: ",s.missingDeps
+    #print "Print required changes: ", s.requiredChanges
+
+    s = DscSrcPackage(cache)
+    d = "libc6 (>= 2.3.2), libaio (>= 0.3.96) | libaio1 (>= 0.3.96)"
+    print s._satisfyDepends(apt_pkg.ParseDepends(d))
+    

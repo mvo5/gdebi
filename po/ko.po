@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2007-06-22 23:12+0200\n"
+"POT-Creation-Date: 2007-06-25 12:24+0200\n"
 "PO-Revision-Date: 2006-04-09 13:25+0000\n"
 "Last-Translator: atie <atie.at.matrix@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "gdebi 에러, 파일을 찾을 수 없습니다: %s"
 msgid "Need to be root to install packages"
 msgstr "'%s' 패키지 설치를 실패 하였습니다"
 
-#: ../gdebi:101 ../GDebi/GDebiCli.py:126
+#: ../gdebi:101 ../GDebi/GDebiCli.py:127
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "소프트웨어 패키지를 설치하기를 원하십니까? [y/N]:"
 
@@ -81,31 +81,31 @@ msgstr "(c) 2005-2006 Canonical"
 msgid "<b><big>   </big></b>"
 msgstr "<b><big> </big></b>"
 
-#: ../data/gdebi.glade.h:4
+#: ../data/gdebi.glade.h:4 ../GDebi/GDebiKDE.py:70
 msgid "<b>Maintainer:</b>"
 msgstr "<b>관리자:</b>"
 
-#: ../data/gdebi.glade.h:5
+#: ../data/gdebi.glade.h:5 ../GDebi/GDebiKDE.py:71
 msgid "<b>Priority:</b>"
 msgstr "<b>우선 순위:</b>"
 
-#: ../data/gdebi.glade.h:6
+#: ../data/gdebi.glade.h:6 ../GDebi/GDebiKDE.py:72
 msgid "<b>Section:</b>"
 msgstr "<b>분류:</b>"
 
-#: ../data/gdebi.glade.h:7
+#: ../data/gdebi.glade.h:7 ../GDebi/GDebiKDE.py:73
 msgid "<b>Size:</b>"
 msgstr "<b>크기:</b>"
 
-#: ../data/gdebi.glade.h:8
+#: ../data/gdebi.glade.h:8 ../GDebi/GDebiKDE.py:209
 msgid "<b>To install the following changes are required:</b>"
 msgstr "<b>설치하는데 다음의 변경이 필요 합니다:</b>"
 
-#: ../data/gdebi.glade.h:9
+#: ../data/gdebi.glade.h:9 ../GDebi/GDebiKDE.py:69
 msgid "<b>Version:</b>"
 msgstr "<b>버전:</b>"
 
-#: ../data/gdebi.glade.h:10
+#: ../data/gdebi.glade.h:10 ../GDebi/GDebiKDE.py:64
 msgid "Description"
 msgstr "설명"
 
@@ -113,7 +113,8 @@ msgstr "설명"
 msgid "Description:"
 msgstr "설명:"
 
-#: ../data/gdebi.glade.h:12
+#: ../data/gdebi.glade.h:12 ../GDebi/GDebiKDE.py:63 ../GDebi/GDebiKDE.py:65
+#: ../GDebi/GDebiKDE.py:210
 msgid "Details"
 msgstr "상세 정보"
 
@@ -121,7 +122,7 @@ msgstr "상세 정보"
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, /usr/share/common-licenses/GPL 참조"
 
-#: ../data/gdebi.glade.h:14
+#: ../data/gdebi.glade.h:14 ../GDebi/GDebiKDE.py:66
 msgid "Included Files"
 msgstr "포함된 파일"
 
@@ -133,11 +134,13 @@ msgstr "소프트웨어 패키지를 설치하고 보기"
 msgid "Package Installer"
 msgstr "패키지 설치 프로그램"
 
-#: ../data/gdebi.glade.h:17
+#. first, we load all the default descriptions -- pyuic doesn't use
+#. gettext as default
+#: ../data/gdebi.glade.h:17 ../GDebi/GDebiKDE.py:61
 msgid "Package:"
 msgstr "패키지:"
 
-#: ../data/gdebi.glade.h:18
+#: ../data/gdebi.glade.h:18 ../GDebi/GDebiKDE.py:62
 msgid "Status:"
 msgstr "상태:"
 
@@ -157,7 +160,7 @@ msgstr "파일(_F)"
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:231 ../GDebi/GDebi.py:265
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:229 ../GDebi/GDebi.py:268
 msgid "_Install Package"
 msgstr "패키지 설치(_I)"
 
@@ -179,52 +182,53 @@ msgstr "소프트웨어 패키지"
 msgid "GDebi Package Installer"
 msgstr "패키지 설치 프로그램"
 
-#: ../GDebi/GDebi.py:85
+#: ../GDebi/GDebi.py:84
 msgid "Loading..."
 msgstr "읽어들이는 중..."
 
 #. set window title
-#: ../GDebi/GDebi.py:165
+#. set name
+#: ../GDebi/GDebi.py:163 ../GDebi/GDebiKDE.py:108
 #, python-format
 msgid "Package Installer - %s"
 msgstr "패키지 설치 프로그램 - %s"
 
-#: ../GDebi/GDebi.py:238
+#: ../GDebi/GDebi.py:239
 msgid "Same version is already installed"
 msgstr "같은 버전이 이미 설치되어 있습니다"
 
-#: ../GDebi/GDebi.py:239
+#: ../GDebi/GDebi.py:240
 msgid "_Reinstall Package"
 msgstr "패키지 재 설치(_R)"
 
-#: ../GDebi/GDebi.py:276
+#: ../GDebi/GDebi.py:279
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>삭제함: %s</b>"
 
-#: ../GDebi/GDebi.py:278
+#: ../GDebi/GDebi.py:281 ../GDebi/GDebiKDE.py:204
 #, python-format
 msgid "To be installed: %s"
 msgstr "설치함: %s"
 
-#: ../GDebi/GDebi.py:292
+#: ../GDebi/GDebi.py:295
 msgid "Open Software Package"
 msgstr "프로그램 패키지 열기"
 
-#: ../GDebi/GDebi.py:297
+#: ../GDebi/GDebi.py:300
 msgid "Software packages"
 msgstr "소프트웨어 패키지"
 
 #. do it
-#: ../GDebi/GDebi.py:315
+#: ../GDebi/GDebi.py:318
 msgid "Installing package file..."
 msgstr "패키지 파일 설치 중 ..."
 
-#: ../GDebi/GDebi.py:317
+#: ../GDebi/GDebi.py:320
 msgid "Install unauthenticated software?"
 msgstr "인증되지 않은 소프트웨어를 설치 합니까?"
 
-#: ../GDebi/GDebi.py:318
+#: ../GDebi/GDebi.py:321
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
@@ -235,11 +239,11 @@ msgstr ""
 "\n"
 "아래의 패키지는 인증되지 않았으며 오동작하는 소프트웨어일 수도 있습니다."
 
-#: ../GDebi/GDebi.py:345
+#: ../GDebi/GDebi.py:348
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:346
+#: ../GDebi/GDebi.py:349
 #, fuzzy
 msgid ""
 "\n"
@@ -252,19 +256,19 @@ msgstr ""
 "수동으로 패키지 파일을 설치하는 것은 보안 위험이 될 수도 있습니다. 신뢰할 수 "
 "있는 프로그램 배포자가 제공하는 프로그램만 설치 하십시오."
 
-#: ../GDebi/GDebi.py:386
+#: ../GDebi/GDebi.py:393 ../GDebi/GDebiKDE.py:246
 msgid "Could not download all required files"
 msgstr "필요한 모든 파일들을 다운로드 할 수 없습니다"
 
-#: ../GDebi/GDebi.py:387
+#: ../GDebi/GDebi.py:394 ../GDebi/GDebiKDE.py:247
 msgid "Please check your internet connection or installation medium."
 msgstr "인터넷 연결 또는 설치 매체를 점검 하십시오."
 
-#: ../GDebi/GDebi.py:391
+#: ../GDebi/GDebi.py:398 ../GDebi/GDebiKDE.py:251
 msgid "Could not install all dependencies"
 msgstr "모든 의존 패키지들을 설치할 수 없습니다"
 
-#: ../GDebi/GDebi.py:392
+#: ../GDebi/GDebi.py:399 ../GDebi/GDebiKDE.py:252
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -272,120 +276,130 @@ msgstr ""
 "이것은 보통 소프트웨어 배포자의 오류와 관련 됩니다. 좀 더 자세한 내용은 터미"
 "널 창을 보십시오."
 
-#: ../GDebi/GDebi.py:402
+#: ../GDebi/GDebi.py:409
 msgid "Failed to install package file"
 msgstr "패키지 파일 설치를 실패 하였습니다"
 
 #. install the package itself
-#: ../GDebi/GDebi.py:406
+#: ../GDebi/GDebi.py:413
 msgid "Installing package file"
 msgstr "패키지 파일 설치 중"
 
-#: ../GDebi/GDebi.py:417
+#. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
+#. show the button
+#. self.button_deb_install_close.set_sensitive(True)
+#. self.button_deb_install_close.grab_default()
+#: ../GDebi/GDebi.py:424 ../GDebi/GDebiKDE.py:270
 #, fuzzy
 msgid "Installation finished"
 msgstr "설치를 마쳤습니다"
 
-#: ../GDebi/GDebi.py:419
+#: ../GDebi/GDebi.py:426 ../GDebi/GDebiKDE.py:272
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "'%s' 패키지를 설치 하였습니다"
 
-#: ../GDebi/GDebi.py:421
+#: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:274
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "'%s' 패키지 설치를 실패 하였습니다"
 
-#: ../GDebi/GDebi.py:423
+#: ../GDebi/GDebi.py:430
 msgid "Installation complete"
 msgstr "설치를 마쳤습니다"
 
-#: ../GDebi/GDebi.py:431
+#: ../GDebi/GDebi.py:438 ../GDebi/GDebiKDE.py:284
 msgid "Failed to completely install all dependencies"
 msgstr "모든 의존된 패키지를 완전히 설치하는데 실패 하였습니다"
 
-#: ../GDebi/GDebi.py:432
+#: ../GDebi/GDebi.py:439 ../GDebi/GDebiKDE.py:285
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "이것을 고치려면 터미널 창에서 'sudo apt-get install -f' 를 실행 하십시오."
 
 #. ui
-#: ../GDebi/GDebi.py:512
+#: ../GDebi/GDebi.py:519 ../GDebi/KDEAptDialogs.py:79
 #, python-format
 msgid "Installing '%s'..."
 msgstr "'%s' 설치 중..."
 
-#: ../GDebi/GDebi.py:589
+#: ../GDebi/GDebi.py:598 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "의존 패키지 설치 중..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:613
+#: ../GDebi/GDebi.py:623 ../GDebi/KDEAptDialogs.py:192
+#: ../GDebi/KDEAptDialogs.py:204 ../GDebi/KDEAptDialogs.py:206
 msgid "Downloading additional package files..."
 msgstr "추가 패키지 파일을 다운로드 중..."
 
-#: ../GDebi/GDebi.py:620
+#: ../GDebi/GDebi.py:631 ../GDebi/KDEAptDialogs.py:204
 #, fuzzy, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "파일 %s of %s 속도 %s/s"
 
-#: ../GDebi/GDebi.py:622
+#: ../GDebi/GDebi.py:633 ../GDebi/KDEAptDialogs.py:206
 #, fuzzy, python-format
 msgid "File %s of %s"
 msgstr "파일 %s of %s 속도 %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:629
+#: ../GDebi/GDebi.py:640 ../GDebi/KDEAptDialogs.py:210
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "'%s'(을)를 드라이브 '%s'에 넣으십시오"
 
-#: ../GDebi/DebPackage.py:122
+#: ../GDebi/DebPackage.py:121
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
 msgstr "의존 패키지를 만족 못함: %s\n"
 
-#: ../GDebi/DebPackage.py:141
+#: ../GDebi/DebPackage.py:140
 #, python-format
 msgid "Conflicts with the installed package '%s'"
 msgstr "설치된 패키지 '%s'(와)과 충돌"
 
-#: ../GDebi/DebPackage.py:237
+#: ../GDebi/DebPackage.py:236
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "잘못된 아키텍처 '%s'"
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:243
+#: ../GDebi/DebPackage.py:242
 msgid "A later version is already installed"
 msgstr "새 버전이 이미 설치되어 있습니다"
 
-#: ../GDebi/DebPackage.py:264
+#: ../GDebi/DebPackage.py:263
 msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr "모든 의존 패키지를 만족하는데 실패 하였습니다 (깨진 캐쉬)"
 
-#: ../GDebi/DebPackage.py:288
+#: ../GDebi/DebPackage.py:290
 #, python-format
 msgid "Cannot install '%s'"
 msgstr "'%s' (을)를 설치할 수 없습니다"
 
-#: ../GDebi/DebPackage.py:335
+#: ../GDebi/DebPackage.py:337
 msgid "List of files could not be read, please report this as a bug"
 msgstr ""
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:344
+#: ../GDebi/DebPackage.py:346
 #, python-format
 msgid "%s is not available"
 msgstr "%s 정보가 없습니다"
 
-#: ../GDebi/GDebiCli.py:63
+#: ../GDebi/GDebiCli.py:61
+#, python-format
+msgid "Unkown package type '%s', exiting"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:64
 #, fuzzy
 msgid "Failed to open the software package\n"
 msgstr "소프트웨어 패키지를 여는데 실패 하였습니다"
 
-#: ../GDebi/GDebiCli.py:64
+#: ../GDebi/GDebiCli.py:65
 #, fuzzy
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
@@ -394,80 +408,147 @@ msgstr ""
 "패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한"
 "을 점검 하십시오."
 
-#: ../GDebi/GDebiCli.py:70
+#: ../GDebi/GDebiCli.py:71
 #, fuzzy
 msgid "This package is uninstallable\n"
 msgstr "이 패키지는 설치할 수 없습니다"
 
-#: ../GDebi/GDebiCli.py:79
+#: ../GDebi/GDebiCli.py:80 ../GDebi/GDebiKDE.py:144
 msgid "No description is available"
 msgstr "설명이 없습니다"
 
-#: ../GDebi/GDebiCli.py:85
+#: ../GDebi/GDebiCli.py:86
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr "다음 패키지는 인증되지 않았습니다: "
 
-#: ../GDebi/GDebiCli.py:89
+#: ../GDebi/GDebiCli.py:90
 msgid "Requires the REMOVAL of the following packages: "
 msgstr "다음 패키지의 삭제가 필요 합니다: "
 
-#: ../GDebi/GDebiCli.py:94
+#: ../GDebi/GDebiCli.py:95
 msgid "Requires the installation of the following packages: "
 msgstr "다음 패키지의 설치가 필요 합니다: "
 
+#: ../GDebi/GDebiKDE.py:68 ../GDebi/GDebiKDE.py:193
 #, fuzzy
-#~ msgid "Broken dependencies"
-#~ msgstr "의존 패키지 설치 중..."
+msgid "&Install Package"
+msgstr "패키지 설치(_I)"
 
-#~ msgid "Could not open '%s'"
-#~ msgstr "'%s' (을)를 열 수 없습니다"
+#: ../GDebi/GDebiKDE.py:92
+#, fuzzy
+msgid "The package file does not exist"
+msgstr "이 패키지는 설치할 수 없습니다"
 
-#~ msgid "Same version is available in a software channel"
-#~ msgstr "소프트웨어 보관소에 같은 버전이 사용 가능 합니다"
+#: ../GDebi/GDebiKDE.py:93
+msgid ""
+"A nonexistent file has been selected for installation. Please select an "
+"existing .deb package file."
+msgstr ""
 
-#~ msgid ""
-#~ "You are recommended to install the software from the channel instead."
-#~ msgstr "대신에 보관소에 있는 소프트웨어를 설치하는 것을 권장 합니다."
+#. self.textLabel1_3_2.setText(_("Same version is already installed"))
+#: ../GDebi/GDebiKDE.py:161
+#, fuzzy
+msgid "&Reinstall Package"
+msgstr "패키지 재 설치(_R)"
 
-#~ msgid "An older version is available in a software channel"
-#~ msgstr "소프트웨어 보관소에 이전 버전이 사용 가능 합니다"
+#: ../GDebi/GDebiKDE.py:196
+#, fuzzy
+msgid "Re&install Package"
+msgstr "패키지 재 설치(_R)"
 
-#~ msgid ""
-#~ "Generally you are recommended to install the version from the software "
-#~ "channel, since it is usually better supported."
-#~ msgstr ""
-#~ "소프트웨어 보관소에 있는 버전을 설치하는 것을 일반적으로 권장 합니다, 보"
-#~ "다 나은 지원이 되기 때문 입니다."
+#: ../GDebi/GDebiKDE.py:206
+#, fuzzy, python-format
+msgid "To be removed: %s"
+msgstr "<b>삭제함: %s</b>"
 
-#~ msgid "A later version is available in a software channel"
-#~ msgstr "소프트웨어 보관소에 새 버전이 사용 가능 합니다"
+#: ../GDebi/GDebiCommon.py:61
+#, fuzzy
+msgid "Broken dependencies"
+msgstr "의존 패키지 설치 중..."
 
-#~ msgid ""
-#~ "You are strongly advised to install the version from the software "
-#~ "channel, since it is usually better supported."
-#~ msgstr ""
-#~ "소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다, 보다 나"
-#~ "은 지원이 되기 때문 입니다."
+#: ../GDebi/GDebiCommon.py:62
+msgid ""
+"Your system has broken dependencies. This application can not continue until "
+"this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
+"a terminal window."
+msgstr ""
 
-#~ msgid "All dependencies are satisfied"
-#~ msgstr "모든 의존 패키지가 만족됨"
+#: ../GDebi/GDebiCommon.py:76
+#, python-format
+msgid "Could not open '%s'"
+msgstr "'%s' (을)를 열 수 없습니다"
 
-#~ msgid "Requires the <b>removal</b> of %s packages\n"
-#~ msgstr "%s 패키지의 <b>삭제</b>가 필요 합니다\n"
+#: ../GDebi/GDebiCommon.py:77
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file."
+msgstr ""
+"패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한"
+"을 점검 하십시오."
 
-#~ msgid "Requires the installation of %s packages"
-#~ msgstr "%s 패키지의 설치가 필요 합니다"
+#: ../GDebi/GDebiCommon.py:93
+msgid "Same version is available in a software channel"
+msgstr "소프트웨어 보관소에 같은 버전이 사용 가능 합니다"
 
-#~ msgid "Only one software management tool is allowed to run at the same time"
-#~ msgstr ""
-#~ "동시에는 오직 하나의 소프트웨어 관리 도구만을 실행하는 것이 허용 됩니다"
+#: ../GDebi/GDebiCommon.py:94
+msgid "You are recommended to install the software from the channel instead."
+msgstr "대신에 보관소에 있는 소프트웨어를 설치하는 것을 권장 합니다."
 
-#~ msgid ""
-#~ "Please close the other application e.g. 'Update Manager', 'aptitude' or "
-#~ "'Synaptic' first."
-#~ msgstr ""
-#~ "먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' "
-#~ "을 종료 하십시오."
+#: ../GDebi/GDebiCommon.py:98
+msgid "An older version is available in a software channel"
+msgstr "소프트웨어 보관소에 이전 버전이 사용 가능 합니다"
+
+#: ../GDebi/GDebiCommon.py:99
+msgid ""
+"Generally you are recommended to install the version from the software "
+"channel, since it is usually better supported."
+msgstr ""
+"소프트웨어 보관소에 있는 버전을 설치하는 것을 일반적으로 권장 합니다, 보다 나"
+"은 지원이 되기 때문 입니다."
+
+#: ../GDebi/GDebiCommon.py:104
+msgid "A later version is available in a software channel"
+msgstr "소프트웨어 보관소에 새 버전이 사용 가능 합니다"
+
+#: ../GDebi/GDebiCommon.py:106
+msgid ""
+"You are strongly advised to install the version from the software channel, "
+"since it is usually better supported."
+msgstr ""
+"소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다, 보다 나은 "
+"지원이 되기 때문 입니다."
+
+#: ../GDebi/GDebiCommon.py:114
+msgid "All dependencies are satisfied"
+msgstr "모든 의존 패키지가 만족됨"
+
+#. FIXME: use ngettext here
+#: ../GDebi/GDebiCommon.py:117
+#, python-format
+msgid "Requires the <b>removal</b> of %s packages\n"
+msgstr "%s 패키지의 <b>삭제</b>가 필요 합니다\n"
+
+#: ../GDebi/GDebiCommon.py:119
+#, python-format
+msgid "Requires the installation of %s packages"
+msgstr "%s 패키지의 설치가 필요 합니다"
+
+#: ../GDebi/GDebiCommon.py:127 ../GDebi/GDebiCommon.py:145
+msgid "Only one software management tool is allowed to run at the same time"
+msgstr ""
+"동시에는 오직 하나의 소프트웨어 관리 도구만을 실행하는 것이 허용 됩니다"
+
+#: ../GDebi/GDebiCommon.py:129 ../GDebi/GDebiCommon.py:147
+msgid ""
+"Please close the other application e.g. 'Update Manager', 'aptitude' or "
+"'Synaptic' first."
+msgstr ""
+"먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' 을 "
+"종료 하십시오."
+
+#: ../GDebi/KDEAptDialogs.py:211
+msgid "Media Change"
+msgstr ""
 
 #~ msgid "Usage: %s [package.deb]"
 #~ msgstr "사용법: %s [package.deb]"

@@ -33,6 +33,10 @@ os.system("intltool-merge -d po data/gdebi.desktop.in"\
 os.system("intltool-merge -d po data/gdebi-kde.desktop.in"\
                        " build/gdebi-kde.desktop")
 
+# build the kde .ui -> py stuff
+for ui in glob.glob("data/*.ui"):
+    os.system("cd build/lib/GDebi/ ; kdepyuic  ../../../%s" % ui)
+
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     

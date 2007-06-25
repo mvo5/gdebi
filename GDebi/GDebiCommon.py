@@ -45,14 +45,17 @@ def utf8(str):
     return unicode(str, 'UTF-8')
 	  
 	  
-class GDebiCommon:
+class GDebiCommon(object):
     # cprogress may be different in child classes
-    cprogress = None
-    deps = ""
-    version_info_title = version_info_msg = ""
     def __init__(self, datadir, options, file=""):
+        self.cprogress = None
+        self.deps = ""
+        self.version_info_title = ""
+        self.version_info_msg = ""
         self._deb = None
      	self._options = options
+
+    def openCache(self):
         self._cache = Cache(self.cprogress)
         if self._cache._depcache.BrokenCount > 0:
                 self.error_header = _("Broken dependencies")
@@ -63,6 +66,7 @@ class GDebiCommon:
                              "'sudo apt-get install -f' "
                              "in a terminal window.")
 		return False
+        return True
 
     def open(self, file):
         # open the package
@@ -75,6 +79,7 @@ class GDebiCommon:
                          "of the file.")
             return False
 
+    def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
         res = self._deb.compareToVersionInCache(useInstalled=False)
         if not self._options.non_interactive and res != DebPackage.NO_VERSION:
@@ -102,22 +107,20 @@ class GDebiCommon:
                             "the version from the software channel, since "
                             "it is usually better supported.")
 
+    def getChanges(self):
         (self.install, self.remove, self.unauthenticated) = self._deb.requiredChanges
         self.deps = ""
         if len(self.remove) == len(self.install) == 0:
             self.deps = _("All dependencies are satisfied")
         if len(self.remove) > 0:
             # FIXME: use ngettext here
-            self.deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
+            self.deps += _("Requires the <b>removal</b> of %s packages\n") % len(self.remove)
         if len(self.install) > 0:
-            self.deps += _("Requires the installation of %s packages") % len(install)
+            self.deps += _("Requires the installation of %s packages") % len(self.install)
+        return True
 
-    def on_button_install_clicked(self):
-        # sanity check ( moved here )
-        if self._deb is None:
-          return False
-
-        # check if we can lock the apt database
+    def try_acquire_lock(self):
+        " check if we can lock the apt database "
         try:
             apt_pkg.PkgSystemLock()
         except SystemError:
@@ -127,18 +130,27 @@ class GDebiCommon:
                      "Manager', 'aptitude' or 'Synaptic' first.")
             return False
         apt_pkg.PkgSystemUnLock()
+        return True
 
-        # install the dependencies
-        if len(self.install) > 0 or len(self.remove) > 0:
-            # check if we can lock the apt database
-            try:
-                apt_pkg.PkgSystemLock()
-            except SystemError:
-                self.error_header = _("Only one software management tool is allowed to"
-                           " run at the same time")
-                self.error_body = _("Please close the other application e.g. 'Update "
-                         "Manager', 'aptitude' or 'Synaptic' first.")
-                return False
-            # FIXME: use the new python-apt acquire interface here,
-            # or rather use it in the apt module and raise exception
-            # when stuff goes wrong!
+    def acquire_lock(self):
+        " lock the pkgsystem for install "
+        # sanity check ( moved here )
+        if self._deb is None:
+          return False
+
+        # check if we can lock the apt database
+        try:
+            apt_pkg.PkgSystemLock()
+        except SystemError:
+            self.error_header = _("Only one software management tool is allowed to"
+                                  " run at the same time")
+            self.error_body = _("Please close the other application e.g. 'Update "
+                                "Manager', 'aptitude' or 'Synaptic' first.")
+            return False
+        return True
+
+    def release_lock(self):
+        " release the pkgsystem lock "
+        apt_pkg.PkgSystemLock()
+        return True
+    

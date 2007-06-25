@@ -63,7 +63,7 @@ class DebPackage(object):
             # check for virtual pkgs
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
-                    #print "%s is virtual" % depname
+                    self._dbg(3,"_isOrGroupSatisfied(): %s is virtual dep" % depname)
                     for pkg in self._cache.getProvidersForVirtual(depname):
                         if pkg.isInstalled:
                             return True
@@ -73,7 +73,6 @@ class DebPackage(object):
             instver = inst.installedVersion
             if instver != None and apt_pkg.CheckDep(instver,oper,ver) == True:
                 return True
-
         return False
             
 
@@ -271,8 +270,11 @@ class DebPackage(object):
         return self._satisfyDepends(apt_pkg.ParseDepends(dependsstr))
 
     def _satisfyDepends(self, depends):
-        # turn off MarkAndSweep via a action group
-        _actiongroup = apt_pkg.GetPkgActionGroup(self._cache._depcache)
+        # turn off MarkAndSweep via a action group (if available)
+        try:
+            _actiongroup = apt_pkg.GetPkgActionGroup(self._cache._depcache)
+        except AttributeError, e:
+            pass
         # check depends
         for or_group in depends:
             #print "or_group: %s" % or_group

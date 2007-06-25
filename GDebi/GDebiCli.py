@@ -58,7 +58,8 @@ class GDebiCli(object):
                   os.path.basename(file) == "control"):
                 self._deb = DscSrcPackage(self._cache, file)
             else:
-                raise Exception
+                sys.stderr.write(_("Unkown package type '%s', exiting") % file)
+                sys.exit(1)
         except (IOError,SystemError),e:
             sys.stderr.write(_("Failed to open the software package\n"))
             sys.stderr.write(_("The package might be corrupted or you are not "
