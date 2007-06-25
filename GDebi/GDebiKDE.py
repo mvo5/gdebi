@@ -153,6 +153,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             return False
             #self.button_install.set_sensitive(False)
 
+        # set version_info_{msg,title} strings
+        self.compareDebWithCache()
+			
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
@@ -160,6 +163,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             #self.button_install.grab_default()
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
+
+        # load changes into (self.install, self.remove, self.unauthenticated)
+        self.getChanges()
 
         if self.version_info_title != "" and self.version_info_msg != "":
             icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
