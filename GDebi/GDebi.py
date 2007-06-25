@@ -232,6 +232,9 @@ class GDebi(SimpleGladeApp, GDebiCommon):
             self.button_details.hide()
             return
 
+        # set version_info_{msg,title} strings
+        self.compareDebWithCache()
+
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
@@ -251,6 +254,8 @@ class GDebi(SimpleGladeApp, GDebiCommon):
             dialog.run()
             dialog.destroy()
 
+        # load changes into (self.install, self.remove, self.unauthenticated)
+        self.getChanges()
         if len(self.remove) == len(self.install) == 0:
             self.button_details.hide()
         else:

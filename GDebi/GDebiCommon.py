@@ -79,6 +79,7 @@ class GDebiCommon(object):
                          "of the file.")
             return False
 
+    def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
         res = self._deb.compareToVersionInCache(useInstalled=False)
         if not self._options.non_interactive and res != DebPackage.NO_VERSION:
@@ -106,15 +107,17 @@ class GDebiCommon(object):
                             "the version from the software channel, since "
                             "it is usually better supported.")
 
+    def getChanges(self):
         (self.install, self.remove, self.unauthenticated) = self._deb.requiredChanges
         self.deps = ""
         if len(self.remove) == len(self.install) == 0:
             self.deps = _("All dependencies are satisfied")
         if len(self.remove) > 0:
             # FIXME: use ngettext here
-            self.deps += _("Requires the <b>removal</b> of %s packages\n") % len(remove)
+            self.deps += _("Requires the <b>removal</b> of %s packages\n") % len(self.remove)
         if len(self.install) > 0:
-            self.deps += _("Requires the installation of %s packages") % len(install)
+            self.deps += _("Requires the installation of %s packages") % len(self.install)
+        return True
 
     def try_acquire_lock(self):
         " check if we can lock the apt database "

@@ -63,7 +63,7 @@ class DebPackage(object):
             # check for virtual pkgs
             if not self._cache.has_key(depname):
                 if self._cache.isVirtualPkg(depname):
-                    #print "%s is virtual" % depname
+                    self._dbg(3,"_isOrGroupSatisfied(): %s is virtual dep" % depname)
                     for pkg in self._cache.getProvidersForVirtual(depname):
                         if pkg.isInstalled:
                             return True
@@ -73,7 +73,6 @@ class DebPackage(object):
             instver = inst.installedVersion
             if instver != None and apt_pkg.CheckDep(instver,oper,ver) == True:
                 return True
-
         return False
             
 
