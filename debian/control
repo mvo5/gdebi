@@ -4,13 +4,14 @@ Priority: optional
 Maintainer: Michael Vogt <mvo@ubuntu.com>
 XSBC-Original-Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Gustavo Franco <stratus@debian.org>, Michael Vogt <mvo@debian.org>
-Build-Depends: debhelper (>= 5.0.38), python-dev, python-central (>= 0.5.6), intltool
+Build-Depends: debhelper (>= 5.0.38), python-dev, python-central (>= 0.5.6), intltool, python-kde3-dev (>= 3.16.0-0ubuntu11)
 XS-Python-Version: current
 Standards-Version: 3.7.2
+XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/
 
 Package: gdebi-core
 Architecture: all
-Depends: ${python:Depends}, ${shlibs:Depends}, python-apt (>= 0.6.20ubuntu2)
+Depends: ${python:Depends}, ${shlibs:Depends}, python-apt (>= 0.7.0)
 Replaces: gdebi (<< 0.2ubuntu3)
 Conflicts: gdebi (<< 0.2ubuntu3)
 XB-Python-Version: ${python:Versions}
@@ -32,3 +33,14 @@ Description: Simple tool to install deb files
  located packages.
  .
  This package contains the graphical user interface.
+
+Package: gdebi-kde
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, gdebi-core (= ${Source-Version}), python-kde3 (>= 3.16.0-0ubuntu11)
+XB-Python-Version: ${python:Versions}
+Description: Simple tool to install deb files
+ gdebi lets you install local deb packages resolving and installing 
+ its dependencies. apt does the same, but only for remote (http, ftp)
+ located packages.
+ .
+ This package contains the KDE user interface.

@@ -40,6 +40,9 @@ clean:
 	find . -name "*.so" -exec rm {} \;
 	find . -name "*.o" -exec rm {} \;
 	find . -name "*.pyc" -exec rm {} \;
+	find . -name "GDebiKDEDialog.py" -exec rm {} \;
+	find . -name "GDebiKDEInstallDialog.py" -exec rm {} \;
+
 
 	dh_clean 
 
@@ -51,7 +54,6 @@ install: build
 
 	# Add here commands to install the package into debian/gdebi.
 	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
-
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -77,14 +79,21 @@ binary-arch: build install
 #	dh_installinfo
 	dh_installman
 
-	# We split the GDebi python module across the two packages:
+	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
 		d=../gdebi-core/$$s; p=site-packages/GDebi;		\
+		k=../gdebi-kde/$$s;                                     \
 		g=../gdebi/$$s;						\
-		mkdir -p $$d/$$p $$g/$$p;				\
+		mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
 		cp $$s/$$p/* $$d/$$p/.;					\
+		# gtk                                                   \
 		for f in SimpleGladeApp GDebi; do			\
 			mv $$d/$$p/$$f.* $$g/$$p/.;			\
+		done;							\
+		# kde                                                   \
+		for f in GDebiKDEDialog GDebiKDE                  \
+                         GDebiKDEInstallDialog KDEAptDialogs; do	\
+			mv $$d/$$p/$$f.* $$k/$$p/.;			\
 		done;							\
 	done
 

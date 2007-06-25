@@ -30,17 +30,26 @@ os.system("intltool-merge -x po data/gdebi.xml.in"\
                        " build/gdebi.xml")
 os.system("intltool-merge -d po data/gdebi.desktop.in"\
                        " build/gdebi.desktop")
+os.system("intltool-merge -d po data/gdebi-kde.desktop.in"\
+                       " build/gdebi-kde.desktop")
+
+# build the kde .ui -> py stuff
+for ui in glob.glob("data/*.ui"):
+    os.system("cd build/lib/GDebi/ ; kdepyuic  ../../../%s" % ui)
+
 # HACK: make sure that the mo files are generated and up-to-date
 os.system("cd po; make update-po")
     
 setup(name='gdebi',
       version=version,
       packages=['GDebi'],
-      scripts=['gdebi','gdebi-gtk'],
+      scripts=['gdebi','gdebi-gtk','gdebi-kde'],
       data_files=[('share/gdebi/',
                    ["data/gdebi.glade"]),
                   ('share/applications',
                    ["build/gdebi.desktop"]),
+		  ('share/applications/kde',
+		   ["build/gdebi-kde.desktop"]),
                   ('share/application-registry',
 		   ["data/gdebi.applications"]),
                   ('share/mime/packages/',

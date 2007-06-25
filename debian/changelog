@@ -1,3 +1,25 @@
+gdebi (0.2.6ubuntu1) gutsy; urgency=low
+
+  [Martin Böhm]
+  * GDebi/GDebiKDE.py
+    GDebi/KDEAptDialogs.py
+    gdebi-kde
+    data/GDebiKDEDialog.ui
+    data/GDebiKDEInstallDialog.ui
+    - added a KDE frontend for gdebi
+  * GDebi/GDebiCommon.py:
+    - added a common class for KDE and GNOME frontends
+  * GDebi/GDebi.py:
+    - the GNOME frontend is now using the common class as well
+  [Michael Vogt]
+  * debian/rules, debian/gdebi-kde.install:
+    - install into the gdebi-core, gdebi, gdebi-kde packages
+  * debian/control:
+    - added XS-Vcs-Bzr header
+    - adjusted python-apt dependency
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 25 Jun 2007 10:20:02 +0200
+
 gdebi (0.2.5ubuntu1) gutsy; urgency=low
 
   * cosmetic fixes in progress reporting

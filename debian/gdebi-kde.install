@@ -1,0 +1,2 @@
+debian/tmp/usr/bin/gdebi-kde
+debian/tmp/usr/share/applications/kde/*.desktop
