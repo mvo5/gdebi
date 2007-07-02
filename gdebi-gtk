@@ -33,6 +33,10 @@ from GDebi.GDebi import GDebi
 from gettext import gettext as _
 import gettext
 
+import pygtk
+pygtk.require("2.0")
+import gtk
+
 
 if __name__ == "__main__":
     data="/usr/share/gdebi"
@@ -64,7 +68,11 @@ if __name__ == "__main__":
                     "reload the software information with: "
                     "'sudo apt-get update' and 'sudo apt-get install -f'."
                     )
-        self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
+        dia = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
+                                gtk.BUTTONS_OK, "")
+        dia.set_markup("<b><big>%s</big></b>" % err_header)
+        dia.format_secondary_text(err_body)
+        dia.run()
         sys.exit(1)
         
     if options.non_interactive == True:

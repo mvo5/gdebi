@@ -1,4 +1,11 @@
-gdebi (0.2.6ubuntu1) gutsy; urgency=low
+gdebi (0.3.1ubuntu1) gutsy; urgency=low
+
+  * gdebi-gtk:
+    - fix error dialog when software cache is broken
+
+ --
+
+gdebi (0.3.0ubuntu1) gutsy; urgency=low
 
   [Martin Böhm]
   * GDebi/GDebiKDE.py
