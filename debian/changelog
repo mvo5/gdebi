@@ -2,8 +2,11 @@ gdebi (0.3.1ubuntu1) gutsy; urgency=low
 
   * gdebi-gtk:
     - fix error dialog when software cache is broken
+  * GDebi/DebPackage.py:
+    - use APT::Architecture when checking if the architecture
+      of the package is for us
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 06 Aug 2007 17:03:31 +0200
 
 gdebi (0.3.0ubuntu1) gutsy; urgency=low
 

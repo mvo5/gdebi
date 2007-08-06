@@ -231,7 +231,7 @@ class DebPackage(object):
 
         # check arch
         arch = self._sections["Architecture"]
-        if  arch != "all" and arch != apt_pkg.CPU:
+        if  arch != "all" and arch != apt_pkg.Config.Find("APT::Architecture"):
             self._dbg(1,"ERROR: Wrong architecture dude!")
             self._failureString = _("Wrong architecture '%s'" % arch)
             return False
