@@ -1,3 +1,10 @@
+gdebi (0.3.2ubuntu1) gutsy; urgency=low
+
+  * do not crash on reinstall, thanks to Joao Pinto (LP: #123674)
+  * fix off-by-one error when parsing dpkg output
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Sat, 06 Oct 2007 10:37:32 +0200
+
 gdebi (0.3.1ubuntu1) gutsy; urgency=low
 
   * gdebi-gtk:

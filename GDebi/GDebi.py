@@ -234,6 +234,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
+        self.getChanges()
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
@@ -255,7 +256,6 @@ class GDebi(SimpleGladeApp, GDebiCommon):
             dialog.destroy()
 
         # load changes into (self.install, self.remove, self.unauthenticated)
-        self.getChanges()
         if len(self.remove) == len(self.install) == 0:
             self.button_details.hide()
         else:
@@ -553,7 +553,7 @@ Install software from trustworthy software distributors only.
                         break
                     if read.endswith("\n"):
                         statusl = string.split(read, ":")
-                        if len(statusl) < 2:
+                        if len(statusl) < 3:
                             print "got garbage from dpkg: '%s'" % read
                             read = ""
                             break

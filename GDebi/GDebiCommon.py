@@ -54,6 +54,9 @@ class GDebiCommon(object):
         self.version_info_msg = ""
         self._deb = None
      	self._options = options
+        self.install = 0
+        self.remove = 0
+        self.unauthenticated = 0
 
     def openCache(self):
         self._cache = Cache(self.cprogress)
