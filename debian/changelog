@@ -1,3 +1,15 @@
+gdebi (0.3.3) unstable; urgency=high
+
+  * NMU of 0.3.2 from bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/.
+    Last Debian upload was 0.2.5~pre1, which like this package was just an
+    upload to Debian of the Ubuntu version.
+  * debian/rules clean deletes some otherwise leftover files:
+     build GDebi/Version.py po/mo.
+  * Undo changes to Maintainer (wiki.ubuntu.com/DebianMaintainerField)
+  * Cut-and-paste 0.2.5~pre1 changelog entry into right place.
+
+ -- Ian Jackson <ian@davenant.greenend.org.uk>  Wed, 07 Nov 2007 22:31:39 +0000
+
 gdebi (0.3.2ubuntu1) gutsy; urgency=low
 
   * do not crash on reinstall, thanks to Joao Pinto (LP: #123674, #129526)
@@ -48,6 +60,15 @@ gdebi (0.2.5ubuntu1) gutsy; urgency=low
     - do not crash on unknown file types (LP#113094)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 24 May 2007 12:14:48 +0200
+
+gdebi (0.2.5~pre1) experimental; urgency=low
+
+  * Merge changes up to gdebi 0.2.4ubuntu1.
+    - Introduce in Debian the package split, gdebi-core for CLI and 
+      gdebi for GUI.
+  * Ack NMU, thanks Thomas.
+
+ -- Gustavo Franco <stratus@debian.org>  Mon, 23 Apr 2007 03:12:47 -0300
 
 gdebi (0.2.4ubuntu1) feisty; urgency=low
 

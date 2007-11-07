@@ -43,6 +43,7 @@ clean:
 	find . -name "GDebiKDEDialog.py" -exec rm {} \;
 	find . -name "GDebiKDEInstallDialog.py" -exec rm {} \;
 
+	rm -rf build GDebi/Version.py po/mo
 
 	dh_clean 
 

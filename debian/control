@@ -1,8 +1,7 @@
 Source: gdebi
 Section: admin
 Priority: optional
-Maintainer: Michael Vogt <mvo@ubuntu.com>
-XSBC-Original-Maintainer: Gustavo Franco <stratus@debian.org>
+Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Gustavo Franco <stratus@debian.org>, Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 5.0.38), python-dev, python-central (>= 0.5.6), intltool, python-kde3-dev (>= 3.16.0-0ubuntu11)
 XS-Python-Version: current
