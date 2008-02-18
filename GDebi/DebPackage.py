@@ -334,7 +334,10 @@ class DebPackage(object):
             try:
                 apt_inst.debExtract(open(self.file), extract_cb, "data.tar.bz2")
             except SystemError, e:
-                return [_("List of files could not be read, please report this as a bug")]
+                try:
+                    apt_inst.debExtract(open(self.file), extract_cb, "data.tar.lzma")
+                except SystemError, e:
+                    return [_("List of files could not be read, please report this as a bug")]
         return files
     filelist = property(filelist)
     

@@ -53,6 +53,8 @@ if __name__ == "__main__":
                       help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
 
+    gtk.init_check()
+
     afile = ""
     if len(args) >= 1:
         afile = args[0]
