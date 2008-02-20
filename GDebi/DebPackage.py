@@ -184,6 +184,13 @@ class DebPackage(object):
                 depends.extend(apt_pkg.ParseDepends(self._sections[key]))
         return depends
 
+    def getProvides(self):
+        provides = []
+        key = "Provides"
+        if self._sections.has_key(key):
+            provides = apt_pkg.ParseDepends(self._sections[key])
+        return provides
+
     def checkConflicts(self):
         """ check if the pkg conflicts with a existing or to be installed
             package. Return True if the pkg is ok """
@@ -284,6 +291,16 @@ class DebPackage(object):
                     return False
         # now try it out in the cache
             for pkg in self._needPkgs:
+                providesitself = False
+                for provide in self.getProvides():
+                    if provide[0][0] == pkg:
+                        # Package provides its own depends (e.g. nvidia-glx-new provides nvidia-glx, but also conflicts with it)
+                        # TODO: this should probably also check provide[1,..] and provide[0..n][1..2] (versions)
+                        providesitself = True
+                        break
+                if providesitself:
+                    continue
+
                 try:
                     self._cache[pkg].markInstall(fromUser=False)
                 except SystemError, e:

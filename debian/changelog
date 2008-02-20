@@ -1,9 +1,14 @@
 gdebi (0.3.5) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
   * GDebi/DebPackage.py:
     - support lzma packages
   * gdebi-gtk:
     - run gtk.init_check()
+
+  [ Daniel Hahler ]
+  * properly handle packages that conflict with their own provides.
+    Fixes LP: #141126.
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 18 Feb 2008 17:32:36 +0100
 
