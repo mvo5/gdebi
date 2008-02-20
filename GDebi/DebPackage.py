@@ -126,6 +126,7 @@ class DebPackage(object):
             pkg """
         # FIXME: deal with conflicts against its own provides
         #        (e.g. Provides: ftp-server, Conflicts: ftp-server)
+        self._dbg(3, "_checkSinglePkgConflict() pkg='%s' ver='%s' oper='%s'" % (pkgname, ver, oper))
         pkgver = None
         cand = self._cache[pkgname]
         if cand.isInstalled:
@@ -136,7 +137,8 @@ class DebPackage(object):
         #print "ver: %s" % ver
         #print "pkgver: %s " % pkgver
         #print "oper: %s " % oper
-        if pkgver and apt_pkg.CheckDep(pkgver,oper,ver):
+        if (pkgver and apt_pkg.CheckDep(pkgver,oper,ver) and 
+            not self.replacesRealPkg(pkgname, oper, ver)):
             self._failureString += _("Conflicts with the installed package '%s'" % cand.name)
             return True
         return False
@@ -155,12 +157,14 @@ class DebPackage(object):
 
             # check conflicts with virtual pkgs
             if not self._cache.has_key(depname):
+                # FIXME: we have to check for virtual replaces here as 
+                #        well (to pass tests/gdebi-test8.deb)
                 if self._cache.isVirtualPkg(depname):
                     for pkg in self._cache.getProvidersForVirtual(depname):
-                        #print "conflicts virtual check: %s" % pkg.name
+                        self._dbg(3, "conflicts virtual check: %s" % pkg.name)
                         # P/C/R on virtal pkg, e.g. ftpd
                         if self.pkgName == pkg.name:
-                            #print "conflict on self, ignoring"
+                            self._dbg(3, "conflict on self, ignoring")
                             continue
                         if self._checkSinglePkgConflict(pkg.name,ver,oper):
                             self._installedConflicts.add(pkg.name)
@@ -190,6 +194,33 @@ class DebPackage(object):
         if self._sections.has_key(key):
             provides = apt_pkg.ParseDepends(self._sections[key])
         return provides
+
+    def getReplaces(self):
+        replaces = []
+        key = "Replaces"
+        if self._sections.has_key(key):
+            replaces = apt_pkg.ParseDepends(self._sections[key])
+        return replaces
+
+    def replacesRealPkg(self, pkgname, oper, ver):
+        """ 
+        return True if the deb packages replaces a real (not virtual)
+        packages named pkgname, oper, ver 
+        """
+        self._dbg(3, "replacesPkg() %s %s %s" % (pkgname,oper,ver))
+        pkgver = None
+        cand = self._cache[pkgname]
+        if cand.isInstalled:
+            pkgver = cand.installedVersion
+        elif cand.markedInstall:
+            pkgver = cand.candidateVersion
+        for or_group in self.getReplaces():
+            for (name, ver, oper) in or_group:
+                if (name == pkgname and 
+                    apt_pkg.CheckDep(pkgver,oper,ver)):
+                    self._dbg(3, "we have a replaces in our package for the conflict against '%s'" % (pkgname))
+                    return True
+        return False
 
     def checkConflicts(self):
         """ check if the pkg conflicts with a existing or to be installed
@@ -291,16 +322,6 @@ class DebPackage(object):
                     return False
         # now try it out in the cache
             for pkg in self._needPkgs:
-                providesitself = False
-                for provide in self.getProvides():
-                    if provide[0][0] == pkg:
-                        # Package provides its own depends (e.g. nvidia-glx-new provides nvidia-glx, but also conflicts with it)
-                        # TODO: this should probably also check provide[1,..] and provide[0..n][1..2] (versions)
-                        providesitself = True
-                        break
-                if providesitself:
-                    continue
-
                 try:
                     self._cache[pkg].markInstall(fromUser=False)
                 except SystemError, e:
