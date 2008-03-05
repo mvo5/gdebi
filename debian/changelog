@@ -1,3 +1,11 @@
+gdebi (0.3.6) hardy; urgency=low
+
+  * GDebi/GDebiCommon.py:
+    - init self.install, self.remove with the correct type 
+      (LP: #173249)
+
+ --
+
 gdebi (0.3.5) hardy; urgency=low
 
   [ Michael Vogt ]
