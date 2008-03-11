@@ -4,7 +4,7 @@ gdebi (0.3.6) hardy; urgency=low
     - init self.install, self.remove with the correct type 
       (LP: #173249)
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 11 Mar 2008 21:31:54 +0100
 
 gdebi (0.3.5) hardy; urgency=low
 
