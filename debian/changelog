@@ -3,6 +3,8 @@ gdebi (0.3.6) hardy; urgency=low
   * GDebi/GDebiCommon.py:
     - init self.install, self.remove with the correct type 
       (LP: #173249)
+  * debian/control:
+    - updated standards version to 3.7.3
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 11 Mar 2008 21:31:54 +0100
 
