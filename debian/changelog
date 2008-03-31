@@ -1,3 +1,10 @@
+gdebi (0.3.7) unstable; urgency=low
+
+  * po/cs.po:
+    - updated (thanks to Kamil Páral)
+
+ --
+
 gdebi (0.3.6) hardy; urgency=low
 
   * GDebi/GDebiCommon.py:
