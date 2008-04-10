@@ -1,9 +1,16 @@
-gdebi (0.3.7) unstable; urgency=low
+gdebi (0.3.7) hardy; urgency=low
 
+  [ Michael Vogt ]
   * po/cs.po:
     - updated (thanks to Kamil Páral)
 
- --
+  [ Harald Sitter ]
+  * debian/gdebi-kde.links:
+    - Make gdebi-kde available in KDE 4 (LP: #17721)
+  * data/gdebi-kde.desktop.in:
+    - Set the initial preference for gdebi-kde
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Thu, 10 Apr 2008 16:18:18 +0200
 
 gdebi (0.3.6) hardy; urgency=low
 
