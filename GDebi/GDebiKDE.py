@@ -212,7 +212,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # if not root, start a new instance
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
-                     "gdebi-kde -n " + self._deb.file)
+                     "gdebi-kde -n ", self._deb.file)
             self.kapp.exit()
 
         if not self.try_acquire_lock():
