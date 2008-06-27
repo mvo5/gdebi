@@ -48,6 +48,17 @@ class GDebiCli(object):
             arch = Popen([options.rootdir+"/usr/bin/dpkg","--print-architecture"], stdout=PIPE).communicate()[0]
             if arch:
                 apt_pkg.Config.Set("APT::Architecture",arch.strip())
+        if options.apt_opts:
+            for o in options.apt_opts:
+                if o.find('=') < 0:
+                    sys.stderr.write(_("Configuration items must be specified with a =<value>\n"))
+                    sys.exit(1)
+                (name, value) = o.split('=', 1)
+                try:
+                    apt_pkg.Config.Set(name, value)
+                except:
+                    sys.stderr.write(_("Couldn't set APT option %s to %s\n") % (name, value))
+                    sys.exit(1)
         self._cache = Cache(tp, rootdir=options.rootdir)
 
     def open(self, file):

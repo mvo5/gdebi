@@ -50,6 +50,10 @@ if __name__ == "__main__":
                       action="store_true", dest="non_interactive",
                       default=False,
                       help=unicode(_("Run non-interactive (dangerous!)"),"UTF-8"))
+    parser.add_option("-o", "--option",
+                      action="append", dest="apt_opts",
+                      default=[],
+                      help=unicode(_("Set an APT configuration option"),"UTF-8"))
     parser.add_option("-q", "--quiet",
                       action="store_true", dest="quiet",
                       default=False,
