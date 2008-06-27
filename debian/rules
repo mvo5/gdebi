@@ -32,16 +32,14 @@ install: build
 	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
 
 binary-indep: build install
-
-binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs
-	dh_installdocs
-	dh_installexamples
-	dh_installmime
-	dh_desktop
-	dh_installman
+	dh_installchangelogs -i
+	dh_installdocs -i
+	dh_installexamples -i
+	dh_installmime -i
+	dh_desktop -i
+	dh_installman -i
 	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
 		d=../gdebi-core/$$s; p=site-packages/GDebi;		\
@@ -59,18 +57,20 @@ binary-arch: build install
 			mv $$d/$$p/$$f.* $$k/$$p/.;			\
 		done;							\
 	done
-	dh_install -Xsite-packages/GDebi --list-missing
-	dh_link
-	dh_compress
-	dh_fixperms
-	dh_pycentral
+	dh_install -i -Xsite-packages/GDebi --list-missing
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_pycentral -i
 	find debian/gdebi debian/gdebi-core -type d -print0 | xargs -0 \
 		rmdir -p --ignore-fail-on-non-empty --
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary-arch: build install
 
 arch-build:
 	rm -rf debian/arch-build
