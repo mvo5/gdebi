@@ -2,6 +2,7 @@ gdebi (0.3.9) UNRELEASED; urgency=low
 
   * Add parsing of -o, --option in the CLI to pass arbitrary APT configuration
     options.
+  * Add trailing \n to the "Unkown package type" string.
 
  -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 17:19:43 +0200
 
