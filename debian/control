@@ -16,6 +16,7 @@ XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/
 Package: gdebi-core
 Architecture: all
 Depends: ${python:Depends},
+         ${misc:Depends},
          python-apt (>= 0.7.0)
 Replaces: gdebi (<< 0.2ubuntu3)
 Conflicts: gdebi (<< 0.2ubuntu3)
@@ -30,6 +31,7 @@ Description: Simple tool to install deb files
 Package: gdebi
 Architecture: all
 Depends: ${python:Depends},
+         ${misc:Depends},
          gdebi-core (= ${source:Version}),
          python-gtk2 (>= 2.6.3-2),
          python-glade2 (>= 2.6.3-2),
@@ -48,6 +50,7 @@ Description: Simple tool to install deb files
 Package: gdebi-kde
 Architecture: all
 Depends: ${python:Depends},
+         ${misc:Depends},
          gdebi-core (= ${source:Version}),
          python-kde3 (>= 3.16.0-0ubuntu11)
 XB-Python-Version: ${python:Versions}

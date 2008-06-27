@@ -1,4 +1,4 @@
-gdebi (0.3.10) UNRELEASED; urgency=low
+gdebi (0.3.10) intrepid; urgency=low
 
   * Cleanup rules.
   * Use binary-indep instead of binary-arch; thanks lintian.
@@ -6,6 +6,7 @@ gdebi (0.3.10) UNRELEASED; urgency=low
   * Drop dh_shlibdeps and ${shlib:Depends}.
   * Use ${source:Version} instead of ${binary:Version}.
   * Wrap Uploaders, build-deps and deps.
+  * Add ${misc:Depends}.
 
  -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 18:22:13 +0200
 
