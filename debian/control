@@ -23,7 +23,7 @@ Description: Simple tool to install deb files
 
 Package: gdebi
 Architecture: all
-Depends: ${python:Depends}, gdebi-core (= ${binary:Version}), python-gtk2 (>= 2.6.3-2), python-glade2 (>= 2.6.3-2), python-vte (>= 1:0.11.15-4), gksu (>= 2.0.0-1ubuntu3), gnome-icon-theme (>= 2.14.0-1)
+Depends: ${python:Depends}, gdebi-core (= ${source:Version}), python-gtk2 (>= 2.6.3-2), python-glade2 (>= 2.6.3-2), python-vte (>= 1:0.11.15-4), gksu (>= 2.0.0-1ubuntu3), gnome-icon-theme (>= 2.14.0-1)
 Recommends: libgnome2-perl
 XB-Python-Version: ${python:Versions}
 Description: Simple tool to install deb files
@@ -35,7 +35,7 @@ Description: Simple tool to install deb files
 
 Package: gdebi-kde
 Architecture: all
-Depends: ${python:Depends}, gdebi-core (= ${binary:Version}), python-kde3 (>= 3.16.0-0ubuntu11)
+Depends: ${python:Depends}, gdebi-core (= ${source:Version}), python-kde3 (>= 3.16.0-0ubuntu11)
 XB-Python-Version: ${python:Versions}
 Description: Simple tool to install deb files
  gdebi lets you install local deb packages resolving and installing 

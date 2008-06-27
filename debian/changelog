@@ -4,6 +4,7 @@ gdebi (0.3.10) UNRELEASED; urgency=low
   * Use binary-indep instead of binary-arch; thanks lintian.
   * Call dh_* with -i in binary-indep.
   * Drop dh_shlibdeps and ${shlib:Depends}.
+  * Use ${source:Version} instead of ${binary:Version}.
 
  -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 18:22:13 +0200
 
