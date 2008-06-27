@@ -1,85 +1,47 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# GNU copyright 1997 to 1999 by Joey Hess.
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-
-PKG=gdebi
-DEBVER=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
-DEB_BUILD_PROG:=debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
-
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	# Add here commands to configure the package.
-
-	touch configure-stamp
-
+PKG := gdebi
+DEBVER := $(shell dpkg-parsechangelog | sed -n 's/^Version: //p')
+DEB_BUILD_PROG := debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
 
 build: build-stamp
 
-build-stamp: configure-stamp 
+build-stamp:
 	dh_testdir
-
-	# Add here commands to compile the package.
-	#$(MAKE)
 	python ./setup.py build
+	touch $@
 
-	touch build-stamp
-
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp
-
-	# Add here commands to clean up after the build process.
-	#-$(MAKE) clean
+	rm -f build-stamp
 	python ./setup.py clean --all
 	find . -name "*.so" -exec rm {} \;
 	find . -name "*.o" -exec rm {} \;
 	find . -name "*.pyc" -exec rm {} \;
 	find . -name "GDebiKDEDialog.py" -exec rm {} \;
 	find . -name "GDebiKDEInstallDialog.py" -exec rm {} \;
-
 	rm -rf build GDebi/Version.py po/mo
-
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs
-
-	# Add here commands to install the package into debian/gdebi.
 	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
 
-# Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
 
-# Build architecture-dependent files here.
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_installdocs
 	dh_installexamples
-#	dh_install
-#	dh_installmenu
-#	dh_installdebconf	
-#	dh_installlogrotate
-#	dh_installemacsen
-#	dh_installpam
 	dh_installmime
 	dh_desktop
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
 	dh_installman
-
 	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
 		d=../gdebi-core/$$s; p=site-packages/GDebi;		\
@@ -97,24 +59,18 @@ binary-arch: build install
 			mv $$d/$$p/$$f.* $$k/$$p/.;			\
 		done;							\
 	done
-
 	dh_install -Xsite-packages/GDebi --list-missing
-
 	dh_link
-#	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_pycentral
-   
 	find debian/gdebi debian/gdebi-core -type d -print0 | xargs -0 \
 		rmdir -p --ignore-fail-on-non-empty --
-
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
-
 
 arch-build:
 	rm -rf debian/arch-build
@@ -122,6 +78,5 @@ arch-build:
 	tar -c --exclude=arch-build --no-recursion -f - `bzr inventory` | (cd debian/arch-build/$(PKG)-$(DEBVER);tar xf -)
 	(cd debian/arch-build/$(PKG)-$(DEBVER) && $(DEB_BUILD_PROG))
 
-
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
+.PHONY: build clean binary-indep binary-arch binary install

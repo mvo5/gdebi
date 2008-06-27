@@ -1,3 +1,9 @@
+gdebi (0.3.10) UNRELEASED; urgency=low
+
+  * Cleanup rules.
+
+ -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 18:22:13 +0200
+
 gdebi (0.3.9) intrepid; urgency=low
 
   * Add parsing of -o, --option in the CLI to pass arbitrary APT configuration
