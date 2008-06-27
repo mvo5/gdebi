@@ -1,11 +1,11 @@
-gdebi (0.3.9) UNRELEASED; urgency=low
+gdebi (0.3.9) intrepid; urgency=low
 
   * Add parsing of -o, --option in the CLI to pass arbitrary APT configuration
     options.
   * Add trailing \n to the "Unkown package type" string.
   * Fix typo (s/Unkown/Unkown).
 
- -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 17:19:43 +0200
+ -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 18:11:42 +0200
 
 gdebi (0.3.8) hardy; urgency=low
 

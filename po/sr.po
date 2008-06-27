@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2007-06-25 12:24+0200\n"
+"POT-Creation-Date: 2008-06-27 18:12+0200\n"
 "PO-Revision-Date: 2006-04-29 17:23+0000\n"
 "Last-Translator: Jovan Turanjanin <jovan_turanjanin@yahoo.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -23,44 +23,48 @@ msgid ""
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
 
-#: ../gdebi:52 ../gdebi-gtk:49
+#: ../gdebi:52 ../gdebi-gtk:53
 msgid "Run non-interactive (dangerous!)"
 msgstr ""
 
 #: ../gdebi:56
-msgid "Do not show progress information"
+msgid "Set an APT configuration option"
 msgstr ""
 
 #: ../gdebi:60
+msgid "Do not show progress information"
+msgstr ""
+
+#: ../gdebi:64
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
 
-#: ../gdebi:62
+#: ../gdebi:66
 msgid "Use alternative root dir"
 msgstr ""
 
-#: ../gdebi:70
+#: ../gdebi:74
 #, fuzzy, c-format
 msgid "gdebi error, file not found: %s\n"
 msgstr "gdebi грешка, датотека није нађена: %s"
 
-#: ../gdebi:89 ../gdebi:99
+#: ../gdebi:93 ../gdebi:103
 msgid "Need to be root to install packages"
 msgstr ""
 
-#: ../gdebi:101 ../GDebi/GDebiCli.py:127
+#: ../gdebi:105 ../GDebi/GDebiCli.py:138
 msgid "Do you want to install the software package? [y/N]:"
 msgstr ""
 
-#: ../gdebi:105
+#: ../gdebi:109
 msgid "Y"
 msgstr ""
 
-#: ../gdebi-gtk:59
+#: ../gdebi-gtk:65
 msgid "Software index is broken"
 msgstr ""
 
-#: ../gdebi-gtk:60
+#: ../gdebi-gtk:66
 msgid ""
 "This is a major failure of your software management system. Please check for "
 "broken packages with synaptic, check the file permissions and correctness of "
@@ -191,11 +195,11 @@ msgstr "Учитавам..."
 msgid "Package Installer - %s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:239
+#: ../GDebi/GDebi.py:240
 msgid "Same version is already installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:240
+#: ../GDebi/GDebi.py:241
 msgid "_Reinstall Package"
 msgstr ""
 
@@ -340,73 +344,82 @@ msgstr ""
 msgid "Dependency is not satisfiable: %s\n"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:140
+#: ../GDebi/DebPackage.py:142
 #, python-format
 msgid "Conflicts with the installed package '%s'"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:236
+#: ../GDebi/DebPackage.py:274
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr ""
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:242
+#: ../GDebi/DebPackage.py:280
 msgid "A later version is already installed"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:263
+#: ../GDebi/DebPackage.py:301
 msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:290
+#: ../GDebi/DebPackage.py:328
 #, python-format
 msgid "Cannot install '%s'"
 msgstr ""
 
-#: ../GDebi/DebPackage.py:337
+#: ../GDebi/DebPackage.py:378
 msgid "List of files could not be read, please report this as a bug"
 msgstr ""
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:346
+#: ../GDebi/DebPackage.py:387
 #, python-format
 msgid "%s is not available"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:61
-#, python-format
-msgid "Unkown package type '%s', exiting"
+#: ../GDebi/GDebiCli.py:54
+msgid "Configuration items must be specified with a =<value>\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:64
+#: ../GDebi/GDebiCli.py:60
+#, python-format
+msgid "Couldn't set APT option %s to %s\n"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:72
+#, python-format
+msgid "Unknown package type '%s', exiting\n"
+msgstr ""
+
+#: ../GDebi/GDebiCli.py:75
 msgid "Failed to open the software package\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:65
+#: ../GDebi/GDebiCli.py:76
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:71
+#: ../GDebi/GDebiCli.py:82
 msgid "This package is uninstallable\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:80 ../GDebi/GDebiKDE.py:144
+#: ../GDebi/GDebiCli.py:91 ../GDebi/GDebiKDE.py:144
 msgid "No description is available"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:86
+#: ../GDebi/GDebiCli.py:97
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:90
+#: ../GDebi/GDebiCli.py:101
 msgid "Requires the REMOVAL of the following packages: "
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:95
+#: ../GDebi/GDebiCli.py:106
 msgid "Requires the installation of the following packages: "
 msgstr ""
 
@@ -438,76 +451,76 @@ msgstr ""
 msgid "To be removed: %s"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:61
+#: ../GDebi/GDebiCommon.py:64
 msgid "Broken dependencies"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:62
+#: ../GDebi/GDebiCommon.py:65
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
 "a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:76
+#: ../GDebi/GDebiCommon.py:79
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Не могу да отворим '%s'"
 
-#: ../GDebi/GDebiCommon.py:77
+#: ../GDebi/GDebiCommon.py:80
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:93
+#: ../GDebi/GDebiCommon.py:96
 msgid "Same version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:94
+#: ../GDebi/GDebiCommon.py:97
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:98
+#: ../GDebi/GDebiCommon.py:101
 msgid "An older version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:99
+#: ../GDebi/GDebiCommon.py:102
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:104
+#: ../GDebi/GDebiCommon.py:107
 msgid "A later version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:106
+#: ../GDebi/GDebiCommon.py:109
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:114
+#: ../GDebi/GDebiCommon.py:117
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:117
+#: ../GDebi/GDebiCommon.py:120
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:119
+#: ../GDebi/GDebiCommon.py:122
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:127 ../GDebi/GDebiCommon.py:145
+#: ../GDebi/GDebiCommon.py:130 ../GDebi/GDebiCommon.py:148
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:129 ../GDebi/GDebiCommon.py:147
+#: ../GDebi/GDebiCommon.py:132 ../GDebi/GDebiCommon.py:150
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
