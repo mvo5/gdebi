@@ -33,6 +33,7 @@ from gettext import gettext as _
 
 from optparse import OptionParser
 from GDebi.GDebiCli import GDebiCli
+from GDebi.Version import VERSION
 
 # FIXME: - add "--assume-yes" option
 #        - add check for removal of essential packages
@@ -45,7 +46,7 @@ if __name__ == "__main__":
 
     usage = unicode(_("usage: %prog [options] filename\n"
                       "For a graphical version run gdebi-gtk\n"),"UTF-8")
-    parser = OptionParser(usage=usage)
+    parser = OptionParser(usage=usage, version = VERSION)
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
