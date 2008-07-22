@@ -374,6 +374,8 @@ Install software from trustworthy software distributors only.
                      self._deb.file)
 
         if not self.try_acquire_lock():
+            self.statusbar_main.push(self.context,
+                                     _("Failed to install package file"))
             self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
             return False
             

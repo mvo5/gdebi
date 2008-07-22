@@ -4,6 +4,8 @@ gdebi (0.3.12) intrepid; urgency=low
     - fix utf-8 disply (LP: #109907)
     - do not crash if the file disappeared in --non-interactive
       mode (LP: #213725)
+    - fix incorrect statusline when cache can not be locked 
+      (LP: #212105)
 
  --
 
