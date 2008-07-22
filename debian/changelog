@@ -6,6 +6,9 @@ gdebi (0.3.12) intrepid; urgency=low
       mode (LP: #213725)
     - fix incorrect statusline when cache can not be locked 
       (LP: #212105)
+  * GDebi/DebPackage.py:
+    - do not crash when the filelist can not be read because of
+      gvfs strangeness (LP: #211822)
 
  --
 

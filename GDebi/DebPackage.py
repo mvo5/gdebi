@@ -367,15 +367,19 @@ class DebPackage(object):
             #      % (What,Name,Link,Mode,UID,GID,Size, MTime, Major, Minor)
             files.append(Name)
         try:
-            apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
-        except SystemError, e:
             try:
-                apt_inst.debExtract(open(self.file), extract_cb, "data.tar.bz2")
+                apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")
             except SystemError, e:
                 try:
-                    apt_inst.debExtract(open(self.file), extract_cb, "data.tar.lzma")
+                    apt_inst.debExtract(open(self.file), extract_cb, "data.tar.bz2")
                 except SystemError, e:
-                    return [_("List of files could not be read, please report this as a bug")]
+                    try:
+                        apt_inst.debExtract(open(self.file), extract_cb, "data.tar.lzma")
+                    except SystemError, e:
+                        return [_("List of files could not be read, please report this as a bug")]
+        # IOError may happen because of gvfs madness (LP: #211822)
+        except IOError, e:
+            return [_("IOError during filelist read: %s" % e)]
         return files
     filelist = property(filelist)
     
