@@ -12,3 +12,4 @@ MimeType=application/x-deb;application/x-debian-package;
 NoDisplay=true
 NotShowIn=KDE;
 X-Ubuntu-Gettext-Domain=gdebi
+StartupNotify=true

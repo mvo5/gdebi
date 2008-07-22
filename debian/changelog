@@ -11,6 +11,8 @@ gdebi (0.3.12) intrepid; urgency=low
       gvfs strangeness (LP: #211822)
   * gdebi-gtk:
     - do not crash when DISPLAY is not accessable (LP: #204543)
+  * data/gdebi.desktop.in:
+    - add "Startup-Notify=true" (LP: #120920)
 
  --
 
