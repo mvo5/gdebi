@@ -1,3 +1,10 @@
+gdebi (0.3.12) intrepid; urgency=low
+
+  * GDebi/GDebi.py:
+    - fix utf-8 disply (LP: #109907)
+
+ --
+
 gdebi (0.3.11) intrepid; urgency=low
 
   * Setup the option parser with a version to enable the --version flag.

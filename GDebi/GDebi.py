@@ -50,7 +50,10 @@ from GDebiCommon import GDebiCommon
 from gettext import gettext as _
 
 def utf8(str):
-  return unicode(str, 'latin1').encode('utf-8')
+  try:
+    return unicode(str).encode('utf-8')
+  except:
+    return unicode(str, 'latin1').encode('utf-8')
 
 class GDebi(SimpleGladeApp, GDebiCommon):
 
