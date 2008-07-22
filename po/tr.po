@@ -1,0 +1,650 @@
+# Turkish translation for gdebi
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# This file is distributed under the same license as the gdebi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gdebi\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2008-07-22 09:42+0000\n"
+"PO-Revision-Date: 2008-07-10 19:01+0200\n"
+"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2008-07-09 21:04+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../gdebi:47
+#, c-format
+msgid ""
+"usage: %prog [options] filename\n"
+"For a graphical version run gdebi-gtk\n"
+msgstr ""
+"kullanım: %prog [seçenekler] dosyaadı\n"
+"Görsel sürüm için gdebi-gtk'yı çalıştırın\n"
+
+#: ../gdebi:53 ../gdebi-gtk:53
+msgid "Run non-interactive (dangerous!)"
+msgstr "Etkileşimsiz çalış (tehlikeli!)"
+
+#: ../gdebi:57
+msgid "Set an APT configuration option"
+msgstr "APT yapılandırma seçeneklerini ayarla"
+
+#: ../gdebi:61
+msgid "Do not show progress information"
+msgstr "İlerleme bilgisini gösterme"
+
+#: ../gdebi:65
+msgid "Simulate only and print a apt-get install compatible line to stderr"
+msgstr "Sadece benzetim yap ve apt-get install uyumlu satırı stderr'a bas"
+
+#: ../gdebi:67
+msgid "Use alternative root dir"
+msgstr "Alternatif kök dizin kullan"
+
+#: ../gdebi:75
+#, c-format
+msgid "gdebi error, file not found: %s\n"
+msgstr "gdebi hatası, %s dosyası bulunamadı\n"
+
+#: ../gdebi:94 ../gdebi:104
+msgid "Need to be root to install packages"
+msgstr "Paket kurabilmeniz için root olmanız gerekli"
+
+#: ../gdebi:106 ../GDebi/GDebiCli.py:138
+msgid "Do you want to install the software package? [y/N]:"
+msgstr "Bu yazılım paketini kurmak istiyor musunuz? [e/H]:"
+
+#: ../gdebi:110
+msgid "Y"
+msgstr "E"
+
+#: ../gdebi-gtk:65
+msgid "Software index is broken"
+msgstr "Yazılım indeksi bozuk"
+
+#: ../gdebi-gtk:66
+msgid ""
+"This is a major failure of your software management system. Please check for "
+"broken packages with synaptic, check the file permissions and correctness of "
+"the file '/etc/apt/sources.list' and reload the software information with: "
+"'sudo apt-get update' and 'sudo apt-get install -f'."
+msgstr ""
+"Bu yazılım yönetim sisteminizdeki ciddi bir bozukluktur. Lütfen synaptic "
+"vasıtasıyla bozuk paketleri, '/etc/apt/sources.list' dosyasının izinlerini "
+"ve düzgün olup olmadığını denetleyin ve daha sonra 'sudo apt-get update' ve "
+"'sudo apt-get install -f' komutlarını kullanarak yazılım bilgisini tazeleyin."
+
+#: ../data/gdebi.glade.h:1
+msgid "  "
+msgstr "  "
+
+#: ../data/gdebi.glade.h:2
+msgid "(c) 2005-2006 Canonical"
+msgstr "(c) 2005-2006 Canonical"
+
+#: ../data/gdebi.glade.h:3
+msgid "<b><big>   </big></b>"
+msgstr "<b><big>   </big></b>"
+
+#: ../data/gdebi.glade.h:4 ../GDebi/GDebiKDE.py:70
+msgid "<b>Maintainer:</b>"
+msgstr "<b>Bakımcı:</b>"
+
+#: ../data/gdebi.glade.h:5 ../GDebi/GDebiKDE.py:71
+msgid "<b>Priority:</b>"
+msgstr "<b>Öncelik:</b>"
+
+#: ../data/gdebi.glade.h:6 ../GDebi/GDebiKDE.py:72
+msgid "<b>Section:</b>"
+msgstr "<b>Bölüm:</b>"
+
+#: ../data/gdebi.glade.h:7 ../GDebi/GDebiKDE.py:73
+msgid "<b>Size:</b>"
+msgstr "<b>Boyut:</b>"
+
+#: ../data/gdebi.glade.h:8 ../GDebi/GDebiKDE.py:209
+msgid "<b>To install the following changes are required:</b>"
+msgstr ""
+"<b>Paketi kurabilmeniz için aşağıdaki değişikliklerin yapılması gerekli:</b>"
+
+#: ../data/gdebi.glade.h:9 ../GDebi/GDebiKDE.py:69
+msgid "<b>Version:</b>"
+msgstr "<b>Sürüm:</b>"
+
+#: ../data/gdebi.glade.h:10 ../GDebi/GDebiKDE.py:64
+msgid "Description"
+msgstr "Açıklama"
+
+#: ../data/gdebi.glade.h:11
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: ../data/gdebi.glade.h:12 ../GDebi/GDebiKDE.py:63 ../GDebi/GDebiKDE.py:65
+#: ../GDebi/GDebiKDE.py:210
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: ../data/gdebi.glade.h:13
+msgid "GPL, see /usr/share/common-licenses/GPL"
+msgstr "GPL, /usr/share/common-licenses/GPL dosyasına bakın"
+
+#: ../data/gdebi.glade.h:14 ../GDebi/GDebiKDE.py:66
+msgid "Included Files"
+msgstr "İçerdiği Dosyalar"
+
+#: ../data/gdebi.glade.h:15 ../data/gdebi.desktop.in.h:2
+msgid "Install and view software packages"
+msgstr "Yazılım paketlerini kur ve izle"
+
+#: ../data/gdebi.glade.h:16 ../data/gdebi.desktop.in.h:3
+msgid "Package Installer"
+msgstr "Paket Kurucu"
+
+#. first, we load all the default descriptions -- pyuic doesn't use
+#. gettext as default
+#: ../data/gdebi.glade.h:17 ../GDebi/GDebiKDE.py:61
+msgid "Package:"
+msgstr "Paket:"
+
+#: ../data/gdebi.glade.h:18 ../GDebi/GDebiKDE.py:62
+msgid "Status:"
+msgstr "Durum:"
+
+#: ../data/gdebi.glade.h:19
+msgid "Terminal"
+msgstr "Uçbirim"
+
+#: ../data/gdebi.glade.h:20
+msgid "_Details"
+msgstr "_Ayrıntılar"
+
+#: ../data/gdebi.glade.h:21
+msgid "_File"
+msgstr "_Dosya"
+
+#: ../data/gdebi.glade.h:22
+msgid "_Help"
+msgstr "_Yardım"
+
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:229 ../GDebi/GDebi.py:268
+msgid "_Install Package"
+msgstr "Paket_i dosyasını kur"
+
+#: ../data/gdebi.glade.h:24
+msgid "gdebi"
+msgstr "gdebi"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../data/gdebi.glade.h:26
+msgid "translator-credits"
+msgstr ""
+"Mert Dirik <mertdirik@gmail.com>\n"
+"Murat Güneş https://launchpad.net/~mgunes"
+
+#: ../data/gdebi.xml.in.h:1
+msgid "Software package"
+msgstr "Yazılım paketi"
+
+#: ../data/gdebi.desktop.in.h:1
+msgid "GDebi Package Installer"
+msgstr "GDebi Paket Kurucu"
+
+#: ../GDebi/GDebi.py:84
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#. set window title
+#. set name
+#: ../GDebi/GDebi.py:163 ../GDebi/GDebiKDE.py:108
+#, python-format
+msgid "Package Installer - %s"
+msgstr "Paket Kurucu - %s"
+
+#: ../GDebi/GDebi.py:240
+msgid "Same version is already installed"
+msgstr "Aynı sürüm zaten kurulu"
+
+#: ../GDebi/GDebi.py:241
+msgid "_Reinstall Package"
+msgstr "Paketi Tek_rar Kur"
+
+#: ../GDebi/GDebi.py:279
+#, python-format
+msgid "<b>To be removed: %s</b>"
+msgstr "<b>Kaldırılacak: %s</b>"
+
+#: ../GDebi/GDebi.py:281 ../GDebi/GDebiKDE.py:204
+#, python-format
+msgid "To be installed: %s"
+msgstr "Kurulacak: %s"
+
+#: ../GDebi/GDebi.py:295
+msgid "Open Software Package"
+msgstr "Bir Yazılım Paketini Aç"
+
+#: ../GDebi/GDebi.py:300
+msgid "Software packages"
+msgstr "Yazılım paketleri"
+
+#. do it
+#: ../GDebi/GDebi.py:318
+msgid "Installing package file..."
+msgstr "Paket dosyası kuruluyor..."
+
+#: ../GDebi/GDebi.py:320
+msgid "Install unauthenticated software?"
+msgstr "Doğrulanmamış yazılım kurulsun mu?"
+
+#: ../GDebi/GDebi.py:321
+msgid ""
+"Malicous software can damage your data and take control of your system.\n"
+"\n"
+"The packages below are not authenticated and could therefor be of malicous "
+"nature."
+msgstr ""
+"Kötü niyetli yazılımlar verilerinize zarar verebilir ve sisteminizin "
+"denetimini ele \n"
+"\n"
+"geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir içeriğe "
+"sahip olabilirler."
+
+#: ../GDebi/GDebi.py:348
+msgid "You need to grant administrative rights to install software"
+msgstr "Yazılım kurabilmek için yönetici haklarınızı tasdik etmeniz gerekli"
+
+#: ../GDebi/GDebi.py:349
+msgid ""
+"\n"
+"It is a possible security risk to install packages files manually.\n"
+"Install software from trustworthy software distributors only.\n"
+msgstr ""
+"\n"
+"Paketleri elle kurmak potansiyel bir güvenlik riskidir.\n"
+"Yalnızca güvendiğiniz kaynaklardan gelen yazılımları kurun.\n"
+
+#: ../GDebi/GDebi.py:393 ../GDebi/GDebiKDE.py:246
+msgid "Could not download all required files"
+msgstr "Gereken tüm dosyalar indirilemedi"
+
+#: ../GDebi/GDebi.py:394 ../GDebi/GDebiKDE.py:247
+msgid "Please check your internet connection or installation medium."
+msgstr "Internet bağlantınızı ya da kurulum ortamını kontrol edin."
+
+#: ../GDebi/GDebi.py:398 ../GDebi/GDebiKDE.py:251
+msgid "Could not install all dependencies"
+msgstr "Bağımlılıkların hepsi kurulamadı"
+
+#: ../GDebi/GDebi.py:399 ../GDebi/GDebiKDE.py:252
+msgid ""
+"Usually this is related to an error of the software distributor. See the "
+"terminal window for more details."
+msgstr ""
+"Bu genellikle yazılım dağıtıcısıyla ilgili bir sorundur. Ayrıntılar için "
+"uçbirim penceresine bakın."
+
+#: ../GDebi/GDebi.py:409
+msgid "Failed to install package file"
+msgstr "Paket dosyası kurulamadı"
+
+#. install the package itself
+#: ../GDebi/GDebi.py:413
+msgid "Installing package file"
+msgstr "Paket dosyası kuruluyor"
+
+#. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
+#. show the button
+#. self.button_deb_install_close.set_sensitive(True)
+#. self.button_deb_install_close.grab_default()
+#: ../GDebi/GDebi.py:424 ../GDebi/GDebiKDE.py:270
+msgid "Installation finished"
+msgstr "Kurulum tamamlandı"
+
+#: ../GDebi/GDebi.py:426 ../GDebi/GDebiKDE.py:272
+#, python-format
+msgid "Package '%s' was installed"
+msgstr "'%s' paketi kuruldu"
+
+#: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:274
+#, python-format
+msgid "Failed to install package '%s'"
+msgstr "'%s' paketi kurulamadı"
+
+#: ../GDebi/GDebi.py:430
+msgid "Installation complete"
+msgstr "Kurulum tamamlandı"
+
+#: ../GDebi/GDebi.py:438 ../GDebi/GDebiKDE.py:284
+msgid "Failed to completely install all dependencies"
+msgstr "Bazı bağımlılıklar kurulamadı"
+
+#: ../GDebi/GDebi.py:439 ../GDebi/GDebiKDE.py:285
+msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
+msgstr ""
+"Bu sorunu gidermek için uçbirim penceresinde 'sudo apt-get install -f' "
+"komutunu çalıştırın."
+
+#. ui
+#: ../GDebi/GDebi.py:519 ../GDebi/KDEAptDialogs.py:79
+#, python-format
+msgid "Installing '%s'..."
+msgstr "%s kuruluyor..."
+
+#: ../GDebi/GDebi.py:598 ../GDebi/KDEAptDialogs.py:141
+msgid "Installing dependencies..."
+msgstr "Bağımlılıklar kuruluyor..."
+
+#. print "start()"
+#: ../GDebi/GDebi.py:623 ../GDebi/KDEAptDialogs.py:192
+#: ../GDebi/KDEAptDialogs.py:204 ../GDebi/KDEAptDialogs.py:206
+msgid "Downloading additional package files..."
+msgstr "İlâve paket dosyaları indiriliyor..."
+
+#: ../GDebi/GDebi.py:631 ../GDebi/KDEAptDialogs.py:204
+#, python-format
+msgid "File %s of %s at %sB/s"
+msgstr "Dosya %s/%s, %sB/s hızla"
+
+#: ../GDebi/GDebi.py:633 ../GDebi/KDEAptDialogs.py:206
+#, python-format
+msgid "File %s of %s"
+msgstr "Dosya %s/%s"
+
+#. print "mediaChange %s %s" % (medium, drive)
+#: ../GDebi/GDebi.py:640 ../GDebi/KDEAptDialogs.py:210
+#, python-format
+msgid "Please insert '%s' into the drive '%s'"
+msgstr "Lütfen '%s' sürücüsüne '%s' takın"
+
+#: ../GDebi/DebPackage.py:121
+#, python-format
+msgid "Dependency is not satisfiable: %s\n"
+msgstr "%s bağımlılığı sağlanamadı\n"
+
+#: ../GDebi/DebPackage.py:142
+#, python-format
+msgid "Conflicts with the installed package '%s'"
+msgstr "Kurulu şu paketle çakışıyor: '%s'"
+
+#: ../GDebi/DebPackage.py:274
+#, python-format
+msgid "Wrong architecture '%s'"
+msgstr "Hatalı işlemci mimarisi '%s'"
+
+#. the deb is older than the installed
+#: ../GDebi/DebPackage.py:280
+msgid "A later version is already installed"
+msgstr "Daha yeni bir sürüm zaten kurulu"
+
+#: ../GDebi/DebPackage.py:301
+msgid "Failed to satisfy all dependencies (broken cache)"
+msgstr "Bağımlılıkların hepsi sağlanamadı (önbellek bozuk)"
+
+#: ../GDebi/DebPackage.py:328
+#, python-format
+msgid "Cannot install '%s'"
+msgstr "'%s' paketi kurulamadı"
+
+#: ../GDebi/DebPackage.py:378
+msgid "List of files could not be read, please report this as a bug"
+msgstr "Dosya listesi okunamadı, lütfen bunu bir hata olarak bildirin"
+
+#. Translators: it's for missing entries in the deb package,
+#. e.g. a missing "Maintainer" field
+#: ../GDebi/DebPackage.py:387
+#, python-format
+msgid "%s is not available"
+msgstr "%s alanı eksik"
+
+#: ../GDebi/GDebiCli.py:54
+msgid "Configuration items must be specified with a =<value>\n"
+msgstr "Yapılandırma öğeleri a = <değer> şeklinde belirtilmelidir\n"
+
+#: ../GDebi/GDebiCli.py:60
+#, python-format
+msgid "Couldn't set APT option %s to %s\n"
+msgstr "%s APT seçeneği %s değerine ayarlanamadı\n"
+
+#: ../GDebi/GDebiCli.py:72
+#, python-format
+msgid "Unknown package type '%s', exiting\n"
+msgstr "'%s' diye bir paket türü tanınmıyor, şimdi çıkılacak\n"
+
+#: ../GDebi/GDebiCli.py:75
+msgid "Failed to open the software package\n"
+msgstr "Yazılım paketi açılamadı\n"
+
+#: ../GDebi/GDebiCli.py:76
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file.\n"
+msgstr ""
+"Paket hasar görmüş olabilir ya da paketi açma yetkisine sahip "
+"olmayabilirsiniz. Dosyanın izinlerini denetleyin.\n"
+
+#: ../GDebi/GDebiCli.py:82
+msgid "This package is uninstallable\n"
+msgstr "Paket kaldırılamaz durumda\n"
+
+#: ../GDebi/GDebiCli.py:91 ../GDebi/GDebiKDE.py:144
+msgid "No description is available"
+msgstr "Herhangi bir açıklama yok"
+
+#: ../GDebi/GDebiCli.py:97
+msgid "The following packages are UNAUTHENTICATED: "
+msgstr "Şu paketler DOĞRULANMAMIŞ:"
+
+#: ../GDebi/GDebiCli.py:101
+msgid "Requires the REMOVAL of the following packages: "
+msgstr "Şu paketlerin KALDIRILMASINI gerektiriyor:"
+
+#: ../GDebi/GDebiCli.py:106
+msgid "Requires the installation of the following packages: "
+msgstr "Şu paketlerin kurulmasını gerektiriyor:"
+
+#: ../GDebi/GDebiKDE.py:68 ../GDebi/GDebiKDE.py:193
+msgid "&Install Package"
+msgstr "Paket K&ur"
+
+#: ../GDebi/GDebiKDE.py:92
+msgid "The package file does not exist"
+msgstr "Paket dosyası bulunamadı"
+
+#: ../GDebi/GDebiKDE.py:93
+msgid ""
+"A nonexistent file has been selected for installation. Please select an "
+"existing .deb package file."
+msgstr ""
+"Varolmayan bir dosya kurulum için seçildi. Lütfen mevcut bir .deb paketi "
+"dosyasını seçin."
+
+#. self.textLabel1_3_2.setText(_("Same version is already installed"))
+#: ../GDebi/GDebiKDE.py:161
+msgid "&Reinstall Package"
+msgstr "Paketi Tek&rar Kur"
+
+#: ../GDebi/GDebiKDE.py:196
+msgid "Re&install Package"
+msgstr "Paket&i Tekrar Kur"
+
+#: ../GDebi/GDebiKDE.py:206
+#, python-format
+msgid "To be removed: %s"
+msgstr "Kaldırılacak: %s"
+
+#: ../GDebi/GDebiCommon.py:64
+msgid "Broken dependencies"
+msgstr "Sağlanamayan bağımlılıklar"
+
+#: ../GDebi/GDebiCommon.py:65
+msgid ""
+"Your system has broken dependencies. This application can not continue until "
+"this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
+"a terminal window."
+msgstr ""
+"Sisteminizde karşılanmamış bağımlılıklar var. Bu sorun giderilene kadar bu "
+"uygulama çalışamaz. Sorunu gidermek için uçbirim penceresinde 'sudo "
+"synaptic' ya da 'sudo apt-get install -f' komutunu çalıştırın."
+
+#: ../GDebi/GDebiCommon.py:79
+#, python-format
+msgid "Could not open '%s'"
+msgstr "'%s' açılamadı"
+
+#: ../GDebi/GDebiCommon.py:80
+msgid ""
+"The package might be corrupted or you are not allowed to open the file. "
+"Check the permissions of the file."
+msgstr ""
+"Paket hasar görmüş olabilir ya da dosyayı açma yetkiniz olmayabilir. "
+"Dosyanın izinlerini denetleyin."
+
+#: ../GDebi/GDebiCommon.py:96
+msgid "Same version is available in a software channel"
+msgstr "Aynı sürüm yazılım kanalında mevcut"
+
+#: ../GDebi/GDebiCommon.py:97
+msgid "You are recommended to install the software from the channel instead."
+msgstr "Bu paket yerine kanaldakini kurmanız tavsiye edilir."
+
+#: ../GDebi/GDebiCommon.py:101
+msgid "An older version is available in a software channel"
+msgstr "Yazılım kanalında daha eski bir sürüm mevcut"
+
+#: ../GDebi/GDebiCommon.py:102
+msgid ""
+"Generally you are recommended to install the version from the software "
+"channel, since it is usually better supported."
+msgstr ""
+"Yazılım kanalındaki sürüm daha iyi desteklendiğinden genellikle oradaki "
+"sürümü kurmanız önerilir."
+
+#: ../GDebi/GDebiCommon.py:107
+msgid "A later version is available in a software channel"
+msgstr "Yazılım kanalında daha yeni bir sürüm mevcut"
+
+#: ../GDebi/GDebiCommon.py:109
+msgid ""
+"You are strongly advised to install the version from the software channel, "
+"since it is usually better supported."
+msgstr ""
+"Yazılım kanalındaki sürüm daha iyi desteklendiğinden oradaki sürümü kurmanız "
+"şiddetle önerilir."
+
+#: ../GDebi/GDebiCommon.py:117
+msgid "All dependencies are satisfied"
+msgstr "Tüm bağımlılıklar sağlanmış"
+
+#. FIXME: use ngettext here
+#: ../GDebi/GDebiCommon.py:120
+#, python-format
+msgid "Requires the <b>removal</b> of %s packages\n"
+msgstr "%s paketin <b>kaldırılmasını</b> gerektiriyor\n"
+
+#: ../GDebi/GDebiCommon.py:122
+#, python-format
+msgid "Requires the installation of %s packages"
+msgstr "%s adet paketin kurulmasını gerektiriyor"
+
+#: ../GDebi/GDebiCommon.py:130 ../GDebi/GDebiCommon.py:148
+msgid "Only one software management tool is allowed to run at the same time"
+msgstr "Aynı anda yalnızca tek bir paket yöneticisi çalışabilir"
+
+#: ../GDebi/GDebiCommon.py:132 ../GDebi/GDebiCommon.py:150
+msgid ""
+"Please close the other application e.g. 'Update Manager', 'aptitude' or "
+"'Synaptic' first."
+msgstr ""
+"Lütfen önce diğer uygulamayı, ör. 'Güncelleme Yöneticisi', 'aptitude' ya da "
+"'Synaptic'i kapatın."
+
+#: ../GDebi/KDEAptDialogs.py:211
+msgid "Media Change"
+msgstr "Ortam Değiştirme"
+
+#~ msgid "<b>Package information:</b>"
+#~ msgstr "<b>Paket bilgisi:</b>"
+
+#~ msgid "<b>Required changes:</b>"
+#~ msgstr "<b>Gereken değişiklikler:</b>"
+
+#~ msgid "Filelist"
+#~ msgstr "Dosya listesi"
+
+#~ msgid "Install"
+#~ msgstr "Kur"
+
+#~ msgid "Install deb packages directly"
+#~ msgstr "deb paketlerini doğrudan kur"
+
+#~ msgid "Install progress"
+#~ msgstr "Kurulum süreci"
+
+#~ msgid "_About"
+#~ msgstr "H_akkında"
+
+#~ msgid "Run as administrator"
+#~ msgstr "Yönetici olarak çalıştır"
+
+#~ msgid ""
+#~ "To install the selected package you need to run this program with "
+#~ "administraor rights. \n"
+#~ "\n"
+#~ "<b>Note that installing deb packages directly can be a security risk! "
+#~ "Only install from trusted sources.</b> \n"
+#~ "\n"
+#~ "Do you want to do this now?"
+#~ msgstr ""
+#~ "Seçil dosyayı kurmak için bu programı yönetici yetkisiyle çalıştırmanız "
+#~ "gerekli. \n"
+#~ "<b>Dikkat: Deb dosyalarını doğrudan kurmak bir güvenlik riski olabilir! "
+#~ "Sadece güvenilir kaynaklardan gelen dosyaları kurun.</b> \n"
+#~ "Şimdi paketi kurmak istiyor musunuz?"
+
+#~ msgid "Unable to get exclusive lock"
+#~ msgstr "Özel kilide erişilemiyor"
+
+#~ msgid ""
+#~ "This usually means that another package management application (like apt-"
+#~ "get or aptitude) already running. Please close that application first."
+#~ msgstr ""
+#~ "Bu, genelde başka bir paket yönetimi uygulamasının (apt-get ya da "
+#~ "aptitude gibi) zaten çalıştığı anlamına gelir. Lütfen öncelikle bu "
+#~ "uygulamayı kapatın."
+
+#~ msgid "Failed to fetch the following dependencies:"
+#~ msgstr "Paketin kurulabilmesi için gereken şu paketler alınamadı:"
+
+#~ msgid ""
+#~ "Installing the dependencies was not sucessful. This a bug in the archive "
+#~ "please see the terminal window for details."
+#~ msgstr ""
+#~ "Paketin kurulabilmesi için gereken paketlerin kurulumu başarısız oldu. Bu "
+#~ "arşivdeki bir hata olabilir; detaylar için lütfen uçbirim penceresine "
+#~ "bakınız."
+
+#~ msgid "<b>Installed %s</b>"
+#~ msgstr "<b>%s kuruldu</b>"
+
+#~ msgid "Dependency problem"
+#~ msgstr "Kurulum için gerekli diğer paketlerin sağlanmasında sorun"
+
+#~ msgid ""
+#~ "Internal error, please report this as a bug:\n"
+#~ "A dependency problem was found after installation.\n"
+#~ "You have to run: 'apt-get install -f' to correct the situation"
+#~ msgstr ""
+#~ "Dahili bir hata oluştu, lütfen bunu bir hata olarak bildirin:\n"
+#~ "Paketin kurulabilmesi için gerekli diğer paketlerde kurulumdan sonra "
+#~ "sorun oluştu.\n"
+#~ "Sorunu gidermek için uçbirimde \"apt-get install -f\" komutunu çalıştırın"
+
+#~ msgid "%s/%s (Speed: %s/s)"
+#~ msgstr "%s/%s (Hız: %s/s)"
+
+#~ msgid "No entry for '%s' found"
+#~ msgstr "'%s' için giriş bulunamadı"
