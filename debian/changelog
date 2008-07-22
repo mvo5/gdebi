@@ -2,6 +2,8 @@ gdebi (0.3.12) intrepid; urgency=low
 
   * GDebi/GDebi.py:
     - fix utf-8 disply (LP: #109907)
+    - do not crash if the file disappeared in --non-interactive
+      mode (LP: #213725)
 
  --
 

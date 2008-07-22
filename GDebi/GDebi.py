@@ -317,6 +317,18 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         self.dialog_about.hide()
 
     def on_button_install_clicked(self, widget):
+        # check if we actually have a deb, see #213725
+        if not self._deb:
+            err_header = _("File not found")
+            err_body = _("You tried to install a file that does not "
+                         "(or no longer) exist. ")
+            dia = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
+                                    gtk.BUTTONS_OK, "")
+            dia.set_markup("<b><big>%s</big></b>" % err_header)
+            dia.format_secondary_text(err_body)
+            dia.run()
+            dia.destroy()
+            return
         # do it
         self.statusbar_main.push(self.context,_("Installing package file..."))
         if widget != None and len(self.unauthenticated) > 0:
