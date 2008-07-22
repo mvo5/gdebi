@@ -9,6 +9,8 @@ gdebi (0.3.12) intrepid; urgency=low
   * GDebi/DebPackage.py:
     - do not crash when the filelist can not be read because of
       gvfs strangeness (LP: #211822)
+  * gdebi-gtk:
+    - do not crash when DISPLAY is not accessable (LP: #204543)
 
  --
 
