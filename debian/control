@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 5.0.38),
                intltool,
                python-kde3-dev (>= 3.16.0-0ubuntu11)
 XS-Python-Version: current
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/
 
 Package: gdebi-core
