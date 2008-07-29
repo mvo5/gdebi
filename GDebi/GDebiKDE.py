@@ -31,7 +31,7 @@ import apt_pkg
 from qt import *
 from kdeui import *
 from kdecore import *
-from kparts import konsolePart,TerminalInterface
+#from kparts import konsolePart,TerminalInterface
 from kfile import *
 
 from DebPackage import DebPackage, Cache
@@ -49,6 +49,56 @@ def utf8(str):
   if isinstance(str, unicode):
       return str
   return unicode(str, 'UTF-8')
+
+class DumbTerminal(QTextEdit):
+    " a very dumb terminal "
+    def __init__(self, parent_frame):
+        " really dumb terminal with simple editing support "
+        QTextEdit.__init__(self, "","", parent_frame)
+        #self.installProgress = installProgress
+        self.setFamily("Monospace")
+        self.setPointSize(8)
+        self.setWordWrap(QTextEdit.NoWrap)
+        self.setUndoDepth(0)
+        self.setUndoRedoEnabled(False)
+        self._block = False
+        self.connect(self, SIGNAL("cursorPositionChanged(int,int)"), 
+                     self.onCursorPositionChanged)
+    def setInstallProgress(self, installProgress):
+        self.installProgress = installProgress
+    def insertWithTermCodes(self, text):
+        " support basic terminal codes "
+        display_text = ""
+        for c in text:
+            # \b - backspace
+            if c == chr(8):       
+                self.moveCursor(QTextEdit.MoveBackward, True)
+                self.removeSelectedText()
+            # \r - is filtered out
+            elif c == chr(13):
+                pass
+            # \a - bell - ignore for now
+            elif c == chr(7):
+                pass
+            else:
+                display_text += c
+        self.insert(display_text)
+    def keyPressEvent(self, ev):
+        " send (ascii) key events to the pty "
+        # FIXME: use ev.text() here instead and deal with
+        # that it sends strange stuff
+        if hasattr(self.installProgress,"master_fd"):
+            os.write(self.installProgress.master_fd, chr(ev.ascii()))
+    def onCursorPositionChanged(self, x, y):
+        " helper that ensures that the cursor is always at the end "
+        if self._block:
+            return
+        # block signals so that we do not run into a recursion
+        self._block = True
+        para = self.paragraphs() - 1
+        pos = self.paragraphLength(para)
+        self.setCursorPosition(para, pos)
+        self._block = False
 
 class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
@@ -210,24 +260,31 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                       changedList, _("Details"))
     def installButtonClicked(self):
         # if not root, start a new instance
+        print "installButtonClicked"
         if os.getuid() != 0:
             os.execl("/usr/bin/kdesu", "kdesu",
                      "gdebi-kde -n ", self._deb.file)
             self.kapp.exit()
 
+        print "installButtonClicked2"
         if not self.try_acquire_lock():
 	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
 			       self.error_header)
 	    return False
         # set the window as disabled
+        print "installButtonClicked2.1.1"
         self.setDisabled(True)
+        print "installButtonClicked2.1.2"
         self.installDialog = GDebiKDEInstall(self)
+        print "installButtonClicked2.1.3"
         self.installDialog.show()
 
+        print "installButtonClicked2.1"
         # FIXME: use the new python-apt acquire interface here,
         # or rather use it in the apt module and raise exception
         # when stuff goes wrong!
         if len(self.install) > 0 or len(self.remove) > 0:
+            print "installButtonClicked2.2"
             if not self.acquire_lock():
               self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
               return False
@@ -237,6 +294,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
                                                         self.installDialog.installingLabel,
                                                         self.installDialog)
+            self.installDialog.konsole.setInstallProgress(iprogress)
             errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
@@ -256,6 +314,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                 self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
                 return
     
+        print "installButtonClicked3"
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = KDEDpkgInstallProgress(self._deb.file,
@@ -277,6 +336,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
 
+        print "installButtonClicked4"
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = Cache(self.cprogress)
         self._cache = Cache()
@@ -287,12 +347,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             self.errorReport = KMessageBox.error(None,header + text, header)
 	    sys.exit(1)
             print "Autsch, please report"
+        print "installButtonClicked end"
 
 
 class GDebiKDEInstall(GDebiKDEInstallDialog):
     def __init__(self,parent=None):
+        print "GDebiKDEInstall init 1"
         GDebiKDEInstallDialog.__init__(self,parent)
+        print "GDebiKDEInstall init 2"
         # load the translations first
+        print "GDebiKDEInstall init 3"
         self.showDetailsButton.setText(__("libept","Show Details"))
         self.closeButton.setText(__("kdelibs","&Close"))
         # end
@@ -306,24 +370,27 @@ class GDebiKDEInstall(GDebiKDEInstallDialog):
         self.newKonsole()
         kapp = KApplication.kApplication()
         kapp.processEvents()
+        print "GDebiKDEInstall init end"
 
     def unlock(self,number):
         self.parent.dprogress.lock.unlock()
+
     def newKonsole(self):
     	# this one belong elsewhere, but we need it here for debug
         self.konsoleFrame.hide()
-        if self.konsole is not None:
-            self.konsole.widget().hide()
-        self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
+        ##if self.konsole is not None:
+        ##    self.konsole.widget().hide()
+        self.konsole = DumbTerminal(self.konsoleFrame)
+        ##self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
         self.konsoleFrame.setMinimumSize(500, 400)
-        self.konsole.setAutoStartShell(False)
-        self.konsole.setAutoDestroy(False)
-        self.konsoleWidget = self.konsole.widget()
-        self.konsoleFrameLayout.addWidget(self.konsoleWidget)
+        ##self.konsole.setAutoStartShell(False)
+        ##self.konsole.setAutoDestroy(False)
+        ##self.konsoleWidget = self.konsole.widget()
+        self.konsoleFrameLayout.addWidget(self.konsole)
 
         #prepare for dpkg pty being attached to konsole
         (self.master, self.slave) = pty.openpty()
-        self.konsole.setPtyFd(self.master)
+        ##self.konsole.setPtyFd(self.master)
 
     def showTerminal(self):
         print "click"

@@ -87,6 +87,7 @@ class KDEDpkgInstallProgress(object):
 	if self.child_pid == 0:
 		# we're the child, call a subprocess, wait for the exit status, use the parent Konsole fd's as stdin/stdout
 		exitstatus = subprocess.call(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
+                #exitstatus = subprocess.call(argv)
 		os.write(wNum,str(exitstatus))
 		os._exit(0)
 	else:
@@ -96,6 +97,20 @@ class KDEDpkgInstallProgress(object):
 			# we're using the select check to see if the pipe is readable. If it is, we're reading it
 			# see select(2) or select at libref for more info
 			# TODO: implement error checking
+			while True:
+				try:
+					(rlist, wlist, xlist) = select.select([self.parent.master],[],[], 0)
+					if len(rlist) > 0:
+						line = os.read(self.parent.master, 255)
+						#self._terminal_log.write(line)
+						self.parent.konsole.insertWithTermCodes(utf8(line))
+					else:
+						break
+				except Exception, e:
+					print e
+					#logging.debug("error reading from self.master_fd '%s'" % e)
+				break
+
 			
 			try:
 				readable = select.select([rNum],[],[],0.001)
@@ -148,6 +163,20 @@ class KDEInstallProgressAdapter(InstallProgress):
 	#print "finished"
 	pass
     def updateInterface(self):
+        # log the output of dpkg (on the master_fd) to the terminal log
+        while True:
+            try:
+                (rlist, wlist, xlist) = select.select([self.master_fd],[],[], 0)
+                if len(rlist) > 0:
+                    line = os.read(self.master_fd, 255)
+                    #self._terminal_log.write(line)
+                    self.parent.konsole.insertWithTermCodes(utf8(line))
+                else:
+                    break
+            except Exception, e:
+                print e
+                #logging.debug("error reading from self.master_fd '%s'" % e)
+                break
 	try:
 	    InstallProgress.updateInterface(self)
 	except ValueError,e:
@@ -158,7 +187,8 @@ class KDEInstallProgressAdapter(InstallProgress):
 	#while gtk.events_pending():
 	#gtk.main_iteration()
     def fork(self):
-	self.child_pid = os.fork()
+	#self.child_pid = os.fork()
+        (self.child_pid, self.master_fd)  = pty.fork()
 	if self.child_pid == 0:
 	    os.setsid()
 	    #os.environ["TERM"] = "linux"
