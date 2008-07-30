@@ -73,7 +73,7 @@ class DumbTerminal(QTextEdit):
 
     def insertWithTermCodes(self, text):
         " support basic terminal codes "
-	print "insertWithTermCodes"
+        print "insertWithTermCodes"
         display_text = ""
         for c in text:
             # \b - backspace
@@ -109,9 +109,9 @@ class DumbTerminal(QTextEdit):
         self._block = False
 
 class GDebiKDEDialog(QDialog):
-	def __init__(self, parent):
-		QDialog.__init__(self, parent)
-		uic.loadUi("data/GDebiKDEDialog.ui", self)
+    def __init__(self, parent):
+        QDialog.__init__(self, parent)
+        uic.loadUi("data/GDebiKDEDialog.ui", self)
 
 class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
@@ -138,10 +138,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.setDisabled(True)
         self.PackageProgressBar.setEnabled(True)
         self.detailsButton.hide()
-	"""FIXME
+        """FIXME
         self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
         self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
-	"""
+        """
         self.show()
         self.kapp = KApplication.kApplication() #incidently, this stops it crashing on quit, no idea why, jriddell
         self.kapp.processEvents() #run because openCache takes a while to do its thing
@@ -149,7 +149,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if not self.openCache():
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
                 self.error_header)
-	    sys.exit(1)	
+            sys.exit(1)
         # try to open the file
         if file != "" and os.path.exists(file):
             self.open(file)
@@ -161,18 +161,17 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         self.setEnabled(True)
         self.PackageProgressBar.hide()
-	self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancelButtonClicked)
-	self.connect(self.installButton, SIGNAL("clicked()"), self.installButtonClicked)
-	self.connect(self.detailsButton, SIGNAL("clicked()"), self.detailsButtonClicked)
+        self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancelButtonClicked)
+        self.connect(self.installButton, SIGNAL("clicked()"), self.installButtonClicked)
+        self.connect(self.detailsButton, SIGNAL("clicked()"), self.detailsButtonClicked)
 
     def open(self, file):
         # load the common core
-	print "open"
-	res = GDebiCommon.open(self,file)
-	if res == False:
-	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
-			       self.error_header)
-	    return False
+        print "open"
+        res = GDebiCommon.open(self,file)
+        if res == False:
+            KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+            return False
 
         # set name
         self.setWindowTitle(_("Package Installer - %s") % self._deb.pkgName)
@@ -224,11 +223,11 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
-			
+
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
-	    ##FIXMEself.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_reinstall",KIcon.NoGroup,KIcon.SizeSmall))
+            ##FIXMEself.installButton.setIconSet( KGlobal.iconLoader().loadIconSet("adept_reinstall",KIcon.NoGroup,KIcon.SizeSmall))
             #self.button_install.grab_default()
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
@@ -242,7 +241,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             self.infoBox.setText(self.version_info_title + '\n' + self.version_info_msg)
 
         if len(self.remove) == len(self.install) == 0:
-	    pass # handled by common core
+            pass # handled by common core
         else:
             self.detailsButton.show()
 
@@ -260,7 +259,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         if not self._deb.checkDeb():
             self.installButton.setText(_("&Install Package"))
-        
+
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.installButton.setText(_("Re&install Package"))
 
@@ -289,14 +288,12 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         print "installButtonClicked2"
         if not self.try_acquire_lock():
-	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
-			       self.error_header)
-	    return False
+            KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+            return False
         if not self.try_acquire_lock():
-	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
-			       self.error_header)
-	    return False
-	# set the window as disabled
+            KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+            return False
+        # set the window as disabled
         print "installButtonClicked2.1.1"
         self.setDisabled(True)
         print "installButtonClicked2.1.2"
@@ -308,16 +305,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # FIXME: use the new python-apt acquire interface here,
         # or rather use it in the apt module and raise exception
         # when stuff goes wrong!
-	print "len > 0"
+        print "len > 0"
         if len(self.install) > 0 or len(self.remove) > 0:
-	    print "len > 0 yes"
+            print "len > 0 yes"
             print "installButtonClicked2.2"
             #if not self.acquire_lock():
             if not self.acquire_lock():
-	      print "not lock"
-              #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
-              KMessageBox.sorry(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
-              return False
+                print "not lock"
+                #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+                KMessageBox.sorry(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+                return False
             fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgress,
                                                 self.installDialog.installingLabel,
                                                 self.installDialog)
@@ -342,10 +339,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                         "more details.")
             print "here"
             if not res:
-		print "if here"
+                print "if here"
                 self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
                 return
-    
+
         print "installButtonClicked3"
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
@@ -377,7 +374,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             text = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")
             self.errorReport = KMessageBox.error(None,header + text, header)
-	    sys.exit(1)
+            sys.exit(1)
             print "Autsch, please report"
         print "installButtonClicked end"
 
@@ -385,7 +382,7 @@ class GDebiKDEInstall(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
         uic.loadUi("data/GDebiKDEInstallDialog.ui", self)
-	#FIXME terminal
+        #FIXME terminal
         self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
         self.closeButton.setText(__("kdelibs","&Close"))
         # end
@@ -405,7 +402,7 @@ class GDebiKDEInstall(QDialog):
         self.parent.dprogress.lock.unlock()
 
     def newKonsole(self):
-    	# this one belong elsewhere, but we need it here for debug
+        # this one belong elsewhere, but we need it here for debug
         #self.konsoleFrame.hide()
         ##if self.konsole is not None:
         ##    self.konsole.widget().hide()
