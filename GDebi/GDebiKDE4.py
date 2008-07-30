@@ -30,6 +30,59 @@ def utf8(str):
       return str
   return unicode(str, 'UTF-8')
 
+class DumbTerminal(QTextEdit):
+    " a very dumb terminal "
+    def __init__(self, parent_frame):
+        " really dumb terminal with simple editing support "
+        QTextEdit.__init__(self, parent_frame)
+        #self.installProgress = installProgress
+        self.setFontFamily("Monospace")
+        self.setFontPointSize(8)
+        self.setWordWrapMode(QTextOption.NoWrap)
+        self.setUndoRedoEnabled(False)
+        self._block = False
+        self.connect(self, SIGNAL("cursorPositionChanged(int,int)"), 
+                     self.onCursorPositionChanged)
+
+    def setInstallProgress(self, installProgress):
+        self.installProgress = installProgress
+
+    def insertWithTermCodes(self, text):
+        " support basic terminal codes "
+        display_text = ""
+        for c in text:
+            # \b - backspace
+            if c == chr(8):       
+                self.moveCursor(QTextEdit.MoveBackward, True)
+                self.removeSelectedText()
+            # \r - is filtered out
+            elif c == chr(13):
+                pass
+            # \a - bell - ignore for now
+            elif c == chr(7):
+                pass
+            else:
+                display_text += c
+        self.insert(display_text)
+
+    def keyPressEvent(self, ev):
+        " send (ascii) key events to the pty "
+        # FIXME: use ev.text() here instead and deal with
+        # that it sends strange stuff
+        if hasattr(self.installProgress,"master_fd"):
+            os.write(self.installProgress.master_fd, chr(ev.ascii()))
+
+    def onCursorPositionChanged(self, x, y):
+        " helper that ensures that the cursor is always at the end "
+        if self._block:
+            return
+        # block signals so that we do not run into a recursion
+        self._block = True
+        para = self.paragraphs() - 1
+        pos = self.paragraphLength(para)
+        self.setCursorPosition(para, pos)
+        self._block = False
+
 class GDebiKDEDialog(QDialog):
 	def __init__(self, parent):
 		QDialog.__init__(self, parent)
@@ -232,7 +285,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
                                                         self.installDialog.installingLabel,
                                                         self.installDialog)
-	"""
             self.installDialog.konsole.setInstallProgress(iprogress)
             errMsg = None
             try:
@@ -249,7 +301,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                 body = _("Usually this is related to an error of the "
                         "software distributor. See the terminal window for "
                         "more details.")
+            print "here"
             if not res:
+		print "if here"
                 self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
                 return
     
@@ -258,9 +312,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = KDEDpkgInstallProgress(self._deb.file,
                                              self.installDialog.installingLabel,
-                                             self.installDialog.installationProgres,
+                                             self.installDialog.installationProgress,
                                              self.installDialog.konsole, self.installDialog)
         dprogress.commit()
+	"""
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         #self.button_deb_install_close.set_sensitive(True)
@@ -294,15 +349,54 @@ class GDebiKDEInstall(QDialog):
         QDialog.__init__(self, parent)
         uic.loadUi("data/GDebiKDEInstallDialog.ui", self)
 	#FIXME terminal
+        self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
+        self.closeButton.setText(__("kdelibs","&Close"))
+        # end
+        ##FIXMEself.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
+        ##self.closeButton.setIconSet(KGlobal.iconLoader().loadIconSet("fileclose",KIcon.NoGroup,KIcon.SizeSmall))
+        self.closeButton.setEnabled(False)
+        self.parent = parent
+        self.konsole = None
+        self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)
+        self.konsoleFrame.hide()
+        self.newKonsole()
+        kapp = KApplication.kApplication()
+        kapp.processEvents()
+        print "GDebiKDEInstall init end"
+
+    def unlock(self,number):  #FIXME needed?
+        self.parent.dprogress.lock.unlock()
+
+    def newKonsole(self):
+    	# this one belong elsewhere, but we need it here for debug
+        #self.konsoleFrame.hide()
+        ##if self.konsole is not None:
+        ##    self.konsole.widget().hide()
+        self.konsole = DumbTerminal(self.konsoleFrame)
+        ##self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
+        self.konsoleFrame.setMinimumSize(500, 400)
+        ##self.konsole.setAutoStartShell(False)
+        ##self.konsole.setAutoDestroy(False)
+        ##self.konsoleWidget = self.konsole.widget()
+        self.konsoleFrameLayout.addWidget(self.konsole)
+
+        #prepare for dpkg pty being attached to konsole
+        (self.master, self.slave) = pty.openpty()
+        ##self.konsole.setPtyFd(self.master)
 
     def showTerminal(self):
         print "click"
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
             self.showDetailsButton.setText(__("libept","Show Details"))
+            #FIXME resize
         else:
             self.konsoleFrame.show()
             self.showDetailsButton.setText(__("libept","Hide Details"))
 
     def closeButtonClicked(self):
         self.close()
+
+    def close(self, argument=False):
+        GDebiKDEInstallDialog.close(self, argument)
+        KApplication.kApplication().exit()

@@ -104,6 +104,7 @@ if __name__ == "__main__":
         if args.count() >= 1:
             afile = args.arg(0)
 	print "afile: " + afile
+	afile = unicode(afile, 'utf-8')
 	options = OptionParsed #FIXME set non_interactive
 	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
 	##app.setMainWidget(gdebi)

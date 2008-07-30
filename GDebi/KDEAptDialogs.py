@@ -49,12 +49,10 @@ from gettext import gettext as gett
 def _(str):
     return unicode(gett(str), 'UTF-8')
 
-
 def utf8(str):
   if isinstance(str, unicode):
       return str
   return unicode(str, 'UTF-8')
-
 
 class KDEDpkgInstallProgress(object):
     # this one is the frontend for dpkg -i
@@ -69,13 +67,14 @@ class KDEDpkgInstallProgress(object):
 	self.parent = parent
 	
 	# in case there was some progress left from the deps
-	self.progress.setProgress(0)
+	self.progress.setValue(0)
     def timeoutHandler(self,signum, frame):
         # print 'Stopped waiting for I/O ', signum
         raise IOError, "Stopped waiting for I/O."
 
     def commit(self):
 	# ui
+	print "type: " + str(type(self.debfile))
 	self.status.setText(_("Installing '%s'...") % \
 				os.path.basename(self.debfile))
 	# the command
@@ -121,7 +120,7 @@ class KDEDpkgInstallProgress(object):
 				pass
 			KApplication.kApplication().processEvents()
 			time.sleep(0.0000001)			
-		self.progress.setProgress(100)
+		self.progress.setValue(100)
     		self.parent.closeButton.setEnabled(True)
 		
 class KDEInstallProgressAdapter(InstallProgress):
