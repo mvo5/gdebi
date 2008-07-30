@@ -405,6 +405,9 @@ class GDebiKDEInstall(QDialog):
     def closeButtonClicked(self):
         self.close()
 
+    def closeEvent(self, event):
+        self.close()
+
     def close(self):
         self.accept()
         KApplication.kApplication().exit()
