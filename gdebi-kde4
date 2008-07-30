@@ -53,6 +53,8 @@ from PyQt4.QtGui import *
 from gettext import gettext as _
 import gettext
 
+class OptionParsed:
+	non_interactive = False
 
 if __name__ == "__main__":
     data="/usr/share/gdebi"
@@ -102,11 +104,13 @@ if __name__ == "__main__":
         if args.count() >= 1:
             afile = args.arg(0)
 	print "afile: " + afile
+	options = OptionParsed #FIXME set non_interactive
 	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
 	##app.setMainWidget(gdebi)
 	gdebi.show()
-        if options.non_interactive == True:
-            gdebi.installButtonClicked()
+	#if args.getOption("non-interactive") == True:  #FIXME why doesn't this work?
+        ##if options.non_interactive == True:
+        #    gdebi.installButtonClicked()
 	app.exec_()
     except SystemError, e:
         err_header = _("Software index is broken")
