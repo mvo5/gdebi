@@ -1,0 +1,105 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2005-2007 Martin Böhm
+#
+# AUTHOR:
+# Martin Böhm <martin.bohm@ubuntu.com>
+#
+# This file is part of GDebi
+#
+# GDebi is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published
+# by the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# GDebi is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GDebi; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
+import sys
+import os
+import subprocess
+import string
+import apt
+import apt_pkg
+from PyKDE4.kdecore import *
+from PyKDE4.kdeui import *
+
+import urllib
+import fcntl
+import posix
+import time
+import thread
+import re
+import pty
+import select
+
+import sys
+import apt
+import os.path
+
+from optparse import OptionParser
+from GDebi.GDebiKDE4 import GDebiKDE
+
+from gettext import gettext as _
+import gettext
+
+
+if __name__ == "__main__":
+    data="/usr/share/gdebi"
+
+    localesApp="gdebi"
+    localesAppKdelibs="kdelibs"
+    localesDir="/usr/share/locale"
+    gettext.bindtextdomain(localesApp, localesDir)
+    gettext.textdomain(localesApp)
+    parser = OptionParser()
+    parser.add_option("-n", "--non-interactive",
+                      action="store_true", dest="non_interactive",
+                      default=False,
+                      help=_("Run non-interactive (dangerous!)"))
+    (options, args) = parser.parse_args()
+    afile = ""
+    if len(args) >= 1:
+        afile = args[0]        
+    try:
+	appName     = "KApplication"
+	catalog     = ""
+	programName = ki18n ("KApplication")
+	version     = "1.0"
+	description = ki18n ("KApplication/KMainWindow/KAboutData example")
+	license     = KAboutData.License_GPL
+	copyright   = ki18n ("(c) 2007 Jim Bublitz")
+	text        = ki18n ("none")
+	homePage    = "www.riverbankcomputing.com"
+	bugEmail    = "jbublitz@nwinternet.com"
+
+	aboutData   = KAboutData (appName, catalog, programName, version, description,
+                                license, copyright, text, homePage, bugEmail)
+	KCmdLineArgs.init (sys.argv, aboutData)
+        #app = KApplication(["gdebi-kde"],"Kdefile")
+        app = KApplication()
+	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
+	##app.setMainWidget(gdebi)
+	gdebi.show()
+        if options.non_interactive == True:
+            gdebi.installButtonClicked()
+	app.exec_()
+    except SystemError, e:
+        err_header = _("Software index is broken")
+        err_body = _("This is a major failure of your software " 
+                    "management system. Please check for broken packages "
+                    "with synaptic, check the file permissions and "
+                    "correctness of the file '/etc/apt/sources.list' and "
+                    "reload the software information with: "
+                    "'sudo apt-get update' and 'sudo apt-get install -f'."
+                    )
+	errorReport = KMessageBox.error(None, '<b>' + err_header + '</b><br>' + err_body, err_header)
+        sys.exit(1)
