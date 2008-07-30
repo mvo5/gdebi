@@ -24,10 +24,10 @@ import subprocess
 import string
 import apt
 import apt_pkg
-from qt import *
-from kdeui import *
-from kdecore import *
-from kfile import *
+from PyKDE4.kdecore import *
+from PyKDE4.kdeui import *
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 
 import urllib
 import fcntl
@@ -42,9 +42,9 @@ from DebPackage import DebPackage, Cache
 from apt.progress import InstallProgress
 from gettext import gettext as gett
 
-from GDebiKDEInstallDialog import GDebiKDEInstallDialog
-from GDebiKDEDialog import GDebiKDEDialog
-from KDEAptDialogs import *
+#from GDebiKDEInstallDialog import GDebiKDEInstallDialog
+#from GDebiKDEDialog import GDebiKDEDialog
+#from KDEAptDialogs import *
 
 def _(str):
     return unicode(gett(str), 'UTF-8')
@@ -248,7 +248,7 @@ class CacheProgressAdapter(apt.progress.FetchProgress):
 	self.progressbar = progressbar
     def update(self, percent):
 	self.progressbar.show()
-	self.progressbar.setProgress(percent)
+	self.progressbar.setValue(percent)
     def done(self):
 	pass
 

@@ -47,6 +47,8 @@ import os.path
 
 from optparse import OptionParser
 from GDebi.GDebiKDE4 import GDebiKDE
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 
 from gettext import gettext as _
 import gettext
@@ -60,32 +62,46 @@ if __name__ == "__main__":
     localesDir="/usr/share/locale"
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
-    parser = OptionParser()
-    parser.add_option("-n", "--non-interactive",
-                      action="store_true", dest="non_interactive",
-                      default=False,
-                      help=_("Run non-interactive (dangerous!)"))
-    (options, args) = parser.parse_args()
-    afile = ""
-    if len(args) >= 1:
-        afile = args[0]        
+    #parser = OptionParser()
+    #parser.add_option("-n", "--non-interactive",
+    #                  action="store_true", dest="non_interactive",
+    #                  default=False,
+    #                  help=_("Run non-interactive (dangerous!)"))
+    #(options, args) = parser.parse_args()
+    #afile = ""
+    #if len(args) >= 1:
+    #    afile = args[0]        
     try:
-	appName     = "KApplication"
+	appName     = "gdebi-kde"
 	catalog     = ""
-	programName = ki18n ("KApplication")
+	programName = ki18n ("GDebi")
 	version     = "1.0"
-	description = ki18n ("KApplication/KMainWindow/KAboutData example")
+	description = ki18n (".deb Package Installer")
 	license     = KAboutData.License_GPL
-	copyright   = ki18n ("(c) 2007 Jim Bublitz")
+	copyright   = ki18n ("(c) 2005-2007 Martin Böhm, 2008 Canonical Ltd")
 	text        = ki18n ("none")
-	homePage    = "www.riverbankcomputing.com"
-	bugEmail    = "jbublitz@nwinternet.com"
+	homePage    = "launchpad.net/gdebi"
+	bugEmail    = ""
 
 	aboutData   = KAboutData (appName, catalog, programName, version, description,
                                 license, copyright, text, homePage, bugEmail)
-	KCmdLineArgs.init (sys.argv, aboutData)
+	KCmdLineArgs.init(sys.argv, aboutData)
+	
+	options = KCmdLineOptions()
+	options.add("n")
+	options.add("non-interactive", ki18n("Run non-interactive (dangerous!)"))
+	options.add("+[File]", ki18n("File to open"))
+	KCmdLineArgs.addCmdLineOptions(options)
+	print "added options"
+	
         #app = KApplication(["gdebi-kde"],"Kdefile")
         app = KApplication()
+        #app = QApplication(["gdebi-kde"])
+	args = KCmdLineArgs.parsedArgs()
+        afile = ""
+        if args.count() >= 1:
+            afile = args.arg(0)
+	print "afile: " + afile
 	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
 	##app.setMainWidget(gdebi)
 	gdebi.show()

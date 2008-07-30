@@ -19,7 +19,16 @@ import gettext
 from GDebiCommon import GDebiCommon
 ##from GDebiKDEInstallDialog import GDebiKDEInstallDialog
 ##from GDebiKDEDialog import GDebiKDEDialog
-#from KDEAptDialogs import *
+from KDEAptDialogs import *
+
+def _(str):
+    return unicode(gettext.gettext(str), 'UTF-8')
+def __(catalog,str):
+    return unicode(gettext.dgettext(catalog, str), 'UTF-8')
+def utf8(str):
+  if isinstance(str, unicode):
+      return str
+  return unicode(str, 'UTF-8')
 
 class GDebiKDEDialog(QDialog):
 	def __init__(self, parent):
@@ -30,17 +39,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
         GDebiKDEDialog.__init__(self,parent)
         GDebiCommon.__init__(self,datadir,options,file)
-	"""
         # load the icon
-        self.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
+        ##FIXMEself.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
         # gettext as default
         self.textLabel1.setText(_("Package:"))
         self.textLabel1_2.setText(_("Status:"))
         self.detailsButton.setText(_("Details"))
-        self.tabWidget2.setTabLabel(self.desc,_("Description"))
-        self.tabWidget2.setTabLabel(self.det,_("Details"))
-        self.tabWidget2.setTabLabel(self.incl,_("Included Files"))
+        self.tabWidget2.setTabText(0,_("Description"))
+        self.tabWidget2.setTabText(1,_("Details"))
+        self.tabWidget2.setTabText(2,_("Included Files"))
         self.cancelButton.setText(__("kdelibs","&Cancel"))
         self.installButton.setText(_("&Install Package"))
         self.DetailsVersionLabel.setText(_("<b>Version:</b>"))
@@ -52,11 +60,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.setDisabled(True)
         self.PackageProgressBar.setEnabled(True)
         self.detailsButton.hide()
+	"""
         self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
         self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
+	"""
         self.show()
-        self.kapp = KApplication.kApplication()
-        self.kapp.processEvents()
+        self.kapp = KApplication.kApplication() #incidently, this stops it crashing on quit, no idea why, jriddell
+        self.kapp.processEvents() #run because openCache takes a while to do its thing
         self.cprogress = CacheProgressAdapter(self.PackageProgressBar)
         if not self.openCache():
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
@@ -73,4 +83,3 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         self.setEnabled(True)
         self.PackageProgressBar.hide()
-	"""
