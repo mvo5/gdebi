@@ -385,10 +385,13 @@ class GDebiKDEInstall(QDialog):
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
             self.showDetailsButton.setText(__("libept","Show Details"))
-            #FIXME resize
+            QTimer.singleShot(1, self.changeSize)
         else:
             self.konsoleFrame.show()
             self.showDetailsButton.setText(__("libept","Hide Details"))
+
+    def changeSize(self):
+        self.resize(self.minimumSize())
 
     def closeButtonClicked(self):
         self.close()
