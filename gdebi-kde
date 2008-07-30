@@ -44,7 +44,7 @@ import sys
 import apt
 import os.path
 
-from optparse import OptionParser
+#from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
 
 from gettext import gettext as _
@@ -86,11 +86,11 @@ if __name__ == "__main__":
                                 license, copyright, text, homePage, bugEmail)
         KCmdLineArgs.init(sys.argv, aboutData)
 
-        options = KCmdLineOptions()
-        options.add("n")
-        options.add("non-interactive", ki18n("Run non-interactive (dangerous!)"))
-        options.add("+[File]", ki18n("File to open"))
-        KCmdLineArgs.addCmdLineOptions(options)
+        opts = KCmdLineOptions()
+        opts.add("n")
+        opts.add("dont-interactive", ki18n("Run non-interactive (dangerous!)")) #should be "non-interactive" but "no" gets eaten by KCmdLineArgs
+        opts.add("+[File]", ki18n("File to open"))
+        KCmdLineArgs.addCmdLineOptions(opts)
 
         app = KApplication()
         args = KCmdLineArgs.parsedArgs()
@@ -101,9 +101,9 @@ if __name__ == "__main__":
         options = OptionParsed #FIXME set non_interactive
         gdebi = GDebiKDE(datadir=data,options=options,file=afile)
         gdebi.show()
-        #if args.getOption("non-interactive") == True:  #FIXME why doesn't this work?
-                ##if options.non_interactive == True:
-                #    gdebi.installButtonClicked()
+        if args.isSet("dont-interactive") == True:
+            options.non_interactive = True
+            gdebi.installButtonClicked()
         app.exec_()
     except SystemError, e:
         err_header = _("Software index is broken")
