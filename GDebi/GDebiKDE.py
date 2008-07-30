@@ -22,7 +22,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#import sys
 import os
 import subprocess
 import string
@@ -41,8 +40,6 @@ from PyQt4 import uic
 from DebPackage import DebPackage, Cache
 import gettext
 from GDebiCommon import GDebiCommon
-##from GDebiKDEInstallDialog import GDebiKDEInstallDialog
-##from GDebiKDEDialog import GDebiKDEDialog
 from KDEAptDialogs import *
 
 def _(str):
@@ -55,25 +52,22 @@ def utf8(str):
   return unicode(str, 'UTF-8')
 
 class DumbTerminal(QTextEdit):
-    " a very dumb terminal "
+    """ a very dumb terminal """
     def __init__(self, parent_frame):
-        " really dumb terminal with simple editing support "
+        """ really dumb terminal with simple editing support """
         QTextEdit.__init__(self, parent_frame)
-        #self.installProgress = installProgress
         self.setFontFamily("Monospace")
         self.setFontPointSize(8)
         self.setWordWrapMode(QTextOption.NoWrap)
         self.setUndoRedoEnabled(False)
         self._block = False
-        self.connect(self, SIGNAL("cursorPositionChanged(int,int)"), 
-                     self.onCursorPositionChanged)
+        self.connect(self, SIGNAL("cursorPositionChanged(int,int)"), self.onCursorPositionChanged)
 
     def setInstallProgress(self, installProgress):
         self.installProgress = installProgress
 
     def insertWithTermCodes(self, text):
-        " support basic terminal codes "
-        print "insertWithTermCodes"
+        """ support basic terminal codes """
         display_text = ""
         for c in text:
             # \b - backspace
@@ -91,14 +85,14 @@ class DumbTerminal(QTextEdit):
         self.insertPlainText(display_text)
 
     def keyPressEvent(self, ev):
-        " send (ascii) key events to the pty "
+        """ send (ascii) key events to the pty """
         # FIXME: use ev.text() here instead and deal with
         # that it sends strange stuff
         if hasattr(self.installProgress,"master_fd"):
             os.write(self.installProgress.master_fd, chr(ev.ascii()))
 
     def onCursorPositionChanged(self, x, y):
-        " helper that ensures that the cursor is always at the end "
+        """ helper that ensures that the cursor is always at the end """
         if self._block:
             return
         # block signals so that we do not run into a recursion
@@ -109,6 +103,7 @@ class DumbTerminal(QTextEdit):
         self._block = False
 
 class GDebiKDEDialog(QDialog):
+    """Our main user interface, load from UI file"""
     def __init__(self, parent):
         QDialog.__init__(self, parent)
         uic.loadUi("data/GDebiKDEDialog.ui", self)
@@ -120,7 +115,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # load the icon
         ##FIXMEself.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
-        # gettext as default
+        # gettext as default (FIXME, copy code from language-selector)
         self.textLabel1.setText(_("Package:"))
         self.textLabel1_2.setText(_("Status:"))
         self.detailsButton.setText(_("Details"))
@@ -166,9 +161,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.connect(self.detailsButton, SIGNAL("clicked()"), self.detailsButtonClicked)
 
     def open(self, file):
-        # load the common core
-        print "open"
-        res = GDebiCommon.open(self,file)
+        """ load the .deb file """
+        res = GDebiCommon.open(self, file)
         if res == False:
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
             return False
@@ -214,12 +208,11 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         # check deps
         if not self._deb.checkDeb():
-            #icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
+            #FIXME#icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
             self.installButton.setEnabled(False)
             self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failureString + "</font>")
             self.detailsButton.hide()
             return False
-
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
@@ -237,7 +230,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         if self.version_info_title != "" and self.version_info_msg != "":
             ##FIXME icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
-            ##self.infoIcon.setPixmap(icon)
             self.infoBox.setText(self.version_info_title + '\n' + self.version_info_msg)
 
         if len(self.remove) == len(self.install) == 0:
@@ -286,7 +278,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                      "/home/jr/src/gdebi/branch/ubuntu/gdebi-kde4 -n ", self._deb.file)  #FIXME
             self.kapp.exit()
 
-        print "installButtonClicked2"
         if not self.try_acquire_lock():
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
             return False
@@ -294,24 +285,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
             return False
         # set the window as disabled
-        print "installButtonClicked2.1.1"
         self.setDisabled(True)
-        print "installButtonClicked2.1.2"
         self.installDialog = GDebiKDEInstall(self)
-        print "installButtonClicked2.1.3"
         self.installDialog.show()
 
-        print "installButtonClicked2.1"
         # FIXME: use the new python-apt acquire interface here,
         # or rather use it in the apt module and raise exception
         # when stuff goes wrong!
-        print "len > 0"
         if len(self.install) > 0 or len(self.remove) > 0:
-            print "len > 0 yes"
-            print "installButtonClicked2.2"
             #if not self.acquire_lock():
             if not self.acquire_lock():
-                print "not lock"
                 #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
                 KMessageBox.sorry(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
                 return False
@@ -337,13 +320,11 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                 body = _("Usually this is related to an error of the "
                         "software distributor. See the terminal window for "
                         "more details.")
-            print "here"
             if not res:
                 print "if here"
                 self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
                 return
 
-        print "installButtonClicked3"
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
         dprogress = KDEDpkgInstallProgress(self._deb.file,
@@ -365,7 +346,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
 
-        print "installButtonClicked4"
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = Cache(self.cprogress)
         self._cache = Cache()
@@ -375,17 +355,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                          "terminal window.")
             self.errorReport = KMessageBox.error(None,header + text, header)
             sys.exit(1)
-            print "Autsch, please report"
-        print "installButtonClicked end"
 
 class GDebiKDEInstall(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
         uic.loadUi("data/GDebiKDEInstallDialog.ui", self)
-        #FIXME terminal
         self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
         self.closeButton.setText(__("kdelibs","&Close"))
-        # end
         ##FIXMEself.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
         ##self.closeButton.setIconSet(KGlobal.iconLoader().loadIconSet("fileclose",KIcon.NoGroup,KIcon.SizeSmall))
         self.closeButton.setEnabled(False)
@@ -396,30 +372,16 @@ class GDebiKDEInstall(QDialog):
         self.newKonsole()
         kapp = KApplication.kApplication()
         kapp.processEvents()
-        print "GDebiKDEInstall init end"
-
-    def unlock(self,number):  #FIXME needed?
-        self.parent.dprogress.lock.unlock()
 
     def newKonsole(self):
-        # this one belong elsewhere, but we need it here for debug
-        #self.konsoleFrame.hide()
-        ##if self.konsole is not None:
-        ##    self.konsole.widget().hide()
         self.konsole = DumbTerminal(self.konsoleFrame)
-        ##self.konsole = konsolePart(self.konsoleFrame, "konsole", self.konsoleFrame, "konsole")
         self.konsoleFrame.setMinimumSize(500, 400)
-        ##self.konsole.setAutoStartShell(False)
-        ##self.konsole.setAutoDestroy(False)
-        ##self.konsoleWidget = self.konsole.widget()
         self.konsoleFrameLayout.addWidget(self.konsole)
 
         #prepare for dpkg pty being attached to konsole
         (self.master, self.slave) = pty.openpty()
-        ##self.konsole.setPtyFd(self.master)
 
     def showTerminal(self):
-        print "click"
         if self.konsoleFrame.isVisible():
             self.konsoleFrame.hide()
             self.showDetailsButton.setText(__("libept","Show Details"))
