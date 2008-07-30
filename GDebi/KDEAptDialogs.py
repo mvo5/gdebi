@@ -186,19 +186,18 @@ class KDEInstallProgressAdapter(InstallProgress):
 	time.sleep(0.0000001)
 	#while gtk.events_pending():
 	#gtk.main_iteration()
+
     def fork(self):
-	#self.child_pid = os.fork()
-        (self.child_pid, self.master_fd)  = pty.fork()
-	if self.child_pid == 0:
-	    os.setsid()
-	    #os.environ["TERM"] = "linux"
-	    os.environ["DEBIAN_FRONTEND"] = "kde"
-	    os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
-	    os.dup2(self.parent.slave, 0)
-	    os.dup2(self.parent.slave, 1)
-	    os.dup2(self.parent.slave, 2)
-	return self.child_pid
-    
+        """pty voodoo"""
+        (self.child_pid, self.master_fd) = pty.fork()
+        if self.child_pid == 0:
+            os.environ["TERM"] = "dumb"
+            if not os.environ.has_key("DEBIAN_FRONTEND"):
+                os.environ["DEBIAN_FRONTEND"] = "noninteractive"
+            os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
+        #logging.debug(" fork pid is: %s" % self.child_pid)
+        return self.child_pid
+
     def waitChild(self):
         while True:
             try:

@@ -139,6 +139,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.PackageProgressBar.hide()
 	self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancelButtonClicked)
 	self.connect(self.installButton, SIGNAL("clicked()"), self.installButtonClicked)
+	self.connect(self.detailsButton, SIGNAL("clicked()"), self.detailsButtonClicked)
 
     def open(self, file):
         # load the common core
@@ -242,6 +243,18 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def cancelButtonClicked(self):
         self.close()
 
+    def detailsButtonClicked(self):
+        changedList = QStringList()
+        (install, remove, unauthenticated) = self._deb.requiredChanges
+        for i in install:
+            changedList.append(_("To be installed: %s") % i)
+        for r in remove:
+            changedList.append(_("To be removed: %s") % r)
+
+        infoReport = KMessageBox.informationList(self,
+                      _("<b>To install the following changes are required:</b>"),
+                      changedList, _("Details"))
+
     def installButtonClicked(self):
         # if not root, start a new instance
         print "installButtonClicked"
@@ -275,15 +288,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if len(self.install) > 0 or len(self.remove) > 0:
 	    print "len > 0 yes"
             print "installButtonClicked2.2"
+            #if not self.acquire_lock():
             if not self.acquire_lock():
 	      print "not lock"
               #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
-              KMessageBox.warning(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+              KMessageBox.sorry(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
               return False
-            fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
+            fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgress,
                                                 self.installDialog.installingLabel,
                                                 self.installDialog)
-            iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
+            iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgress,
                                                         self.installDialog.installingLabel,
                                                         self.installDialog)
             self.installDialog.konsole.setInstallProgress(iprogress)
