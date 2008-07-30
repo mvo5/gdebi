@@ -223,10 +223,10 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
         return True
 
     def mediaChange(self, medium, drive):
-    #FIXME test
         msg = _("Please insert '%s' into the drive '%s'") % (medium,drive)
-        change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
-        if change == QMessageBox.Ok:
+        #change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
+        change = KMessageBox.questionYesNo(None, _("Media Change"), _("Media Change") + "<br>" + msg, KStandardGuiItem.ok(), KStandardGuiItem.cancel())
+        if change == KMessageBox.Yes:
             return True
         return False
 

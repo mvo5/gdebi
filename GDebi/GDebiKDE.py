@@ -121,7 +121,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         GDebiCommon.__init__(self,datadir,options,file)
         # load the icon
         self.setWindowIcon(KIcon("adept_installer"))
-        ##FIXMEself.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
         # gettext as default (FIXME, copy code from language-selector)
         self.textLabel1.setText(_("Package:"))
