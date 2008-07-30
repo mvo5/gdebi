@@ -52,6 +52,7 @@ def utf8(str):
   return unicode(str, 'UTF-8')
 
 def loadUi(file, parent):
+    """load local file if possible else use installed file"""
     if os.path.exists("data/" + file):
         uic.loadUi("data/" + file, parent)
     else:
@@ -119,6 +120,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         GDebiKDEDialog.__init__(self,parent)
         GDebiCommon.__init__(self,datadir,options,file)
         # load the icon
+        self.setWindowIcon(KIcon("adept_installer"))
         ##FIXMEself.setIcon(KGlobal.iconLoader().loadIcon("adept_installer",KIcon.NoGroup,KIcon.SizeLarge))
         # first, we load all the default descriptions -- pyuic doesn't use
         # gettext as default (FIXME, copy code from language-selector)
@@ -139,10 +141,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.setDisabled(True)
         self.PackageProgressBar.setEnabled(True)
         self.detailsButton.hide()
-        """FIXME
-        self.installButton.setIconSet(KGlobal.iconLoader().loadIconSet("adept_install",KIcon.NoGroup,KIcon.SizeSmall))
-        self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("button_cancel",KIcon.NoGroup,KIcon.SizeSmall))
-        """
+        self.installButton.setIcon(KIcon("dialog-ok"))
+        self.cancelButton.setIcon(KIcon("dialog-cancel"))
         self.show()
         self.kapp = KApplication.kApplication() #incidently, this stops it crashing on quit, no idea why, jriddell
         self.kapp.processEvents() #run because openCache takes a while to do its thing
@@ -214,7 +214,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         # check deps
         if not self._deb.checkDeb():
-            #FIXME#icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_critical",KIcon.NoGroup,KIcon.SizeMedium))
             self.installButton.setEnabled(False)
             self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failureString + "</font>")
             self.detailsButton.hide()
@@ -226,7 +225,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
-            ##FIXMEself.installButton.setIconSet( KGlobal.iconLoader().loadIconSet("adept_reinstall",KIcon.NoGroup,KIcon.SizeSmall))
+            self.installButton.setIcon(KIcon("view-refresh"))
+            #TODO
             #self.button_install.grab_default()
             #self.button_install.set_sensitive(True)
             #self.button_details.hide()
@@ -235,7 +235,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.getChanges()
 
         if self.version_info_title != "" and self.version_info_msg != "":
-            ##FIXME icon = QPixmap(KGlobal.iconLoader().loadIcon("messagebox_info",KIcon.NoGroup,KIcon.SizeMedium))
+            self.infoIcon.setPixmap(DesktopIcon("dialog-information"))
             self.infoBox.setText(self.version_info_title + '\n' + self.version_info_msg)
 
         if len(self.remove) == len(self.install) == 0:
@@ -371,8 +371,8 @@ class GDebiKDEInstall(QDialog):
         loadUi("GDebiKDEInstallDialog.ui", self)
         self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
         self.closeButton.setText(__("kdelibs","&Close"))
-        ##FIXMEself.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
-        ##self.closeButton.setIconSet(KGlobal.iconLoader().loadIconSet("fileclose",KIcon.NoGroup,KIcon.SizeSmall))
+        self.showDetailsButton.setIcon(KIcon("utilities-terminal"))
+        self.closeButton.setIcon(KIcon("window-close"))
         self.closeButton.setEnabled(False)
         self.parent = parent
         self.konsole = None
