@@ -30,8 +30,6 @@ import apt
 import apt_pkg
 from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 
 import urllib
 import fcntl

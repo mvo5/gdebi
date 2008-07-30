@@ -28,6 +28,7 @@ import subprocess
 import string
 import apt
 import apt_pkg
+from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *
 
 import urllib
