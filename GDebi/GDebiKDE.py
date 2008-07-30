@@ -51,6 +51,12 @@ def utf8(str):
       return str
   return unicode(str, 'UTF-8')
 
+def loadUi(file, parent):
+    if os.path.exists("data/" + file):
+        uic.loadUi("data/" + file, parent)
+    else:
+        uic.loadUi("/usr/share/gdebi/" + file, parent)
+
 class DumbTerminal(QTextEdit):
     """ a very dumb terminal """
     def __init__(self, parent_frame):
@@ -106,7 +112,7 @@ class GDebiKDEDialog(QDialog):
     """Our main user interface, load from UI file"""
     def __init__(self, parent):
         QDialog.__init__(self, parent)
-        uic.loadUi("data/GDebiKDEDialog.ui", self)
+        loadUi("GDebiKDEDialog.ui", self)
 
 class GDebiKDE(GDebiCommon, GDebiKDEDialog):
     def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
@@ -272,10 +278,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
     def installButtonClicked(self):
         # if not root, start a new instance
-        print "installButtonClicked"
         if os.getuid() != 0:
-            os.execl("/usr/bin/kdesudo", "kdesudo",
-                     "/home/jr/src/gdebi/branch/ubuntu/gdebi-kde4 -n ", self._deb.file)  #FIXME
+            if os.path.exists("gdebi-kde"):
+                executable = os.path.curdir + "/gdebi-kde"
+            else:
+                executable = "/usr/bin/gdebi-kde"
+            print "executable " + executable
+            os.execl("/usr/bin/kdesudo", "kdesudo", executable + " -n ", self._deb.file)
             self.kapp.exit()
 
         if not self.try_acquire_lock():
@@ -359,7 +368,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 class GDebiKDEInstall(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
-        uic.loadUi("data/GDebiKDEInstallDialog.ui", self)
+        loadUi("GDebiKDEInstallDialog.ui", self)
         self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
         self.closeButton.setText(__("kdelibs","&Close"))
         ##FIXMEself.showDetailsButton.setIconSet(KGlobal.iconLoader().loadIconSet("terminal",KIcon.NoGroup,KIcon.SizeSmall))
