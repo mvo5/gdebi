@@ -30,6 +30,8 @@ import apt
 import apt_pkg
 from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 
 import urllib
 import fcntl
@@ -53,7 +55,7 @@ def utf8(str):
   return unicode(str, 'UTF-8')
 
 class KDEDpkgInstallProgress(object):
-    # this one is the frontend for dpkg -i
+    """The frontend for dpkg -i"""
     # there is only 0/100 state for the progress bar
 
     def __init__(self, debfile, status, progress, konsole, parent):
@@ -66,13 +68,12 @@ class KDEDpkgInstallProgress(object):
 
         # in case there was some progress left from the deps
         self.progress.setValue(0)
+
     def timeoutHandler(self,signum, frame):
-        # print 'Stopped waiting for I/O ', signum
         raise IOError, "Stopped waiting for I/O."
 
     def commit(self):
         # ui
-        print "type: " + str(type(self.debfile))
         self.status.setText(_("Installing '%s'...") % os.path.basename(self.debfile))
         # the command
         cmd = "/usr/bin/dpkg"
@@ -94,27 +95,25 @@ class KDEDpkgInstallProgress(object):
                 # see select(2) or select at libref for more info
                 # TODO: implement error checking
                 while True:
+                    #Read from pty and write to DumbTerminal
                     try:
                         (rlist, wlist, xlist) = select.select([self.parent.master],[],[], 0)
                         if len(rlist) > 0:
                             line = os.read(self.parent.master, 255)
-                            #self._terminal_log.write(line)
-                            print "inserting line: " + line
                             self.parent.konsole.insertWithTermCodes(utf8(line))
                         else:
                             break
                     except Exception, e:
                         print e
-                        #logging.debug("error reading from self.master_fd '%s'" % e)
                     break
 
                 try:
                     readable = select.select([rNum],[],[],0.001)
                     if len(readable[0]) > 0:
                         self.exitstatus = int(os.read(rNum,2))
-
                 except (OSError, IOError):
                     pass
+
                 KApplication.kApplication().processEvents()
                 time.sleep(0.0000001)
             self.progress.setValue(100)
@@ -130,48 +129,42 @@ class KDEInstallProgressAdapter(InstallProgress):
         self.finished = False
 
     def child_exited(self,process):
-        print "processExited(self):"
-        print "exit status: " + str(process.exitStatus())
         self.finished = True
         self.apt_status = process.exitStatus()
-
-        #print "child_exited: %s %s %s %s" % (self,term,pid,status)
-        #se lf.apt_status = posix.WEXITSTATUS(status)
         self.finished = True
+
     def error(self, pkg, errormsg):
         # FIXME: display a msg
-        #self.term_expander.set_expanded(True)
+        #self.term_expander.set_expanded(True) #FIXME show konsole
         pass
+
     def conffile(self, current, new):
         # FIXME: display a msg or expand term
-        #self.term_expander.set_expanded(True)
+        #self.term_expander.set_expanded(True) #FIXME show konsole
         pass
+
     def startUpdate(self):
-        #print "startUpdate"
         apt_pkg.PkgSystemUnLock()
         self.action.setText(_("Installing dependencies..."))
         self.progress.setValue(0)
+
     def statusChange(self, pkg, percent, status):
         self.progress.setValue(percent)
         print status # mhb debug
-        #self.progress.setText(status)
-    def finishUpdate(self):
-        #print "finished"
-        pass
+        #self.progress.setText(status) #FIXME set text
+
     def updateInterface(self):
-        # log the output of dpkg (on the master_fd) to the terminal log
+        # log the output of dpkg (on the master_fd) to the DumbTerminal
         while True:
             try:
                 (rlist, wlist, xlist) = select.select([self.master_fd],[],[], 0)
                 if len(rlist) > 0:
                     line = os.read(self.master_fd, 255)
-                    #self._terminal_log.write(line)
                     self.parent.konsole.insertWithTermCodes(utf8(line))
                 else:
                     break
             except Exception, e:
                 print e
-                #logging.debug("error reading from self.master_fd '%s'" % e)
                 break
         try:
             InstallProgress.updateInterface(self)
@@ -180,8 +173,6 @@ class KDEInstallProgressAdapter(InstallProgress):
 
         KApplication.kApplication().processEvents()
         time.sleep(0.0000001)
-        #while gtk.events_pending():
-        #gtk.main_iteration()
 
     def fork(self):
         """pty voodoo"""
@@ -191,7 +182,6 @@ class KDEInstallProgressAdapter(InstallProgress):
             if not os.environ.has_key("DEBIAN_FRONTEND"):
                 os.environ["DEBIAN_FRONTEND"] = "noninteractive"
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
-        #logging.debug(" fork pid is: %s" % self.child_pid)
         return self.child_pid
 
     def waitChild(self):
@@ -199,7 +189,6 @@ class KDEInstallProgressAdapter(InstallProgress):
             try:
                 select.select([self.statusfd],[],[], self.selectTimeout)
             except Exception, e:
-                #logging.warning("select interrupted '%s'" % e)
                 pass
             self.updateInterface()
             (pid, res) = os.waitpid(self.child_pid,os.WNOHANG)
@@ -212,13 +201,14 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
         self.progress = progress
         self.label = label
         self.parent = parent
+
     def start(self):
-        #print "start()"
         self.label.setText(_("Downloading additional package files..."))
         self.progress.setValue(0)
+
     def stop(self):
-        #print "stop()"
         pass
+
     def pulse(self):
         apt.progress.FetchProgress.pulse(self)
         self.progress.setValue(self.percent)
@@ -231,6 +221,7 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
             self.label.setText(_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)))
         KApplication.kApplication().processEvents()
         return True
+
     def mediaChange(self, medium, drive):
     #FIXME test
         msg = _("Please insert '%s' into the drive '%s'") % (medium,drive)
@@ -242,9 +233,10 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
 class CacheProgressAdapter(apt.progress.FetchProgress):
     def __init__(self, progressbar):
         self.progressbar = progressbar
+
     def update(self, percent):
         self.progressbar.show()
         self.progressbar.setValue(percent)
+
     def done(self):
         pass
-
