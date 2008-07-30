@@ -28,7 +28,6 @@ import subprocess
 import string
 import apt
 import apt_pkg
-from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *
 
 import urllib
@@ -46,8 +45,6 @@ import os.path
 
 from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 
 from gettext import gettext as _
 import gettext
@@ -93,20 +90,15 @@ if __name__ == "__main__":
         options.add("non-interactive", ki18n("Run non-interactive (dangerous!)"))
         options.add("+[File]", ki18n("File to open"))
         KCmdLineArgs.addCmdLineOptions(options)
-        print "added options"
 
-        #app = KApplication(["gdebi-kde"],"Kdefile")
         app = KApplication()
-        #app = QApplication(["gdebi-kde"])
         args = KCmdLineArgs.parsedArgs()
         afile = ""
         if args.count() >= 1:
             afile = args.arg(0)
-        print "afile: " + afile
         afile = unicode(afile, 'utf-8')
         options = OptionParsed #FIXME set non_interactive
         gdebi = GDebiKDE(datadir=data,options=options,file=afile)
-        ##app.setMainWidget(gdebi)
         gdebi.show()
         #if args.getOption("non-interactive") == True:  #FIXME why doesn't this work?
                 ##if options.non_interactive == True:

@@ -46,10 +46,6 @@ from DebPackage import DebPackage, Cache
 from apt.progress import InstallProgress
 from gettext import gettext as gett
 
-#from GDebiKDEInstallDialog import GDebiKDEInstallDialog
-#from GDebiKDEDialog import GDebiKDEDialog
-#from KDEAptDialogs import *
-
 def _(str):
     return unicode(gett(str), 'UTF-8')
 
