@@ -49,12 +49,13 @@ class DumbTerminal(QTextEdit):
 
     def insertWithTermCodes(self, text):
         " support basic terminal codes "
+	print "insertWithTermCodes"
         display_text = ""
         for c in text:
             # \b - backspace
-            if c == chr(8):       
-                self.moveCursor(QTextEdit.MoveBackward, True)
-                self.removeSelectedText()
+            if c == chr(8):
+                self.moveCursor(QTextEdit.MoveBackward, QTextCursor.KeepAnchor)
+                self.cut() #self.removeSelectedText()  FIXME
             # \r - is filtered out
             elif c == chr(13):
                 pass
@@ -63,7 +64,7 @@ class DumbTerminal(QTextEdit):
                 pass
             else:
                 display_text += c
-        self.insert(display_text)
+        self.insertPlainText(display_text)
 
     def keyPressEvent(self, ev):
         " send (ascii) key events to the pty "
@@ -80,7 +81,7 @@ class DumbTerminal(QTextEdit):
         self._block = True
         para = self.paragraphs() - 1
         pos = self.paragraphLength(para)
-        self.setCursorPosition(para, pos)
+        self.moveCursor(QTextCursor.End)
         self._block = False
 
 class GDebiKDEDialog(QDialog):
@@ -315,12 +316,11 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                                              self.installDialog.installationProgress,
                                              self.installDialog.konsole, self.installDialog)
         dprogress.commit()
-	"""
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         #self.button_deb_install_close.set_sensitive(True)
         #self.button_deb_install_close.grab_default()
-        self.installDialog.setCaption(_("Installation finished"))
+        self.installDialog.setWindowTitle(_("Installation finished"))
         if dprogress.exitstatus == 0:
             self.installDialog.installingLabel.setText(_("Package '%s' was installed") % os.path.basename(self._deb.file))
         else:
@@ -342,7 +342,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 	    sys.exit(1)
             print "Autsch, please report"
         print "installButtonClicked end"
-	"""
 
 class GDebiKDEInstall(QDialog):
     def __init__(self, parent):
@@ -397,6 +396,6 @@ class GDebiKDEInstall(QDialog):
     def closeButtonClicked(self):
         self.close()
 
-    def close(self, argument=False):
-        GDebiKDEInstallDialog.close(self, argument)
+    def close(self):
+        self.accept()
         KApplication.kApplication().exit()

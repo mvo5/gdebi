@@ -102,6 +102,7 @@ class KDEDpkgInstallProgress(object):
 					if len(rlist) > 0:
 						line = os.read(self.parent.master, 255)
 						#self._terminal_log.write(line)
+						print "inserting line: " + line
 						self.parent.konsole.insertWithTermCodes(utf8(line))
 					else:
 						break
