@@ -1,5 +1,6 @@
 debian/tmp/usr/bin/gdebi-gtk
-debian/tmp/usr/share/gdebi
+debian/tmp/usr/share/gdebi/gdebi.glade
+debian/tmp/usr/share/gdebi/gdebi.png
 debian/tmp/usr/share/applications/*.desktop
 debian/tmp/usr/share/application-registry
 debian/tmp/usr/share/mime

@@ -1,3 +1,10 @@
+gdebi (0.3.13) UNRELEASED; urgency=low
+
+  * GDebi/GDebiKDE.py
+    - Port to KDE 4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 30 Jul 2008 22:32:25 +0100
+
 gdebi (0.3.12) intrepid; urgency=low
 
   * GDebi/GDebi.py:
