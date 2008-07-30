@@ -84,6 +84,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.setEnabled(True)
         self.PackageProgressBar.hide()
 	self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancelButtonClicked)
+	self.connect(self.installButton, SIGNAL("clicked()"), self.installButtonClicked)
 
     def open(self, file):
         # load the common core
@@ -141,6 +142,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             self.detailsButton.hide()
             return False
 
+
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
 			
@@ -184,4 +186,123 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             self.installButton.setText(_("Re&install Package"))
 
     def cancelButtonClicked(self):
+        self.close()
+
+    def installButtonClicked(self):
+        # if not root, start a new instance
+        print "installButtonClicked"
+        if os.getuid() != 0:
+            os.execl("/usr/bin/kdesudo", "kdesudo",
+                     "/home/jr/src/gdebi/branch/ubuntu/gdebi-kde4 -n ", self._deb.file)  #FIXME
+            self.kapp.exit()
+
+        print "installButtonClicked2"
+        if not self.try_acquire_lock():
+	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
+			       self.error_header)
+	    return False
+        if not self.try_acquire_lock():
+	    KMessageBox.error(None, '<b>' + self.error_header + '</b><br>' + self.error_body,
+			       self.error_header)
+	    return False
+	# set the window as disabled
+        print "installButtonClicked2.1.1"
+        self.setDisabled(True)
+        print "installButtonClicked2.1.2"
+        self.installDialog = GDebiKDEInstall(self)
+        print "installButtonClicked2.1.3"
+        self.installDialog.show()
+
+        print "installButtonClicked2.1"
+        # FIXME: use the new python-apt acquire interface here,
+        # or rather use it in the apt module and raise exception
+        # when stuff goes wrong!
+	print "len > 0"
+        if len(self.install) > 0 or len(self.remove) > 0:
+	    print "len > 0 yes"
+            print "installButtonClicked2.2"
+            if not self.acquire_lock():
+	      print "not lock"
+              #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+              KMessageBox.warning(None, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
+              return False
+            fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgres,
+                                                self.installDialog.installingLabel,
+                                                self.installDialog)
+            iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgres,
+                                                        self.installDialog.installingLabel,
+                                                        self.installDialog)
+	"""
+            self.installDialog.konsole.setInstallProgress(iprogress)
+            errMsg = None
+            try:
+                res = self._cache.commit(fprogress,iprogress)
+            except IOError, msg:
+                res = False
+                errMsg = "%s" % msg
+                header = _("Could not download all required files")
+                body = _("Please check your internet connection or "
+                            "installation medium.")
+            except SystemError, msg:
+                res = False
+                header = _("Could not install all dependencies"),
+                body = _("Usually this is related to an error of the "
+                        "software distributor. See the terminal window for "
+                        "more details.")
+            if not res:
+                self.errorReport = KMessageBox.error(None,header + "<br>" + body, header)
+                return
+    
+        print "installButtonClicked3"
+        # install the package itself
+        #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
+        dprogress = KDEDpkgInstallProgress(self._deb.file,
+                                             self.installDialog.installingLabel,
+                                             self.installDialog.installationProgres,
+                                             self.installDialog.konsole, self.installDialog)
+        dprogress.commit()
+        #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
+        # show the button
+        #self.button_deb_install_close.set_sensitive(True)
+        #self.button_deb_install_close.grab_default()
+        self.installDialog.setCaption(_("Installation finished"))
+        if dprogress.exitstatus == 0:
+            self.installDialog.installingLabel.setText(_("Package '%s' was installed") % os.path.basename(self._deb.file))
+        else:
+            self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
+            self.installDialog.konsoleFrame.show()
+        #self.statusbar_main.push(self.context,_("Installation complete"))
+        # FIXME: Doesn't stop notifying
+        #self.window_main.set_property("urgency-hint", 1)
+
+        print "installButtonClicked4"
+        # reopen the cache, reread the file, FIXME: add progress reporting
+        #self._cache = Cache(self.cprogress)
+        self._cache = Cache()
+        if self._cache._depcache.BrokenCount > 0:
+            header = _("Failed to completely install all dependencies")
+            text = _("To fix this run 'sudo apt-get install -f' in a "
+                         "terminal window.")
+            self.errorReport = KMessageBox.error(None,header + text, header)
+	    sys.exit(1)
+            print "Autsch, please report"
+        print "installButtonClicked end"
+	"""
+
+class GDebiKDEInstall(QDialog):
+    def __init__(self, parent):
+        QDialog.__init__(self, parent)
+        uic.loadUi("data/GDebiKDEInstallDialog.ui", self)
+	#FIXME terminal
+
+    def showTerminal(self):
+        print "click"
+        if self.konsoleFrame.isVisible():
+            self.konsoleFrame.hide()
+            self.showDetailsButton.setText(__("libept","Show Details"))
+        else:
+            self.konsoleFrame.show()
+            self.showDetailsButton.setText(__("libept","Hide Details"))
+
+    def closeButtonClicked(self):
         self.close()

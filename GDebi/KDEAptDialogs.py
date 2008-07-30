@@ -154,9 +154,9 @@ class KDEInstallProgressAdapter(InstallProgress):
 	#print "startUpdate"
 	apt_pkg.PkgSystemUnLock()
 	self.action.setText(_("Installing dependencies..."))
-	self.progress.setProgress(0)
+	self.progress.setValue(0)
     def statusChange(self, pkg, percent, status):
-	self.progress.setProgress(percent)
+	self.progress.setValue(percent)
 	print status # mhb debug
 	#self.progress.setText(status)
     def finishUpdate(self):
@@ -220,13 +220,13 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
     def start(self):
 	#print "start()"
 	self.label.setText(_("Downloading additional package files..."))
-	self.progress.setProgress(0)
+	self.progress.setValue(0)
     def stop(self):
 	#print "stop()"
 	pass
     def pulse(self):
 	apt.progress.FetchProgress.pulse(self)
-        self.progress.setProgress(self.percent)
+        self.progress.setValue(self.percent)
         currentItem = self.currentItems + 1
         if currentItem > self.totalItems:
             currentItem = self.totalItems
@@ -237,6 +237,7 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
 	KApplication.kApplication().processEvents()
 	return True
     def mediaChange(self, medium, drive):
+	#FIXME test
         msg = _("Please insert '%s' into the drive '%s'") % (medium,drive)
         change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
         if change == QMessageBox.Ok:
