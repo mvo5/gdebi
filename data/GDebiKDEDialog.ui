@@ -21,8 +21,8 @@
   <property name="sizeGripEnabled" >
    <bool>false</bool>
   </property>
-  <layout class="QVBoxLayout" >
-   <item>
+  <layout class="QGridLayout" name="gridLayout" >
+   <item row="0" column="0" >
     <layout class="QHBoxLayout" >
      <item>
       <layout class="QGridLayout" >
@@ -144,7 +144,7 @@
      </item>
     </layout>
    </item>
-   <item>
+   <item row="1" column="0" >
     <spacer name="spacer3" >
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -160,13 +160,90 @@
      </property>
     </spacer>
    </item>
-   <item>
+   <item row="2" column="0" >
+    <layout class="QHBoxLayout" >
+     <item>
+      <spacer name="spacer5" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="infoIcon" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="scaledContents" >
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="infoBox" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="spacer4" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0" >
     <widget class="QTabWidget" name="tabWidget2" >
      <property name="sizePolicy" >
       <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
        <horstretch>160</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
      </property>
      <widget class="QWidget" name="desc" >
       <property name="geometry" >
@@ -385,81 +462,7 @@
      </widget>
     </widget>
    </item>
-   <item>
-    <layout class="QHBoxLayout" >
-     <item>
-      <spacer name="spacer5" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="infoIcon" >
-       <property name="enabled" >
-        <bool>true</bool>
-       </property>
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="scaledContents" >
-        <bool>true</bool>
-       </property>
-       <property name="wordWrap" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="infoBox" >
-       <property name="enabled" >
-        <bool>true</bool>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="wordWrap" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="spacer4" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item>
+   <item row="4" column="0" >
     <spacer name="spacer2" >
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -475,7 +478,7 @@
      </property>
     </spacer>
    </item>
-   <item>
+   <item row="5" column="0" >
     <layout class="QHBoxLayout" >
      <item>
       <spacer name="Horizontal Spacing2_2" >

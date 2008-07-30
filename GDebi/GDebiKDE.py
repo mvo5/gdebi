@@ -346,7 +346,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         #self.button_deb_install_close.grab_default()
         self.installDialog.setWindowTitle(_("Installation finished"))
         if dprogress.exitstatus == 0:
-            self.installDialog.installingLabel.setText(_("Package '%s' was installed") % os.path.basename(self._deb.file))
+            self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgName)
         else:
             self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
             self.installDialog.konsoleFrame.show()
@@ -373,6 +373,7 @@ class GDebiKDEInstall(QDialog):
         self.showDetailsButton.setIcon(KIcon("utilities-terminal"))
         self.closeButton.setIcon(KIcon("window-close"))
         self.closeButton.setEnabled(False)
+        self.closeButton.setVisible(False)
         self.parent = parent
         self.konsole = None
         self.konsoleFrameLayout = QHBoxLayout(self.konsoleFrame)

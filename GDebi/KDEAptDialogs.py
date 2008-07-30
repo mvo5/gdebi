@@ -118,6 +118,9 @@ class KDEDpkgInstallProgress(object):
                 time.sleep(0.0000001)
             self.progress.setValue(100)
             self.parent.closeButton.setEnabled(True)
+            self.parent.closeButton.setVisible(True)
+            self.parent.installationProgress.setVisible(False)
+            QTimer.singleShot(1, self.parent.changeSize)
 
 class KDEInstallProgressAdapter(InstallProgress):
     def __init__(self, progress, action, parent):
