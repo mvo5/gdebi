@@ -1,5 +1,12 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+#
+# Copyright (c) 2005-2007 Martin Böhm
+# Copyright (c) 2008 Canonical Ltd
+#
+# AUTHOR:
+# Martin Böhm <martin.bohm@ubuntu.com>
+#
 # This file is part of GDebi
 #
 # GDebi is free software; you can redistribute it and/or
@@ -13,10 +20,7 @@
 # General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with GDebi; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#
-
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import os
