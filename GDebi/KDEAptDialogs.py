@@ -233,6 +233,7 @@ class CacheProgressAdapter(apt.progress.FetchProgress):
     def update(self, percent):
         self.progressbar.show()
         self.progressbar.setValue(percent)
+        KApplication.kApplication().processEvents()
 
     def done(self):
         pass
