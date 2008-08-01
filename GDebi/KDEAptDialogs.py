@@ -65,6 +65,7 @@ class KDEDpkgInstallProgress(object):
         self.progress = progress
         self.konsole = konsole
         self.parent = parent
+        self.konsole.setInstallProgress(self)
 
         # in case there was some progress left from the deps
         self.progress.setValue(0)
@@ -78,49 +79,40 @@ class KDEDpkgInstallProgress(object):
         # the command
         cmd = "/usr/bin/dpkg"
         argv = [cmd, "-i", self.debfile]
-        (rNum,wNum) = os.pipe()
-        self.child_pid = os.fork()
+        (self.child_pid, self.master_fd) = pty.fork()
 
         if self.child_pid == 0:
-            # we're the child, call a subprocess, wait for the exit status, use the parent Konsole fd's as stdin/stdout
-            exitstatus = subprocess.call(argv,stdin=self.parent.master, stdout=self.parent.slave,stderr=subprocess.STDOUT)
-            #exitstatus = subprocess.call(argv)
-            os.write(wNum,str(exitstatus))
-            os._exit(0)
-        else:
-            self.exitstatus = -5
-            while self.exitstatus < 0:
-                # okay, so what we're doing now:
-                # we're using the select check to see if the pipe is readable. If it is, we're reading it
-                # see select(2) or select at libref for more info
-                # TODO: implement error checking
-                while True:
-                    #Read from pty and write to DumbTerminal
-                    try:
-                        (rlist, wlist, xlist) = select.select([self.parent.master],[],[], 0)
-                        if len(rlist) > 0:
-                            line = os.read(self.parent.master, 255)
-                            self.parent.konsole.insertWithTermCodes(utf8(line))
-                        else:
-                            break
-                    except Exception, e:
-                        print e
-                    break
+            os.environ["TERM"] = "dumb"
+            if not os.environ.has_key("DEBIAN_FRONTEND"):
+                os.environ["DEBIAN_FRONTEND"] = "noninteractive"
+            os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
+            exitstatus = subprocess.call(argv)
+            os._exit(exitstatus)
+        
+        while True:
+            #Read from pty and write to DumbTerminal
+            try:
+                (rlist, wlist, xlist) = select.select([self.master_fd],[],[], 0.001)
+                if len(rlist) > 0:
+                    line = os.read(self.master_fd, 255)
+                    self.parent.konsole.insertWithTermCodes(utf8(line))
+            except Exception, e:
+                #print e
+                # 11 == EAGAIN
+                if e.errno == 11:
+                    continue
+                break
+            KApplication.kApplication().processEvents()
+        # at this point we got a read error from the pty, that most
+        # likely means that the client is dead
+        (pid, status) = os.waitpid(self.child_pid, 0)
+        self.exitstatus = os.WEXITSTATUS(status)
 
-                try:
-                    readable = select.select([rNum],[],[],0.001)
-                    if len(readable[0]) > 0:
-                        self.exitstatus = int(os.read(rNum,2))
-                except (OSError, IOError):
-                    pass
-
-                KApplication.kApplication().processEvents()
-                time.sleep(0.0000001)
-            self.progress.setValue(100)
-            self.parent.closeButton.setEnabled(True)
-            self.parent.closeButton.setVisible(True)
-            self.parent.installationProgress.setVisible(False)
-            QTimer.singleShot(1, self.parent.changeSize)
+        self.progress.setValue(100)
+        self.parent.closeButton.setEnabled(True)
+        self.parent.closeButton.setVisible(True)
+        self.parent.installationProgress.setVisible(False)
+        QTimer.singleShot(1, self.parent.changeSize)
 
 class KDEInstallProgressAdapter(InstallProgress):
     def __init__(self, progress, action, parent):
@@ -130,6 +122,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         self.action = action
         self.parent = parent
         self.finished = False
+        self.parent.konsole.setInstallProgress(self)
 
     def child_exited(self,process):
         self.finished = True

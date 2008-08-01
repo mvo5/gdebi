@@ -93,10 +93,19 @@ class DumbTerminal(QTextEdit):
 
     def keyPressEvent(self, ev):
         """ send (ascii) key events to the pty """
-        # FIXME: use ev.text() here instead and deal with
-        # that it sends strange stuff
-        if hasattr(self.installProgress,"master_fd"):
-            os.write(self.installProgress.master, chr(ev.ascii()))
+        # no master_fd yet
+        if not hasattr(self.installProgress, "master_fd"):
+            return
+        # special handling for backspace
+        if ev.key() == Qt.Key_Backspace:
+            #print "sent backspace"
+            os.write(self.installProgress.master_fd, chr(8))
+            return
+        # do nothing for events like "shift" 
+        if not ev.text():
+            return
+        # now sent the key event to the termianl as utf-8
+        os.write(self.installProgress.master_fd, ev.text().toUtf8())
 
     def onCursorPositionChanged(self, x, y):
         """ helper that ensures that the cursor is always at the end """
@@ -386,9 +395,6 @@ class GDebiKDEInstall(QDialog):
         self.konsole = DumbTerminal(self.konsoleFrame)
         self.konsoleFrame.setMinimumSize(500, 400)
         self.konsoleFrameLayout.addWidget(self.konsole)
-
-        #prepare for dpkg pty being attached to konsole
-        (self.master, self.slave) = pty.openpty()
 
     def showTerminal(self):
         if self.konsoleFrame.isVisible():
