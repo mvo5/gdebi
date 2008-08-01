@@ -333,13 +333,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                             "installation medium.")
             except SystemError, msg:
                 res = False
-                header = _("Could not install all dependencies"),
+                header = _("Could not install all dependencies")
                 body = _("Usually this is related to an error of the "
                         "software distributor. See the terminal window for "
                         "more details.")
             if not res:
-                print "if here"
-                self.errorReport = KMessageBox.error(self, header + "<br>" + body, header)
+                #print "if here something is very wrong"
+                self.errorReport = KMessageBox.error(None, header + "<br>" + body, header)
                 return
 
         # install the package itself

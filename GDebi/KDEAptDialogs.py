@@ -146,29 +146,30 @@ class KDEInstallProgressAdapter(InstallProgress):
 
     def statusChange(self, pkg, percent, status):
         self.progress.setValue(percent)
-        print status # mhb debug
+        #print status # mhb debug
         #self.progress.setText(status) #FIXME set text
 
     def updateInterface(self):
-        # log the output of dpkg (on the master_fd) to the DumbTerminal
-        while True:
-            try:
-                (rlist, wlist, xlist) = select.select([self.master_fd],[],[], 0)
-                if len(rlist) > 0:
-                    line = os.read(self.master_fd, 255)
-                    self.parent.konsole.insertWithTermCodes(utf8(line))
-                else:
-                    break
-            except Exception, e:
-                print e
-                break
+        # run the base class
         try:
             InstallProgress.updateInterface(self)
         except ValueError,e:
             pass
-
+        # log the output of dpkg (on the master_fd) to the DumbTerminal
+        while True:
+            try:
+                (rlist, wlist, xlist) = select.select([self.master_fd],[],[], 0.01)
+                # data available, read it
+                if len(rlist) > 0:
+                    line = os.read(self.master_fd, 255)
+                    self.parent.konsole.insertWithTermCodes(utf8(line))
+                else:
+                    # nothing happend within the timeout, break
+                    break
+            except Exception, e:
+                #print e
+                break
         KApplication.kApplication().processEvents()
-        time.sleep(0.0000001)
 
     def fork(self):
         """pty voodoo"""
