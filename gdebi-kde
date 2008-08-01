@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2005-2007 Martin Böhm
+# Copyright (c) 2008 Canonical Ltd
 #
 # AUTHOR:
 # Martin Böhm <martin.bohm@ubuntu.com>
@@ -19,9 +20,7 @@
 # General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with GDebi; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import os
@@ -29,10 +28,8 @@ import subprocess
 import string
 import apt
 import apt_pkg
-from qt import *
-from kdeui import *
-from kdecore import *
-from kfile import *
+from PyKDE4.kdecore import *
+from PyKDE4.kdeui import *
 
 import urllib
 import fcntl
@@ -46,16 +43,15 @@ import select
 import sys
 import apt
 import os.path
-from qt import *
-from kdeui import *
-from kdecore import *
 
-from optparse import OptionParser
+#from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
 
 from gettext import gettext as _
 import gettext
 
+class OptionParsed:
+    non_interactive = False
 
 if __name__ == "__main__":
     data="/usr/share/gdebi"
@@ -65,23 +61,50 @@ if __name__ == "__main__":
     localesDir="/usr/share/locale"
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
-    parser = OptionParser()
-    parser.add_option("-n", "--non-interactive",
-                      action="store_true", dest="non_interactive",
-                      default=False,
-                      help=_("Run non-interactive (dangerous!)"))
-    (options, args) = parser.parse_args()
-    afile = ""
-    if len(args) >= 1:
-        afile = args[0]        
+    #parser = OptionParser()
+    #parser.add_option("-n", "--non-interactive",
+    #                  action="store_true", dest="non_interactive",
+    #                  default=False,
+    #                  help=_("Run non-interactive (dangerous!)"))
+    #(options, args) = parser.parse_args()
+    #afile = ""
+    #if len(args) >= 1:
+    #    afile = args[0]        
     try:
-        app = KApplication(["gdebi-kde"],"Kdefile")
-	gdebi = GDebiKDE(datadir=data,options=options,file=afile)
-	app.setMainWidget(gdebi)
-	gdebi.show()
-        if options.non_interactive == True:
+        appName     = "gdebi-kde"
+        catalog     = ""
+        programName = ki18n ("GDebi")
+        version     = "1.0"
+        description = ki18n (".deb Package Installer")
+        license     = KAboutData.License_GPL
+        copyright   = ki18n ("(c) 2005-2007 Martin Böhm, 2008 Canonical Ltd")
+        text        = ki18n ("none")
+        homePage    = "launchpad.net/gdebi"
+        bugEmail    = ""
+
+        aboutData   = KAboutData (appName, catalog, programName, version, description,
+                                license, copyright, text, homePage, bugEmail)
+        KCmdLineArgs.init(sys.argv, aboutData)
+
+        opts = KCmdLineOptions()
+        opts.add("n")
+        opts.add("dont-interactive", ki18n("Run non-interactive (dangerous!)")) #should be "non-interactive" but "no" gets eaten by KCmdLineArgs
+        opts.add("+[File]", ki18n("File to open"))
+        KCmdLineArgs.addCmdLineOptions(opts)
+
+        app = KApplication()
+        args = KCmdLineArgs.parsedArgs()
+        afile = ""
+        if args.count() >= 1:
+            afile = args.arg(0)
+        afile = unicode(afile, 'utf-8')
+        options = OptionParsed #FIXME set non_interactive
+        gdebi = GDebiKDE(datadir=data,options=options,file=afile)
+        gdebi.show()
+        if args.isSet("dont-interactive") == True:
+            options.non_interactive = True
             gdebi.installButtonClicked()
-	app.exec_loop()
+        app.exec_()
     except SystemError, e:
         err_header = _("Software index is broken")
         err_body = _("This is a major failure of your software " 
@@ -91,5 +114,5 @@ if __name__ == "__main__":
                     "reload the software information with: "
                     "'sudo apt-get update' and 'sudo apt-get install -f'."
                     )
-	errorReport = KMessageBox.error(None, '<b>' + err_header + '</b><br>' + err_body, err_header)
+        errorReport = KMessageBox.error(None, '<b>' + err_header + '</b><br>' + err_body, err_header)
         sys.exit(1)
