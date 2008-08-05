@@ -49,6 +49,10 @@ from apt.progress import InstallProgress
 from GDebiCommon import GDebiCommon
 from gettext import gettext as _
 
+# the timeout when the termial is expanded if no activity from dpkg
+# is happening 
+GDEBI_TERMINAL_TIMEOUT=4*60.0
+
 def utf8(str):
   try:
     return unicode(str).encode('utf-8')
@@ -517,8 +521,9 @@ Install software from trustworthy software distributors only.
             self.status = status
             self.progress = progress
             self.term = term
-            self.expander = expander
-            self.expander.set_expanded(False)
+            self.term_expander = expander
+            self.time_last_update = time.time()
+            self.term_expander.set_expanded(False)
         def commit(self):
             def finish_dpkg(term, pid, status, lock):
                 " helper "
@@ -568,6 +573,7 @@ Install software from trustworthy software distributors only.
                         if errno != 11:
                             print errstr
                         break
+                    self.time_last_update = time.time()
                     if read.endswith("\n"):
                         statusl = string.split(read, ":")
                         if len(statusl) < 3:
@@ -577,12 +583,16 @@ Install software from trustworthy software distributors only.
                         status = statusl[2].strip()
                         #print status
                         if status == "error" or status == "conffile-prompt":
-                            self.expander.set_expanded(True)
+                            self.term_expander.set_expanded(True)
                         read = ""
                 self.progress.pulse()
                 while gtk.events_pending():
                     gtk.main_iteration()
                 time.sleep(0.2)
+                # if the terminal has not reacted for some time, do something
+                if (not self.term_expander.get_expanded() and 
+                    (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
+                  self.term_expander.set_expanded(True)
             self.progress.set_fraction(1.0)
             reaper.disconnect(signal_id)
     
@@ -594,6 +604,7 @@ Install software from trustworthy software distributors only.
             self.term_expander = term_expander
             self.finished = False
             self.action = label
+            self.time_last_update = time.time()
             reaper = vte.reaper_get()
             reaper.connect("child-exited",self.child_exited)
             self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
@@ -618,10 +629,14 @@ Install software from trustworthy software distributors only.
         def statusChange(self, pkg, percent, status):
             self.progress.set_fraction(percent/100.0)
             self.progress.set_text(status)
+            self.time_last_update = time.time()
         def updateInterface(self):
             InstallProgress.updateInterface(self)
             while gtk.events_pending():
                 gtk.main_iteration()
+            if (not self.term_expander.get_expanded() and 
+                (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
+              self.term_expander.set_expanded(True)
         def fork(self):
             return self.term.forkpty(envv=self.env)
         def waitChild(self):

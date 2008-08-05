@@ -1,7 +1,13 @@
-gdebi (0.3.13) UNRELEASED; urgency=low
+gdebi (0.3.13) intrepid; urgency=low
 
+  [ Jonathan Riddell ]
   * GDebi/GDebiKDE.py
     - Port to KDE 4
+  
+  [ Michael Vogt ]
+  * GDebi/GDebi.py:
+    - if the terminal has no updates for a long time, expand 
+      it (assuming some sort of prompting is going on, LP: #252632)
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 30 Jul 2008 22:32:25 +0100
 
