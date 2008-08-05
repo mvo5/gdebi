@@ -319,8 +319,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                                                 self.installDialog.installingLabel,
                                                 self.installDialog)
             iprogress = KDEInstallProgressAdapter(self.installDialog.installationProgress,
-                                                        self.installDialog.installingLabel,
-                                                        self.installDialog)
+                                                  self.installDialog.installingLabel,
+                                                  self.installDialog)
             self.installDialog.konsole.setInstallProgress(iprogress)
             errMsg = None
             try:
@@ -338,8 +338,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                         "software distributor. See the terminal window for "
                         "more details.")
             if not res:
-                #print "if here something is very wrong"
-                self.errorReport = KMessageBox.error(None, header + "<br>" + body, header)
+                #print "something bad happend"
+                self.errorReport = KMessageBox.error(self, header + "<br>" + body, header)
                 return
 
         # install the package itself

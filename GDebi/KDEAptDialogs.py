@@ -167,7 +167,7 @@ class KDEInstallProgressAdapter(InstallProgress):
                     # nothing happend within the timeout, break
                     break
             except Exception, e:
-                #print e
+                #print "updateInterface: ", e
                 break
         KApplication.kApplication().processEvents()
 
@@ -186,10 +186,12 @@ class KDEInstallProgressAdapter(InstallProgress):
             try:
                 select.select([self.statusfd],[],[], self.selectTimeout)
             except Exception, e:
+                #print "waitChild: ", e
                 pass
             self.updateInterface()
             (pid, res) = os.waitpid(self.child_pid,os.WNOHANG)
             if pid == self.child_pid:
+                #print "child exited: ", pid, os.WEXITSTATUS(res)
                 break
         return os.WEXITSTATUS(res)
 
