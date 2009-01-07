@@ -230,7 +230,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         # check the deps
         if not self._deb.checkDeb():
             self.label_status.set_markup("<span foreground=\"red\" weight=\"bold\">"+
-                                         "Error: " +
+                                         _("Error: ") +
                                          self._deb._failureString +
                                          "</span>")
 	    self.button_install.set_label(_("_Install Package"))
@@ -660,9 +660,9 @@ Install software from trustworthy software distributors only.
         def pulse(self):
             at_item = min(self.currentItems + 1, self.totalItems)
             if self.currentCPS > 0:
-                self.progress.set_text(_("File %s of %s at %sB/s" % (at_item,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+                self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.totalItems,apt_pkg.SizeToStr(self.currentCPS)))
             else:
-                self.progress.set_text(_("File %s of %s" % (at_item,self.totalItems)))
+                self.progress.set_text(_("File %s of %s") % (at_item,self.totalItems))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
             while gtk.events_pending():
                 gtk.main_iteration()

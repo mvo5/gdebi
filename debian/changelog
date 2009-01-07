@@ -1,3 +1,9 @@
+gdebi (0.3.14) jaunty; urgency=low
+
+  * i18n fixes (LP: #313890), thanks to Gabor Kelemen
+
+ --
+
 gdebi (0.3.13) intrepid; urgency=low
 
   [ Jonathan Riddell ]
