@@ -101,7 +101,7 @@ class DumbTerminal(QTextEdit):
             #print "sent backspace"
             os.write(self.installProgress.master_fd, chr(8))
             return
-        # do nothing for events like "shift" 
+        # do nothing for events like "shift"
         if not ev.text():
             return
         # now sent the key event to the termianl as utf-8
@@ -129,7 +129,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         GDebiKDEDialog.__init__(self,parent)
         GDebiCommon.__init__(self,datadir,options,file)
         # load the icon
-        self.setWindowIcon(KIcon("adept_installer"))
+        self.setWindowIcon(KIcon("application-x-deb"))
         # first, we load all the default descriptions -- pyuic doesn't use
         # gettext as default (FIXME, copy code from language-selector)
         self.textLabel1.setText(_("Package:"))

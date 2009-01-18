@@ -1,4 +1,4 @@
 debian/tmp/usr/bin/gdebi-kde
 debian/tmp/usr/share/gdebi/GDebiKDEInstallDialog.ui
 debian/tmp/usr/share/gdebi/GDebiKDEDialog.ui
-debian/tmp/usr/share/applications/kde/*.desktop
+debian/tmp/usr/share/applications/kde4/*.desktop
