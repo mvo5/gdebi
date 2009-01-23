@@ -7,6 +7,7 @@ gdebi (0.3.14) jaunty; urgency=low
     - better error string for versionized dependencies (LP: #160218)
   * GDebi/GDebi.py:
     - fix filelist display for debs with utf-8 chars (LP: #257597)
+    - add refresh action (LP: #156214)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
