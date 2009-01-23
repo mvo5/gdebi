@@ -13,6 +13,7 @@ gdebi (0.3.14) jaunty; urgency=low
     - tell the user what is being installed
   * data/gdebi.glade:
     - make the status text selectable (LP: #50212)
+    - Open is now "Open..." (LP:# 90010)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
