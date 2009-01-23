@@ -1,13 +1,14 @@
-gdebi (0.3.14) UNRELEASED; urgency=low
+gdebi (0.3.14) jaunty; urgency=low
 
   [ Michael Vogt ]
   * i18n fixes (LP: #313890), thanks to Gabor Kelemen
+  * merged da.po translation update (thanks to Joe Dalton)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
   * Change install path of gdebi-kde desktop file to applications/kde4
 
- -- Harald Sitter <apachelogger@ubuntu.com>  Tue, 13 Jan 2009 17:44:14 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 23 Jan 2009 08:39:52 +0100
 
 gdebi (0.3.13) intrepid; urgency=low
 
