@@ -3,6 +3,8 @@ gdebi (0.3.14) jaunty; urgency=low
   [ Michael Vogt ]
   * i18n fixes (LP: #313890), thanks to Gabor Kelemen
   * merged da.po translation update (thanks to Joe Dalton)
+  * GDebi/DebPackage.py:
+    - better error string for versionized dependencies (LP: #160218)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)

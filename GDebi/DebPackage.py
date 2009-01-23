@@ -116,6 +116,8 @@ class DebPackage(object):
         or_str = ""
         for dep in or_group:
             or_str += dep[0]
+            if ver and oper:
+                or_str += " (%s %s)" % (dep[2], dep[1])
             if dep != or_group[len(or_group)-1]:
                 or_str += "|"
         self._failureString += _("Dependency is not satisfiable: %s\n" % or_str)
