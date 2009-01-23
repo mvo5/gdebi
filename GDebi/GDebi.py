@@ -225,7 +225,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
 
         # set filelist
         buf = self.textview_filelist.get_buffer()
-        buf.set_text("\n".join(self._deb.filelist))
+        buf.set_text(utf8("\n".join(self._deb.filelist)))
 
         # check the deps
         if not self._deb.checkDeb():

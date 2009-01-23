@@ -5,6 +5,8 @@ gdebi (0.3.14) jaunty; urgency=low
   * merged da.po translation update (thanks to Joe Dalton)
   * GDebi/DebPackage.py:
     - better error string for versionized dependencies (LP: #160218)
+  * GDebi/GDebi.py:
+    - fix filelist display for debs with utf-8 chars (LP: #257597)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
