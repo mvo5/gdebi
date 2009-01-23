@@ -438,7 +438,9 @@ Install software from trustworthy software distributors only.
                 return 
     
         # install the package itself
-        self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
+        self.label_action.set_markup("<b><big>" +
+                                     _("Installing %s") % self._deb.pkgName+
+                                     "</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,

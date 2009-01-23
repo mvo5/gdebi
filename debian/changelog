@@ -5,9 +5,12 @@ gdebi (0.3.14) jaunty; urgency=low
   * merged da.po translation update (thanks to Joe Dalton)
   * GDebi/DebPackage.py:
     - better error string for versionized dependencies (LP: #160218)
+    - do not crash on packages with no architecture field but show
+      a error instead (LP: #261266)
   * GDebi/GDebi.py:
     - fix filelist display for debs with utf-8 chars (LP: #257597)
     - add refresh action (LP: #156214)
+    - tell the user what is being installed
   * data/gdebi.glade:
     - make the status text selectable (LP: #50212)
 

@@ -270,6 +270,10 @@ class DebPackage(object):
         self._dbg(3,"checkDepends")
 
         # check arch
+        if not self._sections.has_key("Architecture"):
+            self._dbg(1, "ERROR: no architecture field")
+            self._failureString = _("No Architecture field in the package")
+            return False
         arch = self._sections["Architecture"]
         if  arch != "all" and arch != apt_pkg.Config.Find("APT::Architecture"):
             self._dbg(1,"ERROR: Wrong architecture dude!")
