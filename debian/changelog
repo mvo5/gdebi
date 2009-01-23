@@ -8,6 +8,8 @@ gdebi (0.3.14) jaunty; urgency=low
   * GDebi/GDebi.py:
     - fix filelist display for debs with utf-8 chars (LP: #257597)
     - add refresh action (LP: #156214)
+  * data/gdebi.glade:
+    - make the status text selectable (LP: #50212)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
