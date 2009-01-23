@@ -455,16 +455,13 @@ Install software from trustworthy software distributors only.
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
 
-        # reopen the cache, reread the file, FIXME: add progress reporting
-        #self._cache = Cache(self.cprogress)
-        self._cache = Cache()
+        # reopen the cache, reread the file
+        self.openCache()
         if self._cache._depcache.BrokenCount > 0:
             err_header = _("Failed to completely install all dependencies")
             err_body = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")
             self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
-
-            #print "Autsch, please report"
         self.open(self._deb.file)
         
     def on_button_deb_install_close_clicked(self, widget):
