@@ -1,4 +1,4 @@
-gdebi (0.3.14) jaunty; urgency=low
+gdebi (0.4.0) jaunty; urgency=low
 
   [ Michael Vogt ]
   * i18n fixes (LP: #313890), thanks to Gabor Kelemen
