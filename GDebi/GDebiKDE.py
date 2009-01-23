@@ -39,17 +39,11 @@ from PyQt4 import uic
 
 from DebPackage import DebPackage, Cache
 import gettext
-from GDebiCommon import GDebiCommon
+from GDebiCommon import GDebiCommon, utf8, _
 from KDEAptDialogs import *
 
-def _(str):
-    return unicode(gettext.gettext(str), 'UTF-8')
 def __(catalog,str):
     return unicode(gettext.dgettext(catalog, str), 'UTF-8')
-def utf8(str):
-  if isinstance(str, unicode):
-      return str
-  return unicode(str, 'UTF-8')
 
 def loadUi(file, parent):
     """load local file if possible else use installed file"""

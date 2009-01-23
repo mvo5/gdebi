@@ -46,18 +46,12 @@ import re
 from DebPackage import DebPackage, Cache
 from SimpleGladeApp import SimpleGladeApp
 from apt.progress import InstallProgress
-from GDebiCommon import GDebiCommon
+from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
 
 # the timeout when the termial is expanded if no activity from dpkg
 # is happening 
 GDEBI_TERMINAL_TIMEOUT=4*60.0
-
-def utf8(str):
-  try:
-    return unicode(str).encode('utf-8')
-  except:
-    return unicode(str, 'latin1').encode('utf-8')
 
 class GDebi(SimpleGladeApp, GDebiCommon):
 

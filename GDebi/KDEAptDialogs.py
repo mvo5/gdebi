@@ -45,14 +45,8 @@ import select
 from DebPackage import DebPackage, Cache
 from apt.progress import InstallProgress
 from gettext import gettext as gett
+from GDebiCommon import utf8, _
 
-def _(str):
-    return unicode(gett(str), 'UTF-8')
-
-def utf8(str):
-  if isinstance(str, unicode):
-      return str
-  return unicode(str, 'UTF-8')
 
 class KDEDpkgInstallProgress(object):
     """The frontend for dpkg -i"""

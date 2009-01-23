@@ -34,16 +34,17 @@ import apt_pkg
 from DebPackage import DebPackage, Cache
 import gettext
 
-#def utf8(str):
-#  return unicode(str, 'latin1').encode('utf-8')
 def _(str):
     return unicode(gettext.gettext(str), 'UTF-8')
-    
+
 def utf8(str):
     if isinstance(str, unicode):
         return str
-    return unicode(str, 'UTF-8')
-	  
+    try:
+        return unicode(str, 'UTF-8')
+    except:
+        # assume latin1 as fallback
+        return unicode(str, 'latin1')
 	  
 class GDebiCommon(object):
     # cprogress may be different in child classes

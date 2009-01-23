@@ -14,6 +14,8 @@ gdebi (0.3.14) jaunty; urgency=low
   * data/gdebi.glade:
     - make the status text selectable (LP: #50212)
     - Open is now "Open..." (LP:# 90010)
+  * unify the utf8 methods and deal properly with non-utf8 input
+    (fixes crash in gdebi-kde, LP: #149893)
 
   [ Harald Sitter ]
   * Fix gdebi-kde icon (application-x-deb)
