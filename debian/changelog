@@ -7,6 +7,8 @@ gdebi (0.3.14) jaunty; urgency=low
     - better error string for versionized dependencies (LP: #160218)
     - do not crash on packages with no architecture field but show
       a error instead (LP: #261266)
+    - fix improper checking for reverse conflicts/strict dependencies
+      (LP: #312022)
   * GDebi/GDebi.py:
     - fix filelist display for debs with utf-8 chars (LP: #257597)
     - add refresh action (LP: #156214)

@@ -28,6 +28,10 @@ import apt
 class Cache(apt.Cache):
     """ helper to provide some additonal functions """
 
+    def __init__(self, progress, rootdir=None, memonly=False):
+        apt.Cache.__init__(self, progress, rootdir, memonly)
+        self.op_progress = progress
+
     def clear(self):
         """ unmark all pkgs """
         self._depcache.Init()

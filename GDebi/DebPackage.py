@@ -141,7 +141,7 @@ class DebPackage(object):
         #print "oper: %s " % oper
         if (pkgver and apt_pkg.CheckDep(pkgver,oper,ver) and 
             not self.replacesRealPkg(pkgname, oper, ver)):
-            self._failureString += _("Conflicts with the installed package '%s'" % cand.name)
+            self._failureString += _("Conflicts with the installed package '%s'\n" % cand.name)
             return True
         return False
 
@@ -235,6 +235,45 @@ class DebPackage(object):
                 res = False
         return res
 
+    def checkBreaksExistingPackages(self):
+        """ 
+        check if installing the package would break exsisting 
+        package on the system, e.g. system has:
+        smc depends on smc-data (= 1.4)
+        and user tries to installs smc-data 1.6
+        """
+        # show progress information as this step may take some time
+        size = float(len(self._cache))
+        steps = int(size/50)
+        debver = self._sections["Version"]
+        for (i, pkg) in enumerate(self._cache):
+            if i%steps == 0:
+                self._cache.op_progress.update(float(i)/size*100.0)
+            if not pkg.isInstalled:
+                continue
+            # check if the exising dependencies are still satisfied
+            # with the package
+            ver = pkg._pkg.CurrentVer
+            for dep_or in pkg.installedDependencies:
+                for dep in dep_or.or_dependencies:
+                    if dep.name == self.pkgName:
+                        if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
+                            self._dbg(2, "would break (depends) %s" % pkg.name)
+                            self._failureString += _("Breaks exisiting package '%s' dependy: %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
+                            return False
+            # now check if there are conflicts against this package on
+            # the existing system
+            if ver.DependsList.has_key("Conflicts"):
+                for conflictsVerList in ver.DependsList["Conflicts"]:
+                    for cOr in conflictsVerList:
+                        if cOr.TargetPkg.Name == self.pkgName:
+                            if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
+                                self._dbg(2, "would break (conflicts) %s" % pkg.name)
+                                self._failureString += _("Breaks exisiting package '%s' conflict: %s (%s %s)\n") % (pkg.name, cOr.TargetPkg.Name, cOr.CompType, cOr.TargetVer)
+                                return False
+        self._cache.op_progress.done()
+        return True
+
     # some constants
     (NO_VERSION,
      VERSION_OUTDATED,
@@ -291,6 +330,14 @@ class DebPackage(object):
 
         # check conflicts
         if not self.checkConflicts():
+            return False
+
+        # set progress information
+        self._cache.op_progress.subOp = _("Analysing dependencies")
+
+        # check if installing it would break anything on the 
+        # current system
+        if not self.checkBreaksExistingPackages():
             return False
 
         # try to satisfy the dependencies
