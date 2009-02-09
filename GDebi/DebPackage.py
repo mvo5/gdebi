@@ -259,7 +259,8 @@ class DebPackage(object):
                     if dep.name == self.pkgName:
                         if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
-                            self._failureString += _("Breaks exisiting package '%s' dependy: %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
+                            # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
+                            self._failureString += _("Breaks exisiting package '%s' dependency %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
                             return False
             # now check if there are conflicts against this package on
             # the existing system
@@ -269,6 +270,7 @@ class DebPackage(object):
                         if cOr.TargetPkg.Name == self.pkgName:
                             if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
+                                # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
                                 self._failureString += _("Breaks exisiting package '%s' conflict: %s (%s %s)\n") % (pkg.name, cOr.TargetPkg.Name, cOr.CompType, cOr.TargetVer)
                                 return False
         self._cache.op_progress.done()

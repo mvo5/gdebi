@@ -1,3 +1,11 @@
+gdebi (0.4.1) jaunty; urgency=low
+
+  * GDebi/DebPackage.py:
+    - add explaination for translators (LP: #326944)
+    - fix typo
+
+ --
+
 gdebi (0.4.0) jaunty; urgency=low
 
   [ Michael Vogt ]
