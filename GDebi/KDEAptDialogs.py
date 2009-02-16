@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2005-2007 Martin Böhm
-# Copyright (c) 2008 Canonical Ltd
+# Copyright (c) 2008-2009 Canonical Ltd
 #
 # AUTHOR:
 # Martin Böhm <martin.bohm@ubuntu.com>

@@ -898,7 +898,7 @@
   <property name="border_width">5</property>
   <property name="destroy_with_parent">False</property>
   <property name="name" translatable="yes">gdebi</property>
-  <property name="copyright" translatable="yes">(c) 2005-2006 Canonical</property>
+  <property name="copyright">(c) 2005-2009 Canonical Ltd</property>
   <property name="comments" translatable="yes">Install and view software packages</property>
   <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
   <property name="wrap_license">False</property>

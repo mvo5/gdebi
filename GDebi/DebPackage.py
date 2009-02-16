@@ -1,4 +1,4 @@
-# Copyright (c) 2005-2007 Canonical
+# Copyright (c) 2005-2009 Canonical Ltd
 #
 # AUTHOR:
 # Michael Vogt <mvo@ubuntu.com>
