@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-07 09:12+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2009-02-16 09:37+0100\n"
 "PO-Revision-Date: 2009-01-19 21:58+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -41,8 +41,7 @@ msgstr "Vis ikke hvor langt installationen er nået"
 
 #: ../gdebi:65
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
-"Simuler kun og udskriv en apt-get install kompatibel linje til stderr"
+msgstr "Simuler kun og udskriv en apt-get install kompatibel linje til stderr"
 
 #: ../gdebi:67
 msgid "Use alternative root dir"
@@ -77,8 +76,8 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Dette er en alvorlig fejl i dit softwarehåndteringssystem. Undersøg venligst "
-"for ødelagte pakker med synaptic, undersøg filrettighederne og at filen "
-"»/etc/apt/sources.list« er korrekt og genindlæs softwareinformationen med: "
+"for ødelagte pakker med synaptic, undersøg filrettighederne og at filen »/"
+"etc/apt/sources.list« er korrekt og genindlæs softwareinformationen med: "
 "»sudo apt-get update« og »sudo apt-get install -f«."
 
 #: ../data/gdebi.glade.h:1
@@ -86,61 +85,61 @@ msgid "  "
 msgstr "  "
 
 #: ../data/gdebi.glade.h:2
-msgid "(c) 2005-2006 Canonical"
-msgstr "(c) 2005-2006 Canonical"
-
-#: ../data/gdebi.glade.h:3
 msgid "<b><big>   </big></b>"
 msgstr "<b><big> </big></b>"
 
-#: ../data/gdebi.glade.h:4 ../GDebi/GDebiKDE.py:144
+#: ../data/gdebi.glade.h:3 ../GDebi/GDebiKDE.py:138
 msgid "<b>Maintainer:</b>"
 msgstr "<b>Vedligeholder:</b>"
 
-#: ../data/gdebi.glade.h:5 ../GDebi/GDebiKDE.py:145
+#: ../data/gdebi.glade.h:4 ../GDebi/GDebiKDE.py:139
 msgid "<b>Priority:</b>"
 msgstr "<b>Prioritet:</b>"
 
-#: ../data/gdebi.glade.h:6 ../GDebi/GDebiKDE.py:146
+#: ../data/gdebi.glade.h:5 ../GDebi/GDebiKDE.py:140
 msgid "<b>Section:</b>"
 msgstr "<b>Sektion:</b>"
 
-#: ../data/gdebi.glade.h:7 ../GDebi/GDebiKDE.py:147
+#: ../data/gdebi.glade.h:6 ../GDebi/GDebiKDE.py:141
 msgid "<b>Size:</b>"
 msgstr "<b>Størrelse:</b>"
 
-#: ../data/gdebi.glade.h:8 ../GDebi/GDebiKDE.py:284
+#: ../data/gdebi.glade.h:7 ../GDebi/GDebiKDE.py:278
 msgid "<b>To install the following changes are required:</b>"
 msgstr "<b>For at installere er de følgende ændringer påkrævet:</b>"
 
-#: ../data/gdebi.glade.h:9 ../GDebi/GDebiKDE.py:143
+#: ../data/gdebi.glade.h:8 ../GDebi/GDebiKDE.py:137
 msgid "<b>Version:</b>"
 msgstr "<b>Version:</b>"
 
-#: ../data/gdebi.glade.h:10 ../GDebi/GDebiKDE.py:138
+#: ../data/gdebi.glade.h:9 ../GDebi/GDebiKDE.py:132
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: ../data/gdebi.glade.h:11
+#: ../data/gdebi.glade.h:10
 msgid "Description:"
 msgstr "Beskrivelse:"
 
-#: ../data/gdebi.glade.h:12 ../GDebi/GDebiKDE.py:137 ../GDebi/GDebiKDE.py:139
-#: ../GDebi/GDebiKDE.py:285
+#: ../data/gdebi.glade.h:11 ../GDebi/GDebiKDE.py:131 ../GDebi/GDebiKDE.py:133
+#: ../GDebi/GDebiKDE.py:279
 msgid "Details"
 msgstr "Detaljer"
 
-#: ../data/gdebi.glade.h:13
+#: ../data/gdebi.glade.h:12
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, se /usr/share/common-licenses/GPL"
 
-#: ../data/gdebi.glade.h:14 ../GDebi/GDebiKDE.py:140
+#: ../data/gdebi.glade.h:13 ../GDebi/GDebiKDE.py:134
 msgid "Included Files"
 msgstr "Inkluderede filer"
 
-#: ../data/gdebi.glade.h:15 ../data/gdebi.desktop.in.h:2
+#: ../data/gdebi.glade.h:14 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
 msgstr "Installer og vis softwarepakker"
+
+#: ../data/gdebi.glade.h:15
+msgid "Open..."
+msgstr ""
 
 #: ../data/gdebi.glade.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
@@ -148,11 +147,11 @@ msgstr "Pakkeinstalleringsprogram"
 
 #. first, we load all the default descriptions -- pyuic doesn't use
 #. gettext as default (FIXME, copy code from language-selector)
-#: ../data/gdebi.glade.h:17 ../GDebi/GDebiKDE.py:135
+#: ../data/gdebi.glade.h:17 ../GDebi/GDebiKDE.py:129
 msgid "Package:"
 msgstr "Pakke:"
 
-#: ../data/gdebi.glade.h:18 ../GDebi/GDebiKDE.py:136
+#: ../data/gdebi.glade.h:18 ../GDebi/GDebiKDE.py:130
 msgid "Status:"
 msgstr "Status:"
 
@@ -172,16 +171,20 @@ msgstr "_Fil"
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:236 ../GDebi/GDebi.py:275
+#: ../data/gdebi.glade.h:23 ../GDebi/GDebi.py:230 ../GDebi/GDebi.py:269
 msgid "_Install Package"
 msgstr "_Installer pakke"
 
 #: ../data/gdebi.glade.h:24
+msgid "_Refresh"
+msgstr ""
+
+#: ../data/gdebi.glade.h:25
 msgid "gdebi"
 msgstr "gdebi"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../data/gdebi.glade.h:26
+#: ../data/gdebi.glade.h:27
 msgid "translator-credits"
 msgstr ""
 "Lasse Bang Mikkelsen\n"
@@ -202,62 +205,66 @@ msgstr "Softwarepakke"
 msgid "GDebi Package Installer"
 msgstr "GDebi pakkeinstalleringsprogram"
 
-#: ../GDebi/GDebi.py:91
+#: ../GDebi/GDebi.py:85
 msgid "Loading..."
 msgstr "Indlæser..."
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:170 ../GDebi/GDebiKDE.py:185
+#: ../GDebi/GDebi.py:164 ../GDebi/GDebiKDE.py:179
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Pakkeinstalleringsprogram - %s"
 
-#: ../GDebi/GDebi.py:247
+#: ../GDebi/GDebi.py:227
+msgid "Error: "
+msgstr ""
+
+#: ../GDebi/GDebi.py:241
 msgid "Same version is already installed"
 msgstr "Denne version er allerede installeret"
 
-#: ../GDebi/GDebi.py:248
+#: ../GDebi/GDebi.py:242
 msgid "_Reinstall Package"
 msgstr "_Geninstaller pakke"
 
-#: ../GDebi/GDebi.py:286
+#: ../GDebi/GDebi.py:280
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Vil blive fjernet: %s</b>"
 
-#: ../GDebi/GDebi.py:288 ../GDebi/GDebiKDE.py:279
+#: ../GDebi/GDebi.py:282 ../GDebi/GDebiKDE.py:273
 #, python-format
 msgid "To be installed: %s"
 msgstr "Vil blive installeret: %s"
 
-#: ../GDebi/GDebi.py:302
+#: ../GDebi/GDebi.py:296
 msgid "Open Software Package"
 msgstr "Åbn softwarepakke"
 
-#: ../GDebi/GDebi.py:307
+#: ../GDebi/GDebi.py:301
 msgid "Software packages"
 msgstr "Softwarepakker"
 
-#: ../GDebi/GDebi.py:326
+#: ../GDebi/GDebi.py:327
 msgid "File not found"
 msgstr "Fil ikke fundet"
 
-#: ../GDebi/GDebi.py:327
+#: ../GDebi/GDebi.py:328
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
 "Du forsøgte at installere en fil, som ikke (eller ikke længere) eksisterer. "
 
 #. do it
-#: ../GDebi/GDebi.py:337
+#: ../GDebi/GDebi.py:338
 msgid "Installing package file..."
 msgstr "Installerer pakkefil..."
 
-#: ../GDebi/GDebi.py:339
+#: ../GDebi/GDebi.py:340
 msgid "Install unauthenticated software?"
 msgstr "Installer ikke-godkendt software?"
 
-#: ../GDebi/GDebi.py:340
+#: ../GDebi/GDebi.py:341
 msgid ""
 "Malicous software can damage your data and take control of your system.\n"
 "\n"
@@ -269,12 +276,11 @@ msgstr ""
 "\n"
 "Pakkerne nedenfor er ikke godkendt og kan derfor være skadelige."
 
-#: ../GDebi/GDebi.py:367
-msgid "You need to grant administrative rights to install software"
-msgstr ""
-"Du skal tildele administrative rettigheder for at installere software"
-
 #: ../GDebi/GDebi.py:368
+msgid "You need to grant administrative rights to install software"
+msgstr "Du skal tildele administrative rettigheder for at installere software"
+
+#: ../GDebi/GDebi.py:369
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
@@ -284,23 +290,23 @@ msgstr ""
 "Det er en mulig sikkerhedsrisiko at installere pakkefiler manuelt.\n"
 "Installer kun software fra troværdige softwaredistributører.\n"
 
-#: ../GDebi/GDebi.py:382 ../GDebi/GDebi.py:430
+#: ../GDebi/GDebi.py:383 ../GDebi/GDebi.py:431
 msgid "Failed to install package file"
 msgstr "Kunne ikke installere pakkefil"
 
-#: ../GDebi/GDebi.py:414 ../GDebi/GDebiKDE.py:331
+#: ../GDebi/GDebi.py:415 ../GDebi/GDebiKDE.py:325
 msgid "Could not download all required files"
 msgstr "Kunne ikke hente alle de krævede filer"
 
-#: ../GDebi/GDebi.py:415 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:416 ../GDebi/GDebiKDE.py:326
 msgid "Please check your internet connection or installation medium."
 msgstr "Undersøg venligst din internetforbindelse eller installationsmedie."
 
-#: ../GDebi/GDebi.py:419 ../GDebi/GDebiKDE.py:336
+#: ../GDebi/GDebi.py:420 ../GDebi/GDebiKDE.py:330
 msgid "Could not install all dependencies"
 msgstr "Kunne ikke installere alle afhængigheder"
 
-#: ../GDebi/GDebi.py:420 ../GDebi/GDebiKDE.py:337
+#: ../GDebi/GDebi.py:421 ../GDebi/GDebiKDE.py:331
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -308,115 +314,137 @@ msgstr ""
 "Normalt skyldes dette en fejl hos softwaredistributøren. Se terminalvinduet "
 "for yderligere detaljer."
 
-#. install the package itself
-#: ../GDebi/GDebi.py:434
-msgid "Installing package file"
-msgstr "Installerer pakkefil"
+#: ../GDebi/GDebi.py:436
+#, python-format
+msgid "Installing %s"
+msgstr "Installerer %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:445 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:448 ../GDebi/GDebiKDE.py:350
 msgid "Installation finished"
 msgstr "Installationen er færdig"
 
-#: ../GDebi/GDebi.py:447
+#: ../GDebi/GDebi.py:450
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Pakke »%s« er installeret"
 
-#: ../GDebi/GDebi.py:449 ../GDebi/GDebiKDE.py:360
+#: ../GDebi/GDebi.py:452 ../GDebi/GDebiKDE.py:354
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Kunne ikke installere pakke »%s«"
 
-#: ../GDebi/GDebi.py:451
+#: ../GDebi/GDebi.py:454
 msgid "Installation complete"
 msgstr "Installation fuldført"
 
-#: ../GDebi/GDebi.py:459 ../GDebi/GDebiKDE.py:370
+#: ../GDebi/GDebi.py:461 ../GDebi/GDebiKDE.py:364
 msgid "Failed to completely install all dependencies"
 msgstr "Kunne ikke installere alle afhængigheder"
 
-#: ../GDebi/GDebi.py:460 ../GDebi/GDebiKDE.py:371
+#: ../GDebi/GDebi.py:462 ../GDebi/GDebiKDE.py:365
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "For at rette dette så kør »sudo apt-get install -f« i et terminalvindue."
 
 #. ui
-#: ../GDebi/GDebi.py:541 ../GDebi/KDEAptDialogs.py:78
+#: ../GDebi/GDebi.py:541 ../GDebi/KDEAptDialogs.py:72
 #, python-format
 msgid "Installing '%s'..."
 msgstr "Installerer »%s«"
 
-#: ../GDebi/GDebi.py:626 ../GDebi/KDEAptDialogs.py:144
+#: ../GDebi/GDebi.py:626 ../GDebi/KDEAptDialogs.py:138
 msgid "Installing dependencies..."
 msgstr "Installerer afhængigheder..."
 
 #. print "start()"
-#: ../GDebi/GDebi.py:655 ../GDebi/KDEAptDialogs.py:205
-#: ../GDebi/KDEAptDialogs.py:218 ../GDebi/KDEAptDialogs.py:220
+#: ../GDebi/GDebi.py:655 ../GDebi/KDEAptDialogs.py:199
+#: ../GDebi/KDEAptDialogs.py:212 ../GDebi/KDEAptDialogs.py:214
 msgid "Downloading additional package files..."
 msgstr "Henter yderligere pakkefiler..."
 
-#: ../GDebi/GDebi.py:663 ../GDebi/KDEAptDialogs.py:218
+#: ../GDebi/GDebi.py:663 ../GDebi/KDEAptDialogs.py:212
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "Fil %s af %s med %sB/s"
 
-#: ../GDebi/GDebi.py:665 ../GDebi/KDEAptDialogs.py:220
+#: ../GDebi/GDebi.py:665 ../GDebi/KDEAptDialogs.py:214
 #, python-format
 msgid "File %s of %s"
 msgstr "Fil %s af %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:672 ../GDebi/KDEAptDialogs.py:225
+#: ../GDebi/GDebi.py:672 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Indsæt venligst »%s« i drevet »%s«"
 
-#: ../GDebi/DebPackage.py:121
+#: ../GDebi/DebPackage.py:123
 #, python-format
 msgid "Dependency is not satisfiable: %s\n"
 msgstr "Afhængighed er ikke opfyldt: %s\n"
 
-#: ../GDebi/DebPackage.py:142
-#, python-format
-msgid "Conflicts with the installed package '%s'"
+#: ../GDebi/DebPackage.py:144
+#, fuzzy, python-format
+msgid "Conflicts with the installed package '%s'\n"
 msgstr "Er i konflikt med den installerede pakke »%s«"
 
+#. TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
+#: ../GDebi/DebPackage.py:263
+#, python-format
+msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
+msgstr ""
+
+#. TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
 #: ../GDebi/DebPackage.py:274
+#, python-format
+msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
+msgstr ""
+
+#: ../GDebi/DebPackage.py:316
+msgid "No Architecture field in the package"
+msgstr ""
+
+#: ../GDebi/DebPackage.py:321
 #, python-format
 msgid "Wrong architecture '%s'"
 msgstr "Forkert arkitektur »%s«"
 
 #. the deb is older than the installed
-#: ../GDebi/DebPackage.py:280
+#: ../GDebi/DebPackage.py:327
 msgid "A later version is already installed"
 msgstr "En senere version er allerede installeret"
 
-#: ../GDebi/DebPackage.py:301
+#. set progress information
+#: ../GDebi/DebPackage.py:338
+#, fuzzy
+msgid "Analysing dependencies"
+msgstr "Installerer afhængigheder..."
+
+#: ../GDebi/DebPackage.py:356
 msgid "Failed to satisfy all dependencies (broken cache)"
 msgstr "Kunne ikke opfylde alle afhængigheder (ødelagt mellemlager)"
 
-#: ../GDebi/DebPackage.py:328
+#: ../GDebi/DebPackage.py:383
 #, python-format
 msgid "Cannot install '%s'"
 msgstr "Kan ikke installere »%s«"
 
-#: ../GDebi/DebPackage.py:379
+#: ../GDebi/DebPackage.py:434
 msgid "List of files could not be read, please report this as a bug"
 msgstr "Filliste kunne ikke læses, anmeld venligst det her som en fejl"
 
-#: ../GDebi/DebPackage.py:382
+#: ../GDebi/DebPackage.py:437
 #, python-format
 msgid "IOError during filelist read: %s"
 msgstr "IO-fejl under læsning af filliste: %s"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:391
+#: ../GDebi/DebPackage.py:446
 #, python-format
 msgid "%s is not available"
 msgstr "%s er ikke tilgængelig"
@@ -451,7 +479,7 @@ msgstr ""
 msgid "This package is uninstallable\n"
 msgstr "Denne pakke kan ikke installeres\n"
 
-#: ../GDebi/GDebiCli.py:91 ../GDebi/GDebiKDE.py:221
+#: ../GDebi/GDebiCli.py:91 ../GDebi/GDebiKDE.py:215
 msgid "No description is available"
 msgstr "Ingen beskrivelse er tilgængelig"
 
@@ -467,15 +495,15 @@ msgstr "Kræver FJERNELSE af de følgende pakker: "
 msgid "Requires the installation of the following packages: "
 msgstr "Kræver installation af de følgende pakker: "
 
-#: ../GDebi/GDebiKDE.py:142 ../GDebi/GDebiKDE.py:267
+#: ../GDebi/GDebiKDE.py:136 ../GDebi/GDebiKDE.py:261
 msgid "&Install Package"
 msgstr "&Installer pakke"
 
-#: ../GDebi/GDebiKDE.py:166
+#: ../GDebi/GDebiKDE.py:160
 msgid "The package file does not exist"
 msgstr "Pakkefilen eksisterer ikke"
 
-#: ../GDebi/GDebiKDE.py:167
+#: ../GDebi/GDebiKDE.py:161
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
@@ -484,43 +512,44 @@ msgstr ""
 "eksisterende .deb pakkefil."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
-#: ../GDebi/GDebiKDE.py:235
+#: ../GDebi/GDebiKDE.py:229
 msgid "&Reinstall Package"
 msgstr "&Geninstaller pakke"
 
-#: ../GDebi/GDebiKDE.py:270
+#: ../GDebi/GDebiKDE.py:264
 msgid "Re&install Package"
 msgstr "Gen%installer pakke"
 
-#: ../GDebi/GDebiKDE.py:281
+#: ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be removed: %s"
 msgstr "Til fjernelse: %s"
 
-#: ../GDebi/GDebiKDE.py:358
+#: ../GDebi/GDebiKDE.py:352
 msgid "<b>"
 msgstr "<b>"
 
-#: ../GDebi/GDebiCommon.py:64
+#: ../GDebi/GDebiCommon.py:65
 msgid "Broken dependencies"
 msgstr "Ødelagte afhængigheder"
 
-#: ../GDebi/GDebiCommon.py:65
+#: ../GDebi/GDebiCommon.py:66
+#, fuzzy
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
-"this is fixed. To fix it run 'sudo synaptic' or 'sudo apt-get install -f' in "
-"a terminal window."
+"this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
+"in a terminal window."
 msgstr ""
 "Dit system har ødelagte afhængigheder. Dette program kan ikke fortsætte, før "
 "det er ordnet. For at rette afhængighedsfejlen køres »sudo synaptic« eller "
 "»sudo apt-get install -f« i et terminalvindue."
 
-#: ../GDebi/GDebiCommon.py:79
+#: ../GDebi/GDebiCommon.py:80
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Kunne ikke åbne »%s«"
 
-#: ../GDebi/GDebiCommon.py:80
+#: ../GDebi/GDebiCommon.py:81
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
@@ -528,19 +557,19 @@ msgstr ""
 "Denne pakke er måske korrupt, eller du har ikke tilladelse til at åbne "
 "filen. Undersøg rettighederne på filen."
 
-#: ../GDebi/GDebiCommon.py:96
+#: ../GDebi/GDebiCommon.py:97
 msgid "Same version is available in a software channel"
 msgstr "Tilsvarende version er tilgængelig i en softwarekanal"
 
-#: ../GDebi/GDebiCommon.py:97
+#: ../GDebi/GDebiCommon.py:98
 msgid "You are recommended to install the software from the channel instead."
 msgstr "Du anbefales at installere softwaren fra kanalen i steden for."
 
-#: ../GDebi/GDebiCommon.py:101
+#: ../GDebi/GDebiCommon.py:102
 msgid "An older version is available in a software channel"
 msgstr "En ældre version er tilgængelig i en softwarekanal"
 
-#: ../GDebi/GDebiCommon.py:102
+#: ../GDebi/GDebiCommon.py:103
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
@@ -548,11 +577,11 @@ msgstr ""
 "Generelt anbefales du at installere versionen fra softwarekanalen, da den "
 "normalt er bedre understøttet."
 
-#: ../GDebi/GDebiCommon.py:107
+#: ../GDebi/GDebiCommon.py:108
 msgid "A later version is available in a software channel"
 msgstr "En senere version er tilgængelig i en softwarekanal"
 
-#: ../GDebi/GDebiCommon.py:109
+#: ../GDebi/GDebiCommon.py:110
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
@@ -560,26 +589,26 @@ msgstr ""
 "Du anbefales stærkt at installere versionen fra softwarekanalen, da den "
 "normalt er bedre understøttet."
 
-#: ../GDebi/GDebiCommon.py:117
+#: ../GDebi/GDebiCommon.py:118
 msgid "All dependencies are satisfied"
 msgstr "Alle afhængigheder er opfyldt"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:120
+#: ../GDebi/GDebiCommon.py:121
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Kræver <b>fjernelse</b> af %s pakker\n"
 
-#: ../GDebi/GDebiCommon.py:122
+#: ../GDebi/GDebiCommon.py:123
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Kræver installation af %s pakker"
 
-#: ../GDebi/GDebiCommon.py:130 ../GDebi/GDebiCommon.py:148
+#: ../GDebi/GDebiCommon.py:131 ../GDebi/GDebiCommon.py:149
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Det er kun tilladt at have et softwarehåndteringsværktøj kørende."
 
-#: ../GDebi/GDebiCommon.py:132 ../GDebi/GDebiCommon.py:150
+#: ../GDebi/GDebiCommon.py:133 ../GDebi/GDebiCommon.py:151
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -588,9 +617,15 @@ msgstr ""
 "»aptitude« eller »Synaptic«."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
-#: ../GDebi/KDEAptDialogs.py:227
+#: ../GDebi/KDEAptDialogs.py:221
 msgid "Media Change"
 msgstr "Medieændring"
+
+#~ msgid "(c) 2005-2006 Canonical"
+#~ msgstr "(c) 2005-2006 Canonical"
+
+#~ msgid "Installing package file"
+#~ msgstr "Installerer pakkefil"
 
 #~ msgid "(c) 2005 Canonical"
 #~ msgstr "(c) 2005 Canonical"
@@ -637,11 +672,9 @@ msgstr "Medieændring"
 #~ msgid "All dependencies satisfied"
 #~ msgstr "Alle afhængigheder opfyldt"
 
-#, python-format
 #~ msgid "Need to <b>remove</b> %s packages from the archive\n"
 #~ msgstr "Der vil blive <b>fjernet</b> %s pakker fra arkivet\n"
 
-#, python-format
 #~ msgid "Need to install %s packages from the archive"
 #~ msgstr "Der vil blive installeret %s pakker fra arkivet"
 
@@ -655,8 +688,8 @@ msgstr "Medieændring"
 #~ "To install the selected package you need to run this program with "
 #~ "administraor rights. \n"
 #~ "\n"
-#~ "<b>Note that installing deb packages directly can be a security risk! Only "
-#~ "install from trusted sources.</b> \n"
+#~ "<b>Note that installing deb packages directly can be a security risk! "
+#~ "Only install from trusted sources.</b> \n"
 #~ "\n"
 #~ "Do you want to do this now?"
 #~ msgstr ""
@@ -675,8 +708,8 @@ msgstr "Medieændring"
 #~ msgstr "Kan ikke opnå eksklusiv lås"
 
 #~ msgid ""
-#~ "This usually means that another package management application (like apt-get "
-#~ "or aptitude) already running. Please close that application first."
+#~ "This usually means that another package management application (like apt-"
+#~ "get or aptitude) already running. Please close that application first."
 #~ msgstr ""
 #~ "Det skyldes sandsynligvis at et andet pakkehåndterings-program (såsom apt-"
 #~ "get eller aptitude) allerede kører. Luk venligst det program først."
@@ -700,7 +733,6 @@ msgstr "Medieændring"
 #~ msgid "Installing package ..."
 #~ msgstr "Installerer pakke ..."
 
-#, python-format
 #~ msgid "<b>Installed %s</b>"
 #~ msgstr "<b>Installerede %s</b>"
 
@@ -716,36 +748,27 @@ msgstr "Medieændring"
 #~ "Et afhængigheds-problem blev fundet efter installation.\n"
 #~ "Du skal køre: 'apt-get -f install' for at rette fejlen"
 
-#, python-format
-#~ msgid "Installing %s"
-#~ msgstr "Installerer %s"
-
 #~ msgid "Installing dependencies ..."
 #~ msgstr "Installerer afhængigheder ..."
 
-#, python-format
 #~ msgid "%s/%s (Speed: %s/s)"
 #~ msgstr "%s/%s (Hastighed: %s/s)"
 
-#, python-format
 #~ msgid "Dependency not found: %s\n"
 #~ msgstr "Afhængighed ikke fundet: %s\n"
 
-#, python-format
 #~ msgid "Conflicts with installed pkg: '%s'"
 #~ msgstr "Konflikt med installeret pakke: '%s'"
 
 #~ msgid "Newer version is already installed"
 #~ msgstr "Nyere version er allerede installeret"
 
-#, python-format
 #~ msgid "Can't install '%s'"
 #~ msgstr "Kan ikke installere '%s'"
 
 #~ msgid "Installing the dependencies impossible (broken cache)"
 #~ msgstr "Installation af afhængigheder ikke muligt (ødelagt mellemlager)"
 
-#, python-format
 #~ msgid "No entry for '%s' found"
 #~ msgstr "Feltet '%s' ikke fundet"
 
@@ -756,8 +779,8 @@ msgstr "Medieændring"
 #~ msgstr "Kunne ikke åbne deb-pakke"
 
 #~ msgid ""
-#~ "The package can't be opened, it may have improper permissions, is invalid or "
-#~ "corrupted."
+#~ "The package can't be opened, it may have improper permissions, is invalid "
+#~ "or corrupted."
 #~ msgstr ""
 #~ "Pakken kan ikke åbnes. Den kan have forkerte filrettigheder, være ugyldig "
 #~ "eller beskadiget."
@@ -766,11 +789,12 @@ msgstr "Medieændring"
 #~ msgstr "Ikke-godkendte pakker"
 
 #~ msgid ""
-#~ "You are about to install software that <b>can't be authenticated</b>! Doing "
-#~ "this could allow a malicious individual to damage or take control of your "
-#~ "system.\n"
+#~ "You are about to install software that <b>can't be authenticated</b>! "
+#~ "Doing this could allow a malicious individual to damage or take control "
+#~ "of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated. Are you sure you want to continue?"
+#~ "The packages below are not authenticated. Are you sure you want to "
+#~ "continue?"
 #~ msgstr ""
 #~ "Du er ved at installere programmel som <b>ikke kan godkendes</b>! Dette "
 #~ "kunne tillade en ondsindet person at beskadige eller tage kontrollen over "

@@ -4,6 +4,7 @@ gdebi (0.4.1) jaunty; urgency=low
   * GDebi/DebPackage.py:
     - add explaination for translators (LP: #326944)
     - fix typo
+  * refresh po/pot (LP: #30008)
   
   [ István Nyitrai ]
   * GDebi/GDebiCommon.py:
@@ -12,7 +13,7 @@ gdebi (0.4.1) jaunty; urgency=low
   * GDebi/GDebiCli.py:
     - fix whitespace in filename problem (LP: #178171)
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 16 Feb 2009 09:38:11 +0100
 
 gdebi (0.4.0) jaunty; urgency=low
 
