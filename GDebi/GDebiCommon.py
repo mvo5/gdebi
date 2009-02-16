@@ -66,7 +66,7 @@ class GDebiCommon(object):
                 self.error_body = _("Your system has broken dependencies. "
                              "This application can not continue until "
                              "this is fixed. "
-                             "To fix it run 'sudo synaptic' or "
+                             "To fix it run 'gksudo synaptic' or "
                              "'sudo apt-get install -f' "
                              "in a terminal window.")
 		return False

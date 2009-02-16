@@ -3,6 +3,10 @@ gdebi (0.4.1) jaunty; urgency=low
   * GDebi/DebPackage.py:
     - add explaination for translators (LP: #326944)
     - fix typo
+  
+  [ István Nyitrai ]
+  * GDebi/GDebiCommon.py:
+    - improve description for broken deps (LP: #204240)
 
  --
 
