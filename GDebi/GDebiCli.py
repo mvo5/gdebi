@@ -32,7 +32,7 @@ from gettext import gettext as _
 from DebPackage import DebPackage, Cache
 from DscSrcPackage import DscSrcPackage
 
-from subprocess import PIPE, Popen
+from subprocess import PIPE, Popen, call
 
 class GDebiCli(object):
 
@@ -128,7 +128,7 @@ class GDebiCli(object):
             #    os.system("gdebi %s_%s_*.deb" % (i,self._deb["Version"]))
             pass
         else:
-            os.system("dpkg -i %s"%self._deb.file)
+            ret = call(["dpkg","-i",self._deb.file])
         
 
 if __name__ == "__main__":
