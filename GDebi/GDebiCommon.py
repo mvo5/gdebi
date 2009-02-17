@@ -36,7 +36,7 @@ from DebPackage import DebPackage, Cache
 import gettext
 
 def _(str):
-    return unicode(gettext.gettext(str), 'UTF-8')
+    return utf8(gettext.gettext(str))
 
 def utf8(str):
     if isinstance(str, unicode):
