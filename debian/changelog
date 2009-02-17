@@ -1,3 +1,12 @@
+gdebi (0.4.2) jaunty; urgency=low
+
+  [ István Nyitrai ]
+  * GDebi/GDebiCommon.py:
+    - show a more meaningful error message when users
+      try to open a non debian package (LP: #289308)
+
+ --
+
 gdebi (0.4.1) jaunty; urgency=low
 
   [ Michael Vogt ]

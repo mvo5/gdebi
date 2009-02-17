@@ -27,6 +27,7 @@ import os
 import string
 import warnings
 warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+from mimetypes import guess_type
 
 import apt
 import apt_pkg
@@ -77,11 +78,19 @@ class GDebiCommon(object):
         try:
             self._deb = DebPackage(self._cache, file)
         except (IOError,SystemError),e:
-            self.error_header = _("Could not open '%s'" % os.path.basename(file))
-            self.error_body = _("The package might be corrupted or you are not "
-                         "allowed to open the file. Check the permissions "
-                         "of the file.")
-            return False
+            mimetype=guess_type(file)
+            if (mimetype[0] != None and 
+                mimetype[0] != "application/x-debian-package"):
+                self.error_header = _("'%s' is not a Debian package") % os.path.basename(file)
+                self.error_body = _("The MIME type of this file is '%s' "
+                             "and can not be installed on this system.") % mimetype[0]
+                return False    
+            else:
+                self.error_header = _("Could not open '%s'") % os.path.basename(file)
+                self.error_body = _("The package might be corrupted or you are not "
+                             "allowed to open the file. Check the permissions "
+                             "of the file.")
+                return False
 
     def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
