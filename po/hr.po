@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2009-02-16 09:37+0100\n"
+"POT-Creation-Date: 2009-02-17 11:01+0100\n"
 "PO-Revision-Date: 2006-05-14 06:11+0000\n"
 "Last-Translator: Ante Karamatić <ivoks@ubuntu.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -523,24 +523,35 @@ msgstr "<b>Za uklanjanje: %s</b>"
 msgid "<b>"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:65
+#: ../GDebi/GDebiCommon.py:66
 #, fuzzy
 msgid "Broken dependencies"
 msgstr "Instaliram međuzavisnosti..."
 
-#: ../GDebi/GDebiCommon.py:66
+#: ../GDebi/GDebiCommon.py:67
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:80
+#: ../GDebi/GDebiCommon.py:84
+#, python-format
+msgid "'%s' is not a Debian package"
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:85
+#, python-format
+msgid ""
+"The MIME type of this file is '%s' and can not be installed on this system."
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Ne mogu otvoriti '%s'"
 
-#: ../GDebi/GDebiCommon.py:81
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
@@ -548,19 +559,19 @@ msgstr ""
 "Paket je neispravan ili nemate dozvolu ga otvoriti. Provjerite dozvole na "
 "datoteci."
 
-#: ../GDebi/GDebiCommon.py:97
+#: ../GDebi/GDebiCommon.py:106
 msgid "Same version is available in a software channel"
 msgstr "Ista verzija je dostupna putem službenih repozitorija"
 
-#: ../GDebi/GDebiCommon.py:98
+#: ../GDebi/GDebiCommon.py:107
 msgid "You are recommended to install the software from the channel instead."
 msgstr "Preporuča se instalacija paketa sa službenih repozitorija."
 
-#: ../GDebi/GDebiCommon.py:102
+#: ../GDebi/GDebiCommon.py:111
 msgid "An older version is available in a software channel"
 msgstr "Starija verzija paketa je dostupna u službenim repozitorijima."
 
-#: ../GDebi/GDebiCommon.py:103
+#: ../GDebi/GDebiCommon.py:112
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
@@ -568,11 +579,11 @@ msgstr ""
 "Uglavnom se preporuča instalacija verzije iz službenih repozitorija jer su "
 "paketi od tamo bolje podržani."
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:117
 msgid "A later version is available in a software channel"
 msgstr "Novija verzija je dostupna u službenim repozitorijma"
 
-#: ../GDebi/GDebiCommon.py:110
+#: ../GDebi/GDebiCommon.py:119
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
@@ -580,26 +591,26 @@ msgstr ""
 "Preporuča se instalacija paketa sa službenog repozitorija jer su paketi od "
 "tamo bolje podržani."
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:127
 msgid "All dependencies are satisfied"
 msgstr "Sve međuzavisnosti su rješene."
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:121
+#: ../GDebi/GDebiCommon.py:130
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Zahtijeva <b>uklanjanje</b> %s paketa\n"
 
-#: ../GDebi/GDebiCommon.py:123
+#: ../GDebi/GDebiCommon.py:132
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Zahtijeva instalaciju %s paketa"
 
-#: ../GDebi/GDebiCommon.py:131 ../GDebi/GDebiCommon.py:149
+#: ../GDebi/GDebiCommon.py:140 ../GDebi/GDebiCommon.py:158
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Dozvoljno je pokretanje samo jednog paketnog alata u istom trenutku"
 
-#: ../GDebi/GDebiCommon.py:133 ../GDebi/GDebiCommon.py:151
+#: ../GDebi/GDebiCommon.py:142 ../GDebi/GDebiCommon.py:160
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."

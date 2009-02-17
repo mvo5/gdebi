@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2009-02-16 09:37+0100\n"
+"POT-Creation-Date: 2009-02-17 11:01+0100\n"
 "PO-Revision-Date: 2006-05-06 09:57+0000\n"
 "Last-Translator: Khandakar Mujahidul Islam <suzan@bengalinux.org>\n"
 "Language-Team: Bengali <bn@li.org>\n"
@@ -507,77 +507,88 @@ msgstr "<b>মুছে ফেলা হবে: %s</b>"
 msgid "<b>"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:65
+#: ../GDebi/GDebiCommon.py:66
 #, fuzzy
 msgid "Broken dependencies"
 msgstr "নির্বরতা ইনস্টল করা হচ্ছে..."
 
-#: ../GDebi/GDebiCommon.py:66
+#: ../GDebi/GDebiCommon.py:67
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:80
+#: ../GDebi/GDebiCommon.py:84
+#, python-format
+msgid "'%s' is not a Debian package"
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:85
+#, python-format
+msgid ""
+"The MIME type of this file is '%s' and can not be installed on this system."
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "'%s' খুলতে পারছে না"
 
-#: ../GDebi/GDebiCommon.py:81
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:97
+#: ../GDebi/GDebiCommon.py:106
 msgid "Same version is available in a software channel"
 msgstr "একই সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:98
+#: ../GDebi/GDebiCommon.py:107
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:102
+#: ../GDebi/GDebiCommon.py:111
 msgid "An older version is available in a software channel"
 msgstr "একটি পুরোনো সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:103
+#: ../GDebi/GDebiCommon.py:112
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:117
 msgid "A later version is available in a software channel"
 msgstr "একটি পরের সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:110
+#: ../GDebi/GDebiCommon.py:119
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:127
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:121
+#: ../GDebi/GDebiCommon.py:130
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:123
+#: ../GDebi/GDebiCommon.py:132
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:131 ../GDebi/GDebiCommon.py:149
+#: ../GDebi/GDebiCommon.py:140 ../GDebi/GDebiCommon.py:158
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "শুধুমাত্র একটি সফটওয়্যার ম্যানেজমেন্ট টুল একসময়ে চালানো যাবে"
 
-#: ../GDebi/GDebiCommon.py:133 ../GDebi/GDebiCommon.py:151
+#: ../GDebi/GDebiCommon.py:142 ../GDebi/GDebiCommon.py:160
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."

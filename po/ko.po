@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2009-02-16 09:37+0100\n"
+"POT-Creation-Date: 2009-02-17 11:01+0100\n"
 "PO-Revision-Date: 2006-04-09 13:25+0000\n"
 "Last-Translator: atie <atie.at.matrix@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -521,24 +521,35 @@ msgstr "<b>삭제함: %s</b>"
 msgid "<b>"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:65
+#: ../GDebi/GDebiCommon.py:66
 #, fuzzy
 msgid "Broken dependencies"
 msgstr "의존 패키지 설치 중..."
 
-#: ../GDebi/GDebiCommon.py:66
+#: ../GDebi/GDebiCommon.py:67
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:80
+#: ../GDebi/GDebiCommon.py:84
+#, python-format
+msgid "'%s' is not a Debian package"
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:85
+#, python-format
+msgid ""
+"The MIME type of this file is '%s' and can not be installed on this system."
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "'%s' (을)를 열 수 없습니다"
 
-#: ../GDebi/GDebiCommon.py:81
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
@@ -546,19 +557,19 @@ msgstr ""
 "패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한"
 "을 점검 하십시오."
 
-#: ../GDebi/GDebiCommon.py:97
+#: ../GDebi/GDebiCommon.py:106
 msgid "Same version is available in a software channel"
 msgstr "소프트웨어 보관소에 같은 버전이 사용 가능 합니다"
 
-#: ../GDebi/GDebiCommon.py:98
+#: ../GDebi/GDebiCommon.py:107
 msgid "You are recommended to install the software from the channel instead."
 msgstr "대신에 보관소에 있는 소프트웨어를 설치하는 것을 권장 합니다."
 
-#: ../GDebi/GDebiCommon.py:102
+#: ../GDebi/GDebiCommon.py:111
 msgid "An older version is available in a software channel"
 msgstr "소프트웨어 보관소에 이전 버전이 사용 가능 합니다"
 
-#: ../GDebi/GDebiCommon.py:103
+#: ../GDebi/GDebiCommon.py:112
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
@@ -566,11 +577,11 @@ msgstr ""
 "소프트웨어 보관소에 있는 버전을 설치하는 것을 일반적으로 권장 합니다, 보다 나"
 "은 지원이 되기 때문 입니다."
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:117
 msgid "A later version is available in a software channel"
 msgstr "소프트웨어 보관소에 새 버전이 사용 가능 합니다"
 
-#: ../GDebi/GDebiCommon.py:110
+#: ../GDebi/GDebiCommon.py:119
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
@@ -578,27 +589,27 @@ msgstr ""
 "소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다, 보다 나은 "
 "지원이 되기 때문 입니다."
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:127
 msgid "All dependencies are satisfied"
 msgstr "모든 의존 패키지가 만족됨"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:121
+#: ../GDebi/GDebiCommon.py:130
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "%s 패키지의 <b>삭제</b>가 필요 합니다\n"
 
-#: ../GDebi/GDebiCommon.py:123
+#: ../GDebi/GDebiCommon.py:132
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "%s 패키지의 설치가 필요 합니다"
 
-#: ../GDebi/GDebiCommon.py:131 ../GDebi/GDebiCommon.py:149
+#: ../GDebi/GDebiCommon.py:140 ../GDebi/GDebiCommon.py:158
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "동시에는 오직 하나의 소프트웨어 관리 도구만을 실행하는 것이 허용 됩니다"
 
-#: ../GDebi/GDebiCommon.py:133 ../GDebi/GDebiCommon.py:151
+#: ../GDebi/GDebiCommon.py:142 ../GDebi/GDebiCommon.py:160
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2009-02-16 09:37+0100\n"
+"POT-Creation-Date: 2009-02-17 11:01+0100\n"
 "PO-Revision-Date: 2006-04-23 13:00+0000\n"
 "Last-Translator: Christian Bjälevik <nafallo@ubuntu.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -522,11 +522,11 @@ msgstr "<b>Att tas bort: %s</b>"
 msgid "<b>"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:65
+#: ../GDebi/GDebiCommon.py:66
 msgid "Broken dependencies"
 msgstr "Trasiga beroenden"
 
-#: ../GDebi/GDebiCommon.py:66
+#: ../GDebi/GDebiCommon.py:67
 #, fuzzy
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
@@ -537,12 +537,23 @@ msgstr ""
 "lagat dessa. Kör \"sudo synaptic\" eller \"sudo apt-get install -f\" i ett "
 "terminalfönster för att laga dem."
 
-#: ../GDebi/GDebiCommon.py:80
+#: ../GDebi/GDebiCommon.py:84
+#, python-format
+msgid "'%s' is not a Debian package"
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:85
+#, python-format
+msgid ""
+"The MIME type of this file is '%s' and can not be installed on this system."
+msgstr ""
+
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Kunde inte öppna \"%s\""
 
-#: ../GDebi/GDebiCommon.py:81
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
@@ -550,19 +561,19 @@ msgstr ""
 "Paketet kan vara skadat eller så tillåts du inte att öppna filen. "
 "Kontrollera rättigheterna på filen."
 
-#: ../GDebi/GDebiCommon.py:97
+#: ../GDebi/GDebiCommon.py:106
 msgid "Same version is available in a software channel"
 msgstr "Samma version finns tillgänglig i en programvarukanal"
 
-#: ../GDebi/GDebiCommon.py:98
+#: ../GDebi/GDebiCommon.py:107
 msgid "You are recommended to install the software from the channel instead."
 msgstr "Du rekommenderas att istället installera programvaran från kanalen."
 
-#: ../GDebi/GDebiCommon.py:102
+#: ../GDebi/GDebiCommon.py:111
 msgid "An older version is available in a software channel"
 msgstr "En äldre version finns tillgänglig i en programvarukanal"
 
-#: ../GDebi/GDebiCommon.py:103
+#: ../GDebi/GDebiCommon.py:112
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
@@ -570,11 +581,11 @@ msgstr ""
 "Generellt sett rekommenderas du att installera versionen från "
 "programvarukanalen, eftersom den normalt sett har bättre stöd."
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:117
 msgid "A later version is available in a software channel"
 msgstr "En senare version finns tillgänglig i en programvarukanal"
 
-#: ../GDebi/GDebiCommon.py:110
+#: ../GDebi/GDebiCommon.py:119
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
@@ -582,26 +593,26 @@ msgstr ""
 "Du rekommenderas starkt att installera versionen från programvarukanalen, "
 "eftersom den normalt sett har bättre stöd."
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:127
 msgid "All dependencies are satisfied"
 msgstr "Alla beroenden är tillfredsställda"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:121
+#: ../GDebi/GDebiCommon.py:130
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Kräver <b>borttagning</b> av %s paket\n"
 
-#: ../GDebi/GDebiCommon.py:123
+#: ../GDebi/GDebiCommon.py:132
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Kräver installationen av %s paket"
 
-#: ../GDebi/GDebiCommon.py:131 ../GDebi/GDebiCommon.py:149
+#: ../GDebi/GDebiCommon.py:140 ../GDebi/GDebiCommon.py:158
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Endast körning av ett samtidigt programvaruhanteringsverktyg tillåts"
 
-#: ../GDebi/GDebiCommon.py:133 ../GDebi/GDebiCommon.py:151
+#: ../GDebi/GDebiCommon.py:142 ../GDebi/GDebiCommon.py:160
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
