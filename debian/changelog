@@ -7,7 +7,7 @@ gdebi (0.4.3) jaunty; urgency=low
   [ Gabor  Kelemen ]
   * i18n fixes (LP: #332744)
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 23 Feb 2009 20:39:58 +0100
 
 gdebi (0.4.2) jaunty; urgency=low
 
