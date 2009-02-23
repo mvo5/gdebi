@@ -3,6 +3,9 @@ gdebi (0.4.3) jaunty; urgency=low
   [ István Nyitrai ]
   * fix potential crash in kde frontend i18n
     messages  (LP: #316116)
+  
+  [ Gabor  Kelemen ]
+  * i18n fixes (LP: #332744)
 
  --
 

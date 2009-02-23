@@ -120,7 +120,7 @@ class DebPackage(object):
                 or_str += " (%s %s)" % (dep[2], dep[1])
             if dep != or_group[len(or_group)-1]:
                 or_str += "|"
-        self._failureString += _("Dependency is not satisfiable: %s\n" % or_str)
+        self._failureString += _("Dependency is not satisfiable: %s\n") % or_str
         return False
 
     def _checkSinglePkgConflict(self, pkgname, ver, oper):
@@ -141,7 +141,7 @@ class DebPackage(object):
         #print "oper: %s " % oper
         if (pkgver and apt_pkg.CheckDep(pkgver,oper,ver) and 
             not self.replacesRealPkg(pkgname, oper, ver)):
-            self._failureString += _("Conflicts with the installed package '%s'\n" % cand.name)
+            self._failureString += _("Conflicts with the installed package '%s'\n") % cand.name
             return True
         return False
 
@@ -318,7 +318,7 @@ class DebPackage(object):
         arch = self._sections["Architecture"]
         if  arch != "all" and arch != apt_pkg.Config.Find("APT::Architecture"):
             self._dbg(1,"ERROR: Wrong architecture dude!")
-            self._failureString = _("Wrong architecture '%s'" % arch)
+            self._failureString = _("Wrong architecture '%s'") % arch
             return False
 
         # check version
@@ -380,7 +380,7 @@ class DebPackage(object):
                 try:
                     self._cache[pkg].markInstall(fromUser=False)
                 except SystemError, e:
-                    self._failureString = _("Cannot install '%s'" % pkg)
+                    self._failureString = _("Cannot install '%s'") % pkg
                     self._cache.clear()
                     return False
         return True
@@ -434,7 +434,7 @@ class DebPackage(object):
                         return [_("List of files could not be read, please report this as a bug")]
         # IOError may happen because of gvfs madness (LP: #211822)
         except IOError, e:
-            return [_("IOError during filelist read: %s" % e)]
+            return [_("IOError during filelist read: %s") % e]
         return files
     filelist = property(filelist)
     
@@ -443,7 +443,7 @@ class DebPackage(object):
         if not self._sections.has_key(item):
             # Translators: it's for missing entries in the deb package,
             # e.g. a missing "Maintainer" field
-            return _("%s is not available" % item)
+            return _("%s is not available") % item
         return self._sections[item]
 
     def _dbg(self, level, msg):
