@@ -28,6 +28,7 @@ import subprocess
 import string
 import apt
 import apt_pkg
+import os.path
 from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *
 
@@ -40,20 +41,17 @@ import re
 import pty
 import select
 
-import sys
-import apt
-import os.path
-
-#from optparse import OptionParser
+from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
 
-from gettext import gettext as _
 import gettext
 
 class OptionParsed:
     non_interactive = False
 
 if __name__ == "__main__":
+    t = gettext.translation('gdebi', '/usr/share/locale')
+    _ = t.ugettext
     data="/usr/share/gdebi"
 
     localesApp="gdebi"
@@ -61,16 +59,16 @@ if __name__ == "__main__":
     localesDir="/usr/share/locale"
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
-    #parser = OptionParser()
-    #parser.add_option("-n", "--non-interactive",
-    #                  action="store_true", dest="non_interactive",
-    #                  default=False,
-    #                  help=_("Run non-interactive (dangerous!)"))
-    #(options, args) = parser.parse_args()
-    #afile = ""
-    #if len(args) >= 1:
-    #    afile = args[0]        
+
+    parser = OptionParser()
+    parser.add_option("-n", "--non-interactive",
+                      action="store_true", dest="non_interactive",
+                      default=False,
+                      help=_("Run non-interactive (dangerous!)"))
+    (options, args) = parser.parse_args()
+    
     try:
+        #Don't edit from this point
         appName     = "gdebi-kde"
         catalog     = ""
         programName = ki18n ("GDebi")
@@ -85,24 +83,24 @@ if __name__ == "__main__":
         aboutData   = KAboutData (appName, catalog, programName, version, description,
                                 license, copyright, text, homePage, bugEmail)
         KCmdLineArgs.init(sys.argv, aboutData)
-
+        #To this point
+        #Keep sync with OptionParser() - this is to workaround utf-8 issues
+        # on the commandline that KCmdLineOptions can not handle, see
+        # bug #190907
         opts = KCmdLineOptions()
         opts.add("n")
-        opts.add("dont-interactive", ki18n("Run non-interactive (dangerous!)")) #should be "non-interactive" but "no" gets eaten by KCmdLineArgs
+        opts.add("dont-interactive", ki18n("Run non-interactive (dangerous!)"))
         opts.add("+[File]", ki18n("File to open"))
         KCmdLineArgs.addCmdLineOptions(opts)
 
         app = KApplication()
-        args = KCmdLineArgs.parsedArgs()
+        #args = KCmdLineArgs.parsedArgs()
         afile = ""
-        if args.count() >= 1:
-            afile = args.arg(0)
-        afile = unicode(afile, 'utf-8')
-        options = OptionParsed #FIXME set non_interactive
+        if len(args) >= 1:
+            afile = args[0]
         gdebi = GDebiKDE(datadir=data,options=options,file=afile)
         gdebi.show()
-        if args.isSet("dont-interactive") == True:
-            options.non_interactive = True
+        if options.non_interactive == True:
             gdebi.installButtonClicked()
         app.exec_()
     except SystemError, e:

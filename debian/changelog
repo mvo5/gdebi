@@ -1,3 +1,11 @@
+gdebi (0.4.4) jaunty; urgency=low
+
+  [ István Nyitrai ]
+  * fix problem with installing utf-8 filenames with gdebi-kde
+    (LP: #190907)
+
+ --
+
 gdebi (0.4.3) jaunty; urgency=low
 
   [ István Nyitrai ]
