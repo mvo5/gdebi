@@ -3,8 +3,12 @@ gdebi (0.4.4) jaunty; urgency=low
   [ István Nyitrai ]
   * fix problem with installing utf-8 filenames with gdebi-kde
     (LP: #190907)
+  
+  [ Michael Vogt ]
+  * updated for the new setup.py --install-layout=deb requirement
+    that the new python has
 
- --
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Mar 2009 11:54:47 +0100
 
 gdebi (0.4.3) jaunty; urgency=low
 
@@ -82,7 +86,7 @@ gdebi (0.3.13) intrepid; urgency=low
     - if the terminal has no updates for a long time, expand
       it (assuming some sort of prompting is going on, LP: #252632)
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 30 Jul 2008 22:32:25 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 05 Aug 2008 16:28:53 +0200
 
 gdebi (0.3.12) intrepid; urgency=low
 

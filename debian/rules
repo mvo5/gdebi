@@ -27,7 +27,7 @@ install: build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr
+	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr --install-layout=deb
 
 binary-indep: build install
 	dh_testdir
