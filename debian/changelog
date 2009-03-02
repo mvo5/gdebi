@@ -3,10 +3,11 @@ gdebi (0.4.4) jaunty; urgency=low
   [ István Nyitrai ]
   * fix problem with installing utf-8 filenames with gdebi-kde
     (LP: #190907)
+  * auto-close checkbutton (LP: #57812)
   
   [ Michael Vogt ]
-  * updated for the new setup.py --install-layout=deb requirement
-    that the new python has
+  * updated for the new "setup.py --install-layout=deb" and
+    dist-packages requirement
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Mar 2009 11:54:47 +0100
 

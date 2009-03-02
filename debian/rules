@@ -40,11 +40,13 @@ binary-indep: build install
 	dh_installman -i
 	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
-		d=../gdebi-core/$$s; p=site-packages/GDebi;		\
+		d=../gdebi-core/$$s; p=dist-packages/GDebi;		\
 		k=../gdebi-kde/$$s;                                     \
 		g=../gdebi/$$s;						\
 		mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
+		echo mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
 		cp $$s/$$p/* $$d/$$p/.;					\
+		echo cp $$s/$$p/* $$d/$$p/.;					\
 		# gtk                                                   \
 		for f in SimpleGladeApp GDebi; do			\
 			mv $$d/$$p/$$f.* $$g/$$p/.;			\
@@ -54,7 +56,7 @@ binary-indep: build install
 			mv $$d/$$p/$$f.* $$k/$$p/.;			\
 		done;							\
 	done
-	dh_install -i -Xsite-packages/GDebi --list-missing
+	dh_install -i -Xdist-packages/GDebi --list-missing
 	dh_link -i
 	dh_compress -i
 	dh_fixperms -i

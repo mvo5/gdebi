@@ -445,6 +445,9 @@ Install software from trustworthy software distributors only.
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
+        #Close if checkbox is selected
+        if self.checkbutton1.get_active():
+            self.on_button_deb_install_close_clicked(None)
         self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
         if dprogress.exitstatus == 0:
             self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
