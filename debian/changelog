@@ -9,7 +9,7 @@ gdebi (0.4.4) jaunty; urgency=low
   * updated for the new "setup.py --install-layout=deb" and
     dist-packages requirement
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Mar 2009 11:54:47 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 02 Mar 2009 13:49:46 +0100
 
 gdebi (0.4.3) jaunty; urgency=low
 
