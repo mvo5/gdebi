@@ -1,3 +1,10 @@
+gdebi (0.4.5) UNRELEASED; urgency=low
+
+  [ István Nyitrai ]
+  * fix gettext issue with gdebi-kde (LP: #337786)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 05 Mar 2009 10:53:11 +0100
+
 gdebi (0.4.4) jaunty; urgency=low
 
   [ István Nyitrai ]

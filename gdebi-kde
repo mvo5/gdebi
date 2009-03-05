@@ -50,15 +50,15 @@ class OptionParsed:
     non_interactive = False
 
 if __name__ == "__main__":
-    t = gettext.translation('gdebi', '/usr/share/locale')
-    _ = t.ugettext
-    data="/usr/share/gdebi"
 
     localesApp="gdebi"
-    localesAppKdelibs="kdelibs"
     localesDir="/usr/share/locale"
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
+    t = gettext.translation(localesApp, localesDir, fallback=True)
+    _ = t.ugettext
+    data="/usr/share/gdebi"
+
 
     parser = OptionParser()
     parser.add_option("-n", "--non-interactive",
