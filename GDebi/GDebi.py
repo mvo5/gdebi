@@ -475,7 +475,8 @@ Install software from trustworthy software distributors only.
 
     def on_window_main_delete_event(self, *args):
         if self.window_main.get_property("sensitive"):
-            gtk.main_quit()
+            if gtk.main_level() > 0:
+                gtk.main_quit()
             return False
         else: 
             return True
