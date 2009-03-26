@@ -261,6 +261,7 @@ class DebPackage(object):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
                             # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
                             self._failureString += _("Breaks exisiting package '%s' dependency %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
+                            self._cache.op_progress.done()
                             return False
             # now check if there are conflicts against this package on
             # the existing system
@@ -272,6 +273,7 @@ class DebPackage(object):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
                                 self._failureString += _("Breaks exisiting package '%s' conflict: %s (%s %s)\n") % (pkg.name, cOr.TargetPkg.Name, cOr.CompType, cOr.TargetVer)
+                                self._cache.op_progress.done()
                                 return False
         self._cache.op_progress.done()
         return True
