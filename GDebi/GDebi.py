@@ -121,7 +121,6 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         
         self.window_main.set_sensitive(True)
 
-
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
         path = urllib.url2pathname(uri) # escape special chars
@@ -322,6 +321,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         self.dialog_about.hide()
 
     def on_button_install_clicked(self, widget):
+        self.install_completed=False
         # check if we actually have a deb, see #213725
         if not self._deb:
             err_header = _("File not found")
@@ -391,7 +391,7 @@ Install software from trustworthy software distributors only.
         #self._term.feed(str(0x1b)+"[2J")
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
-        
+
         if len(self.install) > 0 or len(self.remove) > 0:
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
@@ -441,12 +441,13 @@ Install software from trustworthy software distributors only.
                                              self._term,
                                              self.expander_install)
         dprogress.commit()
+        self.install_completed=True
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
         self.button_deb_install_close.grab_default()
         #Close if checkbox is selected
-        if self.checkbutton1.get_active():
+        if self.checkbutton_autoclose.get_active():
             self.on_button_deb_install_close_clicked(None)
         self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
         if dprogress.exitstatus == 0:
@@ -472,6 +473,10 @@ Install software from trustworthy software distributors only.
         #self.window_main.set_property("urgency-hint", 0)
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
+    
+    def on_checkbutton_autoclose_clicked(self, widget):
+        if self.install_completed:
+            self.on_button_deb_install_close_clicked(None)            
 
     def on_window_main_delete_event(self, *args):
         if self.window_main.get_property("sensitive"):

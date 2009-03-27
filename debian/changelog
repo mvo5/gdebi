@@ -1,3 +1,11 @@
+gdebi (0.4.7) jaunty; urgency=low
+
+  * GDebi/GDebi.py:
+    - when the install is finished and the user clicks on 
+      the auto-close button (thanks Nyitrai István)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 27 Mar 2009 14:01:36 +0100
+
 gdebi (0.4.6) jaunty; urgency=low
 
   * GDebi/GDebi.py:
