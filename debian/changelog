@@ -1,3 +1,11 @@
+gdebi (0.4.8) jaunty; urgency=low
+
+  * GDebi/GDebi.py:
+    - fix crash on reload with no package selected
+      (LP: #350755)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 31 Mar 2009 10:59:02 +0200
+
 gdebi (0.4.7) jaunty; urgency=low
 
   * GDebi/GDebi.py:

@@ -310,7 +310,8 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         #print "refresh"
         self.window_main.set_sensitive(False)
         self.openCache()
-        self.open(self._deb.file)
+        if self._deb:
+            self.open(self._deb.file)
         self.window_main.set_sensitive(True)
 
     def on_about_activate(self, widget):
