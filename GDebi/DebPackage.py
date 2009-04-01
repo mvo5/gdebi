@@ -68,11 +68,18 @@ class DebPackage(object):
                         if pkg.isInstalled:
                             return True
                 continue
-
+            # check real dependency
             inst = self._cache[depname]
             instver = inst.installedVersion
             if instver != None and apt_pkg.CheckDep(instver,oper,ver) == True:
                 return True
+            # if no real dependency is installed, check if there is
+            # a package installed that provides this dependency
+            # (e.g. scrollkeeper dependecies are provided by rarian-compat)
+            for ppkg in self._cache.getProvidersFor(depname):
+                if ppkg.isInstalled:
+                    self._dbg(3, "found installed '%s' that provides '%s'" % (ppkg.name, depname))
+                    return True
         return False
             
 

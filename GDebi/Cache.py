@@ -61,14 +61,12 @@ class Cache(apt.Cache):
             return False
         return ver.Downloadable
 
-    def getProvidersForVirtual(self, virtual_pkg):
+    def getProvidersFor(self, pkgname):
+        """
+        get providers for a pkgname, this is not limited to
+        pure virtual packages
+        """
         providers = []
-        try:
-            vp = self._cache[virtual_pkg]
-            if len(vp.VersionList) != 0:
-                return providers
-        except IndexError:
-            return providers
         for pkg in self:
             v = self._depcache.GetCandidateVer(pkg._pkg)
             if v == None:
@@ -76,7 +74,7 @@ class Cache(apt.Cache):
             for p in v.ProvidesList:
                 #print virtual_pkg
                 #print p[0]
-                if virtual_pkg == p[0]:
+                if pkgname == p[0]:
                     # we found a pkg that provides this virtual
                     # pkg, check if the proivdes is any good
                     providers.append(pkg)
@@ -89,4 +87,15 @@ class Cache(apt.Cache):
                     #    or_found = True
                     #    break
         return providers
+
+    def getProvidersForVirtual(self, virtual_pkg):
+        " get providers for a pure virtual package "
+        providers = []
+        try:
+            vp = self._cache[virtual_pkg]
+            if len(vp.VersionList) != 0:
+                return providers
+        except IndexError:
+            return providers
+        return self.getProvidersFor(virtual_pkg)
 

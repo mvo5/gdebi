@@ -1,3 +1,11 @@
+gdebi (0.4.9) jaunty; urgency=low
+
+  * GDebi/DebPackages.py, GDebi/Cache.py:
+    - when checking if a dependency is satified ensure to test
+      for all provides (not just pure virtual ones) (LP: #353088)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 01 Apr 2009 15:25:06 +0200
+
 gdebi (0.4.8) jaunty; urgency=low
 
   * GDebi/GDebi.py:
