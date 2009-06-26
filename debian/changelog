@@ -1,3 +1,11 @@
+gdebi (0.4.10) karmic; urgency=low
+
+  * GDebi/DebPackage.py:
+    - Look for Pre-Depends instead of PreDepends.  (Closes: #435577)
+      (LP: #392714)
+
+ -- Anders Kaseorg <andersk@mit.edu>  Wed, 24 Jun 2009 15:57:19 -0400
+
 gdebi (0.4.9) jaunty; urgency=low
 
   * GDebi/DebPackages.py, GDebi/Cache.py:

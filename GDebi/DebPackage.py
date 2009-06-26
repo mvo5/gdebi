@@ -192,7 +192,7 @@ class DebPackage(object):
     def getDepends(self):
         depends = []
         # find depends
-        for key in ["Depends","PreDepends"]:
+        for key in ["Depends","Pre-Depends"]:
             if self._sections.has_key(key):
                 depends.extend(apt_pkg.ParseDepends(self._sections[key]))
         return depends
