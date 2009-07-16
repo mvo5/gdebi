@@ -8,6 +8,8 @@ gdebi (0.4.10) UNRELEASEDkarmic; urgency=low
   [ Michael Vogt ]
   * GDebi/DebPackage.py:
     - fix typo (LP: #387022)
+  * data/gdebi-kde.desktop:
+    - increase initialPreference value (LP: #379150)
 
  -- Anders Kaseorg <andersk@mit.edu>  Wed, 24 Jun 2009 15:57:19 -0400
 

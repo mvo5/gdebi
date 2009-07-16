@@ -12,5 +12,5 @@ MimeType=application/x-deb;application/x-debian-package;
 OnlyShowIn=KDE;
 NotShowIn=GNOME;
 NoDisplay=true
-InitialPreference=8
+InitialPreference=12
 X-Ubuntu-Gettext-Domain=gdebi
