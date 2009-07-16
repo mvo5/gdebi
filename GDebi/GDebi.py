@@ -32,7 +32,7 @@ import apt_pkg
 
 import pygtk
 pygtk.require("2.0")
-import gtk, gtk.glade
+import gtk
 import pango
 import gobject
 import vte
@@ -44,7 +44,7 @@ import thread
 import re
 
 from DebPackage import DebPackage, Cache
-from SimpleGladeApp import SimpleGladeApp
+from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 from apt.progress import InstallProgress
 from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
@@ -53,17 +53,14 @@ from gettext import gettext as _
 # is happening 
 GDEBI_TERMINAL_TIMEOUT=4*60.0
 
-class GDebi(SimpleGladeApp, GDebiCommon):
+class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir,options,file)
         localesApp="gdebi"
         localesDir="/usr/share/locale"
-        gtk.glade.bindtextdomain(localesApp, localesDir)
-        gtk.glade.textdomain(localesApp)
 
-        SimpleGladeApp.__init__(self, domain="gdebi",
-                                path=datadir+"/gdebi.glade")
+        SimpleGtkbuilderApp.__init__(self, path=datadir+"/gdebi.ui")
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
         try:
@@ -94,6 +91,7 @@ class GDebi(SimpleGladeApp, GDebiCommon):
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
+        self.create_vte()
 
         # show what we have
         self.window_main.show()
@@ -487,12 +485,11 @@ Install software from trustworthy software distributors only.
         else: 
             return True
 
-    def create_vte(self, arg1,arg2,arg3,arg4):
+    def create_vte(self):
         #print "create_vte (for the custom glade widget)"
         self._term = vte.Terminal()
         self._term.set_font_from_string("monospace 10")
-        return self._term
-
+        self.expander_install.add(self._term)
 
     def show_alert(self, type, header, body=None, details=None, parent=None):
         if parent is not None:
