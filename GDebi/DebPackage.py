@@ -192,7 +192,7 @@ class DebPackage(object):
     def getDepends(self):
         depends = []
         # find depends
-        for key in ["Depends","PreDepends"]:
+        for key in ["Depends","Pre-Depends"]:
             if self._sections.has_key(key):
                 depends.extend(apt_pkg.ParseDepends(self._sections[key]))
         return depends
@@ -267,7 +267,7 @@ class DebPackage(object):
                         if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
                             # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the releation (e.g. >=) and the latest the version for the releation
-                            self._failureString += _("Breaks exisiting package '%s' dependency %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
+                            self._failureString += _("Breaks existing package '%s' dependency %s (%s %s)\n") % (pkg.name, dep.name, dep.relation, dep.version)
                             self._cache.op_progress.done()
                             return False
             # now check if there are conflicts against this package on
