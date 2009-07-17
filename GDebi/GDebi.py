@@ -71,12 +71,6 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
           print "Error loading logo"
           pass
   
-        # set image of button "install"  manually, since it is overriden 
-        #by set_label otherwise
-        img = gtk.Image()
-        img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
-        self.button_install.set_image(img)
-
         # setup status
         self.context=self.statusbar_main.get_context_id("context_main_window")
         self.statusbar_main.push(self.context,_("Loading..."))

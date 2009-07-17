@@ -35,7 +35,9 @@ class SimpleGtkbuilderApp:
         self.builder.add_from_file(path)
         self.builder.connect_signals(self)
         for o in self.builder.get_objects():
+            #print o
             if hasattr(o, "get_name"):
+                #print o.get_name()
                 setattr(self, o.get_name(), o)
 
     def run(self):

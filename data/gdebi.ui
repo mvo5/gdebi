@@ -230,6 +230,7 @@
                     <property name="can_focus">True</property>
                     <property name="can_default">True</property>
                     <property name="receives_default">False</property>
+                    <property name="image">image1</property>
                     <property name="use_underline">True</property>
                     <signal name="clicked" handler="on_button_install_clicked"/>
                   </object>
@@ -522,31 +523,6 @@
             <property name="expand">False</property>
             <property name="fill">False</property>
             <property name="position">3</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
-  <object class="GtkAboutDialog" id="dialog_about">
-    <property name="border_width">5</property>
-    <property name="type_hint">normal</property>
-    <property name="copyright">(c) 2005-2009 Canonical Ltd</property>
-    <property name="comments" translatable="yes">Install and view software packages</property>
-    <property name="website">www.ubuntu.com</property>
-    <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
-    <property name="authors">Michael Vogt
-Sebastian Heinlein
-</property>
-    <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
-    <property name="logo">gdebi.png</property>
-    <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox1">
-        <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area1"/>
-          <packing>
-            <property name="expand">False</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
           </packing>
         </child>
       </object>
@@ -911,4 +887,42 @@ Sebastian Heinlein
   <object class="GtkTextBuffer" id="textbuffer_filelist"/>
   <object class="GtkTextBuffer" id="textbuffer_description"/>
   <object class="GtkAccelGroup" id="accelgroup1"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="stock">gtk-apply</property>
+  </object>
+  <object class="GtkAboutDialog" id="dialog_about">
+    <property name="border_width">5</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="skip_pager_hint">True</property>
+    <property name="program_name">GDebi</property>
+    <property name="version">0.4</property>
+    <property name="copyright">(c) 2005-2009 Canonical Ltd</property>
+    <property name="comments" translatable="yes">Install and view software packages</property>
+    <property name="website">www.ubuntu.com</property>
+    <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
+    <property name="authors">Michael Vogt
+Sebastian Heinlein
+</property>
+    <property name="logo">gdebi.png</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox6">
+        <property name="orientation">vertical</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area6"/>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
 </interface>
