@@ -307,6 +307,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         #print "about"
         from Version import VERSION
         self.dialog_about.set_version(VERSION)
+        self.dialog_about.set_name("GDebi")
         self.dialog_about.run()
         self.dialog_about.hide()
 

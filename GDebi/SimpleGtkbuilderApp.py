@@ -35,10 +35,14 @@ class SimpleGtkbuilderApp:
         self.builder.add_from_file(path)
         self.builder.connect_signals(self)
         for o in self.builder.get_objects():
-            #print o
             if hasattr(o, "get_name"):
-                #print o.get_name()
+                name = o.get_name()
+                if not self.builder.get_object(name):
+                    # this can happen for e.g. the GtkAboutDialog that
+                    # has its own get_name
+                    raise IOError, "get_name() does not match object name for name '%s'" % name
                 setattr(self, o.get_name(), o)
+                
 
     def run(self):
         """
