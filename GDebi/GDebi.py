@@ -91,10 +91,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
-        self.create_vte()
 
         # show what we have
         self.window_main.show()
+        #self.vte_terminal.set_font_from_string("monospace 10")
         
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         if not self.openCache():
@@ -387,7 +387,7 @@ Install software from trustworthy software distributors only.
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
-        #self._term.feed(str(0x1b)+"[2J")
+        #self.vte_terminal.feed(str(0x1b)+"[2J")
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
@@ -402,7 +402,7 @@ Install software from trustworthy software distributors only.
                                                 self.label_action,
                                                 self.dialog_deb_install)
             iprogress = self.InstallProgressAdapter(self.progressbar_install,
-                                                    self._term,
+                                                    self.vte_terminal,
                                                     self.label_action,
                                                     self.expander_install)
             errMsg = None
@@ -437,7 +437,7 @@ Install software from trustworthy software distributors only.
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
                                              self.progressbar_install,
-                                             self._term,
+                                             self.vte_terminal,
                                              self.expander_install)
         dprogress.commit()
         self.install_completed=True
@@ -484,12 +484,6 @@ Install software from trustworthy software distributors only.
             return False
         else: 
             return True
-
-    def create_vte(self):
-        #print "create_vte (for the custom glade widget)"
-        self._term = vte.Terminal()
-        self._term.set_font_from_string("monospace 10")
-        self.expander_install.add(self._term)
 
     def show_alert(self, type, header, body=None, details=None, parent=None):
         if parent is not None:

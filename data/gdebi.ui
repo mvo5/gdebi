@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
+  <!-- interface-requires vte 0.0 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkWindow" id="window_main">
     <property name="title" translatable="yes">Package Installer</property>
@@ -14,6 +15,7 @@
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkMenuBar" id="menubar1">
             <property name="visible">True</property>
@@ -219,6 +221,7 @@
             <child>
               <object class="GtkVBox" id="vbox5">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkButton" id="button_install">
                     <property name="label" translatable="yes">_Install Package</property>
@@ -277,7 +280,7 @@
                     <property name="left_margin">4</property>
                     <property name="right_margin">4</property>
                     <property name="cursor_visible">False</property>
-                    <property name="buffer">textbuffer3</property>
+                    <property name="buffer">textbuffer_description</property>
                   </object>
                 </child>
               </object>
@@ -469,7 +472,7 @@
                     <property name="editable">False</property>
                     <property name="left_margin">6</property>
                     <property name="right_margin">6</property>
-                    <property name="buffer">textbuffer2</property>
+                    <property name="buffer">textbuffer_filelist</property>
                   </object>
                 </child>
               </object>
@@ -561,15 +564,18 @@ Sebastian Heinlein
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkVBox" id="vbox6">
             <property name="visible">True</property>
             <property name="border_width">6</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkVBox" id="vbox3">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="label_action">
@@ -615,7 +621,14 @@ Sebastian Heinlein
                 <property name="can_focus">True</property>
                 <property name="spacing">6</property>
                 <child>
-                  <placeholder/>
+                  <object class="VteTerminal" id="vte_terminal">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="background_tint_color">#000000000000</property>
+                    <property name="encoding">UTF-8</property>
+                    <property name="scroll_on_keystroke">True</property>
+                    <property name="scroll_on_output">False</property>
+                  </object>
                 </child>
                 <child type="label">
                   <object class="GtkLabel" id="label9">
@@ -693,11 +706,13 @@ Sebastian Heinlein
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkVBox" id="vbox4">
             <property name="visible">True</property>
             <property name="border_width">6</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="label10">
@@ -779,6 +794,7 @@ Sebastian Heinlein
     <child internal-child="vbox">
       <object class="GtkVBox" id="vbox7">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">12</property>
         <child>
           <object class="GtkHBox" id="hbox5">
@@ -801,6 +817,7 @@ Sebastian Heinlein
             <child>
               <object class="GtkVBox" id="vbox8">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">12</property>
                 <child>
                   <object class="GtkLabel" id="label_hig">
@@ -830,7 +847,7 @@ Sebastian Heinlein
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="editable">False</property>
-                            <property name="buffer">textbuffer1</property>
+                            <property name="buffer">textbuffer_hig</property>
                           </object>
                         </child>
                       </object>
@@ -890,8 +907,8 @@ Sebastian Heinlein
       <action-widget response="-7">button2</action-widget>
     </action-widgets>
   </object>
-  <object class="GtkTextBuffer" id="textbuffer1"/>
-  <object class="GtkTextBuffer" id="textbuffer2"/>
-  <object class="GtkTextBuffer" id="textbuffer3"/>
+  <object class="GtkTextBuffer" id="textbuffer_hig"/>
+  <object class="GtkTextBuffer" id="textbuffer_filelist"/>
+  <object class="GtkTextBuffer" id="textbuffer_description"/>
   <object class="GtkAccelGroup" id="accelgroup1"/>
 </interface>
