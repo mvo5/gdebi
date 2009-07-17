@@ -17,6 +17,9 @@ gdebi (0.4.10) UNRELEASEDkarmic; urgency=low
   * do not resolve versionized dependencies with virtual 
     packages (LP: #373154)
   * honor "GDEBI_DEBUG_LEVEL" environment var
+  * GDebi/GDebi.py:
+    - workaround bug in vte where forkpty() does not pass the 
+      environment (LP: #367959)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Jul 2009 21:06:27 +0200
 

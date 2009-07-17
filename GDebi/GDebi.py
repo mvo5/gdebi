@@ -636,7 +636,13 @@ Install software from trustworthy software distributors only.
                 (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
               self.term_expander.set_expanded(True)
         def fork(self):
-            return self.term.forkpty(envv=self.env)
+            pid = self.term.forkpty(self.env)
+            if pid == 0:
+                # *grumpf* workaround bug in vte here (gnome bug #588871)
+                for env in self.env:
+                    (key, value) = env.split("=")
+                    os.environ[key] = value
+            return pid
         def waitChild(self):
             while not self.finished:
                 self.updateInterface()
@@ -695,7 +701,7 @@ Install software from trustworthy software distributors only.
 if __name__ == "__main__":
     app = GDebi("data/",None)
 
-    pkgs = ["3ddesktop"]
+    pkgs = ["cw"]
     for pkg in pkgs:
         print "installing %s" % pkg
         app._cache[pkg].markInstall()
@@ -709,8 +715,14 @@ if __name__ == "__main__":
     app.dialog_deb_install.show_all()
  
     # install the dependecnies
-    fprogress = app.FetchProgressAdapter(app.progressbar_install)
-    iprogress = app.InstallProgressAdapter(app.progressbar_install, app._term)
+    fprogress = app.FetchProgressAdapter(app.progressbar_install,
+                                         app.label_action,
+                                         app.dialog_deb_install)
+    iprogress = app.InstallProgressAdapter(app.progressbar_install, 
+                                           app.vte_terminal,
+                                           app.label_action,
+                                           app.expander_install)
     res = app._cache.commit(fprogress,iprogress)
     print "commit retured: %s" % res
     
+    gtk.main()
