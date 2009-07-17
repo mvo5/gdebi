@@ -31,7 +31,7 @@ from gettext import gettext as _
 from Cache import Cache
 
 class DebPackage(object):
-    debug = 0
+    debug = int(os.environ.get("GDEBI_DEBUG_LEVEL") or 0)
 
     def __init__(self, cache, file=None):
         cache.clear()
@@ -73,13 +73,17 @@ class DebPackage(object):
             instver = inst.installedVersion
             if instver != None and apt_pkg.CheckDep(instver,oper,ver) == True:
                 return True
+
             # if no real dependency is installed, check if there is
             # a package installed that provides this dependency
             # (e.g. scrollkeeper dependecies are provided by rarian-compat)
-            for ppkg in self._cache.getProvidersFor(depname):
-                if ppkg.isInstalled:
-                    self._dbg(3, "found installed '%s' that provides '%s'" % (ppkg.name, depname))
-                    return True
+            # but only do that if there is no version required in the 
+            # dependency (we do not supprot versionized dependencies)
+            if not oper:
+                for ppkg in self._cache.getProvidersFor(depname):
+                    if ppkg.isInstalled:
+                        self._dbg(3, "found installed '%s' that provides '%s'" % (ppkg.name, depname))
+                        return True
         return False
             
 

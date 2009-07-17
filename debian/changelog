@@ -14,6 +14,9 @@ gdebi (0.4.10) UNRELEASEDkarmic; urgency=low
     - ported to GtkBuilder
   * fix crash because we made the window sensitive too early
     (LP: #355268)
+  * do not resolve versionized dependencies with virtual 
+    packages (LP: #373154)
+  * honor "GDEBI_DEBUG_LEVEL" environment var
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Jul 2009 21:06:27 +0200
 
