@@ -24,7 +24,6 @@ import sys
 import re
 
 import gtk
-import logging
 
 # based on SimpleGladeApp
 class SimpleGtkbuilderApp:
