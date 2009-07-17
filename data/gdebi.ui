@@ -898,7 +898,7 @@
     <property name="type_hint">dialog</property>
     <property name="skip_taskbar_hint">True</property>
     <property name="skip_pager_hint">True</property>
-    <property name="program_name">dialog_about</property>
+    <property name="program_name">GDebi</property>
     <property name="version">0.4</property>
     <property name="copyright">(c) 2005-2009 Canonical Ltd</property>
     <property name="comments" translatable="yes">Install and view software packages</property>

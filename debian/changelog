@@ -22,8 +22,6 @@ gdebi (0.4.10) karmic; urgency=low
       environment (LP: #367959)
     - set the image in the gtkbuilder file, hopefully fixes
       (LP: #345260)
-  * workaround problem with gtkbuilder and GtkAboutDialog for
-    duplicated get_name()
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Jul 2009 21:06:27 +0200
 
