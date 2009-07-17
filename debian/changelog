@@ -12,6 +12,8 @@ gdebi (0.4.10) UNRELEASEDkarmic; urgency=low
     - increase initialPreference value (LP: #379150)
   * data/gdebi.ui:
     - ported to GtkBuilder
+  * fix crash because we made the window sensitive too early
+    (LP: #355268)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Jul 2009 21:06:27 +0200
 

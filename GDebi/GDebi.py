@@ -154,19 +154,14 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             
         self.statusbar_main.push(self.context, "")
 
-        # grey in since we are ready for user input now
-        self.window_main.set_sensitive(True)
-
         # set window title
         self.window_main.set_title(_("Package Installer - %s") % 
                                    self._deb.pkgName)
 
-        # set name
+        # set name and ungrey some widgets
         self.label_name.set_markup(self._deb.pkgName)
-        
         self.notebook_details.set_sensitive(True)
         self.hbox_main.set_sensitive(True)
-
 
         # set description
         buf = self.textview_description.get_buffer()
@@ -284,6 +279,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
     def on_open_activate(self, widget):
         #print "open"
         # build dialog
+        self.window_main.set_sensitive(False)
         fs = gtk.FileChooserDialog(parent=self.window_main,
                                    buttons=(gtk.STOCK_CANCEL, 
                                             gtk.RESPONSE_CANCEL, 
@@ -303,6 +299,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             #print fs.get_filename()
             self.open(fs.get_filename())
         fs.destroy()
+        self.window_main.set_sensitive(True)
 
     def on_refresh_activate(self, widget):
         #print "refresh"
