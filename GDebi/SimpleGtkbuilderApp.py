@@ -37,7 +37,11 @@ class SimpleGtkbuilderApp:
                 name = gtk.Buildable.get_name(o)
                 setattr(self, name, o)
             else:
-                print >>sys.stderr, "WARNING: can not get name for '%s'" % o
+                # see LP: #402780 - sometimes this dies with broken pipe?
+                try:
+                    print >>sys.stderr, "WARNING: can not get name for '%s'" % o
+                except:
+                    pass
 
     def run(self):
         """

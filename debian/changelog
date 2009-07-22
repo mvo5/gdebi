@@ -2,6 +2,8 @@ gdebi (0.5.1) karmic; urgency=low
 
   * po/pt_BR.po:
     - fix typo in translation (LP: #377151)
+  * GDebi/SimpleGtkbuilderApp.py:
+    - do not crash if sys.stderr can not be used (LP: #402780)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 22 Jul 2009 13:19:33 +0200
 
