@@ -99,7 +99,7 @@ msgstr "<b>Tamanho:</b>"
 
 #: ../data/gdebi.glade.h:7 ../GDebi/GDebiKDE.py:278
 msgid "<b>To install the following changes are required:</b>"
-msgstr "<b>Para instalar, as seguintes mudanças são necessárias:<b>"
+msgstr "<b>Para instalar, as seguintes mudanças são necessárias:</b>"
 
 #: ../data/gdebi.glade.h:8 ../GDebi/GDebiKDE.py:137
 msgid "<b>Version:</b>"

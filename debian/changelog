@@ -1,4 +1,11 @@
-gdebi (0.4.10) karmic; urgency=low
+gdebi (0.5.1) karmic; urgency=low
+
+  * po/pt_BR.po:
+    - fix typo in translation (LP: #377151)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 22 Jul 2009 13:19:33 +0200
+
+gdebi (0.5.0) karmic; urgency=low
 
   [ Anders Kaseorg ]
   * GDebi/DebPackage.py:
@@ -22,6 +29,8 @@ gdebi (0.4.10) karmic; urgency=low
       environment (LP: #367959)
     - set the image in the gtkbuilder file, hopefully fixes
       (LP: #345260)
+  * debian/rules:
+    - build with DY_PYCENTRAL=include-links
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 16 Jul 2009 21:06:27 +0200
 
