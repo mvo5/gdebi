@@ -104,7 +104,14 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         column.add_attribute(render, "markup", 0)
         self.treeview_details.append_column(column)
         self.treeview_details.set_model(self.details_list)
-        
+
+        # setup the control treeview
+        column = gtk.TreeViewColumn("")
+        render = gtk.CellRendererText()
+        column.pack_start(render, True)
+        column.add_attribute(render, "text", 0)
+        self.treeview_control.append_column(column)
+
         if file != "" and os.path.exists(file):
             self.window_main.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
             while gtk.events_pending(): gtk.main_iteration()        
@@ -207,6 +214,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         buf = self.textview_filelist.get_buffer()
         buf.set_text(utf8("\n".join(self._deb.filelist)))
 
+        # set control file list
+        store = gtk.ListStore(str)
+        for name in self._deb.control_filelist:
+            store.append([name])
+        self.treeview_control.set_model(store)
+
         # check the deps
         if not self._deb.checkDeb():
             self.label_status.set_markup("<span foreground=\"red\" weight=\"bold\">"+
@@ -218,6 +231,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.button_install.set_sensitive(False)
             self.button_details.hide()
             return
+        
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
@@ -255,6 +269,13 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.button_install.set_label(_("_Install Package"))
         self.button_install.set_sensitive(True)
         self.button_install.grab_default()
+
+    def on_treeview_control_cursor_changed(self, treeview):
+        model = treeview.get_model()
+        (path, col) = treeview.get_cursor()
+        name = model[path][0]
+        buf = self.textview_control_content.get_buffer()
+        buf.set_text(self._deb.control_content(name))
 
     def on_button_details_clicked(self, widget):
         #print "on_button_details_clicked"

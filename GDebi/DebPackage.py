@@ -427,6 +427,24 @@ class DebPackage(object):
         return (install,remove, unauthenticated)
     requiredChanges = property(requiredChanges)
 
+    def control_filelist(self):
+        """ return the list of files in control.tar.gt """
+        from debian_bundle.debfile import DebFile
+        content = []
+        for name in DebFile(self.file).control:
+            if name and name != ".":
+                content.append(name)
+        return sorted(content)
+    control_filelist = property(control_filelist)
+
+    def control_content(self, name):
+        """ return the content of a specific control.tar.gz file """
+        from debian_bundle.debfile import DebFile
+        control = DebFile(self.file).control
+        if name in control:
+            return control.get_content(name)
+        return ""
+
     def filelist(self):
         """ return the list of files in the deb """
         files = []
