@@ -302,11 +302,6 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             assert False, "NOT REACHED"
         if not data:
             data = _("File content can not be extracted")
-        # check if it is unicode
-        try:
-            data = unicode(data, "utf-8")
-        except Exception, e:
-            data = _("File content is not in utf8")
         buf = self.textview_file_content.get_buffer()
         buf.set_text(data)
 

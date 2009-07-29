@@ -441,12 +441,38 @@ class DebPackage(object):
         return sorted(content)
     control_filelist = property(control_filelist)
 
-    def _get_content(self, part, name, auto_decompress=True):
+    def to_hex(self, in_data):
+        hex = ""
+        for (i, c) in enumerate(in_data):
+            if i%80 == 0:
+                hex += "\n"
+            hex += "%2.2x " % ord(c)
+        return hex
+
+    def to_strish(self, in_data):
+        s = ""
+        for c in in_data:
+            if ord(c) < 10 or ord(c) > 127:
+                s += " "
+            else:
+                s += c
+        return s
+        
+    def _get_content(self, part, name, auto_decompress=True, auto_hex=True):
         data = part.get_content(name)
+        # check for zip content
         if name.endswith(".gz") and auto_decompress:
             io = StringIO(data)
             gz = gzip.GzipFile(fileobj=io)
-            data = gz.read()
+            data = _("Automatically decompressed:\n\n")
+            data += gz.read()
+        # auto-convert to hex
+        try:
+            data = unicode(data, "utf-8")
+        except Exception, e:
+            new_data = _("Automatically converted to printable ascii:\n")
+            new_data += self.to_strish(data)
+            return new_data
         return data
 
     def control_content(self, name):
@@ -522,3 +548,5 @@ if __name__ == "__main__":
     print "missing deps: %s" % d.missingDeps
     print d.requiredChanges
 
+    print d.filelist
+    print d.data_content("usr/share/locale/bn/LC_MESSAGES/gdebi.mo")
