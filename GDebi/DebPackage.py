@@ -30,6 +30,8 @@ import os
 from gettext import gettext as _
 from Cache import Cache
 
+from debian_bundle.debfile import DebFile
+
 import gzip
 from StringIO import StringIO
 
@@ -432,7 +434,6 @@ class DebPackage(object):
 
     def control_filelist(self):
         """ return the list of files in control.tar.gt """
-        from debian_bundle.debfile import DebFile
         content = []
         for name in DebFile(self.file).control:
             if name and name != ".":
@@ -450,7 +451,6 @@ class DebPackage(object):
 
     def control_content(self, name):
         """ return the content of a specific control.tar.gz file """
-        from debian_bundle.debfile import DebFile
         control = DebFile(self.file).control
         if name in control:
             return self._get_content(control, name)
@@ -458,7 +458,6 @@ class DebPackage(object):
 
     def data_content(self, name):
         """ return the content of a specific control.tar.gz file """
-        from debian_bundle.debfile import DebFile
         data = DebFile(self.file).data
         if name in data:
             return self._get_content(data, name)
