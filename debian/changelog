@@ -3,7 +3,7 @@ gdebi (0.5.2) karmic; urgency=low
   * use a treeview in the file list display
   * display control information in the file list
   * support displaing file content in gdebi (both for control and data 
-    members)
+    members) with auto-decompress of .gz
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 29 Jul 2009 15:07:35 +0200
 

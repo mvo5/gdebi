@@ -30,6 +30,9 @@ import os
 from gettext import gettext as _
 from Cache import Cache
 
+import gzip
+from StringIO import StringIO
+
 class DebPackage(object):
     debug = int(os.environ.get("GDEBI_DEBUG_LEVEL") or 0)
 
@@ -437,12 +440,20 @@ class DebPackage(object):
         return sorted(content)
     control_filelist = property(control_filelist)
 
+    def _get_content(self, part, name, auto_decompress=True):
+        data = part.get_content(name)
+        if name.endswith(".gz") and auto_decompress:
+            io = StringIO(data)
+            gz = gzip.GzipFile(fileobj=io)
+            data = gz.read()
+        return data
+
     def control_content(self, name):
         """ return the content of a specific control.tar.gz file """
         from debian_bundle.debfile import DebFile
         control = DebFile(self.file).control
         if name in control:
-            return control.get_content(name)
+            return self._get_content(control, name)
         return ""
 
     def data_content(self, name):
@@ -450,7 +461,7 @@ class DebPackage(object):
         from debian_bundle.debfile import DebFile
         data = DebFile(self.file).data
         if name in data:
-            return data.get_content(name)
+            return self._get_content(data, name)
         return ""
 
     def filelist(self):

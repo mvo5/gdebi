@@ -293,18 +293,20 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                 data = self._deb.control_content(name)
             except Exception, e:
                 data = _("Error reading file content '%s'") % e
-        else:
+        elif parent_path == 1:
             try:
                 data = self._deb.data_content(name)
             except Exception, e:
                 data = _("Error reading file content '%s'") % e
+        else:
+            assert False, "NOT REACHED"
         if not data:
             data = _("File content can not be extracted")
         # check if it is unicode
         try:
             data = unicode(data, "utf-8")
         except Exception, e:
-            data = _("File content is not in utf8") % e
+            data = _("File content is not in utf8")
         buf = self.textview_file_content.get_buffer()
         buf.set_text(data)
 
