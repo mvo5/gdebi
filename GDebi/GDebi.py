@@ -105,12 +105,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.treeview_details.append_column(column)
         self.treeview_details.set_model(self.details_list)
 
-        # setup the control treeview
+        # setup the files treeview
         column = gtk.TreeViewColumn("")
         render = gtk.CellRendererText()
         column.pack_start(render, True)
         column.add_attribute(render, "text", 0)
-        self.treeview_control.append_column(column)
+        self.treeview_files.append_column(column)
 
         if file != "" and os.path.exists(file):
             self.window_main.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
@@ -210,15 +210,20 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.label_section.set_text(utf8(self._deb["Section"]))
         self.label_size.set_text(self._deb["Installed-Size"] + " KB")
 
-        # set filelist
-        buf = self.textview_filelist.get_buffer()
-        buf.set_text(utf8("\n".join(self._deb.filelist)))
 
-        # set control file list
-        store = gtk.ListStore(str)
+        # set file list
+        store = gtk.TreeStore(str)
+        header = store.append(None, [_("Package control data")])
         for name in self._deb.control_filelist:
-            store.append([name])
-        self.treeview_control.set_model(store)
+            store.append(header, [name])
+        header = store.append(None, [_("Upstream data")])
+        for name in self._deb.filelist:
+            store.append(header, [name])
+        self.treeview_files.set_model(store)
+        self.treeview_files.expand_all()
+        # and the file content textview
+        font_desc = pango.FontDescription('monospace')
+        self.textview_file_content.modify_font(font_desc)
 
         # check the deps
         if not self._deb.checkDeb():
@@ -270,12 +275,38 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.button_install.set_sensitive(True)
         self.button_install.grab_default()
 
-    def on_treeview_control_cursor_changed(self, treeview):
+    def on_treeview_files_cursor_changed(self, treeview):
+        " the selection in the files list chanaged "
         model = treeview.get_model()
         (path, col) = treeview.get_cursor()
         name = model[path][0]
-        buf = self.textview_control_content.get_buffer()
-        buf.set_text(self._deb.control_content(name))
+        # if we are at the top-level, do nothing
+        if len(path) < 2:
+            return
+        # parent path == 0 means we look at the control information
+        # parent path == 1 means we look at the data
+        parent_path = path[0]
+        if name.endswith("/"):
+            data = _("Selection is a directory")
+        elif parent_path == 0:
+            try:
+                data = self._deb.control_content(name)
+            except Exception, e:
+                data = _("Error reading file content '%s'") % e
+        else:
+            try:
+                data = self._deb.data_content(name)
+            except Exception, e:
+                data = _("Error reading file content '%s'") % e
+        if not data:
+            data = _("File content can not be extracted")
+        # check if it is unicode
+        try:
+            data = unicode(data, "utf-8")
+        except Exception, e:
+            data = _("File content is not in utf8") % e
+        buf = self.textview_file_content.get_buffer()
+        buf.set_text(data)
 
     def on_button_details_clicked(self, widget):
         #print "on_button_details_clicked"

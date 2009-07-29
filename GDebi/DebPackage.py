@@ -445,13 +445,22 @@ class DebPackage(object):
             return control.get_content(name)
         return ""
 
+    def data_content(self, name):
+        """ return the content of a specific control.tar.gz file """
+        from debian_bundle.debfile import DebFile
+        data = DebFile(self.file).data
+        if name in data:
+            return data.get_content(name)
+        return ""
+
     def filelist(self):
         """ return the list of files in the deb """
         files = []
         def extract_cb(What,Name,Link,Mode,UID,GID,Size,MTime,Major,Minor):
             #print "%s '%s','%s',%u,%u,%u,%u,%u,%u,%u"\
             #      % (What,Name,Link,Mode,UID,GID,Size, MTime, Major, Minor)
-            files.append(Name)
+            if Name != "./":
+                files.append(Name)
         try:
             try:
                 apt_inst.debExtract(open(self.file), extract_cb, "data.tar.gz")

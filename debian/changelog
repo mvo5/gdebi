@@ -1,6 +1,9 @@
 gdebi (0.5.2) karmic; urgency=low
 
-  * support viewing the control information
+  * use a treeview in the file list display
+  * display control information in the file list
+  * support displaing file content in gdebi (both for control and data 
+    members)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 29 Jul 2009 15:07:35 +0200
 
