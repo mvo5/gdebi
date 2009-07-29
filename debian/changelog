@@ -4,8 +4,11 @@ gdebi (0.5.2) karmic; urgency=low
   * display control information in the file list
   * support displaing file content in gdebi (both for control and data 
     members) with auto-decompress of .gz
+  * debian/control:
+    - add dependency to python-debian for the new display 
+      functionatlity
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 29 Jul 2009 15:07:35 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 29 Jul 2009 17:59:35 +0200
 
 gdebi (0.5.1) karmic; urgency=low
 
