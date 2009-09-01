@@ -21,12 +21,15 @@
 #
 
 
-import sys, time, thread, os, fcntl, string
-import warnings
-from warnings import warn
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt
 import apt_pkg
+import fcntl
+import os
+import string
+import sys
+import time
+import thread
+
 from gettext import gettext as _
 
 from DebPackage import DebPackage, Cache
@@ -45,7 +48,8 @@ class GDebiCli(object):
             tp = apt.progress.OpTextProgress()
         # set architecture to architecture in root-dir
         if options.rootdir and os.path.exists(options.rootdir+"/usr/bin/dpkg"):
-            arch = Popen([options.rootdir+"/usr/bin/dpkg","--print-architecture"], stdout=PIPE).communicate()[0]
+            arch = Popen([options.rootdir+"/usr/bin/dpkg",
+                          "--print-architecture"], stdout=PIPE).communicate()[0]
             if arch:
                 apt_pkg.Config.Set("APT::Architecture",arch.strip())
         if options.apt_opts:
@@ -114,7 +118,11 @@ class GDebiCli(object):
         if len(install) > 0 or len(remove) > 0:
             fprogress = apt.progress.TextFetchProgress()
             iprogress = apt.progress.InstallProgress()
-            res = self._cache.commit(fprogress,iprogress)
+            try:
+                res = self._cache.commit(fprogress,iprogress)
+            except SystemError, e:
+                sys.stderr.write(_("Error during install: '%s'") % e)
+                return False
 
         # install the package itself
         if self._deb.file.endswith(".dsc"): 
@@ -129,6 +137,9 @@ class GDebiCli(object):
             pass
         else:
             ret = call(["dpkg","-i",self._deb.file])
+            if (ret != 0):
+                return False
+        return True
         
 
 if __name__ == "__main__":
