@@ -1,3 +1,10 @@
+gdebi (0.5.5) UNRELEASEDkarmic; urgency=low
+
+  * GDebi/GDebi.py:
+    - do not crash if the filelist can not be read (LP: #407198)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 01 Sep 2009 11:07:05 +0200
+
 gdebi (0.5.4) karmic; urgency=low
 
   * GDebi/GDebiCli.py:

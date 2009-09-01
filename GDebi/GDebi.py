@@ -213,15 +213,19 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.label_section.set_text(utf8(self._deb["Section"]))
         self.label_size.set_text(self._deb["Installed-Size"] + " KB")
 
-
         # set file list
         store = gtk.TreeStore(str)
-        header = store.append(None, [_("Package control data")])
-        for name in self._deb.control_filelist:
-            store.append(header, [name])
-        header = store.append(None, [_("Upstream data")])
-        for name in self._deb.filelist:
-            store.append(header, [name])
+        try:
+            header = store.append(None, [_("Package control data")])
+            for name in self._deb.control_filelist:
+                store.append(header, [name])
+            header = store.append(None, [_("Upstream data")])
+            for name in self._deb.filelist:
+                store.append(header, [name])
+        except Exception, e:
+            print "Exception while reading the filelist: '%s'" % e
+            store.clear()
+            store.append(None, [_("Error reading filelist")])
         self.treeview_files.set_model(store)
         self.treeview_files.expand_all()
         # and the file content textview
