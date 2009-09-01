@@ -685,6 +685,8 @@ Install software from trustworthy software distributors only.
             if (not self.term_expander.get_expanded() and 
                 (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
               self.term_expander.set_expanded(True)
+            # sleep just long enough to not create a busy loop
+            time.sleep(0.01)
         def fork(self):
             pid = self.term.forkpty(self.env)
             if pid == 0:
