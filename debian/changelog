@@ -1,8 +1,10 @@
-gdebi (0.5.5) UNRELEASEDkarmic; urgency=low
+gdebi (0.5.5) karmic; urgency=low
 
   * GDebi/GDebi.py:
     - do not crash if the filelist can not be read (LP: #407198)
     - avoid busy loop
+  * gdebi-gtk:
+    - add --auto-close commandline option
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 01 Sep 2009 11:07:05 +0200
 

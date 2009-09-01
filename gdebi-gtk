@@ -51,6 +51,9 @@ if __name__ == "__main__":
                       action="store_true", dest="non_interactive",
                       default=False,
                       help=_("Run non-interactive (dangerous!)"))
+    parser.add_option("--auto-close", "",
+                      action="store_true", default=False,
+                      help=_("Auto close when the install is finished"))
     parser.add_option("--datadir", "", default="",
                       help=_("Use alternative datadir"))
     (options, args) = parser.parse_args()
@@ -88,4 +91,6 @@ if __name__ == "__main__":
         
     if options.non_interactive == True:
         app.on_button_install_clicked(None)
+        if options.auto_close == True:
+            sys.exit()
     app.run()
