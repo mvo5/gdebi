@@ -60,7 +60,7 @@
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="accel_group">accelgroup1</property>
-                        <signal name="activate" handler="gtk_main_quit"/>
+                        <signal name="activate" handler="on_menuitem_quit_activate"/>
                       </object>
                     </child>
                   </object>
@@ -230,7 +230,6 @@
                     <property name="can_focus">True</property>
                     <property name="can_default">True</property>
                     <property name="receives_default">False</property>
-                    <property name="image">image1</property>
                     <property name="use_underline">True</property>
                     <signal name="clicked" handler="on_button_install_clicked"/>
                   </object>
@@ -925,7 +924,7 @@
   <object class="GtkTextBuffer" id="textbuffer_filelist"/>
   <object class="GtkTextBuffer" id="textbuffer_description"/>
   <object class="GtkAccelGroup" id="accelgroup1"/>
-  <object class="GtkImage" id="image1">
+  <object class="GtkImage" id="image_apply">
     <property name="visible">True</property>
     <property name="stock">gtk-apply</property>
   </object>

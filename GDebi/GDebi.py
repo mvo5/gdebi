@@ -133,6 +133,9 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             path = path[5:] # 5 is len('file:')
         return path
     
+    def on_menuitem_quit_activate(self, widget):
+        gtk.main_quit()
+
     def on_window_main_drag_data_received(self, widget, context, x, y,
                                           selection, target_type, timestamp):
         """ call when we got a drop event """
@@ -268,9 +271,9 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.button_details.show()
             
         self.label_status.set_markup(self.deps)
-        img = gtk.Image()
-        img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
-        self.button_install.set_image(img)
+        #img = gtk.Image()
+        #img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
+        #self.button_install.set_image(img)
         self.button_install.set_label(_("_Install Package"))
         self.button_install.set_sensitive(True)
         self.button_install.grab_default()

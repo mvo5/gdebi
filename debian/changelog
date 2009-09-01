@@ -2,6 +2,8 @@ gdebi (0.5.4) karmic; urgency=low
 
   * GDebi/GDebiCli.py:
     - do not crash when dpkg returns a error (LP: #410780)
+  * GDebi/GDebi.py:
+    - try working around a crash in gtk.Button.set_label()
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 01 Sep 2009 10:34:58 +0200
 
