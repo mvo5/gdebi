@@ -1,3 +1,10 @@
+gdebi (0.5.6) UNRELEASEDkarmic; urgency=low
+
+  * GDebi/GDebi.py:
+    - return full status in waitChild() not just the return code
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 03 Sep 2009 15:26:36 +0200
+
 gdebi (0.5.5) karmic; urgency=low
 
   * GDebi/GDebi.py:

@@ -660,7 +660,7 @@ Install software from trustworthy software distributors only.
                         "APT_LISTCHANGES_FRONTEND=gtk"]
         def child_exited(self,term, pid, status):
             #print "child_exited: %s %s %s %s" % (self,term,pid,status)
-            self.apt_status = posix.WEXITSTATUS(status)
+            self.apt_status = status
             self.finished = True
         def error(self, pkg, errormsg):
             # FIXME: display a msg
