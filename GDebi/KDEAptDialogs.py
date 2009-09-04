@@ -120,6 +120,8 @@ class KDEInstallProgressAdapter(InstallProgress):
 
     def child_exited(self,process):
         self.finished = True
+        # FIXME: check if this is just the return code or
+        #        the full exit status (as returned by waitpid())
         self.apt_status = process.exitStatus()
         self.finished = True
 
