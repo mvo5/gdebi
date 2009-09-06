@@ -32,9 +32,10 @@ import apt_pkg
 
 import pygtk
 pygtk.require("2.0")
+import glib
+import gobject
 import gtk
 import pango
-import gobject
 import vte
 import urllib
 import fcntl
@@ -236,7 +237,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         if not self._deb.checkDeb():
             self.label_status.set_markup("<span foreground=\"red\" weight=\"bold\">"+
                                          _("Error: ") +
-                                         self._deb._failureString +
+                                         glib.markup_escape_text(self._deb._failureString) +
                                          "</span>")
 	    self.button_install.set_label(_("_Install Package"))
 
