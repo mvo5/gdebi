@@ -1,4 +1,4 @@
-gdebi (0.5.7) UNRELEASEDkarmic; urgency=low
+gdebi (0.5.7) karmic; urgency=low
 
   * GDebi/GDebi.py:
     - fix markup escape bug in error message output
