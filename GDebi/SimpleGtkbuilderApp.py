@@ -19,6 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
 # USA
 
+import logging
 import os
 import sys
 import re
@@ -39,7 +40,7 @@ class SimpleGtkbuilderApp:
             else:
                 # see LP: #402780 - sometimes this dies with broken pipe?
                 try:
-                    print >>sys.stderr, "WARNING: can not get name for '%s'" % o
+                    logging.debug("WARNING: can not get name for '%s'" % o)
                 except:
                     pass
 

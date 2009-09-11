@@ -1,3 +1,17 @@
+gdebi (0.5.8) karmic; urgency=low
+
+  * data/gdebi.ui:
+    - add domain="gdebi" to the interface tag to ensure we
+      get a translation (LP: #425812)
+  * po/POTFILES.in: 
+    - updated to include gdebi.ui
+  * GDebi/SimpleGtkbuilderApp.py:
+    - use logging instead of sys.stderr.write()
+  * po/*.po: 
+    - refresh
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 11 Sep 2009 15:21:02 +0200
+
 gdebi (0.5.7) karmic; urgency=low
 
   * GDebi/GDebi.py:

@@ -1,7 +1,7 @@
 [encoding: UTF-8]
 gdebi
 gdebi-gtk
-data/gdebi.glade
+[type: gettext/glade] data/gdebi.ui
 data/gdebi.xml.in
 data/gdebi.desktop.in
 gdebi-gtk
