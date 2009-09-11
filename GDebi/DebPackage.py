@@ -22,7 +22,7 @@
 
 import warnings
 from warnings import warn
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+warnings.filterwarnings("ignore", "Accessed deprecated property", DeprecationWarning)
 import apt_inst, apt_pkg
 import apt
 import sys

@@ -1,8 +1,10 @@
-gdebi (0.5.7) UNRELEASED; urgency=low
+gdebi (0.5.7) UNRELEASEDkarmic; urgency=low
 
   * GDebi/GDebi.py:
     - fix markup escape bug in error message output
     - fix typo (LP: #402695)
+  * GDebi/DebPackage.py:
+    - filter deprecation warnings
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Sun, 06 Sep 2009 17:23:17 +0200
 
