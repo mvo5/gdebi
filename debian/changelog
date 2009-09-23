@@ -1,3 +1,10 @@
+gdebi (0.5.9) UNRELEASEDkarmic; urgency=low
+
+  * .bzr-builddeb/default.conf:
+    - build with split=True as requested by debian
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 23 Sep 2009 14:58:31 +0200
+
 gdebi (0.5.8) karmic; urgency=low
 
   * data/gdebi.ui:
