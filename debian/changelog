@@ -2,6 +2,9 @@ gdebi (0.5.9) UNRELEASEDkarmic; urgency=low
 
   * .bzr-builddeb/default.conf:
     - build with split=True as requested by debian
+  * GDebi/GDebi.py:
+    - do not crash if exit is selected while the progress bar is
+      still going (LP: #428978)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 23 Sep 2009 14:58:31 +0200
 

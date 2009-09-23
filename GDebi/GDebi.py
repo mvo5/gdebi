@@ -135,7 +135,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         return path
     
     def on_menuitem_quit_activate(self, widget):
-        gtk.main_quit()
+        try:
+            gtk.main_quit()
+        except:
+            # if we are outside of the main loop, just exit
+            sys.exit(0)
 
     def on_window_main_drag_data_received(self, widget, context, x, y,
                                           selection, target_type, timestamp):
