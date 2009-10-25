@@ -1,3 +1,19 @@
+gdebi (0.5.10) UNRELEASED; urgency=low
+
+  * data/gdebi.1, data/gdebi-gtk.1:
+    - Refresh man pages, thanks to Kartik Mistry (LP: #453528).
+  * data/gdebi-kde.1:
+    - Add man page for gdebi-kde.
+  * debian/control:
+    - Bump Standards-Version to 3.8.3.
+  * debian/copyright:
+    - Add copyright notice.
+  * debian/rules:
+    - Do not hardcode dist-package directory.
+    - Remove useless dh_desktop call.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 25 Oct 2009 11:32:50 +0100
+
 gdebi (0.5.9) karmic; urgency=low
 
   * .bzr-builddeb/default.conf:
