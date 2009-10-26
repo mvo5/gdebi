@@ -5,11 +5,11 @@ Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Gustavo Franco <stratus@debian.org>,
            Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 5.0.38),
-               python-dev,
+               python-dev (>= 2.5.4-1~),
                python-central (>= 0.5.6),
                intltool
 XS-Python-Version: current
-Standards-Version: 3.8.0
+Standards-Version: 3.8.3
 XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/
 
 Package: gdebi-core
