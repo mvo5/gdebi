@@ -67,7 +67,8 @@ class GDebiCli(object):
 
     def open(self, file):
         try:
-            if file.endswith(".deb"):
+            if (file.endswith(".deb") or 
+                Popen(["file", file], stdout=PIPE).communicate()[0].find('Debian binary package') != -1):
                 self._deb = DebPackage(self._cache, file)
             elif (file.endswith(".dsc") or
                   os.path.basename(file) == "control"):
