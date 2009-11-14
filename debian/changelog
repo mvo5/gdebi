@@ -1,5 +1,7 @@
 gdebi (0.5.10) UNRELEASED; urgency=low
 
+  * gdebi, GDebi/GDebiCli.py:
+    - Correctly parse translated "y" characters (LP: #453537).
   * data/gdebi.1, data/gdebi-gtk.1:
     - Refresh man pages, thanks to Kartik Mistry (LP: #453528).
   * data/gdebi-kde.1:
@@ -12,7 +14,7 @@ gdebi (0.5.10) UNRELEASED; urgency=low
     - Do not hardcode dist-package directory.
     - Remove useless dh_desktop call.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 25 Oct 2009 11:32:50 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 14 Nov 2009 03:38:50 +0100
 
 gdebi (0.5.9) karmic; urgency=low
 

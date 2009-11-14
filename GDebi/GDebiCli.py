@@ -146,8 +146,9 @@ if __name__ == "__main__":
     app = GDebiCli()
     if not app.open(sys.argv[1]):
         sys.exit(1)
-    print _("Do you want to install the software package? [y/N]:"),
+    msg =  _("Do you want to install the software package? [y/N]:")
+    print msg,
     sys.stdout.flush()
     res = sys.stdin.readline()
-    if res.startswith("y") or res.startswith("Y"):
+    if res.lower().startswith(msg[-5]):
         app.install()
