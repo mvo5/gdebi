@@ -9,6 +9,9 @@ gdebi (0.5.10) UNRELEASED; urgency=low
     - Refresh man pages, thanks to Kartik Mistry (LP: #453528).
   * data/gdebi-kde.1:
     - Add man page for gdebi-kde.
+  * README:
+    - No longer mention packages are Ubuntu-specific, they are available
+      in Debian too (Closes: #453709).
   * debian/control:
     - Bump Standards-Version to 3.8.3.
   * debian/copyright:
@@ -17,7 +20,7 @@ gdebi (0.5.10) UNRELEASED; urgency=low
     - Do not hardcode dist-package directory.
     - Remove useless dh_desktop call.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 14 Nov 2009 03:59:39 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 15 Nov 2009 18:20:35 +0100
 
 gdebi (0.5.9) karmic; urgency=low
 
