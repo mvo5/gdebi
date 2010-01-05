@@ -422,12 +422,27 @@ It is a possible security risk to install packages files manually.
 Install software from trustworthy software distributors only.
 """)
         if os.getuid() != 0:
-            os.execl("/usr/bin/gksu", "gksu", "--desktop",
-                     "/usr/share/applications/gdebi.desktop",
-                     "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
-                     "--always-ask-pass",
-                     "--", "gdebi-gtk", "--non-interactive",
-                     self._deb.file)
+            try:
+                import lsb_release
+                if lsb_release.get_distro_information()['ID'] == 'Ubuntu':
+                    os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                             "/usr/share/applications/gdebi.desktop",
+                             "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
+                             "--always-ask-pass",
+                             "--", "gdebi-gtk", "--non-interactive",
+                             self._deb.file)
+                else:
+                    os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                             "/usr/share/applications/gdebi.desktop",
+                             "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
+                             "--", "gdebi-gtk", "--non-interactive",
+                             self._deb.file)
+            except:
+                os.execl("/usr/bin/gksu", "gksu", "--desktop",
+                         "/usr/share/applications/gdebi.desktop",
+                         "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
+                         "--", "gdebi-gtk", "--non-interactive",
+                         self._deb.file)
 
         if not self.try_acquire_lock():
             self.statusbar_main.push(self.context,
