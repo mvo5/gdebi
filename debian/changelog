@@ -1,4 +1,4 @@
-gdebi (0.5.10) UNRELEASED; urgency=low
+gdebi (0.6) UNRELEASED; urgency=low
 
   * gdebi, GDebi/GDebiCli.py:
     - Correctly parse translated "y" characters (LP: #453537)
