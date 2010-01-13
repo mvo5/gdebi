@@ -392,7 +392,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             secondary = _("Malicious software can damage your data "
                           "and take control of your system.\n\n"
                           "The packages below are not authenticated and "
-                          "could therefor be of malicious nature.")
+                          "could therefore be of malicious nature.")
             msg = "<big><b>%s</b></big>\n\n%s" % (primary, secondary)
             dialog = gtk.MessageDialog(parent=self.dialog_deb_install,
                                        flags=gtk.DIALOG_MODAL,

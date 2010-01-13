@@ -6,6 +6,8 @@ gdebi (0.6) UNRELEASED; urgency=low
   * GDebi/GDebiCli.py:
     - Allow install of Debian binary packages with uncommon extensions
       or missing one (LP: #449937) (Closes: #472693).
+  * GDebi/GDebi.py:
+    - fix typo (LP: #446221)
   * data/gdebi.1, data/gdebi-gtk.1:
     - Refresh man pages, thanks to Kartik Mistry (LP: #453528).
   * data/gdebi-kde.1:
