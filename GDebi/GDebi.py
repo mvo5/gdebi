@@ -422,12 +422,24 @@ It is a possible security risk to install packages files manually.
 Install software from trustworthy software distributors only.
 """)
         if os.getuid() != 0:
-            os.execl("/usr/bin/gksu", "gksu", "--desktop",
-                     "/usr/share/applications/gdebi.desktop",
-                     "--message","<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy),
-                     "--always-ask-pass",
-                     "--", "gdebi-gtk", "--non-interactive",
-                     self._deb.file)
+            # build command and argument lists
+            gksu_cmd = "/usr/bin/gksu"
+            gksu_args = ["gksu", "--desktop",
+                         "/usr/share/applications/gdebi.desktop",
+                         "--message",
+                         "<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy)]
+            gdebi_args = ["--", "gdebi-gtk", "--non-interactive",
+                          self._deb.file]
+            # check if we run on ubuntu and always ask for the password
+            # there - we would like to do that on debian too, but this
+            # gksu patch is only available on ubuntu currently unfortunately
+            try:
+                import lsb_release
+                if lsb_release.get_distro_information()['ID'] == 'Ubuntu':
+                    gksu_args.append("--always-ask-pass")
+            except:
+                pass
+            os.execv(gksu_cmd, gksu_args+gdebi_args)
 
         if not self.try_acquire_lock():
             self.statusbar_main.push(self.context,
