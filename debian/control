@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 5.0.38),
                intltool
 XS-Python-Version: current
 Standards-Version: 3.8.3
-XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gdebi/ubuntu/
+Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 
 Package: gdebi-core
 Architecture: all
