@@ -12,6 +12,8 @@ gdebi (0.6) UNRELEASED; urgency=low
     - Refresh man pages, thanks to Kartik Mistry (LP: #453528).
   * data/gdebi-kde.1:
     - Add man page for gdebi-kde.
+  * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
+    - Remove Encoding field, deprecated.
   * README:
     - No longer mention packages are Ubuntu-specific, they are available
       in Debian too (Closes: #453709).
@@ -24,7 +26,7 @@ gdebi (0.6) UNRELEASED; urgency=low
     - Do not hardcode dist-package directory.
     - Remove useless dh_desktop call.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Tue, 05 Jan 2010 09:28:40 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 25 Jan 2010 00:59:22 +0100
 
 gdebi (0.5.9) karmic; urgency=low
 

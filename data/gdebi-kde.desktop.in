@@ -6,7 +6,6 @@ Exec=gdebi-kde
 Icon=application-x-deb
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Application;System;
 MimeType=application/x-deb;application/x-debian-package;
 OnlyShowIn=KDE;
