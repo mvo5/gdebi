@@ -20,13 +20,14 @@ gdebi (0.6) UNRELEASED; urgency=low
   * debian/control:
     - Do not build-depend on python-dev, python is enough.
     - Bump Standards-Version to 3.8.3.
+    - Differentiate short descrriptions for gdebi and gdebi-kde.
   * debian/copyright:
     - Add copyright notice.
   * debian/rules:
     - Do not hardcode dist-package directory.
     - Remove useless dh_desktop call.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Mon, 25 Jan 2010 00:59:22 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 25 Jan 2010 01:05:38 +0100
 
 gdebi (0.5.9) karmic; urgency=low
 

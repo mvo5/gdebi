@@ -39,7 +39,7 @@ Depends: ${python:Depends},
          gnome-icon-theme (>= 2.14.0-1)
 Recommends: libgnome2-perl
 XB-Python-Version: ${python:Versions}
-Description: Simple tool to install deb files
+Description: Simple tool to install deb files - GNOME GUI
  gdebi lets you install local deb packages resolving and installing 
  its dependencies. apt does the same, but only for remote (http, ftp)
  located packages.
@@ -54,7 +54,7 @@ Depends: ${python:Depends},
          python-kde4 (>= 3.16.0-0ubuntu11),
 	 kdesudo
 XB-Python-Version: ${python:Versions}
-Description: Simple tool to install deb files
+Description: Simple tool to install deb files - KDE GUI
  gdebi lets you install local deb packages resolving and installing 
  its dependencies. apt does the same, but only for remote (http, ftp)
  located packages.
