@@ -1,3 +1,16 @@
+gdebi (0.5.9debian2) unstable; urgency=low
+
+  * GDebi/GDebi.py:
+    - Do not pass --status-fd to dpkg to avoid install failures due to bad
+      descriptors not correctly passed by vte, this can be reverted when
+      https://bugzilla.gnome.org/320128 will be fixed.
+  * data/gdebi.1, data/gdebi-gtk.1:
+    - Refresh man pages, many thanks to Kartik Mistry! (Closes: #531297).
+  * data/gdebi-kde.1:
+    - Add man page for gdebi-kde.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Tue, 20 Oct 2009 23:39:53 +0200
+
 gdebi (0.5.9debian1) unstable; urgency=low
 
   * New upstream release from Ubuntu (Closes: #514125).

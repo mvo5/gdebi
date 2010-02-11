@@ -602,7 +602,7 @@ Install software from trustworthy software distributors only.
 
             # the command
             cmd = "/usr/bin/dpkg"
-            argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
+            argv = [cmd, "-i", self.debfile]
             env = ["VTE_PTY_KEEP_FD=%s"% writefd,
                    "DEBIAN_FRONTEND=gnome",
                    "APT_LISTCHANGES_FRONTEND=gtk"]
