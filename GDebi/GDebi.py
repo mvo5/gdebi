@@ -445,8 +445,6 @@ Install software from trustworthy software distributors only.
             # gksu patch is only available on ubuntu currently unfortunately
             if UBUNTU:
                     gksu_args.append("--always-ask-pass")
-            except:
-                pass
             os.execv(gksu_cmd, gksu_args+gdebi_args)
 
         if not self.try_acquire_lock():
