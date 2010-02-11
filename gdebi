@@ -103,9 +103,9 @@ if __name__ == "__main__":
     if os.getuid() != 0:
         print _("Need to be root to install packages")
         sys.exit(1)
-    print _("Do you want to install the software package? [y/N]:"),
+    msg =  _("Do you want to install the software package? [y/N]:")
+    print msg,
     sys.stdout.flush()
     res = sys.stdin.readline()
-    # TRANSLATORS: the first char in a "Yes" word
-    if res.upper().startswith(_("Y")):
+    if res.lower().startswith(msg[-5]):
         debi.install()

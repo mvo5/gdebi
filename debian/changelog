@@ -1,3 +1,20 @@
+gdebi (0.5.9debian3) unstable; urgency=low
+
+  * gdebi, GDebi/GDebiCli.py:
+    - Correctly parse translated "y" characters (Closes: #497821).
+  * GDebi/GDebiCli.py:
+    - Allow install of Debian binary packages with uncommon extensions
+      or missing one (Closes: #472693).
+  * po/es.po:
+    - Update Spanish translation, by Omar Campagne (Closes: #556927).
+  * README:
+    - No longer mention packages are Ubuntu-specific, they are available
+      in Debian too (Closes: #453709).
+  * debian/control:
+    - Do not build-depend on python-dev, python is enough.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 25 Jan 2010 00:16:13 +0100
+
 gdebi (0.5.9debian2) unstable; urgency=low
 
   * GDebi/GDebi.py:
