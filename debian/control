@@ -2,7 +2,7 @@ Source: gdebi
 Section: admin
 Priority: optional
 Maintainer: Gustavo Franco <stratus@debian.org>
-Uploaders: Gustavo Franco <stratus@debian.org>,
+Uploaders: Luca Falavigna <dktrkranz@debian.org>,
            Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 5.0.38),
                python (>= 2.5.4-1~),

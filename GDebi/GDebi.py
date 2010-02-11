@@ -54,6 +54,15 @@ from gettext import gettext as _
 # is happening 
 GDEBI_TERMINAL_TIMEOUT=4*60.0
 
+# HACK - there are two ubuntu specific patches, one for VTE, one
+#        for gksu
+UBUNTU=False
+try:
+    import lsb_release
+    UBUNTU = lsb_release.get_distro_information()['ID'] == 'Ubuntu'
+except Exception, e:
+    pass
+
 class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
@@ -422,6 +431,7 @@ It is a possible security risk to install packages files manually.
 Install software from trustworthy software distributors only.
 """)
         if os.getuid() != 0:
+
             # build command and argument lists
             gksu_cmd = "/usr/bin/gksu"
             gksu_args = ["gksu", "--desktop",
@@ -433,9 +443,7 @@ Install software from trustworthy software distributors only.
             # check if we run on ubuntu and always ask for the password
             # there - we would like to do that on debian too, but this
             # gksu patch is only available on ubuntu currently unfortunately
-            try:
-                import lsb_release
-                if lsb_release.get_distro_information()['ID'] == 'Ubuntu':
+            if UBUNTU:
                     gksu_args.append("--always-ask-pass")
             except:
                 pass
@@ -615,7 +623,12 @@ Install software from trustworthy software distributors only.
 
             # the command
             cmd = "/usr/bin/dpkg"
-            argv = [cmd,"--status-fd", "%s"%writefd, "-i", self.debfile]
+            argv = [cmd]
+            # ubuntu supports VTE_PTY_KEEP_FD, see 
+            # https://bugzilla.gnome.org/320128 for the upstream bug
+            if UBUNTU:
+                argv += ["--status-fd", "%s"%writefd]
+            argv += ["-i", self.debfile]
             env = ["VTE_PTY_KEEP_FD=%s"% writefd,
                    "DEBIAN_FRONTEND=gnome",
                    "APT_LISTCHANGES_FRONTEND=gtk"]
