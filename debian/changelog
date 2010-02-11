@@ -26,6 +26,9 @@ gdebi (0.6) UNRELEASED; urgency=low
   * debian/rules:
     - Do not hardcode dist-package directory.
     - Remove useless dh_desktop call.
+  * GDebi/DebPackage.py:
+    - improve i18n by using %(var)s LP: #403632, thanks to
+      David Planella
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 30 Jan 2010 15:01:33 +0100
 
