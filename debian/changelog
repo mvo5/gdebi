@@ -1,3 +1,33 @@
+gdebi (0.5.9debian1) unstable; urgency=low
+
+  * New upstream release from Ubuntu (Closes: #514125).
+    + Compatible with recent python-apt versions (Closes: #438714).
+    + When checking if a dependency is satified, ensure to test for all
+      provided ones (Closes: #490870).
+    + Let install packages with spaces in the filename (Closes: #515238).
+    + Localization updates:
+      - Catalan (Closes: #415987).
+      - French (Closes: #410377).
+      - German (Closes: #511221).
+      - Hebrew (Closes: #461138).
+      - Slowak (Closes: #531775).
+      - Swedish (Closes: #517508).
+
+  * GDebi/GDebi.py:
+    + Do not pass --always-ask-pass to gksu, this option is not currently
+      supported in Debian gksu package (Closes: #493352).
+  * debian/control:
+    + Add myself to Uploaders, I will help Gustavo and Michael maintaining
+      gdebi in Debian via collab-maint (Closes: #547634).
+    + Bump Standards-Version to 3.8.3.
+  * debian/copyright:
+    + Add copyright notice.
+  * debian/rules:
+    - Do not hardcode {site,dist}-package directory (Closes: #547873).
+    - Remove useless dh_desktop call.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Oct 2009 18:56:30 +0200
+
 gdebi (0.5.9) karmic; urgency=low
 
   * .bzr-builddeb/default.conf:
@@ -269,6 +299,31 @@ gdebi (0.3.12) intrepid; urgency=low
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 22 Jul 2008 17:39:47 +0200
 
+gdebi (0.3.11debian1+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * GDebi/GDebi.py: Don't use non-existent vte features but
+    use a wrapper to proxy dpkg statusfd via a named pipe.
+    Closes: #493353.
+
+ -- Thomas Viehmann <tv@beamnet.de>  Sat, 04 Oct 2008 16:23:23 +0200
+
+gdebi (0.3.11debian1) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * Non-maintainer upload.
+  * New upstream from Ubuntu. (Closes: #440834, #403335, #469593).
+    - Debhelper commands in right order. (Closes: #449495).
+  * Add Turkish translation.
+  * Remove KDE package for now.
+
+  [ Amaya Rodrigo Sastre ]
+  * Make lintian happy:
+    - Fix white space in debian/changelog 
+    - Bump standards-version, no changes needed.
+
+ -- Amaya Rodrigo Sastre <amaya@debian.org>  Tue, 22 Jul 2008 11:39:35 +0200
+
 gdebi (0.3.11) intrepid; urgency=low
 
   * Setup the option parser with a version to enable the --version flag.
@@ -327,6 +382,21 @@ gdebi (0.3.6) hardy; urgency=low
     - updated standards version to 3.7.3
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 11 Mar 2008 21:31:54 +0100
+
+gdebi (0.3.5debian1.1) unstable; urgency=low
+
+  * NMU. Rebuild to move files to /usr/share/pyshared. Closes: #490463.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 15:56:23 +0000 
+
+gdebi (0.3.5debian1) unstable; urgency=low
+
+  * new release
+  * remaining diff against ubuntu:
+    - do not use --always-ask when running gksu
+    - Vcs-Bzr location
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 03 Mar 2008 15:45:48 +0100 
 
 gdebi (0.3.5) hardy; urgency=low
 

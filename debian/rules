@@ -1,8 +1,11 @@
 #!/usr/bin/make -f
 
+include /usr/share/python/python.mk
+
 PKG := gdebi
 DEBVER := $(shell dpkg-parsechangelog | sed -n 's/^Version: //p')
 DEB_BUILD_PROG := debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
+PYDIR := $(call py_sitename, $(shell pyversions -d))
 
 build: build-stamp
 
@@ -36,11 +39,10 @@ binary-indep: build install
 	dh_installdocs -i
 	dh_installexamples -i
 	dh_installmime -i
-	dh_desktop -i
 	dh_installman -i
 	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
-		d=../gdebi-core/$$s; p=dist-packages/GDebi;		\
+		d=../gdebi-core/$$s; p=${PYDIR}/GDebi;			\
 		k=../gdebi-kde/$$s;                                     \
 		g=../gdebi/$$s;						\
 		mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
@@ -56,7 +58,7 @@ binary-indep: build install
 			mv $$d/$$p/$$f.* $$k/$$p/.;			\
 		done;							\
 	done
-	dh_install -i -Xdist-packages/GDebi --list-missing
+	dh_install -i -X${PYDIR}/GDebi --list-missing
 	dh_link -i
 	dh_compress -i
 	dh_fixperms -i
