@@ -3,6 +3,7 @@ gdebi (0.6) UNRELEASED; urgency=low
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
     - Remove Encoding field, deprecated.
   * debian/control:
+    - Set XS-Python-Version to all (Closes: #570560).
     - Differentiate short descrriptions for gdebi and gdebi-kde.
   * GDebi/DebPackage.py:
     - improve i18n by using %(var)s LP: #403632, thanks to
