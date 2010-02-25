@@ -288,7 +288,6 @@ class DebPackage(object):
                             if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
-                                self._failureString += _("Breaks exisiting package '%s' conflict: %s (%s %s)\n") % (pkg.name, cOr.TargetPkg.Name, cOr.CompType, cOr.TargetVer)
                                 self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)\n") % {'pkgname' : pkg.name, 'targetpkg' : cOr.TargetPkg.Name, 'comptype' : cOr.CompType, 'targetver' : cOr.TargetVer}
                                 self._cache.op_progress.done()
                                 return False
