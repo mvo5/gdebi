@@ -1,4 +1,4 @@
-gdebi (0.6-1) unstable; urgency=low
+gdebi (0.6.0) unstable; urgency=low
 
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
     - Remove Encoding field, deprecated.
