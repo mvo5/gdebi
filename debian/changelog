@@ -10,6 +10,9 @@ gdebi (0.6) UNRELEASED; urgency=low
       David Planella
   * data/gdebi.ui, GDebi/DebPackage.py:
     - alignment fixes in the status label
+  * GDebi/SimpleGtkbuilderApp.py:
+    - set translation domain here explicitely instead of in gdebi.ui
+      (the later is often cleared by glade for some reason)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 09 Mar 2010 10:07:43 +0100
 

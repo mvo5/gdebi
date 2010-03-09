@@ -29,8 +29,9 @@ import gtk
 # based on SimpleGladeApp
 class SimpleGtkbuilderApp:
 
-    def __init__(self, path):
+    def __init__(self, path, domain):
         self.builder = gtk.Builder()
+        self.builder.set_translation_domain(domain)
         self.builder.add_from_file(path)
         self.builder.connect_signals(self)
         for o in self.builder.get_objects():
@@ -38,11 +39,7 @@ class SimpleGtkbuilderApp:
                 name = gtk.Buildable.get_name(o)
                 setattr(self, name, o)
             else:
-                # see LP: #402780 - sometimes this dies with broken pipe?
-                try:
-                    logging.debug("WARNING: can not get name for '%s'" % o)
-                except:
-                    pass
+                logging.debug("WARNING: can not get name for '%s'" % o)
 
     def run(self):
         """

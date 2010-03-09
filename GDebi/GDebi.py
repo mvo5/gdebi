@@ -70,7 +70,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         localesApp="gdebi"
         localesDir="/usr/share/locale"
 
-        SimpleGtkbuilderApp.__init__(self, path=datadir+"/gdebi.ui")
+        SimpleGtkbuilderApp.__init__(
+            self, path=datadir+"/gdebi.ui", domain="gdebi")
         # use a nicer default icon
         icons = gtk.icon_theme_get_default()
         try:
