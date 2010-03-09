@@ -1,4 +1,4 @@
-gdebi (0.6) UNRELEASED; urgency=low
+gdebi (0.6-1) unstable; urgency=low
 
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
     - Remove Encoding field, deprecated.
@@ -11,10 +11,13 @@ gdebi (0.6) UNRELEASED; urgency=low
   * data/gdebi.ui, GDebi/DebPackage.py:
     - alignment fixes in the status label
   * GDebi/SimpleGtkbuilderApp.py:
-    - set translation domain here explicitely instead of in gdebi.ui
+    - set translation domain here explicitly instead of in gdebi.ui
       (the later is often cleared by glade for some reason)
+  * .bzr-builddeb/default.conf:
+    - build as native package again
+  * unified release for Debian&Ubuntu
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 09 Mar 2010 10:07:43 +0100
+ -- Michael Vogt <mvo@debian.org>  Tue, 09 Mar 2010 10:15:03 +0100
 
 gdebi (0.5.9debian3) unstable; urgency=low
 
