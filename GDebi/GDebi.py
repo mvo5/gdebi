@@ -248,10 +248,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # check the deps
         if not self._deb.checkDeb():
-            self.label_status.set_markup("<span foreground=\"red\" weight=\"bold\">"+
-                                         _("Error: ") +
-                                         glib.markup_escape_text(self._deb._failureString) +
-                                         "</span>")
+            self.label_status.set_markup(
+                "<span foreground=\"red\" weight=\"bold\">"+
+                _("Error: ") +
+                glib.markup_escape_text(self._deb._failureString) +
+                "</span>")
 	    self.button_install.set_label(_("_Install Package"))
 
             self.button_install.set_sensitive(False)

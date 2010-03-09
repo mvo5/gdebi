@@ -276,7 +276,11 @@ class DebPackage(object):
                         if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
                             # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the relation (e.g. >=) and the latest the version for the releation
-                            self._failureString += _("Breaks existing package '%(pkgname)s' dependency %(depname)s (%(deprelation)s %i(depversion)s)\n") % {'pkgname' : pkg.name, 'depname' : dep.name, 'deprelation' : dep.relation, 'depversion' : dep.version}
+                            self._failureString += _("Breaks existing package '%(pkgname)s' dependency %(depname)s (%(deprelation)s %i(depversion)s)") % {
+                                'pkgname' : pkg.name, 
+                                'depname' : dep.name, 
+                                'deprelation' : dep.relation, 
+                                'depversion' : dep.version}
                             self._cache.op_progress.done()
                             return False
             # now check if there are conflicts against this package on
@@ -288,7 +292,11 @@ class DebPackage(object):
                             if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
-                                self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)\n") % {'pkgname' : pkg.name, 'targetpkg' : cOr.TargetPkg.Name, 'comptype' : cOr.CompType, 'targetver' : cOr.TargetVer}
+                                self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)") % {
+                                    'pkgname' : pkg.name, 
+                                    'targetpkg' : cOr.TargetPkg.Name, 
+                                    'comptype' : cOr.CompType, 
+                                    'targetver' : cOr.TargetVer }
                                 self._cache.op_progress.done()
                                 return False
         self._cache.op_progress.done()
