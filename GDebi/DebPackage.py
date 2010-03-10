@@ -27,6 +27,7 @@ import apt_inst, apt_pkg
 import apt
 import sys
 import os
+from re import sub
 from gettext import gettext as _
 from Cache import Cache
 
@@ -289,7 +290,9 @@ class DebPackage(object):
                 for conflictsVerList in ver.DependsList["Conflicts"]:
                     for cOr in conflictsVerList:
                         if cOr.TargetPkg.Name == self.pkgName:
-                            if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
+                            # if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
+                            # The line above can be restored when using python-apt 0.8 API
+                            if apt_pkg.CheckDep(debver, sub('^\s*(<|>)\s*$', r'\1\1', cOr.CompType), cOr.TargetVer):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
                                 self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)") % {

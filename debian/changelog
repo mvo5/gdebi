@@ -1,3 +1,12 @@
+gdebi (0.6.1) UNRELEASED; urgency=low
+
+  * GDebi/DebPackage.py:
+    - Correctly parse strictly earlier version of conflicting packages
+      to allow installation of packages conflicting with a version lower
+      than the one being installed (LP: #484097).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 10 Mar 2010 17:31:36 +0100
+
 gdebi (0.6.0) unstable; urgency=low
 
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
