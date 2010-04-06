@@ -28,7 +28,7 @@
                   <object class="GtkMenu" id="menuitem1_menu">
                     <child>
                       <object class="GtkImageMenuItem" id="open2">
-                        <property name="label">Open...</property>
+                        <property name="label" translatable="yes">_Open...</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
@@ -39,7 +39,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="refresh1">
-                        <property name="label">_Refresh</property>
+                        <property name="label" translatable="yes">_Refresh</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
