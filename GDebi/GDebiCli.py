@@ -137,7 +137,7 @@ class GDebiCli(object):
             #    os.system("gdebi %s_%s_*.deb" % (i,self._deb["Version"]))
             pass
         else:
-            ret = call(["dpkg","-i",self._deb.file])
+            ret = call(["dpkg","--auto-deconfigure", "-i",self._deb.file])
             if (ret != 0):
                 return False
         return True

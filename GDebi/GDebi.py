@@ -623,7 +623,7 @@ Install software from trustworthy software distributors only.
 
             # the command
             cmd = "/usr/bin/dpkg"
-            argv = [cmd]
+            argv = [cmd, "--auto-deconfiure"]
             # ubuntu supports VTE_PTY_KEEP_FD, see 
             # https://bugzilla.gnome.org/320128 for the upstream bug
             if UBUNTU:

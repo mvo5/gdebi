@@ -72,7 +72,7 @@ class KDEDpkgInstallProgress(object):
         self.status.setText(_("Installing '%s'...") % os.path.basename(self.debfile))
         # the command
         cmd = "/usr/bin/dpkg"
-        argv = [cmd, "-i", self.debfile]
+        argv = [cmd, "--auto-deconfigure", "-i", self.debfile]
         (self.child_pid, self.master_fd) = pty.fork()
 
         if self.child_pid == 0:
