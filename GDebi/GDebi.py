@@ -598,8 +598,9 @@ Install software from trustworthy software distributors only.
             self.time_last_update = time.time()
             self.term_expander.set_expanded(False)
         def commit(self):
-            def finish_dpkg(term, pid, status, lock):
-                " helper "
+            def finish_dpkg(term, lock):
+                """ helper that is run when dpkg finishes """
+                status = term.get_child_exit_status()
                 self.exitstatus = posix.WEXITSTATUS(status)
                 #print "dpkg finished %s %s" % (pid,status)
                 #print "exit status: %s" % self.exitstatus
@@ -638,8 +639,7 @@ Install software from trustworthy software distributors only.
             #print self.term
 
             # prepare for the fork
-            reaper = vte.reaper_get()
-            signal_id = reaper.connect("child-exited", finish_dpkg, lock)
+            self.term.connect("child-exited", finish_dpkg, lock)
             pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
             read = ""
             while lock.locked():
@@ -672,7 +672,6 @@ Install software from trustworthy software distributors only.
                     (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
                   self.term_expander.set_expanded(True)
             self.progress.set_fraction(1.0)
-            reaper.disconnect(signal_id)
     
     class InstallProgressAdapter(InstallProgress):
         def __init__(self,progress,term,label,term_expander):
@@ -683,13 +682,15 @@ Install software from trustworthy software distributors only.
             self.finished = False
             self.action = label
             self.time_last_update = time.time()
-            reaper = vte.reaper_get()
-            reaper.connect("child-exited",self.child_exited)
+            self.term.connect("child-exited", self.child_exited)
             self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
                         "DEBIAN_FRONTEND=gnome",
                         "APT_LISTCHANGES_FRONTEND=gtk"]
-        def child_exited(self,term, pid, status):
-            #print "child_exited: %s %s %s %s" % (self,term,pid,status)
+        def child_exited(self,term):
+            status = term.get_child_exit_status()
+            #print "apt finished %s" % status
+            #print "exit status: %s" % posix.WEXITSTATUS(status)
+            #print "was signaled %s" % posix.WIFSIGNALED(status)
             self.apt_status = status
             self.finished = True
         def error(self, pkg, errormsg):
