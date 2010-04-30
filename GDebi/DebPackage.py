@@ -429,7 +429,7 @@ class DebPackage(object):
                 # check authentication, one authenticated origin is enough
                 # libapt will skip non-authenticated origins then
                 authenticated = False
-                for origin in pkg.candidateOrigin:
+                for origin in pkg.candidate.origins:
                     authenticated |= origin.trusted
                 if not authenticated:
                     unauthenticated.append(pkg.name)
