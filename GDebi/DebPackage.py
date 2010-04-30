@@ -53,7 +53,7 @@ class DebPackage(object):
     def open(self, file):
         """ read a deb """
         control = apt_inst.debExtractControl(open(file))
-        self._sections = apt_pkg.ParseSection(control)
+        self._sections = apt_pkg.TagSection(control)
         self.pkgName = self._sections["Package"]
 
     def _isOrGroupSatisfied(self, or_group):
@@ -67,11 +67,11 @@ class DebPackage(object):
             oper = dep[2]
 
             # check for virtual pkgs
-            if not self._cache.has_key(depname):
-                if self._cache.isVirtualPkg(depname):
+            if not depname in self._cache:
+                if self._cache.is_virtual_pkg(depname):
                     self._dbg(3,"_isOrGroupSatisfied(): %s is virtual dep" % depname)
                     for pkg in self._cache.getProvidersForVirtual(depname):
-                        if pkg.isInstalled:
+                        if pkg.is_installed:
                             return True
                 continue
             # check real dependency
@@ -87,7 +87,7 @@ class DebPackage(object):
             # dependency (we do not supprot versionized dependencies)
             if not oper:
                 for ppkg in self._cache.getProvidersFor(depname):
-                    if ppkg.isInstalled:
+                    if ppkg.is_installed:
                         self._dbg(3, "found installed '%s' that provides '%s'" % (ppkg.name, depname))
                         return True
         return False
@@ -106,7 +106,7 @@ class DebPackage(object):
 
             # if we don't have it in the cache, it may be virtual
             if not self._cache.has_key(depname):
-                if not self._cache.isVirtualPkg(depname):
+                if not self._cache.is_virtual_pkg(depname):
                     continue
                 providers = self._cache.getProvidersForVirtual(depname)
                 # if a package just has a single virtual provider, we
@@ -118,10 +118,10 @@ class DebPackage(object):
             # now check if we can satisfy the deps with the candidate(s)
             # in the cache
             cand = self._cache[depname]
-            candver = self._cache._depcache.GetCandidateVer(cand._pkg)
+            candver = self._cache._depcache.get_candidate_ver(cand._pkg)
             if not candver:
                 continue
-            if not apt_pkg.CheckDep(candver.VerStr,oper,ver):
+            if not apt_pkg.check_dep(candver.ver_str,oper,ver):
                 continue
 
             # check if we need to install it
@@ -148,9 +148,9 @@ class DebPackage(object):
         self._dbg(3, "_checkSinglePkgConflict() pkg='%s' ver='%s' oper='%s'" % (pkgname, ver, oper))
         pkgver = None
         cand = self._cache[pkgname]
-        if cand.isInstalled:
+        if cand.is_installed:
             pkgver = cand.installedVersion
-        elif cand.markedInstall:
+        elif cand.marked_install:
             pkgver = cand.candidateVersion
         #print "pkg: %s" % pkgname
         #print "ver: %s" % ver
@@ -178,7 +178,7 @@ class DebPackage(object):
             if not self._cache.has_key(depname):
                 # FIXME: we have to check for virtual replaces here as 
                 #        well (to pass tests/gdebi-test8.deb)
-                if self._cache.isVirtualPkg(depname):
+                if self._cache.is_virtual_pkg(depname):
                     for pkg in self._cache.getProvidersForVirtual(depname):
                         self._dbg(3, "conflicts virtual check: %s" % pkg.name)
                         # P/C/R on virtal pkg, e.g. ftpd
@@ -196,7 +196,7 @@ class DebPackage(object):
         conflicts = []
         key = "Conflicts"
         if self._sections.has_key(key):
-            conflicts = apt_pkg.ParseDepends(self._sections[key])
+            conflicts = apt_pkg.parse_depends(self._sections[key])
         return conflicts
 
     def getDepends(self):
@@ -204,21 +204,21 @@ class DebPackage(object):
         # find depends
         for key in ["Depends","Pre-Depends"]:
             if self._sections.has_key(key):
-                depends.extend(apt_pkg.ParseDepends(self._sections[key]))
+                depends.extend(apt_pkg.parse_depends(self._sections[key]))
         return depends
 
     def getProvides(self):
         provides = []
         key = "Provides"
         if self._sections.has_key(key):
-            provides = apt_pkg.ParseDepends(self._sections[key])
+            provides = apt_pkg.parse_depends(self._sections[key])
         return provides
 
     def getReplaces(self):
         replaces = []
         key = "Replaces"
         if self._sections.has_key(key):
-            replaces = apt_pkg.ParseDepends(self._sections[key])
+            replaces = apt_pkg.parse_depends(self._sections[key])
         return replaces
 
     def replacesRealPkg(self, pkgname, oper, ver):
@@ -229,9 +229,9 @@ class DebPackage(object):
         self._dbg(3, "replacesPkg() %s %s %s" % (pkgname,oper,ver))
         pkgver = None
         cand = self._cache[pkgname]
-        if cand.isInstalled:
+        if cand.is_installed:
             pkgver = cand.installedVersion
-        elif cand.markedInstall:
+        elif cand.marked_install:
             pkgver = cand.candidateVersion
         for or_group in self.getReplaces():
             for (name, ver, oper) in or_group:
@@ -266,11 +266,11 @@ class DebPackage(object):
         for (i, pkg) in enumerate(self._cache):
             if i%steps == 0:
                 self._cache.op_progress.update(float(i)/size*100.0)
-            if not pkg.isInstalled:
+            if not pkg.is_installed:
                 continue
             # check if the exising dependencies are still satisfied
             # with the package
-            ver = pkg._pkg.CurrentVer
+            ver = pkg._pkg.current_ver
             for dep_or in pkg.installedDependencies:
                 for dep in dep_or.or_dependencies:
                     if dep.name == self.pkgName:
@@ -286,10 +286,10 @@ class DebPackage(object):
                             return False
             # now check if there are conflicts against this package on
             # the existing system
-            if ver.DependsList.has_key("Conflicts"):
-                for conflictsVerList in ver.DependsList["Conflicts"]:
+            if "Conflicts" in ver.depends_list:
+                for conflictsVerList in ver.depends_list["Conflicts"]:
                     for cOr in conflictsVerList:
-                        if cOr.TargetPkg.Name == self.pkgName:
+                        if cOr.target_pkg.name == self.pkgName:
                             # if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
                             # The line above can be restored when using python-apt 0.8 API
                             if apt_pkg.CheckDep(debver, sub('^\s*(<|>)\s*$', r'\1\1', cOr.CompType), cOr.TargetVer):
@@ -297,7 +297,7 @@ class DebPackage(object):
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
                                 self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)") % {
                                     'pkgname' : pkg.name, 
-                                    'targetpkg' : cOr.TargetPkg.Name, 
+                                    'targetpkg' : cOr.target_pkg.name, 
                                     'comptype' : cOr.CompType, 
                                     'targetver' : cOr.TargetVer }
                                 self._cache.op_progress.done()
@@ -345,7 +345,7 @@ class DebPackage(object):
             self._failureString = _("No Architecture field in the package")
             return False
         arch = self._sections["Architecture"]
-        if  arch != "all" and arch != apt_pkg.Config.Find("APT::Architecture"):
+        if  arch != "all" and arch != apt_pkg.config.find("APT::Architecture"):
             self._dbg(1,"ERROR: Wrong architecture dude!")
             self._failureString = _("Wrong architecture '%s'") % arch
             return False
@@ -381,7 +381,7 @@ class DebPackage(object):
         if not self.checkConflicts():
             return False
 
-        if self._cache._depcache.BrokenCount > 0:
+        if self._cache._depcache.broken_count > 0:
             self._failureString = _("Failed to satisfy all dependencies (broken cache)")
             # clean the cache again
             self._cache.clear()
@@ -389,14 +389,11 @@ class DebPackage(object):
         return True
 
     def satisfyDependsStr(self, dependsstr):
-        return self._satisfyDepends(apt_pkg.ParseDepends(dependsstr))
+        return self._satisfyDepends(apt_pkg.parse_depends(dependsstr))
 
     def _satisfyDepends(self, depends):
         # turn off MarkAndSweep via a action group (if available)
-        try:
-            _actiongroup = apt_pkg.GetPkgActionGroup(self._cache._depcache)
-        except AttributeError, e:
-            pass
+        _actiongroup = apt_pkg.ActionGroup(self._cache._depcache)
         # check depends
         for or_group in depends:
             #print "or_group: %s" % or_group
@@ -407,7 +404,7 @@ class DebPackage(object):
         # now try it out in the cache
             for pkg in self._needPkgs:
                 try:
-                    self._cache[pkg].markInstall(fromUser=False)
+                    self._cache[pkg].mark_install(from_user=False)
                 except SystemError, e:
                     self._failureString = _("Cannot install '%s'") % pkg
                     self._cache.clear()
@@ -429,7 +426,7 @@ class DebPackage(object):
         remove = []
         unauthenticated = []
         for pkg in self._cache:
-            if pkg.markedInstall or pkg.markedUpgrade:
+            if pkg.marked_install or pkg.marked_upgrade:
                 install.append(pkg.name)
                 # check authentication, one authenticated origin is enough
                 # libapt will skip non-authenticated origins then
@@ -438,7 +435,7 @@ class DebPackage(object):
                     authenticated |= origin.trusted
                 if not authenticated:
                     unauthenticated.append(pkg.name)
-            if pkg.markedDelete:
+            if pkg.marked_delete:
                 remove.append(pkg.name)
         return (install,remove, unauthenticated)
     requiredChanges = property(requiredChanges)
@@ -545,7 +542,7 @@ if __name__ == "__main__":
     cache = Cache()
 
     vp = "www-browser"
-    print "%s virtual: %s" % (vp,cache.isVirtualPkg(vp))
+    print "%s virtual: %s" % (vp,cache.is_virtual_pkg(vp))
     providers = cache.getProvidersForVirtual(vp)
     print "Providers for %s :" % vp
     for pkg in providers:

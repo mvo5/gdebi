@@ -43,15 +43,15 @@ class GDebiCli(object):
         # fixme, do graphic cache check
         self.options = options
         if options.quiet:
-            tp = apt.progress.OpProgress()
+            tp = apt.progress.base.OpProgress()
         else:
-            tp = apt.progress.OpTextProgress()
+            tp = apt.progress.text.OpProgress()
         # set architecture to architecture in root-dir
         if options.rootdir and os.path.exists(options.rootdir+"/usr/bin/dpkg"):
             arch = Popen([options.rootdir+"/usr/bin/dpkg",
                           "--print-architecture"], stdout=PIPE).communicate()[0]
             if arch:
-                apt_pkg.Config.Set("APT::Architecture",arch.strip())
+                apt_pkg.config.set("APT::Architecture",arch.strip())
         if options.apt_opts:
             for o in options.apt_opts:
                 if o.find('=') < 0:
@@ -59,7 +59,7 @@ class GDebiCli(object):
                     sys.exit(1)
                 (name, value) = o.split('=', 1)
                 try:
-                    apt_pkg.Config.Set(name, value)
+                    apt_pkg.config.set(name, value)
                 except:
                     sys.stderr.write(_("Couldn't set APT option %s to %s\n") % (name, value))
                     sys.exit(1)
@@ -117,8 +117,8 @@ class GDebiCli(object):
         # install the dependecnies
         (install,remove,unauthenticated) = self._deb.requiredChanges
         if len(install) > 0 or len(remove) > 0:
-            fprogress = apt.progress.TextFetchProgress()
-            iprogress = apt.progress.InstallProgress()
+            fprogress = apt.progress.text.AcquireProgress()
+            iprogress = apt.progress.base.InstallProgress()
             try:
                 res = self._cache.commit(fprogress,iprogress)
             except SystemError, e:

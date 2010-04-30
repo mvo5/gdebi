@@ -1,4 +1,4 @@
-gdebi (0.6.1) UNRELEASED; urgency=low
+gdebi (0.6.5) UNRELEASED; urgency=low
 
   [ Luca Falavigna ]
   * GDebi/DebPackage.py:
@@ -13,6 +13,7 @@ gdebi (0.6.1) UNRELEASED; urgency=low
   * do not use the VteReaper anymore, use the child-exited and 
     get_child_exit_status() functions of VteTerminal for this
     (closes: #574168)
+  * port to python-apt 0.8 API (closes: #571763)
 
  -- Luca Falavigna <dktrkranz@debian.org>  Wed, 10 Mar 2010 17:31:36 +0100
 

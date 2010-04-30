@@ -43,7 +43,7 @@ import pty
 import select
 
 from DebPackage import DebPackage, Cache
-from apt.progress import InstallProgress
+from apt.progress.base import InstallProgress
 from gettext import gettext as gett
 from GDebiCommon import utf8, _
 
@@ -136,7 +136,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         pass
 
     def startUpdate(self):
-        apt_pkg.PkgSystemUnLock()
+        apt_pkg.pkgsystem_unlock()
         self.action.setText(_("Installing dependencies..."))
         self.progress.setValue(0)
 
@@ -180,7 +180,7 @@ class KDEInstallProgressAdapter(InstallProgress):
     def waitChild(self):
         while True:
             try:
-                select.select([self.statusfd],[],[], self.selectTimeout)
+                select.select([self.statusfd],[],[], self.select_timeout)
             except Exception, e:
                 #print "waitChild: ", e
                 pass
@@ -211,7 +211,7 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
         if currentItem > self.totalItems:
             currentItem = self.totalItems
         if self.currentCPS > 0:
-            self.label.setText(_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.SizeToStr(self.currentCPS))))
+            self.label.setText(_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.size_to_str(self.currentCPS))))
         else:
             self.label.setText(_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)))
         KApplication.kApplication().processEvents()
