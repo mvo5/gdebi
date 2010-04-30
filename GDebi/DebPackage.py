@@ -105,7 +105,7 @@ class DebPackage(object):
             oper = dep[2]
 
             # if we don't have it in the cache, it may be virtual
-            if not self._cache.has_key(depname):
+            if not depname in self._cache:
                 if not self._cache.is_virtual_pkg(depname):
                     continue
                 providers = self._cache.getProvidersForVirtual(depname)
@@ -175,7 +175,7 @@ class DebPackage(object):
             oper = dep[2]
 
             # check conflicts with virtual pkgs
-            if not self._cache.has_key(depname):
+            if not depname in self._cache:
                 # FIXME: we have to check for virtual replaces here as 
                 #        well (to pass tests/gdebi-test8.deb)
                 if self._cache.is_virtual_pkg(depname):
@@ -195,7 +195,7 @@ class DebPackage(object):
     def getConflicts(self):
         conflicts = []
         key = "Conflicts"
-        if self._sections.has_key(key):
+        if key in self._sections:
             conflicts = apt_pkg.parse_depends(self._sections[key])
         return conflicts
 
@@ -203,21 +203,21 @@ class DebPackage(object):
         depends = []
         # find depends
         for key in ["Depends","Pre-Depends"]:
-            if self._sections.has_key(key):
+            if key in self._sections:
                 depends.extend(apt_pkg.parse_depends(self._sections[key]))
         return depends
 
     def getProvides(self):
         provides = []
         key = "Provides"
-        if self._sections.has_key(key):
+        if key in self._sections:
             provides = apt_pkg.parse_depends(self._sections[key])
         return provides
 
     def getReplaces(self):
         replaces = []
         key = "Replaces"
-        if self._sections.has_key(key):
+        if key in self._sections:
             replaces = apt_pkg.parse_depends(self._sections[key])
         return replaces
 
@@ -318,7 +318,7 @@ class DebPackage(object):
         pkgname = self._sections["Package"]
         debver = self._sections["Version"]
         self._dbg(1,"debver: %s" % debver)
-        if self._cache.has_key(pkgname):
+        if pkgname in self._cache:
             if useInstalled:
                 cachever = self._cache[pkgname].installedVersion
             else:
@@ -338,7 +338,7 @@ class DebPackage(object):
         self._dbg(3,"checkDepends")
 
         # check arch
-        if not self._sections.has_key("Architecture"):
+        if not "Architecture" in self._sections:
             self._dbg(1, "ERROR: no architecture field")
             self._failureString = _("No Architecture field in the package")
             return False
@@ -522,7 +522,7 @@ class DebPackage(object):
     
     # properties
     def __getitem__(self,item):
-        if not self._sections.has_key(item):
+        if not item in self._sections:
             # Translators: it's for missing entries in the deb package,
             # e.g. a missing "Maintainer" field
             return _("%s is not available") % item
