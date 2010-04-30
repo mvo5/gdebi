@@ -77,7 +77,7 @@ class DebPackage(object):
             # check real dependency
             inst = self._cache[depname]
             instver = inst.installedVersion
-            if instver != None and apt_pkg.CheckDep(instver,oper,ver) == True:
+            if instver != None and apt_pkg.check_dep(instver,oper,ver) == True:
                 return True
 
             # if no real dependency is installed, check if there is
@@ -156,7 +156,7 @@ class DebPackage(object):
         #print "ver: %s" % ver
         #print "pkgver: %s " % pkgver
         #print "oper: %s " % oper
-        if (pkgver and apt_pkg.CheckDep(pkgver,oper,ver) and 
+        if (pkgver and apt_pkg.check_dep(pkgver,oper,ver) and 
             not self.replacesRealPkg(pkgname, oper, ver)):
             self._failureString += _("Conflicts with the installed package '%s'\n") % cand.name
             return True
@@ -236,7 +236,7 @@ class DebPackage(object):
         for or_group in self.getReplaces():
             for (name, ver, oper) in or_group:
                 if (name == pkgname and 
-                    apt_pkg.CheckDep(pkgver,oper,ver)):
+                    apt_pkg.check_dep(pkgver,oper,ver)):
                     self._dbg(3, "we have a replaces in our package for the conflict against '%s'" % (pkgname))
                     return True
         return False
@@ -274,7 +274,7 @@ class DebPackage(object):
             for dep_or in pkg.installedDependencies:
                 for dep in dep_or.or_dependencies:
                     if dep.name == self.pkgName:
-                        if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
+                        if not apt_pkg.check_dep(debver,dep.relation,dep.version):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
                             # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the relation (e.g. >=) and the latest the version for the releation
                             self._failureString += _("Breaks existing package '%(pkgname)s' dependency %(depname)s (%(deprelation)s %i(depversion)s)") % {
@@ -290,16 +290,14 @@ class DebPackage(object):
                 for conflictsVerList in ver.depends_list["Conflicts"]:
                     for cOr in conflictsVerList:
                         if cOr.target_pkg.name == self.pkgName:
-                            # if apt_pkg.CheckDep(debver, cOr.CompType, cOr.TargetVer):
-                            # The line above can be restored when using python-apt 0.8 API
-                            if apt_pkg.CheckDep(debver, sub('^\s*(<|>)\s*$', r'\1\1', cOr.CompType), cOr.TargetVer):
+                            if apt_pkg.check_dep(debver, cOr.comp_type, cOr.target_ver):
                                 self._dbg(2, "would break (conflicts) %s" % pkg.name)
 				# TRANSLATORS: the first '%s' is the package that conflicts, the second the packagename that it conflicts with (so the name of the deb the user tries to install), the third is the relation (e.g. >=) and the last is the version for the relation
                                 self._failureString += _("Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s %(targetver)s)") % {
                                     'pkgname' : pkg.name, 
                                     'targetpkg' : cOr.target_pkg.name, 
-                                    'comptype' : cOr.CompType, 
-                                    'targetver' : cOr.TargetVer }
+                                    'comptype' : cOr.comp_type, 
+                                    'targetver' : cOr.target_ver }
                                 self._cache.op_progress.done()
                                 return False
         self._cache.op_progress.done()
@@ -326,7 +324,7 @@ class DebPackage(object):
             else:
                 cachever = self._cache[pkgname].candidateVersion
             if cachever != None:
-                cmp = apt_pkg.VersionCompare(cachever,debver)
+                cmp = apt_pkg.version_compare(cachever,debver)
                 self._dbg(1, "CompareVersion(debver,instver): %s" % cmp)
                 if cmp == 0:
                     return self.VERSION_SAME
