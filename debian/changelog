@@ -8,6 +8,8 @@ gdebi (0.6.1) UNRELEASED; urgency=low
   
   [ Michael Vogt ]
   * use --auto-deconfigure when runnign dpkg to correctly handle C/R
+  * po/es.po:
+    - updated, thanks to Omar Campagne (closes: #578612)
 
  -- Luca Falavigna <dktrkranz@debian.org>  Wed, 10 Mar 2010 17:31:36 +0100
 
