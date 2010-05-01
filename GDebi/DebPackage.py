@@ -277,7 +277,7 @@ class DebPackage(object):
                         if not apt_pkg.CheckDep(debver,dep.relation,dep.version):
                             self._dbg(2, "would break (depends) %s" % pkg.name)
                             # TRANSLATORS: the first '%s' is the package that breaks, the second the dependency that makes it break, the third the relation (e.g. >=) and the latest the version for the releation
-                            self._failureString += _("Breaks existing package '%(pkgname)s' dependency %(depname)s (%(deprelation)s %i(depversion)s)") % {
+                            self._failureString += _("Breaks existing package '%(pkgname)s' dependency %(depname)s (%(deprelation)s %(depversion)s)") % {
                                 'pkgname' : pkg.name, 
                                 'depname' : dep.name, 
                                 'deprelation' : dep.relation, 

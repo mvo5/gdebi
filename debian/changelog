@@ -5,6 +5,8 @@ gdebi (0.6.1) UNRELEASED; urgency=low
     - Correctly parse strictly earlier version of conflicting packages
       to allow installation of packages conflicting with a version lower
       than the one being installed (LP: #484097).
+  * GDebi/DebPackage.py:
+    - Fix typo in format string, thanks Simon Ruggier (Closes: #577851).
   
   [ Michael Vogt ]
   * use --auto-deconfigure when runnign dpkg to correctly handle C/R
@@ -14,7 +16,7 @@ gdebi (0.6.1) UNRELEASED; urgency=low
     get_child_exit_status() functions of VteTerminal for this
     (closes: #574168)
 
- -- Luca Falavigna <dktrkranz@debian.org>  Wed, 10 Mar 2010 17:31:36 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 01 May 2010 20:29:22 +0200
 
 gdebi (0.6.0) unstable; urgency=low
 
