@@ -939,7 +939,7 @@
     <property name="version">0.4</property>
     <property name="copyright">(c) 2005-2009 Canonical Ltd</property>
     <property name="comments" translatable="yes">Install and view software packages</property>
-    <property name="website">www.ubuntu.com</property>
+    <property name="website">http://launchpad.net/gdebi</property>
     <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
     <property name="authors">Michael Vogt
 Sebastian Heinlein

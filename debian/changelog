@@ -15,6 +15,8 @@ gdebi (0.6.1) UNRELEASED; urgency=low
   * do not use the VteReaper anymore, use the child-exited and 
     get_child_exit_status() functions of VteTerminal for this
     (closes: #574168)
+   * make link in about page clickable and point to launchpad.net
+     project page (LP: #562729), thanks to Gabe Gorelick
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 01 May 2010 20:29:22 +0200
 
