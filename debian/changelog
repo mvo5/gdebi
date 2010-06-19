@@ -7,6 +7,8 @@ gdebi (0.6.1) UNRELEASED; urgency=low
       than the one being installed (LP: #484097).
   * GDebi/DebPackage.py:
     - Fix typo in format string, thanks Simon Ruggier (Closes: #577851).
+  * GDebi/GDebiKDE.py:
+    - Use kdesu instead of kdesudo (Closes: #584860).
   
   [ Michael Vogt ]
   * use --auto-deconfigure when runnign dpkg to correctly handle C/R
@@ -18,7 +20,7 @@ gdebi (0.6.1) UNRELEASED; urgency=low
    * make link in about page clickable and point to launchpad.net
      project page (LP: #562729), thanks to Gabe Gorelick
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 01 May 2010 20:29:22 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Jun 2010 10:44:05 +0200
 
 gdebi (0.6.0) unstable; urgency=low
 

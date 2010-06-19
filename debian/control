@@ -51,8 +51,7 @@ Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
          gdebi-core (= ${source:Version}),
-         python-kde4 (>= 3.16.0-0ubuntu11),
-	 kdesudo
+         python-kde4 (>= 3.16.0-0ubuntu11)
 XB-Python-Version: ${python:Versions}
 Description: Simple tool to install deb files - KDE GUI
  gdebi lets you install local deb packages resolving and installing 

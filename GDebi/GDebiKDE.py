@@ -286,7 +286,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             else:
                 executable = "/usr/bin/gdebi-kde"
             print "executable " + executable
-            os.execl("/usr/bin/kdesudo", "kdesudo", executable + " -n ", self._deb.file)
+            os.execl("/usr/bin/kdesu", "kdesu", executable + " -n ", self._deb.file)
             self.kapp.exit()
 
         if not self.try_acquire_lock():
