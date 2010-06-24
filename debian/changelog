@@ -5,10 +5,13 @@ gdebi (0.6.1) UNRELEASED; urgency=low
     - Correctly parse strictly earlier version of conflicting packages
       to allow installation of packages conflicting with a version lower
       than the one being installed (LP: #484097).
+    - Replace imports of deprecated debian_bundle with debian.
   * GDebi/DebPackage.py:
     - Fix typo in format string, thanks Simon Ruggier (Closes: #577851).
   * GDebi/GDebiKDE.py:
     - Use kdesu instead of kdesudo (Closes: #584860).
+  * debian/control:
+    - Depend on python-debian >= 0.1.15.
   
   [ Michael Vogt ]
   * use --auto-deconfigure when runnign dpkg to correctly handle C/R.
@@ -21,7 +24,7 @@ gdebi (0.6.1) UNRELEASED; urgency=low
     project page (LP: #562729), thanks to Gabe Gorelick.
   * port to python-apt 0.8 API (closes: #571763).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Jun 2010 10:44:05 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 24 Jun 2010 21:15:42 +0200
 
 gdebi (0.6.0) unstable; urgency=low
 

@@ -31,7 +31,7 @@ from re import sub
 from gettext import gettext as _
 from Cache import Cache
 
-from debian_bundle.debfile import DebFile
+from debian.debfile import DebFile
 
 import gzip
 from StringIO import StringIO
