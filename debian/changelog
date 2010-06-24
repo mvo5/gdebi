@@ -1,4 +1,4 @@
-gdebi (0.6.1) UNRELEASED; urgency=low
+gdebi (0.6.1) unstable; urgency=low
 
   [ Luca Falavigna ]
   * GDebi/DebPackage.py:
@@ -24,7 +24,7 @@ gdebi (0.6.1) UNRELEASED; urgency=low
     project page (LP: #562729), thanks to Gabe Gorelick.
   * port to python-apt 0.8 API (closes: #571763).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 24 Jun 2010 21:15:42 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 24 Jun 2010 21:34:30 +0200
 
 gdebi (0.6.0) unstable; urgency=low
 
