@@ -46,6 +46,8 @@ import re
 
 from DebPackage import DebPackage, Cache
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
+# FIXME: when this moves to apt.progress.base for some reason the 
+#        install progress is no longer shown, debug why
 from apt.progress import InstallProgress
 from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
@@ -263,7 +265,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
-        self.getChanges()
+        self.get_changes()
 
         if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
@@ -532,7 +534,7 @@ Install software from trustworthy software distributors only.
 
         # reopen the cache, reread the file
         self.openCache()
-        if self._cache._depcache.BrokenCount > 0:
+        if self._cache._depcache.broken_count > 0:
             err_header = _("Failed to completely install all dependencies")
             err_body = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")
@@ -701,7 +703,7 @@ Install software from trustworthy software distributors only.
             self.term_expander.set_expanded(True)
         def startUpdate(self):
             #print "startUpdate"
-            apt_pkg.PkgSystemUnLock()
+            apt_pkg.pkgsystem_unlock()
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
             self.progress.set_text("")
@@ -747,7 +749,7 @@ Install software from trustworthy software distributors only.
         def pulse(self):
             at_item = min(self.currentItems + 1, self.totalItems)
             if self.currentCPS > 0:
-                self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.totalItems,apt_pkg.SizeToStr(self.currentCPS)))
+                self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.totalItems,apt_pkg.size_to_str(self.currentCPS)))
             else:
                 self.progress.set_text(_("File %s of %s") % (at_item,self.totalItems))
             self.progress.set_fraction(self.currentBytes/self.totalBytes)
@@ -787,13 +789,13 @@ if __name__ == "__main__":
     pkgs = ["cw"]
     for pkg in pkgs:
         print "installing %s" % pkg
-        app._cache[pkg].markInstall()
+        app._cache[pkg].mark_install()
 
     for pkg in app._cache:
-        if pkg.markedInstall or pkg.markedUpgrade:
+        if pkg.marked_install or pkg.marked_upgrade:
             print pkg.name
 
-    apt_pkg.PkgSystemLock()
+    apt_pkg.pkgsystem_lock()
     app.dialog_deb_install.set_transient_for(app.window_main)
     app.dialog_deb_install.show_all()
  

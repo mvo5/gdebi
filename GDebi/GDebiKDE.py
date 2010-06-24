@@ -234,7 +234,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             #self.button_details.hide()
 
         # load changes into (self.install, self.remove, self.unauthenticated)
-        self.getChanges()
+        self.get_changes()
 
         if self.version_info_title != "" and self.version_info_msg != "":
             self.infoIcon.setPixmap(DesktopIcon("dialog-information"))
@@ -360,7 +360,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # reopen the cache, reread the file, FIXME: add progress reporting
         #self._cache = Cache(self.cprogress)
         self._cache = Cache()
-        if self._cache._depcache.BrokenCount > 0:
+        if self._cache._depcache.broken_count > 0:
             header = _("Failed to completely install all dependencies")
             text = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")

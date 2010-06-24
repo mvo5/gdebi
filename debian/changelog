@@ -1,26 +1,30 @@
-gdebi (0.6.1) UNRELEASED; urgency=low
+gdebi (0.6.1) unstable; urgency=low
 
   [ Luca Falavigna ]
   * GDebi/DebPackage.py:
     - Correctly parse strictly earlier version of conflicting packages
       to allow installation of packages conflicting with a version lower
       than the one being installed (LP: #484097).
+    - Replace imports of deprecated debian_bundle with debian.
   * GDebi/DebPackage.py:
     - Fix typo in format string, thanks Simon Ruggier (Closes: #577851).
   * GDebi/GDebiKDE.py:
     - Use kdesu instead of kdesudo (Closes: #584860).
+  * debian/control:
+    - Depend on python-debian >= 0.1.15.
   
   [ Michael Vogt ]
-  * use --auto-deconfigure when runnign dpkg to correctly handle C/R
+  * use --auto-deconfigure when runnign dpkg to correctly handle C/R.
   * po/es.po:
-    - updated, thanks to Omar Campagne (closes: #578612)
+    - updated, thanks to Omar Campagne (closes: #578612).
   * do not use the VteReaper anymore, use the child-exited and 
     get_child_exit_status() functions of VteTerminal for this
-    (closes: #574168)
+    (closes: #574168).
   * make link in about page clickable and point to launchpad.net
-    project page (LP: #562729), thanks to Gabe Gorelick
+    project page (LP: #562729), thanks to Gabe Gorelick.
+  * port to python-apt 0.8 API (closes: #571763).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Jun 2010 10:44:05 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 24 Jun 2010 21:34:30 +0200
 
 gdebi (0.6.0) unstable; urgency=low
 
@@ -561,12 +565,6 @@ gdebi (0.2.5~pre1) experimental; urgency=low
 
  -- Gustavo Franco <stratus@debian.org>  Mon, 23 Apr 2007 03:12:47 -0300
 
-gdebi (0.2.4debian1) unstable; urgency=low
-
-  * updated to new upstream version
-
- -- Michael Vogt <mvo@debian.org>  Tue, 24 Apr 2007 21:18:44 +0200
-
 gdebi (0.2.4ubuntu1) feisty; urgency=low
 
   * GDebi/GDebi.py:
@@ -578,6 +576,12 @@ gdebi (0.2.4ubuntu1) feisty; urgency=low
     - do not crash if the cache can not be opened (LP#95650)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  5 Apr 2007 18:25:36 +0200
+
+gdebi (0.2.4debian1) unstable; urgency=low
+
+  * updated to new upstream version
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 24 Apr 2007 21:18:44 +0200
 
 gdebi (0.2.3ubuntu1) feisty; urgency=low
 
@@ -749,6 +753,15 @@ gdebi (0.2ubuntu1) feisty; urgency=low
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 15 Dec 2006 11:46:06 +0100
 
+gdebi (0.1.6ubuntu1) edgy; urgency=low
+
+  * show a better finish message (ubuntu: #37651)
+  * fixes for the new auto-dependency removal apt (ubuntu: #53655)
+  * check for broken packages early (ubuntu: #40050)
+  * merged the debian changes
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  4 Aug 2006 13:45:16 +0200
+
 debi (0.1.6debian1) unstable; urgency=low
 
   * Non-maintainer upload.
@@ -772,15 +785,6 @@ debi (0.1.6) unstable; urgency=low
   * updated to new upstream version
 
  -- Gustavo Franco <stratus@debian.org>  Tue, 22 Aug 2006 15:52:22 -0300
-
-gdebi (0.1.6ubuntu1) edgy; urgency=low
-
-  * show a better finish message (ubuntu: #37651)
-  * fixes for the new auto-dependency removal apt (ubuntu: #53655)
-  * check for broken packages early (ubuntu: #40050)
-  * merged the debian changes
-
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  4 Aug 2006 13:45:16 +0200
 
 gdebi (0.1.5) unstable; urgency=low
 

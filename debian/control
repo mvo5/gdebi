@@ -16,8 +16,8 @@ Package: gdebi-core
 Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
-         python-apt (>= 0.7.0),
-	 python-debian
+         python-apt (>= 0.7.93.2),
+	 python-debian (>= 0.1.15)
 Replaces: gdebi (<< 0.2ubuntu3)
 Conflicts: gdebi (<< 0.2ubuntu3)
 XB-Python-Version: ${python:Versions}
