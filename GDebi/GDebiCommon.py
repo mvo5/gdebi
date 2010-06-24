@@ -62,7 +62,7 @@ class GDebiCommon(object):
 
     def openCache(self):
         self._cache = Cache(self.cprogress)
-        if self._cache._depcache.BrokenCount > 0:
+        if self._cache._depcache.broken_count > 0:
                 self.error_header = _("Broken dependencies")
                 self.error_body = _("Your system has broken dependencies. "
                              "This application can not continue until "
@@ -120,7 +120,7 @@ class GDebiCommon(object):
                             "the version from the software channel, since "
                             "it is usually better supported.")
 
-    def getChanges(self):
+    def get_changes(self):
         (self.install, self.remove, self.unauthenticated) = self._deb.requiredChanges
         self.deps = ""
         if len(self.remove) == len(self.install) == 0:
@@ -135,14 +135,14 @@ class GDebiCommon(object):
     def try_acquire_lock(self):
         " check if we can lock the apt database "
         try:
-            apt_pkg.PkgSystemLock()
+            apt_pkg.pkgsystem_lock()
         except SystemError:
             self.error_header = _("Only one software management tool is allowed to"
                        " run at the same time")
             self.error_body = _("Please close the other application e.g. 'Update "
                      "Manager', 'aptitude' or 'Synaptic' first.")
             return False
-        apt_pkg.PkgSystemUnLock()
+        apt_pkg.pkgsystem_unlock()
         return True
 
     def acquire_lock(self):
@@ -153,7 +153,7 @@ class GDebiCommon(object):
 
         # check if we can lock the apt database
         try:
-            apt_pkg.PkgSystemLock()
+            apt_pkg.pkgsystem_lock()
         except SystemError:
             self.error_header = _("Only one software management tool is allowed to"
                                   " run at the same time")
@@ -164,6 +164,6 @@ class GDebiCommon(object):
 
     def release_lock(self):
         " release the pkgsystem lock "
-        apt_pkg.PkgSystemLock()
+        apt_pkg.pkgsystem_lock()
         return True
     

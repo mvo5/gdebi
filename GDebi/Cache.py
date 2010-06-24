@@ -33,13 +33,13 @@ class Cache(apt.Cache):
         if progress:
             self.op_progress = progress
         else:
-            self.op_progress = apt.progress.OpProgress()
+            self.op_progress = apt.progress.base.OpProgress()
 
     def clear(self):
         """ unmark all pkgs """
-        self._depcache.Init()
+        self._depcache.init()
 
-    def isVirtualPkg(self, pkgname):
+    def is_virtual_pkg(self, pkgname):
         """ this function returns true if pkgname is a virtual
             pkg """
         try:
@@ -47,19 +47,19 @@ class Cache(apt.Cache):
         except KeyError:
             return False
 
-        if len(virtual_pkg.VersionList) == 0:
+        if len(virtual_pkg.version_list) == 0:
             return True
         return False
 
     def downloadable(self, pkg, useCandidate=True):
         " check if the given pkg can be downloaded "
         if useCandidate:
-            ver = self._depcache.GetCandidateVer(pkg._pkg)
+            ver = self._depcache.get_candidate_ver(pkg._pkg)
         else:
-            ver = pkg._pkg.CurrentVer
+            ver = pkg._pkg.current_ver
         if ver == None:
             return False
-        return ver.Downloadable
+        return ver.downloadable
 
     def getProvidersFor(self, pkgname):
         """
@@ -68,10 +68,10 @@ class Cache(apt.Cache):
         """
         providers = []
         for pkg in self:
-            v = self._depcache.GetCandidateVer(pkg._pkg)
+            v = self._depcache.get_candidate_ver(pkg._pkg)
             if v == None:
                 continue
-            for p in v.ProvidesList:
+            for p in v.provides_list:
                 #print virtual_pkg
                 #print p[0]
                 if pkgname == p[0]:
@@ -93,7 +93,7 @@ class Cache(apt.Cache):
         providers = []
         try:
             vp = self._cache[virtual_pkg]
-            if len(vp.VersionList) != 0:
+            if len(vp.version_list) != 0:
                 return providers
         except IndexError:
             return providers

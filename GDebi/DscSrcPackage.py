@@ -49,11 +49,11 @@ class DscSrcPackage(DebPackage):
             for tag in depends_tags:
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
-                    self.depends.extend(apt_pkg.ParseSrcDepends(key))
+                    self.depends.extend(apt_pkg.parse_src_depends(key))
             for tag in conflicts_tags:
                 if line.startswith(tag):
                     key = line[len(tag):].strip()
-                    self.conflicts.extend(apt_pkg.ParseSrcDepends(key))
+                    self.conflicts.extend(apt_pkg.parse_src_depends(key))
             # check binary and source and version
             if line.startswith("Source:"):
                 self.pkgName = line[len("Source:"):].strip()
@@ -72,9 +72,9 @@ class DscSrcPackage(DebPackage):
     def checkDeb(self):
         if not self.checkConflicts():
             for pkgname in self._installedConflicts:
-                if self._cache[pkgname]._pkg.Essential:
+                if self._cache[pkgname]._pkg.essential:
                     raise Exception, _("A essential package would be removed")
-                self._cache[pkgname].markDelete()
+                self._cache[pkgname].mark_delete()
         # FIXME: a additional run of the checkConflicts()
         #        after _satisfyDepends() should probably be done
         return self._satisfyDepends(self.depends)
@@ -89,5 +89,5 @@ if __name__ == "__main__":
 
     s = DscSrcPackage(cache)
     d = "libc6 (>= 2.3.2), libaio (>= 0.3.96) | libaio1 (>= 0.3.96)"
-    print s._satisfyDepends(apt_pkg.ParseDepends(d))
+    print s._satisfyDepends(apt_pkg.parse_depends(d))
     
