@@ -42,7 +42,8 @@ import re
 import pty
 import select
 
-from DebPackage import DebPackage, Cache
+from apt.cache import Cache
+from apt.debfile import DebPackage
 from apt.progress.base import InstallProgress
 from gettext import gettext as gett
 from GDebiCommon import utf8, _

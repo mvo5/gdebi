@@ -44,7 +44,8 @@ import time
 import thread
 import re
 
-from DebPackage import DebPackage, Cache
+from apt.cache import Cache
+from apt.debfile import DebPackage
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 # FIXME: when this moves to apt.progress.base for some reason the 
 #        install progress is no longer shown, debug why
@@ -177,10 +178,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # set window title
         self.window_main.set_title(_("Package Installer - %s") % 
-                                   self._deb.pkgName)
+                                   self._deb.pkgname)
 
         # set name and ungrey some widgets
-        self.label_name.set_markup(self._deb.pkgName)
+        self.label_name.set_markup(self._deb.pkgname)
         self.notebook_details.set_sensitive(True)
         self.hbox_main.set_sensitive(True)
 
@@ -250,11 +251,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.textview_file_content.modify_font(font_desc)
 
         # check the deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.label_status.set_markup(
                 "<span foreground=\"red\" weight=\"bold\">"+
                 _("Error: ") +
-                glib.markup_escape_text(self._deb._failureString) +
+                glib.markup_escape_text(self._deb._failure_string) +
                 "</span>")
 	    self.button_install.set_label(_("_Install Package"))
 
@@ -267,7 +268,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.compareDebWithCache()
         self.get_changes()
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
             self.button_install.grab_default()
@@ -506,7 +507,7 @@ Install software from trustworthy software distributors only.
     
         # install the package itself
         self.label_action.set_markup("<b><big>" +
-                                     _("Installing %s") % self._deb.pkgName+
+                                     _("Installing %s") % self._deb.pkgname+
                                      "</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,

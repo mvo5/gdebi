@@ -84,7 +84,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if options.apt_line == True:
-        (install, remove, unauthenticated) = debi._deb.requiredChanges
+        (install, remove, unauthenticated) = debi._deb.required_changes
         print " ".join(install)
         print " ".join([pkg+"-" for pkg in remove])
         sys.exit(0)

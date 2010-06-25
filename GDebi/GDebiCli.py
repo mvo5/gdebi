@@ -32,8 +32,8 @@ import thread
 
 from gettext import gettext as _
 
-from DebPackage import DebPackage, Cache
-from DscSrcPackage import DscSrcPackage
+from apt.cache import Cache
+from apt.debfile import DebPackage, DebSrcPackage
 
 from subprocess import PIPE, Popen, call
 
@@ -69,10 +69,10 @@ class GDebiCli(object):
         try:
             if (file.endswith(".deb") or 
                 "Debian binary package" in Popen(["file", file], stdout=PIPE).communicate()[0]):
-                self._deb = DebPackage(self._cache, file)
+                self._deb = DebPackage(file, self._cache)
             elif (file.endswith(".dsc") or
                   os.path.basename(file) == "control"):
-                self._deb = DscSrcPackage(self._cache, file)
+                self._deb = DscSrcPackage(file, self._cache)
             else:
                 sys.stderr.write(_("Unknown package type '%s', exiting\n") % file)
                 sys.exit(1)
@@ -83,9 +83,9 @@ class GDebiCli(object):
                            "of the file.\n"))
             sys.exit(1)
         # check the deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             sys.stderr.write(_("This package is uninstallable\n"))
-            sys.stderr.write(self._deb._failureString + "\n")
+            sys.stderr.write(self._deb._failure_string + "\n")
             return False
         return True
             
@@ -97,7 +97,7 @@ class GDebiCli(object):
 
     def show_dependencies(self):
         # show what changes
-        (install, remove, unauthenticated) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.required_changes
         if len(unauthenticated) > 0:
             print _("The following packages are UNAUTHENTICATED: ")
             for pkgname in unauthenticated:
@@ -115,7 +115,7 @@ class GDebiCli(object):
 
     def install(self):
         # install the dependecnies
-        (install,remove,unauthenticated) = self._deb.requiredChanges
+        (install,remove,unauthenticated) = self._deb.required_changes
         if len(install) > 0 or len(remove) > 0:
             fprogress = apt.progress.text.AcquireProgress()
             iprogress = apt.progress.base.InstallProgress()
@@ -130,7 +130,7 @@ class GDebiCli(object):
             # FIXME: add option to only install build-dependencies
             #        (or build+install the deb) and then enable
             #        this code
-            #dir = self._deb.pkgName + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
+            #dir = self._deb.pkgname + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
             #os.system("dpkg-source -x %s" % self._deb.file)
             #os.system("cd %s && dpkg-buildpackage -b -uc" % dir)
             #for i in self._deb.binaries:

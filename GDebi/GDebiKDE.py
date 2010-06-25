@@ -37,7 +37,9 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4 import uic
 
-from DebPackage import DebPackage, Cache
+from apt.cache import Cache
+from apt.debfile import DebPackage, DebSrcPackage
+
 import gettext
 from GDebiCommon import GDebiCommon, utf8, _
 from KDEAptDialogs import *
@@ -176,8 +178,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             return False
 
         # set name
-        self.setWindowTitle(_("Package Installer - %s") % self._deb.pkgName)
-        self.textLabel1_3.setText(self._deb.pkgName)
+        self.setWindowTitle(_("Package Installer - %s") % self._deb.pkgname)
+        self.textLabel1_3.setText(self._deb.pkgname)
 
         # set description
         buf = self.DecriptionEdit
@@ -215,16 +217,16 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             buf.setText(_("No description is available"))
 
         # check deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.installButton.setEnabled(False)
-            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failureString + "</font>")
+            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failure_string + "</font>")
             self.detailsButton.hide()
             return False
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
             self.installButton.setIcon(KIcon("view-refresh"))
@@ -257,10 +259,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         buf = self.IncFilesEdit
         buf.setText("\n".join(self._deb.filelist))
 
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.installButton.setText(_("&Install Package"))
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.installButton.setText(_("Re&install Package"))
 
     def cancelButtonClicked(self):
@@ -268,7 +270,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
     def detailsButtonClicked(self):
         changedList = QStringList()
-        (install, remove, unauthenticated) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.required_changes
         for i in install:
             changedList.append(_("To be installed: %s") % i)
         for r in remove:
@@ -349,7 +351,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         #self.button_deb_install_close.grab_default()
         self.installDialog.setWindowTitle(_("Installation finished"))
         if dprogress.exitstatus == 0:
-            self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgName)
+            self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgname)
         else:
             self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
             self.installDialog.konsoleFrame.show()

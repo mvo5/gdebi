@@ -32,7 +32,8 @@ from mimetypes import guess_type
 import apt
 import apt_pkg
 
-from DebPackage import DebPackage, Cache
+from apt.cache import Cache
+from apt.debfile import DebPackage
 import gettext
 
 def _(str):
@@ -76,7 +77,7 @@ class GDebiCommon(object):
     def open(self, file):
         # open the package
         try:
-            self._deb = DebPackage(self._cache, file)
+            self._deb = DebPackage(file, self._cache)
         except (IOError,SystemError),e:
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
@@ -94,26 +95,26 @@ class GDebiCommon(object):
 
     def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
-        res = self._deb.compareToVersionInCache(useInstalled=False)
-        if not self._options.non_interactive and res != DebPackage.NO_VERSION:
-            pkg = self._cache[self._deb.pkgName]
+        res = self._deb.compare_to_version_in_cache(use_installed=False)
+        if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
+            pkg = self._cache[self._deb.pkgname]
             
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repository directly
             # (when possible)
             if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,useCandidate=True):
+                if self._cache.downloadable(pkg,use_candidate=True):
                     self.version_info_title = _("Same version is available in a software channel")
                     self.version_info_msg = _("You are recommended to install the software "
                             "from the channel instead.")
-            elif res == DebPackage.VERSION_IS_NEWER:
-                if self._cache.downloadable(pkg,useCandidate=True):
+            elif res == DebPackage.VERSION_NEWER:
+                if self._cache.downloadable(pkg,use_candidate=True):
                     self.version_info_title = _("An older version is available in a software channel")
                     self.version_info_msg = _("Generally you are recommended to install "
                             "the version from the software channel, since "
                             "it is usually better supported.")
             elif res == DebPackage.VERSION_OUTDATED:
-                if self._cache.downloadable(pkg,useCandidate=True):
+                if self._cache.downloadable(pkg,use_candidate=True):
                     self.version_info_title = _("A later version is available in a software "
                               "channel")
                     self.version_info_msg = _("You are strongly advised to install "
@@ -121,7 +122,7 @@ class GDebiCommon(object):
                             "it is usually better supported.")
 
     def get_changes(self):
-        (self.install, self.remove, self.unauthenticated) = self._deb.requiredChanges
+        (self.install, self.remove, self.unauthenticated) = self._deb.required_changes
         self.deps = ""
         if len(self.remove) == len(self.install) == 0:
             self.deps = _("All dependencies are satisfied")
