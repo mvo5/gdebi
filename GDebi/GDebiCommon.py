@@ -103,18 +103,18 @@ class GDebiCommon(object):
             # providing a option to install from repository directly
             # (when possible)
             if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,use_candidate=True):
+                if pkg.candidate.downloadable:
                     self.version_info_title = _("Same version is available in a software channel")
                     self.version_info_msg = _("You are recommended to install the software "
                             "from the channel instead.")
             elif res == DebPackage.VERSION_NEWER:
-                if self._cache.downloadable(pkg,use_candidate=True):
+                if pkg.candidate.downloadable:
                     self.version_info_title = _("An older version is available in a software channel")
                     self.version_info_msg = _("Generally you are recommended to install "
                             "the version from the software channel, since "
                             "it is usually better supported.")
             elif res == DebPackage.VERSION_OUTDATED:
-                if self._cache.downloadable(pkg,use_candidate=True):
+                if pkg.candidate.downloadable:
                     self.version_info_title = _("A later version is available in a software "
                               "channel")
                     self.version_info_msg = _("You are strongly advised to install "
