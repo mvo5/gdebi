@@ -33,7 +33,7 @@ import thread
 from gettext import gettext as _
 
 from apt.cache import Cache
-from apt.debfile import DebPackage, DebSrcPackage
+from apt.debfile import DebPackage, DscSrcPackage
 
 from subprocess import PIPE, Popen, call
 

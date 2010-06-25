@@ -38,7 +38,7 @@ from PyQt4.QtGui import *
 from PyQt4 import uic
 
 from apt.cache import Cache
-from apt.debfile import DebPackage, DebSrcPackage
+from apt.debfile import DebPackage, DscSrcPackage
 
 import gettext
 from GDebiCommon import GDebiCommon, utf8, _
