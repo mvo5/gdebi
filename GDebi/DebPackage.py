@@ -20,23 +20,15 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-import apt_inst
-import apt_pkg
 import apt
 import apt.debfile
-import sys
-import os
-from re import sub
 from gettext import gettext as _
-from Cache import Cache
 
-
-import gzip
-from StringIO import StringIO
+from apt.debfile import DscSrcPackage
 
 class DebPackage(apt.debfile.DebPackage):
 
-    def __init__(self, cache, filename):
+    def __init__(self, filename, cache):
         super(DebPackage, self).__init__(cache=cache, filename=filename)	
 
     def __getitem__(self,item):

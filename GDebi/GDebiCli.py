@@ -32,8 +32,8 @@ import thread
 
 from gettext import gettext as _
 
-from DebPackage import DebPackage, Cache
-from DscSrcPackage import DscSrcPackage
+from apt.cache import Cache
+from DebPackage import DebPackage, DscSrcPackage
 
 from subprocess import PIPE, Popen, call
 
@@ -69,10 +69,10 @@ class GDebiCli(object):
         try:
             if (file.endswith(".deb") or 
                 "Debian binary package" in Popen(["file", file], stdout=PIPE).communicate()[0]):
-                self._deb = DebPackage(self._cache, file)
+                self._deb = DebPackage(file, self._cache)
             elif (file.endswith(".dsc") or
                   os.path.basename(file) == "control"):
-                self._deb = DscSrcPackage(self._cache, file)
+                self._deb = DscSrcPackage(file, self._cache)
             else:
                 sys.stderr.write(_("Unknown package type '%s', exiting\n") % file)
                 sys.exit(1)
@@ -130,7 +130,7 @@ class GDebiCli(object):
             # FIXME: add option to only install build-dependencies
             #        (or build+install the deb) and then enable
             #        this code
-            #dir = self._deb.pkg_name + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
+            #dir = self._deb.pkgname + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
             #os.system("dpkg-source -x %s" % self._deb.filename)
             #os.system("cd %s && dpkg-buildpackage -b -uc" % dir)
             #for i in self._deb.binaries:

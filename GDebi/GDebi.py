@@ -36,18 +36,16 @@ import glib
 import gobject
 import gtk
 import pango
-import vte
 import urllib
 import fcntl
 import posix
 import time
 import thread
+import vte
 import re
 
-from DebPackage import DebPackage, Cache
+from DebPackage import DebPackage
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
-# FIXME: when this moves to apt.progress.base for some reason the 
-#        install progress is no longer shown, debug why
 from apt.progress.base import InstallProgress
 from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
@@ -267,7 +265,6 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.compareDebWithCache()
         self.get_changes()
 
-        print self._deb.compare_to_version_in_cache()
         if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))

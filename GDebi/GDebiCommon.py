@@ -32,7 +32,8 @@ from mimetypes import guess_type
 import apt
 import apt_pkg
 
-from DebPackage import DebPackage, Cache
+from apt.cache import Cache
+from DebPackage import DebPackage
 import gettext
 
 def _(str):
@@ -76,7 +77,7 @@ class GDebiCommon(object):
     def open(self, file):
         # open the package
         try:
-            self._deb = DebPackage(self._cache, file)
+            self._deb = DebPackage(file, self._cache)
         except (IOError,SystemError),e:
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
@@ -102,18 +103,18 @@ class GDebiCommon(object):
             # providing a option to install from repository directly
             # (when possible)
             if res == DebPackage.VERSION_SAME:
-                if self._cache.downloadable(pkg,useCandidate=True):
+                if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("Same version is available in a software channel")
                     self.version_info_msg = _("You are recommended to install the software "
                             "from the channel instead.")
             elif res == DebPackage.VERSION_NEWER:
-                if self._cache.downloadable(pkg,useCandidate=True):
+                if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("An older version is available in a software channel")
                     self.version_info_msg = _("Generally you are recommended to install "
                             "the version from the software channel, since "
                             "it is usually better supported.")
             elif res == DebPackage.VERSION_OUTDATED:
-                if self._cache.downloadable(pkg,useCandidate=True):
+                if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("A later version is available in a software "
                               "channel")
                     self.version_info_msg = _("You are strongly advised to install "
