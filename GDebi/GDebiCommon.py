@@ -96,7 +96,7 @@ class GDebiCommon(object):
         # check if the package is available in the normal sources as well
         res = self._deb.compare_to_version_in_cache(use_installed=False)
         if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
-            pkg = self._cache[self._deb.pkgName]
+            pkg = self._cache[self._deb.pkgname]
             
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repository directly

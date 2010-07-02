@@ -374,7 +374,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.window_main.set_sensitive(False)
         self.openCache()
         if self._deb:
-            self.open(self._deb.file)
+            self.open(self._deb.filename)
         self.window_main.set_sensitive(True)
 
     def on_about_activate(self, widget):
@@ -443,7 +443,7 @@ Install software from trustworthy software distributors only.
                          "--message",
                          "<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy)]
             gdebi_args = ["--", "gdebi-gtk", "--non-interactive",
-                          self._deb.file]
+                          self._deb.filename]
             # check if we run on ubuntu and always ask for the password
             # there - we would like to do that on debian too, but this
             # gksu patch is only available on ubuntu currently unfortunately
@@ -508,7 +508,7 @@ Install software from trustworthy software distributors only.
         self.label_action.set_markup("<b><big>" +
                                      _("Installing %s") % self._deb.pkgname+
                                      "</big></b>")
-        dprogress = self.DpkgInstallProgress(self._deb.file,
+        dprogress = self.DpkgInstallProgress(self._deb.filename,
                                              self.label_install_status,
                                              self.progressbar_install,
                                              self.vte_terminal,
@@ -524,9 +524,9 @@ Install software from trustworthy software distributors only.
             self.on_button_deb_install_close_clicked(None)
         self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
         if dprogress.exitstatus == 0:
-            self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.file)+"</i>")
+            self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.filename)+"</i>")
         else:
-            self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
+            self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.filename)+"</b>")
             self.expander_install.set_expanded(True)
         self.statusbar_main.push(self.context,_("Installation complete"))
         # FIXME: Doesn't stop notifying
@@ -539,7 +539,7 @@ Install software from trustworthy software distributors only.
             err_body = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")
             self.show_alert(gtk.MESSAGE_ERROR, err_header, err_body)
-        self.open(self._deb.file)
+        self.open(self._deb.filename)
         
     def on_button_deb_install_close_clicked(self, widget):
         # FIXME: doesn't turn it off
