@@ -130,7 +130,7 @@ class GDebiCli(object):
             # FIXME: add option to only install build-dependencies
             #        (or build+install the deb) and then enable
             #        this code
-            #dir = self._deb.pkgName + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
+            #dir = self._deb.pkg_name + "-" + apt_pkg.UpstreamVersion(self._deb["Version"])
             #os.system("dpkg-source -x %s" % self._deb.file)
             #os.system("cd %s && dpkg-buildpackage -b -uc" % dir)
             #for i in self._deb.binaries:

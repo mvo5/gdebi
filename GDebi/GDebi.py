@@ -48,7 +48,7 @@ from DebPackage import DebPackage, Cache
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 # FIXME: when this moves to apt.progress.base for some reason the 
 #        install progress is no longer shown, debug why
-from apt.progress import InstallProgress
+from apt.progress.base import InstallProgress
 from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
 
@@ -177,10 +177,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # set window title
         self.window_main.set_title(_("Package Installer - %s") % 
-                                   self._deb.pkgName)
+                                   self._deb.pkgname)
 
         # set name and ungrey some widgets
-        self.label_name.set_markup(self._deb.pkgName)
+        self.label_name.set_markup(self._deb.pkgname)
         self.notebook_details.set_sensitive(True)
         self.hbox_main.set_sensitive(True)
 
@@ -267,7 +267,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.compareDebWithCache()
         self.get_changes()
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
             self.button_install.grab_default()
@@ -506,7 +506,7 @@ Install software from trustworthy software distributors only.
     
         # install the package itself
         self.label_action.set_markup("<b><big>" +
-                                     _("Installing %s") % self._deb.pkgName+
+                                     _("Installing %s") % self._deb.pkgname+
                                      "</big></b>")
         dprogress = self.DpkgInstallProgress(self._deb.file,
                                              self.label_install_status,
@@ -733,26 +733,27 @@ Install software from trustworthy software distributors only.
                 self.updateInterface()
             return self.apt_status
         
-    class FetchProgressAdapter(apt.progress.FetchProgress):
+    class FetchProgressAdapter(apt.progress.base.AcquireProgress):
         def __init__(self,progress,action,main):
-            #print "FetchProgressAdapter.__init__()"
+            super(FetchProgressAdapter, self).__init__()
             self.progress = progress
             self.action = action
             self.main = main
         def start(self):
-            #print "start()"
+            super(FetchProgressAdapter, self).start()
             self.action.set_markup("<i>"+_("Downloading additional package files...")+"</i>")
             self.progress.set_fraction(0)
         def stop(self):
             #print "stop()"
             pass
-        def pulse(self):
-            at_item = min(self.currentItems + 1, self.totalItems)
-            if self.currentCPS > 0:
-                self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.totalItems,apt_pkg.size_to_str(self.currentCPS)))
+        def pulse(self, owner):
+            super(FetchProgressAdapter, self).pulse(owner)
+            at_item = min(self.current_items + 1, self.total_items)
+            if self.current_cps > 0:
+                self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.total_items,apt_pkg.size_to_str(self.current_cps)))
             else:
-                self.progress.set_text(_("File %s of %s") % (at_item,self.totalItems))
-            self.progress.set_fraction(self.currentBytes/self.totalBytes)
+                self.progress.set_text(_("File %s of %s") % (at_item,self.total_items))
+            self.progress.set_fraction(self.current_bytes/self.total_bytes)
             while gtk.events_pending():
                 gtk.main_iteration()
             return True
@@ -771,12 +772,13 @@ Install software from trustworthy software distributors only.
                 return True
             return False
 
-    class CacheProgressAdapter(apt.progress.FetchProgress):
+    class CacheProgressAdapter(apt.progress.base.OpProgress):
         def __init__(self, progressbar):
             self.progressbar = progressbar
-        def update(self, percent):
+        def update(self, percent=None):
             self.progressbar.show()
-            self.progressbar.set_fraction(percent/100.0)
+            if percent:
+                self.progressbar.set_fraction(percent/100.0)
             #self.progressbar.set_text(self.op)
             while gtk.events_pending():
                 gtk.main_iteration()

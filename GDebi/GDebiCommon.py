@@ -94,8 +94,8 @@ class GDebiCommon(object):
 
     def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
-        res = self._deb.compareToVersionInCache(useInstalled=False)
-        if not self._options.non_interactive and res != DebPackage.NO_VERSION:
+        res = self._deb.compare_to_version_in_cache(use_installed=False)
+        if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
             pkg = self._cache[self._deb.pkgName]
             
             # FIXME: make this strs better, improve the dialog by
@@ -106,7 +106,7 @@ class GDebiCommon(object):
                     self.version_info_title = _("Same version is available in a software channel")
                     self.version_info_msg = _("You are recommended to install the software "
                             "from the channel instead.")
-            elif res == DebPackage.VERSION_IS_NEWER:
+            elif res == DebPackage.VERSION_NEWER:
                 if self._cache.downloadable(pkg,useCandidate=True):
                     self.version_info_title = _("An older version is available in a software channel")
                     self.version_info_msg = _("Generally you are recommended to install "

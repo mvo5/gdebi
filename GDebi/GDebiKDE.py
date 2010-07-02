@@ -176,8 +176,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             return False
 
         # set name
-        self.setWindowTitle(_("Package Installer - %s") % self._deb.pkgName)
-        self.textLabel1_3.setText(self._deb.pkgName)
+        self.setWindowTitle(_("Package Installer - %s") % self._deb.pkgname)
+        self.textLabel1_3.setText(self._deb.pkgname)
 
         # set description
         buf = self.DecriptionEdit
@@ -349,7 +349,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         #self.button_deb_install_close.grab_default()
         self.installDialog.setWindowTitle(_("Installation finished"))
         if dprogress.exitstatus == 0:
-            self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgName)
+            self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgname)
         else:
             self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
             self.installDialog.konsoleFrame.show()
