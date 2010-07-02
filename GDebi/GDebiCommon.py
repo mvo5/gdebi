@@ -121,7 +121,7 @@ class GDebiCommon(object):
                             "it is usually better supported.")
 
     def get_changes(self):
-        (self.install, self.remove, self.unauthenticated) = self._deb.requiredChanges
+        (self.install, self.remove, self.unauthenticated) = self._deb.required_changes
         self.deps = ""
         if len(self.remove) == len(self.install) == 0:
             self.deps = _("All dependencies are satisfied")

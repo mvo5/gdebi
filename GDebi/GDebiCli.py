@@ -83,9 +83,9 @@ class GDebiCli(object):
                            "of the file.\n"))
             sys.exit(1)
         # check the deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             sys.stderr.write(_("This package is uninstallable\n"))
-            sys.stderr.write(self._deb._failureString + "\n")
+            sys.stderr.write(self._deb._failure_string + "\n")
             return False
         return True
             
@@ -97,7 +97,7 @@ class GDebiCli(object):
 
     def show_dependencies(self):
         # show what changes
-        (install, remove, unauthenticated) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.required_changes
         if len(unauthenticated) > 0:
             print _("The following packages are UNAUTHENTICATED: ")
             for pkgname in unauthenticated:
@@ -115,7 +115,7 @@ class GDebiCli(object):
 
     def install(self):
         # install the dependecnies
-        (install,remove,unauthenticated) = self._deb.requiredChanges
+        (install,remove,unauthenticated) = self._deb.required_changes
         if len(install) > 0 or len(remove) > 0:
             fprogress = apt.progress.text.AcquireProgress()
             iprogress = apt.progress.base.InstallProgress()

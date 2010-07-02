@@ -215,9 +215,9 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             buf.setText(_("No description is available"))
 
         # check deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.installButton.setEnabled(False)
-            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failureString + "</font>")
+            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failure_string + "</font>")
             self.detailsButton.hide()
             return False
 
@@ -268,7 +268,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
     def detailsButtonClicked(self):
         changedList = QStringList()
-        (install, remove, unauthenticated) = self._deb.requiredChanges
+        (install, remove, unauthenticated) = self._deb.required_changes
         for i in install:
             changedList.append(_("To be installed: %s") % i)
         for r in remove:

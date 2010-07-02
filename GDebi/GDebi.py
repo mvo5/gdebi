@@ -250,11 +250,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.textview_file_content.modify_font(font_desc)
 
         # check the deps
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.label_status.set_markup(
                 "<span foreground=\"red\" weight=\"bold\">"+
                 _("Error: ") +
-                glib.markup_escape_text(self._deb._failureString) +
+                glib.markup_escape_text(self._deb._failure_string) +
                 "</span>")
 	    self.button_install.set_label(_("_Install Package"))
 
