@@ -191,13 +191,15 @@ class KDEInstallProgressAdapter(InstallProgress):
                 break
         return os.WEXITSTATUS(res)
 
-class KDEFetchProgressAdapter(apt.progress.FetchProgress):
+class KDEFetchProgressAdapter(apt.progress.base.AcquireProgress):
     def __init__(self,progress,label,parent):
+        super(KDEFetchProgressAdapter, self).__init__()
         self.progress = progress
         self.label = label
         self.parent = parent
 
     def start(self):
+        super(KDEFetchProgressAdapter, self).start()
         self.label.setText(_("Downloading additional package files..."))
         self.progress.setValue(0)
 
@@ -205,7 +207,7 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
         pass
 
     def pulse(self):
-        apt.progress.FetchProgress.pulse(self)
+        super(KDEFetchProgressAdapter, self).pulse()
         self.progress.setValue(self.percent)
         currentItem = self.currentItems + 1
         if currentItem > self.totalItems:
@@ -225,13 +227,14 @@ class KDEFetchProgressAdapter(apt.progress.FetchProgress):
             return True
         return False
 
-class CacheProgressAdapter(apt.progress.FetchProgress):
+class CacheProgressAdapter(apt.progress.base.OpProgress):
     def __init__(self, progressbar):
         self.progressbar = progressbar
 
-    def update(self, percent):
+    def update(self, percent=None):
         self.progressbar.show()
-        self.progressbar.setValue(percent)
+        if percent:
+            self.progressbar.setValue(percent)
         KApplication.kApplication().processEvents()
 
     def done(self):

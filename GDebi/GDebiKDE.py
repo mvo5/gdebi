@@ -224,7 +224,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
             self.installButton.setIcon(KIcon("view-refresh"))
@@ -257,10 +257,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         buf = self.IncFilesEdit
         buf.setText("\n".join(self._deb.filelist))
 
-        if not self._deb.checkDeb():
+        if not self._deb.check():
             self.installButton.setText(_("&Install Package"))
 
-        if self._deb.compareToVersionInCache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.installButton.setText(_("Re&install Package"))
 
     def cancelButtonClicked(self):
@@ -286,7 +286,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             else:
                 executable = "/usr/bin/gdebi-kde"
             print "executable " + executable
-            os.execl("/usr/bin/kdesu", "kdesu", executable + " -n ", self._deb.file)
+            os.execl("/usr/bin/kdesu", "kdesu", executable + " -n ", self._deb.filename)
             self.kapp.exit()
 
         if not self.try_acquire_lock():
@@ -338,7 +338,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         # install the package itself
         #self.label_action.set_markup("<b><big>"+_("Installing package file")+"</big></b>")
-        dprogress = KDEDpkgInstallProgress(self._deb.file,
+        dprogress = KDEDpkgInstallProgress(self._deb.filename,
                                              self.installDialog.installingLabel,
                                              self.installDialog.installationProgress,
                                              self.installDialog.konsole, self.installDialog)
@@ -351,7 +351,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if dprogress.exitstatus == 0:
             self.installDialog.installingLabel.setText(_("<b>" + "Package '%s' was installed" + "</b>") % self._deb.pkgname)
         else:
-            self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.file)+"</b>")
+            self.installDialog.installingLabel.setText("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.filename)+"</b>")
             self.installDialog.konsoleFrame.show()
         #self.statusbar_main.push(self.context,_("Installation complete"))
         # FIXME: Doesn't stop notifying

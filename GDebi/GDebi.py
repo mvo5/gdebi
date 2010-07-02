@@ -267,6 +267,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.compareDebWithCache()
         self.get_changes()
 
+        print self._deb.compare_to_version_in_cache()
         if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
