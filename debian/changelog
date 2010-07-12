@@ -1,10 +1,15 @@
 gdebi (0.6.2) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
   * use DebPackage from python-apt and depend on python-apt >= 0.7.96
   * merged lp:~kiwinote/gdebi/use-python-apt (with some minor
     modifcations)
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 02 Jul 2010 15:04:30 +0200
+  [ Luca Falavigna ]
+  * GDebi/GDebiKDE.py:
+    - Use kdesudo instead of kdesu in Ubuntu (LP: #600644).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 12 Jul 2010 14:07:09 +0200
 
 gdebi (0.6.1) unstable; urgency=low
 
