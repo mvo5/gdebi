@@ -1,4 +1,4 @@
-gdebi (0.6.2) UNRELEASED; urgency=low
+gdebi (0.6.2) unstable; urgency=low
 
   [ Michael Vogt ]
   * use DebPackage from python-apt and depend on python-apt >= 0.7.96
@@ -9,7 +9,7 @@ gdebi (0.6.2) UNRELEASED; urgency=low
   * GDebi/GDebiKDE.py:
     - Use kdesudo instead of kdesu in Ubuntu (LP: #600644).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Mon, 12 Jul 2010 14:07:09 +0200
+ -- Michael Vogt <mvo@debian.org>  Wed, 28 Jul 2010 11:26:02 +0200
 
 gdebi (0.6.1) unstable; urgency=low
 
