@@ -9,6 +9,11 @@ gdebi (0.6.2) UNRELEASED; urgency=low
   * GDebi/GDebiKDE.py:
     - Use kdesudo instead of kdesu in Ubuntu (LP: #600644).
 
+  [ Andrew Higginson ]
+  * GDebi/GDebi.py:
+    - Read whether we autoclose from synaptic config
+      file and write to it as well (LP: #376966)
+
  -- Luca Falavigna <dktrkranz@debian.org>  Mon, 12 Jul 2010 14:07:09 +0200
 
 gdebi (0.6.1) unstable; urgency=low
