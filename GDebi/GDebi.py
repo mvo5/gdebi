@@ -44,6 +44,7 @@ import thread
 import vte
 import re
 
+from apt.debfile import VERSION_NONE,VERSION_OUTDATED,VERSION_SAME,VERSION_NEWER
 from DebPackage import DebPackage
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 from apt.progress.base import InstallProgress
@@ -265,7 +266,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.compareDebWithCache()
         self.get_changes()
 
-        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
             self.button_install.set_label(_("_Reinstall Package"))
             self.button_install.grab_default()

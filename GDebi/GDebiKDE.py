@@ -38,6 +38,7 @@ from PyQt4.QtGui import *
 from PyQt4 import uic
 
 from apt.cache import Cache
+from apt.debfile import VERSION_NONE,VERSION_OUTDATED,VERSION_SAME,VERSION_NEWER
 from DebPackage import DebPackage
 
 import gettext
@@ -226,7 +227,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
 
-        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
             self.installButton.setText(_("&Reinstall Package"))
             self.installButton.setIcon(KIcon("view-refresh"))
@@ -262,7 +263,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if not self._deb.check():
             self.installButton.setText(_("&Install Package"))
 
-        if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
+        if self._deb.compare_to_version_in_cache() == VERSION_SAME:
             self.installButton.setText(_("Re&install Package"))
 
     def cancelButtonClicked(self):

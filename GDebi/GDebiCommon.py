@@ -33,6 +33,7 @@ import apt
 import apt_pkg
 
 from apt.cache import Cache
+from apt.debfile import VERSION_NONE,VERSION_OUTDATED,VERSION_SAME,VERSION_NEWER
 from DebPackage import DebPackage
 import gettext
 
@@ -96,24 +97,24 @@ class GDebiCommon(object):
     def compareDebWithCache(self):
         # check if the package is available in the normal sources as well
         res = self._deb.compare_to_version_in_cache(use_installed=False)
-        if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
+        if not self._options.non_interactive and res != VERSION_NONE:
             pkg = self._cache[self._deb.pkgname]
             
             # FIXME: make this strs better, improve the dialog by
             # providing a option to install from repository directly
             # (when possible)
-            if res == DebPackage.VERSION_SAME:
+            if res == VERSION_SAME:
                 if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("Same version is available in a software channel")
                     self.version_info_msg = _("You are recommended to install the software "
                             "from the channel instead.")
-            elif res == DebPackage.VERSION_NEWER:
+            elif res == VERSION_NEWER:
                 if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("An older version is available in a software channel")
                     self.version_info_msg = _("Generally you are recommended to install "
                             "the version from the software channel, since "
                             "it is usually better supported.")
-            elif res == DebPackage.VERSION_OUTDATED:
+            elif res == VERSION_OUTDATED:
                 if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("A later version is available in a software "
                               "channel")
