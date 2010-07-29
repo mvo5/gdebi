@@ -460,6 +460,17 @@ Install software from trustworthy software distributors only.
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
         #self.vte_terminal.feed(str(0x1b)+"[2J")
+        
+        # Get whether we auto close from synaptic's config file and
+        # update the toggle button as neccessary
+        config = apt_pkg.Configuration()
+        if os.path.isfile(os.path.expanduser("~/.synaptic/synaptic.conf")):
+            apt_pkg.read_config_file(config, os.path.expanduser("~/.synaptic/synaptic.conf"))
+        else:
+            config["Synaptic::closeZvt"] = "false"
+        self.synaptic_config = config.subtree("Synaptic")
+        self.checkbutton_autoclose.set_active(self.synaptic_config.find_b("closeZvt"))
+        
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
@@ -540,6 +551,10 @@ Install software from trustworthy software distributors only.
         self.open(self._deb.filename)
         
     def on_button_deb_install_close_clicked(self, widget):
+        # Set the autoclose option when we close
+        autoclose = self.checkbutton_autoclose.get_active()
+        self.synaptic_config["closeZvt"] = str(autoclose).lower()
+        self.write_synaptic_config_file(self.synaptic_config, os.path.expanduser("~/.synaptic/synaptic.conf"))
         # FIXME: doesn't turn it off
         #self.window_main.set_property("urgency-hint", 0)
         self.dialog_deb_install.hide()
@@ -586,6 +601,15 @@ Install software from trustworthy software distributors only.
         if res == gtk.RESPONSE_CLOSE:
             return True
         return False
+        
+    def write_synaptic_config_file(self, config, path):
+        config_file = open(path, "w")
+        config_file.write("Synaptic \"\" {\n")
+        for key in config.keys():
+            value = config[key]
+            config_file.write("  %s \"%s\";\n" % (key, value))
+        config_file.write("};\n")
+        config_file.close()
         
     # embedded classes
     class DpkgInstallProgress(object):
