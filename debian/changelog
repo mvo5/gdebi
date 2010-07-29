@@ -1,5 +1,12 @@
 gdebi (0.6.3) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
+  * debian/control:
+    - depend on the latest python-apt to get the "dump()"
+      method
+  * GDebi/GDebi.py:
+    - synaptics config is always stored under /root
+  
   [ Andrew Higginson ]
   * GDebi/GDebi.py:
     - Read whether we autoclose from synaptic config
