@@ -12,6 +12,10 @@ gdebi (0.6.3) UNRELEASED; urgency=low
     - Read whether we autoclose from synaptic config
       file and write to it as well (LP: #376966)
 
+  [ Michal Simunek ]
+  * po/cs.po:
+    - Update Czech translation (Closes: #590848).
+
  -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Jul 2010 09:43:33 +0200
 
 gdebi (0.6.2) unstable; urgency=low
