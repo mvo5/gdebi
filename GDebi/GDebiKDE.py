@@ -288,16 +288,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             else:
                 executable = "/usr/bin/gdebi-kde"
             print "executable " + executable
-            SU_PATH = '/usr/bin/kdesu'
-            SU_EXEC = 'kdesu'
-            try:
-                import lsb_release
-                if lsb_release.get_distro_information()['ID'] == 'Ubuntu':
-                    SU_PATH = '/usr/bin/kdesudo'
-                    SU_EXEC = 'kdesudo'
-            except Exception, e:
-                pass
-            os.execl(SU_PATH, SU_EXEC, executable + " -n ", self._deb.filename)
+            os.execl("/usr/bin/kdesudo", "kdesudo", executable + " -n ", self._deb.filename)
             self.kapp.exit()
 
         if not self.try_acquire_lock():

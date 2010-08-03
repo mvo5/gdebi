@@ -16,7 +16,12 @@ gdebi (0.6.3) UNRELEASED; urgency=low
   * po/cs.po:
     - Update Czech translation (Closes: #590848).
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 29 Jul 2010 09:43:33 +0200
+  [ Luca Falavigna ]
+  * GDebi/GDebiKDE.py:
+    - Switch back to kdesudo, kdesu isn't available anymore both in
+      Debian and Ubuntu (Closes: #591306).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Tue, 03 Aug 2010 23:58:02 +0200
 
 gdebi (0.6.2) unstable; urgency=low
 
