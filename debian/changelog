@@ -20,8 +20,12 @@ gdebi (0.6.3) UNRELEASED; urgency=low
   * GDebi/GDebiKDE.py:
     - Switch back to kdesudo, kdesu isn't available anymore both in
       Debian and Ubuntu (Closes: #591306).
+  * GDebi/GDebi.py:
+    - Adjust FetchProgressAdapter namespace, fix NameError exception
+      trying to install packages which requires more dependencies
+      (LP: #614690).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Tue, 03 Aug 2010 23:58:02 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 16 Aug 2010 22:04:05 +0200
 
 gdebi (0.6.2) unstable; urgency=low
 

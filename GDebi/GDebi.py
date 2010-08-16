@@ -754,19 +754,19 @@ Install software from trustworthy software distributors only.
         
     class FetchProgressAdapter(apt.progress.base.AcquireProgress):
         def __init__(self,progress,action,main):
-            super(FetchProgressAdapter, self).__init__()
+            super(GDebi.FetchProgressAdapter, self).__init__()
             self.progress = progress
             self.action = action
             self.main = main
         def start(self):
-            super(FetchProgressAdapter, self).start()
+            super(GDebi.FetchProgressAdapter, self).start()
             self.action.set_markup("<i>"+_("Downloading additional package files...")+"</i>")
             self.progress.set_fraction(0)
         def stop(self):
             #print "stop()"
             pass
         def pulse(self, owner):
-            super(FetchProgressAdapter, self).pulse(owner)
+            super(GDebi.FetchProgressAdapter, self).pulse(owner)
             at_item = min(self.current_items + 1, self.total_items)
             if self.current_cps > 0:
                 self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.total_items,apt_pkg.size_to_str(self.current_cps)))
