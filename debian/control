@@ -1,7 +1,8 @@
 Source: gdebi
 Section: admin
 Priority: optional
-Maintainer: Gustavo Franco <stratus@debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Luca Falavigna <dktrkranz@debian.org>,
            Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 5.0.38),
