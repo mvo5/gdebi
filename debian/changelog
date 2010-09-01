@@ -4,7 +4,11 @@ gdebi (0.6.4) UNRELEASED; urgency=low
   * po/fr.po:
     - Update French translation (Closes: #594910).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Wed, 01 Sep 2010 10:59:24 +0200
+  [ Yaron Shahrabani ]
+  * po/he.po:
+    - Update Hebrew translation (LP: #626360).
+
+ -- Luca Falavigna <dktrkranz@valar>  Wed, 01 Sep 2010 11:11:15 +0200
 
 gdebi (0.6.3) unstable; urgency=low
 
