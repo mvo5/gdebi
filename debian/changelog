@@ -1,3 +1,11 @@
+gdebi (0.6.4) UNRELEASED; urgency=low
+
+  [ David Prévot ]
+  * po/fr.po:
+    - Update French translation (Closes: #594910).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 01 Sep 2010 10:59:24 +0200
+
 gdebi (0.6.3) unstable; urgency=low
 
   [ Michael Vogt ]
