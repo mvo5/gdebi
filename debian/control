@@ -1,7 +1,7 @@
 Source: gdebi
 Section: admin
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: Ubuntu Developers <ubuntu-dev-team@lists.alioth.debian.org>
 XSBC-Original-Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders: Luca Falavigna <dktrkranz@debian.org>,
            Michael Vogt <mvo@debian.org>
