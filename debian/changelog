@@ -16,6 +16,7 @@ gdebi (0.6.4) UNRELEASED; urgency=low
   * GDebi/GDebi.py:
     - update InstallProgressAdapter to match the new 
       apt.progres.base.InstallProgress names
+    - fix crash if no synaptic config is there (LP: #624703)
 
  -- Luca Falavigna <dktrkranz@valar>  Wed, 01 Sep 2010 11:41:36 +0200
 
