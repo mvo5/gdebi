@@ -735,7 +735,6 @@ Install software from trustworthy software distributors only.
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
             self.progress.set_text("")
-            self.term_expander.set_expanded(True)
         def status_change(self, pkg, percent, status):
             #print "status change", pkg, percent, status
             self.progress.set_fraction(percent/100.0)
