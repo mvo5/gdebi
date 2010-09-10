@@ -123,6 +123,9 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         column.add_attribute(render, "text", 0)
         self.treeview_files.append_column(column)
 
+        # empty config
+        self.synaptic_config = apt_pkg.Configuration()
+
         if file != "" and os.path.exists(file):
             self.window_main.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
             while gtk.events_pending(): gtk.main_iteration()        
@@ -720,18 +723,20 @@ Install software from trustworthy software distributors only.
         def conffile(self, current, new):
             # FIXME: display a msg or expand term
             self.term_expander.set_expanded(True)
-        def startUpdate(self):
+        def start_update(self):
             #print "startUpdate"
             apt_pkg.pkgsystem_unlock()
             self.action.set_markup("<i>"+_("Installing dependencies...")+"</i>")
             self.progress.set_fraction(0.0)
             self.progress.set_text("")
-        def statusChange(self, pkg, percent, status):
+            self.term_expander.set_expanded(True)
+        def status_change(self, pkg, percent, status):
+            #print "status change", pkg, percent, status
             self.progress.set_fraction(percent/100.0)
             self.progress.set_text(status)
             self.time_last_update = time.time()
-        def updateInterface(self):
-            InstallProgress.updateInterface(self)
+        def update_interface(self):
+            InstallProgress.update_interface(self)
             while gtk.events_pending():
                 gtk.main_iteration()
             if (not self.term_expander.get_expanded() and 
@@ -747,9 +752,9 @@ Install software from trustworthy software distributors only.
                     (key, value) = env.split("=")
                     os.environ[key] = value
             return pid
-        def waitChild(self):
+        def wait_child(self):
             while not self.finished:
-                self.updateInterface()
+                self.update_interface()
             return self.apt_status
         
     class FetchProgressAdapter(apt.progress.base.AcquireProgress):
@@ -776,7 +781,7 @@ Install software from trustworthy software distributors only.
             while gtk.events_pending():
                 gtk.main_iteration()
             return True
-        def mediaChange(self, medium, drive):
+        def media_change(self, medium, drive):
             #print "mediaChange %s %s" % (medium, drive)
             msg = _("Please insert '%s' into the drive '%s'" % (medium,drive))
             dialog = gtk.MessageDialog(parent=self.main,
