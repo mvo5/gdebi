@@ -607,7 +607,7 @@ Install software from trustworthy software distributors only.
         return False
         
     def write_synaptic_config_file(self, config, path):
-        if not os.path.exists(config):
+        if not os.path.exists(path):
             return
         config_file = open(path, "w")
         config_file.write(config.dump())
