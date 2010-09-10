@@ -94,7 +94,7 @@ class KDEDpkgInstallProgress(object):
             except Exception, e:
                 #print e
                 # 11 == EAGAIN
-                if e.errno == 11:
+                if hasattr(e, "errno") and e.errno == 11:
                     continue
                 break
             KApplication.kApplication().processEvents()

@@ -17,6 +17,8 @@ gdebi (0.6.4) UNRELEASED; urgency=low
     - update InstallProgressAdapter to match the new 
       apt.progres.base.InstallProgress names
     - fix crash if no synaptic config is there (LP: #624703)
+  * GDebi/KDEAptDialogs.py:
+    - check if errno is there before using it (LP: #625221)
 
  -- Luca Falavigna <dktrkranz@valar>  Wed, 01 Sep 2010 11:41:36 +0200
 
