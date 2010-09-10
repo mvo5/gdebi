@@ -17,6 +17,8 @@ gdebi (0.6.4) UNRELEASED; urgency=low
     - update InstallProgressAdapter to match the new 
       apt.progres.base.InstallProgress names
     - fix crash if no synaptic config is there (LP: #624703)
+    - do not crash if lock can not be released, but log it
+      to the console (LP: #630784)
   * GDebi/KDEAptDialogs.py:
     - check if errno is there before using it (LP: #625221)
 

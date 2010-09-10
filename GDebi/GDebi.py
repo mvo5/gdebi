@@ -36,6 +36,7 @@ import glib
 import gobject
 import gtk
 import pango
+import logging
 import urllib
 import fcntl
 import posix
@@ -631,7 +632,10 @@ Install software from trustworthy software distributors only.
                 #print "dpkg finished %s %s" % (pid,status)
                 #print "exit status: %s" % self.exitstatus
                 #print "was signaled %s" % posix.WIFSIGNALED(status)
-                lock.release()
+                try:
+                    lock.release()
+                except:
+                    logging.exception("lock.release failed")
 
             # get a lock
             lock = thread.allocate_lock()
