@@ -11,6 +11,7 @@ gdebi (0.6.4) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * debian/control:
     - Update maintainer address to the ubuntu-dev-team @Alioth.
+    - Bump Standards-Version to 3.9.1, no changes required.
   
   [ Michael Vogt ]
   * GDebi/GDebi.py:
@@ -23,7 +24,7 @@ gdebi (0.6.4) UNRELEASED; urgency=low
   * GDebi/KDEAptDialogs.py:
     - check if errno is there before using it (LP: #625221)
 
- -- Luca Falavigna <dktrkranz@valar>  Wed, 01 Sep 2010 11:41:36 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 24 Sep 2010 15:03:40 +0200
 
 gdebi (0.6.3) unstable; urgency=low
 
