@@ -1,4 +1,4 @@
-gdebi (0.6.4) UNRELEASED; urgency=low
+gdebi (0.6.4) unstable; urgency=low
 
   [ David Prévot ]
   * po/fr.po:
@@ -24,7 +24,7 @@ gdebi (0.6.4) UNRELEASED; urgency=low
   * GDebi/KDEAptDialogs.py:
     - check if errno is there before using it (LP: #625221)
 
- -- Luca Falavigna <dktrkranz@debian.org>  Fri, 24 Sep 2010 15:03:40 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 26 Sep 2010 09:41:54 +0200
 
 gdebi (0.6.3) unstable; urgency=low
 
