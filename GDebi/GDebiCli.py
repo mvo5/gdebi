@@ -31,6 +31,7 @@ import time
 import thread
 
 from gettext import gettext as _
+from re import findall
 
 from apt.cache import Cache
 from DebPackage import DebPackage, DscSrcPackage
@@ -151,5 +152,9 @@ if __name__ == "__main__":
     print msg,
     sys.stdout.flush()
     res = sys.stdin.readline()
-    if res.lower().startswith(msg[-5]):
+    try:
+        c = findall("\[(\S+)/\S+\]", msg)[0].lower()
+    except IndexError:
+        c = "y"
+    if res.lower().startswith(c):
         app.install()
