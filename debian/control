@@ -37,7 +37,7 @@ Depends: ${python:Depends},
          python-vte (>= 1:0.11.15-4),
          gksu (>= 2.0.0-1ubuntu3),
          gnome-icon-theme (>= 2.14.0-1)
-Recommends: libgnome2-perl
+Recommends: libgtk2-perl (>= 1:1.130)
 XB-Python-Version: ${python:Versions}
 Description: Simple tool to install deb files - GNOME GUI
  gdebi lets you install local deb packages resolving and installing 

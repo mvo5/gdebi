@@ -1,10 +1,15 @@
 gdebi (0.6.5) UNRELEASED; urgency=low
 
+  [ Luca Falavigna ]
   * GDebi/GDebiCli.py: try to determine correct localized value for "Y"
     answer by parsing first value located into square brackets instead
     of relying on an hardcoded value (Closes: #605147) (LP: #577140).
+  
+  [ Michael Vogt ]
+  * debian/control:
+    - recommend on libgtk2-perl instead of libgnome2-perl
 
- -- Luca Falavigna <dktrkranz@debian.org>  Fri, 10 Dec 2010 20:58:01 +0100
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 17 Dec 2010 15:29:16 +0100
 
 gdebi (0.6.4) unstable; urgency=low
 
