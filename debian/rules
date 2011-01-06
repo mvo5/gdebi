@@ -38,7 +38,6 @@ binary-indep: build install
 	dh_installchangelogs -i
 	dh_installdocs -i
 	dh_installexamples -i
-	dh_installmime -i
 	dh_installman -i
 	# We split the GDebi python module across the packages:
 	set -e; cd debian/tmp; for s in usr/lib/python*; do		\

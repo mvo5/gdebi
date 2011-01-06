@@ -26,8 +26,6 @@ for filepath in glob.glob("po/mo/*/LC_MESSAGES/*.mo"):
 
 # we should probably only run those os.system() stuff when "build" is
 # the cmndline argument
-os.system("intltool-merge -x po data/gdebi.xml.in"\
-                       " build/gdebi.xml")
 os.system("intltool-merge -d po data/gdebi.desktop.in"\
                        " build/gdebi.desktop")
 os.system("intltool-merge -d po data/gdebi-kde.desktop.in"\
@@ -48,8 +46,6 @@ setup(name='gdebi',
 		   ["build/gdebi-kde.desktop"]),
                   ('share/application-registry',
 		   ["data/gdebi.applications"]),
-                  ('share/mime/packages/',
-                   ["build/gdebi.xml"]),
                   ('share/gdebi/',
                    ["data/gdebi.png"])]+I18NFILES,
       )

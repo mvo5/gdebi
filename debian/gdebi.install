@@ -3,4 +3,4 @@ debian/tmp/usr/share/gdebi/gdebi.ui
 debian/tmp/usr/share/gdebi/gdebi.png
 debian/tmp/usr/share/applications/*.desktop
 debian/tmp/usr/share/application-registry
-debian/tmp/usr/share/mime
+
