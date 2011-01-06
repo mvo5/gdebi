@@ -6,6 +6,7 @@ gdebi (0.6.5) UNRELEASED; urgency=low
     of relying on an hardcoded value (Closes: #605147) (LP: #577140).
   * setup.py: do not ship gdebi.xml mime-info, the .deb mime info is part
     of the shared-mime-info package (Closes: #502717)
+  * debian/source/format: switch to format 3.0 (native).
   * debian/control: build-depend on python (>= 2.6.5-2~) for dh_python2
     and drop python-central build-dependency.
   * debian/rules: switch to dh_python2.
@@ -14,7 +15,7 @@ gdebi (0.6.5) UNRELEASED; urgency=low
   * debian/control:
     - recommend on libgtk2-perl instead of libgnome2-perl
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 06 Jan 2011 18:06:07 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 06 Jan 2011 18:08:43 +0100
 
 gdebi (0.6.4) unstable; urgency=low
 
