@@ -518,6 +518,7 @@ Install software from trustworthy software distributors only.
                 return 
     
         # install the package itself
+        self.dialog_deb_install.set_title(self.window_main.get_title())
         self.label_action.set_markup("<b><big>" +
                                      _("Installing %s") % self._deb.pkgname+
                                      "</big></b>")
