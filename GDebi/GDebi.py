@@ -230,7 +230,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.label_maintainer.set_text(utf8(self._deb["Maintainer"]))
         self.label_priority.set_text(self._deb["Priority"])
         self.label_section.set_text(utf8(self._deb["Section"]))
-        self.label_size.set_text(self._deb["Installed-Size"] + " KB")
+        self.label_size.set_text(self._deb["Installed-Size"] + " KiB")
 
         # set file list
         store = gtk.TreeStore(str)

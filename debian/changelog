@@ -3,6 +3,8 @@ gdebi (0.6.5) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * GDebi/Gdebi.py:
     - Assign a proper title to dialog_deb_install (LP: #576566).
+  * GDebi/Gdebi.py, GDebi/GdebiKDE.py:
+    - Use correct IEC prefix name to display Installed-Size (LP: #44286).
   * GDebi/GDebiCli.py:
     - Try to determine correct localized value for "Y" answer by parsing
       first value located into square brackets instead of relying on an
@@ -23,7 +25,7 @@ gdebi (0.6.5) UNRELEASED; urgency=low
   * debian/control:
     - recommend on libgtk2-perl instead of libgnome2-perl
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 09 Jan 2011 02:51:34 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 30 Jan 2011 03:15:00 +0100
 
 gdebi (0.6.4) unstable; urgency=low
 

@@ -253,7 +253,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.DetailsMaintainer.setText(utf8(self._deb["Maintainer"]))
         self.DetailsPriority.setText(self._deb["Priority"])
         self.DetailsSection.setText(utf8(self._deb["Section"]))
-        self.DetailsSize.setText(self._deb["Installed-Size"] + " KB")
+        self.DetailsSize.setText(self._deb["Installed-Size"] + " KiB")
 
         # set filelist
         buf = self.IncFilesEdit
