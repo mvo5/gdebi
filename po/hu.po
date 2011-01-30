@@ -1,20 +1,21 @@
 # Hungarian translation for gdebi
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2010-09-02 09:19+0200\n"
-"PO-Revision-Date: 2006-04-11 20:19+0000\n"
-"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-01-30 16:18+0100\n"
+"PO-Revision-Date: 2009-11-13 19:58+0000\n"
+"Last-Translator: Gergely Szarka <szarka.honved@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
+"X-Generator: Launchpad (build 12274)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -22,6 +23,8 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"Használat: %prog [opciók] fájlnév\n"
+"A grafikus változathoz futtassa a gdebi-gtk parancsot.\n"
 
 #: ../gdebi:53 ../gdebi-gtk:53
 msgid "Run non-interactive (dangerous!)"
@@ -29,33 +32,34 @@ msgstr "Futtatás nem interaktív módban (veszélyes!)"
 
 #: ../gdebi:57
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "APT konfigurációs opció beállítása"
 
 #: ../gdebi:61
 msgid "Do not show progress information"
-msgstr ""
+msgstr "Ne mutasson információt a folyamatról"
 
 #: ../gdebi:65
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
+"Csak szimulálja, és írjon ki egy apt-get install kompatibilis sort a "
+"szabványos hibakimenetre"
 
 #: ../gdebi:67
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "Alternatív gyökérkönyvtár használata"
 
 #: ../gdebi:75
-#, fuzzy, c-format
+#, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "gdebi hiba, nem található a következő fájl: %s"
+msgstr "gdebi hiba, nem található a következő fájl: %s\n"
 
 #: ../gdebi:94 ../gdebi:104
-#, fuzzy
 msgid "Need to be root to install packages"
-msgstr "Nem sikerült telepíteni a következő csomagot: \"%s\""
+msgstr "A csomagok telepítéséhez rendszergazdai jogosultság szükséges."
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:150
+#: ../gdebi:106 ../GDebi/GDebiCli.py:151
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "Kívánja telepíteni a szoftvercsomagot? [y/N]:"
+msgstr "Kívánja telepíteni a szoftvercsomagot? [i/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
@@ -67,7 +71,7 @@ msgstr ""
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
-msgstr ""
+msgstr "A szoftverek tartalomjegyzéke sérült"
 
 #: ../gdebi-gtk:78
 msgid ""
@@ -76,6 +80,11 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"Ez a szoftverkezelő rendszer súlyos hibáját jelzi. Ellenőrizze a törött "
+"csomagokat a Synaptickal, ellenőrizze a fájl jogosultságait és az "
+"/etc/apt/sources.list fájl helyességét, majd töltse újra a "
+"szoftverinformációkat a \"sudo apt-get update\" és \"sudo apt-get install -"
+"f\" parancsok kiadásával."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -131,9 +140,8 @@ msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, lásd /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
-#, fuzzy
 msgid "Included files"
-msgstr "Telepített fájlok"
+msgstr ""
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -151,7 +159,7 @@ msgstr "Csomag:"
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr "Állapot:"
+msgstr "Státusz:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
@@ -172,7 +180,7 @@ msgstr "_Súgó"
 #. img = gtk.Image()
 #. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:257 ../GDebi/GDebi.py:297
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:261 ../GDebi/GDebi.py:301
 msgid "_Install Package"
 msgstr "_Csomag telepítése"
 
@@ -182,16 +190,15 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
-msgstr ""
+msgstr "_Frissítés"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
 msgstr "Szoftvercsomag"
 
 #: ../data/gdebi.desktop.in.h:1
-#, fuzzy
 msgid "GDebi Package Installer"
-msgstr "Csomagtelepítő"
+msgstr "GDebi csomagtelepítő"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -200,138 +207,132 @@ msgstr "Csomagtelepítő"
 msgid "%s is not available"
 msgstr "%s nem érhető el"
 
-#: ../GDebi/GDebi.py:87
+#: ../GDebi/GDebi.py:88
 msgid "Loading..."
 msgstr "Betöltés..."
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:177 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:181 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Csomagkezelő - %s"
 
-#: ../GDebi/GDebi.py:234
+#: ../GDebi/GDebi.py:238
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:237
+#: ../GDebi/GDebi.py:241
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:243
+#: ../GDebi/GDebi.py:247
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:254
+#: ../GDebi/GDebi.py:258
 msgid "Error: "
-msgstr ""
+msgstr "Hiba: "
 
-#: ../GDebi/GDebi.py:269
+#: ../GDebi/GDebi.py:273
 msgid "Same version is already installed"
 msgstr "Már telepítve van ugyanez a verzió"
 
-#: ../GDebi/GDebi.py:270
+#: ../GDebi/GDebi.py:274
 msgid "_Reinstall Package"
 msgstr "Csomag új_ratelepítése"
 
-#: ../GDebi/GDebi.py:313
+#: ../GDebi/GDebi.py:317
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:318 ../GDebi/GDebi.py:323
+#: ../GDebi/GDebi.py:322 ../GDebi/GDebi.py:327
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:327
+#: ../GDebi/GDebi.py:331
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:338
+#: ../GDebi/GDebi.py:342
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Eltávolítandó: %s</b>"
 
-#: ../GDebi/GDebi.py:340 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:344 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
 msgstr "Telepítendő: %s"
 
-#: ../GDebi/GDebi.py:355
+#: ../GDebi/GDebi.py:359
 msgid "Open Software Package"
 msgstr "Szoftvercsomag megnyitása"
 
-#: ../GDebi/GDebi.py:360
+#: ../GDebi/GDebi.py:364
 msgid "Software packages"
 msgstr "Szoftvercsomagok"
 
-#: ../GDebi/GDebi.py:389
+#: ../GDebi/GDebi.py:393
 msgid "File not found"
-msgstr ""
+msgstr "A fájl nem található"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:394
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
+"Olyan fájlt próbált meg telepíteni, amely nem (vagy már nem) létezik. "
 
 #. do it
-#: ../GDebi/GDebi.py:400
+#: ../GDebi/GDebi.py:404
 msgid "Installing package file..."
-msgstr "Csomagfájl telepítése..."
+msgstr "Csomag telepítése..."
 
-#: ../GDebi/GDebi.py:402
+#: ../GDebi/GDebi.py:406
 msgid "Install unauthenticated software?"
 msgstr "Kíván hitelesítés nélküli szoftvert telepíteni?"
 
-#: ../GDebi/GDebi.py:403
-#, fuzzy
+#: ../GDebi/GDebi.py:407
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"A rosszindulatú szoftverek tönkretehetik az adatait és átvehetik a rendszere "
-"feletti ellenőrzést.\n"
-"\n"
-"Az alábbi csomagok hitelesítés nélküliek és ennek megfelelően akár "
-"rosszindulatúak is lehetnek."
 
-#: ../GDebi/GDebi.py:430
+#: ../GDebi/GDebi.py:434
 msgid "You need to grant administrative rights to install software"
 msgstr ""
+"Adminisztrátori jogosultságokkal kell rendelkezni a szoftvercsomag "
+"telepítéséhez"
 
-#: ../GDebi/GDebi.py:431
-#, fuzzy
+#: ../GDebi/GDebi.py:435
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
-"<big><b>Szoftverek telepítéséhez rendszergazdai jogosultságokra van "
-"szüksége</b></big>\n"
 "\n"
-"A csomagfájlok saját kezű telepítése biztonsági kockázatot jelent. Csak "
-"megbízható szoftverterjesztőktől származó szoftvert telepítsen."
+"A csomagfájlok saját kezű telepítése biztonsági kockázatot jelent.\n"
+"Csak megbízható szoftverterjesztőktől származó szoftvert telepítsen.\n"
 
-#: ../GDebi/GDebi.py:454 ../GDebi/GDebi.py:513
+#: ../GDebi/GDebi.py:458 ../GDebi/GDebi.py:517
 msgid "Failed to install package file"
 msgstr "A csomagfájl telepítése meghiúsult"
 
-#: ../GDebi/GDebi.py:497 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:501 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
 msgstr "Nem sikerült letölteni minden szükséges fájlt"
 
-#: ../GDebi/GDebi.py:498 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 "Kérem ellenőrizze az internetkapcsolatát vagy a telepítési adathordozót."
 
-#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:506 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
-msgstr "Nem telepíthető minden függőség"
+msgstr "Nem sikerült minden függőség telepítése"
 
-#: ../GDebi/GDebi.py:503 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:507 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -339,174 +340,166 @@ msgstr ""
 "Általában ez a szoftverterjesztő hibájával kapcsolatos. További részletekért "
 "tekintse meg a terminálablakot."
 
-#: ../GDebi/GDebi.py:518
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:523
+#, python-format
 msgid "Installing %s"
-msgstr "\"%s\" telepítése..."
+msgstr "%s telepítése"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:534 ../GDebi/GDebiKDE.py:352
-#, fuzzy
+#: ../GDebi/GDebi.py:539 ../GDebi/GDebiKDE.py:352
 msgid "Installation finished"
-msgstr "A telepítés befejezve"
+msgstr "A telepítés befejeződött"
 
-#: ../GDebi/GDebi.py:536
+#: ../GDebi/GDebi.py:541
 #, python-format
 msgid "Package '%s' was installed"
-msgstr "A következő csomag telepítve volt: %s"
+msgstr "A következő csomag telepítésre került: %s"
 
-#: ../GDebi/GDebi.py:538 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:543 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr "Nem sikerült telepíteni a következő csomagot: \"%s\""
+msgstr "Nem sikerült telepíteni a következő csomagot: „%s”"
 
-#: ../GDebi/GDebi.py:540
+#: ../GDebi/GDebi.py:545
 msgid "Installation complete"
-msgstr "A telepítés befejezve"
+msgstr "A telepítés befejeződött"
 
-#: ../GDebi/GDebi.py:547 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:552 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
-msgstr "Az összes függőség teljes telepítése meghiúsult"
+msgstr "Nem sikerült minden függőséget teljesen telepíteni"
 
-#: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
-"Ennek javításához futtassa a \"sudo apt-get install -f\" parancsot egy "
+"Ennek javításához futtassa a „sudo apt-get install -f” parancsot egy "
 "terminálablakból."
 
 #. ui
-#: ../GDebi/GDebi.py:636 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:646 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "\"%s\" telepítése..."
+msgstr "„%s” telepítése..."
 
-#: ../GDebi/GDebi.py:726 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:736 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "Függőségek telepítése..."
 
-#: ../GDebi/GDebi.py:763 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "További csomagfájlok letöltése..."
+msgstr "További csomagok letöltése..."
 
-#: ../GDebi/GDebi.py:772 ../GDebi/KDEAptDialogs.py:217
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:783 ../GDebi/KDEAptDialogs.py:217
+#, python-format
 msgid "File %s of %s at %sB/s"
-msgstr "%s. fájl, összesen %s. Sebesség: %s/mp"
+msgstr "%s. fájl, összesen %s. Sebesség: %sB/mp"
 
-#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:219
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:219
+#, python-format
 msgid "File %s of %s"
-msgstr "%s. fájl, összesen %s. Sebesség: %s/mp"
+msgstr "%s. fájl, összesen %s."
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:781 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:792 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
-"Helyezze be a következő adathordozót: \"%s\", ebbe a meghajtóba: \"%s\""
+msgstr "Helyezze be a következő médiát: '%s', ebbe a meghajtóba: '%s'"
 
-#: ../GDebi/GDebiCli.py:58
+#: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
+msgstr "A konfigurációs elemeket =<érték> formában kell megadni\n"
 
-#: ../GDebi/GDebiCli.py:64
+#: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr ""
+msgstr "A(z) %s APT opció nem állítható be a következőre: %s\n"
 
-#: ../GDebi/GDebiCli.py:77
+#: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr ""
-
-#: ../GDebi/GDebiCli.py:80
-#, fuzzy
-msgid "Failed to open the software package\n"
-msgstr "A szoftvercsomag megnyitása meghiúsult"
+msgstr "Ismeretlen csomagtípus: „%s”; kilépés\n"
 
 #: ../GDebi/GDebiCli.py:81
-#, fuzzy
+msgid "Failed to open the software package\n"
+msgstr "A szoftvercsomag megnyitása meghiúsult\n"
+
+#: ../GDebi/GDebiCli.py:82
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
 "A csomag sérült lehet vagy nincs joga a fájl megnyitásához. Ellenőrizze a "
-"fájl jogosultságait."
+"fájl jogosultságait.\n"
 
-#: ../GDebi/GDebiCli.py:87
-#, fuzzy
+#: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
-msgstr "Ez a csomag telepíthetetlen"
+msgstr "Ez a csomag telepíthetetlen\n"
 
-#: ../GDebi/GDebiCli.py:96 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
 msgid "No description is available"
 msgstr "Nem érhető el leírás"
 
-#: ../GDebi/GDebiCli.py:102
+#: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr "Az alábbi csomagok NINCSENEK HITELESÍTVE: "
 
-#: ../GDebi/GDebiCli.py:106
+#: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
 msgstr "A következő csomagok ELTÁVOLÍTÁSA szükséges: "
 
-#: ../GDebi/GDebiCli.py:111
+#: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
 msgstr "A következő csomagok telepítése szükséges: "
 
-#: ../GDebi/GDebiCli.py:125
-#, fuzzy, python-format
+#: ../GDebi/GDebiCli.py:126
+#, python-format
 msgid "Error during install: '%s'"
-msgstr "Adja meg jelszavát a következő telepítéséhez: %s"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
 msgstr "Telepített fájlok"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
-#, fuzzy
 msgid "&Install Package"
 msgstr "_Csomag telepítése"
 
 #: ../GDebi/GDebiKDE.py:162
-#, fuzzy
 msgid "The package file does not exist"
-msgstr "Ez a csomag telepíthetetlen"
+msgstr "A csomagfájl nem létezik"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
+"Egy nem létező fájl került kiválasztásra. Egy létező .deb csomagfájlt "
+"válasszon ki."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:231
-#, fuzzy
 msgid "&Reinstall Package"
 msgstr "Csomag új_ratelepítése"
 
 #: ../GDebi/GDebiKDE.py:266
-#, fuzzy
 msgid "Re&install Package"
 msgstr "Csomag új_ratelepítése"
 
 #: ../GDebi/GDebiKDE.py:277
-#, fuzzy, python-format
+#, python-format
 msgid "To be removed: %s"
-msgstr "<b>Eltávolítandó: %s</b>"
+msgstr "Eltávolítandó: %s"
 
 #: ../GDebi/GDebiKDE.py:354
 msgid "<b>"
-msgstr ""
+msgstr "<b>"
 
 #: ../GDebi/GDebiCommon.py:67
-#, fuzzy
 msgid "Broken dependencies"
-msgstr "Függőségek telepítése..."
+msgstr "Törött függőségek"
 
 #: ../GDebi/GDebiCommon.py:68
 msgid ""
@@ -514,22 +507,25 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"A rendszeren törött függőségek vannak. Az alkalmazás a javításig nem képes "
+"folytatni a munkát. Próbálja meg terminálablakban futtatni a „gksudo "
+"synaptic” vagy „sudo apt-get install -f” parancsok egyikét."
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "„%s” nem Debian csomagfájl"
 
 #: ../GDebi/GDebiCommon.py:86
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr ""
+msgstr "A fájl „%s” MIME típusú, emiatt nem telepíthető erre a rendszerre."
 
 #: ../GDebi/GDebiCommon.py:90
 #, python-format
 msgid "Could not open '%s'"
-msgstr "\"%s\" nem nyitható meg"
+msgstr "Nem nyitható meg a következő: „%s”"
 
 #: ../GDebi/GDebiCommon.py:91
 msgid ""
@@ -601,57 +597,78 @@ msgstr ""
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
-msgstr ""
-
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "A következő függőség nem elégíthető ki: %s\n"
-
-#, fuzzy
-#~ msgid "Conflicts with the installed package '%s'\n"
-#~ msgstr "Ütközik a következő telepített csomaggal: \"%s\""
-
-#~ msgid "Wrong architecture '%s'"
-#~ msgstr "Rossz architektúra: \"%s\""
-
-#~ msgid "A later version is already installed"
-#~ msgstr "Már telepítve van egy újabb verzió"
-
-#, fuzzy
-#~ msgid "Analysing dependencies"
-#~ msgstr "Függőségek telepítése..."
-
-#~ msgid "Failed to satisfy all dependencies (broken cache)"
-#~ msgstr "Nem sikerült kielégíteni minden függőséget (a gyorsítótár sérült)"
-
-#~ msgid "Cannot install '%s'"
-#~ msgstr "Nem telepíthető: \"%s\""
+msgstr "Adathordozó-csere"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Burján Gábor <buga@buvoshetes.hu>\n"
-#~ "Kelemen Gábor <kelemeng@gnome.hu>"
+#, python-format
+#~ msgid "Wrong architecture '%s'"
+#~ msgstr "Rossz architektúra: \"%s\""
 
-#~ msgid "(c) 2005-2006 Canonical"
-#~ msgstr "(c) 2005-2006 Canonical"
+#~ msgid "Y"
+#~ msgstr "I"
 
-#~ msgid "Installing package file"
-#~ msgstr "Csomagfájl telepítése"
-
-#~ msgid "Usage: %s [package.deb]"
-#~ msgstr "Használat: %s [csomag.deb]"
+#~ msgid "Open..."
+#~ msgstr "Megnyitás..."
 
 #~ msgid ""
-#~ "To use the graphical user interface, right-click\n"
-#~ "on a '.deb' software package in the file browser\n"
-#~ "and select: Open with 'GDebi Package Installer'."
+#~ "Malicous software can damage your data and take control of your system.\n"
+#~ "\n"
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "A grafikus felhasználói felület használatához\n"
-#~ "kattintson a jobb egérgombbal a \".deb\" csomagon a fájlböngészőben,\n"
-#~ "majd válassza a \"Megnyitás a következővel: GDebi csomagkezelő\"\n"
-#~ "menüpontot."
+#~ "A rosszindulatú szoftverek tönkretehetik az adatait és átvehetik a rendszere "
+#~ "feletti ellenőrzést.\n"
+#~ "\n"
+#~ "Az alábbi csomagok hitelesítés nélküliek és ennek megfelelően akár "
+#~ "rosszindulatúak is lehetnek."
 
-#~ msgid "_Grant"
-#~ msgstr "_Megadás"
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "A következő függőség nem elégíthető ki: %s\n"
+
+#~ msgid "Analysing dependencies"
+#~ msgstr "Függőségek elemzése"
+
+#, python-format
+#~ msgid "Conflicts with the installed package '%s'\n"
+#~ msgstr "Ütközés a(z) '%s' telepített csomaggal\n"
+
+#~ msgid "No Architecture field in the package"
+#~ msgstr "A csomagban nincs architektúra mező"
+
+#~ msgid "A later version is already installed"
+#~ msgstr "Már telepítve van egy újabb verzió"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
+#~ msgstr "Megsérti a meglévő „%s” csomag függőségeit; ütközés: %s (%s %s)\n"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
+#~ msgstr "Megsérti a meglévő „%s” csomag %s függőségét (%s %s)\n"
+
+#, python-format
+#~ msgid "Cannot install '%s'"
+#~ msgstr "„%s” nem telepíthető"
+
+#~ msgid "Failed to satisfy all dependencies (broken cache)"
+#~ msgstr "Nem sikerült kielégíteni minden függőséget (a gyorsítótár sérült)"
+
+#, python-format
+#~ msgid "IOError during filelist read: %s"
+#~ msgstr "IOError a fájllista olvasása során: %s"
+
+#~ msgid "List of files could not be read, please report this as a bug"
+#~ msgstr ""
+#~ "A fájlok listáját nem sikerült beolvasni, kérjük jelezze ezt a hibát a "
+#~ "fejlesztőknek."
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Gergely Szarka https://launchpad.net/~gszarka\n"
+#~ "  HORVATH, Akos https://launchpad.net/~akos-horvath\n"
+#~ "  Pittmann Tamás https://launchpad.net/~zaivaldi\n"
+#~ "  Szilveszter Kovács https://launchpad.net/~hunsly"

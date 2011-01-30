@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2010-09-02 09:19+0200\n"
-"PO-Revision-Date: 2010-08-29 16:55+0000\n"
+"POT-Creation-Date: 2011-01-30 16:18+0100\n"
+"PO-Revision-Date: 2010-09-05 22:46+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-01 09:08+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
+"X-Generator: Launchpad (build 12274)\n"
+"Language: he\n"
 
 #: ../gdebi:47
 #, c-format
@@ -56,18 +56,17 @@ msgstr "gdebi error, file not found: %s\n"
 msgid "Need to be root to install packages"
 msgstr "Need to be root to install packages"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:150
+#: ../gdebi:106 ../GDebi/GDebiCli.py:151
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "Do you want to install the software package? [y/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "סגירה אוטומטית כאשר ההתקנה מסתיימת"
 
 #: ../gdebi-gtk:58
-#, fuzzy
 msgid "Use alternative datadir"
-msgstr "Use alternative root dir"
+msgstr "שימוש בתיקיית נתונים חלופית"
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
@@ -119,7 +118,7 @@ msgstr "<b>גרסה:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "סגירה אוטומטית לאחר שהשינויים החלו בהצלחה"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -139,9 +138,8 @@ msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr "GPL, יש לעיין ב־‎/usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
-#, fuzzy
 msgid "Included files"
-msgstr "קבצים בחבילה"
+msgstr "קבצים כלולים"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -180,14 +178,13 @@ msgstr "ע_זרה"
 #. img = gtk.Image()
 #. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:257 ../GDebi/GDebi.py:297
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:261 ../GDebi/GDebi.py:301
 msgid "_Install Package"
 msgstr "ה_תקנת חבילה"
 
 #: ../data/gdebi.ui.h:24
-#, fuzzy
 msgid "_Open..."
-msgstr "פתיחה..."
+msgstr "_פתיחה..."
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
@@ -208,107 +205,105 @@ msgstr "מתקין החבילות GDebi"
 msgid "%s is not available"
 msgstr "השדה %s אינו זמין"
 
-#: ../GDebi/GDebi.py:87
+#: ../GDebi/GDebi.py:88
 msgid "Loading..."
 msgstr "בטעינה..."
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:177 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:181 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
 msgstr "מתקין החבילות — %s"
 
-#: ../GDebi/GDebi.py:234
+#: ../GDebi/GDebi.py:238
 msgid "Package control data"
-msgstr ""
+msgstr "נתוני הבקרה על החבילה"
 
-#: ../GDebi/GDebi.py:237
+#: ../GDebi/GDebi.py:241
 msgid "Upstream data"
-msgstr ""
+msgstr "נתוני ה־Upstream"
 
-#: ../GDebi/GDebi.py:243
-#, fuzzy
+#: ../GDebi/GDebi.py:247
 msgid "Error reading filelist"
-msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
+msgstr "ארע כשל בקריאת רשימת הקבצים"
 
-#: ../GDebi/GDebi.py:254
+#: ../GDebi/GDebi.py:258
 msgid "Error: "
 msgstr "שגיאה: "
 
-#: ../GDebi/GDebi.py:269
+#: ../GDebi/GDebi.py:273
 msgid "Same version is already installed"
 msgstr "אותה הגרסה כבר מותקנת"
 
-#: ../GDebi/GDebi.py:270
+#: ../GDebi/GDebi.py:274
 msgid "_Reinstall Package"
 msgstr "ה_תקנת חבילה מחדש"
 
-#: ../GDebi/GDebi.py:313
+#: ../GDebi/GDebi.py:317
 msgid "Selection is a directory"
-msgstr ""
+msgstr "הבחירה הנה תיקייה"
 
-#: ../GDebi/GDebi.py:318 ../GDebi/GDebi.py:323
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:322 ../GDebi/GDebi.py:327
+#, python-format
 msgid "Error reading file content '%s'"
-msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
+msgstr "ארע כשל בקריאת תוכן הקובץ '%s'"
 
-#: ../GDebi/GDebi.py:327
+#: ../GDebi/GDebi.py:331
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "לא ניתן לחלץ את תוכן הקובץ"
 
-#: ../GDebi/GDebi.py:338
+#: ../GDebi/GDebi.py:342
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>להסרה: %s</b>"
 
-#: ../GDebi/GDebi.py:340 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:344 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
 msgstr "להתקנה: %s"
 
-#: ../GDebi/GDebi.py:355
+#: ../GDebi/GDebi.py:359
 msgid "Open Software Package"
 msgstr "פתיחת חבילת תכנה"
 
-#: ../GDebi/GDebi.py:360
+#: ../GDebi/GDebi.py:364
 msgid "Software packages"
 msgstr "חבילות תכנה"
 
-#: ../GDebi/GDebi.py:389
+#: ../GDebi/GDebi.py:393
 msgid "File not found"
 msgstr "הקובץ לא נמצא"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:394
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr "ניסית להתקין קובץ שאינו קיים (או אינו עוד). "
 
 #. do it
-#: ../GDebi/GDebi.py:400
+#: ../GDebi/GDebi.py:404
 msgid "Installing package file..."
 msgstr "קובץ החבילה מותקן..."
 
-#: ../GDebi/GDebi.py:402
+#: ../GDebi/GDebi.py:406
 msgid "Install unauthenticated software?"
 msgstr "האם להתקין תכנה בלתי מאומתת?"
 
-#: ../GDebi/GDebi.py:403
-#, fuzzy
+#: ../GDebi/GDebi.py:407
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"תכנה זדונית עלולה להזיק לנתונים ולהשתלט על המערכת שלך.\n"
+"תכנה זדונית עלולה לפגוע בנתונים לך ולשלוט במערכת שלך.\n"
 "\n"
-"החבילות שלהלן אינן מאומתות ולכן לא מן הנמנע שאלו בעלות יכולות זדוניות."
+"החבילות שלהלן אינן מאומתות ולפיכך יכולות להיות בעלות אופי זדוני."
 
-#: ../GDebi/GDebi.py:430
+#: ../GDebi/GDebi.py:434
 msgid "You need to grant administrative rights to install software"
 msgstr "עליך לקבל הרשאות ניהול כדי להתקין תכנה"
 
-#: ../GDebi/GDebi.py:431
+#: ../GDebi/GDebi.py:435
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
@@ -318,30 +313,30 @@ msgstr ""
 "התקנת חבילות באופן ידני מהווה סכנת אבטחה.\n"
 "עדיף להתקין תכנה ממפיצי תכנה מהימנים בלבד.\n"
 
-#: ../GDebi/GDebi.py:454 ../GDebi/GDebi.py:513
+#: ../GDebi/GDebi.py:458 ../GDebi/GDebi.py:517
 msgid "Failed to install package file"
 msgstr "ארע כשל בהתקנת קובץ החבילה"
 
-#: ../GDebi/GDebi.py:497 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:501 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
 msgstr "לא ניתן להוריד את כל הקבצים הנדרשים"
 
-#: ../GDebi/GDebi.py:498 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
 msgstr "נא לבדוק את החיבור שלך לאינטרנט או את אמצעי ההתקנה שלך."
 
-#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:506 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
 msgstr "לא ניתן להתקין את כל התלויות"
 
-#: ../GDebi/GDebi.py:503 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:507 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
 "בעיה זו קשורה לרוב לשגיאה של מפיץ התכנה. יש לעיין בחלון המסוף לפרטים נוספים."
 
-#: ../GDebi/GDebi.py:518
+#: ../GDebi/GDebi.py:523
 #, python-format
 msgid "Installing %s"
 msgstr "החבילה %s מותקנת"
@@ -350,82 +345,83 @@ msgstr "החבילה %s מותקנת"
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:534 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:539 ../GDebi/GDebiKDE.py:352
 msgid "Installation finished"
 msgstr "ההתקנה הסתיימה"
 
-#: ../GDebi/GDebi.py:536
+#: ../GDebi/GDebi.py:541
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "החבילה '%s' הותקנה"
 
-#: ../GDebi/GDebi.py:538 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:543 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "ארע כשל בהתקנת החבילה '%s'"
 
-#: ../GDebi/GDebi.py:540
+#: ../GDebi/GDebi.py:545
 msgid "Installation complete"
 msgstr "ההתקנה הושלמה"
 
-#: ../GDebi/GDebi.py:547 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:552 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
 msgstr "ארע כשל בהתקנה מלאה של כל התלויות"
 
-#: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
+msgstr ""
+"כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
 
 #. ui
-#: ../GDebi/GDebi.py:636 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:646 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "החבילה '%s' מותקנת..."
 
-#: ../GDebi/GDebi.py:726 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:736 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "התלויות מותקנות..."
 
-#: ../GDebi/GDebi.py:763 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "קובצי חבילות נוספים בהורדה..."
 
-#: ../GDebi/GDebi.py:772 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:783 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "קובץ %s מתוך %s במהירות %s ב/ש"
 
-#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "קובץ %s מתוך %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:781 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:792 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "נא להכניס את \"%s\" לכונן \"%s\"."
 
-#: ../GDebi/GDebiCli.py:58
+#: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
 msgstr "Configuration items must be specified with a =<value>\n"
 
-#: ../GDebi/GDebiCli.py:64
+#: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
 msgstr "Couldn't set APT option %s to %s\n"
 
-#: ../GDebi/GDebiCli.py:77
+#: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
 msgstr "Unknown package type '%s', exiting\n"
 
-#: ../GDebi/GDebiCli.py:80
+#: ../GDebi/GDebiCli.py:81
 msgid "Failed to open the software package\n"
 msgstr "Failed to open the software package\n"
 
-#: ../GDebi/GDebiCli.py:81
+#: ../GDebi/GDebiCli.py:82
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
@@ -433,30 +429,30 @@ msgstr ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 
-#: ../GDebi/GDebiCli.py:87
+#: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
 msgstr "This package is uninstallable\n"
 
-#: ../GDebi/GDebiCli.py:96 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
 msgid "No description is available"
 msgstr "אין תיאור זמין"
 
-#: ../GDebi/GDebiCli.py:102
+#: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr "The following packages are UNAUTHENTICATED: "
 
-#: ../GDebi/GDebiCli.py:106
+#: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
 msgstr "Requires the REMOVAL of the following packages: "
 
-#: ../GDebi/GDebiCli.py:111
+#: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
 msgstr "Requires the installation of the following packages: "
 
-#: ../GDebi/GDebiCli.py:125
-#, fuzzy, python-format
+#: ../GDebi/GDebiCli.py:126
+#, python-format
 msgid "Error during install: '%s'"
-msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
+msgstr "Error during install: '%s'"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
@@ -585,15 +581,13 @@ msgstr "ניתן להפעיל כלי ניהול תכנה אחד ויחיד בע�
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr "נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
+msgstr ""
+"נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
 msgstr "החלפת מדיה"
-
-#~ msgid "Y"
-#~ msgstr "Y"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
@@ -606,35 +600,61 @@ msgstr "החלפת מדיה"
 #~ "  Yaron https://launchpad.net/~sh-yaron\n"
 #~ "  kulight https://launchpad.net/~kulight"
 
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "התלויות אינן עומדות בדרישות: %s\n"
+#~ msgid "Y"
+#~ msgstr "Y"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "מתנגשת עם החבילה המותקנת '%s'\n"
-
-#~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
-#~ msgstr "שוברת את החבילה הקיימת '%s' התלויה ב־%s‏ (%s‏ %s)\n"
-
-#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
-#~ msgstr "שוברת את החבילה הקיימת '%s' התנגשות: %s‏ (%s‏ %s)\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "אין שדה ארכיטקטורה בחבילה"
 
+#, python-format
+#~ msgid "Cannot install '%s'"
+#~ msgstr "לא ניתן להתקין את '%s'"
+
+#, python-format
+#~ msgid "IOError during filelist read: %s"
+#~ msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
+
+#~ msgid "Open..."
+#~ msgstr "פתיחה..."
+
+#~ msgid ""
+#~ "Malicous software can damage your data and take control of your system.\n"
+#~ "\n"
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
+#~ msgstr ""
+#~ "תכנה זדונית עלולה להזיק לנתונים ולהשתלט על המערכת שלך.\n"
+#~ "\n"
+#~ "החבילות שלהלן אינן מאומתות ולכן לא מן הנמנע שאלו בעלות יכולות זדוניות."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "התלויות אינן עומדות בדרישות: %s\n"
+
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "הארכיטקטורה '%s' שגויה"
 
-#~ msgid "A later version is already installed"
-#~ msgstr "כבר מותקנת גרסה עדכנית יותר"
+#, python-format
+#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
+#~ msgstr "שוברת את החבילה הקיימת '%s' התנגשות: %s‏ (%s‏ %s)\n"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
+#~ msgstr "שוברת את החבילה הקיימת '%s' התלויה ב־%s‏ (%s‏ %s)\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "התלויות בניתוח"
 
-#~ msgid "Failed to satisfy all dependencies (broken cache)"
-#~ msgstr "ארע כשל במענה על דרישות התלות (מטמון לא תקין)"
-
-#~ msgid "Cannot install '%s'"
-#~ msgstr "לא ניתן להתקין את '%s'"
+#~ msgid "A later version is already installed"
+#~ msgstr "כבר מותקנת גרסה עדכנית יותר"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "לא ניתן לקרוא את רשימת הקבצים, אנא לדווח על כך כתקלה"
+
+#~ msgid "Failed to satisfy all dependencies (broken cache)"
+#~ msgstr "ארע כשל במענה על דרישות התלות (מטמון לא תקין)"

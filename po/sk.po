@@ -1,21 +1,21 @@
 # Slovak translation for gdebi
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2010-09-02 09:19+0200\n"
-"PO-Revision-Date: 2006-05-16 21:08+0000\n"
-"Last-Translator: Peter Chabada <ubuntu@chabada.sk>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-01-30 16:18+0100\n"
+"PO-Revision-Date: 2009-11-10 20:49+0000\n"
+"Last-Translator: helix84 <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
+"X-Generator: Launchpad (build 12274)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -23,40 +23,43 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"Použitie: %prog [voľby] názov_súboru\n"
+"Grafickú verziu spustíte pomocou gdebi-gtk\n"
 
 #: ../gdebi:53 ../gdebi-gtk:53
 msgid "Run non-interactive (dangerous!)"
-msgstr "Spustiť neinteraktívne (nebezpečné!)"
+msgstr "Spustiť v neinteraktívnom režime (nebezpečné!)"
 
 #: ../gdebi:57
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "Nastaviť konfiguračnú voľbu APT"
 
 #: ../gdebi:61
 msgid "Do not show progress information"
-msgstr ""
+msgstr "Nezobrazovať informácie o priebehu"
 
 #: ../gdebi:65
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
+"Vykonať iba simuláciu a vypísať na štandardný chybový výstup riadok "
+"kompatibilný s apt-get install"
 
 #: ../gdebi:67
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "Použiť alternatívny koreňový adresár"
 
 #: ../gdebi:75
-#, fuzzy, c-format
+#, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "Nastala chyba, súbor nebol nájdený: %s"
+msgstr "chyba gdebi, súbor nebol nájdený: %s\n"
 
 #: ../gdebi:94 ../gdebi:104
-#, fuzzy
 msgid "Need to be root to install packages"
-msgstr "Nepodarilo sa nainštalovať balík '%s'"
+msgstr "Aby ste mohli inštalovať balíky, musíte byť root"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:150
+#: ../gdebi:106 ../GDebi/GDebiCli.py:151
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "Chcete nainštalovať tento softvérový balík? [y/N]:"
+msgstr "Chcete nainštalovať softvérový balík? [a/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
@@ -68,7 +71,7 @@ msgstr ""
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
-msgstr ""
+msgstr "Index softvéru je poškodený"
 
 #: ../gdebi-gtk:78
 msgid ""
@@ -77,6 +80,11 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"Toto je zásadná chyba vo vašom systéme na správu softvéru. Prosím, "
+"skontrolujte poškodené balíky pomocou aplikácie Synaptic, skontrolujte "
+"oprávnenia súborov a správnosť súboru „/etc/apt/sources.list“ a znovu "
+"načítajte informácie o softvéri pomocou „sudo apt-get update“ a „sudo apt-"
+"get install -f“."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -84,7 +92,7 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:2
 msgid "<b><big>   </big></b>"
-msgstr "<b><big> </big></b>"
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:140
 msgid "<b>Maintainer:</b>"
@@ -96,7 +104,7 @@ msgstr "<b>Priorita:</b>"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
 msgid "<b>Section:</b>"
-msgstr "<b>Oblasť:</b>"
+msgstr "<b>Sekcia:</b>"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
 msgid "<b>Size:</b>"
@@ -104,8 +112,7 @@ msgstr "<b>Veľkosť:</b>"
 
 #: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
-"<b>Aby ste mohli balík nainštalovať je potrebné vykonať tieto zmeny:</b>"
+msgstr "<b>Nasledovné zmeny umožnia inštaláciu:</b>"
 
 #: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
 msgid "<b>Version:</b>"
@@ -130,16 +137,15 @@ msgstr "Podrobnosti"
 
 #: ../data/gdebi.ui.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL, pozrite /usr/share/common-licenses/GPL"
+msgstr "GPL, pozri /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
-#, fuzzy
 msgid "Included files"
-msgstr "Obsahuje súbory"
+msgstr ""
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr "Zobraziť a nainštalovať softvérové balíky"
+msgstr "Inštalácia a zobrazenie balíkov softvéru"
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
@@ -161,7 +167,7 @@ msgstr "Terminál"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr "_Podrobnosti"
+msgstr "Po_drobnosti"
 
 #: ../data/gdebi.ui.h:21
 msgid "_File"
@@ -174,9 +180,9 @@ msgstr "_Pomocník"
 #. img = gtk.Image()
 #. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:257 ../GDebi/GDebi.py:297
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:261 ../GDebi/GDebi.py:301
 msgid "_Install Package"
-msgstr "_Nainštalovať balík"
+msgstr "Na_inštalovať balík"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Open..."
@@ -184,327 +190,313 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
-msgstr ""
+msgstr "_Obnoviť"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr "Softvérový balík"
+msgstr "Balík softvéru"
 
 #: ../data/gdebi.desktop.in.h:1
-#, fuzzy
 msgid "GDebi Package Installer"
-msgstr "Inštalátor balíkov"
+msgstr "Inštalátor balíkov GDebi"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:38
 #, python-format
 msgid "%s is not available"
-msgstr "%s nie je dostupný"
+msgstr "Pole %s nie je dostupné"
 
-#: ../GDebi/GDebi.py:87
+#: ../GDebi/GDebi.py:88
 msgid "Loading..."
-msgstr "Prebieha načítavanie..."
+msgstr "Načítava sa..."
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:177 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:181 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Inštalátor balíkov - %s"
 
-#: ../GDebi/GDebi.py:234
+#: ../GDebi/GDebi.py:238
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:237
+#: ../GDebi/GDebi.py:241
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:243
+#: ../GDebi/GDebi.py:247
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:254
+#: ../GDebi/GDebi.py:258
 msgid "Error: "
-msgstr ""
+msgstr "Chyba: "
 
-#: ../GDebi/GDebi.py:269
+#: ../GDebi/GDebi.py:273
 msgid "Same version is already installed"
-msgstr "V rovnakej verzii ako je súčasne nainštalovaná"
+msgstr "Rovnaká verzia už je nainštalovaná"
 
-#: ../GDebi/GDebi.py:270
+#: ../GDebi/GDebi.py:274
 msgid "_Reinstall Package"
 msgstr "P_reinštalovať balík"
 
-#: ../GDebi/GDebi.py:313
+#: ../GDebi/GDebi.py:317
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:318 ../GDebi/GDebi.py:323
+#: ../GDebi/GDebi.py:322 ../GDebi/GDebi.py:327
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:327
+#: ../GDebi/GDebi.py:331
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:338
+#: ../GDebi/GDebi.py:342
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>Odstráni sa: %s</b>"
+msgstr "<b>Na odstránenie: %s</b>"
 
-#: ../GDebi/GDebi.py:340 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:344 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
-msgstr "Bude sa inštalovať: %s"
+msgstr "Na inštaláciu: %s"
 
-#: ../GDebi/GDebi.py:355
+#: ../GDebi/GDebi.py:359
 msgid "Open Software Package"
-msgstr "Otvoriť softvérový balík"
+msgstr "Otvoriť balík softvéru"
 
-#: ../GDebi/GDebi.py:360
+#: ../GDebi/GDebi.py:364
 msgid "Software packages"
-msgstr "Softvérové balíky"
+msgstr "Balíky softvéru"
 
-#: ../GDebi/GDebi.py:389
+#: ../GDebi/GDebi.py:393
 msgid "File not found"
-msgstr ""
+msgstr "Súbor nebol nájdený"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:394
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
+msgstr "Pokúsili ste sa nainštalovať súbor, ktorý (už) neexistuje. "
 
 #. do it
-#: ../GDebi/GDebi.py:400
+#: ../GDebi/GDebi.py:404
 msgid "Installing package file..."
-msgstr "Inštaluje sa balík..."
+msgstr "Inštaluje sa súbor balíka..."
 
-#: ../GDebi/GDebi.py:402
+#: ../GDebi/GDebi.py:406
 msgid "Install unauthenticated software?"
-msgstr "Nainštalovať neoverený balík?"
+msgstr "Nainštalovať softvér, ktorého pravosť nebola overená?"
 
-#: ../GDebi/GDebi.py:403
-#, fuzzy
+#: ../GDebi/GDebi.py:407
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"Škodlivý softvér môže poškodiť vaše dáta alebo prevziať kontrolu nad vašim "
-"systémom.\n"
-"\n"
-"Pri nižšie uvedených balíkoch sa nepodarilo overiť pravosť, a preto nemožno "
-"zaručiť, že neobsahujú škodlivý softvér."
 
-#: ../GDebi/GDebi.py:430
+#: ../GDebi/GDebi.py:434
 msgid "You need to grant administrative rights to install software"
-msgstr ""
+msgstr "Musíte programu udeliť práva správcu aby mohol inštalovať softvér"
 
-#: ../GDebi/GDebi.py:431
-#, fuzzy
+#: ../GDebi/GDebi.py:435
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
-"<big><b>Na inštalovanie softvéru musíte poskytnúť administrátorské práva</"
-"b></big>\n"
 "\n"
-"Manuálne inštalovanie balíkov môže predstavovať bezpečnostné riziko, preto "
-"inštalujte iba softvér od dôveryhodných dodávateľov."
+"Inštalovať súbory balíkov manuálne je potenciálne bezpečnostné riziko.\n"
+"Inštalujte iba softvér od dôveryhodných dodávateľov.\n"
 
-#: ../GDebi/GDebi.py:454 ../GDebi/GDebi.py:513
+#: ../GDebi/GDebi.py:458 ../GDebi/GDebi.py:517
 msgid "Failed to install package file"
-msgstr "Inštalácia balíka zlyhala"
+msgstr "Nepodarilo sa nainštalovať súbor balíka"
 
-#: ../GDebi/GDebi.py:497 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:501 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
-msgstr "Nepodarilo sa stiahnuť všetky potrebné súbory"
+msgstr "Nepodarilo sa stiahnuť všetky požadované súbory"
 
-#: ../GDebi/GDebi.py:498 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
-msgstr "Skontrolujte si svoje internerové pripojenie alebo inštalačné médium."
+msgstr ""
+"Skontrolujte prosím vaše pripojenie k internetu alebo inštalačný nosič."
 
-#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:506 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
-msgstr "Nepodarilo sa nainštalovať všetky závislosti"
+msgstr "Nebolo možné nainštalovať všetky závislosti"
 
-#: ../GDebi/GDebi.py:503 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:507 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"Zvyčajne je to chyba softvérového dodávateľa. Podrobnosti si môžete pozrieť "
-"v termináli."
+"Toto sa zvyčajne týka chyby distribútora softvéru. Podrobnosti nájdete v "
+"okne terminálu."
 
-#: ../GDebi/GDebi.py:518
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:523
+#, python-format
 msgid "Installing %s"
-msgstr "Inštaluje sa '%s'..."
+msgstr "Inštaluje sa %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:534 ../GDebi/GDebiKDE.py:352
-#, fuzzy
+#: ../GDebi/GDebi.py:539 ../GDebi/GDebiKDE.py:352
 msgid "Installation finished"
-msgstr "Inštalácia úspešne skončila"
+msgstr "Inštalácia dokončená"
 
-#: ../GDebi/GDebi.py:536
+#: ../GDebi/GDebi.py:541
 #, python-format
 msgid "Package '%s' was installed"
-msgstr "Balík '%s' bol nainštalovaný"
+msgstr "Bol nainštalovaný balík „%s“"
 
-#: ../GDebi/GDebi.py:538 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:543 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr "Nepodarilo sa nainštalovať balík '%s'"
+msgstr "Nepodarilo sa nainštalovať balík „%s“"
 
-#: ../GDebi/GDebi.py:540
+#: ../GDebi/GDebi.py:545
 msgid "Installation complete"
-msgstr "Inštalácia úspešne skončila"
+msgstr "Inštalácia dokončená"
 
-#: ../GDebi/GDebi.py:547 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:552 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
-msgstr "Nepodarilo sa nainštalovať všetky závislosti"
+msgstr "Nepodarilo sa úplne nainštalovať všetky závislosti"
 
-#: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "Na opravu tejto chyby spustite v termináli 'sudo apt-get install -f'."
+msgstr ""
+"Ak chcete túto situáciu opraviť, spustite v okne terminálu „sudo apt-get "
+"install -f“."
 
 #. ui
-#: ../GDebi/GDebi.py:636 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:646 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "Inštaluje sa '%s'..."
+msgstr "Inštaluje sa „%s“..."
 
-#: ../GDebi/GDebi.py:726 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:736 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
-msgstr "Inštalujú sa závislosti"
+msgstr "Inštalujú sa závislosti..."
 
-#: ../GDebi/GDebi.py:763 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "Získavajú sa ďalšie balíky..."
+msgstr "Sťahujú sa ďalšie súbory balíkov..."
 
-#: ../GDebi/GDebi.py:772 ../GDebi/KDEAptDialogs.py:217
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:783 ../GDebi/KDEAptDialogs.py:217
+#, python-format
 msgid "File %s of %s at %sB/s"
-msgstr "Súbor %s z %s pri %s/s"
+msgstr "Súbor %s z %s pri rýchlosti %sB/s"
 
-#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:219
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:219
+#, python-format
 msgid "File %s of %s"
-msgstr "Súbor %s z %s pri %s/s"
+msgstr "Súbor %s z %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:781 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:792 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "Prosím, vložte '%s' do mechaniky '%s'"
+msgstr "Prosím vložte „%s“ do mechaniky „%s“"
 
-#: ../GDebi/GDebiCli.py:58
+#: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
+msgstr "Položky konfigurácie je potrebné uviesť s =<hodnota>\n"
 
-#: ../GDebi/GDebiCli.py:64
+#: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr ""
+msgstr "Nepodarilo sa nastaviť voľbu APT %s na hodnotu %s\n"
 
-#: ../GDebi/GDebiCli.py:77
+#: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr ""
-
-#: ../GDebi/GDebiCli.py:80
-#, fuzzy
-msgid "Failed to open the software package\n"
-msgstr "Nepodarilo sa otvoriť softvérový balík"
+msgstr "Neznámy typ balíka „%s“, ukončuje sa\n"
 
 #: ../GDebi/GDebiCli.py:81
-#, fuzzy
+msgid "Failed to open the software package\n"
+msgstr "Nepodarilo sa otvoriť balík softvéru\n"
+
+#: ../GDebi/GDebiCli.py:82
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
-"Balík môže byť poškodený alebo nie ste oprávnený otvoriť súbor s balíkom. "
-"Skontrolujte práva k súboru."
+"Balík môže byť poškodený alebo nemáte oprávnenie na otvorenie súboru. "
+"Skontrolujte oprávnenia súboru.\n"
 
-#: ../GDebi/GDebiCli.py:87
-#, fuzzy
+#: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
-msgstr "Tento balík nie je možné naištalovať"
+msgstr "Tento balík nie je možné nainštalovať\n"
 
-#: ../GDebi/GDebiCli.py:96 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
 msgid "No description is available"
-msgstr "Nie je dostupný žiadny popis"
+msgstr "Popis nie je dostupný"
 
-#: ../GDebi/GDebiCli.py:102
+#: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr "Pri nasledovných balíkoch NEBOLO MOŽNÉ OVERIŤ PRAVOSŤ: "
+msgstr "pri nasledovných balíkoch NEBOLO MOŽNÉ OVERIŤ PRAVOSŤ: "
 
-#: ../GDebi/GDebiCli.py:106
+#: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
-msgstr "Vyžaduje ODSTRÁNENIE nasledových balíkov: "
+msgstr "Vyžaduje ODSTRÁNENIE nasledovných balíkov: "
 
-#: ../GDebi/GDebiCli.py:111
+#: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
-msgstr "Vyžaduje inštaláciu nasledových balíkov: "
+msgstr "Vyžaduje inštaláciu nasledovných balíkov: "
 
-#: ../GDebi/GDebiCli.py:125
-#, fuzzy, python-format
+#: ../GDebi/GDebiCli.py:126
+#, python-format
 msgid "Error during install: '%s'"
-msgstr "Bude sa inštalovať: %s"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
 msgstr "Obsahuje súbory"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
-#, fuzzy
 msgid "&Install Package"
-msgstr "_Nainštalovať balík"
+msgstr "Na&inštalovať balík"
 
 #: ../GDebi/GDebiKDE.py:162
-#, fuzzy
 msgid "The package file does not exist"
-msgstr "Tento balík nie je možné naištalovať"
+msgstr "Súbor balíka neexistuje"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
+"Na inštaláciu bol vybraný neexistujúci súbor. Prosím, vyberte existujúci "
+"súbor balíka .deb."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:231
-#, fuzzy
 msgid "&Reinstall Package"
-msgstr "P_reinštalovať balík"
+msgstr "P&reinštalovať balík"
 
 #: ../GDebi/GDebiKDE.py:266
-#, fuzzy
 msgid "Re&install Package"
-msgstr "P_reinštalovať balík"
+msgstr "Pre&inštalovať balík"
 
 #: ../GDebi/GDebiKDE.py:277
-#, fuzzy, python-format
+#, python-format
 msgid "To be removed: %s"
-msgstr "<b>Odstráni sa: %s</b>"
+msgstr "Na odstránenie: %s"
 
 #: ../GDebi/GDebiKDE.py:354
 msgid "<b>"
-msgstr ""
+msgstr "<b>"
 
 #: ../GDebi/GDebiCommon.py:67
-#, fuzzy
 msgid "Broken dependencies"
-msgstr "Inštalujú sa závislosti"
+msgstr "Poškodené závislosti"
 
 #: ../GDebi/GDebiCommon.py:68
 msgid ""
@@ -512,63 +504,66 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"Váš systém obsahuje poškodené závislosti. Táto aplikácia nemôže pokračovať, "
+"kým nebude problém opravený. Ak to chcete opraviť, spustite v okne terminálu "
+"„gksudo synaptic“ alebo „sudo apt-get install -f“."
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "„%s“ nie je balík Debianu"
 
 #: ../GDebi/GDebiCommon.py:86
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
+"Typ MIME tohto súboru je „%s“ a nemožno ho na tomto systéme nainštalovať."
 
 #: ../GDebi/GDebiCommon.py:90
 #, python-format
 msgid "Could not open '%s'"
-msgstr "Nebolo možné otvoriť '%s'"
+msgstr "Nepodarilo sa otvoriť „%s“"
 
 #: ../GDebi/GDebiCommon.py:91
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
-"Balík môže byť poškodený alebo nie ste oprávnený otvoriť súbor s balíkom. "
-"Skontrolujte práva k súboru."
+"Balík môže byť poškodený alebo nemáte oprávnenie otvoriť súbor. Skontrolujte "
+"oprávnenia súboru."
 
 #: ../GDebi/GDebiCommon.py:107
 msgid "Same version is available in a software channel"
-msgstr "Rovnaká verzia je dostupná z internetového zdroja balíkov"
+msgstr "Zdroj softvéru poskytuje rovnakú verziu."
 
 #: ../GDebi/GDebiCommon.py:108
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
-"Je odporúčané radšej nainštalovať softvér z internetového zdroja balíkov."
+msgstr "Odporúča sa namiesto toho inštalovať softvér zo zdroja softvéru."
 
 #: ../GDebi/GDebiCommon.py:112
 msgid "An older version is available in a software channel"
-msgstr "Staršia verzia je dostupná z internetového zdroja balíkov"
+msgstr "Zdroj softvéru poskytuje staršiu verziu."
 
 #: ../GDebi/GDebiCommon.py:113
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
-"Vo všeobecnosti je odporúčané nainštalovať verziu z internetového zdroja "
-"balíkov, pretože zväčša býva lepšie podporovaná."
+"Vo všeobecnosti sa odporúča inštalovať softvér zo zdroja softvéru, pretože "
+"je zvyčajne lepšie podporovaný."
 
 #: ../GDebi/GDebiCommon.py:118
 msgid "A later version is available in a software channel"
-msgstr "Novšia verzia je dostupná z internetového zdroja balíkov"
+msgstr "Zdroj softvéru poskytuje novšiu verziu."
 
 #: ../GDebi/GDebiCommon.py:120
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
-"Je silne odporúčané nainštalovať verziu z internetového zdroja balíkov, "
-"pretože zväčša býva lepšie podporovaná."
+"Dôrazne sa odporúča inštalovať softvér zo zdroja softvéru, pretože je "
+"zvyčajne lepšie podporovaný."
 
 #: ../GDebi/GDebiCommon.py:128
 msgid "All dependencies are satisfied"
@@ -587,68 +582,88 @@ msgstr "Vyžaduje inštaláciu %s balíkov"
 
 #: ../GDebi/GDebiCommon.py:141 ../GDebi/GDebiCommon.py:159
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr "Naraz môže byť spustený len jeden program na správu softvéru"
+msgstr "Naraz môže bežať iba jeden nástroj na správu softvéru"
 
 #: ../GDebi/GDebiCommon.py:143 ../GDebi/GDebiCommon.py:161
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Musíte najprv zavrieť ostatné programy na správu softvéru, ako napr. "
-"'Správcu aktualizácií', 'aptitude' alebo 'Synaptic'."
+"Prosím, najskôr zatvorte druhú aplikáciu (napr. „Správca aktualizácií“, "
+"„aptitude“ alebo „Synaptic“)."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
-msgstr ""
-
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "Závislosti nie sú splnené: %s\n"
-
-#, fuzzy
-#~ msgid "Conflicts with the installed package '%s'\n"
-#~ msgstr "Konflikt s nainštalovaným balíkom '%s'"
-
-#~ msgid "Wrong architecture '%s'"
-#~ msgstr "Nesprávna architektúra '%s'"
-
-#~ msgid "A later version is already installed"
-#~ msgstr "Už je nainštalovaná novšia verzia"
-
-#, fuzzy
-#~ msgid "Analysing dependencies"
-#~ msgstr "Inštalujú sa závislosti"
-
-#~ msgid "Failed to satisfy all dependencies (broken cache)"
-#~ msgstr ""
-#~ "Nebolo možné splniť všetky závislosti (poškodená vyrovnávacia pamäť)"
-
-#~ msgid "Cannot install '%s'"
-#~ msgstr "Nie je možné naištalovať '%s'"
+msgstr "Výmena nosiča"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
+#~ msgid "Wrong architecture '%s'"
+#~ msgstr "Nesprávna architektúra „%s“"
+
+#~ msgid "Y"
+#~ msgstr "A"
+
+#~ msgid "Open..."
+#~ msgstr "Otvoriť..."
+
 #~ msgid "translator-credits"
-#~ msgstr "Peter Chabada"
-
-#~ msgid "(c) 2005-2006 Canonical"
-#~ msgstr "(c) 2005-2006 Canonical"
-
-#~ msgid "Installing package file"
-#~ msgstr "Prebiaha inštalácia balíka"
-
-#~ msgid "Usage: %s [package.deb]"
-#~ msgstr "Použitie: %s [balík.deb]"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Matej Duman https://launchpad.net/~dumi\n"
+#~ "  helix84 https://launchpad.net/~helix84"
 
 #~ msgid ""
-#~ "To use the graphical user interface, right-click\n"
-#~ "on a '.deb' software package in the file browser\n"
-#~ "and select: Open with 'GDebi Package Installer'."
+#~ "Malicous software can damage your data and take control of your system.\n"
+#~ "\n"
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Ak chcete použiť grafické používateľské rozhranie,\n"
-#~ "kliknite pravým tlačítkom na '.deb' balík a vyberte:\n"
-#~ "Otvoriť s 'Inštalátorom balíov GDebi'."
+#~ "Zákerný softvér môže poškodiť vaše dáta a prebrať kontrolu nad vaším "
+#~ "systémom.\n"
+#~ "\n"
+#~ "Pravosť dolu uvedených balíkov nebola overená a preto môžu byť podvrhnuté."
 
-#~ msgid "_Grant"
-#~ msgstr "Poskytnúť _adminstrátorské práva"
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Závislosť nemožno uspokojiť: %s\n"
+
+#, python-format
+#~ msgid "Conflicts with the installed package '%s'\n"
+#~ msgstr "Je v konflikte s nainštalovaným  balíkom „%s“\n"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
+#~ msgstr "Porušuje v existujúcom balíku „%s“ závislosť %s (%s %s)\n"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
+#~ msgstr "Porušuje v existujúcom balíku „%s“ konflikt: %s (%s %s)\n"
+
+#~ msgid "No Architecture field in the package"
+#~ msgstr "Balík neobsahuje pole Architektúra"
+
+#~ msgid "A later version is already installed"
+#~ msgstr "Novšia verzia je už nainštalovaná"
+
+#~ msgid "Analysing dependencies"
+#~ msgstr "Analyzujú sa závislosti"
+
+#~ msgid "Failed to satisfy all dependencies (broken cache)"
+#~ msgstr ""
+#~ "Nepodarilo sa uspokojiť všetky závislosti (poškodená vyrovnávacia pamäť)"
+
+#, python-format
+#~ msgid "Cannot install '%s'"
+#~ msgstr "Nemožno nainštalovať „%s“"
+
+#~ msgid "List of files could not be read, please report this as a bug"
+#~ msgstr ""
+#~ "Zoznam súborov, ktoré nebolo možné načítať. Ohláste to prosím ako chybu."
+
+#, python-format
+#~ msgid "IOError during filelist read: %s"
+#~ msgstr "V/V chyba počas čítania zoznamu súborov: %s"

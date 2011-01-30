@@ -1,16 +1,16 @@
-# Italian translation for gdebi
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Lithuanian translation for gdebi
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-30 16:18+0100\n"
-"PO-Revision-Date: 2010-09-02 07:37+0000\n"
-"Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 2009-11-19 15:34+0000\n"
+"Last-Translator: brennus <Unknown>\n"
+"Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,54 +23,53 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
-"Uso: %prog [OPZIONI] NOMEFILE\n"
-"Per una versione grafica eseguire \"gdebi-gtk\"\n"
+"naudojimas: %prog [nustatymai] failas\n"
+"Norėdami grafinės versijos, paleiskite gdebi-gtk\n"
 
 #: ../gdebi:53 ../gdebi-gtk:53
 msgid "Run non-interactive (dangerous!)"
-msgstr "Esecuzione non-interattiva (pericoloso)"
+msgstr "Paleisti automatiškai sprendimus priimančiu rėžimu (pavojinga!)"
 
 #: ../gdebi:57
 msgid "Set an APT configuration option"
-msgstr "Imposta un'opzione di configurazione APT"
+msgstr "Pasirinkite APT konfigūracijos nustatymus"
 
 #: ../gdebi:61
 msgid "Do not show progress information"
-msgstr "Non mostra informazioni di avanzamento"
+msgstr "Norodyti būklės informacijos"
 
 #: ../gdebi:65
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
-"Solo simulazione e stampa su stderr una riga compatibile per apt-get install"
+msgstr "Išspausdinti netikrą su apt-get install suderinamą eilutę į stderr"
 
 #: ../gdebi:67
 msgid "Use alternative root dir"
-msgstr "Usa una directory root alternativa"
+msgstr "Naudoti alternatyvų šakninį katalogą"
 
 #: ../gdebi:75
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "Errore di gdebi, file non trovato: %s\n"
+msgstr "gdebi klaida, nerasta byla %s\n"
 
 #: ../gdebi:94 ../gdebi:104
 msgid "Need to be root to install packages"
-msgstr "È necessario essere amministratori per installare i pacchetti"
+msgstr "Norint įdiegti paketus, reikia turėti prieigos teises"
 
 #: ../gdebi:106 ../GDebi/GDebiCli.py:151
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "Installare il pacchetto software? [s/N]:"
+msgstr "Ar norite įdiegti šį programų paketą? [y/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
-msgstr "Chiudere automaticamente alla fine dell'installazione"
+msgstr ""
 
 #: ../gdebi-gtk:58
 msgid "Use alternative datadir"
-msgstr "Usa una datadir alternativa"
+msgstr ""
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
-msgstr "L'indice dei programmi è rovinato"
+msgstr "Programinės įrangos rodyklė sugadinta"
 
 #: ../gdebi-gtk:78
 msgid ""
@@ -79,10 +78,11 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"Questo è un problema grave del sistema di gestione del software. Controllare "
-"i pacchetti danneggiati con synaptic, i permessi dei file e la correttezza "
-"dei file presenti in «/etc/apt/sources.list» e ricaricare le informazioni "
-"del software con: «sudo apt-get update» e «sudo apt-get install -f»."
+"Jūsų sistemą ištiko kritinė programų tvarkymo klaida. Prašome su synaptic "
+"patikrinti, ar yra sugadintų paketų, bei peržiūrėti bylų prieigos teises bei "
+"bylos „/etc/apt/sources/list“ taisyklingumą ir iš naujo atsiųsti programinės "
+"įrangos informaciją naudojant komandas „sudo apt-get update“ bei „sudo apt-"
+"get install -f“."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -90,206 +90,203 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:2
 msgid "<b><big>   </big></b>"
-msgstr "<b><big>   </big></b>"
+msgstr "<b><big> </big></b>"
 
 #: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:140
 msgid "<b>Maintainer:</b>"
-msgstr "<b>Responsabile:</b>"
+msgstr "<b>Prižiūrėtojas:</b>"
 
 #: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:141
 msgid "<b>Priority:</b>"
-msgstr "<b>Priorità:</b>"
+msgstr "<b>Svarba:</b>"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
 msgid "<b>Section:</b>"
-msgstr "<b>Sezione:</b>"
+msgstr "<b>Skyrius:</b>"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
 msgid "<b>Size:</b>"
-msgstr "<b>Dimensione:</b>"
+msgstr "<b>Dydis:</b>"
 
 #: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
 msgid "<b>To install the following changes are required:</b>"
-msgstr "<b>Per installare, sono richieste le seguenti modifiche:</b>"
+msgstr "<b>Įdiegimui reikalingi šie pakeitimai:</b>"
 
 #: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
 msgid "<b>Version:</b>"
-msgstr "<b>Versione:</b>"
+msgstr "<b>Versija:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
 msgstr ""
-"Chiudere automaticamente una volta applicate con successo le modifiche"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
-msgstr "Descrizione"
+msgstr "Apibūdinimas"
 
 #: ../data/gdebi.ui.h:11
 msgid "Description:"
-msgstr "Descrizione:"
+msgstr "Aprašas:"
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
 #: ../GDebi/GDebiKDE.py:281
 msgid "Details"
-msgstr "Dettagli"
+msgstr "Išsamiau"
 
 #: ../data/gdebi.ui.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL, consultare /usr/share/common-licenses/GPL"
+msgstr "GPL, žiūrėkite /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr "File inclusi"
+msgstr ""
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr "Installa e visualizza pacchetti software"
+msgstr "Įdiegti ir peržiūrėti programinės įrangos paketus"
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr "Installatore pacchetto"
+msgstr "Paketų diegyklė"
 
 #. first, we load all the default descriptions -- pyuic doesn't use
 #. gettext as default (FIXME, copy code from language-selector)
 #: ../data/gdebi.ui.h:17 ../GDebi/GDebiKDE.py:131
 msgid "Package:"
-msgstr "Pacchetto:"
+msgstr "Paketas:"
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr "Stato:"
+msgstr "Būsena:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
-msgstr "Terminale"
+msgstr "Terminalas"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr "_Dettagli"
+msgstr "_Išsamiau"
 
 #: ../data/gdebi.ui.h:21
 msgid "_File"
-msgstr "_File"
+msgstr "_Byla"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Help"
-msgstr "A_iuto"
+msgstr "_Pagalba"
 
 #. img = gtk.Image()
 #. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:261 ../GDebi/GDebi.py:301
 msgid "_Install Package"
-msgstr "Installa _pacchetto"
+msgstr "Į_diegti paketą"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Open..."
-msgstr "_Apri..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
-msgstr "A_ggiorna"
+msgstr "_Atnaujinti"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr "Pacchetto software"
+msgstr "Programinis paketas"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr "Installatore pacchetto GDebi"
+msgstr "„GDebi“ paketų diegyklė"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:38
 #, python-format
 msgid "%s is not available"
-msgstr "%s non è disponibile"
+msgstr "%s neprieinamas"
 
 #: ../GDebi/GDebi.py:88
 msgid "Loading..."
-msgstr "Caricamento..."
+msgstr "Įkeliama..."
 
 #. set window title
 #. set name
 #: ../GDebi/GDebi.py:181 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
-msgstr "Installatore pacchetto - %s"
+msgstr "Paketų diegyklė – %s"
 
 #: ../GDebi/GDebi.py:238
 msgid "Package control data"
-msgstr "Dati di controllo pacchetto"
+msgstr ""
 
 #: ../GDebi/GDebi.py:241
 msgid "Upstream data"
-msgstr "Dati upstream"
+msgstr ""
 
 #: ../GDebi/GDebi.py:247
 msgid "Error reading filelist"
-msgstr "Errore nel leggere l'elenco file"
+msgstr ""
 
 #: ../GDebi/GDebi.py:258
 msgid "Error: "
-msgstr "Errore: "
+msgstr "Klaida: "
 
 #: ../GDebi/GDebi.py:273
 msgid "Same version is already installed"
-msgstr "La stessa versione è già installata"
+msgstr "Ta pati versija jau įdiegta"
 
 #: ../GDebi/GDebi.py:274
 msgid "_Reinstall Package"
-msgstr "_Reinstalla pacchetto"
+msgstr "_Perdiegti paketą"
 
 #: ../GDebi/GDebi.py:317
 msgid "Selection is a directory"
-msgstr "La selezione è una directory"
+msgstr ""
 
 #: ../GDebi/GDebi.py:322 ../GDebi/GDebi.py:327
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr "Errore nel leggere il contenuto del file «%s»"
+msgstr ""
 
 #: ../GDebi/GDebi.py:331
 msgid "File content can not be extracted"
-msgstr "Il contenuto del file non può essere estratto"
+msgstr ""
 
 #: ../GDebi/GDebi.py:342
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>Da rimuovere: %s</b>"
+msgstr "<b>Bus pašalinta: %s</b>"
 
 #: ../GDebi/GDebi.py:344 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
-msgstr "Da installare: %s"
+msgstr "Bus įdiegta: %s"
 
 #: ../GDebi/GDebi.py:359
 msgid "Open Software Package"
-msgstr "Apri pacchetto software"
+msgstr "Atverti programinį paketą"
 
 #: ../GDebi/GDebi.py:364
 msgid "Software packages"
-msgstr "Pacchetti software"
+msgstr "Programiniai paketai"
 
 #: ../GDebi/GDebi.py:393
 msgid "File not found"
-msgstr "File non trovato"
+msgstr "Byla nerasta"
 
 #: ../GDebi/GDebi.py:394
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
-"È stata tentata l'installazione di un file che non esiste (o non esiste "
-"più). "
+msgstr "Jūs pabandėte įdiegti nebeegzistuojančią bylą. "
 
 #. do it
 #: ../GDebi/GDebi.py:404
 msgid "Installing package file..."
-msgstr "Installazione file di pacchetto..."
+msgstr "Diegiama paketo byla..."
 
 #: ../GDebi/GDebi.py:406
 msgid "Install unauthenticated software?"
-msgstr "Installare software non autenticato?"
+msgstr "Įdiegti nepatvirtintą programinę įrangą?"
 
 #: ../GDebi/GDebi.py:407
 msgid ""
@@ -298,16 +295,11 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"Il software malevolo può danneggiare i dati e prendere il controllo del "
-"sistema.\n"
-"\n"
-"I seguenti pacchetti non sono autenticati e quindi potrebbero essere di "
-"natura pericolosa."
 
 #: ../GDebi/GDebi.py:434
 msgid "You need to grant administrative rights to install software"
 msgstr ""
-"È necessario avere i privilegi di amministratore per installare software"
+"Tam, kad šios programos būtų įdiegtos, Jūs turite suteikti prieigos teises"
 
 #: ../GDebi/GDebi.py:435
 msgid ""
@@ -316,39 +308,37 @@ msgid ""
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 "\n"
-"L'installazione manuale di file di pacchetti rappresenta un possibile "
-"rischio di sicurezza.\n"
-"Installare software solo da distributori fidati.\n"
+"Rankinis paketų diegimas yra ganėtinai pavojingas.\n"
+"Įdiekite tik iš patikimų programinės įrangos gamintojų.\n"
 
 #: ../GDebi/GDebi.py:458 ../GDebi/GDebi.py:517
 msgid "Failed to install package file"
-msgstr "Installazione del file di pacchetto non riuscita"
+msgstr "Nepavyko įdiegti paketo bylos"
 
 #: ../GDebi/GDebi.py:501 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
-msgstr "Impossibile scaricare tutti i file richiesti"
+msgstr "Nepavyko atsiųsti visų reikalingų bylų"
 
 #: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
-msgstr ""
-"Verificare la propria connessione a Internet o il supporto d'installazione."
+msgstr "Patikrinkite interneto ryšį ar diegimo laikmeną."
 
 #: ../GDebi/GDebi.py:506 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
-msgstr "Impossibile installare tutte le dipendenze"
+msgstr "Nepavyko įdiegti visų priklausomų paketų"
 
 #: ../GDebi/GDebi.py:507 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"Solitamente ciò è dovuto a un errore del distributore di software. "
-"Consultare la finestra del terminale per maggiori dettagli."
+"Paprastai tai yra susiję su programinės įrangos platintoju. Peržiūrėkite "
+"terminalo langą, norėdami gauti daugiau informacijos."
 
 #: ../GDebi/GDebi.py:523
 #, python-format
 msgid "Installing %s"
-msgstr "Installazione di %s"
+msgstr "Diegiama %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -356,149 +346,146 @@ msgstr "Installazione di %s"
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebi.py:539 ../GDebi/GDebiKDE.py:352
 msgid "Installation finished"
-msgstr "Installazione terminata"
+msgstr "Diegimas baigtas"
 
 #: ../GDebi/GDebi.py:541
 #, python-format
 msgid "Package '%s' was installed"
-msgstr "Il pacchetto «%s» è stato installato"
+msgstr "Paketas „%s“ yra įdiegtas"
 
 #: ../GDebi/GDebi.py:543 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr "Installazione del pacchetto «%s» non riuscita"
+msgstr "Nepavyko įdiegti paketo „%s“"
 
 #: ../GDebi/GDebi.py:545
 msgid "Installation complete"
-msgstr "Installazione completata"
+msgstr "Diegimas baigtas"
 
 #: ../GDebi/GDebi.py:552 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
-msgstr "Istallazione completa di tutte le dipendenze non riuscita"
+msgstr "Nepavyko visiškai įdiegti visų priklausomų paketų"
 
 #: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
-"Per correggere questo problema, eseguire «sudo apt-get install -f» in una "
-"finestra di terminale."
+"Norėdami tai ištaisyti, terminalo lange įveskite „sudo apt-get install -f“."
 
 #. ui
 #: ../GDebi/GDebi.py:646 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "Installazione di  «%s»..."
+msgstr "Diegiama „%s“..."
 
 #: ../GDebi/GDebi.py:736 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
-msgstr "Installazione delle dipendenze..."
+msgstr "Diegiami priklausantys paketai..."
 
 #: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "Scaricamento pacchetti aggiuntivi..."
+msgstr "Atsiunčiamos papildomos paketo bylos..."
 
 #: ../GDebi/GDebi.py:783 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr "File %s di %s a %sB/s"
+msgstr "Byla %s iš %s %sB/s greičiu"
 
 #: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
-msgstr "File %s di %s"
+msgstr "%s byla iš %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:792 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "Inserire «%s» nell'unità «%s»"
+msgstr "Įdėkite „%s“ į įrenginį „%s“"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
-"Le voci di configurazione devono essere specificate mediante la sintassi "
-"=<valore>\n"
+msgstr "Nustatymai turi būti nurodyti šitaip: =<reikšmė>\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr "Impossibile impostare l'opzione APT %s a %s\n"
+msgstr "Nepavyko nustatyti %s APT parinkties %s\n"
 
 #: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr "Tipo di pacchetto «%s» sconosciuto, uscita\n"
+msgstr "Nežinomas paketo tipas „%s“, išeinama\n"
 
 #: ../GDebi/GDebiCli.py:81
 msgid "Failed to open the software package\n"
-msgstr "Apertura del pacchetto software non riuscita\n"
+msgstr "Nepavyko atverti programinio paketo\n"
 
 #: ../GDebi/GDebiCli.py:82
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
-"Il pacchetto potrebbe essere danneggiato oppure non si ha il permesso di "
-"aprire il file. Verificare i permessi sul file.\n"
+"Šis paketas galbūt yra sugadintas arba jums tiesiog neleidžiama jo "
+"atidaryti. Patikrinkite bylų prieigos taisykles.\n"
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
-msgstr "Questo pacchetto non è installabile\n"
+msgstr "Šis paketas yra nešalintinas\n"
 
 #: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
 msgid "No description is available"
-msgstr "Nessuna descrizione disponibile"
+msgstr "Nėra jokio aprašymo"
 
 #: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr "I seguenti pacchetti NON SONO AUTENTICATI: "
+msgstr "Šių paketų autentiškumas NEPATVIRTINTAS: "
 
 #: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
-msgstr "Richiede la RIMOZIONE dei seguenti pacchetti: "
+msgstr "Reikia PAŠALINTI šiuos paketus: "
 
 #: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
-msgstr "Richiede l'installazione dei seguenti pacchetti: "
+msgstr "Reikia įdiegti šiuos paketus: "
 
 #: ../GDebi/GDebiCli.py:126
 #, python-format
 msgid "Error during install: '%s'"
-msgstr "Errore durante l'installazione: «%s»"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
-msgstr "File inclusi"
+msgstr "Įtrauktos bylos"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
 msgid "&Install Package"
-msgstr "Installa &pacchetto"
+msgstr "&Diegti paketą"
 
 #: ../GDebi/GDebiKDE.py:162
 msgid "The package file does not exist"
-msgstr "Il file di pacchetto non esiste"
+msgstr "Toks paketas neegzistuoja"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"È stato selezionato per l'installazione un file che non esiste. Selezionare "
-"un file pacchetto .deb esistente."
+"Diegti buvo parinkta neegzistuojanti byla. Prašome pasirinkti egzistuojančią "
+".deb paketinę bylą."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:231
 msgid "&Reinstall Package"
-msgstr "&Reinstalla pacchetto"
+msgstr "&Perdiegti paketą"
 
 #: ../GDebi/GDebiKDE.py:266
 msgid "Re&install Package"
-msgstr "Re&installa pacchetto"
+msgstr "Per&diegti paketą"
 
 #: ../GDebi/GDebiKDE.py:277
 #, python-format
 msgid "To be removed: %s"
-msgstr "Da rimuovere: %s"
+msgstr "Bus pašalinta: %s"
 
 #: ../GDebi/GDebiKDE.py:354
 msgid "<b>"
@@ -506,7 +493,7 @@ msgstr "<b>"
 
 #: ../GDebi/GDebiCommon.py:67
 msgid "Broken dependencies"
-msgstr "Dipendenze non integre"
+msgstr "Besikertančios priklausomybės"
 
 #: ../GDebi/GDebiCommon.py:68
 msgid ""
@@ -514,150 +501,160 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"Il sistema presenta delle dipendenze non integre. Impossibile procedere "
-"finché il problema non è risolto. Eseguire «gksudo synaptic» o «sudo apt-get "
-"install -f» in un terminale."
+"Jūsų sistema turi pažeistų priklausomų paketų. Programa negali tęsti "
+"veiklos, kol tai nebus ištaisyta. Prašome paleisti „gksudo synaptic“ ar "
+"„sudo apt-get install -f“ terminalo lange."
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr "«%s» non è un pacchetto Debian"
+msgstr "„%s“ yra ne Debian paketas"
 
 #: ../GDebi/GDebiCommon.py:86
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
-"Il tipo MIME di questo file è «%s» e non può essere installato su questo "
-"sistema."
+"Šio paketo MIME tipas yra „%s“ ir todėl jis negali būti įdiegtas jūsų "
+"sistemoje."
 
 #: ../GDebi/GDebiCommon.py:90
 #, python-format
 msgid "Could not open '%s'"
-msgstr "Impossibile aprire «%s»"
+msgstr "Nepavyko atverti „%s“"
 
 #: ../GDebi/GDebiCommon.py:91
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
-"Il pacchetto potrebbe essere danneggiato oppure non si ha il permesso di "
-"aprire il file. Verificare i permessi sul file."
+"Paketas gali būti sugadintas arba Jums tiesiog neleidžiama atverti failo. "
+"Patikrinkite failo prieigos teises."
 
 #: ../GDebi/GDebiCommon.py:107
 msgid "Same version is available in a software channel"
-msgstr "È disponibile la stessa versione in un canale software"
+msgstr "Ta pati versija yra ir programinės įrangos kanale"
 
 #: ../GDebi/GDebiCommon.py:108
 msgid "You are recommended to install the software from the channel instead."
-msgstr "È consigliato installare il software dal canale."
+msgstr "Patartina diegti programinę įrangą iš programų kanalo."
 
 #: ../GDebi/GDebiCommon.py:112
 msgid "An older version is available in a software channel"
-msgstr "È disponibile una versione più vecchia in un canale software"
+msgstr "Senesnė versija prieinama programų kanale."
 
 #: ../GDebi/GDebiCommon.py:113
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
-"Generalmente è consigliato installare la versione dal canale software, "
-"poiché spesso è supportata in modo migliore."
+"Jums rekomenduojama diegti programų kanalo versiją, nes ji paprastai yra "
+"geriau palaikoma."
 
 #: ../GDebi/GDebiCommon.py:118
 msgid "A later version is available in a software channel"
-msgstr "È disponibile una versione più recente in un canale software"
+msgstr "Naujesnė versija prieinama programų kanale"
 
 #: ../GDebi/GDebiCommon.py:120
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
-"È fortemente raccomandata l'installazione della versione dal canale "
-"software, poiché spesso è supportata in modo migliore."
+"Jums patariama diegti versiją iš programinės įrangos kanalų, nes paprastai "
+"ten ji geriau palaikoma."
 
 #: ../GDebi/GDebiCommon.py:128
 msgid "All dependencies are satisfied"
-msgstr "Tutte le dipendenze sono soddisfatte"
+msgstr "Visi priklausomi paketai įdiegti"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebiCommon.py:131
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr "Richiede la <b>rimozione</b> di %s pacchetti\n"
+msgstr "Reikia <b>pašalinti</b> %s paketus (-ų)\n"
 
 #: ../GDebi/GDebiCommon.py:133
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr "Richiede l'installazione di %s pacchetti"
+msgstr "Reikia įdiegti %s paketus (-ų)"
 
 #: ../GDebi/GDebiCommon.py:141 ../GDebi/GDebiCommon.py:159
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
-"È consentita l'esecuzione di un solo strumento di gestione software alla "
-"volta"
+"Tik vienas programinės įrangos tvarkymo įrankis gali būti paleistas vienu "
+"metu"
 
 #: ../GDebi/GDebiCommon.py:143 ../GDebi/GDebiCommon.py:161
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Chiudere prima l'altra applicazione (cioè «Gestore aggiornamenti», "
-"«aptitude» o «Synaptic»)."
+"Pirmiausia užverkite kitą programą, pvz., „Atnaujinimų tvarkyklę“, "
+"„aptitude“ arba „Synaptic“."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
-msgstr "Cambio del supporto"
+msgstr "Laikmenos keitimas"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
+#~ msgid "Wrong architecture '%s'"
+#~ msgstr "Netinkama architektūra „%s“"
+
 #~ msgid "Y"
-#~ msgstr "S"
+#~ msgstr "T"
 
 #~ msgid "Open..."
-#~ msgstr "Apri..."
-
-#, python-format
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "La dipendenza non può essere soddisfatta: %s\n"
+#~ msgstr "Atidaryti..."
 
 #, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
-#~ msgstr "Conflitti con il pacchetto «%s» installato\n"
-
-#~ msgid "No Architecture field in the package"
-#~ msgstr "Nessun campo «Architecture» nel pacchetto"
-
-#, python-format
-#~ msgid "Wrong architecture '%s'"
-#~ msgstr "Architettura «%s» errata"
-
-#~ msgid "Analysing dependencies"
-#~ msgstr "Analisi delle dipendenze"
-
-#~ msgid "A later version is already installed"
-#~ msgstr "È già installata una versione più recente"
-
-#, python-format
-#~ msgid "Cannot install '%s'"
-#~ msgstr "Impossibile installare «%s»"
-
-#, python-format
-#~ msgid "IOError during filelist read: %s"
-#~ msgstr "Errore di I/O durante la lettura dell'elenco dei file: %s"
-
-#~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Impossibile leggere l'elenco dei file, segnalare un bug per questo evento"
+#~ msgstr "Kertasi su įdiegtu paketu „%s“\n"
 
 #, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
-#~ msgstr "Il pacchetto esistente «%s» viola la dipendenza «%s» (%s %s)\n"
+#~ msgstr "Paketo „%s“ priklausomybę naikina %s (%s %s)\n"
+
+#~ msgid "Analysing dependencies"
+#~ msgstr "Analizuojami šaltiniai"
+
+#~ msgid "No Architecture field in the package"
+#~ msgstr "Pakete nenurodyta pageidaujama sistemos architektūra"
+
+#~ msgid "A later version is already installed"
+#~ msgstr "Naujesnė versija jau įdiegta"
+
+#, python-format
+#~ msgid "Cannot install '%s'"
+#~ msgstr "Nepavyksta įdiegti „%s“"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
-#~ msgstr "Impossibile soddisfare tutte le dipendenze (cache non integra)"
+#~ msgstr "Nepavyko įdiegti visų priklausomų paketų (klaida atmintyje)"
+
+#, python-format
+#~ msgid "IOError during filelist read: %s"
+#~ msgstr "Įvesties/išvesties klaida skaitant %s sąrašą"
+
+#~ msgid "List of files could not be read, please report this as a bug"
+#~ msgstr ""
+#~ "Nepavyko nuskaityti bylų sąrašo, praneškite apie tai kaip apie klaidą"
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Neįmanoma įdiegti priklausomo paketo %s\n"
+
+#, python-format
+#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
+#~ msgstr "Paketas „%s“ pašalina konfliktą su %s (%s %s)\n"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Julius Vitkauskas https://launchpad.net/~julius-vitkauskas\n"
+#~ "  brennus https://launchpad.net/~jonas-ska"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
@@ -665,27 +662,8 @@ msgstr "Cambio del supporto"
 #~ "The packages below are not authenticated and could therefor be of malicous "
 #~ "nature."
 #~ msgstr ""
-#~ "Il software malevolo può danneggiare i dati e prendere il controllo del "
-#~ "sistema.\n"
+#~ "Piktadariška programinė įranga gali sugadinti Jūsų duomenis ir užvaldyti "
+#~ "Jūsų sistemą.\n"
 #~ "\n"
-#~ "I seguenti pacchetti non sono autenticati e quindi potrebbero essere di "
-#~ "natura pericolosa."
-
-#, python-format
-#~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
-#~ msgstr ""
-#~ "Il pacchetto «%s» viola il conflitto del pacchetto esistente: %s (%s %s)\n"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Alessandro Bruzzi https://launchpad.net/~blueplatinum\n"
-#~ "  Andrea Amoroso https://launchpad.net/~heiko81\n"
-#~ "  Claudio Di Vita https://launchpad.net/~cdivita\n"
-#~ "  Gaetano Ingrasciotta https://launchpad.net/~gaetanoingrasciotta\n"
-#~ "  Luca Falavigna https://launchpad.net/~dktrkranz\n"
-#~ "  Luca Gervasio https://launchpad.net/~gervasio\n"
-#~ "  MeltingShell https://launchpad.net/~meltingshell\n"
-#~ "  Milo Casagrande https://launchpad.net/~milo\n"
-#~ "  Sergio Zanchetta https://launchpad.net/~primes2h\n"
-#~ "  bengregor https://launchpad.net/~bengregor"
+#~ "Žemiau nurodyti paketai nėra patvirtinti, todėl tai gali būti piktadariškos "
+#~ "prigimties programinė įranga."
