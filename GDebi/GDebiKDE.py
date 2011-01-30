@@ -219,7 +219,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         # check deps
         if not self._deb.check():
             self.installButton.setEnabled(False)
-            self.textLabel1_3_2.setText("<font color=\"#ff0000\"> Error: " + self._deb._failure_string + "</font>")
+            self.textLabel1_3_2.setText(utf8("<font color=\"#ff0000\"> Error: " + self._deb._failure_string + "</font>"))
             self.detailsButton.hide()
             return False
 
