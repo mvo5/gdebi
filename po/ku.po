@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2011-01-30 16:18+0100\n"
+"POT-Creation-Date: 2011-01-31 21:35+0100\n"
 "PO-Revision-Date: 2006-05-13 13:45+0000\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Çewtiya gdebi, dosya nehat dîtin: %s"
 msgid "Need to be root to install packages"
 msgstr "Sazkirina paketa '%s' serneket"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:151
+#: ../gdebi:106 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr "_Alîkarî"
 #. img = gtk.Image()
 #. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:261 ../GDebi/GDebi.py:301
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:308 ../GDebi/GDebi.py:348
 msgid "_Install Package"
 msgstr "Paketê saz bike"
 
@@ -201,90 +201,114 @@ msgstr "Sazgera Paketan"
 msgid "%s is not available"
 msgstr "%s nayê dîtin"
 
-#: ../GDebi/GDebi.py:88
+#: ../GDebi/GDebi.py:90
 msgid "Loading..."
 msgstr "Tê bar kirin..."
 
+#: ../GDebi/GDebi.py:158
+msgid "Can not download as root"
+msgstr ""
+
+#: ../GDebi/GDebi.py:159
+msgid ""
+"Remote packages can not be downloaded when running as root. Please try again "
+"as a normal user."
+msgstr ""
+
+#: ../GDebi/GDebi.py:172
+#, fuzzy
+msgid "Downloading package"
+msgstr "Paketên pêvek tên daxistin..."
+
+#: ../GDebi/GDebi.py:179
+msgid "Download failed"
+msgstr ""
+
+#: ../GDebi/GDebi.py:180
+#, fuzzy, python-format
+msgid "Downloading the package failed: file '%s' '%s'"
+msgstr "Paketên pêvek tên daxistin..."
+
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:181 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:228 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Sazgera Paketan - %s"
 
-#: ../GDebi/GDebi.py:238
+#: ../GDebi/GDebi.py:285
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:241
+#: ../GDebi/GDebi.py:288
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:247
+#: ../GDebi/GDebi.py:294
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:258
+#: ../GDebi/GDebi.py:305
 msgid "Error: "
 msgstr ""
 
-#: ../GDebi/GDebi.py:273
+#: ../GDebi/GDebi.py:320
 msgid "Same version is already installed"
 msgstr "Ev guherto jixwe sazkirî ye"
 
-#: ../GDebi/GDebi.py:274
+#: ../GDebi/GDebi.py:321
 msgid "_Reinstall Package"
 msgstr "Paketê ji _nû ve saz bike"
 
-#: ../GDebi/GDebi.py:317
+#: ../GDebi/GDebi.py:364
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:322 ../GDebi/GDebi.py:327
+#: ../GDebi/GDebi.py:369 ../GDebi/GDebi.py:374
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:331
+#: ../GDebi/GDebi.py:378
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:342
+#: ../GDebi/GDebi.py:389
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Were rakirin: %s</b>"
 
-#: ../GDebi/GDebi.py:344 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:391 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
 msgstr "Were sazkirin: %s"
 
-#: ../GDebi/GDebi.py:359
+#: ../GDebi/GDebi.py:406
 msgid "Open Software Package"
 msgstr "Paketa Nivîsbariyê Veke"
 
-#: ../GDebi/GDebi.py:364
+#: ../GDebi/GDebi.py:411
 msgid "Software packages"
 msgstr "Paketên Nivîsbariyê"
 
-#: ../GDebi/GDebi.py:393
+#: ../GDebi/GDebi.py:440
 msgid "File not found"
 msgstr ""
 
-#: ../GDebi/GDebi.py:394
+#: ../GDebi/GDebi.py:441
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
 
 #. do it
-#: ../GDebi/GDebi.py:404
+#: ../GDebi/GDebi.py:451
 msgid "Installing package file..."
 msgstr "Dosiyê paketê tê sazkirin..."
 
-#: ../GDebi/GDebi.py:406
+#: ../GDebi/GDebi.py:453
 msgid "Install unauthenticated software?"
 msgstr ""
 
-#: ../GDebi/GDebi.py:407
+#: ../GDebi/GDebi.py:454
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -292,40 +316,40 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:434
+#: ../GDebi/GDebi.py:481
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:435
+#: ../GDebi/GDebi.py:482
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:458 ../GDebi/GDebi.py:517
+#: ../GDebi/GDebi.py:505 ../GDebi/GDebi.py:564
 msgid "Failed to install package file"
 msgstr "Sazkirina dosiya paketê serneket"
 
-#: ../GDebi/GDebi.py:501 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
 msgstr "Daxistina hemû dosiyên pêwîst serneket"
 
-#: ../GDebi/GDebi.py:502 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:549 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 
-#: ../GDebi/GDebi.py:506 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
 msgstr "Sazkirina hemû bindestiyan serneket"
 
-#: ../GDebi/GDebi.py:507 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:554 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
 
-#: ../GDebi/GDebi.py:523
+#: ../GDebi/GDebi.py:570
 #, fuzzy, python-format
 msgid "Installing %s"
 msgstr "'%s' tê sazkirin..."
@@ -334,62 +358,62 @@ msgstr "'%s' tê sazkirin..."
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:539 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:352
 #, fuzzy
 msgid "Installation finished"
 msgstr "Sazkirin temam e"
 
-#: ../GDebi/GDebi.py:541
+#: ../GDebi/GDebi.py:588
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Paketa '%s' hat sazkirin"
 
-#: ../GDebi/GDebi.py:543 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:590 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Sazkirina paketa '%s' serneket"
 
-#: ../GDebi/GDebi.py:545
+#: ../GDebi/GDebi.py:592
 msgid "Installation complete"
 msgstr "Sazkirin temam e"
 
-#: ../GDebi/GDebi.py:552 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:599 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "Ji bo serastkirina vê rewşê, di paceya termînalê de 'sudo apt-get install -"
 "f' bimeşîne."
 
 #. ui
-#: ../GDebi/GDebi.py:646 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:695 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "'%s' tê sazkirin..."
 
-#: ../GDebi/GDebi.py:736 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "Bindestî tên sazkirin..."
 
-#: ../GDebi/GDebi.py:774 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "Paketên pêvek tên daxistin..."
 
-#: ../GDebi/GDebi.py:783 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:832 ../GDebi/KDEAptDialogs.py:217
 #, fuzzy, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "Dosiya %s ji %s bi %s/ç"
 
-#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:834 ../GDebi/KDEAptDialogs.py:219
 #, fuzzy, python-format
 msgid "File %s of %s"
 msgstr "Dosiya %s ji %s bi %s/ç"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:792 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:841 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr ""
@@ -440,7 +464,7 @@ msgstr "RAKIRINA van paketan pêwîst dike: "
 msgid "Requires the installation of the following packages: "
 msgstr "Sazkirina van paketan pêwîst dike: "
 
-#: ../GDebi/GDebiCli.py:126
+#: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, fuzzy, python-format
 msgid "Error during install: '%s'"
 msgstr "Were sazkirin: %s"

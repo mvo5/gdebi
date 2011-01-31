@@ -44,6 +44,8 @@ import time
 import thread
 import vte
 import re
+import tempfile
+import gio
 
 from DebPackage import DebPackage
 from SimpleGtkbuilderApp import SimpleGtkbuilderApp
@@ -100,8 +102,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # show what we have
         self.window_main.show()
+
+        # Check file with gio
+        file = self.gio_copy_in_place(file)
+
         #self.vte_terminal.set_font_from_string("monospace 10")
-        
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
         if not self.openCache():
             self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
@@ -134,6 +139,48 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.window_main.window.set_cursor(None)
         
         self.window_main.set_sensitive(True)
+
+    def gio_progress_callback(self, bytes_read, bytes_total):
+        self.progressbar_download.set_fraction(bytes_read/float(bytes_total))
+        while gtk.events_pending():
+            gtk.main_iteration()
+
+    def on_button_cancel_download_clicked(self, button, cancellable):
+        cancellable.cancel()
+
+    def gio_copy_in_place(self, file):
+        "helper that copies the file to the local system via gio"
+        gio_file = gio.File(file)
+        if (gio_file.get_uri_scheme() == "file"):
+            return file
+        if (os.getuid()==0):
+            self.show_alert(gtk.MESSAGE_ERROR, 
+                            _("Can not download as root"),
+                            _("Remote packages can not be downloaded when "
+                              "running as root. Please try again as a "
+                              "normal user."))
+            sys.exit(1)
+        # Download the file
+        temp_file_name = os.path.join(tempfile.mkdtemp(),os.path.basename(file))
+        gio_dest = gio.File(temp_file_name)
+        try:
+            # download
+            gio_cancellable = gio.Cancellable()
+            self.button_cancel_download.connect("clicked", self.on_button_cancel_download_clicked, gio_cancellable)
+            self.dialog_gio_download.set_transient_for(self.window_main)
+            self.dialog_gio_download.show()
+            self.label_action.set_text(_("Downloading package"))
+            if gio_file.copy(gio_dest, self.gio_progress_callback, 0,
+                             gio_cancellable):
+                file = gio_dest.get_path()
+            self.dialog_gio_download.hide()
+        except Exception, e:
+            self.show_alert(gtk.MESSAGE_ERROR, 
+                            _("Download failed"),
+                            _("Downloading the package failed: "
+                              "file '%s' '%s'") % (file, e))
+            sys.exit(1)
+        return file
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
@@ -563,6 +610,8 @@ Install software from trustworthy software distributors only.
                                         "/root/.synaptic/synaptic.conf")
         # FIXME: doesn't turn it off
         #self.window_main.set_property("urgency-hint", 0)
+        if hasattr(self, "_gio_cancellable"):
+            self._gio_cancellable.cancel()
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
     
