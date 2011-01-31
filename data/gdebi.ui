@@ -943,6 +943,7 @@
     <property name="license" translatable="yes">GPL, see /usr/share/common-licenses/GPL</property>
     <property name="authors">Michael Vogt
 Sebastian Heinlein
+Luca Falavigna
 </property>
     <property name="logo">gdebi.png</property>
     <child internal-child="vbox">
