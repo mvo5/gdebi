@@ -2,6 +2,7 @@ gdebi (0.7.0) UNRELEASED; urgency=low
 
   [ Luca Falavigna ]
   * GDebi/Gdebi.py:
+    - Add Launchpad integration (LP: #520353).
     - Assign a proper title to dialog_deb_install (LP: #576566).
   * GDebi/GDebiCli.py:
     - Handle FetchFailedException when a package is not available in
@@ -33,7 +34,7 @@ gdebi (0.7.0) UNRELEASED; urgency=low
     - recommend on libgtk2-perl instead of libgnome2-perl
   * gio support, thanks to István Nyitrai (LP: #34133, #80862).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Mon, 31 Jan 2011 21:23:23 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 31 Jan 2011 23:44:52 +0100
 
 gdebi (0.6.4) unstable; urgency=low
 

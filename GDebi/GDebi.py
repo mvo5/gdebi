@@ -84,6 +84,15 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         except Exception, e:
           print "Error loading logo"
           pass
+
+        # Launchpad integration
+        try:
+            import LaunchpadIntegration
+            menu = self.builder.get_object('menuitem4_menu')
+            LaunchpadIntegration.set_sourcepackagename ("gdebi")
+            LaunchpadIntegration.add_items(menu, 1, True, False)
+        except ImportError:
+            pass
   
         # setup status
         self.context=self.statusbar_main.get_context_id("context_main_window")
