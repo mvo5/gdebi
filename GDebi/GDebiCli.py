@@ -123,7 +123,7 @@ class GDebiCli(object):
             try:
                 res = self._cache.commit(fprogress,iprogress)
             except apt.cache.FetchFailedException, e:
-                sys.stderr.write(_("Error during install: %s") % e)
+                sys.stderr.write(_("Error during install: '%s'") % e)
                 return False
             except SystemError, e:
                 sys.stderr.write(_("Error during install: '%s'") % e)
