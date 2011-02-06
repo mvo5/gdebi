@@ -1,4 +1,4 @@
-gdebi (0.7.0) UNRELEASED; urgency=low
+gdebi (0.7.0) unstable; urgency=low
 
   [ Luca Falavigna ]
   * GDebi/Gdebi.py:
@@ -34,7 +34,7 @@ gdebi (0.7.0) UNRELEASED; urgency=low
     - recommend on libgtk2-perl instead of libgnome2-perl
   * gio support, thanks to István Nyitrai (LP: #34133, #80862).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Mon, 31 Jan 2011 23:44:52 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 06 Feb 2011 11:15:46 +0100
 
 gdebi (0.6.4) unstable; urgency=low
 
