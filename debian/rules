@@ -1,81 +1,15 @@
 #!/usr/bin/make -f
 
-include /usr/share/python/python.mk
-
-PKG := gdebi
-DEBVER := $(shell dpkg-parsechangelog | sed -n 's/^Version: //p')
-DEB_BUILD_PROG := debuild --preserve-envvar PATH --preserve-envvar CCACHE_DIR -us -uc $(DEB_BUILD_PROG_OPTS)
-PYDIR := $(call py_sitename, $(shell pyversions -d))
-
-build: build-stamp
-
-build-stamp:
-	dh_testdir
-	python ./setup.py build
-	touch $@
+%:
+	dh $@ --with python2
 
 clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-	python ./setup.py clean --all
-	find . -name "*.so" -exec rm {} \;
-	find . -name "*.o" -exec rm {} \;
-	find . -name "*.pyc" -exec rm {} \;
+	dh $@
 	rm -rf build GDebi/Version.py po/mo
-	dh_clean
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
-	python ./setup.py install --prefix=$(CURDIR)/debian/tmp/usr --install-layout=deb
+override_dh_auto_install:
+	dh_auto_install -- --install-scripts=/usr/share/gdebi \
+		--install-lib=/usr/share/gdebi
 
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs -i
-	dh_installdocs -i
-	dh_installexamples -i
-	dh_installman -i
-	# We split the GDebi python module across the packages:
-	set -e; cd debian/tmp; for s in usr/lib/python*; do		\
-		d=../gdebi-core/$$s; p=${PYDIR}/GDebi;			\
-		k=../gdebi-kde/$$s;                                     \
-		g=../gdebi/$$s;						\
-		mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
-		echo mkdir -p $$d/$$p $$g/$$p $$k/$$p;			\
-		cp $$s/$$p/* $$d/$$p/.;					\
-		echo cp $$s/$$p/* $$d/$$p/.;					\
-		# gtk                                                   \
-		for f in SimpleGtkbuilderApp GDebi; do			\
-			mv $$d/$$p/$$f.* $$g/$$p/.;			\
-		done;							\
-		# kde                                                   \
-		for f in GDebiKDE KDEAptDialogs; do	                \
-			mv $$d/$$p/$$f.* $$k/$$p/.;			\
-		done;							\
-	done
-	dh_install -i -X${PYDIR}/GDebi --list-missing
-	dh_link -i
-	dh_compress -i
-	dh_fixperms -i
-	dh_python2 -i
-	find debian/gdebi debian/gdebi-core -type d -print0 | xargs -0 \
-		rmdir -p --ignore-fail-on-non-empty --
-	dh_installdeb -i
-	dh_gencontrol -i
-	dh_md5sums -i
-	dh_builddeb -i
-
-binary-arch: build install
-
-arch-build:
-	rm -rf debian/arch-build
-	mkdir -p debian/arch-build/$(PKG)-$(DEBVER)
-	tar -c --exclude=arch-build --no-recursion -f - `bzr inventory` | (cd debian/arch-build/$(PKG)-$(DEBVER);tar xf -)
-	(cd debian/arch-build/$(PKG)-$(DEBVER) && $(DEB_BUILD_PROG))
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+override_dh_python2:
+	dh_python2 /usr/share/gdebi

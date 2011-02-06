@@ -1,3 +1,27 @@
+gdebi (0.7.1) UNRELEASED; urgency=low
+
+  * debian/compat:
+    - Bump compatibility level to 8.
+  * debian/control:
+    - Build-depends on python (>= 2.6.6-3~).
+    - Fix typos in synopsises.
+  * debian/dirs:
+    - Obsolete, removed.
+  * debian/*.install:
+    - Add Python files to be installed in each package.
+  * debian/*.links:
+    - Install links in /usr/bin pointing to gdebi scripts.
+  * debian/pycompat:
+    - Obsolete, removed.
+  * debian/rules:
+    - Complete overhaul.
+    - Use dh 8 syntax.
+    - Install Python files into /usr/share/gdebi private directory.
+    - No longer install Python files into correspondant package, let
+      .install files do this task.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 06 Feb 2011 23:58:14 +0100
+
 gdebi (0.7.0) unstable; urgency=low
 
   [ Luca Falavigna ]

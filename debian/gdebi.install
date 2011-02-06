@@ -1,6 +1,8 @@
-debian/tmp/usr/bin/gdebi-gtk
-debian/tmp/usr/share/gdebi/gdebi.ui
-debian/tmp/usr/share/gdebi/gdebi.png
-debian/tmp/usr/share/applications/*.desktop
-debian/tmp/usr/share/application-registry
+usr/share/gdebi/gdebi-gtk
+usr/share/gdebi/gdebi.ui
+usr/share/gdebi/gdebi.png
+usr/share/gdebi/GDebi/SimpleGtkbuilderApp.py
+usr/share/gdebi/GDebi/GDebi.py
+usr/share/applications/*.desktop
+usr/share/application-registry
 
