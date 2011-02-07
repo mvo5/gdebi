@@ -1,4 +1,6 @@
-debian/tmp/usr/bin/gdebi-kde
-debian/tmp/usr/share/gdebi/GDebiKDEInstallDialog.ui
-debian/tmp/usr/share/gdebi/GDebiKDEDialog.ui
-debian/tmp/usr/share/applications/kde4/*.desktop
+usr/share/gdebi/gdebi-kde
+usr/share/gdebi/GDebiKDEInstallDialog.ui
+usr/share/gdebi/GDebiKDEDialog.ui
+usr/share/gdebi/GDebi/KDEAptDialogs.py
+usr/share/gdebi/GDebi/GDebiKDE.py
+usr/share/applications/kde4/*.desktop
