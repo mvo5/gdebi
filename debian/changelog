@@ -1,5 +1,7 @@
 gdebi (0.7.1) UNRELEASED; urgency=low
 
+  * GDebi/GDebi.py:
+    - Make sure Synaptic subtree is available anytime (LP: #721294).
   * debian/compat:
     - Bump compatibility level to 8.
   * debian/control:
@@ -20,7 +22,7 @@ gdebi (0.7.1) UNRELEASED; urgency=low
     - No longer install Python files into correspondant package, let
       .install files do this task.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 06 Feb 2011 23:58:14 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 20 Feb 2011 17:32:42 +0100
 
 gdebi (0.7.0) unstable; urgency=low
 

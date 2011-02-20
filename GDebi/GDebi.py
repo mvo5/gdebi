@@ -528,6 +528,8 @@ Install software from trustworthy software distributors only.
             apt_pkg.read_config_file(config, "/root/.synaptic/synaptic.conf")
         else:
             config["Synaptic::closeZvt"] = "false"
+        if not "Synaptic" in config.list():
+            config["Synaptic::closeZvt"] = "false"
         self.synaptic_config = config.subtree("Synaptic")
         self.checkbutton_autoclose.set_active(self.synaptic_config.find_b("closeZvt"))
         
