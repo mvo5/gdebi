@@ -11,12 +11,12 @@ msgstr ""
 "PO-Revision-Date: 2010-09-05 22:46+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
+"Language: he\n"
 
 #: ../gdebi:47
 #, c-format
@@ -209,29 +209,30 @@ msgstr "השדה %s אינו זמין"
 msgid "Loading..."
 msgstr "בטעינה..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "לא ניתן להוריד כמשתמש על"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"לא ניתן להוריד חבילות מרוחקות בעת הפעלה תחת משתמש על. יש לנסות שוב בתור "
+"משתמש רגיל."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "קובצי חבילות נוספים בהורדה..."
+msgstr "החבילה בהורדה"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "ההורדה נכשלה"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "קובצי חבילות נוספים בהורדה..."
+msgstr "הורדת החבילה נכשלה: הקובץ '%s' '%s'"
 
 #. set window title
 #. set name
@@ -393,7 +394,8 @@ msgstr "ארע כשל בהתקנה מלאה של כל התלויות"
 
 #: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
+msgstr ""
+"כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
 
 #. ui
 #: ../GDebi/GDebi.py:695 ../GDebi/KDEAptDialogs.py:73
@@ -604,7 +606,8 @@ msgstr "ניתן להפעיל כלי ניהול תכנה אחד ויחיד בע�
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr "נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
+msgstr ""
+"נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -625,15 +628,18 @@ msgstr "החלפת מדיה"
 #~ msgid "Y"
 #~ msgstr "Y"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "מתנגשת עם החבילה המותקנת '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "אין שדה ארכיטקטורה בחבילה"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "לא ניתן להתקין את '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
 
@@ -643,22 +649,26 @@ msgstr "החלפת מדיה"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "תכנה זדונית עלולה להזיק לנתונים ולהשתלט על המערכת שלך.\n"
 #~ "\n"
 #~ "החבילות שלהלן אינן מאומתות ולכן לא מן הנמנע שאלו בעלות יכולות זדוניות."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "התלויות אינן עומדות בדרישות: %s\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "הארכיטקטורה '%s' שגויה"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התנגשות: %s‏ (%s‏ %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התלויה ב־%s‏ (%s‏ %s)\n"
 

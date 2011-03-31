@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
 "PO-Revision-Date: 2011-01-02 20:13+0000\n"
 "Last-Translator: Maks Lyashuk aka Ma)(imuM <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -210,29 +209,28 @@ msgstr "%s є недоступним"
 msgid "Loading..."
 msgstr "Завантаження..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
 msgstr ""
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "Завантаження додаткових файлів пакунків..."
+msgstr ""
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Завантаження додаткових файлів пакунків..."
+msgstr ""
 
 #. set window title
 #. set name
@@ -302,7 +300,8 @@ msgstr "Файл не знайдено"
 
 #: ../GDebi/GDebi.py:441
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Ви спробували встановити файл, якого не існує (або більше не існує). "
+msgstr ""
+"Ви спробували встановити файл, якого не існує (або більше не існує). "
 
 #. do it
 #: ../GDebi/GDebi.py:451
@@ -353,7 +352,8 @@ msgstr "Не вдалося завантажити всі необхідні ф�
 
 #: ../GDebi/GDebi.py:549 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
-msgstr "Будь ласка, перевірте ваше інтернет-з'єднання або носій встановлення."
+msgstr ""
+"Будь ласка, перевірте ваше інтернет-з'єднання або носій встановлення."
 
 #: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
@@ -638,8 +638,8 @@ msgstr "Зміна Носія"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Шкідливе програмне забезпечення може пошкодити ваші дані та захопити "
 #~ "контроль над вашою системою.\n"
@@ -647,30 +647,36 @@ msgstr "Зміна Носія"
 #~ "Пакунки, наведені нижче, не є достовірними, а тому можуть мати шкідливу "
 #~ "природу."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Залежність неможливо задовольнити: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Конфліктує з встановленим пакунком \"%s\"\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "В пакунку відсутнє поле \"Архітектура\""
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Неправильна архітектура \"%s\""
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Пізніша версія вже встановлена"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Розбиває існуючий конфлікт пакунка \"%s\": %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Розбиває існуючу залежність пакунка \"%s\" %s (%s %s)\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Йде аналіз залежностей"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Неможливо встановити \"%s\""
 
@@ -690,5 +696,6 @@ msgstr "Зміна Носія"
 #~ "  Maks Lyashuk aka Ma)(imuM https://launchpad.net/~probel\n"
 #~ "  svv https://launchpad.net/~skrypnychuk"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Помилка введення-виведення під час читання списку файлів: %s"

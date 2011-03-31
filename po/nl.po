@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
-"PO-Revision-Date: 2010-09-03 19:29+0000\n"
-"Last-Translator: Bert de Bruijn <Unknown>\n"
+"PO-Revision-Date: 2011-02-26 21:02+0000\n"
+"Last-Translator: Rachid <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -211,29 +210,30 @@ msgstr "%s is niet beschibaar"
 msgid "Loading..."
 msgstr "Laden..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "Kan niet downloaden als root(gebruiker)"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Pakketten op afstand kunnen niet gedownload worden wanneer u dit programma "
+"als root uitvoert. Probeer het nogmaals als normale gebruiker."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "Aanvullende pakketbestanden worden gedownload..."
+msgstr "Bezig met downloaden pakket"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Downloaden is mislukt"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Aanvullende pakketbestanden worden gedownload..."
+msgstr "Downloaden van pakket is mislukt: bestand '%s' '%s'"
 
 #. set window title
 #. set name
@@ -501,8 +501,8 @@ msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"Er is niet-bestaand bestand uitgekozen voor installatie. Kies een bestaand ."
-"deb-pakketbestand."
+"Er is niet-bestaand bestand uitgekozen voor installatie. Kies een bestaand "
+".deb-pakketbestand."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:231
@@ -629,6 +629,7 @@ msgstr "Medium wisselen"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Verkeerde architectuur '%s'"
 
@@ -638,24 +639,27 @@ msgstr "Medium wisselen"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Kwaadaardige software kan uw data beschadigen en de controle over uw "
-#~ "systeem overnemen.\n"
+#~ "Kwaadaardige software kan uw data beschadigen en de controle over uw systeem "
+#~ "overnemen.\n"
 #~ "\n"
-#~ "De pakketten hieronder zijn niet geauthoriseerd en zouden daarom "
-#~ "kwaadaardig kunnen zijn."
+#~ "De pakketten hieronder zijn niet geauthoriseerd en zouden daarom kwaadaardig "
+#~ "kunnen zijn."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Aan de volgende benodigdheid kon niet voldaan worden: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicteert met het geïnstalleerde pakket  '%s'\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Een nieuwere versie is al geïnstalleerd"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kan '%s' niet installeren"
 
@@ -675,20 +679,24 @@ msgstr "Medium wisselen"
 #~ "  Bert de Bruijn https://launchpad.net/~lpdebruijn\n"
 #~ "  Glennz nl https://launchpad.net/~glenn-de-groot\n"
 #~ "  Matthijs ten Kate https://launchpad.net/~igadget\n"
+#~ "  Rachid https://launchpad.net/~rachidbm\n"
 #~ "  brupje https://launchpad.net/~b-meijer\n"
 #~ "  cumulus007 https://launchpad.net/~cumulus-007"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Afhankelijkheden onderzoeken"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOError tijdens lezen van bestandslijst: %s"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Geen veld voor hardware-architectuur in pakket"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Breekt bestaand pakket '%s'-conflict: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Breekt bestaande pakket '%s'-afhankelijkheid: %s (%s %s)\n"

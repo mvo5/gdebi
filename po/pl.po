@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
 "PO-Revision-Date: 2010-10-03 15:03+0000\n"
 "Last-Translator: Naven <naven@ipv4.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -82,8 +81,8 @@ msgstr ""
 "Jest to poważny błąd systemu zarządzania pakietami. Proszę poszukać "
 "uszkodzonych pakietów za pomocą programu Synaptic, sprawdzić prawa dostępu "
 "do plików oraz poprawność pliku \"/etc/apt/sources.list\", a następnie "
-"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get update"
-"\" i \"sudo apt-get install -f\"."
+"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get "
+"update\" i \"sudo apt-get install -f\"."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -210,29 +209,30 @@ msgstr "%s nie istnieje"
 msgid "Loading..."
 msgstr "Wczytywanie..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "Nie można pobrać jako root"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Pakiety nie mogą zostać pobrane, podczas pracy jako root. Proszę spróbować "
+"ponownie jako zwykły użytkownik."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "Pobieranie dodatkowych pakietów..."
+msgstr "Pobieranie pakietu"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Błąd pobierania"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Pobieranie dodatkowych pakietów..."
+msgstr "Pobieranie pakietu '%s' '%s' zakończone niepowodzeniem"
 
 #. set window title
 #. set name
@@ -302,7 +302,8 @@ msgstr "Plik nie został odnaleziony"
 
 #: ../GDebi/GDebi.py:441
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Próbowałeś zainstalować plik, który nie istniał lub już nie istnieje. "
+msgstr ""
+"Próbowałeś zainstalować plik, który nie istniał lub już nie istnieje. "
 
 #. do it
 #: ../GDebi/GDebi.py:451
@@ -328,7 +329,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:481
 msgid "You need to grant administrative rights to install software"
-msgstr "Aby instalować oprogramowanie wymagane są uprawnienia administratora."
+msgstr ""
+"Aby instalować oprogramowanie wymagane są uprawnienia administratora."
 
 #: ../GDebi/GDebi.py:482
 msgid ""
@@ -566,7 +568,8 @@ msgstr "Ta sama wersja jest dostępna poprzez jeden z kanałów oprogramowania"
 
 #: ../GDebi/GDebiCommon.py:108
 msgid "You are recommended to install the software from the channel instead."
-msgstr "Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
+msgstr ""
+"Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
 
 #: ../GDebi/GDebiCommon.py:112
 msgid "An older version is available in a software channel"
@@ -629,6 +632,7 @@ msgstr "Zmiana nośnika"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Nieodpowiednia architektura \"%s\""
 
@@ -638,6 +642,7 @@ msgstr "Zmiana nośnika"
 #~ msgid "Open..."
 #~ msgstr "Otwórz..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Niemożliwe spełnienie zależności: %s\n"
 
@@ -649,25 +654,29 @@ msgstr "Zmiana nośnika"
 #~ "Nie udało się spełnić wszysktkich zależności (uszkodzona pamięć podręczna "
 #~ "instalatora)"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "W konflikcie z zainstalowanym pakietem '%s'\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Nowsza wersja jest już zainstalowana"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nie można zainstalować '%s'"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "Lista plików nie może być odczytana; proszę zgłosić to jako błąd"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Istniejący pakiet '%s' konfliktuje z: '%s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
-#~ msgstr ""
-#~ "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
+#~ msgstr "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Błąd we/wy podczas czytania listy plików: %s"
 
@@ -675,6 +684,7 @@ msgstr "Zmiana nośnika"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Bartosz Kaszubowski https://launchpad.net/~simek\n"
+#~ "  GTriderXC https://launchpad.net/~gtriderxc\n"
 #~ "  Jarosław Ogrodnik https://launchpad.net/~goz\n"
 #~ "  Jojo https://launchpad.net/~kuzniarpawel\n"
 #~ "  Marcin Falkiewicz https://launchpad.net/~avalatron\n"

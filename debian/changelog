@@ -3,6 +3,8 @@ gdebi (0.7.1) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * GDebi/GDebi.py:
     - Make sure Synaptic subtree is available anytime (LP: #721294).
+  * po/*.po:
+    - Refresh translations exported from Rosetta.
   * debian/compat:
     - Bump compatibility level to 8.
   * debian/control:
@@ -31,7 +33,7 @@ gdebi (0.7.1) UNRELEASED; urgency=low
   * po/fr.po:
     - Update French translation (Closes: #620251).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 31 Mar 2011 23:20:30 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 31 Mar 2011 23:25:31 +0200
 
 gdebi (0.7.0) unstable; urgency=low
 

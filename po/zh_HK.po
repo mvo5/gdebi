@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
 "PO-Revision-Date: 2009-11-08 08:58+0000\n"
 "Last-Translator: Roy Chan <roy.chan@linux.org.hk>\n"
 "Language-Team: Chinese (Hong Kong) <zh_HK@li.org>\n"
-"Language: zh_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -203,28 +202,28 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "無法以 root 身分下載"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
-msgstr ""
+msgstr "當以 root 身分執行時無法下載遠端套件。請以一般使用者身分重試。"
 
-#: ../GDebi/GDebi.py:172
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr ""
+msgstr "正在下載套件"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "下載失敗"
 
-#: ../GDebi/GDebi.py:180
+#: ../GDebi/GDebi.py:189
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "正在下載套件時失敗：檔案「%s」「%s」"
 
 #. set window title
 #. set name
@@ -588,6 +587,7 @@ msgstr ""
 msgid "Media Change"
 msgstr ""
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "錯誤平台「%s」"
 

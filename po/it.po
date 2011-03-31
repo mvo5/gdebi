@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
-"PO-Revision-Date: 2010-09-02 07:37+0000\n"
+"PO-Revision-Date: 2011-02-01 22:42+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Italian <it@li.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -119,7 +118,8 @@ msgstr "<b>Versione:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr "Chiudere automaticamente una volta applicate con successo le modifiche"
+msgstr ""
+"Chiudere automaticamente una volta applicate con successo le modifiche"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -210,29 +210,30 @@ msgstr "%s non è disponibile"
 msgid "Loading..."
 msgstr "Caricamento..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "Impossibile scaricare come utente root"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"I pacchetti non possono essere scaricati con i privilegi di root. Riprovare "
+"come utente normale."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "Scaricamento pacchetti aggiuntivi..."
+msgstr "Scaricamento del pacchetto"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Scaricamento non riuscito"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Scaricamento pacchetti aggiuntivi..."
+msgstr "Scaricamento del pacchetto non riuscito: file «%s» «%s»"
 
 #. set window title
 #. set name
@@ -643,15 +644,18 @@ msgstr "Cambio del supporto"
 #~ msgid "Open..."
 #~ msgstr "Apri..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "La dipendenza non può essere soddisfatta: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflitti con il pacchetto «%s» installato\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Nessun campo «Architecture» nel pacchetto"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Architettura «%s» errata"
 
@@ -661,9 +665,11 @@ msgstr "Cambio del supporto"
 #~ msgid "A later version is already installed"
 #~ msgstr "È già installata una versione più recente"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Impossibile installare «%s»"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Errore di I/O durante la lettura dell'elenco dei file: %s"
 
@@ -671,6 +677,7 @@ msgstr "Cambio del supporto"
 #~ msgstr ""
 #~ "Impossibile leggere l'elenco dei file, segnalare un bug per questo evento"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Il pacchetto esistente «%s» viola la dipendenza «%s» (%s %s)\n"
 
@@ -680,8 +687,8 @@ msgstr "Cambio del supporto"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Il software malevolo può danneggiare i dati e prendere il controllo del "
 #~ "sistema.\n"
@@ -689,6 +696,7 @@ msgstr "Cambio del supporto"
 #~ "I seguenti pacchetti non sono autenticati e quindi potrebbero essere di "
 #~ "natura pericolosa."
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr ""
 #~ "Il pacchetto «%s» viola il conflitto del pacchetto esistente: %s (%s %s)\n"

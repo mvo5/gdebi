@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
 "PO-Revision-Date: 2009-12-02 12:50+0000\n"
 "Last-Translator: petre <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -211,29 +210,30 @@ msgstr "%s nu este disponibil"
 msgid "Loading..."
 msgstr "Se încarcă..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "Nu se pot realiza descărcări cât timp sunteți conectat ca root"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Nu se pot realiza descărcări cât timp sunteți conectat ca root. "
+"Autentificați-vă ca utilizator normal și reîncercați."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "Se descarcă pachete adiționale..."
+msgstr "Se descarcă pachetul"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Descărcare eșuată"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Se descarcă pachete adiționale..."
+msgstr "Descărcarea pachetului a eșuat: fișierul „%s” „%s”"
 
 #. set window title
 #. set name
@@ -347,7 +347,8 @@ msgstr "Nu s-au putut descărca toate fișierele necesare"
 
 #: ../GDebi/GDebi.py:549 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
-msgstr "Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
+msgstr ""
+"Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
 
 #: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
@@ -624,12 +625,15 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependenţa nu poate fi satisfăcuta: %s\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nu s-a putut instala '%s'"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arhitectură greşită '%s'"
 
@@ -639,13 +643,14 @@ msgstr ""
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Satisfacerea tuturor dependenţelor a eşuat (cache corupt)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Eroare I/O în timpul citirii listei de fişiere: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru "
-#~ "drept o disfunţionalitate (bug)"
+#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru drept "
+#~ "o disfunţionalitate (bug)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

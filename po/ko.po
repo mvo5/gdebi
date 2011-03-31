@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
-"PO-Revision-Date: 2010-04-18 05:50+0000\n"
-"Last-Translator: Bundo <bundo@bundo.biz>\n"
+"PO-Revision-Date: 2011-03-15 13:03+0000\n"
+"Last-Translator: sangho <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -60,11 +59,11 @@ msgstr "소프트웨어 패키지를 설치하기를 원하십니까? [y/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "설치가 완료되면 자동으로 닫기"
 
 #: ../gdebi-gtk:58
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "alternative datadir 사용"
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
@@ -77,10 +76,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"이것은 소프트웨어 관리 시스템의 중대한 실패입니다. 시냅틱을 이용하여 잘못된 "
-"꾸러미들이 있는지 점검하고, '/etc/apt/sources.list' 파일의 사용 권한 및 내용"
-"을 점검한 뒤 다음을 실행하여 소프트웨어 정보를 갱신하십시오: 'sudo apt-get "
-"update' 실행 후 'sudo apt-get install -f'"
+"이것은 소프트웨어 관리 시스템의 중대한 실패입니다. 시냅틱을 이용하여 잘못된 꾸러미들이 있는지 점검하고, "
+"'/etc/apt/sources.list' 파일의 사용 권한 및 내용을 점검한 뒤 다음을 실행하여 소프트웨어 정보를 갱신하십시오: "
+"'sudo apt-get update' 실행 후 'sudo apt-get install -f'"
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -116,7 +114,7 @@ msgstr "<b>버전:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "변경 사항이 성공적으로 적용되면 창 닫기"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -137,7 +135,7 @@ msgstr "GPL, /usr/share/common-licenses/GPL 참조"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr ""
+msgstr "포함된 파일"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -182,7 +180,7 @@ msgstr "패키지 설치(_I)"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Open..."
-msgstr ""
+msgstr "열기(_O).."
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
@@ -207,29 +205,28 @@ msgstr "%s를 사용할 수 없습니다"
 msgid "Loading..."
 msgstr "불러오는 중..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "root 유저로 다운로드 할 수 없습니다."
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
-msgstr ""
+msgstr "원격 패키지는 root 유저로 다운로드 할 수 없습니다. 일반 유저로 다시 시도해 보세요."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "추가 패키지 파일 다운로드 중..."
+msgstr "패키지 다운로드 중입니다."
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "다운로드에 실패하였습니다."
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "추가 패키지 파일 다운로드 중..."
+msgstr "패키지 다운로드 실패: '%s' '%s'"
 
 #. set window title
 #. set name
@@ -240,15 +237,15 @@ msgstr "패키지 설치 프로그램 - %s"
 
 #: ../GDebi/GDebi.py:285
 msgid "Package control data"
-msgstr ""
+msgstr "패키지 제어 데이터"
 
 #: ../GDebi/GDebi.py:288
 msgid "Upstream data"
-msgstr ""
+msgstr "업스트림 데이터"
 
 #: ../GDebi/GDebi.py:294
 msgid "Error reading filelist"
-msgstr ""
+msgstr "파일 목록 읽는 중 오류"
 
 #: ../GDebi/GDebi.py:305
 msgid "Error: "
@@ -264,16 +261,16 @@ msgstr "패키지 재 설치(_R)"
 
 #: ../GDebi/GDebi.py:364
 msgid "Selection is a directory"
-msgstr ""
+msgstr "선택은 디렉토리 입니다."
 
 #: ../GDebi/GDebi.py:369 ../GDebi/GDebi.py:374
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "파일 내용을 읽는 중 오류 발생 '%s'"
 
 #: ../GDebi/GDebi.py:378
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "파일 내용을 추출할 수 없습니다"
 
 #: ../GDebi/GDebi.py:389
 #, python-format
@@ -317,6 +314,9 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"악성 소프트웨어는 자료와 시스템을 손상시킬 수 있습니다.\n"
+"\n"
+"다음 패키지들은 검증되지 않았고, 악성 소프트웨어일 수 있습니다."
 
 #: ../GDebi/GDebi.py:481
 msgid "You need to grant administrative rights to install software"
@@ -352,9 +352,7 @@ msgstr "모든 의존 패키지들을 설치할 수 없습니다"
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
-msgstr ""
-"이것은 보통 소프트웨어 배포자의 오류와 관련된 문제입니다. 좀 더 자세한 내용"
-"은 터미널 창을 참조하십시오."
+msgstr "이것은 보통 소프트웨어 배포자의 오류와 관련된 문제입니다. 좀 더 자세한 내용은 터미널 창을 참조하십시오."
 
 #: ../GDebi/GDebi.py:570
 #, python-format
@@ -389,8 +387,7 @@ msgstr "모든 의존된 패키지를 완전히 설치하는데 실패 하였습
 
 #: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
-"이것을 고치려면 터미널 창에서 'sudo apt-get install -f' 를 실행 하십시오."
+msgstr "이것을 고치려면 터미널 창에서 'sudo apt-get install -f' 를 실행 하십시오."
 
 #. ui
 #: ../GDebi/GDebi.py:695 ../GDebi/KDEAptDialogs.py:73
@@ -445,9 +442,7 @@ msgstr "소프트웨어 패키지를 여는데 실패하였습니다\n"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
-msgstr ""
-"패키지가 망가졌거나, 파일을 열 수 있는 권한이 없는 것 같습니다. 파일의 권한"
-"을 확인하십시오.\n"
+msgstr "패키지가 망가졌거나, 파일을 열 수 있는 권한이 없는 것 같습니다. 파일의 권한을 확인하십시오.\n"
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
@@ -472,7 +467,7 @@ msgstr "다음 패키지의 설치가 필요 합니다: "
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "설치하는 동안 오류가 발생:  '%s'"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
@@ -490,9 +485,7 @@ msgstr "패키지 파일이 존재하지 않습니다"
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
-msgstr ""
-"존재하지 않는 파일이 설치 과정에 선택되었습니다. 존재하는 deb 패키지 파일을 "
-"선택해주십시오."
+msgstr "존재하지 않는 파일이 설치 과정에 선택되었습니다. 존재하는 deb 패키지 파일을 선택해주십시오."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:231
@@ -522,9 +515,8 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"시스템에 망가진 의존성이 발생했습니다. 이 문제가 해결되기 전까지 프로그램을 "
-"계속 할 수 없습니다. 이 문제를 해결하기 위해 'gksudo synaptic' 또는 'sudo "
-"apt-get install -f'를 터미널 창에서 실행하십시오."
+"시스템에 망가진 의존성이 발생했습니다. 이 문제가 해결되기 전까지 프로그램을 계속 할 수 없습니다. 이 문제를 해결하기 위해 "
+"'gksudo synaptic' 또는 'sudo apt-get install -f'를 터미널 창에서 실행하십시오."
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
@@ -546,9 +538,7 @@ msgstr "'%s' 을(를) 열 수 없습니다"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
-msgstr ""
-"패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한"
-"을 점검 하십시오."
+msgstr "패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한을 점검 하십시오."
 
 #: ../GDebi/GDebiCommon.py:107
 msgid "Same version is available in a software channel"
@@ -566,9 +556,7 @@ msgstr "소프트웨어 보관소에 이전 버전이 사용 가능 합니다"
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
-msgstr ""
-"일반적으로 소프트웨어 보관소에 있는 버전을 설치하는 것을 권장 합니다, 보다 나"
-"은 지원이 되기 때문입니다."
+msgstr "일반적으로 소프트웨어 보관소에 있는 버전을 설치하는 것을 권장 합니다, 보다 나은 지원이 되기 때문입니다."
 
 #: ../GDebi/GDebiCommon.py:118
 msgid "A later version is available in a software channel"
@@ -578,9 +566,7 @@ msgstr "소프트웨어 보관소에 새 버전이 사용 가능 합니다"
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
-msgstr ""
-"소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다, 보다 나은 "
-"지원이 되기 때문입니다."
+msgstr "소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다, 보다 나은 지원이 되기 때문입니다."
 
 #: ../GDebi/GDebiCommon.py:128
 msgid "All dependencies are satisfied"
@@ -605,9 +591,7 @@ msgstr "동시에 한 가지 소프트웨어 관리 도구만 실행할 수 있�
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
-"먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' 을 "
-"종료 하십시오."
+msgstr "먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' 을 종료 하십시오."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -617,6 +601,7 @@ msgstr "미디어 변경"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "잘못된 아키텍처 '%s'"
 
@@ -629,25 +614,29 @@ msgstr "미디어 변경"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "오동작하는 소프트웨어는 자료를 손실시키거나 시스템을 통제할 수 있습니다.\n"
 #~ "\n"
 #~ "아래의 패키지는 인증되지 않았으며 오동작하는 소프트웨어일 수도 있습니다."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "의존 패키지를 만족 못함: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "설치되어있는 패키지 '%s'와 충돌함\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "패키지에 아키텍쳐 구분 없음"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "이미 존재하는 '%s' 패키지와 충돌: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "이미 존재하는 '%s' 패키지의 의존성 깨짐 %s (%s %s)\n"
 
@@ -657,12 +646,14 @@ msgstr "미디어 변경"
 #~ msgid "A later version is already installed"
 #~ msgstr "새 버전이 이미 설치되어 있습니다"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "파일 목록 읽는 중 I/O 에러: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "파일 목록을 읽을 수 없습니다, 이 문제를 버그 보고 해주십시오."
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' (을)를 설치할 수 없습니다"
 
@@ -674,4 +665,5 @@ msgstr "미디어 변경"
 #~ "Launchpad Contributions:\n"
 #~ "  Bugbear5 https://launchpad.net/~bugbear5\n"
 #~ "  Bundo https://launchpad.net/~kang-bundo\n"
-#~ "  atie https://launchpad.net/~atie-at-matrix"
+#~ "  atie https://launchpad.net/~atie-at-matrix\n"
+#~ "  sangho https://launchpad.net/~sangho"

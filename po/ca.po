@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
-"PO-Revision-Date: 2009-11-06 19:50+0000\n"
-"Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
+"PO-Revision-Date: 2011-03-08 07:07+0000\n"
+"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <ubuntu-l10n-ca@ubuntu.com>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-30 22:08+0000\n"
-"X-Generator: Launchpad (build 12274)\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -65,11 +64,11 @@ msgstr "Voleu instal·lar el paquet de programari? [s/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "Tanca automàticament quan la instal·lació s'hagi acabat"
 
 #: ../gdebi-gtk:58
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "Utilitzeu un «datadir» (directori de dades) alternatiu"
 
 #: ../gdebi-gtk:77
 msgid "Software index is broken"
@@ -123,6 +122,8 @@ msgstr "<b>Versió:</b>"
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
 msgstr ""
+"Tanca aquest diàleg automàticament després que s'hagin aplicat els canvis "
+"amb èxit"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -143,7 +144,7 @@ msgstr "GPL, vegeu /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr ""
+msgstr "Fitxers inclosos"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -188,7 +189,7 @@ msgstr "_Instal·la el paquet"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Open..."
-msgstr ""
+msgstr "_Obre..."
 
 #: ../data/gdebi.ui.h:25
 msgid "_Refresh"
@@ -213,29 +214,30 @@ msgstr "%s no és disponible"
 msgid "Loading..."
 msgstr "S'està carregant..."
 
-#: ../GDebi/GDebi.py:158
+#: ../GDebi/GDebi.py:167
 msgid "Can not download as root"
-msgstr ""
+msgstr "No es pot baixar com a usuari primari"
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Els paquets remots no es poden baixar com a usuari primari. Torneu-ho a "
+"provar com a usuari normal."
 
-#: ../GDebi/GDebi.py:172
-#, fuzzy
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr "S'estan baixant fitxers de paquet addicionals..."
+msgstr "S'està baixant el paquet"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Ha fallat la baixada"
 
-#: ../GDebi/GDebi.py:180
-#, fuzzy, python-format
+#: ../GDebi/GDebi.py:189
+#, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "S'estan baixant fitxers de paquet addicionals..."
+msgstr "Ha fallat la baixada del paquet: fitxer «%s» «%s»"
 
 #. set window title
 #. set name
@@ -246,15 +248,15 @@ msgstr "Instal·lador de paquets - %s"
 
 #: ../GDebi/GDebi.py:285
 msgid "Package control data"
-msgstr ""
+msgstr "Dades de control del paquet"
 
 #: ../GDebi/GDebi.py:288
 msgid "Upstream data"
-msgstr ""
+msgstr "Dades del projecte original"
 
 #: ../GDebi/GDebi.py:294
 msgid "Error reading filelist"
-msgstr ""
+msgstr "S'ha produït un error en llegir la llista de fitxers"
 
 #: ../GDebi/GDebi.py:305
 msgid "Error: "
@@ -270,16 +272,16 @@ msgstr "_Reinstal·la el paquet"
 
 #: ../GDebi/GDebi.py:364
 msgid "Selection is a directory"
-msgstr ""
+msgstr "La selecció és un directori"
 
 #: ../GDebi/GDebi.py:369 ../GDebi/GDebi.py:374
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "S'ha produït un error en llegir el contingut del fitxer «%s»"
 
 #: ../GDebi/GDebi.py:378
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "El contingut del fitxer no es pot extreure"
 
 #: ../GDebi/GDebi.py:389
 #, python-format
@@ -323,6 +325,10 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"El programari maliciós pot malmetre les vostres dades i obtenir el control "
+"del vostre sistema.\n"
+"\n"
+"Els paquets següents no estan autenticats i podrien ser maliciosos."
 
 #: ../GDebi/GDebi.py:481
 msgid "You need to grant administrative rights to install software"
@@ -479,7 +485,7 @@ msgstr "Requereix la instal·lació dels paquets següents: "
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "S'ha produït un error durant la instal·lació: «%s»"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
@@ -626,6 +632,7 @@ msgstr "Canvi de suport"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errònia «%s»"
 
@@ -635,28 +642,30 @@ msgstr "Canvi de suport"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "El programari maliciós us pot corrompre les dades i prendre el control "
-#~ "del vostre sistema. \n"
+#~ "El programari maliciós us pot corrompre les dades i prendre el control del "
+#~ "vostre sistema. \n"
 #~ "\n"
 #~ "Els paquets llistats no estan autenticats i per tant poden ser maliciosos."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "No es pot satisfer la dependència: %s\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ja hi ha instal·lada una versió posterior"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No es pot instal·lar «%s»"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest "
-#~ "error"
+#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest error"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr ""
 #~ "S'ha produït un error d'entrada/sortida (IOError) en llegir la llista de "
@@ -665,6 +674,7 @@ msgstr "Canvi de suport"
 #~ msgid "Open..."
 #~ msgstr "Obre..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entra amb conflicte amb el paquet instal·lat «%s»\n"
 
@@ -674,16 +684,17 @@ msgstr "Canvi de suport"
 #~ msgid "Analysing dependencies"
 #~ msgstr "S'estan analitzant les dependències"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Conflicte de trencament del paquet existent «%s»: %s (%s %s)\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "No s'han pogut satisfer totes les dependències (la memòria cau està "
-#~ "trencada)"
+#~ "No s'han pogut satisfer totes les dependències (la memòria cau està trencada)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  David Planella https://launchpad.net/~dpm\n"
+#~ "  Joan Duran https://launchpad.net/~jodufi\n"
 #~ "  Jordi Mallach https://launchpad.net/~jordi"

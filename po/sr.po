@@ -1,21 +1,21 @@
 # Serbian translation for gdebi
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-31 21:35+0100\n"
-"PO-Revision-Date: 2006-04-29 17:23+0000\n"
-"Last-Translator: Jovan Turanjanin <jovan_turanjanin@yahoo.com>\n"
+"PO-Revision-Date: 2011-02-25 22:52+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
-"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
+"X-Generator: Launchpad (build 12696)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -23,43 +23,46 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"употреба: %prog [опције] име датотеке\n"
+"За графичку верзију покрените „gdebi-gtk“\n"
 
 #: ../gdebi:53 ../gdebi-gtk:53
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Неинтерактивно покретање (ризично!)"
 
 #: ../gdebi:57
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "Поставља опцију АПТ подешавања"
 
 #: ../gdebi:61
 msgid "Do not show progress information"
-msgstr ""
+msgstr "Не приказује информације о напредовању"
 
 #: ../gdebi:65
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
+"Само симулира и исписује „apt-get install“ компатибилну линију у „stderr“"
 
 #: ../gdebi:67
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "Користи алтернативни „root“ директоријум"
 
 #: ../gdebi:75
-#, fuzzy, c-format
+#, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "gdebi грешка, датотека није нађена: %s"
+msgstr "гдеби грешка, датотека није пронађена: %s\n"
 
 #: ../gdebi:94 ../gdebi:104
 msgid "Need to be root to install packages"
-msgstr ""
+msgstr "Морате бити супер корисник да бисте инсталирали пакете"
 
 #: ../gdebi:106 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "Да ли желите да инсталирате овај софтверски пакет? [y/N]:"
 
 #: ../gdebi-gtk:56
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "Затвори аутоматски након завршеног инсталирања"
 
 #: ../gdebi-gtk:58
 msgid "Use alternative datadir"
@@ -79,7 +82,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
-msgstr "  "
+msgstr ""
 
 #: ../data/gdebi.ui.h:2
 msgid "<b><big>   </big></b>"
@@ -91,15 +94,15 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:141
 msgid "<b>Priority:</b>"
-msgstr "<b>Приоритет:</b>"
+msgstr ""
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
 msgid "<b>Section:</b>"
-msgstr "<b>Одељак:</b>"
+msgstr ""
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
 msgid "<b>Size:</b>"
-msgstr "<b>Величина:</b>"
+msgstr ""
 
 #: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
 msgid "<b>To install the following changes are required:</b>"
@@ -107,7 +110,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
 msgid "<b>Version:</b>"
-msgstr "<b>Верзија:</b>"
+msgstr ""
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
@@ -115,25 +118,24 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
-msgstr "Опис"
+msgstr ""
 
 #: ../data/gdebi.ui.h:11
 msgid "Description:"
-msgstr "Опис:"
+msgstr ""
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
 #: ../GDebi/GDebiKDE.py:281
 msgid "Details"
-msgstr "Детаљи"
+msgstr ""
 
 #: ../data/gdebi.ui.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
 msgstr ""
 
 #: ../data/gdebi.ui.h:14
-#, fuzzy
 msgid "Included files"
-msgstr "Укључени фајлови"
+msgstr ""
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -147,11 +149,11 @@ msgstr ""
 #. gettext as default (FIXME, copy code from language-selector)
 #: ../data/gdebi.ui.h:17 ../GDebi/GDebiKDE.py:131
 msgid "Package:"
-msgstr "Пакет:"
+msgstr ""
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr "Статус:"
+msgstr ""
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
@@ -201,30 +203,32 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:90
 msgid "Loading..."
-msgstr "Учитавам..."
-
-#: ../GDebi/GDebi.py:158
-msgid "Can not download as root"
 msgstr ""
 
-#: ../GDebi/GDebi.py:159
+#: ../GDebi/GDebi.py:167
+msgid "Can not download as root"
+msgstr "Не можете да преузмете као администратор"
+
+#: ../GDebi/GDebi.py:168
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Даљински пакети не могу бити преузети када сте покренули као администратор. "
+"Молим покушајте поново, као обичан корисник."
 
-#: ../GDebi/GDebi.py:172
+#: ../GDebi/GDebi.py:181
 msgid "Downloading package"
-msgstr ""
+msgstr "Преузимам пакет"
 
-#: ../GDebi/GDebi.py:179
+#: ../GDebi/GDebi.py:188
 msgid "Download failed"
-msgstr ""
+msgstr "Преузимање није успело"
 
-#: ../GDebi/GDebi.py:180
+#: ../GDebi/GDebi.py:189
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "Преузимање пакета није успело: датотека „%s“ „%s“"
 
 #. set window title
 #. set name
@@ -330,7 +334,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
-msgstr "Нисам могао дапреузмем све потребне датотеке"
+msgstr ""
 
 #: ../GDebi/GDebi.py:549 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
@@ -347,18 +351,17 @@ msgid ""
 msgstr ""
 
 #: ../GDebi/GDebi.py:570
-#, fuzzy, python-format
+#, python-format
 msgid "Installing %s"
-msgstr "Инсталирам '%s'..."
+msgstr ""
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:352
-#, fuzzy
 msgid "Installation finished"
-msgstr "Инсталација завршена"
+msgstr ""
 
 #: ../GDebi/GDebi.py:588
 #, python-format
@@ -372,7 +375,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:592
 msgid "Installation complete"
-msgstr "Инсталација завршена"
+msgstr ""
 
 #: ../GDebi/GDebi.py:599 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
@@ -386,7 +389,7 @@ msgstr ""
 #: ../GDebi/GDebi.py:695 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "Инсталирам '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -464,7 +467,7 @@ msgstr ""
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
-msgstr "Укључени фајлови"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
 msgid "&Install Package"
@@ -523,7 +526,7 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:90
 #, python-format
 msgid "Could not open '%s'"
-msgstr "Не могу да отворим '%s'"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:91
 msgid ""
@@ -588,3 +591,8 @@ msgstr ""
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
 msgstr ""
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Мирослав Николић https://launchpad.net/~lipek"
