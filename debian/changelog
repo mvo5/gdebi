@@ -27,7 +27,11 @@ gdebi (0.7.1) UNRELEASED; urgency=low
   * po/es.po:
     - Update Spanish translation (Closes: #619469).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Mon, 28 Mar 2011 18:46:08 +0200
+  [ David Prévot ]
+  * po/fr.po:
+    - Update French translation (Closes: #620251).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 31 Mar 2011 23:20:30 +0200
 
 gdebi (0.7.0) unstable; urgency=low
 
