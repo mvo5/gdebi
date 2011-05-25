@@ -308,7 +308,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         if len(self.install) > 0 or len(self.remove) > 0:
             #if not self.acquire_lock():
             if not self.acquire_lock():
-                #self.show_alert(gtk.MESSAGE_ERROR, self.error_header, self.error_body)
+                #self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
                 KMessageBox.sorry(self, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
                 return False
             fprogress = KDEFetchProgressAdapter(self.installDialog.installationProgress,

@@ -33,9 +33,7 @@ from GDebi.GDebi import GDebi
 from gettext import gettext as _
 import gettext
 
-import pygtk
-pygtk.require("2.0")
-import gtk
+from gi.repository import Gtk
 
 
 if __name__ == "__main__":
@@ -62,7 +60,7 @@ if __name__ == "__main__":
         data = options.datadir
 
     try:
-        gtk.init_check()
+        Gtk.init_check(sys.argv)
     except RuntimeError, e:
         sys.stderr.write("Can not start %s: %s. Exiting\n" % (sys.argv[0], e))
         sys.exit(1)
@@ -82,8 +80,8 @@ if __name__ == "__main__":
                     "reload the software information with: "
                     "'sudo apt-get update' and 'sudo apt-get install -f'."
                     )
-        dia = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
-                                gtk.BUTTONS_OK, "")
+        dia = Gtk.MessageDialog(None, 0, Gtk.MessageType.ERROR,
+                                Gtk.ButtonsType.OK, "")
         dia.set_markup("<b><big>%s</big></b>" % err_header)
         dia.format_secondary_text(err_body)
         dia.run()
