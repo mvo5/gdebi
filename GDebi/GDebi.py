@@ -32,6 +32,7 @@ import apt_pkg
 
 from gi.repository import GObject
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import Pango
 import logging
 import urllib
@@ -135,10 +136,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.synaptic_config = apt_pkg.Configuration()
 
         if file != "" and os.path.exists(file):
-            self.window_main.window.set_cursor(Gdk.Cursor.new(Gdk.WATCH))
+            self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
             while Gtk.events_pending(): Gtk.main_iteration()        
             self.open(file)
-            self.window_main.window.set_cursor(None)
+            self.window_main.get_window().set_cursor(None)
         
         self.window_main.set_sensitive(True)
 
@@ -213,10 +214,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             path = self._get_file_path_from_dnd_dropped_uri(uri)
             #print 'path to open', path
             if path.endswith(".deb"):
-                self.window_main.window.set_cursor(Gdk.Cursor.new(Gdk.WATCH))
+                self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
                 while Gtk.events_pending(): Gtk.main_iteration()        
                 self.open(path)
-                self.window_main.window.set_cursor(None)
+                self.window_main.get_window().set_cursor(None)
 
     def open(self, file):
         res = GDebiCommon.open(self, file)
