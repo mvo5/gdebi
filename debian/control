@@ -29,8 +29,8 @@ Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
          gdebi-core (= ${source:Version}),
-         python-gtk2 (>= 2.6.3-2),
-         python-vte (>= 1:0.11.15-4),
+         gir1.2-gtk-3.0,
+         gir1.2-vte-2.90,
          gksu (>= 2.0.0-1ubuntu3),
          gnome-icon-theme (>= 2.14.0-1)
 Recommends: libgtk2-perl (>= 1:1.130), shared-mime-info

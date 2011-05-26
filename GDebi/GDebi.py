@@ -34,8 +34,9 @@ import tempfile
 import thread
 import urllib
 
-#import gi
-#gi.require_version("Gtk", "3.0")
+import gi
+gi.require_version("Gtk", "3.0")
+gi.require_version("Vte", "2.90")
 from gi.repository import Gtk
 from gi.repository import GObject
 from gi.repository import Gdk
@@ -91,16 +92,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # setup drag'n'drop
         target_entry = Gtk.TargetEntry().new('text/uri-list',0,0)
-        try:
-            Gtk.drag_dest_set(self.window_main, 
-                              Gtk.DestDefaults.ALL,
-                              [target_entry],
-                              Gdk.DragAction.COPY)
-            self.window_main.connect("drag_data_received",
-                                     self.on_window_main_drag_data_received)
-        # not working in gtk2 gi
-        except AttributeError:
-            pass
+        Gtk.drag_dest_set(self.window_main, 
+                          Gtk.DestDefaults.ALL,
+                          [target_entry],
+                          Gdk.DragAction.COPY)
+        self.window_main.connect("drag_data_received",
+                                 self.on_window_main_drag_data_received)
 
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
