@@ -20,29 +20,27 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-
-import sys
-import os
-import string
-import warnings
-from warnings import warn
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt
 import apt_pkg
+import fcntl
+import logging
+import os
+import posix
+import re
+import string
+import sys
+import time
+import tempfile
+import thread
+import urllib
 
-from gi.repository import GObject
+#import gi
+#gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+from gi.repository import GObject
 from gi.repository import Gdk
 from gi.repository import Pango
-import logging
-import urllib
-import fcntl
-import posix
-import time
-import thread
 from gi.repository import Vte
-import re
-import tempfile
 from gi.repository import Gio
 
 from DebPackage import DebPackage
@@ -92,12 +90,17 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.statusbar_main.push(self.context,_("Loading..."))
 
         # setup drag'n'drop
-        # FIXME: port to gtk3
-        #self.window_main.drag_dest_set(Gtk.DEST_DEFAULT_MOTION |
-        #                               Gtk.DEST_DEFAULT_HIGHLIGHT |
-        #                               Gtk.DEST_DEFAULT_DROP,
-        #                               [('text/uri-list',0,0)],
-        #                               Gdk.DragAction.COPY)
+        target_entry = Gtk.TargetEntry().new('text/uri-list',0,0)
+        try:
+            Gtk.drag_dest_set(self.window_main, 
+                              Gtk.DestDefaults.ALL,
+                              [target_entry],
+                              Gdk.DragAction.COPY)
+            self.window_main.connect("drag_data_received",
+                                     self.on_window_main_drag_data_received)
+        # not working in gtk2 gi
+        except AttributeError:
+            pass
 
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
