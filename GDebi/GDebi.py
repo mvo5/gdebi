@@ -738,6 +738,7 @@ Install software from trustworthy software distributors only.
                 argv, 
                 env,
                 GLib.SpawnFlags.LEAVE_DESCRIPTORS_OPEN,
+                # FIXME: add setup_func that closes all fds excpet for writefd
                 None, #setup_func
                 None, #setup_data
                 )
@@ -822,12 +823,19 @@ Install software from trustworthy software distributors only.
             # sleep just long enough to not create a busy loop
             time.sleep(0.01)
         def fork(self):
-            pid = self.term.forkpty(self.env)
+            pty = Vte.Pty.new(Vte.PtyFlags.DEFAULT)
+            pid = os.fork()
             if pid == 0:
                 # *grumpf* workaround bug in vte here (gnome bug #588871)
                 for env in self.env:
                     (key, value) = env.split("=")
                     os.environ[key] = value
+                # MUST be called
+                pty.child_setup()
+                # FIXME: close all fds expect for self.writefd
+            else:
+                self.term.set_pty_object(pty)
+                self.term.watch_child(pid)
             return pid
         def wait_child(self):
             while not self.finished:
