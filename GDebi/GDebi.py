@@ -90,21 +90,21 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.context=self.statusbar_main.get_context_id("context_main_window")
         self.statusbar_main.push(self.context,_("Loading..."))
 
-        # setup drag'n'drop
-        target_entry = Gtk.TargetEntry().new('text/uri-list',0,0)
-        Gtk.drag_dest_set(self.window_main, 
-                          Gtk.DestDefaults.ALL,
-                          [target_entry],
-                          Gdk.DragAction.COPY)
-        self.window_main.connect("drag_data_received",
-                                 self.on_window_main_drag_data_received)
-
         self.window_main.set_sensitive(False)
         self.notebook_details.set_sensitive(False)
         self.hbox_main.set_sensitive(False)
 
         # show what we have
         self.window_main.show()
+
+        # setup drag'n'drop
+        # FIXME: this seems to have no effect, droping in nautilus does nothing
+        target_entry = Gtk.TargetEntry().new('text/uri-list',0,0)
+        self.window_main.drag_dest_set(Gtk.DestDefaults.ALL,
+                                       [target_entry],
+                                       Gdk.DragAction.COPY)
+        self.window_main.connect("drag_data_received",
+                                 self.on_window_main_drag_data_received)
 
         # Check file with gio
         file = self.gio_copy_in_place(file)
