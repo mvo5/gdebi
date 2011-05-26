@@ -39,6 +39,7 @@ gi.require_version("Gtk", "3.0")
 gi.require_version("Vte", "2.90")
 from gi.repository import Gtk
 from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import Gdk
 from gi.repository import Pango
 from gi.repository import Vte
@@ -711,8 +712,7 @@ Install software from trustworthy software distributors only.
             #print "fds (%i,%i)" % (readfd,writefd)
 
             # the command
-            cmd = "/usr/bin/dpkg"
-            argv = [cmd, "--auto-deconfigure"]
+            argv = ["/usr/bin/dpkg", "--auto-deconfigure"]
             # ubuntu supports VTE_PTY_KEEP_FD, see 
             # https://bugzilla.gnome.org/320128 for the upstream bug
             if UBUNTU:
@@ -721,14 +721,23 @@ Install software from trustworthy software distributors only.
             env = ["VTE_PTY_KEEP_FD=%s"% writefd,
                    "DEBIAN_FRONTEND=gnome",
                    "APT_LISTCHANGES_FRONTEND=gtk"]
-            #print cmd
             #print argv
             #print env
             #print self.term
 
             # prepare for the fork
             self.term.connect("child-exited", finish_dpkg, lock)
-            pid = self.term.fork_command(command=cmd, argv=argv, envv=env)
+            (res, pid) =self.term.fork_command_full(
+                Vte.PtyFlags.DEFAULT,
+                "/", 
+                argv, 
+                env,
+                GLib.SpawnFlags.LEAVE_DESCRIPTORS_OPEN,
+                None, #setup_func
+                None, #setup_data
+                )
+            #print "fork_command_full: ", res, pid
+
             read = ""
             while lock.locked():
                 while True:
