@@ -137,7 +137,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         if file != "" and os.path.exists(file):
             self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-            while Gtk.events_pending(): Gtk.main_iteration()        
+            while Gtk.events_pending(): 
+                Gtk.main_iteration()        
             self.open(file)
             self.window_main.get_window().set_cursor(None)
         
@@ -215,7 +216,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             #print 'path to open', path
             if path.endswith(".deb"):
                 self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-                while Gtk.events_pending(): Gtk.main_iteration()        
+                while Gtk.events_pending(): 
+                    Gtk.main_iteration()        
                 self.open(path)
                 self.window_main.get_window().set_cursor(None)
 
@@ -359,11 +361,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         (path, col) = treeview.get_cursor()
         name = model[path][0]
         # if we are at the top-level, do nothing
-        if len(path) < 2:
+        if path.get_depth() < 2:
             return
         # parent path == 0 means we look at the control information
         # parent path == 1 means we look at the data
-        parent_path = path[0]
+        parent_path = path.get_indices()[0]
         if name.endswith("/"):
             data = _("Selection is a directory")
         elif parent_path == 0:
