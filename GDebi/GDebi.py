@@ -85,7 +85,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
-        self.expander_install.add(self.vte_terminal)
+        # FIXME: this sucks but without it the terminal window is only 
+        #        1 line height
+        self.vte_terminal.set_size_request(80*10, 25*10)
+        self.hbox_install_terminal.pack_start(self.vte_terminal, True, True, 0)
+        scrollbar = Gtk.VScrollbar.new(self.vte_terminal.get_vadjustment())
+        self.hbox_install_terminal.pack_start(scrollbar, False, False, 0)
 
         # setup status
         self.context=self.statusbar_main.get_context_id("context_main_window")
