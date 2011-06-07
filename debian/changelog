@@ -1,8 +1,13 @@
 gdebi (0.8~exp1) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
   * Ported to gtk3/GI.
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 26 May 2011 13:48:32 +0200
+  [ Luca Falavigna ]
+  * gdebi, GDebi/GDebiCli.py:
+    - Improve regex to determine user's choice (Closes: #629403).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Tue, 07 Jun 2011 21:27:11 +0200
 
 gdebi (0.7.1) unstable; urgency=low
 

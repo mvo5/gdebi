@@ -30,6 +30,7 @@ import apt
 import os.path
 import gettext
 from gettext import gettext as _
+from re import findall
 
 from optparse import OptionParser
 from GDebi.GDebiCli import GDebiCli
@@ -107,5 +108,9 @@ if __name__ == "__main__":
     print msg,
     sys.stdout.flush()
     res = sys.stdin.readline()
-    if res.lower().startswith(msg[-5]):
+    try:
+        c = findall("[\[|\(](\S+)/\S+[\]|\)]", msg)[0].lower()
+    except IndexError:
+        c = "y"
+    if res.lower().startswith(c):
         debi.install()
