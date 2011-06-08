@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 8),
                python (>= 2.6.6-3~),
                intltool
 X-Python-Version: all
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 
 Package: gdebi-core
