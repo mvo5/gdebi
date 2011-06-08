@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-03-31 21:08+0000\n"
-"X-Generator: Launchpad (build 12696)\n"
+"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
+"X-Generator: Launchpad (build 13144)\n"
 
 #: ../gdebi:47
 #, c-format
@@ -24,7 +24,7 @@ msgid ""
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
 
-#: ../gdebi:53 ../gdebi-gtk:53
+#: ../gdebi:53 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
 msgstr ""
 
@@ -57,19 +57,19 @@ msgstr ""
 msgid "Do you want to install the software package? [y/N]:"
 msgstr ""
 
-#: ../gdebi-gtk:56
+#: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
 msgstr ""
 
-#: ../gdebi-gtk:58
+#: ../gdebi-gtk:56
 msgid "Use alternative datadir"
 msgstr ""
 
-#: ../gdebi-gtk:77
+#: ../gdebi-gtk:75
 msgid "Software index is broken"
 msgstr ""
 
-#: ../gdebi-gtk:78
+#: ../gdebi-gtk:76
 msgid ""
 "This is a major failure of your software management system. Please check for "
 "broken packages with synaptic, check the file permissions and correctness of "
@@ -168,10 +168,10 @@ msgstr "_پرونده"
 msgid "_Help"
 msgstr "_کمک"
 
-#. img = gtk.Image()
-#. img.set_from_stock(gtk.STOCK_APPLY,gtk.ICON_SIZE_BUTTON)
+#. img = Gtk.Image()
+#. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:308 ../GDebi/GDebi.py:348
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:360
 msgid "_Install Package"
 msgstr ""
 
@@ -198,113 +198,113 @@ msgstr ""
 msgid "%s is not available"
 msgstr ""
 
-#: ../GDebi/GDebi.py:90
+#: ../GDebi/GDebi.py:97
 msgid "Loading..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:167
+#: ../GDebi/GDebi.py:168
 msgid "Can not download as root"
 msgstr ""
 
-#: ../GDebi/GDebi.py:168
+#: ../GDebi/GDebi.py:169
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
 
-#: ../GDebi/GDebi.py:181
+#: ../GDebi/GDebi.py:182
 msgid "Downloading package"
 msgstr ""
 
-#: ../GDebi/GDebi.py:188
+#: ../GDebi/GDebi.py:189
 msgid "Download failed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:189
+#: ../GDebi/GDebi.py:190
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
 msgstr ""
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:228 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:181
 #, python-format
 msgid "Package Installer - %s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:285
+#: ../GDebi/GDebi.py:296
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:288
+#: ../GDebi/GDebi.py:299
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:294
+#: ../GDebi/GDebi.py:305
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:305
+#: ../GDebi/GDebi.py:316
 msgid "Error: "
 msgstr ""
 
-#: ../GDebi/GDebi.py:320
+#: ../GDebi/GDebi.py:332
 msgid "Same version is already installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:321
+#: ../GDebi/GDebi.py:333
 msgid "_Reinstall Package"
 msgstr ""
 
-#: ../GDebi/GDebi.py:364
+#: ../GDebi/GDebi.py:376
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:369 ../GDebi/GDebi.py:374
+#: ../GDebi/GDebi.py:381 ../GDebi/GDebi.py:386
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:378
+#: ../GDebi/GDebi.py:390
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:389
+#: ../GDebi/GDebi.py:401
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>حذف خواهد شد: %s</b>"
 
-#: ../GDebi/GDebi.py:391 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:403 ../GDebi/GDebiKDE.py:275
 #, python-format
 msgid "To be installed: %s"
 msgstr "نصب خواهد شد: %s"
 
-#: ../GDebi/GDebi.py:406
+#: ../GDebi/GDebi.py:418
 msgid "Open Software Package"
 msgstr ""
 
-#: ../GDebi/GDebi.py:411
+#: ../GDebi/GDebi.py:423
 msgid "Software packages"
 msgstr ""
 
-#: ../GDebi/GDebi.py:440
+#: ../GDebi/GDebi.py:452
 msgid "File not found"
 msgstr ""
 
-#: ../GDebi/GDebi.py:441
+#: ../GDebi/GDebi.py:453
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
 
 #. do it
-#: ../GDebi/GDebi.py:451
+#: ../GDebi/GDebi.py:463
 msgid "Installing package file..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:453
+#: ../GDebi/GDebi.py:465
 msgid "Install unauthenticated software?"
 msgstr ""
 
-#: ../GDebi/GDebi.py:454
+#: ../GDebi/GDebi.py:466
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -312,40 +312,40 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:481
+#: ../GDebi/GDebi.py:493
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:482
+#: ../GDebi/GDebi.py:494
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:505 ../GDebi/GDebi.py:564
+#: ../GDebi/GDebi.py:517 ../GDebi/GDebi.py:578
 msgid "Failed to install package file"
 msgstr ""
 
-#: ../GDebi/GDebi.py:548 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:562 ../GDebi/GDebiKDE.py:327
 msgid "Could not download all required files"
 msgstr ""
 
-#: ../GDebi/GDebi.py:549 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:563 ../GDebi/GDebiKDE.py:328
 msgid "Please check your internet connection or installation medium."
 msgstr ""
 
-#: ../GDebi/GDebi.py:553 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:567 ../GDebi/GDebiKDE.py:332
 msgid "Could not install all dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:554 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:568 ../GDebi/GDebiKDE.py:333
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
 
-#: ../GDebi/GDebi.py:570
+#: ../GDebi/GDebi.py:584
 #, python-format
 msgid "Installing %s"
 msgstr "در حال نصب %s"
@@ -354,59 +354,59 @@ msgstr "در حال نصب %s"
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:352
 msgid "Installation finished"
 msgstr ""
 
-#: ../GDebi/GDebi.py:588
+#: ../GDebi/GDebi.py:602
 #, python-format
 msgid "Package '%s' was installed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:590 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:604 ../GDebi/GDebiKDE.py:356
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:592
+#: ../GDebi/GDebi.py:606
 msgid "Installation complete"
 msgstr ""
 
-#: ../GDebi/GDebi.py:599 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:613 ../GDebi/GDebiKDE.py:366
 msgid "Failed to completely install all dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:614 ../GDebi/GDebiKDE.py:367
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 
 #. ui
-#: ../GDebi/GDebi.py:695 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:709 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:785 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:808 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:853 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:832 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:862 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:834 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:864 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr ""
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:841 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:871 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "لطفاً '%s' را درون گرداننده‌ی '%s' بگذارید"
@@ -593,9 +593,3 @@ msgstr ""
 #, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "معماری نادرست '%s'"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Mohammad Ebrahim Mohammadi Panah https://launchpad.net/~ebrahim\n"
-#~ "  Saeed Moaddeli https://launchpad.net/~s-moaddeli"

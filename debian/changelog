@@ -6,8 +6,10 @@ gdebi (0.8~exp1) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * gdebi, GDebi/GDebiCli.py:
     - Improve regex to determine user's choice (Closes: #629403).
+  * po/*.po:
+    - Refresh translations exported from Rosetta.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Tue, 07 Jun 2011 21:27:11 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 08 Jun 2011 17:33:51 +0200
 
 gdebi (0.7.1) unstable; urgency=low
 
