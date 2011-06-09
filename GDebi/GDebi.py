@@ -78,7 +78,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         try:
           logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
           if logo != "":
-            Gtk.window_set_default_icon_list(logo)
+            Gtk.Window.set_default_icon_list([logo])
         except Exception, e:
           print "Error loading logo"
           pass
