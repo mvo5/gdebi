@@ -1,11 +1,13 @@
 gdebi (0.8~exp2) UNRELEASED; urgency=low
 
+  * GDebi/GDebi.py, data/gdebi.ui:
+    - Allow copy of selected text (LP: #90009).
   * GDebi/GDebi.py:
     - Fix loading of the logo.
   * debian/control:
     - Remove obsolete dependency versions.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 09 Jun 2011 21:55:25 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 10 Jun 2011 19:42:33 +0200
 
 gdebi (0.8~exp1) experimental; urgency=low
 

@@ -438,6 +438,16 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.open(self._deb.filename)
         self.window_main.set_sensitive(True)
 
+    def on_copy_activate(self, widget):
+        clipboard = Gtk.Clipboard.get(Gdk.atom_intern('CLIPBOARD', True)) 
+        buf = self.textview_description.get_buffer()
+        if buf.get_has_selection():
+            buf.copy_clipboard(clipboard)
+        else:
+            (start, end) = buf.get_bounds()
+            text = buf.get_text(start, end, True)
+            clipboard.set_text(text, -1)
+
     def on_about_activate(self, widget):
         #print "about"
         from Version import VERSION
