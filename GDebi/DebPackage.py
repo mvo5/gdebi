@@ -28,8 +28,9 @@ from apt.debfile import DscSrcPackage
 
 class DebPackage(apt.debfile.DebPackage):
 
-    def __init__(self, filename, cache):
-        super(DebPackage, self).__init__(cache=cache, filename=filename)	
+    def __init__(self, filename, cache, downloaded=False):
+        super(DebPackage, self).__init__(cache=cache, filename=filename)
+        self.downloaded = downloaded
 
     def __getitem__(self,item):
         if not self._sections.has_key(item):

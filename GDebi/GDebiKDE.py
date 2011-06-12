@@ -136,6 +136,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.tabWidget2.setTabText(2,_("Included Files"))
         self.cancelButton.setText(__("kdelibs","&Cancel"))
         self.installButton.setText(_("&Install Package"))
+        self.downloadButton.setText(_("&Download Package"))
         self.DetailsVersionLabel.setText(_("<b>Version:</b>"))
         self.DetailsMaintainerLabel.setText(_("<b>Maintainer:</b>"))
         self.DetailsPriorityLabel.setText(_("<b>Priority:</b>"))
@@ -145,6 +146,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.setDisabled(True)
         self.PackageProgressBar.setEnabled(True)
         self.detailsButton.hide()
+        self.downloadButton.hide()
         self.installButton.setIcon(KIcon("dialog-ok"))
         self.cancelButton.setIcon(KIcon("dialog-cancel"))
         self.show()
@@ -168,11 +170,12 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.PackageProgressBar.hide()
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancelButtonClicked)
         self.connect(self.installButton, SIGNAL("clicked()"), self.installButtonClicked)
+        self.connect(self.downloadButton, SIGNAL("clicked()"), self.downloadButtonClicked)
         self.connect(self.detailsButton, SIGNAL("clicked()"), self.detailsButtonClicked)
 
-    def open(self, file):
+    def open(self, file, downloaded=False):
         """ load the .deb file """
-        res = GDebiCommon.open(self, file)
+        res = GDebiCommon.open(self, file, downloaded)
         if res == False:
             KMessageBox.error(self, '<b>' + self.error_header + '</b><br>' + self.error_body, self.error_header)
             return False
@@ -232,6 +235,11 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
+
+        version_status = self._deb.compare_to_version_in_cache(use_installed=False)
+        if (version_status in (DebPackage.VERSION_SAME, DebPackage.VERSION_OUTDATED)):
+            if not self._deb.downloaded:
+                self.downloadButton.show()
 
         if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             #self.textLabel1_3_2.setText(_("Same version is already installed"))
@@ -375,6 +383,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                          "terminal window.")
             self.errorReport = KMessageBox.error(self, header + text, header)
             sys.exit(1)
+
+    def downloadButtonClicked(self):
+        if self.download_package():
+            self.downloadButton.hide()
 
 class GDebiKDEInstall(QDialog):
     def __init__(self, parent):

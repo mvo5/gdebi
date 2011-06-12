@@ -851,6 +851,24 @@ Luca Falavigna
                 <child>
                   <placeholder/>
                 </child>
+                <child>
+                  <object class="GtkButton" id="button_download">
+                    <property name="label" translatable="yes">_Download Package</property>
+                    <property name="visible">False</property>
+                    <property name="sensitive">False</property>
+                    <property name="can_focus">True</property>
+                    <property name="can_default">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="on_button_download_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>

@@ -7,10 +7,14 @@ gdebi (0.8~exp2) UNRELEASED; urgency=low
   * GDebi/GDebi.py, GDebi/GDebiCommon.py, GDebi/GDebiKDE.py:
     - Check whether provided packages are not removed in case some
       other package still uses them (LP: #661337).
+  * GDebi/DebPackage.py, GDebi/GDebi.py, GDebi/GDebiCommon.py,
+    GDebi/GDebiKDE.py, data/GDebiKDEDialog.ui, data/gdebi.u:
+    - Allow download and installation of packages available in remote
+      repositories (LP: #44456).
   * debian/control:
     - Remove obsolete dependency versions.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 12 Jun 2011 03:28:09 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 12 Jun 2011 15:52:52 +0200
 
 gdebi (0.8~exp1) experimental; urgency=low
 

@@ -504,6 +504,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="downloadButton" >
+       <property name="text" >
+        <string>Download</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="cancelButton" >
        <property name="text" >
         <string>Cancel</string>

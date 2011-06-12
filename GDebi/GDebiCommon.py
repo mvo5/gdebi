@@ -74,10 +74,9 @@ class GDebiCommon(object):
 		return False
         return True
 
-    def open(self, file):
-        # open the package
+    def open(self, file, downloaded=False):
         try:
-            self._deb = DebPackage(file, self._cache)
+            self._deb = DebPackage(file, self._cache, downloaded)
         except (IOError,SystemError),e:
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
@@ -98,10 +97,13 @@ class GDebiCommon(object):
         res = self._deb.compare_to_version_in_cache(use_installed=False)
         if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
             pkg = self._cache[self._deb.pkgname]
+
+            if self._deb.downloaded:
+                self.version_info_title = ""
+                self.version_info_msg = ""
+                return
             
-            # FIXME: make this strs better, improve the dialog by
-            # providing a option to install from repository directly
-            # (when possible)
+            # FIXME: make this strs better
             if res == DebPackage.VERSION_SAME:
                 if pkg.candidate and pkg.candidate.downloadable:
                     self.version_info_title = _("Same version is available in a software channel")
@@ -139,6 +141,18 @@ class GDebiCommon(object):
                                 if d.name in provides:
                                     broken_provides.add(d.name)
             return broken_provides
+
+    def download_package(self):
+        dirname = os.path.abspath(os.path.dirname(self._deb.filename))
+        package = self._cache[self._deb.pkgname].candidate
+        pkgname = os.path.basename(package.filename)
+        if package.downloadable:
+            if not os.access(dirname, os.W_OK):
+                dirname = "/tmp"
+            if not os.path.exists(os.path.join(dirname, pkgname)):
+                package.fetch_binary(dirname)
+            self.open(os.path.join(dirname, pkgname), True)
+            return True
 
     def get_changes(self):
         (self.install, self.remove, self.unauthenticated) = self._deb.required_changes

@@ -227,8 +227,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                 self.open(path)
                 self.window_main.get_window().set_cursor(None)
 
-    def open(self, file):
-        res = GDebiCommon.open(self, file)
+    def open(self, file, downloaded=False):
+        res = GDebiCommon.open(self, file, downloaded)
         if res == False:
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
@@ -335,6 +335,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
         self.get_changes()
+
+        version_status = self._deb.compare_to_version_in_cache(use_installed=False)
+        if (version_status in (DebPackage.VERSION_SAME, DebPackage.VERSION_OUTDATED)):
+            if not self._deb.downloaded:
+                self.button_download.show()
+                self.button_download.set_sensitive(True)
 
         if self._deb.compare_to_version_in_cache() == DebPackage.VERSION_SAME:
             self.label_status.set_text(_("Same version is already installed"))
@@ -633,6 +639,11 @@ Install software from trustworthy software distributors only.
                          "terminal window.")
             self.show_alert(Gtk.MessageType.ERROR, err_header, err_body)
         self.open(self._deb.filename)
+
+    def on_button_download_clicked(self, widget):
+        if self.download_package():
+            self.window_main.get_window().set_cursor(None)
+            self.button_download.hide()
         
     def on_button_deb_install_close_clicked(self, widget):
         # Set the autoclose option when we close
