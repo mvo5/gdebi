@@ -328,8 +328,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         if provides:
             self.label_status.set_markup(
                 "<span foreground=\"red\" weight=\"bold\">"+
-                _("Error: no longer provides ") +
-                glib.markup_escape_text(", ".join(provides)) +
+                _("Error: no longer provides ") + ", ".join(provides) +
                 "</span>")
             return
 
