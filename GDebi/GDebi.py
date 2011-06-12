@@ -322,7 +322,16 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.button_install.set_sensitive(False)
             self.button_details.hide()
             return
-        
+
+        # check provides
+        provides = self.compareProvides()
+        if provides:
+            self.label_status.set_markup(
+                "<span foreground=\"red\" weight=\"bold\">"+
+                _("Error: no longer provides ") +
+                glib.markup_escape_text(", ".join(provides)) +
+                "</span>")
+            return
 
         # set version_info_{msg,title} strings
         self.compareDebWithCache()

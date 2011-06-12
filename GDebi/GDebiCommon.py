@@ -121,6 +121,24 @@ class GDebiCommon(object):
                             "the version from the software channel, since "
                             "it is usually better supported.")
 
+    def compareProvides(self):
+        provides = set()
+        broken_provides = set()
+        pkg = self._cache[self._deb.pkgname].installed
+        if pkg.provides:
+            for p in self._deb.provides:
+                for i in p:
+                    provides.add(i[0])
+        provides = set(pkg.provides).difference(provides) 
+        if provides:                              
+            for package in self._cache.keys():
+                if self._cache[package].installed:
+                    for dep in self._cache[package].installed.dependencies:
+                        for d in dep.or_dependencies:
+                            if d.name in provides:
+                                broken_provides.add(d.name)
+        return broken_provides
+
     def get_changes(self):
         (self.install, self.remove, self.unauthenticated) = self._deb.required_changes
         self.deps = ""

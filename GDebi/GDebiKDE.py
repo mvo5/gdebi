@@ -223,6 +223,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             self.detailsButton.hide()
             return False
 
+        # check provides
+        provides = self.compareProvides()
+        if provides:
+            self.installButton.setEnabled(False)
+            self.textLabel1_3_2.setText(utf8("<font color=\"#ff0000\"> Error: no longer provides " + ", ".join(provides) + "</font>"))    
+            return False
+
         # set version_info_{msg,title} strings
         self.compareDebWithCache()
 
