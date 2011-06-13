@@ -8,18 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-31 21:35+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-03-20 06:32+0000\n"
 "Last-Translator: 英华 <wantinghard@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
 "X-Generator: Launchpad (build 13144)\n"
 
-#: ../gdebi:47
+#: ../gdebi:48
 #, c-format
 msgid ""
 "usage: %prog [options] filename\n"
@@ -28,36 +29,37 @@ msgstr ""
 "用法：%prog [选项] 文件名\n"
 "要使用图形化版本，可以运行 gdebi-gtk\n"
 
-#: ../gdebi:53 ../gdebi-gtk:51
+#: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
 msgstr "以非交互式运行（危险！）"
 
-#: ../gdebi:57
+#: ../gdebi:58
 msgid "Set an APT configuration option"
 msgstr "设置一个 APT 配置选项"
 
-#: ../gdebi:61
+#: ../gdebi:62
 msgid "Do not show progress information"
 msgstr "不显示进度信息"
 
-#: ../gdebi:65
+#: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr "仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
+msgstr ""
+"仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
 
-#: ../gdebi:67
+#: ../gdebi:68
 msgid "Use alternative root dir"
 msgstr "使用另外的 root 文件夹"
 
-#: ../gdebi:75
+#: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
 msgstr "gdebi 错误，找不到文件：%s\n"
 
-#: ../gdebi:94 ../gdebi:104
+#: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
 msgstr "需要以 root 权限安装软件包"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:154
+#: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "您是否想安装这个软件包？[y/N]:"
 
@@ -80,8 +82,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/etc/apt/sources.list' 文件的正确性并使用 "
-"'sudo apt-get update' 和 'sudo apt-get install -f' 重新载入软件信息。"
+"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/"
+"etc/apt/sources.list' 文件的正确性并使用 'sudo apt-get update' 和 'sudo apt-"
+"get install -f' 重新载入软件信息。"
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -91,27 +94,27 @@ msgstr "  "
 msgid "<b><big>   </big></b>"
 msgstr "<b><big> </big></b>"
 
-#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:140
+#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:141
 msgid "<b>Maintainer:</b>"
 msgstr "<b>维护者：</b>"
 
-#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:141
+#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:142
 msgid "<b>Priority:</b>"
 msgstr "<b>优先级：</b>"
 
-#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
+#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
 msgid "<b>Section:</b>"
 msgstr "<b>组别：</b>"
 
-#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
+#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
 msgid "<b>Size:</b>"
 msgstr "<b>大小：</b>"
 
-#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
+#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
 msgid "<b>To install the following changes are required:</b>"
 msgstr "<b>要进行安装，需要做以下改变：</b>"
 
-#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
+#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
 msgid "<b>Version:</b>"
 msgstr "<b>版本：</b>"
 
@@ -128,7 +131,7 @@ msgid "Description:"
 msgstr "描述："
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
-#: ../GDebi/GDebiKDE.py:281
+#: ../GDebi/GDebiKDE.py:296
 msgid "Details"
 msgstr "细节"
 
@@ -167,25 +170,34 @@ msgid "_Details"
 msgstr "细节(_D)"
 
 #: ../data/gdebi.ui.h:21
+#, fuzzy
+msgid "_Download Package"
+msgstr "正在下载软件包"
+
+#: ../data/gdebi.ui.h:22
+msgid "_Edit"
+msgstr ""
+
+#: ../data/gdebi.ui.h:23
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../data/gdebi.ui.h:22
+#: ../data/gdebi.ui.h:24
 msgid "_Help"
 msgstr "帮助(_H)"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:360
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:374
 msgid "_Install Package"
 msgstr "安装软件包(_I)"
 
-#: ../data/gdebi.ui.h:24
+#: ../data/gdebi.ui.h:26
 msgid "_Open..."
 msgstr "打开(_O)..."
 
-#: ../data/gdebi.ui.h:25
+#: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "刷新(_R)"
 
@@ -199,7 +211,7 @@ msgstr "GDebi 软件包安装程序"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:38
+#: ../GDebi/DebPackage.py:39
 #, python-format
 msgid "%s is not available"
 msgstr "%s 不可用"
@@ -233,7 +245,7 @@ msgstr "软件包下载失败：文件 '%s' '%s'"
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
 msgstr "软件包安装程序 - %s"
@@ -254,63 +266,67 @@ msgstr "读取文件列表出错"
 msgid "Error: "
 msgstr "错误： "
 
-#: ../GDebi/GDebi.py:332
+#: ../GDebi/GDebi.py:331
+msgid "Error: no longer provides "
+msgstr ""
+
+#: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
 msgstr "已安装相同版本"
 
-#: ../GDebi/GDebi.py:333
+#: ../GDebi/GDebi.py:347
 msgid "_Reinstall Package"
 msgstr "重新安装软件包(_R)"
 
-#: ../GDebi/GDebi.py:376
+#: ../GDebi/GDebi.py:390
 msgid "Selection is a directory"
 msgstr "选择的是一个目录"
 
-#: ../GDebi/GDebi.py:381 ../GDebi/GDebi.py:386
+#: ../GDebi/GDebi.py:395 ../GDebi/GDebi.py:400
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr "读取文件内容“%s”时出错"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:404
 msgid "File content can not be extracted"
 msgstr "无法提取文件内容"
 
-#: ../GDebi/GDebi.py:401
+#: ../GDebi/GDebi.py:415
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>将要删除：%s</b>"
 
-#: ../GDebi/GDebi.py:403 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:417 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
 msgstr "将要安装：%s"
 
-#: ../GDebi/GDebi.py:418
+#: ../GDebi/GDebi.py:432
 msgid "Open Software Package"
 msgstr "打开软件包"
 
-#: ../GDebi/GDebi.py:423
+#: ../GDebi/GDebi.py:437
 msgid "Software packages"
 msgstr "软件包"
 
-#: ../GDebi/GDebi.py:452
+#: ../GDebi/GDebi.py:476
 msgid "File not found"
 msgstr "文件未找到"
 
-#: ../GDebi/GDebi.py:453
+#: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr "您试图安装一个不存在(或不再存在)的文件。 "
 
 #. do it
-#: ../GDebi/GDebi.py:463
+#: ../GDebi/GDebi.py:487
 msgid "Installing package file..."
 msgstr "正在安装软件包文件..."
 
-#: ../GDebi/GDebi.py:465
+#: ../GDebi/GDebi.py:489
 msgid "Install unauthenticated software?"
 msgstr "安装未认证的软件？"
 
-#: ../GDebi/GDebi.py:466
+#: ../GDebi/GDebi.py:490
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -321,11 +337,11 @@ msgstr ""
 "\n"
 "以下的软件包未经过验证，可能会具有恶意性质。"
 
-#: ../GDebi/GDebi.py:493
+#: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
 msgstr "你需要获取管理员权限以安装软件"
 
-#: ../GDebi/GDebi.py:494
+#: ../GDebi/GDebi.py:518
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
@@ -335,29 +351,29 @@ msgstr ""
 "手工安装软件包是一种潜在的安全风险。\n"
 "只从值得信任的软件发行者的渠道安装软件。\n"
 
-#: ../GDebi/GDebi.py:517 ../GDebi/GDebi.py:578
+#: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
 msgid "Failed to install package file"
 msgstr "安装软件包文件失败"
 
-#: ../GDebi/GDebi.py:562 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
 msgstr "无法下载全部必需的文件"
 
-#: ../GDebi/GDebi.py:563 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
 msgstr "请检查您的互联网连接或安装介质。"
 
-#: ../GDebi/GDebi.py:567 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
 msgstr "无法安装所有依赖软件包"
 
-#: ../GDebi/GDebi.py:568 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:592 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr "通常这与软件发行者的一个错误有关。查看终端窗口输出获取更多细节。"
 
-#: ../GDebi/GDebi.py:584
+#: ../GDebi/GDebi.py:608
 #, python-format
 msgid "Installing %s"
 msgstr "正在安装 %s"
@@ -366,59 +382,59 @@ msgstr "正在安装 %s"
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:624 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
 msgstr "安装完成"
 
-#: ../GDebi/GDebi.py:602
+#: ../GDebi/GDebi.py:626
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "软件包'%s'已安装"
 
-#: ../GDebi/GDebi.py:604 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "安装软件包'%s'失败"
 
-#: ../GDebi/GDebi.py:606
+#: ../GDebi/GDebi.py:630
 msgid "Installation complete"
 msgstr "安装完成"
 
-#: ../GDebi/GDebi.py:613 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:637 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "未能完整地安装所有依赖软件包"
 
-#: ../GDebi/GDebi.py:614 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr "要修复，在终端窗口中运行 'sudo apt-get install -f' 。"
 
 #. ui
-#: ../GDebi/GDebi.py:709 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "正在安装 '%s'..."
 
-#: ../GDebi/GDebi.py:808 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:837 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "正在安装依赖软件包..."
 
-#: ../GDebi/GDebi.py:853 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "正在下载额外的软件包文件..."
 
-#: ../GDebi/GDebi.py:862 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "文件 %s/%s 速度： %sB/s"
 
-#: ../GDebi/GDebi.py:864 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:893 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "文件 %s/%s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:871 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:900 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "请将 '%s' 插入驱动器 '%s' 中"
@@ -451,7 +467,7 @@ msgstr "软件包可能已被破坏，或者不允许您打开此文件。检查
 msgid "This package is uninstallable\n"
 msgstr "此软件包不可安装\n"
 
-#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
 msgid "No description is available"
 msgstr "没有可用的描述"
 
@@ -476,35 +492,40 @@ msgstr "安装时出错： '%s'"
 msgid "Included Files"
 msgstr "包含文件"
 
-#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
+#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
 msgstr "安装软件包(&I)"
 
-#: ../GDebi/GDebiKDE.py:162
+#: ../GDebi/GDebiKDE.py:139
+#, fuzzy
+msgid "&Download Package"
+msgstr "正在下载软件包"
+
+#: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
 msgstr "软件包文件不存在"
 
-#: ../GDebi/GDebiKDE.py:163
+#: ../GDebi/GDebiKDE.py:165
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr "选择了一个不存在的文件来安装。请选择一个存在的 .deb 软件包文件。"
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
-#: ../GDebi/GDebiKDE.py:231
+#: ../GDebi/GDebiKDE.py:246
 msgid "&Reinstall Package"
 msgstr "重新安装软件包(&R)"
 
-#: ../GDebi/GDebiKDE.py:266
+#: ../GDebi/GDebiKDE.py:281
 msgid "Re&install Package"
 msgstr "重新安装软件包(&I)"
 
-#: ../GDebi/GDebiKDE.py:277
+#: ../GDebi/GDebiKDE.py:292
 #, python-format
 msgid "To be removed: %s"
 msgstr "要移除的： %s"
 
-#: ../GDebi/GDebiKDE.py:354
+#: ../GDebi/GDebiKDE.py:369
 msgid "<b>"
 msgstr "<b>"
 
@@ -518,79 +539,79 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运行 'gksudo synaptic' 或 'sudo apt-get "
-"install -f' 。"
+"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运"
+"行 'gksudo synaptic' 或 'sudo apt-get install -f' 。"
 
-#: ../GDebi/GDebiCommon.py:85
+#: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
 msgstr "'%s' 不是一个 Debian 软件包"
 
-#: ../GDebi/GDebiCommon.py:86
+#: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr "此文件的 MIME 类型为 '%s' ，不能安装到系统上。"
 
-#: ../GDebi/GDebiCommon.py:90
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "打不开 '%s'"
 
-#: ../GDebi/GDebiCommon.py:91
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr "软件包可能已损坏或不允许您打开此文件。检查文件的权限。"
 
-#: ../GDebi/GDebiCommon.py:107
+#: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
 msgstr "软件仓库中有相同版本"
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
 msgstr "建议您从软件仓库中安装这个软件。"
 
-#: ../GDebi/GDebiCommon.py:112
+#: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
 msgstr "软件渠道中有较旧的可用版本。"
 
-#: ../GDebi/GDebiCommon.py:113
+#: ../GDebi/GDebiCommon.py:115
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr "您最好还是从软件仓库中安装这个软件，因为它通常有更好的支持。"
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
 msgstr "软件仓库中有更新的版本"
 
-#: ../GDebi/GDebiCommon.py:120
+#: ../GDebi/GDebiCommon.py:122
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr "强烈建议您从软件仓库中安装这个软件，因为它通常有更好的支持。"
 
-#: ../GDebi/GDebiCommon.py:128
+#: ../GDebi/GDebiCommon.py:161
 msgid "All dependencies are satisfied"
 msgstr "所有依赖关系已满足"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:131
+#: ../GDebi/GDebiCommon.py:164
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "需要 the <b>移除</b>  %s 个软件包\n"
 
-#: ../GDebi/GDebiCommon.py:133
+#: ../GDebi/GDebiCommon.py:166
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "需要安装 %s 个软件包"
 
-#: ../GDebi/GDebiCommon.py:141 ../GDebi/GDebiCommon.py:159
+#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "同时只允许运行一个软件管理工具"
 
-#: ../GDebi/GDebiCommon.py:143 ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -604,7 +625,6 @@ msgstr "媒介改变"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
-#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "错误的架构 '%s'"
 
@@ -620,11 +640,9 @@ msgstr "媒介改变"
 #~ msgid "Open..."
 #~ msgstr "打开..."
 
-#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "依赖关系不满足： %s\n"
 
-#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "与已安装的软件包 '%s' 冲突\n"
 
@@ -637,8 +655,8 @@ msgstr "媒介改变"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of malicous "
-#~ "nature."
+#~ "The packages below are not authenticated and could therefor be of "
+#~ "malicous nature."
 #~ msgstr ""
 #~ "恶意软件可能破坏您的数据和控制您的系统。\n"
 #~ "\n"
@@ -647,24 +665,20 @@ msgstr "媒介改变"
 #~ msgid "A later version is already installed"
 #~ msgstr "已经安装了较新的版本"
 
-#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "无法安装 '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "满足所有依赖关系失败(缓存损坏)"
 
-#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "读取文件列表时发生 IO 错误： %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "无法读取列出的文件，请将这作为错误提交"
 
-#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 与 %s (%s %s) 冲突\n"
 
-#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 依赖 %s (%s %s)\n"

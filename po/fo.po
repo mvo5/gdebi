@@ -6,54 +6,55 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-31 21:35+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-06-07 19:12+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Faroese <fo@li.org>\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
 "X-Generator: Launchpad (build 13144)\n"
 
-#: ../gdebi:47
+#: ../gdebi:48
 #, c-format
 msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
 
-#: ../gdebi:53 ../gdebi-gtk:51
+#: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
 msgstr "Koyr ikki-samvirkið (vandamikið!)"
 
-#: ../gdebi:57
+#: ../gdebi:58
 msgid "Set an APT configuration option"
 msgstr "Set ein APT-samansetingakost"
 
-#: ../gdebi:61
+#: ../gdebi:62
 msgid "Do not show progress information"
 msgstr "Vís ikki, hvussu langt innleggingin er liðin"
 
-#: ../gdebi:65
+#: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
 
-#: ../gdebi:67
+#: ../gdebi:68
 msgid "Use alternative root dir"
 msgstr ""
 
-#: ../gdebi:75
+#: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
 msgstr "gdebi villa, fíla ikki funnin: %s\n"
 
-#: ../gdebi:94 ../gdebi:104
+#: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
 msgstr "Skal vera rót, fyri at leggja inn pakkar"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:154
+#: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "Vil tú innleggja ritbúnaðarpakkan? [j/N]"
 
@@ -85,27 +86,27 @@ msgstr "  "
 msgid "<b><big>   </big></b>"
 msgstr "<b><big>   </big></b>"
 
-#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:140
+#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:141
 msgid "<b>Maintainer:</b>"
 msgstr ""
 
-#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:141
+#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:142
 msgid "<b>Priority:</b>"
 msgstr "<b>Raðfesti:</b>"
 
-#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
+#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
 msgid "<b>Section:</b>"
 msgstr ""
 
-#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
+#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
 msgid "<b>Size:</b>"
 msgstr "<b>Stødd:</b>"
 
-#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
+#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
 msgid "<b>To install the following changes are required:</b>"
 msgstr "<b>Fyri at leggja inn, eru hesar broytingar tørvaðar:</b>"
 
-#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
+#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
 msgid "<b>Version:</b>"
 msgstr "<b>Útgáva:</b>"
 
@@ -122,7 +123,7 @@ msgid "Description:"
 msgstr "Frágreiðing:"
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
-#: ../GDebi/GDebiKDE.py:281
+#: ../GDebi/GDebiKDE.py:296
 msgid "Details"
 msgstr "Nærri greining"
 
@@ -161,25 +162,34 @@ msgid "_Details"
 msgstr ""
 
 #: ../data/gdebi.ui.h:21
+#, fuzzy
+msgid "_Download Package"
+msgstr "Legg _inn pakka"
+
+#: ../data/gdebi.ui.h:22
+msgid "_Edit"
+msgstr ""
+
+#: ../data/gdebi.ui.h:23
 msgid "_File"
 msgstr "_Fíla"
 
-#: ../data/gdebi.ui.h:22
+#: ../data/gdebi.ui.h:24
 msgid "_Help"
 msgstr "_Hjálp"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:360
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:374
 msgid "_Install Package"
 msgstr "Legg _inn pakka"
 
-#: ../data/gdebi.ui.h:24
+#: ../data/gdebi.ui.h:26
 msgid "_Open..."
 msgstr ""
 
-#: ../data/gdebi.ui.h:25
+#: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "Endu_rfríska"
 
@@ -193,7 +203,7 @@ msgstr "GDebi Pakka innleggjari"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:38
+#: ../GDebi/DebPackage.py:39
 #, python-format
 msgid "%s is not available"
 msgstr "%s er ikki tøkt"
@@ -227,7 +237,7 @@ msgstr ""
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Pakkainnleggjari - %s"
@@ -248,64 +258,67 @@ msgstr ""
 msgid "Error: "
 msgstr "Villa: "
 
-#: ../GDebi/GDebi.py:332
+#: ../GDebi/GDebi.py:331
+msgid "Error: no longer provides "
+msgstr ""
+
+#: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
 msgstr "Henda útgávan er longu innløgd"
 
-#: ../GDebi/GDebi.py:333
+#: ../GDebi/GDebi.py:347
 msgid "_Reinstall Package"
 msgstr "Endu-rinnlegg pakka"
 
-#: ../GDebi/GDebi.py:376
+#: ../GDebi/GDebi.py:390
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:381 ../GDebi/GDebi.py:386
+#: ../GDebi/GDebi.py:395 ../GDebi/GDebi.py:400
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:404
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:401
+#: ../GDebi/GDebi.py:415
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Til burturtøku: %s</b>"
 
-#: ../GDebi/GDebi.py:403 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:417 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
 msgstr "Til innleggjingar: %s"
 
-#: ../GDebi/GDebi.py:418
+#: ../GDebi/GDebi.py:432
 msgid "Open Software Package"
 msgstr "Lat ritbúnaðarpakka upp"
 
-#: ../GDebi/GDebi.py:423
+#: ../GDebi/GDebi.py:437
 msgid "Software packages"
 msgstr "Ritbúnaðarpakkar"
 
-#: ../GDebi/GDebi.py:452
+#: ../GDebi/GDebi.py:476
 msgid "File not found"
 msgstr "Fíla ei funnin"
 
-#: ../GDebi/GDebi.py:453
+#: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
-"Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
+msgstr "Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
 
 #. do it
-#: ../GDebi/GDebi.py:463
+#: ../GDebi/GDebi.py:487
 msgid "Installing package file..."
 msgstr "Leggji inn pakkafílu..."
 
-#: ../GDebi/GDebi.py:465
+#: ../GDebi/GDebi.py:489
 msgid "Install unauthenticated software?"
 msgstr "Legg inn ikki-góðkendan ritbúnað?"
 
-#: ../GDebi/GDebi.py:466
+#: ../GDebi/GDebi.py:490
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -313,40 +326,40 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:493
+#: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
 msgstr "Tú skal veita umsitingarlig rættindi fyri at leggja inn ritbúnað"
 
-#: ../GDebi/GDebi.py:494
+#: ../GDebi/GDebi.py:518
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:517 ../GDebi/GDebi.py:578
+#: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
 msgid "Failed to install package file"
 msgstr "Miseydnaðist et leggja inn pakkafílu"
 
-#: ../GDebi/GDebi.py:562 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
 msgstr "Kundi ikki niðurtaka allar tær tørvaðu fílurnar"
 
-#: ../GDebi/GDebi.py:563 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
 msgstr "Vinarliga kanna títt alnetssamband, ella innleggingarmiðil."
 
-#: ../GDebi/GDebi.py:567 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:568 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:592 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
 
-#: ../GDebi/GDebi.py:584
+#: ../GDebi/GDebi.py:608
 #, python-format
 msgid "Installing %s"
 msgstr "Innleggi %s"
@@ -355,60 +368,59 @@ msgstr "Innleggi %s"
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:624 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
 msgstr "Innlegging er liðug"
 
-#: ../GDebi/GDebi.py:602
+#: ../GDebi/GDebi.py:626
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Pakki '%s' varð lagdur inn"
 
-#: ../GDebi/GDebi.py:604 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Miseydnaðist at leggja inn pakka '%s'"
 
-#: ../GDebi/GDebi.py:606
+#: ../GDebi/GDebi.py:630
 msgid "Installation complete"
 msgstr "Innlegging fullgjørd"
 
-#: ../GDebi/GDebi.py:613 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:637 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr ""
 
-#: ../GDebi/GDebi.py:614 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
-"Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
+msgstr "Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
 
 #. ui
-#: ../GDebi/GDebi.py:709 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "Leggi inn '%s'..."
 
-#: ../GDebi/GDebi.py:808 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:837 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:853 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:862 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "Fíla %s út av %s við %sB/s"
 
-#: ../GDebi/GDebi.py:864 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:893 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "Fíla %s út av %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:871 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:900 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Vinarliga set inn '%s' í drivið '%s'"
@@ -441,7 +453,7 @@ msgstr ""
 msgid "This package is uninstallable\n"
 msgstr "Hesin pakkin kann ikki leggjast inn\n"
 
-#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
 msgid "No description is available"
 msgstr "Eingin frágreiðing tøk"
 
@@ -466,35 +478,40 @@ msgstr ""
 msgid "Included Files"
 msgstr "Umfataðar fílur"
 
-#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
+#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
 msgstr "&Legg inn pakka"
 
-#: ../GDebi/GDebiKDE.py:162
+#: ../GDebi/GDebiKDE.py:139
+#, fuzzy
+msgid "&Download Package"
+msgstr "&Legg inn pakka"
+
+#: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
 msgstr "Pakkafílan finnst ikki"
 
-#: ../GDebi/GDebiKDE.py:163
+#: ../GDebi/GDebiKDE.py:165
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
-#: ../GDebi/GDebiKDE.py:231
+#: ../GDebi/GDebiKDE.py:246
 msgid "&Reinstall Package"
 msgstr "&Endurinnlegg pakka"
 
-#: ../GDebi/GDebiKDE.py:266
+#: ../GDebi/GDebiKDE.py:281
 msgid "Re&install Package"
 msgstr "Endur&innlegg pakka"
 
-#: ../GDebi/GDebiKDE.py:277
+#: ../GDebi/GDebiKDE.py:292
 #, python-format
 msgid "To be removed: %s"
 msgstr "Til burturtøku: %s"
 
-#: ../GDebi/GDebiKDE.py:354
+#: ../GDebi/GDebiKDE.py:369
 msgid "<b>"
 msgstr "<b>"
 
@@ -509,76 +526,76 @@ msgid ""
 "in a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:85
+#: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
 msgstr "''%s' er ikki ein Debianpakki"
 
-#: ../GDebi/GDebiCommon.py:86
+#: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:90
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "Kundi ikki lata upp '%s'"
 
-#: ../GDebi/GDebiCommon.py:91
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:107
+#: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
 msgstr "Sama útgávan er tøk í einari ritbúnaðarrás"
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:112
+#: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
 msgstr "Ein eldri útgáva er tøk í einari ritbúnaðarrás"
 
-#: ../GDebi/GDebiCommon.py:113
+#: ../GDebi/GDebiCommon.py:115
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
 msgstr "Ein seinni útgáva er tøk í einari ritbúnaðarrás"
 
-#: ../GDebi/GDebiCommon.py:120
+#: ../GDebi/GDebiCommon.py:122
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:128
+#: ../GDebi/GDebiCommon.py:161
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:131
+#: ../GDebi/GDebiCommon.py:164
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Krevur <b>burturtøku</b> av %s pakkum\n"
 
-#: ../GDebi/GDebiCommon.py:133
+#: ../GDebi/GDebiCommon.py:166
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Krevur innlegging av %s pakkum"
 
-#: ../GDebi/GDebiCommon.py:141 ../GDebi/GDebiCommon.py:159
+#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Einans ein ritbúnaðarfyrisiting er loyvd at koyra samstundis"
 
-#: ../GDebi/GDebiCommon.py:143 ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -608,8 +625,8 @@ msgstr "Miðlabroyting"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of malicous "
-#~ "nature."
+#~ "The packages below are not authenticated and could therefor be of "
+#~ "malicous nature."
 #~ msgstr ""
 #~ "Óndsinnaður ritbúnaður, kann skaða tínar dátur og taka yvur leiðsluna á "
 #~ "tínum kervi.\n"
@@ -619,20 +636,18 @@ msgstr "Miðlabroyting"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Eingin byggilagsteigur í pakkanum"
 
-#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Skeivt byggilag '%s'"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ein nýggjari útgáva er longu innløgd"
 
-#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kann ikki leggja inn '%s'"
 
-#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOvilla undir lesan av fílulista: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"
+#~ msgstr ""
+#~ "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"

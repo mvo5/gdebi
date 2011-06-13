@@ -587,7 +587,7 @@ Luca Falavigna
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkImageMenuItem" id="open2">
-                        <property name="label">_Open...</property>
+                        <property name="label" translatable="yes">_Open...</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
@@ -600,7 +600,7 @@ Luca Falavigna
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="refresh1">
-                        <property name="label">_Refresh</property>
+                        <property name="label" translatable="yes">_Refresh</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>

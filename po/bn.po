@@ -6,18 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-31 21:35+0100\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-08 06:24+0000\n"
 "Last-Translator: Khandakar Mujahidul Islam <suzan229@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
 "X-Generator: Launchpad (build 13144)\n"
 
-#: ../gdebi:47
+#: ../gdebi:48
 #, c-format
 msgid ""
 "usage: %prog [options] filename\n"
@@ -26,36 +27,36 @@ msgstr ""
 "ব্যবহার: %prog [options] ফাইলনাম\n"
 "গ্রাফিকাল সংস্করণের জন্য চালান gdebi-gtk\n"
 
-#: ../gdebi:53 ../gdebi-gtk:51
+#: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
 msgstr "নন-ইন্টারেকটিভ চালান (বিপদজ্জক!)"
 
-#: ../gdebi:57
+#: ../gdebi:58
 msgid "Set an APT configuration option"
 msgstr "APT কনফিগারেশন অপশন নির্ধারণ"
 
-#: ../gdebi:61
+#: ../gdebi:62
 msgid "Do not show progress information"
 msgstr "অগ্রগতি সম্পর্কিত তথ্য প্রদর্শন করা হবে না"
 
-#: ../gdebi:65
+#: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr "কেবল নকল হবে এবং stderr এ apt-get ইনস্টল সুসংসগতিপূর্ণ লাইন মুদ্রণ"
 
-#: ../gdebi:67
+#: ../gdebi:68
 msgid "Use alternative root dir"
 msgstr "বিকল্প রুট dir ব্যবহার"
 
-#: ../gdebi:75
+#: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
 msgstr ""
 
-#: ../gdebi:94 ../gdebi:104
+#: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
 msgstr "প্যাকেজ ইনস্টলে রুট করা প্রয়োজন"
 
-#: ../gdebi:106 ../GDebi/GDebiCli.py:154
+#: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "আপনি কি সফটওয়্যার প্যাকেজটি ইনস্টল করতে চান? [y/N]:"
 
@@ -78,10 +79,10 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"এটা আপনার সফ্টওয়ার ব্যবস্থাপনা সিস্টেমের বড় ধরণের ব্যর্থতা। অনুগ্রহ করে "
-"সিনাপটিকে ব্রোকেন প্যাকেজ পরীক্ষা, ফাইল '/etc/apt/sources.list' এর অনুমোদন "
-"এবং নির্ভুলতা পরীক্ষা এবং যা দিয়ে সফ্টওয়ার তথ্য রিলোড করা হবে: 'sudo apt-get "
-"update' and 'sudo apt-get install -f'।"
+"এটা আপনার সফ্টওয়ার ব্যবস্থাপনা সিস্টেমের বড় ধরণের ব্যর্থতা। অনুগ্রহ করে সিনাপটিকে "
+"ব্রোকেন প্যাকেজ পরীক্ষা, ফাইল '/etc/apt/sources.list' এর অনুমোদন এবং নির্ভুলতা "
+"পরীক্ষা এবং যা দিয়ে সফ্টওয়ার তথ্য রিলোড করা হবে: 'sudo apt-get update' and "
+"'sudo apt-get install -f'।"
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -91,27 +92,27 @@ msgstr "  "
 msgid "<b><big>   </big></b>"
 msgstr "<b><big> </big></b>"
 
-#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:140
+#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:141
 msgid "<b>Maintainer:</b>"
 msgstr "<b>মেইনটেইনার:</b>"
 
-#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:141
+#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:142
 msgid "<b>Priority:</b>"
 msgstr "<b>অগ্রাধিকার:</b>"
 
-#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:142
+#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
 msgid "<b>Section:</b>"
 msgstr "<b>সেকশন:</b>"
 
-#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:143
+#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
 msgid "<b>Size:</b>"
 msgstr "<b>আকার:</b>"
 
-#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:280
+#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
 msgid "<b>To install the following changes are required:</b>"
 msgstr ""
 
-#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:139
+#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
 msgid "<b>Version:</b>"
 msgstr "<b>সংস্করণ:</b>"
 
@@ -128,7 +129,7 @@ msgid "Description:"
 msgstr "বর্ণনা:"
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
-#: ../GDebi/GDebiKDE.py:281
+#: ../GDebi/GDebiKDE.py:296
 msgid "Details"
 msgstr "বিস্তারিত"
 
@@ -167,25 +168,34 @@ msgid "_Details"
 msgstr "বিস্তারিত(_D)"
 
 #: ../data/gdebi.ui.h:21
+#, fuzzy
+msgid "_Download Package"
+msgstr "প্যাকেজ ডাউনলোড"
+
+#: ../data/gdebi.ui.h:22
+msgid "_Edit"
+msgstr ""
+
+#: ../data/gdebi.ui.h:23
 msgid "_File"
 msgstr "ফাইল (_ফ)"
 
-#: ../data/gdebi.ui.h:22
+#: ../data/gdebi.ui.h:24
 msgid "_Help"
 msgstr "সহায়িকা (_স)"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:23 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:360
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:374
 msgid "_Install Package"
 msgstr "ইনস্টল প্যাকেজ(_I)"
 
-#: ../data/gdebi.ui.h:24
+#: ../data/gdebi.ui.h:26
 msgid "_Open..."
 msgstr "খুলুন (_O)..."
 
-#: ../data/gdebi.ui.h:25
+#: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "রিফ্রেশ (_R)"
 
@@ -199,7 +209,7 @@ msgstr "প্যাকেজ ইনস্টলার"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:38
+#: ../GDebi/DebPackage.py:39
 #, python-format
 msgid "%s is not available"
 msgstr "%s পাওয়া যায় নি"
@@ -235,7 +245,7 @@ msgstr "প্যাকেজ ডাউনলোড ব্যর্থ:ফাই
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:181
+#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
 msgstr "প্যাকেজ ইনস্টলার - %s"
@@ -256,79 +266,83 @@ msgstr ""
 msgid "Error: "
 msgstr "ত্রুটি : "
 
-#: ../GDebi/GDebi.py:332
+#: ../GDebi/GDebi.py:331
+msgid "Error: no longer provides "
+msgstr ""
+
+#: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
 msgstr "একই সংস্করণ ইতিমধ্যেই ইনস্টল করা আছে"
 
-#: ../GDebi/GDebi.py:333
+#: ../GDebi/GDebi.py:347
 msgid "_Reinstall Package"
 msgstr "প্যাকেজ পুনরায় ইনস্টল(_R)"
 
-#: ../GDebi/GDebi.py:376
+#: ../GDebi/GDebi.py:390
 msgid "Selection is a directory"
 msgstr "ডিরেক্টরিতে নির্বাচন"
 
-#: ../GDebi/GDebi.py:381 ../GDebi/GDebi.py:386
+#: ../GDebi/GDebi.py:395 ../GDebi/GDebi.py:400
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr "ফাইল কন্টেন্ট পড়ার সময় ত্রুটি '%s'"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:404
 msgid "File content can not be extracted"
 msgstr "ফাইল কন্টেন্ট এক্সট্যাক্ট করা যায়না"
 
-#: ../GDebi/GDebi.py:401
+#: ../GDebi/GDebi.py:415
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>মুছে ফেলা হবে: %s</b>"
 
-#: ../GDebi/GDebi.py:403 ../GDebi/GDebiKDE.py:275
+#: ../GDebi/GDebi.py:417 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
 msgstr "ইনস্টল করতে হবে: %s"
 
-#: ../GDebi/GDebi.py:418
+#: ../GDebi/GDebi.py:432
 msgid "Open Software Package"
 msgstr "সফটওয়্যার প্যাকেজ খোলো"
 
-#: ../GDebi/GDebi.py:423
+#: ../GDebi/GDebi.py:437
 msgid "Software packages"
 msgstr "সফটওয়্যার প্যাকেজসমূহ"
 
-#: ../GDebi/GDebi.py:452
+#: ../GDebi/GDebi.py:476
 msgid "File not found"
 msgstr "ফাইল পাওয়া যায়না"
 
-#: ../GDebi/GDebi.py:453
+#: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr "আপনি এমন একটি ফাইল ইনস্টল করতে চাচ্ছেন যা (অথবা আর) বিদ্যমান নেই। "
 
 #. do it
-#: ../GDebi/GDebi.py:463
+#: ../GDebi/GDebi.py:487
 msgid "Installing package file..."
 msgstr "প্যাকেজ ফাইল ইনস্টল করা হচ্ছে..."
 
-#: ../GDebi/GDebi.py:465
+#: ../GDebi/GDebi.py:489
 msgid "Install unauthenticated software?"
 msgstr "প্রমানীকৃত নয় এমন সফ্টওয়ার ইনস্টল?"
 
-#: ../GDebi/GDebi.py:466
+#: ../GDebi/GDebi.py:490
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"ত্রুটিযুক্ত সফ্টওয়ার ডাটার ক্ষতি করতে পারে এবং আপনার সিস্টেমের নিয়ন্ত্রন "
-"নিয়ে নিতে পারে।\n"
+"ত্রুটিযুক্ত সফ্টওয়ার ডাটার ক্ষতি করতে পারে এবং আপনার সিস্টেমের নিয়ন্ত্রন নিয়ে নিতে "
+"পারে।\n"
 "\n"
 "প্যাকেজ প্রমানীকৃত নয় এবং তাই ত্রুটিযুক্ত হতে পারে।"
 
-#: ../GDebi/GDebi.py:493
+#: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:494
+#: ../GDebi/GDebi.py:518
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
@@ -338,32 +352,31 @@ msgstr ""
 "নিজ হাতে প্যাকেজ ইনস্টল করলে নিরাপত্তাজনিত ঝুঁকি থেকে যায়।\n"
 "কেবল বিশ্বস্ত সফ্টওয়ার ডিসট্রিবিউটর থেকে সফ্টওয়ার ইনস্টল করুন।\n"
 
-#: ../GDebi/GDebi.py:517 ../GDebi/GDebi.py:578
+#: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
 msgid "Failed to install package file"
 msgstr "প্যাকেজ ফাইল ইনস্টল করতে ব্যর্থ"
 
-#: ../GDebi/GDebi.py:562 ../GDebi/GDebiKDE.py:327
+#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
 msgstr "সকল প্রয়োজনীয় ফাইল ডাউনলোড করতে পারে নি"
 
-#: ../GDebi/GDebi.py:563 ../GDebi/GDebiKDE.py:328
+#: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr ""
-"দয়াা করে আপনার ইন্টারনেট সংযুক্তি অথবা ইনস্টলেশন মিডিয়াম পরীক্ষা করুন।"
+msgstr "দয়াা করে আপনার ইন্টারনেট সংযুক্তি অথবা ইনস্টলেশন মিডিয়াম পরীক্ষা করুন।"
 
-#: ../GDebi/GDebi.py:567 ../GDebi/GDebiKDE.py:332
+#: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
 msgstr "সকল নির্ভরতা ইনস্টল করতে পারে নি"
 
-#: ../GDebi/GDebi.py:568 ../GDebi/GDebiKDE.py:333
+#: ../GDebi/GDebi.py:592 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"সাধারণত এটা সফ্টওয়ার ডিসট্রিবিউটর সম্পর্কিত ত্রুটি। আরও বিস্তারিত তথ্যের "
-"জন্য টার্মিনাল উইন্ডো দেখুন।"
+"সাধারণত এটা সফ্টওয়ার ডিসট্রিবিউটর সম্পর্কিত ত্রুটি। আরও বিস্তারিত তথ্যের জন্য "
+"টার্মিনাল উইন্ডো দেখুন।"
 
-#: ../GDebi/GDebi.py:584
+#: ../GDebi/GDebi.py:608
 #, python-format
 msgid "Installing %s"
 msgstr ""
@@ -372,61 +385,61 @@ msgstr ""
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:600 ../GDebi/GDebiKDE.py:352
+#: ../GDebi/GDebi.py:624 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
 msgstr ""
 
-#: ../GDebi/GDebi.py:602
+#: ../GDebi/GDebi.py:626
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "'%s' প্যাকেজ ইনস্টল হয়েছে"
 
-#: ../GDebi/GDebi.py:604 ../GDebi/GDebiKDE.py:356
+#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "'%s' প্যাকেজ ইনস্টল করতে ব্যর্থ"
 
-#: ../GDebi/GDebi.py:606
+#: ../GDebi/GDebi.py:630
 msgid "Installation complete"
 msgstr "ইনস্টলেশন সম্পূর্ণ"
 
-#: ../GDebi/GDebi.py:613 ../GDebi/GDebiKDE.py:366
+#: ../GDebi/GDebi.py:637 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "সম্পূর্ণভাবে সকল নির্ভরতা ইনস্টল করতে ব্যর্থ"
 
-#: ../GDebi/GDebi.py:614 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
-"এই সমস্যা নির্দিষ্ট করতে একটি টার্মিনাল উইন্ডোতে 'sudo apt-get install -f' "
-"কমান্ড চালান।"
+"এই সমস্যা নির্দিষ্ট করতে একটি টার্মিনাল উইন্ডোতে 'sudo apt-get install -f' কমান্ড "
+"চালান।"
 
 #. ui
-#: ../GDebi/GDebi.py:709 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "'%s' ইনস্টল করা হচ্ছে..."
 
-#: ../GDebi/GDebi.py:808 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:837 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "নির্বরতা ইনস্টল করা হচ্ছে..."
 
-#: ../GDebi/GDebi.py:853 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "অতিরিক্ত প্যাকেজ ফাইল ডাউনলোড করা হচ্ছে..."
 
-#: ../GDebi/GDebi.py:862 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "%sB/s এ ফাইল %s এর %s"
 
-#: ../GDebi/GDebi.py:864 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:893 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "ফাইল %s এর %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:871 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:900 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "দয়া করে '%s' ড্রাইভে '%s' প্রবেশ করান"
@@ -454,14 +467,14 @@ msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
-"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের "
-"অনুমোদন পরীক্ষা।\n"
+"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের অনুমোদন "
+"পরীক্ষা।\n"
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:217
+#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
 msgid "No description is available"
 msgstr "কোন বর্ননা পাওয়া যায় নি"
 
@@ -486,37 +499,42 @@ msgstr "ইনস্টল করার সময় ত্রুটি: '%s'"
 msgid "Included Files"
 msgstr "সংযুক্ত ফাইলসমূহ"
 
-#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:263
+#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
 msgstr "&Install প্যাকেজ"
 
-#: ../GDebi/GDebiKDE.py:162
+#: ../GDebi/GDebiKDE.py:139
+#, fuzzy
+msgid "&Download Package"
+msgstr "প্যাকেজ ডাউনলোড"
+
+#: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
 msgstr "প্যাকেজ ফাইল বিদ্যমান নেই"
 
-#: ../GDebi/GDebiKDE.py:163
+#: ../GDebi/GDebiKDE.py:165
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"যে ফাইল নেই এমন ফাইল ইনস্টলেশনের জন্য নির্বাচিত। অনুগ্রহ করে existing .deb "
-"প্যাকেজ ফাইল নির্বাচন।"
+"যে ফাইল নেই এমন ফাইল ইনস্টলেশনের জন্য নির্বাচিত। অনুগ্রহ করে existing .deb প্যাকেজ "
+"ফাইল নির্বাচন।"
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
-#: ../GDebi/GDebiKDE.py:231
+#: ../GDebi/GDebiKDE.py:246
 msgid "&Reinstall Package"
 msgstr "&Reinstall প্যাকেজ"
 
-#: ../GDebi/GDebiKDE.py:266
+#: ../GDebi/GDebiKDE.py:281
 msgid "Re&install Package"
 msgstr "Re&install প্যাকেজ"
 
-#: ../GDebi/GDebiKDE.py:277
+#: ../GDebi/GDebiKDE.py:292
 #, python-format
 msgid "To be removed: %s"
 msgstr "যা অপসারন করা হবে: %s"
 
-#: ../GDebi/GDebiKDE.py:354
+#: ../GDebi/GDebiKDE.py:369
 msgid "<b>"
 msgstr "<b>"
 
@@ -530,99 +548,97 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"সিস্টেমে ব্রোকেন ডিপেন্ডেন্সী রয়েছে। টিক না করা পর্যন্ত এ অ্যাপ্লিকেশন "
-"চালানো যায় না। এটা ঠিক করতে টার্মিনাল উইন্ডোতে 'gksudo synaptic' or 'sudo "
-"apt-get install -f' চালান।"
+"সিস্টেমে ব্রোকেন ডিপেন্ডেন্সী রয়েছে। টিক না করা পর্যন্ত এ অ্যাপ্লিকেশন চালানো যায় "
+"না। এটা ঠিক করতে টার্মিনাল উইন্ডোতে 'gksudo synaptic' or 'sudo apt-get install "
+"-f' চালান।"
 
-#: ../GDebi/GDebiCommon.py:85
+#: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:86
+#: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr "ফাইলের মাইম টাইপ '%s'  এবং সিস্টেমে ইনস্টল করা যায় না।"
 
-#: ../GDebi/GDebiCommon.py:90
+#: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
 msgstr "'%s' খুলতে পারছে না"
 
-#: ../GDebi/GDebiCommon.py:91
+#: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
-"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের "
-"অনুমোদন পরীক্ষা।"
+"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের অনুমোদন পরীক্ষা।"
 
-#: ../GDebi/GDebiCommon.py:107
+#: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
 msgstr "একই সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:108
+#: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
 msgstr "এর পরিবর্তে চ্যানেল থেকে ফাইল ইনস্টল করার জন্য সুপারিশ করা হয়।"
 
-#: ../GDebi/GDebiCommon.py:112
+#: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
 msgstr "একটি পুরোনো সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:113
+#: ../GDebi/GDebiCommon.py:115
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
-"সাধারনত সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, কারণ "
-"এর সমর্থন আরও ভাল।"
+"সাধারনত সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, কারণ এর "
+"সমর্থন আরও ভাল।"
 
-#: ../GDebi/GDebiCommon.py:118
+#: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
 msgstr "একটি পরের সংস্করণ সফটওয়্যার চ্যানেলে পাওয়া যাচ্ছে"
 
-#: ../GDebi/GDebiCommon.py:120
+#: ../GDebi/GDebiCommon.py:122
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
-"আপনাকে জোরালোভাবে  সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ "
-"করা হয়, কারণ এর সমর্থন আরও ভাল।"
+"আপনাকে জোরালোভাবে  সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, "
+"কারণ এর সমর্থন আরও ভাল।"
 
-#: ../GDebi/GDebiCommon.py:128
+#: ../GDebi/GDebiCommon.py:161
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:131
+#: ../GDebi/GDebiCommon.py:164
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "%s প্যাকেজ <b>removal</b> আবশ্যক\n"
 
-#: ../GDebi/GDebiCommon.py:133
+#: ../GDebi/GDebiCommon.py:166
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "%s প্যাকেজ ইনস্টলেশন আবশ্যক"
 
-#: ../GDebi/GDebiCommon.py:141 ../GDebi/GDebiCommon.py:159
+#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "শুধুমাত্র একটি সফটওয়্যার ম্যানেজমেন্ট টুল একসময়ে চালানো যাবে"
 
-#: ../GDebi/GDebiCommon.py:143 ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"অনুগ্রহ করে অন্যান্য অ্যাপ্লিকেশন বন্ধ, যেমন, প্রথমে  'Update Manager', "
-"'aptitude' or 'Synaptic'।"
+"অনুগ্রহ করে অন্যান্য অ্যাপ্লিকেশন বন্ধ, যেমন, প্রথমে  'Update Manager', 'aptitude' "
+"or 'Synaptic'।"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
 msgstr ""
 
-#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "নির্বরতা মেটাতে পারে নি: %s\n"
 
@@ -635,10 +651,8 @@ msgstr ""
 #~ msgid "A later version is already installed"
 #~ msgstr "ইতিমধ্যেই একটি পরবর্তী সংস্করণ ইনস্টল করা আছে"
 
-#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' ইনস্টল করতে পারে নি"
 
-#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "ভুল আর্কিটেকচার '%s'"
