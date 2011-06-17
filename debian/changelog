@@ -1,4 +1,4 @@
-gdebi (0.8~exp2) UNRELEASED; urgency=low
+gdebi (0.8~exp2) experimental; urgency=low
 
   * GDebi/GDebi.py:
     - Fix loading of the logo.
@@ -14,7 +14,7 @@ gdebi (0.8~exp2) UNRELEASED; urgency=low
   * debian/control:
     - Remove obsolete dependency versions.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 12 Jun 2011 15:52:52 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 17 Jun 2011 20:22:12 +0200
 
 gdebi (0.8~exp1) experimental; urgency=low
 
