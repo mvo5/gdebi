@@ -1,3 +1,11 @@
+gdebi (0.8~exp3) UNRELEASED; urgency=low
+
+  * GDebi/GDebiCommon.py:
+    - Handle exception generated when installing packages not available
+      in any archive (LP: #800865).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 29 Jun 2011 20:05:22 +0200
+
 gdebi (0.8~exp2) experimental; urgency=low
 
   * GDebi/GDebi.py:

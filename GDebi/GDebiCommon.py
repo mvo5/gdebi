@@ -126,7 +126,10 @@ class GDebiCommon(object):
     def compareProvides(self):
         provides = set()
         broken_provides = set()
-        pkg = self._cache[self._deb.pkgname].installed
+        try:
+            pkg = self._cache[self._deb.pkgname].installed
+        except KeyError:
+            pkg = None
         if pkg:
             if pkg.provides:
                 for p in self._deb.provides:
