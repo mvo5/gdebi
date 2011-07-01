@@ -1,12 +1,13 @@
-gdebi (0.8.0) UNRELEASED; urgency=low
+gdebi (0.8.0) unstable; urgency=low
 
+  * Upload to unstable.
   * GDebi/GDebiCommon.py:
     - Handle exception generated when installing packages not available
       in any archive (LP: #800865).
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
     - Remove NoDisplay to show GDebi in system menus (LP: #803729).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 30 Jun 2011 21:57:44 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 01 Jul 2011 19:58:00 +0200
 
 gdebi (0.8~exp2) experimental; urgency=low
 
