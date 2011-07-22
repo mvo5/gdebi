@@ -1,3 +1,10 @@
+gdebi (0.8.1) UNRELEASED; urgency=low
+
+  * data/gdebi.ui:
+   - fix some spacing issues with the new gtk3/gtkbuilder
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 22 Jul 2011 10:45:51 +0200
+
 gdebi (0.8.0) unstable; urgency=low
 
   * Upload to unstable.

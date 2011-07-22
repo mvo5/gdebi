@@ -549,6 +549,16 @@ Luca Falavigna
       <action-widget response="-7">button2</action-widget>
     </action-widgets>
   </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-open</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-refresh</property>
+  </object>
   <object class="GtkImage" id="image_apply">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -587,12 +597,13 @@ Luca Falavigna
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkImageMenuItem" id="open2">
-                        <property name="label" translatable="yes">_Open...</property>
+                        <property name="label" translatable="yes">_Open…</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="image">image1</property>
+                        <property name="use_stock">False</property>
                         <property name="accel_group">accelgroup1</property>
                         <accelerator key="O" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="on_open_activate" swapped="no"/>
@@ -605,7 +616,8 @@ Luca Falavigna
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="image">image2</property>
+                        <property name="use_stock">False</property>
                         <property name="accel_group">accelgroup1</property>
                         <accelerator key="R" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="on_refresh_activate" swapped="no"/>
@@ -738,12 +750,12 @@ Luca Falavigna
                   <object class="GtkHBox" id="hbox2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_status">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="xalign">0</property>
+                        <property name="yalign">0</property>
                         <property name="wrap">True</property>
                         <property name="selectable">True</property>
                       </object>
@@ -754,13 +766,28 @@ Luca Falavigna
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="button_details">
-                        <property name="label" translatable="yes">_Details</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="use_underline">True</property>
-                        <signal name="clicked" handler="on_button_details_clicked" swapped="no"/>
+                      <object class="GtkBox" id="box1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkButton" id="button_details">
+                            <property name="label" translatable="yes">_Details</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="use_underline">True</property>
+                            <signal name="clicked" handler="on_button_details_clicked" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -775,6 +802,7 @@ Luca Falavigna
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
                     <property name="x_options">GTK_FILL</property>
+                    <property name="y_options"></property>
                   </packing>
                 </child>
                 <child>
@@ -830,6 +858,7 @@ Luca Falavigna
               <object class="GtkVBox" id="vbox5">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="spacing">6</property>
                 <child>
                   <object class="GtkButton" id="button_install">
                     <property name="label" translatable="yes">_Install Package</property>
@@ -849,12 +878,8 @@ Luca Falavigna
                   </packing>
                 </child>
                 <child>
-                  <placeholder/>
-                </child>
-                <child>
                   <object class="GtkButton" id="button_download">
                     <property name="label" translatable="yes">_Download Package</property>
-                    <property name="visible">False</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">True</property>
                     <property name="can_default">True</property>
@@ -868,6 +893,9 @@ Luca Falavigna
                     <property name="fill">False</property>
                     <property name="position">1</property>
                   </packing>
+                </child>
+                <child>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
