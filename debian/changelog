@@ -1,9 +1,14 @@
 gdebi (0.8.1) UNRELEASED; urgency=low
 
+  [ Michael Vogt ]
   * data/gdebi.ui:
    - fix some spacing issues with the new gtk3/gtkbuilder
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 22 Jul 2011 10:45:51 +0200
+  [ Omar Campagne ]
+  * po/es.po:
+    - Update Spanish translation (Closes: #636243).
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 12 Aug 2011 14:36:36 +0200
 
 gdebi (0.8.0) unstable; urgency=low
 
