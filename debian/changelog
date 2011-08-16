@@ -8,7 +8,11 @@ gdebi (0.8.1) UNRELEASED; urgency=low
   * po/es.po:
     - Update Spanish translation (Closes: #636243).
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 12 Aug 2011 14:36:36 +0200
+  [ Luca Falavigna ]
+  * GDebi/GDebi.py, GDebi/KDEAptDialogs.py:
+    - Use errno constant instead of hardcoded values.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Tue, 16 Aug 2011 10:04:38 +0200
 
 gdebi (0.8.0) unstable; urgency=low
 

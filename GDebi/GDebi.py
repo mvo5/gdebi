@@ -780,7 +780,8 @@ Install software from trustworthy software distributors only.
                         read += os.read(readfd,1)
                     except OSError, (errno,errstr):
                         # resource temporarly unavailable is ignored
-                        if errno != 11:
+                        from errno import EAGAIN
+                        if errno != EAGAIN:
                             print errstr
                         break
                     self.time_last_update = time.time()

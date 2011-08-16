@@ -93,8 +93,8 @@ class KDEDpkgInstallProgress(object):
                     self.parent.konsole.insertWithTermCodes(utf8(line))
             except Exception, e:
                 #print e
-                # 11 == EAGAIN
-                if hasattr(e, "errno") and e.errno == 11:
+                from errno import EAGAIN
+                if hasattr(e, "errno") and e.errno == EAGAIN:
                     continue
                 break
             KApplication.kApplication().processEvents()
