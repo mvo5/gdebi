@@ -11,8 +11,10 @@ gdebi (0.8.1) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * GDebi/GDebi.py, GDebi/KDEAptDialogs.py:
     - Use errno constant instead of hardcoded values.
+  * debian/copyright:
+    - Update copyright information.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Tue, 16 Aug 2011 10:04:38 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 17 Aug 2011 17:38:45 +0200
 
 gdebi (0.8.0) unstable; urgency=low
 
