@@ -1,4 +1,4 @@
-gdebi (0.8.1) UNRELEASED; urgency=low
+gdebi (0.8.1) unstable; urgency=low
 
   [ Michael Vogt ]
   * data/gdebi.ui:
@@ -23,7 +23,7 @@ gdebi (0.8.1) UNRELEASED; urgency=low
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in
     - Revalidate .desktop files.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 27 Aug 2011 13:54:56 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 27 Aug 2011 13:55:27 +0200
 
 gdebi (0.8.0) unstable; urgency=low
 
