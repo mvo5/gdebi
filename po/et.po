@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-08 09:31+0000\n"
 "Last-Translator: Maiko Mõtsar <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
-"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -162,9 +161,8 @@ msgid "_Details"
 msgstr ""
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Paki allalaadimine"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -485,9 +483,8 @@ msgid "&Install Package"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Paki allalaadimine"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -578,26 +575,26 @@ msgid ""
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -611,11 +608,11 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Vale arhitektuur '%s'"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
-#~ "  Jalakas https://launchpad.net/~jalakas\n"
-#~ "  eesti tiim https://launchpad.net/~eesti"
+#~ "  Jalakas https://launchpad.net/~jalakas"

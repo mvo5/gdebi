@@ -1,22 +1,47 @@
-# Spanish translation for gdebi
+# gdebi po translation to Spanish
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (C) 2010,2011 Software in the Public Interest
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+# Changes:
+#   - Initial translation
+#       Omar Campagne <ocampagne@gmail.com>
+#
+#   - Updates
+#       TRANSLATOR
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/
+#     especialmente las notas y normas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gdebi 0.7.0\n"
+"Project-Id-Version: gdebi 0.8.0\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
-"PO-Revision-Date: 2011-03-28 02:48+0000\n"
+"PO-Revision-Date: 2011-08-12 13:12+0000\n"
 "Last-Translator: Omar Campagne <ocampagne@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
+"Language: es\n"
 
 #: ../gdebi:48
 #, c-format
@@ -24,7 +49,7 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
-"Uso: %prog [opciones] nombre_de_fichero\n"
+"Uso: %prog [opciones] nombre_de_archivo\n"
 "Ejecute «gdebi-gtk» para la versión gráfica.\n"
 
 #: ../gdebi:54 ../gdebi-gtk:51
@@ -52,7 +77,7 @@ msgstr "Usa un directorio raíz alternativo."
 #: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "Fallo de gdebi, fichero no encontrado: %s\n"
+msgstr "Fallo de gdebi, archivo no encontrado: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
@@ -64,11 +89,11 @@ msgstr "¿Desea instalar el paquete de software? [s/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr "Cerrar automáticamente al finalizar la instalación."
+msgstr "Cerrar automáticamente al finalizar la instalación"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
-msgstr "Usar un directorio de datos alternativo."
+msgstr "Usar un directorio de datos alternativo"
 
 #: ../gdebi-gtk:75
 msgid "Software index is broken"
@@ -82,7 +107,7 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Este es un importante fallo en su sistema de gestión de software. Busque "
-"paquetes rotos con Synaptic, revise los permisos del fichero y que el "
+"paquetes rotos con Synaptic, revise los permisos del archivo y que el "
 "formato de «/etc/apt/sources.list» sea el correcto. Actualice la información "
 "de software con «sudo apt-get update» y «sudo apt-get install -f»."
 
@@ -120,7 +145,7 @@ msgstr "<b>Versión:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr "Cerrar automáticamente después de aplicar los cambios con éxito."
+msgstr "Cerrar automáticamente después de aplicar los cambios con éxito"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -167,20 +192,19 @@ msgstr "Terminal"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr "_Detalles"
+msgstr "De_talles"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Descargando paquete"
+msgstr "_Descargar paquete"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Editar"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
-msgstr "_Fichero"
+msgstr "_Archivo"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Help"
@@ -243,7 +267,7 @@ msgstr "No se ha completado la descarga"
 #: ../GDebi/GDebi.py:190
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr "Error al descargar el paquete: fichero '%s' '%s'"
+msgstr "Error al descargar el paquete: archivo «%s» «%s»"
 
 #. set window title
 #. set name
@@ -270,7 +294,7 @@ msgstr "Error: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Error: ya no proporciona la dependencia "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -313,16 +337,16 @@ msgstr "Paquetes de software"
 
 #: ../GDebi/GDebi.py:476
 msgid "File not found"
-msgstr "Fichero no encontrado"
+msgstr "Archivo no encotrado"
 
 #: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Intentó instalar un fichero que no (o que ya no) existe. "
+msgstr "Intentó instalar un archivo que no (o que ya no) existe. "
 
 #. do it
 #: ../GDebi/GDebi.py:487
 msgid "Installing package file..."
-msgstr "Instalando el fichero de paquete..."
+msgstr "Instalando el archivo de paquete..."
 
 #: ../GDebi/GDebi.py:489
 msgid "Install unauthenticated software?"
@@ -351,8 +375,8 @@ msgid ""
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 "\n"
-"Instalar manualmente ficheros de paquetes constituye un posible riesgo de\n"
-"seguridad. Instale sólo el software que provenga de distribuidores en los\n"
+"Instalar manualmente archivos de paquetes constituye un posible riesgo de\n"
+"seguridad. Instale solo el software que provenga de distribuidores en los\n"
 "que confíe.\n"
 
 #: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
@@ -431,7 +455,7 @@ msgstr "Instalando dependencias..."
 #: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "Descargando ficheros de paquete adicionales..."
+msgstr "Descargando archivos de paquetes adicionales..."
 
 #: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
 #, python-format
@@ -451,7 +475,8 @@ msgstr "Por favor, inserte «%s» en la unidad «%s»"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr "Los elementos de configuración se deben especificar con un =<valor>\n"
+msgstr ""
+"Los elementos de configuración se deben especificar con un =<valor>\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
@@ -509,9 +534,8 @@ msgid "&Install Package"
 msgstr "&Instalar paquete"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Descargando paquete"
+msgstr "&Descargar paquete"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -522,7 +546,7 @@ msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"El paquete seleccionado para su instalación no existe. Seleccione un fichero "
+"El paquete seleccionado para su instalación no existe. Seleccione un archivo "
 "de paquete «.deb» existente."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
@@ -567,7 +591,7 @@ msgstr "«%s» no es un paquete Debian"
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
-"El tipo MIME de este fichero es «%s», y no se puede instalar en este sistema."
+"El tipo MIME de este archivo es «%s», y no se puede instalar en este sistema."
 
 #: ../GDebi/GDebiCommon.py:89
 #, python-format
@@ -614,28 +638,28 @@ msgstr ""
 "Se recomienda encarecidamente que instale la versión disponible en el canal "
 "de software, ya que habitualmente tiene mejor soporte."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Todas las dependencias están satisfechas"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Requiere <b>eliminar</b> %s paquetes\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Requiere la instalación de %s paquetes"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
-"Sólo se permite la ejecución simultánea de una única herramienta de gestión "
+"Solo se permite la ejecución simultánea de una única herramienta de gestión "
 "de software"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -660,18 +684,19 @@ msgstr "Cambio de dispositivo"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Software Malicioso puede dañar tus datos y tomar el control de tu "
-#~ "sistema.\n"
+#~ "Software Malicioso puede dañar tus datos y tomar el control de tu sistema.\n"
 #~ "\n"
 #~ "Los paquetes debajo no estan autenticados y podrian ser de naturaleza "
 #~ "maliciosa."
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Rompe las dependencias del paquete existente «%s» %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Rompe el paquete existente '%s' conflicto: %s (%s %s)\n"
 
@@ -679,21 +704,26 @@ msgstr "Cambio de dispositivo"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Alex Puente https://launchpad.net/~jalepuentem\n"
+#~ "  Fido https://launchpad.net/~fedevera\n"
+#~ "  Fitoschido https://launchpad.net/~fitoschido\n"
+#~ "  Javi Sol https://launchpad.net/~javisolcorreo\n"
 #~ "  Julián Unrrein https://launchpad.net/~junrrein\n"
 #~ "  Paco Molinero https://launchpad.net/~franciscomol\n"
 #~ "  Ricardo Pérez López https://launchpad.net/~ricardo\n"
 #~ "  Seba Polanco https://launchpad.net/~spolanco\n"
 #~ "  juancarlospaco https://launchpad.net/~juancarlospaco"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "La dependencia no se puede satisfacer: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflictos con el paquete instalado «%s»\n"
 
 #~ msgid ""
-#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)"
-#~ "s %(targetver)s)"
+#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s "
+#~ "%(targetver)s)"
 #~ msgstr ""
 #~ "Rompe un conflicto del paquete existente '%(pkgname)s': %(targetpkg)s "
 #~ "(%(comptype)s %(targetver)s)"
@@ -701,6 +731,7 @@ msgstr "Cambio de dispositivo"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "No hay campo de Arquitectura en el paquete"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura incorrecta «%s»"
 
@@ -712,9 +743,10 @@ msgstr "Cambio de dispositivo"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "Se produjo un fallo al intentar satisfacer todas las dependencias "
-#~ "(almacén dañado)"
+#~ "Se produjo un fallo al intentar satisfacer todas las dependencias (almacén "
+#~ "dañado)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No se puede instalar «%s»"
 
@@ -725,6 +757,7 @@ msgstr "Cambio de dispositivo"
 #~ msgstr ""
 #~ "La lista de archivos no se pudo leer. Por favor, remita un informe defallo"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ocurrió un IOError durante la lectura de la lista de archivos: %s"
 

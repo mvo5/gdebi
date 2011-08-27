@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
-"PO-Revision-Date: 2011-03-14 09:24+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-08-15 15:06+0000\n"
+"Last-Translator: Chaitanya Kumar CH <Unknown>\n"
 "Language-Team: Telugu <te@li.org>\n"
-"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -35,7 +34,7 @@ msgstr ""
 
 #: ../gdebi:62
 msgid "Do not show progress information"
-msgstr ""
+msgstr "పురోగతిని తెలియజేయవద్దు"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
@@ -162,9 +161,8 @@ msgid "_Details"
 msgstr "వివరాలు (_D)"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "ప్యాకేజీని డౌన్‌లోడ్‌చేస్తోంది"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -221,8 +219,8 @@ msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
-"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి సాధారణ వాడుకరిగా మారి మరలా "
-"ప్రయత్నించండి."
+"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి "
+"సాధారణ వాడుకరిగా మారి మరలా ప్రయత్నించండి."
 
 #: ../GDebi/GDebi.py:182
 msgid "Downloading package"
@@ -330,7 +328,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
-msgstr "సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
+msgstr ""
+"సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
 
 #: ../GDebi/GDebi.py:518
 msgid ""
@@ -360,7 +359,8 @@ msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం టెర్మినల్ విండోను చూడండి."
+"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం "
+"టెర్మినల్ విండోను చూడండి."
 
 #: ../GDebi/GDebi.py:608
 #, python-format
@@ -395,7 +395,8 @@ msgstr "అన్ని ఆధారితత్వాలను పూర్త�
 
 #: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
+msgstr ""
+"దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
 
 #. ui
 #: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
@@ -486,9 +487,8 @@ msgid "&Install Package"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "ప్యాకేజీని డౌన్‌లోడ్‌చేస్తోంది"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -579,26 +579,26 @@ msgid ""
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."

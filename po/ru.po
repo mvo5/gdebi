@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2010-10-24 16:46+0000\n"
 "Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -169,9 +168,8 @@ msgid "_Details"
 msgstr "По_дробности"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Загрузка пакета"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -508,9 +506,8 @@ msgid "&Install Package"
 msgstr "&Установить пакет"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Загрузка пакета"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -613,28 +610,28 @@ msgstr ""
 "Настоятельно рекомендуется установить версию из источника программного "
 "обеспечения, так как он лучше поддерживается."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Все зависимости удовлетворены"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Требует <b>удаления</b> %s пакетов\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Требует установки %s пакетов"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "Одновременно может быть запущена только одна программа установки/удаления "
 "пакетов"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -650,9 +647,11 @@ msgstr "Смена носителя"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Зависимость не может быть удовлетворена: %s\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Для пакета '%s' имеются поломанные зависимости %s (%s %s)\n"
 
@@ -662,12 +661,12 @@ msgstr "Смена носителя"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Не удалось удовлетворить все зависимости (нарушен кэш)"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Конфликт с существующим пакетом '%s': %s (%s %s)\n"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Список файлов не может быть прочитан, отправьте отчёт об этой ошибке"
+#~ msgstr "Список файлов не может быть прочитан, отправьте отчёт об этой ошибке"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "В пакете отсутствует поле Architecture"
@@ -675,15 +674,16 @@ msgstr "Смена носителя"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Злонамеренные программы могут повредить ваши данные и захватить контроль "
-#~ "над вашей системой.\n"
+#~ "Злонамеренные программы могут повредить ваши данные и захватить контроль над "
+#~ "вашей системой.\n"
 #~ "\n"
 #~ "Пакеты, перечисленные ниже, не авторизованы и поэтому могут быть "
 #~ "злонамеренными."
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ошибка ввода/вывода при чтении списка файлов: %s"
 
@@ -696,24 +696,27 @@ msgstr "Смена носителя"
 #~ msgid ""
 #~ "Malicious software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicious nature."
+#~ "The packages below are not authenticated and could therefor be of malicious "
+#~ "nature."
 #~ msgstr ""
-#~ "Вредоносные программы могут повредить ваши данные и перехватить контроль "
-#~ "над системой.\n"
+#~ "Вредоносные программы могут повредить ваши данные и перехватить контроль над "
+#~ "системой.\n"
 #~ "\n"
 #~ "Пакеты, которые приведены ниже, не аутентифицированы и теоретически могут "
 #~ "содержать вредоносный код."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Конфликты с установленными пакетами '%s'\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Неверная архитектура «%s»"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Уже установлена более новая версия"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Не удалось установить «%s»"
 

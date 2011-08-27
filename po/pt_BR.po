@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-04-24 18:00+0000\n"
 "Last-Translator: Rodrigo Borges <rbm0407@yahoo.com.br>\n"
 "Language-Team: Portuguese (Brazil) <pt_BR@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -159,7 +158,7 @@ msgstr "Pacote:"
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr "Estado:"
+msgstr "Status:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
@@ -170,13 +169,12 @@ msgid "_Details"
 msgstr "_Detalhes"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Baixando pacote"
+msgstr "_Baixar pacote"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Editar"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -207,7 +205,7 @@ msgstr "Pacote de software"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr "Instalador de Pacotes GDebi"
+msgstr "Instalador de pacotes GDebi"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -270,7 +268,7 @@ msgstr "Erro: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Erro: não fornece mais "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -505,9 +503,8 @@ msgid "&Install Package"
 msgstr "&Instalar Pacote"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Baixando pacote"
+msgstr "&Baixar pacote"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -610,26 +607,26 @@ msgstr ""
 "É altamente recomendado que você instale a versão do repositório, pois "
 "geralmente ela é melhor suportada."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Todas as dependências estão satisfeitas"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Requer a <b>remoção</b> de %s pacotes\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Requer a instalação de %s pacotes"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Somente um gerenciador de pacotes pode ser executado por vez"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -645,6 +642,7 @@ msgstr "Trocar Mídia"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitetura errada '%s'"
 
@@ -657,17 +655,17 @@ msgstr "Trocar Mídia"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Softwares maliciosos podem prejudicar o funcionamento de seu sistema.\n"
 #~ "\n"
-#~ "Os pacotes abaixo não são autenticados e podem ter uma origem não "
-#~ "confiável."
+#~ "Os pacotes abaixo não são autenticados e podem ter uma origem não confiável."
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analisando dependências"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflitos com pacotes instalados '%s'\n"
 
@@ -677,18 +675,30 @@ msgstr "Trocar Mídia"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Alexandre Sapata Carbonell https://launchpad.net/~alexandre-sapata-"
+#~ "carbonell\n"
+#~ "  André Gondim https://launchpad.net/~andregondim\n"
 #~ "  Blabos https://launchpad.net/~blabos\n"
+#~ "  Brunno Gomes https://launchpad.net/~brunnogomes\n"
+#~ "  Celio Alves https://launchpad.net/~dreamcelio\n"
 #~ "  Felipe Vieira Borges https://launchpad.net/~felipeborges\n"
+#~ "  Fábio Nogueira https://launchpad.net/~fnogueira\n"
+#~ "  Gerson \"fserve\" Barreiros https://launchpad.net/~fserve\n"
 #~ "  Gustavo Franco https://launchpad.net/~stratus\n"
+#~ "  Henrique P. Machado https://launchpad.net/~zehrique\n"
 #~ "  Marcelo Pires https://launchpad.net/~marcelo-pires-silva\n"
+#~ "  Ricardo Moro https://launchpad.net/~rmoro\n"
 #~ "  Rodrigo Borges https://launchpad.net/~rbm0407\n"
 #~ "  Rogênio Belém https://launchpad.net/~rogeniobelem\n"
+#~ "  Teylo Laundos Aguiar https://launchpad.net/~teylo.aguiar\n"
 #~ "  Tiago Hillebrandt https://launchpad.net/~tiagohillebrandt\n"
 #~ "  woiski https://launchpad.net/~woiski"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependência não satisfeita: %s\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Não foi possível instalar '%s'"
 
@@ -698,12 +708,15 @@ msgstr "Trocar Mídia"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Falhou ao instalar as dependências (cache quebrado)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Erro de E/S ao ler a lista de arquivos: %s"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Pacote existente quebra '%s' que conflita com %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Pacote existente quebrado '%s' que depende de %s (%s %s)\n"
 

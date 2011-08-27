@@ -8,17 +8,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-03-20 06:32+0000\n"
 "Last-Translator: 英华 <wantinghard@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -43,8 +42,7 @@ msgstr "不显示进度信息"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
-"仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
+msgstr "仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
@@ -82,9 +80,8 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/"
-"etc/apt/sources.list' 文件的正确性并使用 'sudo apt-get update' 和 'sudo apt-"
-"get install -f' 重新载入软件信息。"
+"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/etc/apt/sources.list' 文件的正确性并使用 "
+"'sudo apt-get update' 和 'sudo apt-get install -f' 重新载入软件信息。"
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -170,9 +167,8 @@ msgid "_Details"
 msgstr "细节(_D)"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "正在下载软件包"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -497,9 +493,8 @@ msgid "&Install Package"
 msgstr "安装软件包(&I)"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "正在下载软件包"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -539,8 +534,8 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运"
-"行 'gksudo synaptic' 或 'sudo apt-get install -f' 。"
+"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运行 'gksudo synaptic' 或 'sudo apt-get "
+"install -f' 。"
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
@@ -592,26 +587,26 @@ msgid ""
 "since it is usually better supported."
 msgstr "强烈建议您从软件仓库中安装这个软件，因为它通常有更好的支持。"
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "所有依赖关系已满足"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "需要 the <b>移除</b>  %s 个软件包\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "需要安装 %s 个软件包"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "同时只允许运行一个软件管理工具"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -625,6 +620,7 @@ msgstr "媒介改变"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "错误的架构 '%s'"
 
@@ -640,9 +636,11 @@ msgstr "媒介改变"
 #~ msgid "Open..."
 #~ msgstr "打开..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "依赖关系不满足： %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "与已安装的软件包 '%s' 冲突\n"
 
@@ -655,8 +653,8 @@ msgstr "媒介改变"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "恶意软件可能破坏您的数据和控制您的系统。\n"
 #~ "\n"
@@ -665,20 +663,24 @@ msgstr "媒介改变"
 #~ msgid "A later version is already installed"
 #~ msgstr "已经安装了较新的版本"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "无法安装 '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "满足所有依赖关系失败(缓存损坏)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "读取文件列表时发生 IO 错误： %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "无法读取列出的文件，请将这作为错误提交"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 与 %s (%s %s) 冲突\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 依赖 %s (%s %s)\n"

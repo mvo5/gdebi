@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-08 09:31+0000\n"
 "Last-Translator: Malcolm Parsons <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -168,9 +167,8 @@ msgid "_Details"
 msgstr "_Details"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Downloading package"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -498,9 +496,8 @@ msgid "&Install Package"
 msgstr "&Install Package"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Downloading package"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -577,7 +574,8 @@ msgstr "Same version is available in a software channel"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "You are recommended to install the software from the channel instead."
+msgstr ""
+"You are recommended to install the software from the channel instead."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -603,26 +601,26 @@ msgstr ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "All dependencies are satisfied"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Requires the <b>removal</b> of %s packages\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Requires the installation of %s packages"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Only one software management tool is allowed to run at a time"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -638,6 +636,7 @@ msgstr "Media Change"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Wrong architecture '%s'"
 
@@ -647,12 +646,14 @@ msgstr "Media Change"
 #~ msgid "Open..."
 #~ msgstr "Open..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependency is not satisfiable: %s\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analysing dependencies"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicts with the installed package '%s'\n"
 
@@ -662,6 +663,7 @@ msgstr "Media Change"
 #~ msgid "A later version is already installed"
 #~ msgstr "A later version is already installed"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Cannot install '%s'"
 
@@ -671,25 +673,28 @@ msgstr "Media Change"
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "List of files could not be read, please report this as a bug"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Breaks existing package '%s' conflict: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOError during filelist read: %s"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Breaks existing package '%s' dependency %s (%s %s)\n"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Malicious software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefore be of "
-#~ "malicious nature."
+#~ "The packages below are not authenticated and could therefore be of malicious "
+#~ "nature."
 
 #~ msgid "translator-credits"
 #~ msgstr ""

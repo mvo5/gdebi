@@ -11,12 +11,12 @@ msgstr ""
 "PO-Revision-Date: 2010-09-05 22:46+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
+"Language: he\n"
 
 #: ../gdebi:48
 #, c-format
@@ -168,9 +168,8 @@ msgid "_Details"
 msgstr "_פרטים"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "החבילה בהורדה"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -407,7 +406,8 @@ msgstr "ארע כשל בהתקנה מלאה של כל התלויות"
 
 #: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
+msgstr ""
+"כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
 
 #. ui
 #: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
@@ -500,9 +500,8 @@ msgid "&Install Package"
 msgstr "ה&תקנת חבילה"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "החבילה בהורדה"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -600,30 +599,31 @@ msgid ""
 msgstr ""
 "מומלץ בחום להתקין את הגרסה מערוץ התכנה מכיוון שלרוב היא נתמכת טוב יותר."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "כל דרישות התלות מולאו"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "דורשת <b>הסרה</b> של %s חבילות.\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "דורשת התקנה של %s חבילות."
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "ניתן להפעיל כלי ניהול תכנה אחד ויחיד בעת ובעונה אחת"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr "נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
+msgstr ""
+"נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -636,15 +636,18 @@ msgstr "החלפת מדיה"
 #~ msgid "Y"
 #~ msgstr "Y"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "מתנגשת עם החבילה המותקנת '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "אין שדה ארכיטקטורה בחבילה"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "לא ניתן להתקין את '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
 
@@ -654,22 +657,26 @@ msgstr "החלפת מדיה"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "תכנה זדונית עלולה להזיק לנתונים ולהשתלט על המערכת שלך.\n"
 #~ "\n"
 #~ "החבילות שלהלן אינן מאומתות ולכן לא מן הנמנע שאלו בעלות יכולות זדוניות."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "התלויות אינן עומדות בדרישות: %s\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "הארכיטקטורה '%s' שגויה"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התנגשות: %s‏ (%s‏ %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התלויה ב־%s‏ (%s‏ %s)\n"
 

@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-13 19:58+0000\n"
 "Last-Translator: Gergely Szarka <szarka.honved@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -82,9 +81,10 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Ez a szoftverkezelő rendszer súlyos hibáját jelzi. Ellenőrizze a törött "
-"csomagokat a Synaptickal, ellenőrizze a fájl jogosultságait és az /etc/apt/"
-"sources.list fájl helyességét, majd töltse újra a szoftverinformációkat a "
-"\"sudo apt-get update\" és \"sudo apt-get install -f\" parancsok kiadásával."
+"csomagokat a Synaptickal, ellenőrizze a fájl jogosultságait és az "
+"/etc/apt/sources.list fájl helyességét, majd töltse újra a "
+"szoftverinformációkat a \"sudo apt-get update\" és \"sudo apt-get install -"
+"f\" parancsok kiadásával."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -170,9 +170,8 @@ msgid "_Details"
 msgstr "_Részletek"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Csomag letöltése"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -317,7 +316,8 @@ msgstr "A fájl nem található"
 
 #: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Olyan fájlt próbált meg telepíteni, amely nem (vagy már nem) létezik. "
+msgstr ""
+"Olyan fájlt próbált meg telepíteni, amely nem (vagy már nem) létezik. "
 
 #. do it
 #: ../GDebi/GDebi.py:487
@@ -505,9 +505,8 @@ msgid "&Install Package"
 msgstr "_Csomag telepítése"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Csomag letöltése"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -609,26 +608,26 @@ msgstr ""
 "Erősen ajánlott a szoftvercsatornából származó csomagverzió telepítése, "
 "mivel az általában jobban támogatott."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Minden függőség kielégítve"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "%s csomag <b>eltávolítását</b> igényli\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "%s csomag telepítését igényli"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Csak egy szoftverkezelő eszköz futhat egyidejűleg"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -644,6 +643,7 @@ msgstr "Adathordozó-csere"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Rossz architektúra: \"%s\""
 
@@ -656,21 +656,23 @@ msgstr "Adathordozó-csere"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "A rosszindulatú szoftverek tönkretehetik az adatait és átvehetik a "
-#~ "rendszere feletti ellenőrzést.\n"
+#~ "A rosszindulatú szoftverek tönkretehetik az adatait és átvehetik a rendszere "
+#~ "feletti ellenőrzést.\n"
 #~ "\n"
 #~ "Az alábbi csomagok hitelesítés nélküliek és ennek megfelelően akár "
 #~ "rosszindulatúak is lehetnek."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "A következő függőség nem elégíthető ki: %s\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Függőségek elemzése"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Ütközés a(z) '%s' telepített csomaggal\n"
 
@@ -680,18 +682,22 @@ msgstr "Adathordozó-csere"
 #~ msgid "A later version is already installed"
 #~ msgstr "Már telepítve van egy újabb verzió"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Megsérti a meglévő „%s” csomag függőségeit; ütközés: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Megsérti a meglévő „%s” csomag %s függőségét (%s %s)\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "„%s” nem telepíthető"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Nem sikerült kielégíteni minden függőséget (a gyorsítótár sérült)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOError a fájllista olvasása során: %s"
 

@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-06-07 19:12+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Faroese <fo@li.org>\n"
-"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -162,9 +161,8 @@ msgid "_Details"
 msgstr ""
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Legg _inn pakka"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -307,7 +305,8 @@ msgstr "Fíla ei funnin"
 
 #: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
+msgstr ""
+"Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
 
 #. do it
 #: ../GDebi/GDebi.py:487
@@ -392,7 +391,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
+msgstr ""
+"Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
 
 #. ui
 #: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
@@ -483,9 +483,8 @@ msgid "&Install Package"
 msgstr "&Legg inn pakka"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "&Legg inn pakka"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -576,26 +575,26 @@ msgid ""
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Krevur <b>burturtøku</b> av %s pakkum\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Krevur innlegging av %s pakkum"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Einans ein ritbúnaðarfyrisiting er loyvd at koyra samstundis"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -625,8 +624,8 @@ msgstr "Miðlabroyting"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Óndsinnaður ritbúnaður, kann skaða tínar dátur og taka yvur leiðsluna á "
 #~ "tínum kervi.\n"
@@ -636,18 +635,20 @@ msgstr "Miðlabroyting"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Eingin byggilagsteigur í pakkanum"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Skeivt byggilag '%s'"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ein nýggjari útgáva er longu innløgd"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kann ikki leggja inn '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOvilla undir lesan av fílulista: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"
+#~ msgstr "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"

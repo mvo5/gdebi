@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-03-08 07:07+0000\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <ubuntu-l10n-ca@ubuntu.com>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -174,9 +173,8 @@ msgid "_Details"
 msgstr "_Detalls"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "S'està baixant el paquet"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -510,9 +508,8 @@ msgid "&Install Package"
 msgstr "&Instal·la el paquet"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "S'està baixant el paquet"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -616,26 +613,26 @@ msgstr ""
 "Es recomana que instal·leu la versió que disponible al canal de programari, "
 "ja que normalment s'ofereix un millor suport"
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Totes les dependències estan satisfetes"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Requereix la <b>supressió</b> de %s paquets\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Requereix la instal·lació de %s paquets"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Només es pot executar una eina de gestió de programari alhora"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -651,6 +648,7 @@ msgstr "Canvi de suport"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errònia «%s»"
 
@@ -660,28 +658,30 @@ msgstr "Canvi de suport"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "El programari maliciós us pot corrompre les dades i prendre el control "
-#~ "del vostre sistema. \n"
+#~ "El programari maliciós us pot corrompre les dades i prendre el control del "
+#~ "vostre sistema. \n"
 #~ "\n"
 #~ "Els paquets llistats no estan autenticats i per tant poden ser maliciosos."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "No es pot satisfer la dependència: %s\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ja hi ha instal·lada una versió posterior"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No es pot instal·lar «%s»"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest "
-#~ "error"
+#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest error"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr ""
 #~ "S'ha produït un error d'entrada/sortida (IOError) en llegir la llista de "
@@ -690,6 +690,7 @@ msgstr "Canvi de suport"
 #~ msgid "Open..."
 #~ msgstr "Obre..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entra amb conflicte amb el paquet instal·lat «%s»\n"
 
@@ -699,10 +700,10 @@ msgstr "Canvi de suport"
 #~ msgid "Analysing dependencies"
 #~ msgstr "S'estan analitzant les dependències"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Conflicte de trencament del paquet existent «%s»: %s (%s %s)\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "No s'han pogut satisfer totes les dependències (la memòria cau està "
-#~ "trencada)"
+#~ "No s'han pogut satisfer totes les dependències (la memòria cau està trencada)"

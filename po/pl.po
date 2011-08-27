@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2010-10-03 15:03+0000\n"
 "Last-Translator: Naven <naven@n4v.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -82,8 +81,8 @@ msgstr ""
 "Jest to poważny błąd systemu zarządzania pakietami. Proszę poszukać "
 "uszkodzonych pakietów za pomocą programu Synaptic, sprawdzić prawa dostępu "
 "do plików oraz poprawność pliku \"/etc/apt/sources.list\", a następnie "
-"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get update"
-"\" i \"sudo apt-get install -f\"."
+"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get "
+"update\" i \"sudo apt-get install -f\"."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -169,9 +168,8 @@ msgid "_Details"
 msgstr "_Szczegóły"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Pobieranie pakietu"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -316,7 +314,8 @@ msgstr "Plik nie został odnaleziony"
 
 #: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Próbowałeś zainstalować plik, który nie istniał lub już nie istnieje. "
+msgstr ""
+"Próbowałeś zainstalować plik, który nie istniał lub już nie istnieje. "
 
 #. do it
 #: ../GDebi/GDebi.py:487
@@ -342,7 +341,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
-msgstr "Aby instalować oprogramowanie wymagane są uprawnienia administratora."
+msgstr ""
+"Aby instalować oprogramowanie wymagane są uprawnienia administratora."
 
 #: ../GDebi/GDebi.py:518
 msgid ""
@@ -506,9 +506,8 @@ msgid "&Install Package"
 msgstr "&Zainstaluj pakiet"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Pobieranie pakietu"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -585,7 +584,8 @@ msgstr "Ta sama wersja jest dostępna poprzez jeden z kanałów oprogramowania"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
+msgstr ""
+"Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -611,28 +611,28 @@ msgstr ""
 "Zainstalowanie wersji dostępnej poprzez kanał oprogramowania jest bardzo "
 "zalecane, ponieważ zazwyczaj jest lepiej wspierana."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Wszystkie zależności są spełnione"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Wymaga <b>usunięcia</b> %s pakietów\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Wymaga instalacji %s pakietów"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "W danym momencie moży być uruchomione tylko jedno narzędzie zarządzające "
 "oprogramowaniem"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -648,14 +648,15 @@ msgstr "Zmiana nośnika"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Nieodpowiednia architektura \"%s\""
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Złośliwe oprogramowanie może uszkodzić twoje dane i przejąć kontrolę nad "
 #~ "systemem.\n"
@@ -669,6 +670,7 @@ msgstr "Zmiana nośnika"
 #~ msgid "Open..."
 #~ msgstr "Otwórz..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Niemożliwe spełnienie zależności: %s\n"
 
@@ -680,30 +682,33 @@ msgstr "Zmiana nośnika"
 #~ "Nie udało się spełnić wszysktkich zależności (uszkodzona pamięć podręczna "
 #~ "instalatora)"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "W konflikcie z zainstalowanym pakietem '%s'\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Nowsza wersja jest już zainstalowana"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nie można zainstalować '%s'"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "Lista plików nie może być odczytana; proszę zgłosić to jako błąd"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Istniejący pakiet '%s' konfliktuje z: '%s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
-#~ msgstr ""
-#~ "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
+#~ msgstr "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Błąd we/wy podczas czytania listy plików: %s"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
-#~ "  GTriderXC https://launchpad.net/~gtriderxc\n"
-#~ "  Michał Kułach https://launchpad.net/~kulach"
+#~ "  GTriderXC https://launchpad.net/~gtriderxc"

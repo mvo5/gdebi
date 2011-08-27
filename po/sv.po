@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-06 19:50+0000\n"
 "Last-Translator: Gustavo Franco <stratus@debian.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -171,13 +170,12 @@ msgid "_Details"
 msgstr "_Detaljer"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Hämtar paket"
+msgstr "_Hämta paket"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "R_edigera"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -271,7 +269,7 @@ msgstr "Fel: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Fel: tillhandahåller inte längre "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -503,9 +501,8 @@ msgid "&Install Package"
 msgstr "&Installera paket"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Hämtar paket"
+msgstr "&Hämta paket"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -548,8 +545,8 @@ msgid ""
 "in a terminal window."
 msgstr ""
 "Ditt system innehåller trasiga beroenden. Detta program kan inte fortsätta "
-"förräns detta har rättats till. För att rätta till det, kör \"gksudo synaptic"
-"\" eller \"sudo apt-get install -f\" i ett terminalfönster."
+"förräns detta har rättats till. För att rätta till det, kör \"gksudo "
+"synaptic\" eller \"sudo apt-get install -f\" i ett terminalfönster."
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
@@ -608,32 +605,32 @@ msgstr ""
 "Du rekommenderas starkt att installera från programvarukanalen, eftersom den "
 "normalt sett har bättre stöd."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Alla beroenden är tillfredsställda"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Kräver <b>borttagning</b> av %s paket\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Kräver installation av %s paket"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Endast ett programvaruhanteringsverktyg kan köras i taget"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", \"aptitude"
-"\" eller \"Synaptic\" först."
+"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", "
+"\"aptitude\" eller \"Synaptic\" först."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -643,6 +640,7 @@ msgstr "Mediabyte"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Fel arkitektur \"%s\""
 
@@ -655,21 +653,22 @@ msgstr "Mediabyte"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Ondsint programvara kan skada ditt data och ta över kontrollen av ditt "
 #~ "system.\n"
 #~ "\n"
-#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig "
-#~ "karaktär."
+#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig karaktär."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Beroendet tillfredsställs inte: %s\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analyserar beroenden"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Står i konflikt med installerade paketet \"%s\"\n"
 
@@ -679,20 +678,30 @@ msgstr "Mediabyte"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Inget Architecture-fält i paketet"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Gör sönder befintliga paketet \"%s\", konflikt: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Beroenden för paketet \"%s\" på %s uppfylls ej (%s %s)\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kan inte installera \"%s\""
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "In-/Ut-fel under läsning av fillista: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "Fillista kunde inte läsas, rapportera detta som ett fel"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Arve Eriksson https://launchpad.net/~031299870-telia\n"
+#~ "  Daniel Nylander https://launchpad.net/~yeager"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "En senare version är redan installerad"

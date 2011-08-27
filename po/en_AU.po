@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
-"PO-Revision-Date: 2011-05-23 10:05+0000\n"
-"Last-Translator: Hew McLachlan <hew.mclachlan@gmail.com>\n"
+"PO-Revision-Date: 2011-07-10 10:58+0000\n"
+"Last-Translator: Benny <Benjamin.Donald.Wilson.K@gmail.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -168,13 +167,12 @@ msgid "_Details"
 msgstr "_Details"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Downloading package"
+msgstr "_Download Package"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Edit"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -268,7 +266,7 @@ msgstr "Error: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Error: no longer provides "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -502,9 +500,8 @@ msgid "&Install Package"
 msgstr "&Install Package"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Downloading package"
+msgstr "&Download Package"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -581,7 +578,8 @@ msgstr "Same version is available in a software channel"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "You are recommended to install the software from the channel instead."
+msgstr ""
+"You are recommended to install the software from the channel instead."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -607,26 +605,26 @@ msgstr ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "All dependencies are satisfied"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Requires the <b>removal</b> of %s packages\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Requires the installation of %s packages"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Only one software management tool is allowed to run at the same time"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -642,12 +640,14 @@ msgstr "Media Change"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Wrong architecture '%s'"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Benny https://launchpad.net/~benny\n"
 #~ "  Hew McLachlan https://launchpad.net/~hew\n"
 #~ "  Jared Norris https://launchpad.net/~jarednorris\n"
 #~ "  Stephen Norman https://launchpad.net/~stenorman2001-mac"

@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-08 09:30+0000\n"
 "Last-Translator: Murat Gunes <mgunes@ubuntu.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -169,9 +168,8 @@ msgid "_Details"
 msgstr "_Ayrıntılar"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Paket indiriliyor"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -501,9 +499,8 @@ msgid "&Install Package"
 msgstr "Paket K&ur"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Paket indiriliyor"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -602,26 +599,26 @@ msgstr ""
 "Yazılım kanalındaki sürüm daha iyi desteklendiğinden oradaki sürümü kurmanız "
 "şiddetle önerilir."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Tüm bağımlılıklar sağlanmış"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "%s paketin <b>kaldırılmasını</b> gerektiriyor\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "%s adet paketin kurulmasını gerektiriyor"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Aynı anda yalnızca tek bir paket yöneticisi çalışabilir"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -637,9 +634,11 @@ msgstr "Ortam Değiştirme"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Hatalı işlemci mimarisi '%s'"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "%s bağımlılığı sağlanamadı\n"
 
@@ -649,18 +648,19 @@ msgstr "Ortam Değiştirme"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Kötü niyetli yazılımlar verilerinize zarar verebilir ve sisteminizin "
 #~ "denetimini ele \n"
 #~ "\n"
-#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir "
-#~ "içeriğe sahip olabilirler."
+#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir içeriğe "
+#~ "sahip olabilirler."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Daha yeni bir sürüm zaten kurulu"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' paketi kurulamadı"
 

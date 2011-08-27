@@ -14,6 +14,8 @@ gdebi (0.8.1) UNRELEASED; urgency=low
   * GDebi/GDebi.py:
     - Use get_content_area instead of vbox (LP: #834545).
     - Fix crash when initializing main window (LP: #834839).
+  * po/*.po:
+    - Refresh translations exported from Rosetta.
   * debian/copyright:
     - Update copyright information.
 
@@ -21,7 +23,7 @@ gdebi (0.8.1) UNRELEASED; urgency=low
   * data/gdebi.desktop.in, data/gdebi-kde.desktop.in
     - Revalidate .desktop files.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 27 Aug 2011 13:04:56 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 27 Aug 2011 13:54:56 +0200
 
 gdebi (0.8.0) unstable; urgency=low
 

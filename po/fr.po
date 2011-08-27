@@ -18,16 +18,16 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
-"PO-Revision-Date: 2011-04-01 08:27+0000\n"
-"Last-Translator: taffit <Unknown>\n"
+"PO-Revision-Date: 2011-08-01 19:57+0000\n"
+"Last-Translator: Baptiste Fontaine <Unknown>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 "X-Poedit-Country: FRANCE\n"
+"Language: fr\n"
 "X-Poedit-Language: French\n"
 
 #: ../gdebi:48
@@ -125,7 +125,8 @@ msgstr "<b>Taille :</b>"
 
 #: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
 msgid "<b>To install the following changes are required:</b>"
-msgstr "<b>Pour installer, les modifications suivantes sont nécessaires :</b>"
+msgstr ""
+"<b>Pour installer, les modifications suivantes sont nécessaires :</b>"
 
 #: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
 msgid "<b>Version:</b>"
@@ -184,13 +185,12 @@ msgid "_Details"
 msgstr "_Détails"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Téléchargement de paquet"
+msgstr "_Télécharger un paquet"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "É_dition"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -528,9 +528,8 @@ msgid "&Install Package"
 msgstr "&Installer le paquet"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Téléchargement de paquet"
+msgstr "&Télécharger un paquet"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -636,26 +635,27 @@ msgstr ""
 "Il vous est fortement recommandé d'installer la version disponible dans le "
 "dépôt, car elle est habituellement mieux prise en charge."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Toutes les dépendances sont satisfaites"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Nécessite la <b>suppression</b> de %s paquets\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Nécessite l'installation de %s paquets"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr "Vous ne pouvez utiliser qu'un seul gestionnaire de logiciels à la fois"
+msgstr ""
+"Vous ne pouvez utiliser qu'un seul gestionnaire de logiciels à la fois"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -676,9 +676,11 @@ msgstr "Changement de support"
 #~ "Membres de la liste debian-l10n-french@lists.debian.org\n"
 #~ "\n"
 #~ "Launchpad Contributions:\n"
-#~ "  Matthieu Martin https://launchpad.net/~matthieu-martin\n"
-#~ "  Pierre Slamich https://launchpad.net/~pierre-slamich"
+#~ "  Baptiste Fontaine https://launchpad.net/~bfontaine\n"
+#~ "  Pierre Slamich https://launchpad.net/~pierre-slamich\n"
+#~ "  Robert https://launchpad.net/~xx-k3nny-xx"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Architecture « %s » incorrecte"
 
@@ -691,8 +693,8 @@ msgstr "Changement de support"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Des logiciels malveillants peuvent endommager vos données et prendre le "
 #~ "contrôle de votre système.\n"
@@ -703,6 +705,7 @@ msgstr "Changement de support"
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analyse des dépendances"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entre en conflit avec le paquet installé « %s »\n"
 
@@ -716,15 +719,19 @@ msgstr "Changement de support"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Pas de champ « architecture » dans le paquet"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Casse le conflit du paquet « %s » : %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Casse la dépendance du paquet « %s » : %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Impossible d'installer « %s »"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr ""
 #~ "Erreur d'entrée/sortie lors de la lecture de la liste de fichiers : %s"
@@ -733,5 +740,6 @@ msgstr "Changement de support"
 #~ msgstr ""
 #~ "La liste des fichiers ne peut pas être lue, merci de signaler ce bogue"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dépendance non satisfaite : %s\n"

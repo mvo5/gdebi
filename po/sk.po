@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-10 20:49+0000\n"
 "Last-Translator: helix84 <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -171,13 +170,12 @@ msgid "_Details"
 msgstr "Po_drobnosti"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Sťahuje sa balík"
+msgstr "_Stiahnuť balík"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Upraviť"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -271,7 +269,7 @@ msgstr "Chyba: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Chyba: už viac neposkytuje "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -504,9 +502,8 @@ msgid "&Install Package"
 msgstr "Na&inštalovať balík"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Sťahuje sa balík"
+msgstr "&Stiahnuť balík"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -609,26 +606,26 @@ msgstr ""
 "Dôrazne sa odporúča inštalovať softvér zo zdroja softvéru, pretože je "
 "zvyčajne lepšie podporovaný."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Všetky závislosti sú splnené"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Vyžaduje <b>odstránenie</b> %s balíkov\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Vyžaduje inštaláciu %s balíkov"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Naraz môže bežať iba jeden nástroj na správu softvéru"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -644,6 +641,7 @@ msgstr "Výmena nosiča"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Nesprávna architektúra „%s“"
 
@@ -661,23 +659,27 @@ msgstr "Výmena nosiča"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Zákerný softvér môže poškodiť vaše dáta a prebrať kontrolu nad vaším "
 #~ "systémom.\n"
 #~ "\n"
 #~ "Pravosť dolu uvedených balíkov nebola overená a preto môžu byť podvrhnuté."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Závislosť nemožno uspokojiť: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Je v konflikte s nainštalovaným  balíkom „%s“\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Porušuje v existujúcom balíku „%s“ závislosť %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Porušuje v existujúcom balíku „%s“ konflikt: %s (%s %s)\n"
 
@@ -694,6 +696,7 @@ msgstr "Výmena nosiča"
 #~ msgstr ""
 #~ "Nepodarilo sa uspokojiť všetky závislosti (poškodená vyrovnávacia pamäť)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nemožno nainštalovať „%s“"
 
@@ -701,5 +704,6 @@ msgstr "Výmena nosiča"
 #~ msgstr ""
 #~ "Zoznam súborov, ktoré nebolo možné načítať. Ohláste to prosím ako chybu."
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "V/V chyba počas čítania zoznamu súborov: %s"

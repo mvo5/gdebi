@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
-"PO-Revision-Date: 2010-10-26 18:09+0000\n"
-"Last-Translator: Muhammad Ali Makki <Unknown>\n"
+"PO-Revision-Date: 2011-06-22 23:52+0000\n"
+"Last-Translator: Shehzad Ashiq Ali <Unknown>\n"
 "Language-Team: Urdu Team of www.urducoder.com <makkiabufaris@aol.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 "X-Poedit-Country: PAKISTAN\n"
 "X-Poedit-Language: Urdu\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -171,13 +170,12 @@ msgid "_Details"
 msgstr "_تفصیلات"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "پیکج _نصب کریں"
+msgstr "_پیکیج ڈاؤن لوڈ"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_ترمیم"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -223,26 +221,28 @@ msgstr "لادا جارہا ہے..."
 
 #: ../GDebi/GDebi.py:168
 msgid "Can not download as root"
-msgstr ""
+msgstr "بطور روٹ ڈائون لئود نہیں کر سکتا"
 
 #: ../GDebi/GDebi.py:169
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"بطور روٹ دور دراز پیکجوں کو ڈائون لئود نہیں کیا جا سکتا۔ براہ مہربانی ایک "
+"عام صارف کے طور پر دوبارہ کوشش کریں۔"
 
 #: ../GDebi/GDebi.py:182
 msgid "Downloading package"
-msgstr ""
+msgstr "پیکج کو دائون لئود کیا جا ریا ہے"
 
 #: ../GDebi/GDebi.py:189
 msgid "Download failed"
-msgstr ""
+msgstr "دائون لئود ناکام"
 
 #: ../GDebi/GDebi.py:190
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "پیکج کو دائون لئود  نہیں کیا جا سکا مسل '%s' '%s':"
 
 #. set window title
 #. set name
@@ -269,7 +269,7 @@ msgstr "غلطی: "
 
 #: ../GDebi/GDebi.py:331
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "غلطی : اب نہیں فراہم کرتا "
 
 #: ../GDebi/GDebi.py:346
 msgid "Same version is already installed"
@@ -504,9 +504,8 @@ msgid "&Install Package"
 msgstr "&پیکج نصب کریں"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "&پیکج نصب کریں"
+msgstr "&پیکیج ڈاؤن لوڈ"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -608,26 +607,26 @@ msgstr ""
 "آپ پر زور دیا جاتا ہے کہ آپ نسخہ سوفٹ ویئر چینل سے نصب کریں کیونکہ یہ بہتر "
 "طور پر معاونت شُدہ ہوتا ہے."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "تمام انحصاریاں تسلی بخش ہیں"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "اسے نصب کرنے کے لیے %s پیکج <b>حذف</b> کرنا لازمی ہیں\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "اسے نصب کرنے کے لیے مزید %s پیکج نصب کرنا لازمی ہیں"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "ایک وقت میں صرف ایک سوفٹ ویئر ادارت اوزار چلانے کی اجازت ہے"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -640,9 +639,16 @@ msgstr ""
 msgid "Media Change"
 msgstr "میڈیا کی تبدیلی"
 
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Shehzad Ashiq Ali https://launchpad.net/~shehzadashiq"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "انحصاری اطمینان بخش نہیں ہے: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "نصب شُدہ پیکج '%s' سے متصادم\n"
 
@@ -654,8 +660,8 @@ msgstr "میڈیا کی تبدیلی"
 #~ "%(depversion)s)"
 
 #~ msgid ""
-#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)"
-#~ "s %(targetver)s)"
+#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s "
+#~ "%(targetver)s)"
 #~ msgstr ""
 #~ "سابقہ پیکج کو توڑتا ہے '%(pkgname)s' متصادم: %(targetpkg)s (%(comptype)s "
 #~ "%(targetver)s)"
@@ -663,6 +669,7 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "پیکج میں طرزِ تعمیر Architecture کا خانہ نہیں ہے"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "غلط آرکیٹیکچر '%s'"
 
@@ -675,6 +682,7 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "تمام انحصاریوں کو حل کرنے میں ناکامی (بروکن کیشے)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "نصب نہیں کیا جاسکتا '%s'"
 
@@ -692,5 +700,6 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgstr ""
 #~ "فائلوں کی فہرست پڑھی نہیں جاسکتی، ازراہِ کرم اسے بطور غلطی (بگ) رپورٹ کریں"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "فائل فہرست پڑھنے کے دوران IOError: %s"

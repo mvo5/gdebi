@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-12-04 00:05+0000\n"
 "Last-Translator: Miro Glavić <glavicmiro@gmail.com>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
-"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -169,9 +168,8 @@ msgid "_Details"
 msgstr "_Detalji"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Preuzimanje paketa"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -500,9 +498,8 @@ msgid "&Install Package"
 msgstr "&Instaliraj Paket"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Preuzimanje paketa"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -601,28 +598,28 @@ msgstr ""
 "Strogo vam se preporučuje da  instalirate verziju sa softverskog kanala, "
 "budući da je obično bolje podržana."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Sve zavisnosti su zadovoljene"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Zahtijeva <b>uklanjanje</b> %s paketa\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Zahtijeva instaliranje %s paketa"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "Samo jedan softverski alat za upravljanje dopušteno je izvoditi u isto "
 "vrijeme"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -647,31 +644,37 @@ msgstr "Izmjena Medija"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad "
-#~ "vašim sustavom\n"
+#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad vašim "
+#~ "sustavom\n"
 #~ "U nastavku paketi nisu ovjerena i to bi moglo biti od malijiciozne prirode"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Ovisni paketi nisu zadovoljeni %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicts with the installed package '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Ne Arhitektura polje u paketu"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' sukob:% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' ovisnost% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Pogrešna arhitektura '%s'"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nemoguće instalirati '%s'"
 

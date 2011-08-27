@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-01-02 02:59+0000\n"
 "Last-Translator: AJenbo <anders@jenbo.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -41,7 +40,8 @@ msgstr "Vis ikke hvor langt installationen er nået"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr "Simuler kun og udskriv en apt-get install kompatibel linje til stderr"
+msgstr ""
+"Simuler kun og udskriv en apt-get install kompatibel linje til stderr"
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
@@ -80,8 +80,8 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Dette er en alvorlig fejl i dit softwarehåndteringssystem. Undersøg venligst "
-"for ødelagte pakker med synaptic, undersøg filrettighederne og at filen »/"
-"etc/apt/sources.list« er korrekt og genindlæs softwareinformationen med: "
+"for ødelagte pakker med synaptic, undersøg filrettighederne og at filen "
+"»/etc/apt/sources.list« er korrekt og genindlæs softwareinformationen med: "
 "»sudo apt-get update« og »sudo apt-get install -f«."
 
 #: ../data/gdebi.ui.h:1
@@ -168,9 +168,8 @@ msgid "_Details"
 msgstr "_Detaljer"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Henter pakke"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -341,7 +340,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:517
 msgid "You need to grant administrative rights to install software"
-msgstr "Du skal tildele administrative rettigheder for at installere software"
+msgstr ""
+"Du skal tildele administrative rettigheder for at installere software"
 
 #: ../GDebi/GDebi.py:518
 msgid ""
@@ -504,9 +504,8 @@ msgid "&Install Package"
 msgstr "&Installer pakke"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Henter pakke"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -609,26 +608,26 @@ msgstr ""
 "Du anbefales stærkt at installere versionen fra softwarekanalen, da den "
 "normalt er bedre understøttet."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Alle afhængigheder er opfyldt"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Kræver <b>fjernelse</b> af %s pakker\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Kræver installation af %s pakker"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Det er kun tilladt at have et softwarehåndteringsværktøj kørende."
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -657,9 +656,11 @@ msgstr "Medieændring"
 #~ msgid "Y"
 #~ msgstr "J"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Afhængighed er ikke opfyldt: %s\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kan ikke installere »%s«"
 
@@ -669,6 +670,7 @@ msgstr "Medieændring"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Kunne ikke opfylde alle afhængigheder (ødelagt mellemlager)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IO-fejl under læsning af filliste: %s"
 
@@ -678,26 +680,30 @@ msgstr "Medieændring"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Software med ond hensigt kan skade dine data og overtage kontrollen med "
-#~ "dit system.\n"
+#~ "Software med ond hensigt kan skade dine data og overtage kontrollen med dit "
+#~ "system.\n"
 #~ "\n"
 #~ "Pakkerne nedenfor er ikke godkendt og kan derfor være skadelige."
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Forkert arkitektur »%s«"
 
 #~ msgid "Open..."
 #~ msgstr "Åben"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Konflikter med den installerede pakke \"%s\"\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Beskadiger eksisterende pakke \"%s\" afhængighed %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Beskadiger eksisterende pakke \"%s\" konflikt: %s (%s %s)\n"
 

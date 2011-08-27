@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-12-02 12:50+0000\n"
 "Last-Translator: petre <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -170,9 +169,8 @@ msgid "_Details"
 msgstr "_Detalii"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Se descarcă pachetul"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -361,7 +359,8 @@ msgstr "Nu s-au putut descărca toate fișierele necesare"
 
 #: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr "Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
+msgstr ""
+"Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
 
 #: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
@@ -502,9 +501,8 @@ msgid "&Install Package"
 msgstr "&Instalare pachet"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Se descarcă pachetul"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -606,27 +604,27 @@ msgstr ""
 "Este foarte recomandat să instalaţi versiunea din canalul de difuzare "
 "software, pentru că este mai bine suportată de obicei."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Toate dependenţele sunt satisfăcute"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Necesită <b>ştergerea</b> a %s pachete\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Necesită instalarea a %s pachete"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "O singură unealtă de gestionare software poate fi rulată la un moment dat"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -645,12 +643,15 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependenţa nu poate fi satisfăcuta: %s\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nu s-a putut instala '%s'"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arhitectură greşită '%s'"
 
@@ -660,13 +661,14 @@ msgstr ""
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Satisfacerea tuturor dependenţelor a eşuat (cache corupt)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Eroare I/O în timpul citirii listei de fişiere: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru "
-#~ "drept o disfunţionalitate (bug)"
+#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru drept "
+#~ "o disfunţionalitate (bug)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

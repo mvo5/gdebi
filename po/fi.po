@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2009-11-08 06:41+0000\n"
 "Last-Translator: Tony Hulden <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -166,9 +165,8 @@ msgid "_Details"
 msgstr "_Yksityiskohdat"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Ladataan pakettia"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -496,9 +494,8 @@ msgid "&Install Package"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Ladataan pakettia"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -595,26 +592,26 @@ msgstr ""
 "On erittäin suositeltavaa käyttää ohjelmalähteestä löytyvää paketin "
 "versiota, koska se on yleensä paremmin tuettu."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Kaikki riippuvuudet on täytetty"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Vaatii %s paketin <b>poistamista</b>\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Vaatii %s paketin asentamista"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr "Vain yksi pakettienhallintatyökalu voi olla kerralla käytössä"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -630,9 +627,11 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Väärä arkitehtuuri '%s'"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Riippuvuutta ei voida täyttää: %s\n"
 
@@ -642,18 +641,19 @@ msgstr ""
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Haitalliset ohjelmat voivat vaurioittaa tietojasi ja ottaa tietokoneesi "
 #~ "haltuun.\n"
 #~ "\n"
-#~ "Alla olevien pakettien lähdettä ei voida varmistaa ja ne voivat siten "
-#~ "olla haittaohjelmia."
+#~ "Alla olevien pakettien lähdettä ei voida varmistaa ja ne voivat siten olla "
+#~ "haittaohjelmia."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Uudempi versio on jo asennettu"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Pakettia \"%s\" ei voida asentaa"
 
@@ -662,3 +662,8 @@ msgstr ""
 
 #~ msgid "Y"
 #~ msgstr "K"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Tony Hulden https://launchpad.net/~tony-hulden-deactivatedaccount"

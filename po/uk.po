@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-13 23:54+0200\n"
 "PO-Revision-Date: 2011-06-07 19:12+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-08 15:28+0000\n"
-"X-Generator: Launchpad (build 13144)\n"
+"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
+"X-Generator: Launchpad (build 13794)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -169,9 +168,8 @@ msgid "_Details"
 msgstr "_Подробиці"
 
 #: ../data/gdebi.ui.h:21
-#, fuzzy
 msgid "_Download Package"
-msgstr "Завантаження пакунків"
+msgstr ""
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
@@ -316,7 +314,8 @@ msgstr "Файл не знайдено"
 
 #: ../GDebi/GDebi.py:477
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Ви спробували встановити файл, якого не існує (або більше не існує). "
+msgstr ""
+"Ви спробували встановити файл, якого не існує (або більше не існує). "
 
 #. do it
 #: ../GDebi/GDebi.py:487
@@ -367,7 +366,8 @@ msgstr "Не вдалося завантажити всі необхідні ф�
 
 #: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr "Будь ласка, перевірте ваше інтернет-з'єднання або носій встановлення."
+msgstr ""
+"Будь ласка, перевірте ваше інтернет-з'єднання або носій встановлення."
 
 #: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
@@ -508,9 +508,8 @@ msgid "&Install Package"
 msgstr "&Встановити пакунок"
 
 #: ../GDebi/GDebiKDE.py:139
-#, fuzzy
 msgid "&Download Package"
-msgstr "Завантаження пакунків"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -614,28 +613,28 @@ msgstr ""
 "Ми наполегливо радимо вам встановити версію з каналу програмного "
 "забезпечення, оскільки вона краще підтримується."
 
-#: ../GDebi/GDebiCommon.py:161
+#: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
 msgstr "Всі залежності задоволено"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr "Потребує <b>видалення</b> %s пакунків\n"
 
-#: ../GDebi/GDebiCommon.py:166
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr "Потребує встановлення %s пакунків"
 
-#: ../GDebi/GDebiCommon.py:174 ../GDebi/GDebiCommon.py:192
+#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 "Лише один інструмент керування програмним забезпеченням дозволено запускати "
 "одночасно"
 
-#: ../GDebi/GDebiCommon.py:176 ../GDebi/GDebiCommon.py:194
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
@@ -657,8 +656,8 @@ msgstr "Зміна Носія"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Шкідливе програмне забезпечення може пошкодити ваші дані та захопити "
 #~ "контроль над вашою системою.\n"
@@ -666,30 +665,36 @@ msgstr "Зміна Носія"
 #~ "Пакунки, наведені нижче, не є достовірними, а тому можуть мати шкідливу "
 #~ "природу."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Залежність неможливо задовольнити: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Конфліктує з встановленим пакунком \"%s\"\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "В пакунку відсутнє поле \"Архітектура\""
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Неправильна архітектура \"%s\""
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Пізніша версія вже встановлена"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Розбиває існуючий конфлікт пакунка \"%s\": %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Розбиває існуючу залежність пакунка \"%s\" %s (%s %s)\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Йде аналіз залежностей"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Неможливо встановити \"%s\""
 
@@ -709,5 +714,6 @@ msgstr "Зміна Носія"
 #~ "  Maks Lyashuk aka Ma)(imuM https://launchpad.net/~probel\n"
 #~ "  Сергій Матрунчик (SkyMan) https://launchpad.net/~skymanphp"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Помилка введення-виведення під час читання списку файлів: %s"
