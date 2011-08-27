@@ -507,7 +507,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             scrolled.add(textview)
             scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             scrolled.show()
-            dialog.vbox.pack_start(scrolled, True, True, 0)
+            dialog.get_content_area().pack_start(scrolled, True, True, 0)
             textview.show()
             res = dialog.run()
             dialog.destroy()
