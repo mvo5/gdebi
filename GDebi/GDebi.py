@@ -101,6 +101,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.hbox_main.set_sensitive(False)
 
         # show what we have
+        self.window_main.realize()
         self.window_main.show()
 
         # setup drag'n'drop
