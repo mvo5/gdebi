@@ -1,3 +1,10 @@
+gdebi (0.8.2) UNRELEASED; urgency=low
+
+  * setup.py:
+    - Make buildsystem a little less noisy.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 28 Aug 2011 16:21:31 +0200
+
 gdebi (0.8.1) unstable; urgency=low
 
   [ Michael Vogt ]
