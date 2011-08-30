@@ -88,6 +88,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         # FIXME: this sucks but without it the terminal window is only 
         #        1 line height
         self.vte_terminal.set_size_request(80*10, 25*10)
+        menu = Gtk.Menu()
+        menu_items = Gtk.MenuItem(label=_("Copy selected text"))
+        menu.append(menu_items)
+        menu_items.connect("activate", self.menu_action, self.vte_terminal)
+        menu_items.show()
+        self.vte_terminal.connect_object("event", self.vte_event, menu)
         self.hbox_install_terminal.pack_start(self.vte_terminal, True, True, 0)
         scrollbar = Gtk.VScrollbar.new(self.vte_terminal.get_vadjustment())
         self.hbox_install_terminal.pack_start(scrollbar, False, False, 0)
@@ -707,6 +713,17 @@ Install software from trustworthy software distributors only.
         config_file = open(path, "w")
         config_file.write(config.dump())
         config_file.close()
+
+    def vte_event(self, widget, event):
+        if event.type == Gdk.EventType.BUTTON_PRESS:
+            if event.button.button == 3:
+                widget.popup_for_device(None, None, None, None, None,
+                                        event.button.button, event.time)
+                return True
+        return False
+
+    def menu_action(self, widget, terminal):
+        terminal.copy_clipboard()
         
     # embedded classes
     class DpkgInstallProgress(object):
