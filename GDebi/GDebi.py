@@ -345,7 +345,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         version_status = self._deb.compare_to_version_in_cache(use_installed=False)
         if (version_status in (DebPackage.VERSION_SAME, DebPackage.VERSION_OUTDATED)):
-            if not self._deb.downloaded:
+            if (self._cache[self._deb.pkgname].candidate.downloadable
+              and not self._deb.downloaded):
                 self.button_download.show()
                 self.button_download.set_sensitive(True)
 
