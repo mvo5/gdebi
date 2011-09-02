@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-06-13 23:54+0200\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2010-10-02 19:29+0000\n"
 "Last-Translator: Jose Almeida <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,11 +68,16 @@ msgstr ""
 msgid "Use alternative datadir"
 msgstr ""
 
-#: ../gdebi-gtk:75
+#: ../gdebi-gtk:59
+#, fuzzy
+msgid "Remove package"
+msgstr "Pacote de software"
+
+#: ../gdebi-gtk:78
 msgid "Software index is broken"
 msgstr ""
 
-#: ../gdebi-gtk:76
+#: ../gdebi-gtk:79
 msgid ""
 "This is a major failure of your software management system. Please check for "
 "broken packages with synaptic, check the file permissions and correctness of "
@@ -181,17 +187,22 @@ msgstr "_Ajuda"
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:374
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
 msgid "_Install Package"
 msgstr "_Instalar Pacote"
 
 #: ../data/gdebi.ui.h:26
-msgid "_Open..."
+msgid "_Open…"
 msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr ""
+
+#: ../data/gdebi.ui.h:28
+#, fuzzy
+msgid "_Remove Package"
+msgstr "_Reinstalar Pacote"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -208,15 +219,19 @@ msgstr "Instalador de Pacotes"
 msgid "%s is not available"
 msgstr "%s não está disponível"
 
-#: ../GDebi/GDebi.py:97
+#: ../GDebi/GDebi.py:92
+msgid "Copy selected text"
+msgstr ""
+
+#: ../GDebi/GDebi.py:103
 msgid "Loading..."
 msgstr "A ler..."
 
-#: ../GDebi/GDebi.py:168
+#: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
 msgstr "Não pode transferir como administrador (root)"
 
-#: ../GDebi/GDebi.py:169
+#: ../GDebi/GDebi.py:176
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
@@ -224,103 +239,117 @@ msgstr ""
 "Pacotes remotos não podem ser transferidos enquanto é administrador (root). "
 "Por favor tente novamente como utilizador normal."
 
-#: ../GDebi/GDebi.py:182
+#: ../GDebi/GDebi.py:189
 msgid "Downloading package"
 msgstr "A transferir pacote"
 
-#: ../GDebi/GDebi.py:189
+#: ../GDebi/GDebi.py:196
 msgid "Download failed"
 msgstr "Transferência falhada"
 
-#: ../GDebi/GDebi.py:190
+#: ../GDebi/GDebi.py:197
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
 msgstr "Falhou a transferência do pacote: ficheiro '%s' '%s'"
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:184
+#: ../GDebi/GDebi.py:246 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Instalador de Pacotes - %s"
 
-#: ../GDebi/GDebi.py:296
+#: ../GDebi/GDebi.py:303
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:299
+#: ../GDebi/GDebi.py:306
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:305
+#: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:316
+#: ../GDebi/GDebi.py:323
 msgid "Error: "
 msgstr ""
 
-#: ../GDebi/GDebi.py:331
+#: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
 msgstr ""
 
-#: ../GDebi/GDebi.py:346
+#: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
 msgstr "A mesma versão já está instalada"
 
-#: ../GDebi/GDebi.py:347
+#: ../GDebi/GDebi.py:355
 msgid "_Reinstall Package"
 msgstr "_Reinstalar Pacote"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:401
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:395 ../GDebi/GDebi.py:400
+#: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:404
+#: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:415
+#: ../GDebi/GDebi.py:426
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>A ser removido: %s</b>"
 
-#: ../GDebi/GDebi.py:417 ../GDebi/GDebiKDE.py:290
+#: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
 msgstr "A ser instalado: %s"
 
-#: ../GDebi/GDebi.py:432
+#: ../GDebi/GDebi.py:443
 msgid "Open Software Package"
 msgstr "Pacote Software Livre"
 
-#: ../GDebi/GDebi.py:437
+#: ../GDebi/GDebi.py:448
 msgid "Software packages"
 msgstr "Pacotes de software"
 
-#: ../GDebi/GDebi.py:476
+#: ../GDebi/GDebi.py:495
+#, fuzzy
+msgid "Dependency problems"
+msgstr "Dependência não pode ser satisfeita: %s\n"
+
+#: ../GDebi/GDebi.py:496
+#, python-format
+msgid "One or more packages are required by %s, it cannot be removed."
+msgstr ""
+
+#: ../GDebi/GDebi.py:504
 msgid "File not found"
 msgstr ""
 
-#: ../GDebi/GDebi.py:477
+#: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
 
-#. do it
-#: ../GDebi/GDebi.py:487
+#: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
 msgstr "A instalar pacote..."
 
-#: ../GDebi/GDebi.py:489
+#: ../GDebi/GDebi.py:518
+#, fuzzy
+msgid "Removing package..."
+msgstr "A transferir pacote"
+
+#: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
 msgstr "Instalar software não autenticado?"
 
-#: ../GDebi/GDebi.py:490
+#: ../GDebi/GDebi.py:522
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -328,34 +357,47 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:517
+#: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:518
+#: ../GDebi/GDebi.py:551
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
+#: ../GDebi/GDebi.py:556
+msgid "You need to grant administrative rights to remove software"
+msgstr ""
+
+#: ../GDebi/GDebi.py:557
+msgid "It is a possible risk to remove packages."
+msgstr ""
+
+#: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Falha ao instalar pacote"
 
-#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:342
+#: ../GDebi/GDebi.py:581
+#, fuzzy
+msgid "Failed to remove package"
+msgstr "Falha para abrir pacote de software\n"
+
+#: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
 msgstr "Impossível de descarregar todos os ficheiros requeridos"
 
-#: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
+#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
 msgstr "Por favor verifique a ligação à internet ou o media de instalação."
 
-#: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
+#: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
 msgstr "Impossível de instalar todas as dependências"
 
-#: ../GDebi/GDebi.py:592 ../GDebi/GDebiKDE.py:348
+#: ../GDebi/GDebi.py:633 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -363,69 +405,102 @@ msgstr ""
 "Usualmente isto está relacionado com um erro no software do distribuidor. "
 "Veja a janela da consola para mais detalhes."
 
-#: ../GDebi/GDebi.py:608
+#: ../GDebi/GDebi.py:649
 #, python-format
 msgid "Installing %s"
 msgstr "A instalar %s"
+
+#: ../GDebi/GDebi.py:652
+#, python-format
+msgid "Removing %s"
+msgstr ""
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:624 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
 msgstr "Instalação completa"
 
-#: ../GDebi/GDebi.py:626
+#: ../GDebi/GDebi.py:676
+msgid "Removal finished"
+msgstr ""
+
+#: ../GDebi/GDebi.py:679
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Pacote '%s' foi instalado"
 
-#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:371
+#: ../GDebi/GDebi.py:681
+#, fuzzy, python-format
+msgid "Package '%s' was removed"
+msgstr "Pacote '%s' foi instalado"
+
+#: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Falha ao instalar pacote '%s'"
 
-#: ../GDebi/GDebi.py:630
+#: ../GDebi/GDebi.py:687
+#, fuzzy, python-format
+msgid "Failed to remove package '%s'"
+msgstr "Falha ao instalar pacote '%s'"
+
+#: ../GDebi/GDebi.py:691
 msgid "Installation complete"
 msgstr "Instalação completa"
 
-#: ../GDebi/GDebi.py:637 ../GDebi/GDebiKDE.py:381
+#: ../GDebi/GDebi.py:693
+msgid "Removal complete"
+msgstr ""
+
+#: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Falha para completar instalação de toda as dependências"
 
-#: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
+#: ../GDebi/GDebi.py:703
+#, fuzzy
+msgid "Failed to completely remove package"
+msgstr "Falha para abrir pacote de software\n"
+
+#: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "Para resolver este problema execute 'sudo apt-get install -f' numa consola."
 
 #. ui
-#: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "A instalar '%s'..."
 
-#: ../GDebi/GDebi.py:837 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:826
+#, fuzzy, python-format
+msgid "Removing '%s'..."
+msgstr "A instalar '%s'..."
+
+#: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "A instalar dependências..."
 
-#: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "A descarregar pacotes adicionais..."
 
-#: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "Ficheiro %s de %s a %s/s"
 
-#: ../GDebi/GDebi.py:893 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "Ficheiro %s de %s a %s/s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:900 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Por favor insira '%s' no leitor '%s'"
@@ -624,13 +699,8 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
-#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errada '%s'"
-
-#, python-format
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "Dependência não pode ser satisfeita: %s\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Impossível de instalar dependências (cache quebrada)"
@@ -638,8 +708,8 @@ msgstr ""
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of malicous "
-#~ "nature."
+#~ "The packages below are not authenticated and could therefor be of "
+#~ "malicous nature."
 #~ msgstr ""
 #~ "Software malicioso pode danificar os seus dados e tomar o controlo do seu "
 #~ "sistema.\n"
@@ -650,6 +720,5 @@ msgstr ""
 #~ msgid "A later version is already installed"
 #~ msgstr "Versão mais recente já está instalada"
 
-#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Impossível de instalar '%s'"

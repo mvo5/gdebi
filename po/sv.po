@@ -6,13 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 23:54+0200\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-11-06 19:50+0000\n"
 "Last-Translator: Gustavo Franco <stratus@debian.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
 "X-Generator: Launchpad (build 13794)\n"
@@ -69,11 +70,16 @@ msgstr ""
 msgid "Use alternative datadir"
 msgstr ""
 
-#: ../gdebi-gtk:75
+#: ../gdebi-gtk:59
+#, fuzzy
+msgid "Remove package"
+msgstr "Programpaket"
+
+#: ../gdebi-gtk:78
 msgid "Software index is broken"
 msgstr "Programvaruindexet är trasigt"
 
-#: ../gdebi-gtk:76
+#: ../gdebi-gtk:79
 msgid ""
 "This is a major failure of your software management system. Please check for "
 "broken packages with synaptic, check the file permissions and correctness of "
@@ -188,17 +194,22 @@ msgstr "_Hjälp"
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:320 ../GDebi/GDebi.py:374
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
 msgid "_Install Package"
 msgstr "_Installera paket"
 
 #: ../data/gdebi.ui.h:26
-msgid "_Open..."
+msgid "_Open…"
 msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Uppdatera"
+
+#: ../data/gdebi.ui.h:28
+#, fuzzy
+msgid "_Remove Package"
+msgstr "_Ominstallera paket"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -215,15 +226,19 @@ msgstr "Paketinstalleraren GDebi"
 msgid "%s is not available"
 msgstr "%s inte tillgänglig"
 
-#: ../GDebi/GDebi.py:97
+#: ../GDebi/GDebi.py:92
+msgid "Copy selected text"
+msgstr ""
+
+#: ../GDebi/GDebi.py:103
 msgid "Loading..."
 msgstr "Läser in..."
 
-#: ../GDebi/GDebi.py:168
+#: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
 msgstr "Kan inte hämta som root"
 
-#: ../GDebi/GDebi.py:169
+#: ../GDebi/GDebi.py:176
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
@@ -231,103 +246,117 @@ msgstr ""
 "Fjärrpaket kan inte hämtas när programmet körs som root. Försök igen som en "
 "vanlig användare."
 
-#: ../GDebi/GDebi.py:182
+#: ../GDebi/GDebi.py:189
 msgid "Downloading package"
 msgstr "Hämtar paket"
 
-#: ../GDebi/GDebi.py:189
+#: ../GDebi/GDebi.py:196
 msgid "Download failed"
 msgstr "Hämtningen misslyckades"
 
-#: ../GDebi/GDebi.py:190
+#: ../GDebi/GDebi.py:197
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
 msgstr "Hämtning av paketet misslyckades: filen \"%s\" \"%s\""
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:239 ../GDebi/GDebiKDE.py:184
+#: ../GDebi/GDebi.py:246 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
 msgstr "Paketinstallerare - %s"
 
-#: ../GDebi/GDebi.py:296
+#: ../GDebi/GDebi.py:303
 msgid "Package control data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:299
+#: ../GDebi/GDebi.py:306
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:305
+#: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:316
+#: ../GDebi/GDebi.py:323
 msgid "Error: "
 msgstr "Fel: "
 
-#: ../GDebi/GDebi.py:331
+#: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
 msgstr "Fel: tillhandahåller inte längre "
 
-#: ../GDebi/GDebi.py:346
+#: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
 msgstr "Samma version är redan installerad"
 
-#: ../GDebi/GDebi.py:347
+#: ../GDebi/GDebi.py:355
 msgid "_Reinstall Package"
 msgstr "_Ominstallera paket"
 
-#: ../GDebi/GDebi.py:390
+#: ../GDebi/GDebi.py:401
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:395 ../GDebi/GDebi.py:400
+#: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:404
+#: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
 msgstr ""
 
-#: ../GDebi/GDebi.py:415
+#: ../GDebi/GDebi.py:426
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr "<b>Att tas bort: %s</b>"
 
-#: ../GDebi/GDebi.py:417 ../GDebi/GDebiKDE.py:290
+#: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
 msgstr "Att installeras: %s"
 
-#: ../GDebi/GDebi.py:432
+#: ../GDebi/GDebi.py:443
 msgid "Open Software Package"
 msgstr "Fria programvarupaket"
 
-#: ../GDebi/GDebi.py:437
+#: ../GDebi/GDebi.py:448
 msgid "Software packages"
 msgstr "Programvarupaket"
 
-#: ../GDebi/GDebi.py:476
+#: ../GDebi/GDebi.py:495
+#, fuzzy
+msgid "Dependency problems"
+msgstr "Beroendet tillfredsställs inte: %s\n"
+
+#: ../GDebi/GDebi.py:496
+#, python-format
+msgid "One or more packages are required by %s, it cannot be removed."
+msgstr ""
+
+#: ../GDebi/GDebi.py:504
 msgid "File not found"
 msgstr "Filen hittades inte"
 
-#: ../GDebi/GDebi.py:477
+#: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr "Du försökte installera en fil som inte (eller inte längre) finns. "
 
-#. do it
-#: ../GDebi/GDebi.py:487
+#: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
 msgstr "Installerar paketfil..."
 
-#: ../GDebi/GDebi.py:489
+#: ../GDebi/GDebi.py:518
+#, fuzzy
+msgid "Removing package..."
+msgstr "Hämtar paket"
+
+#: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
 msgstr "Installera programvara som inte har autentiserats?"
 
-#: ../GDebi/GDebi.py:490
+#: ../GDebi/GDebi.py:522
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -335,11 +364,11 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:517
+#: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
 msgstr "Du behöver administrativ behörighet för att installera programvara"
 
-#: ../GDebi/GDebi.py:518
+#: ../GDebi/GDebi.py:551
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
@@ -349,23 +378,37 @@ msgstr ""
 "Det är en möjlig säkerhetsrisk att manuellt installera paketfiler. "
 "Installera endast programvara från pålitliga programvarudistributörer.\n"
 
-#: ../GDebi/GDebi.py:541 ../GDebi/GDebi.py:602
+#: ../GDebi/GDebi.py:556
+#, fuzzy
+msgid "You need to grant administrative rights to remove software"
+msgstr "Du behöver administrativ behörighet för att installera programvara"
+
+#: ../GDebi/GDebi.py:557
+msgid "It is a possible risk to remove packages."
+msgstr ""
+
+#: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Misslyckades med att installera paketfil"
 
-#: ../GDebi/GDebi.py:586 ../GDebi/GDebiKDE.py:342
+#: ../GDebi/GDebi.py:581
+#, fuzzy
+msgid "Failed to remove package"
+msgstr "Misslyckades med att öppna programvarupaketet\n"
+
+#: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
 msgstr "Kunde inte hämta alla nödvändiga filer"
 
-#: ../GDebi/GDebi.py:587 ../GDebi/GDebiKDE.py:343
+#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
 msgstr "Kontrollera din Internetanslutning eller installationsmedium."
 
-#: ../GDebi/GDebi.py:591 ../GDebi/GDebiKDE.py:347
+#: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
 msgstr "Kunde inte installera alla beroenden"
 
-#: ../GDebi/GDebi.py:592 ../GDebi/GDebiKDE.py:348
+#: ../GDebi/GDebi.py:633 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
@@ -373,70 +416,103 @@ msgstr ""
 "Normalt sett är detta relaterat till ett fel hos programdistributören. Se "
 "terminalfönstret för fler detaljer."
 
-#: ../GDebi/GDebi.py:608
+#: ../GDebi/GDebi.py:649
 #, python-format
 msgid "Installing %s"
 msgstr "Installerar %s"
+
+#: ../GDebi/GDebi.py:652
+#, python-format
+msgid "Removing %s"
+msgstr ""
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:624 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
 msgstr "Installationen är klar"
 
-#: ../GDebi/GDebi.py:626
+#: ../GDebi/GDebi.py:676
+msgid "Removal finished"
+msgstr ""
+
+#: ../GDebi/GDebi.py:679
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "Paketet \"%s\" installerades"
 
-#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:371
+#: ../GDebi/GDebi.py:681
+#, fuzzy, python-format
+msgid "Package '%s' was removed"
+msgstr "Paketet \"%s\" installerades"
+
+#: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "Misslyckades med att installera paketet \"%s\""
 
-#: ../GDebi/GDebi.py:630
+#: ../GDebi/GDebi.py:687
+#, fuzzy, python-format
+msgid "Failed to remove package '%s'"
+msgstr "Misslyckades med att installera paketet \"%s\""
+
+#: ../GDebi/GDebi.py:691
 msgid "Installation complete"
 msgstr "Installationen slutförd"
 
-#: ../GDebi/GDebi.py:637 ../GDebi/GDebiKDE.py:381
+#: ../GDebi/GDebi.py:693
+msgid "Removal complete"
+msgstr ""
+
+#: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Misslyckades med att installera alla beroenden"
 
-#: ../GDebi/GDebi.py:638 ../GDebi/GDebiKDE.py:382
+#: ../GDebi/GDebi.py:703
+#, fuzzy
+msgid "Failed to completely remove package"
+msgstr "Misslyckades med att öppna programvarupaketet\n"
+
+#: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
 "För att rätta till detta, kör \"sudo aptitude install -f\" i ett "
 "terminalfönster."
 
 #. ui
-#: ../GDebi/GDebi.py:738 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
 msgstr "Installerar \"%s\"..."
 
-#: ../GDebi/GDebi.py:837 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebi.py:826
+#, fuzzy, python-format
+msgid "Removing '%s'..."
+msgstr "Installerar \"%s\"..."
+
+#: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
 msgstr "Installerar beroenden..."
 
-#: ../GDebi/GDebi.py:882 ../GDebi/KDEAptDialogs.py:204
+#: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
 msgstr "Hämtar ytterligare paketfiler..."
 
-#: ../GDebi/GDebi.py:891 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr "Fil %s av %s i %s B/s"
 
-#: ../GDebi/GDebi.py:893 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
 msgstr "Fil %s av %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:900 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr "Mata in \"%s\" i enheten \"%s\""
@@ -545,8 +621,8 @@ msgid ""
 "in a terminal window."
 msgstr ""
 "Ditt system innehåller trasiga beroenden. Detta program kan inte fortsätta "
-"förräns detta har rättats till. För att rätta till det, kör \"gksudo "
-"synaptic\" eller \"sudo apt-get install -f\" i ett terminalfönster."
+"förräns detta har rättats till. För att rätta till det, kör \"gksudo synaptic"
+"\" eller \"sudo apt-get install -f\" i ett terminalfönster."
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
@@ -629,8 +705,8 @@ msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", "
-"\"aptitude\" eller \"Synaptic\" först."
+"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", \"aptitude"
+"\" eller \"Synaptic\" först."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -640,7 +716,6 @@ msgstr "Mediabyte"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
-#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Fel arkitektur \"%s\""
 
@@ -653,22 +728,18 @@ msgstr "Mediabyte"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of malicous "
-#~ "nature."
+#~ "The packages below are not authenticated and could therefor be of "
+#~ "malicous nature."
 #~ msgstr ""
 #~ "Ondsint programvara kan skada ditt data och ta över kontrollen av ditt "
 #~ "system.\n"
 #~ "\n"
-#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig karaktär."
-
-#, python-format
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "Beroendet tillfredsställs inte: %s\n"
+#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig "
+#~ "karaktär."
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analyserar beroenden"
 
-#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Står i konflikt med installerade paketet \"%s\"\n"
 
@@ -678,19 +749,15 @@ msgstr "Mediabyte"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Inget Architecture-fält i paketet"
 
-#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Gör sönder befintliga paketet \"%s\", konflikt: %s (%s %s)\n"
 
-#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Beroenden för paketet \"%s\" på %s uppfylls ej (%s %s)\n"
 
-#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kan inte installera \"%s\""
 
-#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "In-/Ut-fel under läsning av fillista: %s"
 
