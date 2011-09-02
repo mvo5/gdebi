@@ -54,6 +54,9 @@ if __name__ == "__main__":
                       help=_("Auto close when the install is finished"))
     parser.add_option("--datadir", "", default="",
                       help=_("Use alternative datadir"))
+    parser.add_option("-r", "--remove", default="False",
+                      action="store_true", dest="remove",
+                      help=_("Remove package"))
     (options, args) = parser.parse_args()
 
     if options.datadir:
@@ -88,7 +91,10 @@ if __name__ == "__main__":
         sys.exit(1)
         
     if options.non_interactive == True:
-        app.on_button_install_clicked(None)
+        if options.remove == True:
+            app.on_button_remove_clicked(None)
+        else:
+            app.on_button_install_clicked(None)
         if options.auto_close == True:
             sys.exit()
     app.run()

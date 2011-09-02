@@ -895,6 +895,24 @@ Luca Falavigna
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkButton" id="button_remove">
+                    <property name="label" translatable="yes">_Remove Package</property>
+                    <property name="visible">False</property>
+                    <property name="sensitive">False</property>
+                    <property name="can_focus">True</property>
+                    <property name="can_default">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="use_underline">True</property>
+                    <signal name="clicked" handler="on_button_remove_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
                   <placeholder/>
                 </child>
               </object>

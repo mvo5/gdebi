@@ -355,6 +355,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.button_install.set_label(_("_Reinstall Package"))
             self.button_install.grab_default()
             self.button_install.set_sensitive(True)
+            self.button_remove.show()
+            self.button_remove.set_sensitive(True)
             self.button_details.hide()
             return
 
@@ -382,6 +384,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.button_install.set_label(_("_Install Package"))
         self.button_install.set_sensitive(True)
         self.button_install.grab_default()
+        self.button_remove.hide()
 
     def on_treeview_files_cursor_changed(self, treeview):
         " the selection in the files list chanaged "
@@ -477,10 +480,27 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.dialog_about.run()
         self.dialog_about.hide()
 
-    def on_button_install_clicked(self, widget):
-        self.install_completed=False
+    def dpkg_action(self, widget, install):
+        if not install:
+            self.openCache()
+            if not self._deb.pkgname in self._cache:
+                return
+            self._cache[self._deb.pkgname].mark_delete()
+            if self._cache.delete_count > 1:
+                details = set()
+                for package in self._cache.get_changes():
+                    if package.shortname != self._deb.pkgname:
+                        if package.marked_delete:
+                            details.add(package.shortname)
+                self.error_header = _("Dependency problems")
+                self.error_body = _("One or more packages are required by %s, "
+                                    "it cannot be removed.") % self._deb.pkgname
+                self.show_alert(Gtk.MessageType.ERROR, self.error_header,
+                                self.error_body, "\n".join(details))
+                return
+        self.action_completed=False
         # check if we actually have a deb, see #213725
-        if not self._deb:
+        if install and not self._deb:
             err_header = _("File not found")
             err_body = _("You tried to install a file that does not "
                          "(or no longer) exist. ")
@@ -492,8 +512,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             dia.destroy()
             return
         # do it
-        self.statusbar_main.push(self.context,_("Installing package file..."))
-        if widget != None and len(self.unauthenticated) > 0:
+        if install:
+            msgstring = _("Installing package file...")
+        else:
+            msgstring = _("Removing package...")
+        self.statusbar_main.push(self.context, msgstring)
+        if install and widget != None and len(self.unauthenticated) > 0:
             primary = _("Install unauthenticated software?")
             secondary = _("Malicious software can damage your data "
                           "and take control of your system.\n\n"
@@ -522,11 +546,15 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             if res != Gtk.ResponseType.YES:
                 return
 
-        msg_hdr = _("You need to grant administrative rights to install software")
-        msg_bdy = _("""
+        if install:
+            msg_hdr = _("You need to grant administrative rights to install software")
+            msg_bdy = _("""
 It is a possible security risk to install packages files manually.
 Install software from trustworthy software distributors only.
 """)
+        else:
+            msg_hdr = _("You need to grant administrative rights to remove software")
+            msg_bdy = _("It is a possible risk to remove packages.")
         if os.getuid() != 0:
 
             # build command and argument lists
@@ -537,6 +565,8 @@ Install software from trustworthy software distributors only.
                          "<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy)]
             gdebi_args = ["--", "gdebi-gtk", "--non-interactive",
                           self._deb.filename]
+            if not install:
+                gdebi_args.append("--remove")
             # check if we run on ubuntu and always ask for the password
             # there - we would like to do that on debian too, but this
             # gksu patch is only available on ubuntu currently unfortunately
@@ -545,8 +575,11 @@ Install software from trustworthy software distributors only.
             os.execv(gksu_cmd, gksu_args+gdebi_args)
 
         if not self.try_acquire_lock():
-            self.statusbar_main.push(self.context,
-                                     _("Failed to install package file"))
+            if install:
+                msgstring = _("Failed to install package file")
+            else:
+                msgstring = _("Failed to remove package")
+            self.statusbar_main.push(self.context, msgstring)
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
             
@@ -571,7 +604,7 @@ Install software from trustworthy software distributors only.
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
-        if len(self.install) > 0 or len(self.remove) > 0:
+        if install and (len(self.install) > 0 or len(self.remove) > 0):
             # FIXME: use the new python-apt acquire interface here,
             # or rather use it in the apt module and raise exception
             # when stuff goes wrong!
@@ -612,16 +645,24 @@ Install software from trustworthy software distributors only.
     
         # install the package itself
         self.dialog_deb_install.set_title(self.window_main.get_title())
-        self.label_action.set_markup("<b><big>" +
-                                     _("Installing %s") % self._deb.pkgname+
-                                     "</big></b>")
-        dprogress = self.DpkgInstallProgress(self._deb.filename,
-                                             self.label_install_status,
-                                             self.progressbar_install,
-                                             self.vte_terminal,
-                                             self.expander_install)
+        if install:
+            self.label_action.set_markup("<b><big>" + _("Installing %s") %
+                                         self._deb.pkgname + "</big></b>")
+        else:
+            self.label_action.set_markup("<b><big>" + _("Removing %s") %
+                                         self._deb.pkgname + "</big></b>")
+        if install:
+            debfilename = self._deb.filename
+        else:
+            debfilename = self._deb.pkgname
+        dprogress = self.DpkgActionProgress(debfilename,
+                                            self.label_install_status,
+                                            self.progressbar_install,
+                                            self.vte_terminal,
+                                            self.expander_install,
+                                            install)
         dprogress.commit()
-        self.install_completed=True
+        self.action_completed=True
         #self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
         # show the button
         self.button_deb_install_close.set_sensitive(True)
@@ -629,29 +670,52 @@ Install software from trustworthy software distributors only.
         #Close if checkbox is selected
         if self.checkbutton_autoclose.get_active():
             self.on_button_deb_install_close_clicked(None)
-        self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
-        if dprogress.exitstatus == 0:
-            self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.filename)+"</i>")
+        if install:
+            self.label_action.set_markup("<b><big>"+_("Installation finished")+"</big></b>")
         else:
-            self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % os.path.basename(self._deb.filename)+"</b>")
+            self.label_action.set_markup("<b><big>"+_("Removal finished")+"</big></b>")
+        if dprogress.exitstatus == 0:
+            if install:
+                self.label_install_status.set_markup("<i>"+_("Package '%s' was installed") % os.path.basename(self._deb.filename)+"</i>")
+            else:
+                self.label_install_status.set_markup("<i>"+_("Package '%s' was removed") % os.path.basename(self._deb.pkgname)+"</i>")
+        else:
+            if install:
+                self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % 
+                                                     os.path.basename(self._deb.filename)+"</b>")
+            else:
+                self.label_install_status.set_markup("<b>"+_("Failed to remove package '%s'") % 
+                                                    os.path.basename(self._deb.pkgname)+"</b>")
             self.expander_install.set_expanded(True)
-        self.statusbar_main.push(self.context,_("Installation complete"))
+        if install:
+            self.statusbar_main.push(self.context,_("Installation complete"))
+        else:
+            self.statusbar_main.push(self.context,_("Removal complete"))
         # FIXME: Doesn't stop notifying
         #self.window_main.set_property("urgency-hint", 1)
 
         # reopen the cache, reread the file
         self.openCache()
         if self._cache._depcache.broken_count > 0:
-            err_header = _("Failed to completely install all dependencies")
+            if install:
+                err_header = _("Failed to completely install all dependencies")
+            else:
+                err_header = _("Failed to completely remove package")
             err_body = _("To fix this run 'sudo apt-get install -f' in a "
                          "terminal window.")
             self.show_alert(Gtk.MessageType.ERROR, err_header, err_body)
         self.open(self._deb.filename)
 
+    def on_button_install_clicked(self, widget):
+        self.dpkg_action(widget, True)
+
     def on_button_download_clicked(self, widget):
         if self.download_package():
             self.window_main.get_window().set_cursor(None)
             self.button_download.hide()
+
+    def on_button_remove_clicked(self, widget):
+        self.dpkg_action(widget, False)
         
     def on_button_deb_install_close_clicked(self, widget):
         # Set the autoclose option when we close
@@ -667,7 +731,7 @@ Install software from trustworthy software distributors only.
         self.window_main.set_sensitive(True)
     
     def on_checkbutton_autoclose_clicked(self, widget):
-        if self.install_completed:
+        if self.action_completed:
             self.on_button_deb_install_close_clicked(None)            
 
     def on_window_main_delete_event(self, *args):
@@ -727,8 +791,8 @@ Install software from trustworthy software distributors only.
         terminal.copy_clipboard()
         
     # embedded classes
-    class DpkgInstallProgress(object):
-        def __init__(self, debfile, status, progress, term, expander):
+    class DpkgActionProgress(object):
+        def __init__(self, debfile, status, progress, term, expander, install=True):
             self.debfile = debfile
             self.status = status
             self.progress = progress
@@ -736,6 +800,7 @@ Install software from trustworthy software distributors only.
             self.term_expander = expander
             self.time_last_update = time.time()
             self.term_expander.set_expanded(False)
+            self.install = install
         def commit(self):
             def finish_dpkg(term, lock):
                 """ helper that is run when dpkg finishes """
@@ -754,8 +819,13 @@ Install software from trustworthy software distributors only.
             lock.acquire()
 
             # ui
-            self.status.set_markup("<i>"+_("Installing '%s'...") % \
-                                   os.path.basename(self.debfile)+"</i>")
+            if self.install:
+                self.status.set_markup("<i>"+_("Installing '%s'...") % \
+                                       os.path.basename(self.debfile)+"</i>")
+            else:
+                self.status.set_markup("<i>"+_("Removing '%s'...") % \
+                                       os.path.basename(self.debfile)+"</i>")
+
             self.progress.pulse()
             self.progress.set_text("")
 
@@ -770,7 +840,10 @@ Install software from trustworthy software distributors only.
             # https://bugzilla.gnome.org/320128 for the upstream bug
             if UBUNTU:
                 argv += ["--status-fd", "%s"%writefd]
-            argv += ["-i", self.debfile]
+            if self.install:
+                argv += ["-i", self.debfile]
+            else:
+                argv += ["-r", self.debfile]
             env = ["VTE_PTY_KEEP_FD=%s"% writefd,
                    "DEBIAN_FRONTEND=gnome",
                    "APT_LISTCHANGES_FRONTEND=gtk"]
