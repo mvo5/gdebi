@@ -7,8 +7,10 @@ gdebi (0.8.2) UNRELEASED; urgency=low
     - Show download button only when necessary.
   * gdebi-gtk, GDebi/GDebi.py, data/gdebi.ui. data/gdebi-gtk.1:
     - Implement Uninstall button (LP: #74042).
+  * GDebi/GDebiCommon.py:
+    - Open .deb file using absolute path.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Sep 2011 22:09:46 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 04 Sep 2011 12:22:06 +0200
 
 gdebi (0.8.1) unstable; urgency=low
 

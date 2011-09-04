@@ -75,6 +75,7 @@ class GDebiCommon(object):
         return True
 
     def open(self, file, downloaded=False):
+        file = os.path.abspath(file)
         try:
             self._deb = DebPackage(file, self._cache, downloaded)
         except (IOError,SystemError),e:
