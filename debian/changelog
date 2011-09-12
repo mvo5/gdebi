@@ -9,8 +9,10 @@ gdebi (0.8.2) UNRELEASED; urgency=low
     - Implement Uninstall button (LP: #74042).
   * GDebi/GDebiCommon.py:
     - Open .deb file using absolute path.
+  * gdebi, GDebi/GDebiCli.py:
+    - Improve user's choice regex, thanks Adam Barratt!
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 04 Sep 2011 12:22:06 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 12 Sep 2011 23:49:32 +0200
 
 gdebi (0.8.1) unstable; urgency=low
 
