@@ -6,18 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2010-08-17 10:38+0000\n"
-"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
-"net>\n"
+"Last-Translator: Launchpad Translations Administrators "
+"<rosetta@launchpad.net>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
-"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -68,9 +67,8 @@ msgid "Use alternative datadir"
 msgstr "Uporabi nadomestno mapo podatkov"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paket programske opreme"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -83,8 +81,8 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"To je velika napaka vašega sistema za upravljanje paketov programske "
-"opreme.  S programom synaptic preverite, če so na sistemu okvarjeni paketi, "
+"To je velika napaka vašega sistema za upravljanje paketov programske opreme. "
+" S programom synaptic preverite, če so na sistemu okvarjeni paketi, "
 "preverite dovoljenja datotek in pravilnost datoteke '/etc/apt/sources.list' "
 "ter znova naložite podatke o programski opremi s: 'sudo apt-get update' in "
 "'sudo apt-get install -f'."
@@ -204,9 +202,8 @@ msgid "_Refresh"
 msgstr ""
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "Odpri paket programske opreme"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -344,9 +341,8 @@ msgid "Installing package file..."
 msgstr ""
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Prejemanje paketa"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -372,9 +368,8 @@ msgid ""
 msgstr ""
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Za namestitev programske opreme so zahtevana skrbniška dovoljenja."
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -385,9 +380,8 @@ msgid "Failed to install package file"
 msgstr ""
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Napaka med odpiranjem paketa programske opreme\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -447,9 +441,9 @@ msgid "Failed to install package '%s'"
 msgstr ""
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Napaka med odpiranjem paketa programske opreme\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -464,9 +458,8 @@ msgid "Failed to completely install all dependencies"
 msgstr ""
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Napaka med odpiranjem paketa programske opreme\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."

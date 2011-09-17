@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-12-04 00:05+0000\n"
 "Last-Translator: Miro Glavić <glavicmiro@gmail.com>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
-"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Softverski paket"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -175,11 +173,11 @@ msgstr "_Detalji"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "_Preuzmi paket"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Izmijeni"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -205,9 +203,8 @@ msgid "_Refresh"
 msgstr "_Osvježi"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstaliraj Paket"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -282,7 +279,7 @@ msgstr "Greška: "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Greška: više ne pruža "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
@@ -324,9 +321,8 @@ msgid "Software packages"
 msgstr "Softverski paketi"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Ovisni paketi nisu zadovoljeni %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -346,9 +342,8 @@ msgid "Installing package file..."
 msgstr "Instaliram datoteke paketa..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Preuzimanje paketa"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -377,9 +372,8 @@ msgstr ""
 "Instalirajte softver samo od distributera pouzdanog  softvera .\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Trebate dati administratorska prava da biste instalirali softver"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -390,9 +384,8 @@ msgid "Failed to install package file"
 msgstr "Neuspješno instaliranje datoteke  paket"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Neuspješno otvaranje ovog softverskog paketa\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -442,9 +435,9 @@ msgid "Package '%s' was installed"
 msgstr "Paket '%s' je instaliran"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Paket '%s' je instaliran"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -452,9 +445,9 @@ msgid "Failed to install package '%s'"
 msgstr "Neuspješno instaliranje paketa '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Neuspješno instaliranje paketa '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -469,9 +462,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Neuspješno potpuno instaliranje svih zavisnosti"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Neuspješno otvaranje ovog softverskog paketa\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -485,9 +477,9 @@ msgid "Installing '%s'..."
 msgstr "Instaliram '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Instaliram '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -575,7 +567,7 @@ msgstr "&Instaliraj Paket"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "&Preuzmi paket"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -720,28 +712,37 @@ msgstr "Izmjena Medija"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad "
-#~ "vašim sustavom\n"
+#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad vašim "
+#~ "sustavom\n"
 #~ "U nastavku paketi nisu ovjerena i to bi moglo biti od malijiciozne prirode"
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Ovisni paketi nisu zadovoljeni %s\n"
+
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicts with the installed package '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Ne Arhitektura polje u paketu"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' sukob:% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' ovisnost% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Pogrešna arhitektura '%s'"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nemoguće instalirati '%s'"
 

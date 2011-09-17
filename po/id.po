@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2010-01-30 08:02+0000\n"
 "Last-Translator: Iwan Setiawan <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
-"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -67,9 +66,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paket perangkat lunak"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -198,9 +196,8 @@ msgid "_Refresh"
 msgstr ""
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Pasang Ulang Paket"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -315,9 +312,8 @@ msgid "Software packages"
 msgstr "Paket-paket perangkat lunak"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Ketergantungan tidak terpenuhi: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -337,9 +333,8 @@ msgid "Installing package file..."
 msgstr "Memasang berkas paket..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Memasang berkas paket..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -377,9 +372,8 @@ msgid "Failed to install package file"
 msgstr "Gagal menginstal berkas paket"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Gagal membuka paket perangkat lunak\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -429,9 +423,9 @@ msgid "Package '%s' was installed"
 msgstr "Paket '%s' telah diinstal"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Paket '%s' telah diinstal"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -439,9 +433,9 @@ msgid "Failed to install package '%s'"
 msgstr "Gagal menginstal paket '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Gagal menginstal paket '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -456,9 +450,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Gagal meyelesaikan instalasi semua ketergantungan"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Gagal membuka paket perangkat lunak\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -473,9 +466,9 @@ msgid "Installing '%s'..."
 msgstr "Memasang '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Memasang '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -694,26 +687,32 @@ msgstr ""
 msgid "Media Change"
 msgstr ""
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Ketergantungan tidak terpenuhi: %s\n"
+
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Gagal memenuhi semua ketergantungan (cache rusak)"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Program perusak dapat menghancurkan data dan mengambil alih sistem anda.\n"
 #~ "\n"
-#~ "Paket berikut belum di otentifikasi dan untuk itu dapat mengandung hal "
-#~ "yang dapat merusak."
+#~ "Paket berikut belum di otentifikasi dan untuk itu dapat mengandung hal yang "
+#~ "dapat merusak."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Versi terbaru sudah terinstal"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Tidak dapat instal '%s'"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arsitektur salah '%s'"
 

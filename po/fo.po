@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-06-07 19:12+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Faroese <fo@li.org>\n"
-"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -67,9 +66,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Ritbúnaðarpakki"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -198,9 +196,8 @@ msgid "_Refresh"
 msgstr "Endu_rfríska"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "Endu-rinnlegg pakka"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -329,16 +326,16 @@ msgstr "Fíla ei funnin"
 
 #: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
+msgstr ""
+"Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
 
 #: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
 msgstr "Leggji inn pakkafílu..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Leggji inn pakkafílu..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -364,9 +361,8 @@ msgid ""
 msgstr ""
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Tú skal veita umsitingarlig rættindi fyri at leggja inn ritbúnað"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -377,9 +373,8 @@ msgid "Failed to install package file"
 msgstr "Miseydnaðist et leggja inn pakkafílu"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Kundi ikki lata ritbúnaärpakkan upp\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -427,9 +422,9 @@ msgid "Package '%s' was installed"
 msgstr "Pakki '%s' varð lagdur inn"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Pakki '%s' varð lagdur inn"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -437,9 +432,9 @@ msgid "Failed to install package '%s'"
 msgstr "Miseydnaðist at leggja inn pakka '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Miseydnaðist at leggja inn pakka '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -454,13 +449,13 @@ msgid "Failed to completely install all dependencies"
 msgstr ""
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Kundi ikki lata ritbúnaärpakkan upp\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
+msgstr ""
+"Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
 
 #. ui
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
@@ -469,9 +464,9 @@ msgid "Installing '%s'..."
 msgstr "Leggi inn '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Leggi inn '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -697,8 +692,8 @@ msgstr "Miðlabroyting"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Óndsinnaður ritbúnaður, kann skaða tínar dátur og taka yvur leiðsluna á "
 #~ "tínum kervi.\n"
@@ -708,18 +703,20 @@ msgstr "Miðlabroyting"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Eingin byggilagsteigur í pakkanum"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Skeivt byggilag '%s'"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ein nýggjari útgáva er longu innløgd"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kann ikki leggja inn '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOvilla undir lesan av fílulista: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"
+#~ msgstr "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"

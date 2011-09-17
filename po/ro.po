@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-12-02 12:50+0000\n"
 "Last-Translator: petre <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Pachet software"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -206,9 +204,8 @@ msgid "_Refresh"
 msgstr ""
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstalare pachet"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -325,9 +322,8 @@ msgid "Software packages"
 msgstr "Pachete software"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Dependenţa nu poate fi satisfăcuta: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -347,9 +343,8 @@ msgid "Installing package file..."
 msgstr "Se instalează pachet..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Se descarcă pachetul"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -379,10 +374,8 @@ msgstr ""
 "Instalaţi pachete doar de la distribuitori în care aveţi încredere.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
 msgstr ""
-"Pentru instalarea de programe trebuie să obțineți drepturi de administrare"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -393,9 +386,8 @@ msgid "Failed to install package file"
 msgstr "Instalarea pachetului a eşuat"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Nu s-a putut deschide pachetul software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -403,7 +395,8 @@ msgstr "Nu s-au putut descărca toate fișierele necesare"
 
 #: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr "Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
+msgstr ""
+"Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
 
 #: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
@@ -445,9 +438,9 @@ msgid "Package '%s' was installed"
 msgstr "Pachetul '%s' a fost instalat"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Pachetul '%s' a fost instalat"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,9 +448,9 @@ msgid "Failed to install package '%s'"
 msgstr "Instalarea pachetului '%s' a eşuat"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Instalarea pachetului '%s' a eşuat"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -472,9 +465,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Instalarea completă a tuturor dependenţelor a eşuat"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Nu s-a putut deschide pachetul software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -488,9 +480,9 @@ msgid "Installing '%s'..."
 msgstr "Se instalează '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Se instalează '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -719,9 +711,15 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Dependenţa nu poate fi satisfăcuta: %s\n"
+
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nu s-a putut instala '%s'"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arhitectură greşită '%s'"
 
@@ -731,13 +729,14 @@ msgstr ""
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Satisfacerea tuturor dependenţelor a eşuat (cache corupt)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Eroare I/O în timpul citirii listei de fişiere: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru "
-#~ "drept o disfunţionalitate (bug)"
+#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru drept "
+#~ "o disfunţionalitate (bug)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

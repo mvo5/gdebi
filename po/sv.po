@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi 0.1.4\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-11-06 19:50+0000\n"
 "Last-Translator: Gustavo Franco <stratus@debian.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,9 +70,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Programpaket"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -207,9 +205,8 @@ msgid "_Refresh"
 msgstr "_Uppdatera"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Ominstallera paket"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -326,9 +323,8 @@ msgid "Software packages"
 msgstr "Programvarupaket"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Beroendet tillfredsställs inte: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -348,9 +344,8 @@ msgid "Installing package file..."
 msgstr "Installerar paketfil..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Hämtar paket"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -379,9 +374,8 @@ msgstr ""
 "Installera endast programvara från pålitliga programvarudistributörer.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Du behöver administrativ behörighet för att installera programvara"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -392,9 +386,8 @@ msgid "Failed to install package file"
 msgstr "Misslyckades med att installera paketfil"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Misslyckades med att öppna programvarupaketet\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -444,9 +437,9 @@ msgid "Package '%s' was installed"
 msgstr "Paketet \"%s\" installerades"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Paketet \"%s\" installerades"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -454,9 +447,9 @@ msgid "Failed to install package '%s'"
 msgstr "Misslyckades med att installera paketet \"%s\""
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Misslyckades med att installera paketet \"%s\""
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -471,9 +464,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Misslyckades med att installera alla beroenden"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Misslyckades med att öppna programvarupaketet\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -488,9 +480,9 @@ msgid "Installing '%s'..."
 msgstr "Installerar \"%s\"..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Installerar \"%s\"..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -621,8 +613,8 @@ msgid ""
 "in a terminal window."
 msgstr ""
 "Ditt system innehåller trasiga beroenden. Detta program kan inte fortsätta "
-"förräns detta har rättats till. För att rätta till det, kör \"gksudo synaptic"
-"\" eller \"sudo apt-get install -f\" i ett terminalfönster."
+"förräns detta har rättats till. För att rätta till det, kör \"gksudo "
+"synaptic\" eller \"sudo apt-get install -f\" i ett terminalfönster."
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
@@ -705,8 +697,8 @@ msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", \"aptitude"
-"\" eller \"Synaptic\" först."
+"Stäng de andra programmen, exempelvis \"Uppdateringshanteraren\", "
+"\"aptitude\" eller \"Synaptic\" först."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -716,6 +708,7 @@ msgstr "Mediabyte"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Fel arkitektur \"%s\""
 
@@ -728,18 +721,22 @@ msgstr "Mediabyte"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Ondsint programvara kan skada ditt data och ta över kontrollen av ditt "
 #~ "system.\n"
 #~ "\n"
-#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig "
-#~ "karaktär."
+#~ "Paketen nedan är inte autentiserade och kan därför vara av skadlig karaktär."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Beroendet tillfredsställs inte: %s\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analyserar beroenden"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Står i konflikt med installerade paketet \"%s\"\n"
 
@@ -749,15 +746,19 @@ msgstr "Mediabyte"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Inget Architecture-fält i paketet"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Gör sönder befintliga paketet \"%s\", konflikt: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Beroenden för paketet \"%s\" på %s uppfylls ej (%s %s)\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kan inte installera \"%s\""
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "In-/Ut-fel under läsning av fillista: %s"
 

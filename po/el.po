@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-06-27 11:23+0000\n"
 "Last-Translator: Shehzad Ashiq Ali <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,9 +70,8 @@ msgid "Use alternative datadir"
 msgstr "Χρήση εναλλακτικού καταλόγου δεδομένων"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Πακέτο λογισμικού"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -199,18 +197,16 @@ msgid "_Install Package"
 msgstr "_Εγκατάσταση πακέτου"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "Άν_οιγμα..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Ανανέωση"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Επανεγκατάσταση πακέτου"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -327,9 +323,8 @@ msgid "Software packages"
 msgstr "Πακέτα λογισμικού"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Εξάρτηση που δεν ικανοποιήθηκε: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -349,9 +344,8 @@ msgid "Installing package file..."
 msgstr "Εγκατάσταση πακέτου..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Γίνεται λήψη πακέτου"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -385,9 +379,8 @@ msgstr ""
 "Εγκαταστήστε λογισμικό μόνο από αξιόπιστες πηγές μόνο.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Χρειάζεστε διαχειριστικά δικαιώματα για να εγκαταστήσετε λογισμικό"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -398,9 +391,8 @@ msgid "Failed to install package file"
 msgstr "Αποτυχία εγκατάστασης πακέτου"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Αποτυχία ανοίγματος του πακέτου λογισμικού\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -451,9 +443,9 @@ msgid "Package '%s' was installed"
 msgstr "Το πακέτο '%s' εγκαταστάθηκε"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Το πακέτο '%s' εγκαταστάθηκε"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -461,9 +453,9 @@ msgid "Failed to install package '%s'"
 msgstr "Αδυναμία εγκατάστασης του πακέτου '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Αδυναμία εγκατάστασης του πακέτου '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -478,9 +470,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Αδυναμία εγκατάστασης όλων των εξαρτήσεων"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Αποτυχία ανοίγματος του πακέτου λογισμικού\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -494,9 +485,9 @@ msgid "Installing '%s'..."
 msgstr "Εγκατάσταση του '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Εγκατάσταση του '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -723,14 +714,15 @@ msgstr "Αλλαγή μέσου"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Λάθος αρχιτεκτονική επεξεργαστή '%s'"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Κακόβουλο λογισμικό μπορεί να προκαλέσει βλάβες στα δεδομένα σας και να "
 #~ "ελέγξει το σύστημα σας.\n"
@@ -738,15 +730,21 @@ msgstr "Αλλαγή μέσου"
 #~ "Τα παρακάτω πακέτα δεν έχουν πιστοποιηθεί και μπορεί να είναι κακόβουλο "
 #~ "λογισμικό."
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Εξάρτηση που δεν ικανοποιήθηκε: %s\n"
+
 #~ msgid "A later version is already installed"
 #~ msgstr "Μια επόμενη έκδοση είναι ήδη εγκατεστημένη"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Αδυναμία εγκατάστασης '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Αδυναμία ικανοποίησης όλων των εξαρτήσεων (κατεστραμμένη cache)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Σφάλμα εισόδου εξόδου κατά την ανάγνωση της λίστας αρχείων: %s"
 
@@ -763,15 +761,18 @@ msgstr "Αλλαγή μέσου"
 #~ msgid "Open..."
 #~ msgstr "Άνοιγμα..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Υπάρχει σύγκρουση με το εγκατεστημένο πακέτο '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Δεν υπάρχει πεδίο αρχιτεκτονικής στο πακέτο"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Το πακέτο '%s' συγκρούεται με την εξάρτηση: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Το πακέτο '%s' καταστράφηκε από την εξάρτηση %s (%s %s)\n"
 
@@ -781,6 +782,9 @@ msgstr "Αλλαγή μέσου"
 #~ "  Salih EMIN https://launchpad.net/~salih-emin\n"
 #~ "  Shehzad Ashiq Ali https://launchpad.net/~shehzadashiq\n"
 #~ "  Simos Xenitellis https://launchpad.net/~simosx"
+
+#~ msgid "_Open..."
+#~ msgstr "Άν_οιγμα..."
 
 #~ msgid ""
 #~ "Breaks existing package '%(pkgname)s' dependency %(depname)s "

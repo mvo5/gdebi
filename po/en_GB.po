@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2009-11-08 09:31+0000\n"
-"Last-Translator: Malcolm Parsons <Unknown>\n"
+"PO-Revision-Date: 2011-09-03 00:19+0000\n"
+"Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -62,16 +61,15 @@ msgstr "Do you want to install the software package? [y/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "Automatically close when the install is finished"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "Use alternative datadir"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Software package"
+msgstr "Remove package"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -123,7 +121,7 @@ msgstr "<b>Version:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "Automatically close after the changes have been successfully applied"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -144,7 +142,7 @@ msgstr "GPL, see /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr ""
+msgstr "Included files"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -174,11 +172,11 @@ msgstr "_Details"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "_Download Package"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Edit"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -197,16 +195,15 @@ msgstr "_Install Package"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Open…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Refresh"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstall Package"
+msgstr "_Remove Package"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -225,7 +222,7 @@ msgstr "%s is not available"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Copy selected text"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -265,15 +262,15 @@ msgstr "Package Installer - %s"
 
 #: ../GDebi/GDebi.py:303
 msgid "Package control data"
-msgstr ""
+msgstr "Package control data"
 
 #: ../GDebi/GDebi.py:306
 msgid "Upstream data"
-msgstr ""
+msgstr "Upstream data"
 
 #: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
-msgstr ""
+msgstr "Error reading filelist"
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
@@ -281,7 +278,7 @@ msgstr "Error: "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Error: no longer provides "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
@@ -293,16 +290,16 @@ msgstr "_Reinstall Package"
 
 #: ../GDebi/GDebi.py:401
 msgid "Selection is a directory"
-msgstr ""
+msgstr "Selection is a directory"
 
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "Error reading file content '%s'"
 
 #: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "File content cannot be extracted"
 
 #: ../GDebi/GDebi.py:426
 #, python-format
@@ -323,14 +320,13 @@ msgid "Software packages"
 msgstr "Software packages"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Dependency is not satisfiable: %s\n"
+msgstr "Dependency problems"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "One or more packages are required by %s, it cannot be removed."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -345,9 +341,8 @@ msgid "Installing package file..."
 msgstr "Installing package file..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Downloading package"
+msgstr "Removing package..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -360,6 +355,10 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"Malicious software can damage your data and take control of your system.\n"
+"\n"
+"The packages below are not authenticated and could therefore be of malicious "
+"nature."
 
 #: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
@@ -376,22 +375,20 @@ msgstr ""
 "Install software from trustworthy software distributors only.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "You need to grant administrative rights to install software"
+msgstr "You need to grant administrative rights to remove software"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "It is a possible risk to remove packages."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Failed to install package file"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Failed to open the software package\n"
+msgstr "Failed to remove package"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -421,7 +418,7 @@ msgstr "Installing %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Removing %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -433,7 +430,7 @@ msgstr "Installation finished"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Removal finished"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -441,9 +438,9 @@ msgid "Package '%s' was installed"
 msgstr "Package '%s' was installed"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Package '%s' was installed"
+msgstr "Package '%s' was removed"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -451,9 +448,9 @@ msgid "Failed to install package '%s'"
 msgstr "Failed to install package '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Failed to install package '%s'"
+msgstr "Failed to remove package '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -461,16 +458,15 @@ msgstr "Installation complete"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Removal complete"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Failed to completely install all dependencies"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Failed to open the software package\n"
+msgstr "Failed to completely remove package"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -483,9 +479,9 @@ msgid "Installing '%s'..."
 msgstr "Installing '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Installing '%s'..."
+msgstr "Removing '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -561,7 +557,7 @@ msgstr "Requires the installation of the following packages: "
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "Error during install: '%s'"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
@@ -573,7 +569,7 @@ msgstr "&Install Package"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "&Download Package"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -650,7 +646,8 @@ msgstr "Same version is available in a software channel"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "You are recommended to install the software from the channel instead."
+msgstr ""
+"You are recommended to install the software from the channel instead."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -711,6 +708,7 @@ msgstr "Media Change"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Wrong architecture '%s'"
 
@@ -720,9 +718,14 @@ msgstr "Media Change"
 #~ msgid "Open..."
 #~ msgstr "Open..."
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Dependency is not satisfiable: %s\n"
+
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analysing dependencies"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicts with the installed package '%s'\n"
 
@@ -732,6 +735,7 @@ msgstr "Media Change"
 #~ msgid "A later version is already installed"
 #~ msgstr "A later version is already installed"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Cannot install '%s'"
 
@@ -741,28 +745,38 @@ msgstr "Media Change"
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "List of files could not be read, please report this as a bug"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Breaks existing package '%s' conflict: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOError during filelist read: %s"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Breaks existing package '%s' dependency %s (%s %s)\n"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Malicious software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefore be of "
-#~ "malicious nature."
+#~ "The packages below are not authenticated and could therefore be of malicious "
+#~ "nature."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Andi Chandler https://launchpad.net/~bing\n"
 #~ "  Chris Jones https://launchpad.net/~cmsj\n"
-#~ "  James Thorrold https://launchpad.net/~jthorrold"
+#~ "  James Thorrold https://launchpad.net/~jthorrold\n"
+#~ "  Jonathon Hodges https://launchpad.net/~jonblondie\n"
+#~ "  Luca Falavigna https://launchpad.net/~dktrkranz\n"
+#~ "  Robert Readman https://launchpad.net/~robert-readman"
+
+#~ msgid "_Open..."
+#~ msgstr "_Open..."

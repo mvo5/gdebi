@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-06-17 13:17+0000\n"
+"PO-Revision-Date: 2011-09-09 19:29+0000\n"
 "Last-Translator: Raphael Michel <Unknown>\n"
 "Language-Team: de <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,9 +70,8 @@ msgid "Use alternative datadir"
 msgstr "Alternatives Datenverzeichnis verwenden"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Software-Paket"
+msgstr "Paket entfernen"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -88,10 +86,10 @@ msgid ""
 msgstr ""
 "Dies ist ein schwerwiegender Fehler in Ihrem Paketverwaltungssystem. Bitte "
 "prüfen Sie mit Synaptic, ob sich defekte Pakete auf Ihrem System befinden, "
-"überprüfen Sie die Zugriffsberechtigungen und den Inhalt der Datei »/etc/apt/"
-"sources.list« und erstellen Sie die für den Betrieb der Paketverwaltung "
-"notwendigen Informationen mit »sudo apt-get update« und »sudo apt-get "
-"install -f« neu."
+"überprüfen Sie die Zugriffsberechtigungen und den Inhalt der Datei "
+"»/etc/apt/sources.list« und erstellen Sie die für den Betrieb der "
+"Paketverwaltung notwendigen Informationen mit »sudo apt-get update« und "
+"»sudo apt-get install -f« neu."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -200,18 +198,16 @@ msgid "_Install Package"
 msgstr "Paket _installieren"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Öffnen …"
+msgstr "Ö_ffnen"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "Aktualisie_ren"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Erneut installieren"
+msgstr "Paket entfe_rnen"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -230,7 +226,7 @@ msgstr "%s ist nicht verfügbar"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Kopiere ausgewählten Text"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -328,14 +324,15 @@ msgid "Software packages"
 msgstr "Software-Pakete"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Abhängigkeit kann nicht erfüllt werden: %s\n"
+msgstr "Abhängigkeitsprobleme"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Ein oder mehrere Pakete werden von %s benötigt, es kann nicht entfernt "
+"werden."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -352,9 +349,8 @@ msgid "Installing package file..."
 msgstr "Paketdatei wird installiert …"
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Paket downloaden"
+msgstr "Paket entfernen..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -386,22 +382,20 @@ msgstr ""
 "Installieren Sie deshalb nur Software aus vertrauenswürdigen Quellen.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Sie benötigen Systemverwaltungsrechte, um Software zu installieren"
+msgstr "Zum Entfernen von Software werden Systemverwaltungsrechte benötigt."
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Es ist möglicherweise ein Risiko, Pakete zu entfernen."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Konnte Paketdatei nicht installieren"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Das Software-Paket konnte nicht geöffnet werden\n"
+msgstr "Das Entfernen des Pakets ist fehlgeschlagen."
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -432,7 +426,7 @@ msgstr "%s wird installiert"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Entfernen von %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -444,7 +438,7 @@ msgstr "Installation abgeschlossen"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Entfernen abgeschlossen"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -452,9 +446,9 @@ msgid "Package '%s' was installed"
 msgstr "Das Paket »%s« wurde installiert"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Das Paket »%s« wurde installiert"
+msgstr "Paket '%s' wurde entfernt"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -462,9 +456,9 @@ msgid "Failed to install package '%s'"
 msgstr "Konnte das Paket »%s« nicht installieren"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Konnte das Paket »%s« nicht installieren"
+msgstr "Paket '%s' konnte nicht entfernt werden"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -472,16 +466,15 @@ msgstr "Installation abgeschlossen"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Entfernen abgeschlossen"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Konnte nicht alle Abhängigkeiten vollständig installieren"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Das Software-Paket konnte nicht geöffnet werden\n"
+msgstr "Das Paket konnte nicht vollständig entfernt werden"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -496,9 +489,9 @@ msgid "Installing '%s'..."
 msgstr "»%s« wird installiert …"
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "»%s« wird installiert …"
+msgstr "'%s' entfernen..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -749,6 +742,7 @@ msgstr "Medienwechsel"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Falsche Systemarchitektur »%s«"
 
@@ -757,6 +751,10 @@ msgstr "Medienwechsel"
 
 #~ msgid "Open..."
 #~ msgstr "Öffnen..."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Abhängigkeit kann nicht erfüllt werden: %s\n"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "Abhängigkeiten werden analysiert"
@@ -771,40 +769,48 @@ msgstr "Medienwechsel"
 #~ msgstr ""
 #~ "Konnte nicht alle Abhängigkeiten erfüllen (defekter Zwischenspeicher)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ein/Ausgabefehler beim Einlesen der Dateiliste: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Die Liste der Dateien konnte nicht gelesen werden, bitte melden Sie das "
-#~ "als Fehler"
+#~ "Die Liste der Dateien konnte nicht gelesen werden, bitte melden Sie das als "
+#~ "Fehler"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' kann nicht installiert werden"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr ""
 #~ "Das bereits installierte Paket '%s' steht im Konflikt mit: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Kollidiert mit dem bereits installierten Paket '%s'\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr ""
-#~ "Eine Abhängigkeit des bereits installierten Pakets '%s', nämlich %s (%s "
-#~ "%s), kann nicht mehr erfüllt werden\n"
+#~ "Eine Abhängigkeit des bereits installierten Pakets '%s', nämlich %s (%s %s), "
+#~ "kann nicht mehr erfüllt werden\n"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Bösartige Software kann Ihre Daten beschädigen oder die Kontrolle über "
-#~ "Ihr System erlangen.\n"
+#~ "Bösartige Software kann Ihre Daten beschädigen oder die Kontrolle über Ihr "
+#~ "System erlangen.\n"
 #~ "\n"
 #~ "Die nachfolgenden Pakete sind nicht beglaubigt und könnten daher von "
 #~ "bösartiger Natur sein."
+
+#~ msgid "_Open..."
+#~ msgstr "_Öffnen …"
 
 #~ msgid ""
 #~ "Breaks existing package '%(pkgname)s' dependency %(depname)s "

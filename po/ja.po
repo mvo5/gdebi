@@ -1,22 +1,21 @@
 # Japanese translation for gdebi
-# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+# Hideki Yamane <henrich@debian.org>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2009-11-08 09:29+0000\n"
-"Last-Translator: Masa <circlered@gmail.com>\n"
+"PO-Revision-Date: 2011-09-06 15:21+0000\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
 "Language-Team: Japanese <ja@li.org>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -24,55 +23,57 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"使い方: %prog [オプション] ファイル名\n"
+"グラフィカル版を使いたい場合は gdebi-gtk を起動してください\n"
 
 #: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "非対話形式で実行する (危険です!)"
 
 #: ../gdebi:58
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "APT の設定オプションを指定する"
 
 #: ../gdebi:62
 msgid "Do not show progress information"
-msgstr ""
+msgstr "プログレスバーの情報を表示しない"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
+msgstr "シミュレーションのみを行い、apt-get install と互換性のある行を標準エラー出力に表示する"
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "別の rootdir を使う"
 
 #: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr ""
+msgstr "gdebi エラー　ファイルが見つかりません: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
-msgstr ""
+msgstr "パッケージをインストールするには root になる必要があります"
 
 #: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "ソフトウェアパッケージをインストールしますか? [y/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "インストールが完了した時、自動的に終了する"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "別の datadir を使う"
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "パッケージを削除"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
-msgstr ""
+msgstr "ソフトウェアのインデックスが壊れています"
 
 #: ../gdebi-gtk:79
 msgid ""
@@ -81,6 +82,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"ソフトウェア管理システムで重大な問題が起きています。synaptic で破損しているパッケージを確認し、ファイル "
+"'/etc/apt/sources.list' のファイル権限と内容の正確さを確認した上で以下のようにしてソフトウェアの情報を再読み込みしてください: "
+"'sudo apt-get update' and 'sudo apt-get install -f'"
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -88,156 +92,154 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:2
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:141
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>メンテナ:</b>"
 
 #: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:142
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>優先度:</b>"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>セクション:</b>"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>サイズ:</b>"
 
 #: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>インストールするには以下の変更が必要です:</b>"
 
 #: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>バージョン:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "変更が無事に適用できたら、自動的に終了する"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: ../data/gdebi.ui.h:11
 msgid "Description:"
-msgstr ""
+msgstr "説明:"
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
 #: ../GDebi/GDebiKDE.py:296
 msgid "Details"
-msgstr ""
+msgstr "詳細"
 
 #: ../data/gdebi.ui.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr ""
+msgstr "GPL です。/usr/share/common-licenses/GPL を参照してください"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr ""
+msgstr "含まれているファイル"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "ソフトウェアパッケージのインストールと表示を行います"
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr ""
+msgstr "パッケージインストーラー"
 
 #. first, we load all the default descriptions -- pyuic doesn't use
 #. gettext as default (FIXME, copy code from language-selector)
 #: ../data/gdebi.ui.h:17 ../GDebi/GDebiKDE.py:131
 msgid "Package:"
-msgstr ""
+msgstr "パッケージ:"
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr ""
+msgstr "状態:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
-msgstr ""
+msgstr "端末"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr ""
+msgstr "詳細(_D)"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "パッケージをダウンロード(_D)"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "編集(_E)"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
-msgstr ""
+msgstr "ファイル(_F)"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Help"
-msgstr ""
+msgstr "ヘルプ(_H)"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
 msgid "_Install Package"
-msgstr ""
+msgstr "パッケージをインストール(_I)"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "開く(_O)..."
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
-msgstr ""
+msgstr "再読み込み(_R)"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "パッケージを削除(_R)"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
-msgstr ""
+msgstr "ソフトウェアパッケージ"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "GDebi パッケージインストーラー"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:39
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s が利用できません"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "選択したテキストをコピーする"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
-msgstr ""
+msgstr "読み込んでいます..."
 
 #: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
-msgstr "root ではダウンロードできません"
+msgstr "rootではダウンロードができません"
 
 #: ../GDebi/GDebi.py:176
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
-msgstr ""
-"root で実行しているときはリモートパッケージをダウンロードできません。一般ユー"
-"ザで再度試してください。"
+msgstr "root で実行している間は外部からパッケージをダウンロードできません。一般ユーザーで再度試してください。"
 
 #: ../GDebi/GDebi.py:189
 msgid "Downloading package"
-msgstr "パッケージのダウンロード中"
+msgstr "パッケージをダウンロードしています"
 
 #: ../GDebi/GDebi.py:196
 msgid "Download failed"
@@ -253,96 +255,95 @@ msgstr "パッケージのダウンロードに失敗しました: ファイル 
 #: ../GDebi/GDebi.py:246 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "パッケージインストーラー - %s"
 
 #: ../GDebi/GDebi.py:303
 msgid "Package control data"
-msgstr ""
+msgstr "パッケージの管理データ"
 
 #: ../GDebi/GDebi.py:306
 msgid "Upstream data"
-msgstr ""
+msgstr "開発元から取得したデータ"
 
 #: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
-msgstr ""
+msgstr "ファイル一覧を読み込んでいる間にエラーが起きました"
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
-msgstr ""
+msgstr "エラー: "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "エラー: もはや提供されていません "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
-msgstr ""
+msgstr "既に同じバージョンがインストールされています"
 
 #: ../GDebi/GDebi.py:355
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "パッケージの再インストール(_R)"
 
 #: ../GDebi/GDebi.py:401
 msgid "Selection is a directory"
-msgstr ""
+msgstr "選択されているのはディレクトリです"
 
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "ファイルの内容 '%s' を読み込んでいる間にエラーが起きました"
 
 #: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "ファイルの内容が展開できません"
 
 #: ../GDebi/GDebi.py:426
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>アンインストールされます: %s</b>"
+msgstr "<b>以下がアンインストールされます: %s</b>"
 
 #: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
-msgstr "インストールされます: %s"
+msgstr "以下がインストールされます: %s"
 
 #: ../GDebi/GDebi.py:443
 msgid "Open Software Package"
-msgstr ""
+msgstr "ソフトウェアパッケージを開きます"
 
 #: ../GDebi/GDebi.py:448
 msgid "Software packages"
-msgstr ""
+msgstr "ソフトウェアパッケージ"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "依存関係の問題"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "%s によってパッケージが必要とされているので、削除できません。"
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
-msgstr ""
+msgstr "ファイルが見つかりません"
 
 #: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
+msgstr "既に存在していないファイルをインストールしようとしています。 "
 
 #: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
-msgstr ""
+msgstr "パッケージファイルをインストールしています..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "パッケージのダウンロード中"
+msgstr "パッケージを削除しています..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "認証されていないソフトウェアをインストールしますか?"
 
 #: ../GDebi/GDebi.py:522
 msgid ""
@@ -351,10 +352,13 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"悪意のあるソフトウェアによって、あなたのデータを破壊したりシステムを乗っ取られることがあります。\n"
+"\n"
+"このパッケージは認証されておらず、悪意のある者が作成したものである可能性があります。"
 
 #: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
-msgstr ""
+msgstr "ソフトウェアをインストールするには管理者権限での作業を許可する必要があります"
 
 #: ../GDebi/GDebi.py:551
 msgid ""
@@ -362,40 +366,43 @@ msgid ""
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
+"\n"
+"パッケージファイルを手動でインストールするのは、セキュリティ上のリスクとなる可能性があります。\n"
+"十分に信用できるソフトウェアディストリビューターから取得したソフトウェアのみをインストールしてください。\n"
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "ソフトウェアを削除するには管理者権限での作業を許可する必要があります"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "パッケージの削除は危険を招く可能性があります。"
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
-msgstr ""
+msgstr "パッケージファイルのインストールが失敗しました"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "パッケージの削除が失敗しました"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
-msgstr ""
+msgstr "必要なファイルをすべてダウンロードできませんでした"
 
 #: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr ""
+msgstr "インターネット接続あるいはインストールメディアを確認してください"
 
 #: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "依存関係をすべてインストールできませんでした"
 
 #: ../GDebi/GDebi.py:633 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
-msgstr ""
+msgstr "通常、これはソフトウェアのディストリビューター側の問題によるものです。詳細については、端末を参照してください。"
 
 #: ../GDebi/GDebi.py:649
 #, python-format
@@ -405,7 +412,7 @@ msgstr "%s をインストールしています"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "'%s' を削除しています"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -413,180 +420,180 @@ msgstr ""
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
-msgstr ""
+msgstr "インストール完了"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "削除完了"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "パッケージ '%s' がインストールされました"
 
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "パッケージ '%s' は削除されました"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "'%s' パッケージのインストールに失敗しました"
 
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "'%s' パッケージの削除に失敗しました"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
-msgstr ""
+msgstr "インストールが完了しました"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "削除が完了しました"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "すべての依存関係を完全にインストールするのに失敗しました"
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "パッケージを完全に削除するのに失敗しました"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
+msgstr "これを修正するには、端末で 'sudo apt-get install -f' を実行してください。"
 
 #. ui
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "'%s' をインストールしています..."
 
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "'%s' を削除しています..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "依存関係をインストールしています..."
 
 #: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "追加パッケージファイルをダウンロードしています..."
 
 #: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr ""
+msgstr "ファイル %s / %s (%sB/s)"
 
 #: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
-msgstr ""
+msgstr "ファイル %s / %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr ""
+msgstr "'%s' を '%s' ドライブに挿入してください"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
+msgstr "設定項目は =<value> のようにして指定する必要があります\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr ""
+msgstr "APT オプション %s を %s に設定できませんでした\n"
 
 #: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr ""
+msgstr "'%s' は不明なパッケージの種類です。終了します\n"
 
 #: ../GDebi/GDebiCli.py:81
 msgid "Failed to open the software package\n"
-msgstr ""
+msgstr "ソフトウェアパッケージを開くのに失敗しました\n"
 
 #: ../GDebi/GDebiCli.py:82
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
-msgstr ""
+msgstr "パッケージが破損しているか、ファイルを開く権限がありません。ファイルの権限を確認してください。\n"
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
-msgstr ""
+msgstr "このパッケージはインストールできません\n"
 
 #: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
 msgid "No description is available"
-msgstr ""
+msgstr "説明文がありません"
 
 #: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "以下のパッケージは<b>認証されていません</b>: "
 
 #: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "以下のパッケージの<b>削除</b>が必要です: "
 
 #: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "以下のパッケージのインストールが必要です: "
 
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "インストール中にエラー: '%s'"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
-msgstr ""
+msgstr "含まれているファイル"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
-msgstr ""
+msgstr "パッケージのインストール(&I)"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "パッケージのダウンロード(&D)"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
-msgstr ""
+msgstr "パッケージファイルが存在しません"
 
 #: ../GDebi/GDebiKDE.py:165
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
-msgstr ""
+msgstr "インストール対象として、存在しないファイルが選択されました。存在する .deb パッケージファイルを選択してください。"
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:246
 msgid "&Reinstall Package"
-msgstr ""
+msgstr "パッケージの再インストール(&R)"
 
 #: ../GDebi/GDebiKDE.py:281
 msgid "Re&install Package"
-msgstr ""
+msgstr "パッケージの再インストール(&I)"
 
 #: ../GDebi/GDebiKDE.py:292
 #, python-format
 msgid "To be removed: %s"
-msgstr ""
+msgstr "削除されます: %s"
 
 #: ../GDebi/GDebiKDE.py:369
 msgid "<b>"
-msgstr ""
+msgstr "<b>"
 
 #: ../GDebi/GDebiCommon.py:67
 msgid "Broken dependencies"
-msgstr ""
+msgstr "依存関係の破損"
 
 #: ../GDebi/GDebiCommon.py:68
 msgid ""
@@ -594,86 +601,107 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"システムの依存関係が壊れています。この状態が修正されるまで、このアプリケーションは動作を行うことができません。修正するには端末で 'gksudo "
+"synaptic' または 'sudo apt-get install -f' を実行してください。"
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "'%s' は Debian パッケージではありません"
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr ""
+msgstr "このファイルの MIME type は '%s' です。このシステムにはインストールできません。"
 
 #: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "'%s' を開くことができません"
 
 #: ../GDebi/GDebiCommon.py:90
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
-msgstr ""
+msgstr "パッケージが破損しているかファイルを開く権限がありません。ファイルの権限を確認してください。"
 
 #: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "ソフトウェアチャンネルから同じバージョンが入手できます"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "代わりにソフトウェアチャンネルからインストールするのをおすすめします。"
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "古いバージョンがソフトウェアチャンネルから入手できます"
 
 #: ../GDebi/GDebiCommon.py:115
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェアチャンネルから利用可能なバージョンをインストールするのが一般的にはお勧めです"
+"。"
 
 #: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "より新しいバージョンがソフトウェアチャンネルから入手できます"
 
 #: ../GDebi/GDebiCommon.py:122
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェアチャンネルから利用可能なバージョンをインストールするのを強くお勧めします。"
 
 #: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "すべての依存関係が満たされています"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "%s 個のパッケージを<b>削除</b>する必要があります\n"
 
 #: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "%s 個のパッケージをインストールする必要があります"
 
 #: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "ソフトウェア管理ツールは同時に 1 つだけしか実行できません"
 
 #: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
+msgstr "まず、「アップデートマネージャー」「aptitude」「Synaptic」などの他のアプリケーションを閉じてください。"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
-msgstr ""
+msgstr "メディアを入れ替えてください"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "アーキテクチャ '%s' ではありません"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Fumihito YOSHIDA https://launchpad.net/~hito\n"
+#~ "  Hideki Yamane (Debian-JP) https://launchpad.net/~henrich\n"
+#~ "  IRIE Shinsuke https://launchpad.net/~irie\n"
+#~ "  Ikuya Awashiro https://launchpad.net/~ikuya-fruitsbasket\n"
+#~ "  Kentaro Kazuhama https://launchpad.net/~kazken3\n"
+#~ "  Mitsuya Shibata https://launchpad.net/~cosmos-door\n"
+#~ "  Nazo https://launchpad.net/~lovesyao\n"
+#~ "  Nobuto MURATA https://launchpad.net/~nobuto\n"
+#~ "  Shushi Kurose https://launchpad.net/~kuromabo\n"
+#~ "  Y.Nishiwaki https://launchpad.net/~y.nishiwaki\n"
+#~ "  asaijo https://launchpad.net/~asaijo"

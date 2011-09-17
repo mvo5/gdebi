@@ -33,15 +33,15 @@ msgstr ""
 "Project-Id-Version: gdebi 0.8.0\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-08-12 13:12+0000\n"
-"Last-Translator: Omar Campagne <ocampagne@gmail.com>\n"
+"PO-Revision-Date: 2011-09-05 04:43+0000\n"
+"Last-Translator: Braxton Schafer <braxton.schafer@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
+"Language: es\n"
 
 #: ../gdebi:48
 #, c-format
@@ -96,9 +96,8 @@ msgid "Use alternative datadir"
 msgstr "Usar un directorio de datos alternativo"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paquete de software"
+msgstr "Eliminar paquete"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -223,18 +222,16 @@ msgid "_Install Package"
 msgstr "_Instalar paquete"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Abrir..."
+msgstr "_Abrir…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Recargar"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstalar paquete"
+msgstr "_Eliminar paquete"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -253,7 +250,7 @@ msgstr "%s no está disponible"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Copiar el texto seleccionado"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -351,14 +348,13 @@ msgid "Software packages"
 msgstr "Paquetes de software"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "La dependencia no se puede satisfacer: %s\n"
+msgstr "Problemas de Dependencias"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "Uno o mas paquetes son necesario por %s, no se puede eliminar."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -373,9 +369,8 @@ msgid "Installing package file..."
 msgstr "Instalando el archivo de paquete..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Descargando paquete"
+msgstr "Quitando el paquete..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -409,22 +404,20 @@ msgstr ""
 "que confíe.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Necesita conceder derechos de administrador para instalar software"
+msgstr "Tu necesitas conceder derechos administrativo para quitar software"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Es posible que hay un riesgo para quitar paquetes."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Falló la instalación del paquete"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Error al abrir el paquete de software\n"
+msgstr "No se pudo eliminar el paquete"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -455,7 +448,7 @@ msgstr "Instalando %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Quitando %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -467,7 +460,7 @@ msgstr "Instalación completa"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Eliminación completo"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -475,9 +468,9 @@ msgid "Package '%s' was installed"
 msgstr "Se ha instalado el paquete «%s»"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Se ha instalado el paquete «%s»"
+msgstr "Paquete '%s' estaba quitado."
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -485,9 +478,9 @@ msgid "Failed to install package '%s'"
 msgstr "Falló la instalación del paquete «%s»"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Falló la instalación del paquete «%s»"
+msgstr "Falló quitar paquete '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -495,7 +488,7 @@ msgstr "Instalación completa"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Eliminación completo"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -503,9 +496,8 @@ msgstr ""
 "Se produjo un error durante la instalación completa de todas las dependencias"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Error al abrir el paquete de software\n"
+msgstr "Falló quitar paquete completamente"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -520,9 +512,9 @@ msgid "Installing '%s'..."
 msgstr "Instalando «%s»..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Instalando «%s»..."
+msgstr "Quitando '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -551,7 +543,8 @@ msgstr "Por favor, inserte «%s» en la unidad «%s»"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr "Los elementos de configuración se deben especificar con un =<valor>\n"
+msgstr ""
+"Los elementos de configuración se deben especificar con un =<valor>\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
@@ -759,18 +752,19 @@ msgstr "Cambio de dispositivo"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Software Malicioso puede dañar tus datos y tomar el control de tu "
-#~ "sistema.\n"
+#~ "Software Malicioso puede dañar tus datos y tomar el control de tu sistema.\n"
 #~ "\n"
 #~ "Los paquetes debajo no estan autenticados y podrian ser de naturaleza "
 #~ "maliciosa."
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Rompe las dependencias del paquete existente «%s» %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Rompe el paquete existente '%s' conflicto: %s (%s %s)\n"
 
@@ -778,6 +772,7 @@ msgstr "Cambio de dispositivo"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Alex Puente https://launchpad.net/~jalepuentem\n"
+#~ "  Braxton Schafer https://launchpad.net/~braxton-schafer\n"
 #~ "  Fido https://launchpad.net/~fedevera\n"
 #~ "  Fitoschido https://launchpad.net/~fitoschido\n"
 #~ "  Javi Sol https://launchpad.net/~javisolcorreo\n"
@@ -787,12 +782,20 @@ msgstr "Cambio de dispositivo"
 #~ "  Seba Polanco https://launchpad.net/~spolanco\n"
 #~ "  juancarlospaco https://launchpad.net/~juancarlospaco"
 
+#~ msgid "_Open..."
+#~ msgstr "_Abrir..."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "La dependencia no se puede satisfacer: %s\n"
+
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflictos con el paquete instalado «%s»\n"
 
 #~ msgid ""
-#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)"
-#~ "s %(targetver)s)"
+#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s "
+#~ "%(targetver)s)"
 #~ msgstr ""
 #~ "Rompe un conflicto del paquete existente '%(pkgname)s': %(targetpkg)s "
 #~ "(%(comptype)s %(targetver)s)"
@@ -800,6 +803,7 @@ msgstr "Cambio de dispositivo"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "No hay campo de Arquitectura en el paquete"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura incorrecta «%s»"
 
@@ -811,9 +815,10 @@ msgstr "Cambio de dispositivo"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "Se produjo un fallo al intentar satisfacer todas las dependencias "
-#~ "(almacén dañado)"
+#~ "Se produjo un fallo al intentar satisfacer todas las dependencias (almacén "
+#~ "dañado)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No se puede instalar «%s»"
 
@@ -824,6 +829,7 @@ msgstr "Cambio de dispositivo"
 #~ msgstr ""
 #~ "La lista de archivos no se pudo leer. Por favor, remita un informe defallo"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ocurrió un IOError durante la lectura de la lista de archivos: %s"
 

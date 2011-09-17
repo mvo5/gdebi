@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-08-15 15:06+0000\n"
-"Last-Translator: Chaitanya Kumar CH <Unknown>\n"
+"PO-Revision-Date: 2011-09-14 02:41+0000\n"
+"Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: Telugu <te@li.org>\n"
-"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -35,7 +34,7 @@ msgstr ""
 
 #: ../gdebi:62
 msgid "Do not show progress information"
-msgstr "పురోగతిని తెలియజేయవద్దు"
+msgstr "పురోగతి సమాచారాన్ని చూపించవద్దు"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
@@ -43,12 +42,12 @@ msgstr ""
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "ప్రత్యామ్నాయ రూట్ డైరెక్టరీ వాడు"
 
 #: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr ""
+msgstr "జిడెబి దోషం, ఫైల్ కనపడలేదు: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
@@ -67,9 +66,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "సాఫ్ట్‍వేర్ ప్యాకేజీ"
+msgstr "ప్యాకేజీని తీసివేయి"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -168,11 +166,11 @@ msgstr "వివరాలు (_D)"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "ప్యాకేజీని దింపుకొను (_D)"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "సవరణ (_E)"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -190,7 +188,6 @@ msgid "_Install Package"
 msgstr "ప్యాకేజీ స్థాపించు (_I)"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
 msgstr "తెరువు...(_O)"
 
@@ -199,9 +196,8 @@ msgid "_Refresh"
 msgstr "తాజాపరుచు (_R)"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "ప్యాకేజీని మళ్ళీస్థాపించు (_R)"
+msgstr "ప్యాకేజీని తీసివేయి (_R)"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -220,7 +216,7 @@ msgstr "%s అందుబాటులోలేదు"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "ఎంపికచేసిన పాఠ్యాన్ని నకలుతీయి"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -235,8 +231,8 @@ msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
-"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి సాధారణ వాడుకరిగా మారి మరలా "
-"ప్రయత్నించండి."
+"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి "
+"సాధారణ వాడుకరిగా మారి మరలా ప్రయత్నించండి."
 
 #: ../GDebi/GDebi.py:189
 msgid "Downloading package"
@@ -339,9 +335,8 @@ msgid "Installing package file..."
 msgstr "ఫ్యాకేజీ ఫైలును స్థాపిస్తోంది..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "ప్యాకేజీని డౌన్‌లోడ్‌చేస్తోంది"
+msgstr "ప్యాకేజీని తొలగిస్తున్నది..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -357,7 +352,8 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
-msgstr "సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
+msgstr ""
+"సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
 
 #: ../GDebi/GDebi.py:551
 msgid ""
@@ -367,9 +363,8 @@ msgid ""
 msgstr ""
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -380,9 +375,8 @@ msgid "Failed to install package file"
 msgstr "ప్యాకేజీ ఫైలుని స్థాపించుటలో విఫలమైంది"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "ప్యాకేజీ ఫైలుని స్థాపించుటలో విఫలమైంది"
+msgstr "ప్యాకేజీని తీసివేయుటలో విఫలమైంది"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -401,7 +395,8 @@ msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం టెర్మినల్ విండోను చూడండి."
+"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం "
+"టెర్మినల్ విండోను చూడండి."
 
 #: ../GDebi/GDebi.py:649
 #, python-format
@@ -411,7 +406,7 @@ msgstr "%s స్థాపించబడుతోంది"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "%s తొలగించబడుతోంది"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -423,7 +418,7 @@ msgstr "స్థాపన పూర్తయింది"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "తీసివేయుట పూర్తయినది"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -431,9 +426,9 @@ msgid "Package '%s' was installed"
 msgstr "'%s' ప్యాకేజీ స్థాపించబడింది"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "'%s' ప్యాకేజీ స్థాపించబడింది"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -441,9 +436,9 @@ msgid "Failed to install package '%s'"
 msgstr "'%s' ప్యాకేజీని స్థాపించుటలో విఫలమైంది"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "'%s' ప్యాకేజీని స్థాపించుటలో విఫలమైంది"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -458,13 +453,13 @@ msgid "Failed to completely install all dependencies"
 msgstr "అన్ని ఆధారితత్వాలను పూర్తిగా స్థాపించుటలో విఫలమయ్యింది"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "అన్ని ఆధారితత్వాలను పూర్తిగా స్థాపించుటలో విఫలమయ్యింది"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
+msgstr ""
+"దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
 
 #. ui
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
@@ -473,9 +468,9 @@ msgid "Installing '%s'..."
 msgstr "'%s' స్థాపిస్తోంది..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "'%s' స్థాపిస్తోంది..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -681,3 +676,6 @@ msgstr ""
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
 msgstr ""
+
+#~ msgid "_Open..."
+#~ msgstr "తెరువు...(_O)"

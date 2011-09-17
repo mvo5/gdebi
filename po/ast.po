@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-02-21 00:05+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
-"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr "Usar direutoriu de datos alternativu"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paquete de software"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -198,18 +196,16 @@ msgid "_Install Package"
 msgstr "_Instalar Paquete"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Abrir…"
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "Anova_r"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstalar Paquete"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -326,9 +322,8 @@ msgid "Software packages"
 msgstr "Paquetes de software"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "La dependencia nun puede cubrise: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -348,9 +343,8 @@ msgid "Installing package file..."
 msgstr "Instalando ficheru de paquete..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Descargando paquete"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -382,9 +376,8 @@ msgstr ""
 "Instala namái software de distribuidores de software fiables.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Necesites tener privilexos alministrativos pa instalar software"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -395,9 +388,8 @@ msgid "Failed to install package file"
 msgstr "Falló la instalación del paquete"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Falló abrir el paquete de software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -447,9 +439,9 @@ msgid "Package '%s' was installed"
 msgstr "Instalose'l paquete '%s'"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Instalose'l paquete '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -457,9 +449,9 @@ msgid "Failed to install package '%s'"
 msgstr "Falló la instalación del paquete '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Falló la instalación del paquete '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -474,9 +466,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Falló instalar dafechu toles dependencies"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Falló abrir el paquete de software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -490,9 +481,9 @@ msgid "Installing '%s'..."
 msgstr "Instalando '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Instalando '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -729,26 +720,33 @@ msgstr "Cambéu de Mediu"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "El software gafu puede tracamundiar tos datos y controlar el to sistema.\n"
 #~ "\n"
-#~ "Los paquetes d'embaxo nun tan autenticaos y podrian poro ser de miente "
-#~ "gafu."
+#~ "Los paquetes d'embaxo nun tan autenticaos y podrian poro ser de miente gafu."
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "La dependencia nun puede cubrise: %s\n"
+
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Fai conflictu col paquete instaláu '%s'\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura incorreuta '%s'"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Nun hai campu Arquitectura nel paquete"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Fraña conflictos del paquete esistente '%s': %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Fraña la dependencia %2s (%3s %4s) del paquete esistente '%1s'\n"
 
@@ -758,15 +756,20 @@ msgstr "Cambéu de Mediu"
 #~ msgid "A later version is already installed"
 #~ msgstr "Una version siguiente yá ta instalada"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nun puede instalase '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Falló satisfacer toles dependencies (caché frañada)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Error d'E/S durante la llectura de la llista de ficheros: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
 #~ "Llista de ficheros que nun pueden lleese, por favor informa d'esti fallu"
+
+#~ msgid "_Open..."
+#~ msgstr "_Abrir…"

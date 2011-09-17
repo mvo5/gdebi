@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-08-11 00:12+0000\n"
+"PO-Revision-Date: 2011-09-14 00:20+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
-"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,9 +68,8 @@ msgid "Use alternative datadir"
 msgstr "Guna direktori data alternatif"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Pakej perisian"
+msgstr "Buang pakej"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -196,7 +194,6 @@ msgid "_Install Package"
 msgstr "_Pasang Pakej"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
 msgstr "_Buka..."
 
@@ -205,9 +202,8 @@ msgid "_Refresh"
 msgstr "_Segar Semula"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "Pasang _Semula Pakej"
+msgstr "_Buang Pakej"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -226,7 +222,7 @@ msgstr "%s tidak disediakan"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Salin teks pilihan"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -325,12 +321,12 @@ msgstr "Pakej perisian"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Masalah dependensi"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "Satu atau lebih pakej diperlukan oleh %s, ia tidak boleh dibuang."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -345,9 +341,8 @@ msgid "Installing package file..."
 msgstr "Memasang fail pakej..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Memuat turun pakej"
+msgstr "Membuang pakej..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -380,22 +375,20 @@ msgstr ""
 "Pasanglah perisian dari pengedar perisian yang boleh dipercayai sahaja.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Anda perlu dapatkan kebenaran pentadbir untuk memasang perisian"
+msgstr "Anda perlu dapatkan hak sebagai pentadbir untuk membuang perisian"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Ia kemungkinan berisiko untuk membuang pakej."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Gagal memasang fail pakej"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Gagal membuka pakej perisian\n"
+msgstr "Gagal membuang pakej"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -425,7 +418,7 @@ msgstr "Sedang memasang %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Membuang %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -437,7 +430,7 @@ msgstr "Pemasangan selesai"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Pembuangan selesai"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -445,9 +438,9 @@ msgid "Package '%s' was installed"
 msgstr "Pakej '%s' telah dipasang"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Pakej '%s' telah dipasang"
+msgstr "Pakej '%s' telah dibuang"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,9 +448,9 @@ msgid "Failed to install package '%s'"
 msgstr "Gagal memasang pakej '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Gagal memasang pakej '%s'"
+msgstr "Gagal membuang pakej '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -465,16 +458,15 @@ msgstr "Pemasangan selesai"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Pembuangan selesai"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Gagal menyelesaikan pemasangan semua dependensi"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Gagal membuka pakej perisian\n"
+msgstr "Gagal membuang sepenuhnya pakej"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -489,9 +481,9 @@ msgid "Installing '%s'..."
 msgstr "Memasang '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Memasang '%s'..."
+msgstr "Membuang '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -590,8 +582,8 @@ msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"Fail yang tidak wujud telh dipilih untuk pemasangan. Sila pilih fail pakej ."
-"deb yang ada."
+"Fail yang tidak wujud telh dipilih untuk pemasangan. Sila pilih fail pakej "
+".deb yang ada."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:246
@@ -721,6 +713,7 @@ msgstr "Media Berubah"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Salah arkitektur '%s'"
 
@@ -729,3 +722,6 @@ msgstr "Media Berubah"
 #~ "Launchpad Contributions:\n"
 #~ "  abuyop https://launchpad.net/~abuyop\n"
 #~ "  myromance123 https://launchpad.net/~linkinpark-neon"
+
+#~ msgid "_Open..."
+#~ msgstr "_Buka..."

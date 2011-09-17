@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-05-02 11:17+0000\n"
 "Last-Translator: Krasimir Chonov <mk2616@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
-"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr "Използване на друга директория за данни"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Пакет"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -197,18 +195,16 @@ msgid "_Install Package"
 msgstr "_Инсталиране"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Отваряне..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Обновяване"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Преинсталиране"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -346,9 +342,8 @@ msgid "Installing package file..."
 msgstr "Инсталиране на пакет..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Изтегляне на пакет"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -380,9 +375,8 @@ msgstr ""
 "Инсталирайте софтуер само от доверени източници.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Трябва да се издават административни права за инсталиране на софтуер"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -393,9 +387,8 @@ msgid "Failed to install package file"
 msgstr "Неуспешен опит за инсталиране на пакет"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Неуспешен опит да се отвори пакет\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -445,9 +438,9 @@ msgid "Package '%s' was installed"
 msgstr "Пакетът '%s' беше инсталиран"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Пакетът '%s' беше инсталиран"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,9 +448,9 @@ msgid "Failed to install package '%s'"
 msgstr "Неуспешен опит за инсталиране на пакета '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Неуспешен опит за инсталиране на пакета '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -472,9 +465,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Неуспешен опит да инсталирате всички зависимости"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Неуспешен опит да се отвори пакет\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -489,9 +481,9 @@ msgid "Installing '%s'..."
 msgstr "Инсталиране на '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Инсталиране на '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -729,3 +721,6 @@ msgstr "Смяна на носител"
 #~ "Launchpad Contributions:\n"
 #~ "  Miroslav E. Hadzhiev (Хаджиев) https://launchpad.net/~extigyro\n"
 #~ "  Svetoslav Stefanov https://launchpad.net/~svetlisashkov"
+
+#~ msgid "_Open..."
+#~ msgstr "_Отваряне..."

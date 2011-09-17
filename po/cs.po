@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2011-08-03 09:53+0000\n"
 "Last-Translator: Adrian Guniš <andygun696@gmail.com>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr "Použít alternativní datový adresář"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Softwarový balík"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -86,9 +84,9 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Toto je zásadní chyba vašeho systému správy softwaru. Prosím zkontrolujte "
-"poškozené balíky synapticem, zkontrolujte oprávnění a správnost souboru '/"
-"etc/apt/sources.list' a obnovte informace o softwaru příkazy: 'sudo apt-get "
-"update' a 'sudo apt-get install -f'."
+"poškozené balíky synapticem, zkontrolujte oprávnění a správnost souboru "
+"'/etc/apt/sources.list' a obnovte informace o softwaru příkazy: 'sudo apt-"
+"get update' a 'sudo apt-get install -f'."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -197,18 +195,16 @@ msgid "_Install Package"
 msgstr "Na_instalovat balík"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Otevřít..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "O_bnovit"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Přeinstalovat balík"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -325,9 +321,8 @@ msgid "Software packages"
 msgstr "Softwarové balíky"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Závislost je nesplnitelná: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -347,9 +342,8 @@ msgid "Installing package file..."
 msgstr "Instalování balíku..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Stahování balíku"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -383,9 +377,8 @@ msgstr ""
 "Instalujte pouze software získaný z důvěryhodných zdrojů.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Musíte udělit správcovská oprávnění pro instalaci softwaru"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -396,9 +389,8 @@ msgid "Failed to install package file"
 msgstr "Instalace balíku selhala"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Nezdařilo se otevřít softwarový balík\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -406,7 +398,8 @@ msgstr "Nelze stáhnout všechny požadované soubory"
 
 #: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr "Zkontrolujte prosím vaše internetové připojení nebo instalační médium."
+msgstr ""
+"Zkontrolujte prosím vaše internetové připojení nebo instalační médium."
 
 #: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
@@ -448,9 +441,9 @@ msgid "Package '%s' was installed"
 msgstr "Balík \"%s\" byl nainstalován"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Balík \"%s\" byl nainstalován"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -458,9 +451,9 @@ msgid "Failed to install package '%s'"
 msgstr "Nezdařilo se nainstalovat balík \"%s\""
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Nezdařilo se nainstalovat balík \"%s\""
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -475,13 +468,13 @@ msgid "Failed to completely install all dependencies"
 msgstr "Nezdařilo se zcela nainstalovat všechny závislosti"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Nezdařilo se otevřít softwarový balík\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "Vyřešte to spuštěním \"sudo apt-get install -f\" v terminálovém okně."
+msgstr ""
+"Vyřešte to spuštěním \"sudo apt-get install -f\" v terminálovém okně."
 
 #. ui
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
@@ -490,9 +483,9 @@ msgid "Installing '%s'..."
 msgstr "Instalování \"%s\"..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Instalování \"%s\"..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -657,7 +650,8 @@ msgstr "Stejná verze je k dispozici i v distribučním kanálu"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "Doporučujeme raději tento software instalovat z distribučního kanálu."
+msgstr ""
+"Doporučujeme raději tento software instalovat z distribučního kanálu."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -730,8 +724,8 @@ msgstr "Změna média"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Zlovolný software může poškodit vaše data a převzít kontrolu na vaším "
 #~ "systémem.\n"
@@ -744,9 +738,11 @@ msgstr "Změna média"
 #~ msgid "Open..."
 #~ msgstr "Otevřít..."
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Způsobuje u existujícího balíku \"%s\" konflikt: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Narušuje u existujícího balíku \"%s\" závislost %s (%s %s)\n"
 
@@ -757,6 +753,14 @@ msgstr "Změna média"
 #~ "Automaticky rozbalen:\n"
 #~ "\n"
 
+#~ msgid "_Open..."
+#~ msgstr "_Otevřít..."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Závislost je nesplnitelná: %s\n"
+
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Je v konfliktu s nainstalovaným balíkem '%s'\n"
 
@@ -764,12 +768,12 @@ msgstr "Změna média"
 #~ "Breaks existing package '%(pkgname)s' dependency %(depname)s "
 #~ "(%(deprelation)s %(depversion)s)"
 #~ msgstr ""
-#~ "Poškodí stávající balík '%(pkgname)s' závislost %(depname)s "
-#~ "(%(deprelation)s %(depversion)s)"
+#~ "Poškodí stávající balík '%(pkgname)s' závislost %(depname)s (%(deprelation)s "
+#~ "%(depversion)s)"
 
 #~ msgid ""
-#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)"
-#~ "s %(targetver)s)"
+#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s "
+#~ "%(targetver)s)"
 #~ msgstr ""
 #~ "Poškodí stávající balík '%(pkgname)s' je v konfliktu: %(targetpkg)s "
 #~ "(%(comptype)s %(targetver)s)"
@@ -777,6 +781,7 @@ msgstr "Změna média"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "V balíčku není pole s architekturou"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Špatná architektura '%s'"
 
@@ -786,6 +791,7 @@ msgstr "Změna média"
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analýza závislostí"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nelze nainstalovat '%s'"
 
@@ -795,5 +801,6 @@ msgstr "Změna média"
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "Seznam souborů nemohl být načten, nahlaste toto prosím jako chybu"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Chyba I/O při čtení seznamu souborů: %s"

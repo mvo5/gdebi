@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-11-08 06:41+0000\n"
 "Last-Translator: Tony Hulden <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,9 +70,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Ohjelmapaketti"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -202,9 +200,8 @@ msgid "_Refresh"
 msgstr ""
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Asenna paketti uudestaan"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -321,9 +318,8 @@ msgid "Software packages"
 msgstr "Ohjelmapaketit"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Riippuvuutta ei voida täyttää: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -343,9 +339,8 @@ msgid "Installing package file..."
 msgstr "Asennetaan pakettitiedostoa..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Ladataan pakettia"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -374,9 +369,8 @@ msgstr ""
 "Asenna ohjelmia vain luotettavista lähteistä.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Pääkäyttäjäoikeudet tulee ottaa käyttöön ohjelmien asentamiseksi"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -387,9 +381,8 @@ msgid "Failed to install package file"
 msgstr "Paketin asennus epäonnistui"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Ohjelmapakettia ei voitu avata\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -439,9 +432,9 @@ msgid "Package '%s' was installed"
 msgstr "Asennettiin paketti \"%s\""
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Asennettiin paketti \"%s\""
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -449,9 +442,9 @@ msgid "Failed to install package '%s'"
 msgstr "Paketin \"%s\" asennus epäonnistui"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Paketin \"%s\" asennus epäonnistui"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -466,9 +459,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Kaikkien riippuvuuksien asennus ei onnistunut"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Ohjelmapakettia ei voitu avata\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -481,9 +473,9 @@ msgid "Installing '%s'..."
 msgstr "Asennetaan \"%s\"..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Asennetaan \"%s\"..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -703,8 +695,13 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Väärä arkitehtuuri '%s'"
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Riippuvuutta ei voida täyttää: %s\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Kaikkia riippuvuuksia ei voitu täyttää (virheellinen välimuisti)"
@@ -712,18 +709,19 @@ msgstr ""
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Haitalliset ohjelmat voivat vaurioittaa tietojasi ja ottaa tietokoneesi "
 #~ "haltuun.\n"
 #~ "\n"
-#~ "Alla olevien pakettien lähdettä ei voida varmistaa ja ne voivat siten "
-#~ "olla haittaohjelmia."
+#~ "Alla olevien pakettien lähdettä ei voida varmistaa ja ne voivat siten olla "
+#~ "haittaohjelmia."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Uudempi versio on jo asennettu"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Pakettia \"%s\" ei voida asentaa"
 

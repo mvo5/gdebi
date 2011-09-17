@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-11-08 09:30+0000\n"
 "Last-Translator: Murat Gunes <mgunes@ubuntu.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,9 +68,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Yazılım paketi"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -205,9 +203,8 @@ msgid "_Refresh"
 msgstr ""
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "Paketi Tek_rar Kur"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -324,9 +321,8 @@ msgid "Software packages"
 msgstr "Yazılım paketleri"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "%s bağımlılığı sağlanamadı\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -346,9 +342,8 @@ msgid "Installing package file..."
 msgstr "Paket dosyası kuruluyor..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Paket indiriliyor"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -377,9 +372,8 @@ msgstr ""
 "Yalnızca güvendiğiniz kaynaklardan gelen yazılımları kurun.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Yazılım kurabilmek için yönetici haklarınızı tasdik etmeniz gerekli"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -390,9 +384,8 @@ msgid "Failed to install package file"
 msgstr "Paket dosyası kurulamadı"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Yazılım paketi açılamadı\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -442,9 +435,9 @@ msgid "Package '%s' was installed"
 msgstr "'%s' paketi kuruldu"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "'%s' paketi kuruldu"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -452,9 +445,9 @@ msgid "Failed to install package '%s'"
 msgstr "'%s' paketi kurulamadı"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "'%s' paketi kurulamadı"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -469,9 +462,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Bazı bağımlılıklar kurulamadı"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Yazılım paketi açılamadı\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -486,9 +478,9 @@ msgid "Installing '%s'..."
 msgstr "%s kuruluyor..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "%s kuruluyor..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -710,8 +702,13 @@ msgstr "Ortam Değiştirme"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Hatalı işlemci mimarisi '%s'"
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "%s bağımlılığı sağlanamadı\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Bağımlılıkların hepsi sağlanamadı (önbellek bozuk)"
@@ -719,18 +716,19 @@ msgstr "Ortam Değiştirme"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Kötü niyetli yazılımlar verilerinize zarar verebilir ve sisteminizin "
 #~ "denetimini ele \n"
 #~ "\n"
-#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir "
-#~ "içeriğe sahip olabilirler."
+#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir içeriğe "
+#~ "sahip olabilirler."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Daha yeni bir sürüm zaten kurulu"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' paketi kurulamadı"
 

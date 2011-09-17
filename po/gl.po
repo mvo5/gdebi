@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-03-23 08:41+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
-"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr "Usar un directorio de datos alternativo"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paquete de software"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -199,18 +197,16 @@ msgid "_Install Package"
 msgstr "_Instalar paquete"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Abrir..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "Actualiza_r"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstalar paquete"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -327,9 +323,8 @@ msgid "Software packages"
 msgstr "Paquetes de software"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "A dependencia non se pode satisfacer: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -349,9 +344,8 @@ msgid "Installing package file..."
 msgstr "A instalar o paquete..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Descargando paquete"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -387,9 +381,8 @@ msgstr ""
 "confíe.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Necesita ter privilexios de administración para instalar software"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -400,9 +393,8 @@ msgid "Failed to install package file"
 msgstr "Fallou a instalación do paquete"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Ocorreu un erro ao abrir o paquete de software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -453,9 +445,9 @@ msgid "Package '%s' was installed"
 msgstr "Instalouse o paquete '%s'"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Instalouse o paquete '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -463,9 +455,9 @@ msgid "Failed to install package '%s'"
 msgstr "Fallou a instalación do paquete '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Fallou a instalación do paquete '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -480,9 +472,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Non se puido completar a instalación de todas as dependencias"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Ocorreu un erro ao abrir o paquete de software\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -497,9 +488,9 @@ msgid "Installing '%s'..."
 msgstr "A instalar '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "A instalar '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -642,7 +633,8 @@ msgstr "'%s' non é un paquete Debian"
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr "O tipo MIME deste ficheiro é «%s» e non pode instalarse neste sistema."
+msgstr ""
+"O tipo MIME deste ficheiro é «%s» e non pode instalarse neste sistema."
 
 #: ../GDebi/GDebiCommon.py:89
 #, python-format
@@ -734,8 +726,8 @@ msgstr "Cambio de medio"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "O software malicioso podería danar os seus datos e tomar o control do seu "
 #~ "sistema.\n"
@@ -743,30 +735,36 @@ msgstr "Cambio de medio"
 #~ "Os seguintes paquetes non están autenticados e poderían ser de natureza "
 #~ "maliciosa."
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "A dependencia non se pode satisfacer: %s\n"
+
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entra en conflito co paquete '%s' instalado\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura incorrecta \"%s\""
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Non hai un campo Arquitectura no paquete"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Rompe o conflito de paquete existente '%s': %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Non se pode instalar '%s'"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "No se puido ler a lista de ficheiros; por favor, informe disto coma un "
-#~ "fallo"
+#~ "No se puido ler a lista de ficheiros; por favor, informe disto coma un fallo"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "Produciuse un erro ao tentar satisfacer todas as dependencias (caché "
-#~ "danado)"
+#~ "Produciuse un erro ao tentar satisfacer todas as dependencias (caché danado)"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Xa está instalada unha versión máis recente"
@@ -774,9 +772,11 @@ msgstr "Cambio de medio"
 #~ msgid "Analysing dependencies"
 #~ msgstr "Analizando dependencias"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Rompe as dependencias do paquete existente «%s» %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ocorreu un erro de E/S durante a lectura da lista de ficheiros: %s"
 
@@ -784,3 +784,6 @@ msgstr "Cambio de medio"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Fran Diéguez https://launchpad.net/~frandieguez"
+
+#~ msgid "_Open..."
+#~ msgstr "_Abrir..."

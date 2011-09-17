@@ -11,12 +11,12 @@ msgstr ""
 "PO-Revision-Date: 2010-09-05 22:46+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
+"Language: he\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,9 +69,8 @@ msgid "Use alternative datadir"
 msgstr "שימוש בתיקיית נתונים חלופית"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "חבילת תכנה"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -196,18 +195,16 @@ msgid "_Install Package"
 msgstr "ה_תקנת חבילה"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_פתיחה..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_רענון"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "ה_תקנת חבילה מחדש"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -324,9 +321,8 @@ msgid "Software packages"
 msgstr "חבילות תכנה"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "התלויות אינן עומדות בדרישות: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -346,9 +342,8 @@ msgid "Installing package file..."
 msgstr "קובץ החבילה מותקן..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "החבילה בהורדה"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -380,9 +375,8 @@ msgstr ""
 "עדיף להתקין תכנה ממפיצי תכנה מהימנים בלבד.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "עליך לקבל הרשאות ניהול כדי להתקין תכנה"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -393,9 +387,8 @@ msgid "Failed to install package file"
 msgstr "ארע כשל בהתקנת קובץ החבילה"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Failed to open the software package\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -444,9 +437,9 @@ msgid "Package '%s' was installed"
 msgstr "החבילה '%s' הותקנה"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "החבילה '%s' הותקנה"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -454,9 +447,9 @@ msgid "Failed to install package '%s'"
 msgstr "ארע כשל בהתקנת החבילה '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "ארע כשל בהתקנת החבילה '%s'"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -471,13 +464,13 @@ msgid "Failed to completely install all dependencies"
 msgstr "ארע כשל בהתקנה מלאה של כל התלויות"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Failed to open the software package\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
+msgstr ""
+"כדי לתקן זאת יש להריץ את הפקודה 'sudo apt-get install -f' בחלון מסוף."
 
 #. ui
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
@@ -486,9 +479,9 @@ msgid "Installing '%s'..."
 msgstr "החבילה '%s' מותקנת..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "החבילה '%s' מותקנת..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -697,7 +690,8 @@ msgstr "ניתן להפעיל כלי ניהול תכנה אחד ויחיד בע�
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr "נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
+msgstr ""
+"נא לסגור יישומים כגון 'מנהל העדכונים', 'aptitude' או 'Synaptic' תחילה."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -710,15 +704,18 @@ msgstr "החלפת מדיה"
 #~ msgid "Y"
 #~ msgstr "Y"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "מתנגשת עם החבילה המותקנת '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "אין שדה ארכיטקטורה בחבילה"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "לא ניתן להתקין את '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "שגיאת קלט פלט במהלך קריאת רשימת הקבצים: %s"
 
@@ -728,19 +725,26 @@ msgstr "החלפת מדיה"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "תכנה זדונית עלולה להזיק לנתונים ולהשתלט על המערכת שלך.\n"
 #~ "\n"
 #~ "החבילות שלהלן אינן מאומתות ולכן לא מן הנמנע שאלו בעלות יכולות זדוניות."
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "התלויות אינן עומדות בדרישות: %s\n"
+
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "הארכיטקטורה '%s' שגויה"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התנגשות: %s‏ (%s‏ %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "שוברת את החבילה הקיימת '%s' התלויה ב־%s‏ (%s‏ %s)\n"
 
@@ -755,3 +759,6 @@ msgstr "החלפת מדיה"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "ארע כשל במענה על דרישות התלות (מטמון לא תקין)"
+
+#~ msgid "_Open..."
+#~ msgstr "_פתיחה..."

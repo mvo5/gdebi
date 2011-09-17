@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2009-11-19 15:34+0000\n"
 "Last-Translator: jonas-ska <Unknown>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
-"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,9 +68,8 @@ msgid "Use alternative datadir"
 msgstr ""
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Programinis paketas"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -205,9 +203,8 @@ msgid "_Refresh"
 msgstr "_Atnaujinti"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Perdiegti paketą"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -322,9 +319,8 @@ msgid "Software packages"
 msgstr "Programiniai paketai"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "Neįmanoma įdiegti priklausomo paketo %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -344,9 +340,8 @@ msgid "Installing package file..."
 msgstr "Diegiama paketo byla..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Diegiama paketo byla..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -376,10 +371,8 @@ msgstr ""
 "Įdiekite tik iš patikimų programinės įrangos gamintojų.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
 msgstr ""
-"Tam, kad šios programos būtų įdiegtos, Jūs turite suteikti prieigos teises"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -390,9 +383,8 @@ msgid "Failed to install package file"
 msgstr "Nepavyko įdiegti paketo bylos"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Nepavyko atverti programinio paketo\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -442,9 +434,9 @@ msgid "Package '%s' was installed"
 msgstr "Paketas „%s“ yra įdiegtas"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Paketas „%s“ yra įdiegtas"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -452,9 +444,9 @@ msgid "Failed to install package '%s'"
 msgstr "Nepavyko įdiegti paketo „%s“"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Nepavyko įdiegti paketo „%s“"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -469,9 +461,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "Nepavyko visiškai įdiegti visų priklausomų paketų"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Nepavyko atverti programinio paketo\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -485,9 +476,9 @@ msgid "Installing '%s'..."
 msgstr "Diegiama „%s“..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Diegiama „%s“..."
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -586,8 +577,8 @@ msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"Diegti buvo parinkta neegzistuojanti byla. Prašome pasirinkti "
-"egzistuojančią .deb paketinę bylą."
+"Diegti buvo parinkta neegzistuojanti byla. Prašome pasirinkti egzistuojančią "
+".deb paketinę bylą."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:246
@@ -716,6 +707,7 @@ msgstr "Laikmenos keitimas"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Netinkama architektūra „%s“"
 
@@ -725,9 +717,11 @@ msgstr "Laikmenos keitimas"
 #~ msgid "Open..."
 #~ msgstr "Atidaryti..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Kertasi su įdiegtu paketu „%s“\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Paketo „%s“ priklausomybę naikina %s (%s %s)\n"
 
@@ -740,12 +734,14 @@ msgstr "Laikmenos keitimas"
 #~ msgid "A later version is already installed"
 #~ msgstr "Naujesnė versija jau įdiegta"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nepavyksta įdiegti „%s“"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Nepavyko įdiegti visų priklausomų paketų (klaida atmintyje)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Įvesties/išvesties klaida skaitant %s sąrašą"
 
@@ -753,17 +749,22 @@ msgstr "Laikmenos keitimas"
 #~ msgstr ""
 #~ "Nepavyko nuskaityti bylų sąrašo, praneškite apie tai kaip apie klaidą"
 
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "Neįmanoma įdiegti priklausomo paketo %s\n"
+
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Paketas „%s“ pašalina konfliktą su %s (%s %s)\n"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Piktadariška programinė įranga gali sugadinti Jūsų duomenis ir užvaldyti "
 #~ "Jūsų sistemą.\n"
 #~ "\n"
-#~ "Žemiau nurodyti paketai nėra patvirtinti, todėl tai gali būti "
-#~ "piktadariškos prigimties programinė įranga."
+#~ "Žemiau nurodyti paketai nėra patvirtinti, todėl tai gali būti piktadariškos "
+#~ "prigimties programinė įranga."

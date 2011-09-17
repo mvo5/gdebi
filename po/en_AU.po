@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-07-10 10:58+0000\n"
-"Last-Translator: Benny <Benjamin.Donald.Wilson.K@gmail.com>\n"
+"PO-Revision-Date: 2011-09-03 00:19+0000\n"
+"Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,9 +68,8 @@ msgid "Use alternative datadir"
 msgstr "Use alternative datadir"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Software package"
+msgstr "Remove package"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -196,18 +194,16 @@ msgid "_Install Package"
 msgstr "_Install Package"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Open..."
+msgstr "_Open…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Refresh"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstall Package"
+msgstr "_Remove Package"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -226,7 +222,7 @@ msgstr "%s is not available"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Copy selected text"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -325,12 +321,12 @@ msgstr "Software packages"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Dependency problems"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "One or more packages are required by %s, it cannot be removed."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -345,9 +341,8 @@ msgid "Installing package file..."
 msgstr "Installing package file..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "Downloading package"
+msgstr "Removing package..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -380,22 +375,20 @@ msgstr ""
 "Install software from trustworthy software distributors only.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "You need to grant administrative rights to install software"
+msgstr "You need to grant administrative rights to remove software"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "It is a possible risk to remove packages."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
 msgstr "Failed to install package file"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "Failed to open the software package\n"
+msgstr "Failed to remove package"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -425,7 +418,7 @@ msgstr "Installing %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Removing %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -437,7 +430,7 @@ msgstr "Installation finished"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Removal finished"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -445,9 +438,9 @@ msgid "Package '%s' was installed"
 msgstr "Package '%s' was installed"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "Package '%s' was installed"
+msgstr "Package '%s' was removed"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,9 +448,9 @@ msgid "Failed to install package '%s'"
 msgstr "Failed to install package '%s'"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "Failed to install package '%s'"
+msgstr "Failed to remove package '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -465,16 +458,15 @@ msgstr "Installation complete"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Removal complete"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
 msgstr "Failed to completely install all dependencies"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "Failed to open the software package\n"
+msgstr "Failed to completely remove package"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -487,9 +479,9 @@ msgid "Installing '%s'..."
 msgstr "Installing '%s'..."
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "Installing '%s'..."
+msgstr "Removing '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -654,7 +646,8 @@ msgstr "Same version is available in a software channel"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr "You are recommended to install the software from the channel instead."
+msgstr ""
+"You are recommended to install the software from the channel instead."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -715,6 +708,7 @@ msgstr "Media Change"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Wrong architecture '%s'"
 
@@ -724,4 +718,8 @@ msgstr "Media Change"
 #~ "  Benny https://launchpad.net/~benny\n"
 #~ "  Hew McLachlan https://launchpad.net/~hew\n"
 #~ "  Jared Norris https://launchpad.net/~jarednorris\n"
+#~ "  Luca Falavigna https://launchpad.net/~dktrkranz\n"
 #~ "  Stephen Norman https://launchpad.net/~stenorman2001-mac"
+
+#~ msgid "_Open..."
+#~ msgstr "_Open..."

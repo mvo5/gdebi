@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
 "PO-Revision-Date: 2011-03-08 07:07+0000\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <ubuntu-l10n-ca@ubuntu.com>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-08-27 11:44+0000\n"
-"X-Generator: Launchpad (build 13794)\n"
+"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
+"X-Generator: Launchpad (build 13955)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -72,9 +71,8 @@ msgid "Use alternative datadir"
 msgstr "Utilitzeu un «datadir» (directori de dades) alternatiu"
 
 #: ../gdebi-gtk:59
-#, fuzzy
 msgid "Remove package"
-msgstr "Paquet de programari"
+msgstr ""
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -202,18 +200,16 @@ msgid "_Install Package"
 msgstr "_Instal·la el paquet"
 
 #: ../data/gdebi.ui.h:26
-#, fuzzy
 msgid "_Open…"
-msgstr "_Obre..."
+msgstr ""
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
 msgstr "_Refresca"
 
 #: ../data/gdebi.ui.h:28
-#, fuzzy
 msgid "_Remove Package"
-msgstr "_Reinstal·la el paquet"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -330,9 +326,8 @@ msgid "Software packages"
 msgstr "Paquets de programari"
 
 #: ../GDebi/GDebi.py:495
-#, fuzzy
 msgid "Dependency problems"
-msgstr "No es pot satisfer la dependència: %s\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:496
 #, python-format
@@ -352,9 +347,8 @@ msgid "Installing package file..."
 msgstr "S'està instal·lant el fitxer de paquet..."
 
 #: ../GDebi/GDebi.py:518
-#, fuzzy
 msgid "Removing package..."
-msgstr "S'està baixant el paquet"
+msgstr ""
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -387,9 +381,8 @@ msgstr ""
 "Només hauríeu d'instal·lar programari de proveïdors de confiança.\n"
 
 #: ../GDebi/GDebi.py:556
-#, fuzzy
 msgid "You need to grant administrative rights to remove software"
-msgstr "Cal tenir permisos d'administració per a instal·lar programari"
+msgstr ""
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -400,9 +393,8 @@ msgid "Failed to install package file"
 msgstr "No s'han pogut instal·lar el paquet de programari"
 
 #: ../GDebi/GDebi.py:581
-#, fuzzy
 msgid "Failed to remove package"
-msgstr "No s'ha pogut obrir el paquet de programari\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -452,9 +444,9 @@ msgid "Package '%s' was installed"
 msgstr "S'ha instal·lat el paquet «%s»"
 
 #: ../GDebi/GDebi.py:681
-#, fuzzy, python-format
+#, python-format
 msgid "Package '%s' was removed"
-msgstr "S'ha instal·lat el paquet «%s»"
+msgstr ""
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -462,9 +454,9 @@ msgid "Failed to install package '%s'"
 msgstr "No s'ha pogut instal·lar el paquet «%s»"
 
 #: ../GDebi/GDebi.py:687
-#, fuzzy, python-format
+#, python-format
 msgid "Failed to remove package '%s'"
-msgstr "No s'ha pogut instal·lar el paquet «%s»"
+msgstr ""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -479,9 +471,8 @@ msgid "Failed to completely install all dependencies"
 msgstr "No s'han pogut instal·lar completament totes les dependències"
 
 #: ../GDebi/GDebi.py:703
-#, fuzzy
 msgid "Failed to completely remove package"
-msgstr "No s'ha pogut obrir el paquet de programari\n"
+msgstr ""
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -496,9 +487,9 @@ msgid "Installing '%s'..."
 msgstr "S'està instal·lant «%s»"
 
 #: ../GDebi/GDebi.py:826
-#, fuzzy, python-format
+#, python-format
 msgid "Removing '%s'..."
-msgstr "S'està instal·lant «%s»"
+msgstr ""
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -725,6 +716,7 @@ msgstr "Canvi de suport"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errònia «%s»"
 
@@ -734,25 +726,30 @@ msgstr "Canvi de suport"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "El programari maliciós us pot corrompre les dades i prendre el control "
-#~ "del vostre sistema. \n"
+#~ "El programari maliciós us pot corrompre les dades i prendre el control del "
+#~ "vostre sistema. \n"
 #~ "\n"
 #~ "Els paquets llistats no estan autenticats i per tant poden ser maliciosos."
+
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "No es pot satisfer la dependència: %s\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ja hi ha instal·lada una versió posterior"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No es pot instal·lar «%s»"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest "
-#~ "error"
+#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest error"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr ""
 #~ "S'ha produït un error d'entrada/sortida (IOError) en llegir la llista de "
@@ -761,6 +758,7 @@ msgstr "Canvi de suport"
 #~ msgid "Open..."
 #~ msgstr "Obre..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entra amb conflicte amb el paquet instal·lat «%s»\n"
 
@@ -770,10 +768,18 @@ msgstr "Canvi de suport"
 #~ msgid "Analysing dependencies"
 #~ msgstr "S'estan analitzant les dependències"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Conflicte de trencament del paquet existent «%s»: %s (%s %s)\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "No s'han pogut satisfer totes les dependències (la memòria cau està "
-#~ "trencada)"
+#~ "No s'han pogut satisfer totes les dependències (la memòria cau està trencada)"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  J. https://launchpad.net/~jose-manuel-rodriguez-moreno"
+
+#~ msgid "_Open..."
+#~ msgstr "_Obre..."
