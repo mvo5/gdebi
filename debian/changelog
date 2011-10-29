@@ -1,3 +1,10 @@
+gdebi (0.8.3) UNRELEASED; urgency=low
+
+  * data/gdebi.desktop.in:
+    - Append %f to Exec parameter (LP: #803729).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 29 Oct 2011 12:46:48 +0200
+
 gdebi (0.8.2) unstable; urgency=low
 
   * setup.py:
