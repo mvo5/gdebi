@@ -1,9 +1,15 @@
 gdebi (0.8.3) UNRELEASED; urgency=low
 
+  [ Luca Falavigna ]
   * data/gdebi.desktop.in:
     - Append %f to Exec parameter (LP: #803729).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 29 Oct 2011 12:46:48 +0200
+  [ Michael Terry ]
+  * debian/control:
+    - Do not pass "all" to X-Python-Version, pass ">= 2.6" instead,
+      which is known to work with GDebi code (Closes: #648229).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 11 Nov 2011 20:35:50 +0100
 
 gdebi (0.8.2) unstable; urgency=low
 
