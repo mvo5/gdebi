@@ -1,4 +1,4 @@
-gdebi (0.8.3) UNRELEASED; urgency=low
+gdebi (0.8.3) unstable; urgency=low
 
   [ Luca Falavigna ]
   * data/gdebi.desktop.in:
@@ -19,7 +19,7 @@ gdebi (0.8.3) UNRELEASED; urgency=low
     - Do not pass "all" to X-Python-Version, pass ">= 2.6" instead,
       which is known to work with GDebi code (Closes: #648229).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Dec 2011 13:05:34 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Dec 2011 13:05:55 +0100
 
 gdebi (0.8.2) unstable; urgency=low
 
