@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -354,6 +354,10 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"Kenksminga programinė įranga gali pakenkti jūsų duomenims arba perimti "
+"sistemos valdymą.\n"
+"\n"
+"Žemiau pateikti paketai nėra patvirtinti saugiais ir gali būti kenksmingi."
 
 #: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
@@ -600,7 +604,7 @@ msgstr "<b>"
 
 #: ../GDebi/GDebiCommon.py:67
 msgid "Broken dependencies"
-msgstr "Besikertančios priklausomybės"
+msgstr "Netenkinamos priklausomybės"
 
 #: ../GDebi/GDebiCommon.py:68
 msgid ""
@@ -608,9 +612,9 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"Jūsų sistema turi pažeistų priklausomų paketų. Programa negali tęsti "
-"veiklos, kol tai nebus ištaisyta. Prašome paleisti „gksudo synaptic“ ar "
-"„sudo apt-get install -f“ terminalo lange."
+"Jūsų sistema turi paketų, kurių priklausomybės nėra patenkintos. Įdiegimo "
+"programa neveiks, kol tai nebus ištaisyta. Prašome paleisti „gksu synaptic“ "
+"ar „sudo apt-get install -f“ komandų terminale."
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
@@ -757,6 +761,14 @@ msgstr "Laikmenos keitimas"
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Paketas „%s“ pašalina konfliktą su %s (%s %s)\n"
 
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Mantas Kriaučiūnas https://launchpad.net/~mantas\n"
+#~ "  jonas-ska https://launchpad.net/~jonas-ska\n"
+#~ "  netikras https://launchpad.net/~dariuxas\n"
+#~ "  robas https://launchpad.net/~v-grobas"
+
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
@@ -768,3 +780,13 @@ msgstr "Laikmenos keitimas"
 #~ "\n"
 #~ "Žemiau nurodyti paketai nėra patvirtinti, todėl tai gali būti piktadariškos "
 #~ "prigimties programinė įranga."
+
+#~ msgid "Automatically converted to printable ascii:\n"
+#~ msgstr "Automatiškai pakeista į spausdinamą ascii:\n"
+
+#~ msgid ""
+#~ "Breaks existing package '%(pkgname)s' dependency %(depname)s "
+#~ "(%(deprelation)s %(depversion)s)"
+#~ msgstr ""
+#~ "Sugadina egzistuojančio paketo „%(pkgname)s“ priklausomybę %(depname)s "
+#~ "(%(deprelation)s %(depversion)s)"

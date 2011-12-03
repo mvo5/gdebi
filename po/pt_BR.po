@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-04-24 18:00+0000\n"
-"Last-Translator: Rodrigo Borges <rbm0407@yahoo.com.br>\n"
+"PO-Revision-Date: 2011-09-19 07:07+0000\n"
+"Last-Translator: Otto Robba <Unknown>\n"
 "Language-Team: Portuguese (Brazil) <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,7 +71,7 @@ msgstr "Usar diretório de dados alternativo"
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Remover pacote"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -197,7 +197,7 @@ msgstr "_Instalar Pacote"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Abrir…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -205,7 +205,7 @@ msgstr "Atualiza_r"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Remover Pacote"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -224,7 +224,7 @@ msgstr "%s não disponível"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Copiar texto selecionado"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -323,12 +323,12 @@ msgstr "Pacotes de Software"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Problemas de dependências"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "Um ou mais pacotes demandam %s, que não podê ser removido."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -344,7 +344,7 @@ msgstr "Instalando pacote..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Removendo pacote..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -379,11 +379,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Você precisa"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "É um possível risco remover pacotes."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -391,7 +391,7 @@ msgstr "Falha ao instalar pacote"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Falha ao remover o pacote"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -421,7 +421,7 @@ msgstr "Instalando %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Removendo %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -433,7 +433,7 @@ msgstr "Instalação concluída"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Remoção terminada"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -443,7 +443,7 @@ msgstr "Paote '%s' está instalado"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Pacote '%s' foi removido"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -453,7 +453,7 @@ msgstr "Falha ao instalar o pacote '%s'"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Falha ao tentar remover o pacote '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -461,7 +461,7 @@ msgstr "Instalação Completa"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Remoção completa"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -469,7 +469,7 @@ msgstr "Falha ao instalar todas as dependências"
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Falha ao tentar remover completamente o pacote"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -484,7 +484,7 @@ msgstr "Instalando '%s'..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Removendo '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -755,6 +755,7 @@ msgstr "Trocar Mídia"
 #~ "  Gustavo Franco https://launchpad.net/~stratus\n"
 #~ "  Henrique P. Machado https://launchpad.net/~zehrique\n"
 #~ "  Marcelo Pires https://launchpad.net/~marcelo-pires-silva\n"
+#~ "  Otto Robba https://launchpad.net/~otto-ottorobba\n"
 #~ "  Ricardo Moro https://launchpad.net/~rmoro\n"
 #~ "  Rodrigo Borges https://launchpad.net/~rbm0407\n"
 #~ "  Rogênio Belém https://launchpad.net/~rogeniobelem\n"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-06-07 19:12+0000\n"
-"Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
+"PO-Revision-Date: 2011-11-07 21:13+0000\n"
+"Last-Translator: Gunleif Joensen <Unknown>\n"
 "Language-Team: Faroese <fo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -23,6 +23,8 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"nýtsla: %prog [kostir] fílunavn\n"
+"Fyri eina grafiska útgávu koyr gdebi-gtk\n"
 
 #: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
@@ -59,7 +61,7 @@ msgstr "Vil tú innleggja ritbúnaðarpakkan? [j/N]"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "Lat aftur, tá innleggingin er liðug"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
@@ -67,7 +69,7 @@ msgstr ""
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Tak pakkan burtur"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -99,7 +101,7 @@ msgstr "<b>Raðfesti:</b>"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>Deild:</b>"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
 msgid "<b>Size:</b>"
@@ -115,7 +117,7 @@ msgstr "<b>Útgáva:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "Lat vindeygað aftur, ta'broytingarnar eru fullførdar"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
@@ -166,11 +168,11 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "_Tak pakka niður"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Ritstjórna"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -189,7 +191,7 @@ msgstr "Legg _inn pakka"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Opna"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -197,7 +199,7 @@ msgstr "Endu_rfríska"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "Tak pakkan bu_rtur"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -216,7 +218,7 @@ msgstr "%s er ikki tøkt"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Avrita valda tekstin"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -224,26 +226,28 @@ msgstr "Lesur inn..."
 
 #: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
-msgstr ""
+msgstr "Kann ikki taka niður sum rót"
 
 #: ../GDebi/GDebi.py:176
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Fjarpakkar kunnu ikki niðurtakast sum rót. Vinarliga royn aftur sum vanligur "
+"brúkari."
 
 #: ../GDebi/GDebi.py:189
 msgid "Downloading package"
-msgstr ""
+msgstr "Niðurtaki pakka"
 
 #: ../GDebi/GDebi.py:196
 msgid "Download failed"
-msgstr ""
+msgstr "Niðurtøka miseydnaðist"
 
 #: ../GDebi/GDebi.py:197
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "Niðurtøka av pakkanum miseydnaðist: fíla '%s' '%s'"
 
 #. set window title
 #. set name
@@ -258,11 +262,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:306
 msgid "Upstream data"
-msgstr ""
+msgstr "Uppstreymadáta"
 
 #: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
-msgstr ""
+msgstr "Brek við lesan av fílulista"
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
@@ -287,11 +291,11 @@ msgstr ""
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "Kundi ikki lesa fíluinnihaldi\"'%s'"
 
 #: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "Fíluinnihald kundi ikki pakkast út"
 
 #: ../GDebi/GDebi.py:426
 #, python-format
@@ -335,7 +339,7 @@ msgstr "Leggji inn pakkafílu..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Taki pakka burtur..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -362,11 +366,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Tú mást veita rættindi til at taka ritbúnað burtur"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Har er ein møguligur vandi við at taka pakkar burtur."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -374,7 +378,7 @@ msgstr "Miseydnaðist et leggja inn pakkafílu"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Miseydnaðist at taka pakkan burtur"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -393,6 +397,8 @@ msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Vanliga er hettar tengt at einari villu hjá ritbúnaðar-úttvegaranum. Hygg at "
+"útstøðni eftir nærri upplýsing."
 
 #: ../GDebi/GDebi.py:649
 #, python-format
@@ -402,7 +408,7 @@ msgstr "Innleggi %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Taki burtur %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -414,7 +420,7 @@ msgstr "Innlegging er liðug"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Burturtøka fullførd"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -424,7 +430,7 @@ msgstr "Pakki '%s' varð lagdur inn"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Pakkin '%s' er tikin burtur"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -434,7 +440,7 @@ msgstr "Miseydnaðist at leggja inn pakka '%s'"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Miseydnaðist at taka pakkan '%s' burtur"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -442,7 +448,7 @@ msgstr "Innlegging fullgjørd"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Burturtøka fullførd"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -466,7 +472,7 @@ msgstr "Leggi inn '%s'..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Taki burtur '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -621,7 +627,7 @@ msgstr "Sama útgávan er tøk í einari ritbúnaðarrás"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "Mælt verður til, at leggja inn ritbúnað úr rásini í staðin."
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
@@ -632,6 +638,8 @@ msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Vanliga verður mælt til at, leggja inn útgávuna úr ritbúnaðarrásini, av tí "
+"at hon oftast er betri stuðlað."
 
 #: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"

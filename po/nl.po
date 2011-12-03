@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-02-26 21:02+0000\n"
-"Last-Translator: Rachid <Unknown>\n"
+"PO-Revision-Date: 2011-09-27 07:47+0000\n"
+"Last-Translator: Pjotr12345 <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -23,7 +23,7 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
-"gebruik: %prog [opties] bestandsnaam\n"
+"gebruik: %prog [opties] bestandnaam\n"
 "Voer gdebi-gtk uit voor een grafische versie\n"
 
 #: ../gdebi:54 ../gdebi-gtk:51
@@ -41,12 +41,12 @@ msgstr "Geen informatie over de voortgang tonen"
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
-"Alleen simuleren en een lijn naar stderr schrijven die compatibel is met "
+"Alleen simuleren en een regel naar stderr schrijven die verenigbaar is met "
 "\"apt-get install\""
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
-msgstr "Gebruik een alternatieve root dir"
+msgstr "Gebruik alternatieve rootmap"
 
 #: ../gdebi:76
 #, c-format
@@ -55,23 +55,23 @@ msgstr "gdebi-fout, bestand niet gevonden: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
-msgstr "U heeft beheersrechten nodig om software te installeren"
+msgstr "Moet beheerder zijn om pakketten te installeren"
 
 #: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "Wilt u het softwarepakket installeren? [y/N]:"
+msgstr "Wilt u het softwarepakket installeren? [j/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr "Venster sluiten wanneer de installatie is voltooid"
+msgstr "Programma sluiten wanneer de installatie gereed is"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
-msgstr "Alternatieve datamap gebruiken"
+msgstr "Alternatieve gegevensmap gebruiken"
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Pakket verwijderen"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -85,9 +85,9 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 "Dit is een zeer ernstige fout in uw pakketbeheersysteem. Controleer met "
-"synaptic op gebroken pakketten, controleer de toegangsrechten en correctheid "
-"van het bestand '/etc/apt/sources.list' en herlaadt de pakketinformatie met "
-"'sudo apt-get update' en 'sudo apt-get install -f'."
+"Synaptic pakketbeheer op gebroken pakketten, controleer de toegangsrechten "
+"en correctheid van het bestand '/etc/apt/sources.list' en herlaad de "
+"pakketinformatie met 'sudo apt-get update' en 'sudo apt-get install -f'."
 
 #: ../data/gdebi.ui.h:1
 msgid "  "
@@ -123,11 +123,11 @@ msgstr "<b>Versie:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "Automatically close after the changes have been successfully applied"
-msgstr "Venster sluiten nadat de veranderingen succesvol zijn doorgevoerd"
+msgstr "Venster sluiten nadat de veranderingen succesvol zijn toegepast"
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
-msgstr "Omschrijving:"
+msgstr "Omschrijving"
 
 #: ../data/gdebi.ui.h:11
 msgid "Description:"
@@ -144,7 +144,7 @@ msgstr "GPL, zie /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr "Ingesloten bestanden"
+msgstr "Bijgevoegde bestanden"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -152,7 +152,7 @@ msgstr "Softwarepakketten installeren en bekijken"
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr "Pakketinstallatie"
+msgstr "Pakketinstalleerder"
 
 #. first, we load all the default descriptions -- pyuic doesn't use
 #. gettext as default (FIXME, copy code from language-selector)
@@ -166,7 +166,7 @@ msgstr "Status:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
-msgstr "Terminal"
+msgstr "Terminalvenster"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
@@ -182,22 +182,22 @@ msgstr "Be_werken"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
-msgstr "_Bestand"
+msgstr "Bestand"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Help"
-msgstr "_Help"
+msgstr "_Hulp"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
 msgid "_Install Package"
-msgstr "Pakket _Installeren"
+msgstr "Pakket _installeren"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Openen…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -205,7 +205,7 @@ msgstr "_Verversen"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "Pakket verwijderen"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -213,7 +213,7 @@ msgstr "Softwarepakket"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr "GDebi pakketinstallatie"
+msgstr "GDebi pakketinstalleerder"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -224,7 +224,7 @@ msgstr "%s is niet beschikbaar"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Kopieer geselecteerde tekst"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -232,7 +232,7 @@ msgstr "Bezig met laden…"
 
 #: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
-msgstr "Kan niet downloaden als root(gebruiker)"
+msgstr "Kan niet downloaden als beheerder (root)"
 
 #: ../GDebi/GDebi.py:176
 msgid ""
@@ -240,7 +240,7 @@ msgid ""
 "as a normal user."
 msgstr ""
 "Pakketten op afstand kunnen niet gedownload worden wanneer u dit programma "
-"als root uitvoert. Probeer het nogmaals als normale gebruiker."
+"als beheerder (root) uitvoert. Probeer het nogmaals als gewone gebruiker."
 
 #: ../GDebi/GDebi.py:189
 msgid "Downloading package"
@@ -260,19 +260,19 @@ msgstr "Downloaden van pakket is mislukt: bestand '%s' '%s'"
 #: ../GDebi/GDebi.py:246 ../GDebi/GDebiKDE.py:184
 #, python-format
 msgid "Package Installer - %s"
-msgstr "Pakketinstallatie - %s"
+msgstr "Pakketinstalleerder - %s"
 
 #: ../GDebi/GDebi.py:303
 msgid "Package control data"
-msgstr "Pakketcontroledata"
+msgstr "Pakketcontrolegegevens"
 
 #: ../GDebi/GDebi.py:306
 msgid "Upstream data"
-msgstr "Upstream-data"
+msgstr "Bovenstroomse gegevens"
 
 #: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
-msgstr "Fout bij lezen bestandslijst"
+msgstr "Fout bij lezen bestandlijst"
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
@@ -297,11 +297,11 @@ msgstr "Selectie is een map"
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr "Fout bij lezen bestandsinhoud '%s'"
+msgstr "Fout bij lezen bestandinhoud '%s'"
 
 #: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
-msgstr "Bestandsinhoud kan niet uitgepakt worden"
+msgstr "Bestandinhoud kan niet uitgepakt worden"
 
 #: ../GDebi/GDebi.py:426
 #, python-format
@@ -323,12 +323,14 @@ msgstr "Softwarepakketten"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Afhankelijkheidsproblemen"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Eén of meer pakketten worden vereist door %s, het kan dus niet worden "
+"verwijderd."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -336,19 +338,19 @@ msgstr "Bestand niet gevonden"
 
 #: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "U probeert een bestand te installeren dat niet (meer) bestaat. "
+msgstr "U probeerde een bestand te installeren dat niet (meer) bestaat. "
 
 #: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
-msgstr "Pakketbestand installeren…"
+msgstr "Pakketbestand aan het installeren…"
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Pakket aan het verwijderen..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
-msgstr "Ongeautoriseerde software installeren?"
+msgstr "Ongeverifieerde software installeren?"
 
 #: ../GDebi/GDebi.py:522
 msgid ""
@@ -357,15 +359,15 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"Kwaadaardige software kan uw gegevens beschadigen en de controle van uw "
+"Kwaadaardige software kan uw gegevens beschadigen en het beheer van uw "
 "computer overnemen.\n"
 "\n"
-"De onderstaande pakketten zijn ongeautoriseerd en kunnen daarom kwaadaardig "
-"zijn."
+"De onderstaande pakketten zijn ongeverifieerd en zouden daarom kwaadaardig "
+"kunnen zijn."
 
 #: ../GDebi/GDebi.py:550
 msgid "You need to grant administrative rights to install software"
-msgstr "U heeft beheersrechten nodig om software te installeren"
+msgstr "U dient beheersrechten toe te kennen om software te installeren"
 
 #: ../GDebi/GDebi.py:551
 msgid ""
@@ -379,11 +381,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "U dient beheersrechten toe te kennen om software te verwijderen"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Het is een mogelijk risico om pakketten te verwijderen."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -391,11 +393,11 @@ msgstr "Kon het pakketbestand niet installeren"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Kon pakket niet verwijderen"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
-msgstr "Niet alle vereiste bestanden konden gedownload worden"
+msgstr "Kon niet alle vereiste bestanden downloaden"
 
 #: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
@@ -403,25 +405,25 @@ msgstr "Controleer a.u.b. uw internetverbinding of installatiemedium."
 
 #: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
-msgstr "Niet alle afhankelijkheden konden geïnstalleerd worden"
+msgstr "Kon niet alle afhankelijkheden installeren"
 
 #: ../GDebi/GDebi.py:633 ../GDebi/GDebiKDE.py:348
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"Normaal wordt dit veroorzaakt door een fout van de softwaredistributeur. Zie "
-"het terminalvenster voor meer details."
+"Gewoonlijk wordt dit veroorzaakt door een fout van de softwareleverancier. "
+"Zie het terminalvenster voor meer details."
 
 #: ../GDebi/GDebi.py:649
 #, python-format
 msgid "Installing %s"
-msgstr "Installeren van %s"
+msgstr "Bezig met installeren van %s"
 
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Bezig met verwijderen van %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -429,11 +431,11 @@ msgstr ""
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
-msgstr "Installatie voltooid"
+msgstr "Installatie gereed"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Verwijdering gereed"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -443,7 +445,7 @@ msgstr "Pakket '%s' werd geïnstalleerd"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Pakket '%s' werd verwijderd"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -453,7 +455,7 @@ msgstr "Kon pakket '%s' niet installeren"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Kon pakket '%s' niet verwijderen"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -461,15 +463,15 @@ msgstr "Installatie is voltooid"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Verwijdering is voltooid"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
-msgstr "Niet alle afhankelijkheden konden volledig geïnstalleerd worden"
+msgstr "Kon niet alle afhankelijkheden volledig installeren"
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Kon pakket niet volledig verwijderen"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -481,26 +483,26 @@ msgstr ""
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "'%s' installeren…"
+msgstr "'%s' aan het installeren…"
 
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "'%s' aan het verwijderen..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
-msgstr "Afhankelijkheden installeren…"
+msgstr "Afhankelijkheden aan het installeren…"
 
 #: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "Aanvullende pakketbestanden downloaden…"
+msgstr "Aanvullende pakketbestanden aan het downloaden…"
 
 #: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr "Bestand %s van %s bij %sB/s"
+msgstr "Bestand %s van %s met %sB/s"
 
 #: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
@@ -511,11 +513,12 @@ msgstr "Bestand %s van %s"
 #: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "Voer '%s' in in het station '%s'"
+msgstr "Voer a.u.b.  '%s' in, in het station '%s'"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr "Configuratie-items moeten gespecificeerd worden met een =<waarde>\n"
+msgstr ""
+"Configuratie-elementen moeten gespecificeerd worden met een =<waarde>\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
@@ -525,7 +528,7 @@ msgstr "Kon APT-optie %s niet instellen op %s\n"
 #: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr "Onbekend pakkettype '%s', afsluiten\n"
+msgstr "Onbekend pakkettype '%s', aan het afsluiten\n"
 
 #: ../GDebi/GDebiCli.py:81
 msgid "Failed to open the software package\n"
@@ -549,15 +552,15 @@ msgstr "Geen omschrijving beschikbaar"
 
 #: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr "De volgende pakketten zijn ONGEAUTORISEERD: "
+msgstr "De volgende pakketten zijn ONGEVERIFIEERD: "
 
 #: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
-msgstr "Vereist de VERWIJDERING van de volgende pakketbestanden: "
+msgstr "Vereist de VERWIJDERING van de volgende pakketten: "
 
 #: ../GDebi/GDebiCli.py:112
 msgid "Requires the installation of the following packages: "
-msgstr "Vereist de installatie van de volgende pakketen: "
+msgstr "Vereist de installatie van de volgende pakketten: "
 
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
@@ -578,15 +581,15 @@ msgstr "Pakket &downloaden"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
-msgstr "Dit pakketbestand bestaat niet"
+msgstr "Het pakketbestand bestaat niet"
 
 #: ../GDebi/GDebiKDE.py:165
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"U heeft een niet-bestaand bestand uitgekozen voor installatie. Kies een "
-"bestaand .deb-pakketbestand."
+"U heeft een niet-bestaand bestand uitgekozen voor installatie. Kies a.u.b. "
+"een bestaand .deb-pakketbestand."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:246
@@ -623,14 +626,14 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr "'%s' is geen Debian-pakket"
+msgstr "'%s' is geen Debianpakket"
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
-"Het MIME-type van dit bestand is '%s' en kan niet geïnstalleerd worden op "
+"Het MIME-type van dit bestand is '%s' en kan niet geïnstalleerd worden in "
 "dit systeem."
 
 #: ../GDebi/GDebiCommon.py:89
@@ -676,33 +679,33 @@ msgid ""
 "since it is usually better supported."
 msgstr ""
 "Het wordt sterk aangeraden de versie van het softwarekanaal te installeren, "
-"omdat deze meestal beter ondersteund is."
+"omdat deze meestal beter wordt ondersteund."
 
 #: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
-msgstr "Aan alle afhankelijkheden is voldaan"
+msgstr "Aan alle afhankelijkheden wordt voldaan"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr "Vereist de <b>verwijdering</b> van %s pakketen\n"
+msgstr "Vereist de <b>verwijdering</b> van %s pakketten\n"
 
 #: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr "Vereist de installatie van %s pakketen"
+msgstr "Vereist de installatie van %s pakketten"
 
 #: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr "Er kan maar één softwarebeheerder tegelijkertijd actief zijn"
+msgstr "Er mag altijd maar één softwarebeheerder actief zijn"
 
 #: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Sluit eerst de andere toepassing af (bijvoorbeeld 'Updatebeheerder', "
+"Sluit a.u.b. eerst de andere toepassing af (bijvoorbeeld 'Updatebeheerder', "
 "'aptitude' of 'Synaptic')."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
@@ -760,9 +763,14 @@ msgstr "Medium wisselen"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Bert de Bruijn https://launchpad.net/~lpdebruijn\n"
 #~ "  Glennz nl https://launchpad.net/~glenn-de-groot\n"
 #~ "  Heureka https://launchpad.net/~jan-de-ridder\n"
+#~ "  JW https://launchpad.net/~jw-00000\n"
+#~ "  Jan Claeys https://launchpad.net/~janc\n"
+#~ "  Pjotr12345 https://launchpad.net/~computertip\n"
 #~ "  Rachid https://launchpad.net/~rachidbm\n"
+#~ "  brupje https://launchpad.net/~b-meijer\n"
 #~ "  cumulus007 https://launchpad.net/~cumulus-007\n"
 #~ "  rob https://launchpad.net/~rvdb"
 

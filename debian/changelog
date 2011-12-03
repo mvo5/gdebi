@@ -11,13 +11,15 @@ gdebi (0.8.3) UNRELEASED; urgency=low
       Debian archive (superseded by xz), but are still valid and
       supported by dpkg/apt (Closes: #650507).
     - Add kde-runtime to gdebi-kde dependencies for kdesu support.
+  * po/*.po:
+    - Refresh translations exported from Rosetta.
 
   [ Michael Terry ]
   * debian/control:
     - Do not pass "all" to X-Python-Version, pass ">= 2.6" instead,
       which is known to work with GDebi code (Closes: #648229).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Dec 2011 12:56:11 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Dec 2011 13:05:34 +0100
 
 gdebi (0.8.2) unstable; urgency=low
 

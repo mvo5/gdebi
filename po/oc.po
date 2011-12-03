@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -241,6 +241,8 @@ msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"Los paquets distants pòdon pas èsser telecargats al moment d'una execucion "
+"en tant que superutilizaire. Recomençatz en tant qu'utilizaire normal."
 
 #: ../GDebi/GDebi.py:189
 msgid "Downloading package"

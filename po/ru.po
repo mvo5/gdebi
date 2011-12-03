@@ -8,14 +8,18 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2010-10-24 16:46+0000\n"
-"Last-Translator: Sergey Sedov <sedov@webmail.perm.ru>\n"
+"PO-Revision-Date: 2011-10-26 11:17+0000\n"
+"Last-Translator: Nikita Putko <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:20+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
+
+#: ../data/gdebi.ui.h:22
+msgid "_Edit"
+msgstr "_Правка"
 
 #: ../gdebi:48
 #, c-format
@@ -53,7 +57,7 @@ msgstr "ошибка gdebi, файл не найден: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
-msgstr "Для установки пакетов необходимо быть пользователем root"
+msgstr "Для установки пакетов необходимо быть суперпользователем"
 
 #: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
@@ -69,7 +73,7 @@ msgstr "Использовать альтернативную директори
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Удалить пакет"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -151,7 +155,7 @@ msgstr "Программа установки и просмотра пакето
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
-msgstr "Установщик пакетов"
+msgstr "Программа установки пакетов"
 
 #. first, we load all the default descriptions -- pyuic doesn't use
 #. gettext as default (FIXME, copy code from language-selector)
@@ -175,10 +179,6 @@ msgstr "По_дробности"
 msgid "_Download Package"
 msgstr "_Загрузить пакет"
 
-#: ../data/gdebi.ui.h:22
-msgid "_Edit"
-msgstr "_Изменить"
-
 #: ../data/gdebi.ui.h:23
 msgid "_File"
 msgstr "_Файл"
@@ -196,7 +196,7 @@ msgstr "_Установить пакет"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Открыть…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -204,7 +204,7 @@ msgstr "_Обновить"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Удалить пакет"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -212,7 +212,7 @@ msgstr "Пакет программ"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr "Установщик пакетов GDebi"
+msgstr "Программа установки пакетов GDebi"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -223,7 +223,7 @@ msgstr "Поле «%s» недоступно"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Скопировать выделенный текст"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -322,12 +322,13 @@ msgstr "Пакеты программ"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Проблемы зависимостей"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Пакет «%s» требует один или несколько пакетов и не может быть удалён."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -335,7 +336,7 @@ msgstr "Файл не найден"
 
 #: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Вы пытаетесь установить файл, который не существует. "
+msgstr "Вы пытаетесь установить файл, которого не существует. "
 
 #: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
@@ -343,7 +344,7 @@ msgstr "Установка файла пакета..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Удаление пакета..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -379,11 +380,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Требуется получить права администрирования для удаления пакетов"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Удаление пакетов подвергает систему возможному риску."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -391,7 +392,7 @@ msgstr "Не удалось установить файл пакета"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Не удалось удалить пакет"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -422,7 +423,7 @@ msgstr "Установка %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Удаление %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -434,7 +435,7 @@ msgstr "Установка завершена"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Удаление закончено"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -444,7 +445,7 @@ msgstr "Пакет «%s» был установлен"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Пакет «%s» был удалён"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -454,7 +455,7 @@ msgstr "Не удалось установить пакет «%s»"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Не удалось удалить пакет «%s»"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -462,7 +463,7 @@ msgstr "Установка завершена"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Удаление завершено"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -470,7 +471,7 @@ msgstr "Не удалось полностью установить все за�
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Не удалось полностью удалить пакет"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -487,7 +488,7 @@ msgstr "Установка «%s»..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Удаление пакета «%s»..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -804,8 +805,12 @@ msgstr "Смена носителя"
 #~ "\n"
 #~ "Launchpad Contributions:\n"
 #~ "  Andrey Barilov https://launchpad.net/~andreybarilov\n"
-#~ "  Daniil https://launchpad.net/~daniil-r\n"
-#~ "  Eugene Marshal https://launchpad.net/~lowrider"
+#~ "  Eugene Marshal https://launchpad.net/~lowrider\n"
+#~ "  Nikita Putko https://launchpad.net/~ktototam98\n"
+#~ "  Sergey Davidoff https://launchpad.net/~shnatsel\n"
+#~ "  Vetal https://launchpad.net/~vetal1950\n"
+#~ "  qwa https://launchpad.net/~qwa23\n"
+#~ "  Даниил Рыжков https://launchpad.net/~daniil-r"
 
 #~ msgid "_Open..."
 #~ msgstr "_Открыть..."

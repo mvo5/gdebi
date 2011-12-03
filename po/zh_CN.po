@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-03-20 06:32+0000\n"
+"PO-Revision-Date: 2011-11-29 04:41+0000\n"
 "Last-Translator: 英华 <wantinghard@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,7 +71,7 @@ msgstr "使用另外的数据路径"
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "移除软件包"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -172,11 +172,11 @@ msgstr "细节(_D)"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "下载软件包(_D)"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "编辑(_E)"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -195,7 +195,7 @@ msgstr "安装软件包(_I)"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "打开(_O)..."
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -203,7 +203,7 @@ msgstr "刷新(_R)"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "移除软件包(_R)"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -222,7 +222,7 @@ msgstr "%s 不可用"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "复制所选文字"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -276,7 +276,7 @@ msgstr "错误： "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "错误：已不再提供 "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
@@ -319,12 +319,12 @@ msgstr "软件包"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "依赖问题"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "%s 依赖一个或多个软件包，不能移除它。"
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -340,7 +340,7 @@ msgstr "正在安装软件包文件..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "正在移除软件包..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -373,11 +373,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "您需要获得管理员权限来移除软件"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "移除软件包有潜在的风险。"
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -385,7 +385,7 @@ msgstr "安装软件包文件失败"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "移除软件包失败"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -413,7 +413,7 @@ msgstr "正在安装 %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "正在移除 %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -425,7 +425,7 @@ msgstr "安装完成"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "移除结束"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -435,7 +435,7 @@ msgstr "软件包'%s'已安装"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "软件包“%s”已移除"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -445,7 +445,7 @@ msgstr "安装软件包'%s'失败"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "移除软件包“%s”失败"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -453,7 +453,7 @@ msgstr "安装完成"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "移除完成"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -461,7 +461,7 @@ msgstr "未能完整地安装所有依赖软件包"
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "未能完全移除软件包"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -476,7 +476,7 @@ msgstr "正在安装 '%s'..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "正在移除“%s”..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -562,7 +562,7 @@ msgstr "安装软件包(&I)"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "下载软件包(&D)"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -696,7 +696,8 @@ msgstr "媒介改变"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Colin Zhao https://launchpad.net/~colin-shzsc\n"
-#~ "  Qiu Haoyu https://launchpad.net/~timothyqiu"
+#~ "  Qiu Haoyu https://launchpad.net/~timothyqiu\n"
+#~ "  英华 https://launchpad.net/~wantinghard"
 
 #~ msgid "Y"
 #~ msgstr "Y"

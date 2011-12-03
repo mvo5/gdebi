@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-08-28 20:09+0000\n"
-"Last-Translator: Sandra Gucul-Milojevic <Unknown>\n"
+"PO-Revision-Date: 2011-10-31 21:01+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Launchpad Serbian Translators\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:00+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 "Language: sr\n"
 
 #: ../gdebi:48
@@ -72,7 +72,7 @@ msgstr "Користи алтернативни директоријум под�
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Уклони пакет"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -198,7 +198,7 @@ msgstr "И_нсталирај пакет"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Отвори…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -206,7 +206,7 @@ msgstr "О_свежи"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Уклони пакет"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -225,7 +225,7 @@ msgstr "„%s“ није доступан"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Умножи изабрани текст"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -324,12 +324,12 @@ msgstr "Софтверски пакети"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Проблеми са зависностима"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "„%s“ захтева један или више пакета, не може бити уклоњен."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -345,11 +345,11 @@ msgstr "Инсталирам датотеку пакета..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Уклањам пакет..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
-msgstr "Да инсталирам неауторизовани софтвер?"
+msgstr "Да инсталирам неовлашћени софтвер?"
 
 #: ../GDebi/GDebi.py:522
 msgid ""
@@ -382,10 +382,11 @@ msgstr ""
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
 msgstr ""
+"Потребно је да гарантујете администраторска права да бисте уклонили софтвер"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Увек постоји ризик приликом уклањања пакета."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -393,7 +394,7 @@ msgstr "Нисам успео да инсталирам датотеку пак�
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Нисам успео да уклоним пакет"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -423,7 +424,7 @@ msgstr "Инсталирам „%s“"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Уклањам „%s“"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -435,7 +436,7 @@ msgstr "Инсталација је завршена"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Уклањање је завршено"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -445,7 +446,7 @@ msgstr "Пакет „%s“ је инсталиран"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Пакет „%s“ је уклоњен"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,7 +456,7 @@ msgstr "Нисам успео да инсталирам пакет „%s“"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Нисам успео да уклоним пакет „%s“"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -463,7 +464,7 @@ msgstr "Инсталација је завршена"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Уклањање је обављено"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -471,7 +472,7 @@ msgstr "Нисам успео у потпуности да инсталирам 
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Нисам успео у потпуности да уклоним пакет"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -487,7 +488,7 @@ msgstr "Инсталирам „%s“..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Уклањам „%s“..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."

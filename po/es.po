@@ -39,8 +39,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-09-17 16:21+0000\n"
-"X-Generator: Launchpad (build 13955)\n"
+"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
+"X-Generator: Launchpad (build 14418)\n"
 "Language: es\n"
 
 #: ../gdebi:48
@@ -54,30 +54,30 @@ msgstr ""
 
 #: ../gdebi:54 ../gdebi-gtk:51
 msgid "Run non-interactive (dangerous!)"
-msgstr "Ejecución no interactiva (peligroso)."
+msgstr "Ejecución no interactiva (peligroso)"
 
 #: ../gdebi:58
 msgid "Set an APT configuration option"
-msgstr "Define una opción de configuración de APT."
+msgstr "Definir una opción de configuración de APT"
 
 #: ../gdebi:62
 msgid "Do not show progress information"
-msgstr "No muestra información del progreso."
+msgstr "No mostrar información del progreso"
 
 #: ../gdebi:66
 msgid "Simulate only and print a apt-get install compatible line to stderr"
 msgstr ""
-"Simula la acción y muestra una línea compatible con «apt-get install» a "
-"través de la salida de error estándar."
+"Solo simular la acción y mostrar una línea compatible con «apt-get install» "
+"a través de la salida de error estándar"
 
 #: ../gdebi:68
 msgid "Use alternative root dir"
-msgstr "Usa un directorio raíz alternativo."
+msgstr "Usar un directorio raíz alternativo"
 
 #: ../gdebi:76
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr "Fallo de gdebi, archivo no encontrado: %s\n"
+msgstr "Error de gdebi, archivo no encontrado: %s\n"
 
 #: ../gdebi:95 ../gdebi:105
 msgid "Need to be root to install packages"
@@ -85,7 +85,7 @@ msgstr "Necesita ser el administrador para instalar paquetes."
 
 #: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "¿Desea instalar el paquete de software? [s/N]:"
+msgstr "¿Quiere instalar el paquete de software? [s/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
@@ -101,7 +101,7 @@ msgstr "Eliminar paquete"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
-msgstr "El índice de software está roto."
+msgstr "El índice de software está dañado"
 
 #: ../gdebi-gtk:79
 msgid ""
@@ -170,7 +170,7 @@ msgstr "GPL, véase «/usr/share/common-licenses/GPL»"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr "Ficheros incluidos"
+msgstr "Archivos incluidos"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
@@ -196,7 +196,7 @@ msgstr "Terminal"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr "De_talles"
+msgstr "_Detalles"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
@@ -212,7 +212,7 @@ msgstr "_Archivo"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Help"
-msgstr "_Ayuda"
+msgstr "Ay_uda"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
@@ -227,7 +227,7 @@ msgstr "_Abrir…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
-msgstr "_Recargar"
+msgstr "_Actualizar"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
@@ -254,7 +254,7 @@ msgstr "Copiar el texto seleccionado"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
-msgstr "Cargando..."
+msgstr "Cargando…"
 
 #: ../GDebi/GDebi.py:175
 msgid "Can not download as root"
@@ -274,7 +274,7 @@ msgstr "Descargando paquete"
 
 #: ../GDebi/GDebi.py:196
 msgid "Download failed"
-msgstr "No se ha completado la descarga"
+msgstr "Ha fallado la descarga"
 
 #: ../GDebi/GDebi.py:197
 #, python-format
@@ -298,7 +298,7 @@ msgstr "Datos de la fuente original"
 
 #: ../GDebi/GDebi.py:312
 msgid "Error reading filelist"
-msgstr "Error al leer la lista de ficheros"
+msgstr "Error al leer la lista de archivos"
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
@@ -323,11 +323,11 @@ msgstr "La selección es un directorio"
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr "Error al leer los contenidos del fichero «%s»"
+msgstr "Error al leer los contenidos del archivo «%s»"
 
 #: ../GDebi/GDebi.py:415
 msgid "File content can not be extracted"
-msgstr "El contenido del fichero no se puede extraer"
+msgstr "No se puede extraer el contenido del archivo"
 
 #: ../GDebi/GDebi.py:426
 #, python-format
@@ -358,7 +358,7 @@ msgstr "Uno o mas paquetes son necesario por %s, no se puede eliminar."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
-msgstr "Archivo no encotrado"
+msgstr "Archivo no encontrado"
 
 #: ../GDebi/GDebi.py:505
 msgid "You tried to install a file that does not (or no longer) exist. "
@@ -366,7 +366,7 @@ msgstr "Intentó instalar un archivo que no (o que ya no) existe. "
 
 #: ../GDebi/GDebi.py:516
 msgid "Installing package file..."
-msgstr "Instalando el archivo de paquete..."
+msgstr "Instalando el archivo de paquete…"
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
@@ -421,12 +421,11 @@ msgstr "No se pudo eliminar el paquete"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
-msgstr "No se han podido descargar todos los ficheros requeridos"
+msgstr "No se han podido descargar todos los archivos requeridos"
 
 #: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
 msgid "Please check your internet connection or installation medium."
-msgstr ""
-"Por favor, compruebe su conexión a Internet o el soporte de instalación."
+msgstr "Compruebe su conexión a Internet o el soporte de instalación."
 
 #: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
 msgid "Could not install all dependencies"
@@ -456,7 +455,7 @@ msgstr "Quitando %s"
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
 msgid "Installation finished"
-msgstr "Instalación completa"
+msgstr "Instalación finalizada"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
@@ -484,7 +483,7 @@ msgstr "Falló quitar paquete '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
-msgstr "Instalación completa"
+msgstr "Instalación completada"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
@@ -509,7 +508,7 @@ msgstr ""
 #: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
 #, python-format
 msgid "Installing '%s'..."
-msgstr "Instalando «%s»..."
+msgstr "Instalando «%s»…"
 
 #: ../GDebi/GDebi.py:826
 #, python-format
@@ -518,28 +517,28 @@ msgstr "Quitando '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
-msgstr "Instalando dependencias..."
+msgstr "Instalando dependencias…"
 
 #: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
 #: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
 msgid "Downloading additional package files..."
-msgstr "Descargando archivos de paquetes adicionales..."
+msgstr "Descargando archivos de paquetes adicionales…"
 
 #: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr "Fichero %s de %s a %sB/s"
+msgstr "Archivo %s de %s a %sB/s"
 
 #: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
-msgstr "Fichero %s de %s"
+msgstr "Archivo %s de %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "Por favor, inserte «%s» en la unidad «%s»"
+msgstr "Inserte «%s» en la unidad «%s»"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
@@ -566,7 +565,7 @@ msgid ""
 "Check the permissions of the file.\n"
 msgstr ""
 "El paquete podría estar dañado, o puede que usted no tenga permisos para "
-"abrir el fichero. Revise los permisos del fichero.\n"
+"abrir el archivo. Revise los permisos del archivo.\n"
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
@@ -595,7 +594,7 @@ msgstr "Error durante la instalación: «%s»"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
-msgstr "Ficheros incluidos"
+msgstr "Archivos incluidos"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
@@ -607,7 +606,7 @@ msgstr "&Descargar paquete"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
-msgstr "El fichero de paquete no existe"
+msgstr "El archivo de paquete no existe"
 
 #: ../GDebi/GDebiKDE.py:165
 msgid ""
@@ -615,7 +614,7 @@ msgid ""
 "existing .deb package file."
 msgstr ""
 "El paquete seleccionado para su instalación no existe. Seleccione un archivo "
-"de paquete «.deb» existente."
+"de paquete .deb existente."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:246
@@ -672,7 +671,7 @@ msgid ""
 "Check the permissions of the file."
 msgstr ""
 "El paquete podría estar dañado, o puede que usted no tenga permisos para "
-"abrir el fichero. Revise los permisos del fichero."
+"abrir el archivo. Revise los permisos del archivo."
 
 #: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
@@ -696,7 +695,7 @@ msgstr ""
 
 #: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
-msgstr "Dispone de una versión posterior en un canal de software"
+msgstr "Dispone de una versión más reciente en un canal de software"
 
 #: ../GDebi/GDebiCommon.py:122
 msgid ""
@@ -738,7 +737,7 @@ msgstr ""
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
 msgid "Media Change"
-msgstr "Cambio de dispositivo"
+msgstr "Cambio de soporte"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
@@ -777,13 +776,11 @@ msgstr "Cambio de dispositivo"
 #~ "  Fitoschido https://launchpad.net/~fitoschido\n"
 #~ "  Javi Sol https://launchpad.net/~javisolcorreo\n"
 #~ "  Julián Unrrein https://launchpad.net/~junrrein\n"
+#~ "  Martin Albisetti https://launchpad.net/~beuno\n"
 #~ "  Paco Molinero https://launchpad.net/~franciscomol\n"
 #~ "  Ricardo Pérez López https://launchpad.net/~ricardo\n"
 #~ "  Seba Polanco https://launchpad.net/~spolanco\n"
 #~ "  juancarlospaco https://launchpad.net/~juancarlospaco"
-
-#~ msgid "_Open..."
-#~ msgstr "_Abrir..."
 
 #, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
@@ -839,3 +836,6 @@ msgstr "Cambio de dispositivo"
 #~ msgstr ""
 #~ "Descomprimido automáticamente:\n"
 #~ "\n"
+
+#~ msgid "_Open..."
+#~ msgstr "_Abrir…"
