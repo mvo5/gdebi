@@ -3,18 +3,21 @@ gdebi (0.8.3) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * data/gdebi.desktop.in:
     - Append %f to Exec parameter (LP: #803729).
+  * GDebi/GDebiKDE.py:
+    - Invoke kdesu instead of kdesudo in Debian (Closes: #641078).
   * debian/control:
     - Suggest xz-lzma to provide support for lzma compresed packages,
       they are not very common as lzma is no longer supported by
       Debian archive (superseded by xz), but are still valid and
       supported by dpkg/apt (Closes: #650507).
+    - Add kde-runtime to gdebi-kde dependencies for kdesu support.
 
   [ Michael Terry ]
   * debian/control:
     - Do not pass "all" to X-Python-Version, pass ">= 2.6" instead,
       which is known to work with GDebi code (Closes: #648229).
 
- -- Luca Falavigna <dktrkranz@debomatic64.debian.net>  Fri, 02 Dec 2011 15:37:40 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Dec 2011 12:56:11 +0100
 
 gdebi (0.8.2) unstable; urgency=low
 
