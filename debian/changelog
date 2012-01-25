@@ -1,11 +1,11 @@
-gdebi (0.8.4) UNRELEASED; urgency=low
+gdebi (0.8.4) unstable; urgency=low
 
   * GDebi/GDebiKDE.py:
     - Fix execl invocation (Closes: #654456).
   * debian/control:
     - Add kdebase-runtime as optional dependency for gdebi-kde.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Wed, 25 Jan 2012 23:20:44 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 25 Jan 2012 23:37:55 +0100
 
 gdebi (0.8.3) unstable; urgency=low
 
