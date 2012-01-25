@@ -1,3 +1,10 @@
+gdebi (0.8.4) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Add kdebase-runtime as optional dependency for gdebi-kde.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 25 Jan 2012 22:53:32 +0100
+
 gdebi (0.8.3) unstable; urgency=low
 
   [ Luca Falavigna ]
