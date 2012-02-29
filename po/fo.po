@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-11-07 21:13+0000\n"
+"PO-Revision-Date: 2011-12-12 19:11+0000\n"
 "Last-Translator: Gunleif Joensen <Unknown>\n"
 "Language-Team: Faroese <fo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
-"X-Generator: Launchpad (build 14418)\n"
+"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
+"X-Generator: Launchpad (build 14874)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -322,7 +322,7 @@ msgstr ""
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "%s tørvar ein ella fleiri pakkar, og kann ikki takast burtur."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -546,7 +546,7 @@ msgstr "Krevur innlegging av hesum pakkunum: "
 #: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "Brek undir innlegging: '%s'"
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"

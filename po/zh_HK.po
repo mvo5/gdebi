@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
-"X-Generator: Launchpad (build 14418)\n"
+"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
+"X-Generator: Launchpad (build 14874)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -55,11 +55,11 @@ msgstr ""
 
 #: ../gdebi:107 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "要安裝軟體套件嗎？[y/N]:"
 
 #: ../gdebi-gtk:54
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "安裝完成後自動關閉"
 
 #: ../gdebi-gtk:56
 msgid "Use alternative datadir"
@@ -119,28 +119,28 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
 msgid "Description"
-msgstr "詳細說明"
+msgstr "說明"
 
 #: ../data/gdebi.ui.h:11
 msgid "Description:"
-msgstr ""
+msgstr "說明："
 
 #: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
 #: ../GDebi/GDebiKDE.py:296
 msgid "Details"
-msgstr "細節"
+msgstr "詳情"
 
 #: ../data/gdebi.ui.h:13
 msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL，請參看/usr/share/common-licenses/GPL"
+msgstr "GPL，請參看 /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:14
 msgid "Included files"
-msgstr ""
+msgstr "包含檔案"
 
 #: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
 msgid "Install and view software packages"
-msgstr ""
+msgstr "安裝和檢視軟件套件"
 
 #: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
 msgid "Package Installer"
@@ -158,11 +158,11 @@ msgstr "狀態："
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
-msgstr "文字終端機"
+msgstr "終端機"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Details"
-msgstr ""
+msgstr "詳情(_D)"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
@@ -178,7 +178,7 @@ msgstr "檔案(_F)"
 
 #: ../data/gdebi.ui.h:24
 msgid "_Help"
-msgstr "說明(_H)"
+msgstr "求助(_H)"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
@@ -205,14 +205,14 @@ msgstr ""
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "GDebi 套件安裝程式"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:39
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "缺少 %s"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
@@ -266,15 +266,15 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:323
 msgid "Error: "
-msgstr ""
+msgstr "錯誤: "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "錯誤：不再提供 "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
-msgstr ""
+msgstr "已安裝相同版本"
 
 #: ../GDebi/GDebi.py:355
 msgid "_Reinstall Package"
@@ -282,7 +282,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:401
 msgid "Selection is a directory"
-msgstr ""
+msgstr "選擇的是資料夾"
 
 #: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
 #, python-format
@@ -296,12 +296,12 @@ msgstr ""
 #: ../GDebi/GDebi.py:426
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>將移除：%s</b>"
+msgstr "<b>將要刪除：%s</b>"
 
 #: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
-msgstr "將安裝：%s"
+msgstr "將要安裝：%s"
 
 #: ../GDebi/GDebi.py:443
 msgid "Open Software Package"
@@ -396,7 +396,7 @@ msgstr ""
 #: ../GDebi/GDebi.py:649
 #, python-format
 msgid "Installing %s"
-msgstr "安裝%s"
+msgstr "安裝 %s"
 
 #: ../GDebi/GDebi.py:652
 #, python-format
@@ -478,7 +478,7 @@ msgstr ""
 #: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr ""
+msgstr "檔案 %s / %s (速度：%s 位元組/秒)"
 
 #: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
@@ -517,15 +517,15 @@ msgstr ""
 
 #: ../GDebi/GDebiCli.py:88
 msgid "This package is uninstallable\n"
-msgstr ""
+msgstr "此套件無法安裝\n"
 
 #: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
 msgid "No description is available"
-msgstr ""
+msgstr "沒有說明"
 
 #: ../GDebi/GDebiCli.py:103
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "以下套件是＊未經認證＊的： "
 
 #: ../GDebi/GDebiCli.py:107
 msgid "Requires the REMOVAL of the following packages: "
@@ -542,7 +542,7 @@ msgstr ""
 
 #: ../GDebi/GDebiKDE.py:136
 msgid "Included Files"
-msgstr ""
+msgstr "包含檔案"
 
 #: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
 msgid "&Install Package"
@@ -590,11 +590,13 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"您的系統有斷裂相依關係。除非修正問題，否則本應用程式不能繼續運作。在終端機視窗執行 'gksudo synaptic' 或 'sudo apt-get "
+"install -f' 修正。"
 
 #: ../GDebi/GDebiCommon.py:84
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "'%s' 不是 Debian 套件"
 
 #: ../GDebi/GDebiCommon.py:85
 #, python-format
@@ -605,7 +607,7 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:89
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "無法開啟「%s」"
 
 #: ../GDebi/GDebiCommon.py:90
 msgid ""
@@ -615,31 +617,31 @@ msgstr ""
 
 #: ../GDebi/GDebiCommon.py:109
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "在軟體頻道有相同版本"
 
 #: ../GDebi/GDebiCommon.py:110
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "建議安裝軟體頻道的版本。"
 
 #: ../GDebi/GDebiCommon.py:114
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "在軟體頻道有較舊版本"
 
 #: ../GDebi/GDebiCommon.py:115
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
-msgstr ""
+msgstr "一般情況下建議安裝軟體頻道的版本，因為會有較好的支援。"
 
 #: ../GDebi/GDebiCommon.py:120
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "在軟體頻道有較新版本"
 
 #: ../GDebi/GDebiCommon.py:122
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
-msgstr ""
+msgstr "強烈建議安裝軟體頻道的版本，因為有較好支援。"
 
 #: ../GDebi/GDebiCommon.py:164
 msgid "All dependencies are satisfied"
@@ -649,12 +651,12 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:167
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "需要<b>刪除</b>套件 %s\n"
 
 #: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "需要安裝套件 %s"
 
 #: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
 msgid "Only one software management tool is allowed to run at the same time"
@@ -664,7 +666,7 @@ msgstr ""
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
+msgstr "請先關閉其他應用程式，如「更新管理員」、「aptitude」或「Synaptic 套件管理程式」。"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:226
@@ -679,3 +681,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Walter Cheuk https://launchpad.net/~wwycheuk"
+
+#~ msgid "_Open..."
+#~ msgstr "開啟(_O)..."

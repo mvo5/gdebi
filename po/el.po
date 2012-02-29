@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-06-27 11:23+0000\n"
-"Last-Translator: Shehzad Ashiq Ali <Unknown>\n"
+"PO-Revision-Date: 2012-01-23 12:01+0000\n"
+"Last-Translator: Christos Spyroglou <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-03 12:01+0000\n"
-"X-Generator: Launchpad (build 14418)\n"
+"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
+"X-Generator: Launchpad (build 14874)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -71,7 +71,7 @@ msgstr "Χρήση εναλλακτικού καταλόγου δεδομένω�
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Αφαίρεση πακέτου"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -198,7 +198,7 @@ msgstr "_Εγκατάσταση πακέτου"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "Άν_οιγμα…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -206,7 +206,7 @@ msgstr "_Ανανέωση"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "Α_φαίρεση πακέτου"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -225,7 +225,7 @@ msgstr "Το %s δεν είναι διαθέσιμο"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Αντιγραφή επιλεγμένου κειμένου"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -324,12 +324,13 @@ msgstr "Πακέτα λογισμικού"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Πρόβλημα εξάρτησης"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Ένα ή περισσότερα πακέτα απαιτούνται από το %s, δεν μπορεί να αφαιρεθεί."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -345,7 +346,7 @@ msgstr "Εγκατάσταση πακέτου..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Αφαίρεση πακέτου..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -381,10 +382,12 @@ msgstr ""
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
 msgstr ""
+"Χρειάζεται να παραχωρήσετε δικαιώματα διαχείρισης για την αφαίρεση του "
+"λογισμικού"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Η αφαίρεση πακέτων είναι πιθανώς επικίνδυνη."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -392,7 +395,7 @@ msgstr "Αποτυχία εγκατάστασης πακέτου"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Αποτυχία αφαίρεσης πακέτου"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -423,7 +426,7 @@ msgstr "Εγκατάσταση του %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Αφαίρεση του %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -435,7 +438,7 @@ msgstr "Η εγκατάσταση ολοκληρώθηκε"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Η αφαίρεση τελείωσε"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -445,7 +448,7 @@ msgstr "Το πακέτο '%s' εγκαταστάθηκε"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Το πακέτο '%s' αφαιρέθηκε"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -455,7 +458,7 @@ msgstr "Αδυναμία εγκατάστασης του πακέτου '%s'"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Αποτυχία αφαίρεσης του πακέτου '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -463,7 +466,7 @@ msgstr "Η εγκατάσταση ολοκληρώθηκε"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Η αφαίρεση ολοκληρώθηκε"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -471,7 +474,7 @@ msgstr "Αδυναμία εγκατάστασης όλων των εξαρτήσ
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Αποτυχία ολοκληρωτικής αφαίρεσης του πακέτου"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -487,7 +490,7 @@ msgstr "Εγκατάσταση του '%s'..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Απομάκρυνση '%s'..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -779,6 +782,8 @@ msgstr "Αλλαγή μέσου"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Christos Spyroglou https://launchpad.net/~cspyroglou\n"
+#~ "  Fotis Tsamis https://launchpad.net/~phantomas\n"
 #~ "  Salih EMIN https://launchpad.net/~salih-emin\n"
 #~ "  Shehzad Ashiq Ali https://launchpad.net/~shehzadashiq\n"
 #~ "  Simos Xenitellis https://launchpad.net/~simosx"
