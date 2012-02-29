@@ -32,6 +32,7 @@ Depends: ${python:Depends},
          gdebi-core (= ${source:Version}),
          gir1.2-gtk-3.0,
          gir1.2-vte-2.90,
+         python-gi,
          gksu,
          gnome-icon-theme
 Recommends: libgtk2-perl, shared-mime-info
