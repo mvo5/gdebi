@@ -1,3 +1,10 @@
+gdebi (0.8.5) UNRELEASED; urgency=low
+
+  * GDebi/GDebiKDE.py:
+    - Check whether model and path are set (LP: #917802, #912389).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 29 Feb 2012 22:14:28 +0100
+
 gdebi (0.8.4) unstable; urgency=low
 
   * GDebi/GDebiKDE.py:

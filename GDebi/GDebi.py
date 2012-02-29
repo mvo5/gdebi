@@ -390,6 +390,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         " the selection in the files list chanaged "
         model = treeview.get_model()
         (path, col) = treeview.get_cursor()
+        if not (model and path):
+            return
         name = model[path][0]
         # if we are at the top-level, do nothing
         if path.get_depth() < 2:
