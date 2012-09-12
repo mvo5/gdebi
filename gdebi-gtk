@@ -48,15 +48,15 @@ if __name__ == "__main__":
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
-                      help=_("Run non-interactive (dangerous!)"))
+                      help=unicode(_("Run non-interactive (dangerous!)"),"UTF-8"))
     parser.add_option("--auto-close", "",
                       action="store_true", default=False,
-                      help=_("Auto close when the install is finished"))
+                      help=unicode(_("Auto close when the install is finished"),"UTF-8"))
     parser.add_option("--datadir", "", default="",
-                      help=_("Use alternative datadir"))
+                      help=unicode(_("Use alternative datadir"),"UTF_8"))
     parser.add_option("-r", "--remove", default="False",
                       action="store_true", dest="remove",
-                      help=_("Remove package"))
+                      help=unicode(_("Remove package"),"UTF-8"))
     (options, args) = parser.parse_args()
 
     if options.datadir:

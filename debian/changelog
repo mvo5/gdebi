@@ -1,5 +1,7 @@
 gdebi (0.8.6) UNRELEASED; urgency=low
 
+  * gdebi-gtk, gdebi-kde:
+    - Convert help options with unicode (LP: #976253).
   * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
     - Also handle ValueError exception (LP: #980457).
   * debian/control:

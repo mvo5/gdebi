@@ -64,7 +64,7 @@ if __name__ == "__main__":
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
-                      help=_("Run non-interactive (dangerous!)"))
+                      help=unicode(_("Run non-interactive (dangerous!)"),"UTF-8"))
     (options, args) = parser.parse_args()
     
     try:
