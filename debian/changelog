@@ -1,5 +1,7 @@
 gdebi (0.8.6) UNRELEASED; urgency=low
 
+  * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
+    - Also handle ValueError exception (LP: #980457).
   * debian/control:
     - Add xz-utils to gdebi-core Suggests field (Closes: #685193).
 

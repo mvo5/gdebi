@@ -77,7 +77,7 @@ class GDebiCli(object):
             else:
                 sys.stderr.write(_("Unknown package type '%s', exiting\n") % file)
                 sys.exit(1)
-        except (IOError,SystemError),e:
+        except (IOError,SystemError,ValueError),e:
             sys.stderr.write(_("Failed to open the software package\n"))
             sys.stderr.write(_("The package might be corrupted or you are not "
                            "allowed to open the file. Check the permissions "
