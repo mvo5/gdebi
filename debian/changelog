@@ -1,3 +1,10 @@
+gdebi (0.8.6) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Add xz-utils to gdebi-core Suggests field (Closes: #685193).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Wed, 12 Sep 2012 23:16:18 +0200
+
 gdebi (0.8.5) unstable; urgency=low
 
   * GDebi/GDebi.py:
