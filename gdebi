@@ -94,8 +94,7 @@ if __name__ == "__main__":
         if os.getuid() != 0:
             print _("Need to be root to install packages")
             sys.exit(1)
-        debi.install()
-        sys.exit(0)
+        sys.exit(debi.install())
 
     # show information
     debi.show_dependencies()
@@ -113,4 +112,4 @@ if __name__ == "__main__":
     except IndexError:
         c = "y"
     if res.lower().startswith(c):
-        debi.install()
+        sys.exit(debi.install())

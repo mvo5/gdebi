@@ -141,9 +141,7 @@ class GDebiCli(object):
             #    os.system("gdebi %s_%s_*.deb" % (i,self._deb["Version"]))
             pass
         else:
-            ret = call(["dpkg","--auto-deconfigure", "-i",self._deb.filename])
-            if (ret != 0):
-                return False
+            return call(["dpkg","--auto-deconfigure", "-i",self._deb.filename])
         return True
         
 
@@ -160,4 +158,4 @@ if __name__ == "__main__":
     except IndexError:
         c = "y"
     if res.lower().startswith(c):
-        app.install()
+        sys.exit(app.install())
