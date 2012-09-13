@@ -44,13 +44,6 @@ import gettext
 from GDebiCommon import GDebiCommon, utf8, _
 from KDEAptDialogs import *
 
-# HACK - Ubuntu specific configuration
-try:
-    import lsb_release
-    UBUNTU = lsb_release.get_distro_information()['ID'] == 'Ubuntu'
-except Exception, e:
-    UBUNTU=False
-
 def __(catalog,str):
     return unicode(gettext.dgettext(catalog, str), 'UTF-8')
 
@@ -310,9 +303,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             else:
                 executable = "/usr/bin/gdebi-kde"
             print "executable " + executable
-            if UBUNTU:
-                su_cmd = "/usr/bin/kdesudo"
-            else:
+            su_cmd = "/usr/bin/kdesudo"
+            if not os.access(su_cmd, os.X_OK):
                 su_cmd = "/usr/lib/kde4/libexec/kdesu"
             os.execl(su_cmd, os.path.basename(su_cmd), executable, "-n", self._deb.filename)
             self.kapp.exit()

@@ -8,6 +8,8 @@ gdebi (0.8.6) UNRELEASED; urgency=low
     - Port to new GIO API (LP: #858700).
   * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
     - Also handle ValueError exception (LP: #980457).
+  * GDebi/GDebiKDE.py:
+    - Fall-back on kdesu if kdesudo is not avaliable (LP: #949869).
   * debian/control:
     - Add xz-utils to gdebi-core Suggests field (Closes: #685193).
   * po/pt.po:
