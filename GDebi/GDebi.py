@@ -157,7 +157,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         
         self.window_main.set_sensitive(True)
 
-    def gio_progress_callback(self, bytes_read, bytes_total):
+    def gio_progress_callback(self, bytes_read, bytes_total, data):
         self.progressbar_download.set_fraction(bytes_read/float(bytes_total))
         while Gtk.events_pending():
             Gtk.main_iteration()
@@ -179,7 +179,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             sys.exit(1)
         # Download the file
         temp_file_name = os.path.join(tempfile.mkdtemp(),os.path.basename(file))
-        gio_dest = Gio.File(temp_file_name)
+        gio_dest = Gio.file_new_for_path(temp_file_name)
         try:
             # download
             gio_cancellable = Gio.Cancellable()
@@ -187,8 +187,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.dialog_gio_download.set_transient_for(self.window_main)
             self.dialog_gio_download.show()
             self.label_action.set_text(_("Downloading package"))
-            if gio_file.copy(gio_dest, self.gio_progress_callback, 0,
-                             gio_cancellable):
+            if gio_file.copy(gio_dest, 0, gio_cancellable,
+                             self.gio_progress_callback, 0):
                 file = gio_dest.get_path()
             self.dialog_gio_download.hide()
         except Exception, e:

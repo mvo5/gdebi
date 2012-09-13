@@ -4,6 +4,8 @@ gdebi (0.8.6) UNRELEASED; urgency=low
     - Return dpkg error code (LP: #1033631).
   * gdebi-gtk, gdebi-kde:
     - Convert help options with unicode (LP: #976253).
+  * GDebi/GDebi.py:
+    - Port to new GIO API (LP: #858700).
   * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
     - Also handle ValueError exception (LP: #980457).
   * debian/control:
@@ -12,7 +14,7 @@ gdebi (0.8.6) UNRELEASED; urgency=low
     - Fix translation string which erroneously used three format string
       parameters instead of two (LP: #964895).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 12:02:31 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 20:28:05 +0200
 
 gdebi (0.8.5) unstable; urgency=low
 
