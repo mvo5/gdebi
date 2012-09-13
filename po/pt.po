@@ -490,7 +490,7 @@ msgstr "Ficheiro %s de %s a %s/s"
 #: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
 #, python-format
 msgid "File %s of %s"
-msgstr "Ficheiro %s de %s a %s/s"
+msgstr "Ficheiro %s de %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
