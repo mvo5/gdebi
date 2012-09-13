@@ -102,10 +102,6 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.context=self.statusbar_main.get_context_id("context_main_window")
         self.statusbar_main.push(self.context,_("Loading..."))
 
-        self.window_main.set_sensitive(False)
-        self.notebook_details.set_sensitive(False)
-        self.hbox_main.set_sensitive(False)
-
         # show what we have
         self.window_main.realize()
         self.window_main.show()

@@ -6,6 +6,8 @@ gdebi (0.8.6) UNRELEASED; urgency=low
     - Convert help options with unicode (LP: #976253).
   * GDebi/GDebi.py:
     - Port to new GIO API (LP: #858700).
+  * GDebi/GDebi.py, data/gdebi.ui:
+    - Mark menu and labels as sensitive at startup (LP: #1000014).
   * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
     - Also handle ValueError exception (LP: #980457).
   * GDebi/GDebiKDE.py:
@@ -16,7 +18,7 @@ gdebi (0.8.6) UNRELEASED; urgency=low
     - Fix translation string which erroneously used three format string
       parameters instead of two (LP: #964895).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 20:28:05 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 23:30:32 +0200
 
 gdebi (0.8.5) unstable; urgency=low
 
