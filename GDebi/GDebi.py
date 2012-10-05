@@ -67,7 +67,7 @@ except Exception, e:
 class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
-        GDebiCommon.__init__(self,datadir,options,file)
+        GDebiCommon.__init__(self,datadir, options, file)
         localesApp="gdebi"
         localesDir="/usr/share/locale"
 
@@ -314,7 +314,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.textview_lintian_output.modify_font(font_desc)
 
         # run lintian async
-        self._run_lintian(filename)
+        if self._options and self._options.non_interactive is False:
+            self._run_lintian(filename)
 
         # check the deps
         if not self._deb.check():
