@@ -394,21 +394,35 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                   "Please install using sudo apt-get install lintian"))
             return
         buf.set_text(_("Running lintian..."))
-        cmd = ["/usr/bin/lintian", "-v", filename]
+        self._lintian_output = ""
+        self._lintian_exit_status = None
+        cmd = ["/usr/bin/lintian", filename]
         (pid, stdin, stdout, stderr) = GLib.spawn_async(
             cmd, flags=GObject.SPAWN_DO_NOT_REAP_CHILD,
             standard_output=True, standard_error=True)
+        for fd in [stdout, stderr]:
+            channel = GLib.IOChannel(filedes=fd)
+            channel.set_flags(GLib.IOFlags.NONBLOCK)
+            channel.add_watch(GLib.IOCondition.IN, self._on_lintian_output)
         GObject.child_watch_add(
-            pid, self._on_lintian_finished, (stdout, stderr))
+            pid, self._on_lintian_finished)
 
-    def _on_lintian_finished(self, pid, condition, (stdout, stderr)):
-        return_code = os.WEXITSTATUS(condition)
-        text = _("Lintian exited with status: %s\n") % return_code
-        text += os.read(stdout, 4096) or ""
-        text += "\n\n"
-        text += os.read(stderr, 4096) or ""
+    def _on_lintian_finished(self, pid, condition):
+        exit_status = os.WEXITSTATUS(condition)
+        self._lintian_exit_status = exit_status
+        text = _("\nLintian finished with exit status %s") % exit_status
+        self._lintian_output += text
         buf = self.textview_lintian_output.get_buffer()
-        buf.set_text(text)
+        buf.set_text(self._lintian_output)
+
+    def _on_lintian_output(self, gio_file, condition):
+        if condition & GLib.IOCondition.IN:
+            content = gio_file.read()
+            if content:
+                self._lintian_output += content
+                buf = self.textview_lintian_output.get_buffer()
+                buf.set_text(self._lintian_output)
+        return True
 
     def on_treeview_files_cursor_changed(self, treeview):
         " the selection in the files list chanaged "

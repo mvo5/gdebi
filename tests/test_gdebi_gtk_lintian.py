@@ -10,12 +10,7 @@ from mock import patch
 from GDebi.GDebi import GDebi
 from GDebi.GDebiCommon import GDebiCommon
 
-EXPECTED_LINTIAN_OUTPUT = """Lintian exited with status: 1
-N: Using profile ubuntu/main.
-N: Setting up lab in /tmp/temp-lintian-lab-rRN1v73UQF ...
-N: ----
-N: Processing binary package error-package (version 1.0, arch all) ...
-E: error-package: file-in-etc-not-marked-as-conffile etc/foo
+EXPECTED_LINTIAN_OUTPUT = """E: error-package: file-in-etc-not-marked-as-conffile etc/foo
 E: error-package: control-file-has-bad-owner postinst egon/egon != root/root
 E: error-package: no-copyright-file
 E: error-package: package-has-no-description
@@ -25,7 +20,8 @@ W: error-package: no-priority-field
 E: error-package: wrong-file-owner-uid-or-gid etc/ 1000/1000
 E: error-package: wrong-file-owner-uid-or-gid etc/foo 1000/1000
 W: error-package: maintainer-script-ignores-errors postinst
-"""
+
+Lintian finished with exit status 1"""
 
 
 def do_events():
@@ -40,26 +36,25 @@ class GDebiGtkTestCase(unittest.TestCase):
         self.testsdir = os.path.dirname(__file__)
         self.datadir = os.path.join(self.testsdir, "..", "data")
         self.options = None
-        
 
+    # we don't need a cache for this test so patch it out
     @patch.object(GDebiCommon, "openCache")
     def test_lintian(self, mock_open_cache):
         gdebi = GDebi(self.datadir, self.options)
         gdebi._run_lintian(
             os.path.join(self.testsdir, "error-package_1.0_all.deb"))
-        # wait for the output
-        buf = gdebi.textview_lintian_output.get_buffer()
-        for i in range(10):
+        # wait for lintian to finish
+        for i in range(25):
             time.sleep(0.2)
             do_events()
-            start = buf.get_start_iter()
-            end = buf.get_end_iter()
-            if buf.get_text(start, end, False) != "Running lintian...":
+            if gdebi._lintian_exit_status is not None:
                 break
-        # each change to the buffer makes the iters invalid
+        else:
+            self.fail("lintian did not finish")
+        # compare the results
+        buf = gdebi.textview_lintian_output.get_buffer()
         start = buf.get_start_iter()
         end = buf.get_end_iter()
-        buf = gdebi.textview_lintian_output.get_buffer()
         lintian_output = buf.get_text(start, end, False)
         self.assertEqual(lintian_output.strip(), EXPECTED_LINTIAN_OUTPUT)
 
