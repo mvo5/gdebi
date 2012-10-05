@@ -79,7 +79,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
           logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
-        except Exception, e:
+        except Exception as e:
           print "Error loading logo"
           pass
 
@@ -394,7 +394,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                   "Please install using sudo apt-get install lintian"))
             return
         buf.set_text(_("Running lintian..."))
-        cmd = ["/usr/bin/lintian", filename]
+        cmd = ["/usr/bin/lintian", "-v", filename]
         (pid, stdin, stdout, stderr) = GLib.spawn_async(
             cmd, flags=GObject.SPAWN_DO_NOT_REAP_CHILD,
             standard_output=True, standard_error=True)
@@ -409,7 +409,6 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         text += os.read(stderr, 4096) or ""
         buf = self.textview_lintian_output.get_buffer()
         buf.set_text(text)
-
 
     def on_treeview_files_cursor_changed(self, treeview):
         " the selection in the files list chanaged "

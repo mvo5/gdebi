@@ -65,14 +65,14 @@ class GDebiCommon(object):
     def openCache(self):
         self._cache = Cache(self.cprogress)
         if self._cache._depcache.broken_count > 0:
-                self.error_header = _("Broken dependencies")
-                self.error_body = _("Your system has broken dependencies. "
-                             "This application can not continue until "
-                             "this is fixed. "
-                             "To fix it run 'gksudo synaptic' or "
-                             "'sudo apt-get install -f' "
-                             "in a terminal window.")
-		return False
+            self.error_header = _("Broken dependencies")
+            self.error_body = _("Your system has broken dependencies. "
+                                "This application can not continue until "
+                                "this is fixed. "
+                                "To fix it run 'gksudo synaptic' or "
+                                "'sudo apt-get install -f' "
+                                "in a terminal window.")
+            return False
         return True
 
     def open(self, file, downloaded=False):
