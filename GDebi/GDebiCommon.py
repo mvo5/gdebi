@@ -49,6 +49,7 @@ def utf8(str):
         return unicode(str, 'latin1')
 	  
 class GDebiCommon(object):
+
     # cprogress may be different in child classes
     def __init__(self, datadir, options, file=""):
         self.cprogress = None

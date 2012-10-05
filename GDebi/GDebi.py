@@ -52,7 +52,7 @@ from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
 
 # the timeout when the termial is expanded if no activity from dpkg
-# is happening 
+# is happening
 GDEBI_TERMINAL_TIMEOUT=4*60.0
 
 # HACK - there are two ubuntu specific patches, one for VTE, one
@@ -85,7 +85,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
-        # FIXME: this sucks but without it the terminal window is only 
+        # FIXME: this sucks but without it the terminal window is only
         #        1 line height
         self.vte_terminal.set_size_request(80*10, 25*10)
         menu = Gtk.Menu()
@@ -124,7 +124,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             sys.exit(1)
         self.statusbar_main.push(self.context, "")
-        
+
         # setup the details treeview
         self.details_list = Gtk.ListStore(GObject.TYPE_STRING)
         column = Gtk.TreeViewColumn("")
@@ -146,11 +146,11 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
         if file != "" and os.path.exists(file):
             self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-            while Gtk.events_pending(): 
-                Gtk.main_iteration()        
+            while Gtk.events_pending():
+                Gtk.main_iteration()
             self.open(file)
             self.window_main.get_window().set_cursor(None)
-        
+
         self.window_main.set_sensitive(True)
 
     def gio_progress_callback(self, bytes_read, bytes_total, data):
@@ -167,7 +167,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         if (gio_file.get_uri_scheme() == "file"):
             return file
         if (os.getuid()==0):
-            self.show_alert(Gtk.MessageType.ERROR, 
+            self.show_alert(Gtk.MessageType.ERROR,
                             _("Can not download as root"),
                             _("Remote packages can not be downloaded when "
                               "running as root. Please try again as a "
@@ -188,7 +188,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                 file = gio_dest.get_path()
             self.dialog_gio_download.hide()
         except Exception, e:
-            self.show_alert(Gtk.MessageType.ERROR, 
+            self.show_alert(Gtk.MessageType.ERROR,
                             _("Download failed"),
                             _("Downloading the package failed: "
                               "file '%s' '%s'") % (file, e))
@@ -207,7 +207,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         elif path.startswith('file:'): # xffm
             path = path[5:] # 5 is len('file:')
         return path
-    
+
     def on_menuitem_quit_activate(self, widget):
         try:
             Gtk.main_quit()
@@ -225,21 +225,21 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             #print 'path to open', path
             if path.endswith(".deb"):
                 self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-                while Gtk.events_pending(): 
-                    Gtk.main_iteration()        
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
                 self.open(path)
                 self.window_main.get_window().set_cursor(None)
 
-    def open(self, file, downloaded=False):
-        res = GDebiCommon.open(self, file, downloaded)
+    def open(self, filename, downloaded=False):
+        res = GDebiCommon.open(self, filename, downloaded)
         if res == False:
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
-            
+
         self.statusbar_main.push(self.context, "")
 
         # set window title
-        self.window_main.set_title(_("Package Installer - %s") % 
+        self.window_main.set_title(_("Package Installer - %s") %
                                    self._deb.pkgname)
 
         # set name and ungrey some widgets
@@ -311,6 +311,10 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         # and the file content textview
         font_desc = Pango.FontDescription('monospace')
         self.textview_file_content.modify_font(font_desc)
+        self.textview_lintian_output.modify_font(font_desc)
+
+        # run lintian async
+        self._run_lintian(filename)
 
         # check the deps
         if not self._deb.check():
@@ -318,7 +322,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                 "<span foreground=\"red\" weight=\"bold\">"+
                 _("Error: ") +
                 #glib.markup_escape_text(self._deb._failure_string) +
-                self._deb._failure_string + 
+                self._deb._failure_string +
                 "</span>")
 	    self.button_install.set_label(_("_Install Package"))
 
@@ -372,7 +376,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             self.button_details.hide()
         else:
             self.button_details.show()
-            
+
         self.label_status.set_markup(self.deps)
         #img = Gtk.Image()
         #img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
@@ -381,6 +385,31 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.button_install.set_sensitive(True)
         self.button_install.grab_default()
         self.button_remove.hide()
+
+    def _run_lintian(self, filename):
+        buf = self.textview_lintian_output.get_buffer()
+        if not os.path.exists("/usr/bin/lintian"):
+            buf.set_text(
+                _("No lintian available.\n"
+                  "Please install using sudo apt-get install lintian"))
+            return
+        buf.set_text(_("Running lintian..."))
+        cmd = ["/usr/bin/lintian", filename]
+        (pid, stdin, stdout, stderr) = GLib.spawn_async(
+            cmd, flags=GObject.SPAWN_DO_NOT_REAP_CHILD,
+            standard_output=True, standard_error=True)
+        GObject.child_watch_add(
+            pid, self._on_lintian_finished, (stdout, stderr))
+
+    def _on_lintian_finished(self, pid, condition, (stdout, stderr)):
+        return_code = os.WEXITSTATUS(condition)
+        text = _("Lintian exited with status: %s\n") % return_code
+        text += os.read(stdout, 4096) or ""
+        text += "\n\n"
+        text += os.read(stderr, 4096) or ""
+        buf = self.textview_lintian_output.get_buffer()
+        buf.set_text(text)
+
 
     def on_treeview_files_cursor_changed(self, treeview):
         " the selection in the files list chanaged "
@@ -433,9 +462,9 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         # build dialog
         self.window_main.set_sensitive(False)
         fs = Gtk.FileChooserDialog(parent=self.window_main,
-                                   buttons=(Gtk.STOCK_CANCEL, 
-                                            Gtk.ResponseType.CANCEL, 
-                                            Gtk.STOCK_OPEN, 
+                                   buttons=(Gtk.STOCK_CANCEL,
+                                            Gtk.ResponseType.CANCEL,
+                                            Gtk.STOCK_OPEN,
                                             Gtk.ResponseType.OK),
                                    action=Gtk.FileChooserAction.OPEN,
                                    title=_("Open Software Package"))
@@ -462,7 +491,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.window_main.set_sensitive(True)
 
     def on_copy_activate(self, widget):
-        clipboard = Gtk.Clipboard.get(Gdk.atom_intern('CLIPBOARD', True)) 
+        clipboard = Gtk.Clipboard.get(Gdk.atom_intern('CLIPBOARD', True))
         buf = self.textview_description.get_buffer()
         if buf.get_has_selection():
             buf.copy_clipboard(clipboard)
@@ -531,7 +560,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             scrolled = Gtk.ScrolledWindow()
             textview = Gtk.TextView()
             textview.set_cursor_visible(False)
-            textview.set_editable(False) 
+            textview.set_editable(False)
             buf = textview.get_buffer()
             buf.set_text("\n".join(self.unauthenticated))
             scrolled.add(textview)
@@ -580,13 +609,13 @@ Install software from trustworthy software distributors only.
             self.statusbar_main.push(self.context, msgstring)
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
-            
+
         # lock for install
         self.window_main.set_sensitive(False)
         self.button_deb_install_close.set_sensitive(False)
         # clear terminal
         #self.vte_terminal.feed(str(0x1b)+"[2J")
-        
+
         # Get whether we auto close from synaptic's config file and
         # update the toggle button as neccessary
         config = apt_pkg.Configuration()
@@ -598,7 +627,7 @@ Install software from trustworthy software distributors only.
             config["Synaptic::closeZvt"] = "false"
         self.synaptic_config = config.subtree("Synaptic")
         self.checkbutton_autoclose.set_active(self.synaptic_config.find_b("closeZvt"))
-        
+
         self.dialog_deb_install.set_transient_for(self.window_main)
         self.dialog_deb_install.show_all()
 
@@ -634,13 +663,13 @@ Install software from trustworthy software distributors only.
             if not res:
                 self.show_alert(Gtk.MessageType.ERROR, header, body, msg,
                                 parent=self.dialog_deb_install)
-                    
+
                 self.label_install_status.set_markup("<span foreground=\"red\" weight=\"bold\">%s</span>" % header)
                 self.button_deb_install_close.set_sensitive(True)
                 self.button_deb_install_close.grab_default()
                 self.statusbar_main.push(self.context,_("Failed to install package file"))
-                return 
-    
+                return
+
         # install the package itself
         self.dialog_deb_install.set_title(self.window_main.get_title())
         if install:
@@ -679,10 +708,10 @@ Install software from trustworthy software distributors only.
                 self.label_install_status.set_markup("<i>"+_("Package '%s' was removed") % os.path.basename(self._deb.pkgname)+"</i>")
         else:
             if install:
-                self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") % 
+                self.label_install_status.set_markup("<b>"+_("Failed to install package '%s'") %
                                                      os.path.basename(self._deb.filename)+"</b>")
             else:
-                self.label_install_status.set_markup("<b>"+_("Failed to remove package '%s'") % 
+                self.label_install_status.set_markup("<b>"+_("Failed to remove package '%s'") %
                                                     os.path.basename(self._deb.pkgname)+"</b>")
             self.expander_install.set_expanded(True)
         if install:
@@ -714,7 +743,7 @@ Install software from trustworthy software distributors only.
 
     def on_button_remove_clicked(self, widget):
         self.dpkg_action(widget, False)
-        
+
     def on_button_deb_install_close_clicked(self, widget):
         # Set the autoclose option when we close
         autoclose = self.checkbutton_autoclose.get_active()
@@ -727,17 +756,17 @@ Install software from trustworthy software distributors only.
             self._gio_cancellable.cancel()
         self.dialog_deb_install.hide()
         self.window_main.set_sensitive(True)
-    
+
     def on_checkbutton_autoclose_clicked(self, widget):
         if self.action_completed:
-            self.on_button_deb_install_close_clicked(None)            
+            self.on_button_deb_install_close_clicked(None)
 
     def on_window_main_delete_event(self, *args):
         if self.window_main.get_property("sensitive"):
             if Gtk.main_level() > 0:
                 Gtk.main_quit()
             return False
-        else: 
+        else:
             return True
 
     def show_alert(self, type, header, body=None, details=None, parent=None):
@@ -750,26 +779,26 @@ Install software from trustworthy software distributors only.
         if not body == None:
              message = "%s\n\n%s" % (message, body)
         self.label_hig.set_markup(message)
-  
+
         if not details == None:
              buffer = self.textview_hig.get_buffer()
              buffer.set_text(str(details))
              self.expander_hig.set_expanded(False)
              self.expander_hig.show()
-             
+
         if type == Gtk.MessageType.ERROR:
              self.image_hig.set_property("stock", "gtk-dialog-error")
         elif type == Gtk.MessageType.WARNING:
              self.image_hig.set_property("stock", "gtk-dialog-warning")
         elif type == Gtk.MessageType.INFO:
              self.image_hig.set_property("stock", "gtk-dialog-info")
-             
+
         res = self.dialog_hig.run()
         self.dialog_hig.hide()
         if res == Gtk.ResponseType.CLOSE:
             return True
         return False
-        
+
     def write_synaptic_config_file(self, config, path):
         if not os.path.exists(path):
             return
@@ -787,7 +816,7 @@ Install software from trustworthy software distributors only.
 
     def menu_action(self, widget, terminal):
         terminal.copy_clipboard()
-        
+
     # embedded classes
     class DpkgActionProgress(object):
         def __init__(self, debfile, status, progress, term, expander, install=True):
@@ -834,7 +863,7 @@ Install software from trustworthy software distributors only.
 
             # the command
             argv = ["/usr/bin/dpkg", "--auto-deconfigure"]
-            # ubuntu supports VTE_PTY_KEEP_FD, see 
+            # ubuntu supports VTE_PTY_KEEP_FD, see
             # https://bugzilla.gnome.org/320128 for the upstream bug
             if UBUNTU:
                 argv += ["--status-fd", "%s"%writefd]
@@ -853,8 +882,8 @@ Install software from trustworthy software distributors only.
             self.term.connect("child-exited", finish_dpkg, lock)
             (res, pid) =self.term.fork_command_full(
                 Vte.PtyFlags.DEFAULT,
-                "/", 
-                argv, 
+                "/",
+                argv,
                 env,
                 GLib.SpawnFlags.LEAVE_DESCRIPTORS_OPEN,
                 # FIXME: add setup_func that closes all fds excpet for writefd
@@ -891,11 +920,11 @@ Install software from trustworthy software distributors only.
                     Gtk.main_iteration()
                 time.sleep(0.2)
                 # if the terminal has not reacted for some time, do something
-                if (not self.term_expander.get_expanded() and 
+                if (not self.term_expander.get_expanded() and
                     (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
                   self.term_expander.set_expanded(True)
             self.progress.set_fraction(1.0)
-    
+
     class InstallProgressAdapter(InstallProgress):
         def __init__(self,progress,term,label,term_expander):
             InstallProgress.__init__(self)
@@ -937,7 +966,7 @@ Install software from trustworthy software distributors only.
             InstallProgress.update_interface(self)
             while Gtk.events_pending():
                 Gtk.main_iteration()
-            if (not self.term_expander.get_expanded() and 
+            if (not self.term_expander.get_expanded() and
                 (self.time_last_update + GDEBI_TERMINAL_TIMEOUT) < time.time()):
               self.term_expander.set_expanded(True)
             # sleep just long enough to not create a busy loop
@@ -961,7 +990,7 @@ Install software from trustworthy software distributors only.
             while not self.finished:
                 self.update_interface()
             return self.apt_status
-        
+
     class FetchProgressAdapter(apt.progress.base.AcquireProgress):
         def __init__(self,progress,action,main):
             super(GDebi.FetchProgressAdapter, self).__init__()
@@ -1013,7 +1042,7 @@ Install software from trustworthy software distributors only.
                 Gtk.main_iteration()
         def done(self):
             self.progressbar.hide()
-        
+
 if __name__ == "__main__":
     app = GDebi("data/",None)
 
@@ -1029,16 +1058,16 @@ if __name__ == "__main__":
     apt_pkg.pkgsystem_lock()
     app.dialog_deb_install.set_transient_for(app.window_main)
     app.dialog_deb_install.show_all()
- 
+
     # install the dependecnies
     fprogress = app.FetchProgressAdapter(app.progressbar_install,
                                          app.label_action,
                                          app.dialog_deb_install)
-    iprogress = app.InstallProgressAdapter(app.progressbar_install, 
+    iprogress = app.InstallProgressAdapter(app.progressbar_install,
                                            app.vte_terminal,
                                            app.label_action,
                                            app.expander_install)
     res = app._cache.commit(fprogress,iprogress)
     print "commit retured: %s" % res
-    
+
     Gtk.main()
