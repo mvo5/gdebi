@@ -1,5 +1,6 @@
 gdebi (0.8.6) UNRELEASED; urgency=low
 
+  [ Luca Falavigna ]
   * gdebi, GDebi/GDebiCli.py:
     - Return dpkg error code (LP: #1033631).
   * gdebi-gtk, gdebi-kde:
@@ -17,6 +18,10 @@ gdebi (0.8.6) UNRELEASED; urgency=low
   * po/pt.po:
     - Fix translation string which erroneously used three format string
       parameters instead of two (LP: #964895).
+  
+  [ Michael Vogt ]
+  * GDebi/GDebi.py:
+    - do not set a busy cursor if there is no X11 window (LP: #1055181)
 
  -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 23:30:32 +0200
 
