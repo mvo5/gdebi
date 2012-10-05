@@ -52,6 +52,7 @@ class GDebiCommon(object):
     # cprogress may be different in child classes
     def __init__(self, datadir, options, file=""):
         self.cprogress = None
+        self._cache = None
         self.deps = ""
         self.version_info_title = ""
         self.version_info_msg = ""
@@ -62,6 +63,8 @@ class GDebiCommon(object):
         self.unauthenticated = 0
 
     def openCache(self):
+        if self._cache is not None:
+            self._cache.close()
         self._cache = Cache(self.cprogress)
         if self._cache._depcache.broken_count > 0:
                 self.error_header = _("Broken dependencies")
