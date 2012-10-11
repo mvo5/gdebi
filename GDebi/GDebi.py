@@ -145,19 +145,13 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         self.synaptic_config = apt_pkg.Configuration()
 
         if file != "" and os.path.exists(file):
-            self.open(file)
-        self.window_main.set_sensitive(True)
-
-    def _show_busy_cursor(self, show_busy_cursor):
-        win = self.window_main.get_window()
-        if not win:
-            return
-        if show_busy_cursor:
-            win.set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+            self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
             while Gtk.events_pending(): 
                 Gtk.main_iteration()        
-        else:
-            win.set_cursor(None)
+            self.open(file)
+            self.window_main.get_window().set_cursor(None)
+        
+        self.window_main.set_sensitive(True)
 
     def gio_progress_callback(self, bytes_read, bytes_total, data):
         self.progressbar_download.set_fraction(bytes_read/float(bytes_total))
@@ -230,12 +224,14 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             path = self._get_file_path_from_dnd_dropped_uri(uri)
             #print 'path to open', path
             if path.endswith(".deb"):
+                self.window_main.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+                while Gtk.events_pending(): 
+                    Gtk.main_iteration()        
                 self.open(path)
+                self.window_main.get_window().set_cursor(None)
 
     def open(self, file, downloaded=False):
-        self._show_busy_cursor(True)
         res = GDebiCommon.open(self, file, downloaded)
-        self._show_busy_cursor(False)
         if res == False:
             self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
