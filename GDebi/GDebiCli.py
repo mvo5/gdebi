@@ -124,10 +124,10 @@ class GDebiCli(object):
                 res = self._cache.commit(fprogress,iprogress)
             except apt.cache.FetchFailedException, e:
                 sys.stderr.write(_("Error during install: '%s'") % e)
-                return False
+                return 1
             except SystemError, e:
                 sys.stderr.write(_("Error during install: '%s'") % e)
-                return False
+                return 1
 
         # install the package itself
         if self._deb.filename.endswith(".dsc"): 
@@ -139,10 +139,9 @@ class GDebiCli(object):
             #os.system("cd %s && dpkg-buildpackage -b -uc" % dir)
             #for i in self._deb.binaries:
             #    os.system("gdebi %s_%s_*.deb" % (i,self._deb["Version"]))
-            pass
+            return 0
         else:
             return call(["dpkg","--auto-deconfigure", "-i",self._deb.filename])
-        return True
         
 
 if __name__ == "__main__":
