@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-05-02 11:17+0000\n"
-"Last-Translator: Krasimir Chonov <mk2616@abv.bg>\n"
+"PO-Revision-Date: 2012-10-08 21:01+0000\n"
+"Last-Translator: spacy01 <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
-"X-Generator: Launchpad (build 14874)\n"
+"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
+"X-Generator: Launchpad (build 16130)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -70,7 +70,7 @@ msgstr "Използване на друга директория за данн�
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Премахване на пакет"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -161,7 +161,7 @@ msgstr "Пакет:"
 
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
 msgid "Status:"
-msgstr "Състояние"
+msgstr "Състояние:"
 
 #: ../data/gdebi.ui.h:19
 msgid "Terminal"
@@ -173,11 +173,11 @@ msgstr "_Подробности"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "_Сваляне на пакет"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Редактиране"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -196,7 +196,7 @@ msgstr "_Инсталиране"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Отваряне…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -204,7 +204,7 @@ msgstr "_Обновяване"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Премахване на пакет"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -223,7 +223,7 @@ msgstr "%s не е достъпен"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Копиране на маркиран текст"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -279,7 +279,7 @@ msgstr "Грешка: "
 
 #: ../GDebi/GDebi.py:338
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Грешка: Вече не се поддържа "
 
 #: ../GDebi/GDebi.py:354
 msgid "Same version is already installed"
@@ -305,12 +305,12 @@ msgstr "Съдържанието на файла не може да се изв�
 #: ../GDebi/GDebi.py:426
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>За премахване: %s</b>"
+msgstr "<b>Ще се премахнат: %s</b>"
 
 #: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
 #, python-format
 msgid "To be installed: %s"
-msgstr "За инсталиране: %s"
+msgstr "Ще се инсталира: %s"
 
 #: ../GDebi/GDebi.py:443
 msgid "Open Software Package"
@@ -322,12 +322,13 @@ msgstr "Пакети"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Проблем със зависимостите"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Един или повече пакети зависят от '%s' , той не може да бъде премахнат."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -343,7 +344,7 @@ msgstr "Инсталиране на пакет..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Премахване на пакет..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -376,11 +377,11 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Имате нужда от администраторски права, за да премахвате софтуер"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Има възможен риск при премахването на пакети."
 
 #: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
 msgid "Failed to install package file"
@@ -388,7 +389,7 @@ msgstr "Неуспешен опит за инсталиране на пакет"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Неуспешно деинсталиране на пакет"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -418,7 +419,7 @@ msgstr "Инсталиране на %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Премахване на %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -430,7 +431,7 @@ msgstr "Инсталирането завърши"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Премахването завърши"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -440,7 +441,7 @@ msgstr "Пакетът '%s' беше инсталиран"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Пакета '%s'  беше премахнат"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -450,7 +451,7 @@ msgstr "Неуспешен опит за инсталиране на пакет�
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Неуспех при премахването на '%s'"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -458,7 +459,7 @@ msgstr "Инсталирането завърши"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Премахването завършено"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -466,7 +467,7 @@ msgstr "Неуспешен опит да инсталирате всички з�
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Неуспешно завършване на премахването"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -483,7 +484,7 @@ msgstr "Инсталиране на '%s'..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Премахване на '%s' ..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -571,7 +572,7 @@ msgstr "&Инсталиране"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "&Сваляне на пакет"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -719,8 +720,11 @@ msgstr "Смяна на носител"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
-#~ "  Miroslav E. Hadzhiev (Хаджиев) https://launchpad.net/~extigyro\n"
-#~ "  Svetoslav Stefanov https://launchpad.net/~svetlisashkov"
+#~ "  Boyan Sotirov https://launchpad.net/~lz1dsb\n"
+#~ "  Emil Pavlov https://launchpad.net/~emil-p-pavlov\n"
+#~ "  Krasimir Chonov https://launchpad.net/~kchonov\n"
+#~ "  Svetoslav Stefanov https://launchpad.net/~svetlisashkov\n"
+#~ "  spacy01 https://launchpad.net/~spacy00001"
 
 #~ msgid "_Open..."
 #~ msgstr "_Отваряне..."

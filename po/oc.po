@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
-"X-Generator: Launchpad (build 14874)\n"
+"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
+"X-Generator: Launchpad (build 16130)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -727,4 +727,5 @@ msgstr "Cambiament de mèdia"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
-#~ "  Cédric VALMARY (Tot en òc) https://launchpad.net/~cvalmary"
+#~ "  Cédric VALMARY (Tot en òc) https://launchpad.net/~cvalmary\n"
+#~ "  Yannig MARCHEGAY (Kokoyaya) https://launchpad.net/~yannick-marchegay"

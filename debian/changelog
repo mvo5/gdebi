@@ -17,6 +17,8 @@ gdebi (0.8.6) UNRELEASED; urgency=low
   * po/pt.po:
     - Fix translation string which erroneously used three format string
       parameters instead of two (LP: #964895).
+  * po/*.po:
+    - Refresh translations exported from Rosetta.
 
  -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 23:30:32 +0200
 

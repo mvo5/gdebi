@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2009-11-08 09:30+0000\n"
-"Last-Translator: Murat Gunes <mgunes@ubuntu.com>\n"
+"PO-Revision-Date: 2012-09-14 14:33+0000\n"
+"Last-Translator: Emre AYTAÇ <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
-"X-Generator: Launchpad (build 14874)\n"
+"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
+"X-Generator: Launchpad (build 16130)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Paketi kaldır"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -192,7 +192,7 @@ msgstr "_Yardım"
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
 msgid "_Install Package"
-msgstr "Paket_i dosyasını kur"
+msgstr "Paketi _Kur"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
@@ -204,7 +204,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "Paketi Kaldır"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -385,7 +385,7 @@ msgstr "Paket dosyası kurulamadı"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Paket kaldırılamadı"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -447,7 +447,7 @@ msgstr "'%s' paketi kurulamadı"
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "'%s' paketi kaldırılamadı"
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -741,6 +741,20 @@ msgstr "Ortam Değiştirme"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Ali KIBICI https://launchpad.net/~alinux-the-master\n"
+#~ "  Aranel.Surion https://launchpad.net/~aranelsurion\n"
+#~ "  Cihan Ersoy https://launchpad.net/~cihan.ersoy\n"
 #~ "  Emre AYTAÇ https://launchpad.net/~eaytac\n"
+#~ "  EsatYuce https://launchpad.net/~esat\n"
+#~ "  Fatih Bostancı https://launchpad.net/~fbostanci\n"
+#~ "  G https://launchpad.net/~g++\n"
+#~ "  Hasan Yılmaz https://launchpad.net/~hasanyilmaz\n"
+#~ "  Irmak Bıçakçıgil https://launchpad.net/~irmak\n"
 #~ "  Mert Dirik https://launchpad.net/~mertdirik\n"
-#~ "  kulkke https://launchpad.net/~kulkke"
+#~ "  Murat Gunes https://launchpad.net/~mgunes\n"
+#~ "  Mustafa VELİOĞLU https://launchpad.net/~mustafavelioglu\n"
+#~ "  Yiğit Ateş https://launchpad.net/~yigitates52\n"
+#~ "  kulkke https://launchpad.net/~kulkke\n"
+#~ "  mustafa solum https://launchpad.net/~mustafasolum\n"
+#~ "  ubuntuki https://launchpad.net/~aleverzurumlu\n"
+#~ "  yilomka https://launchpad.net/~yilomka-deactivatedaccount"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-09-02 22:18+0200\n"
-"PO-Revision-Date: 2011-06-07 19:12+0000\n"
-"Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
+"PO-Revision-Date: 2012-07-06 15:01+0000\n"
+"Last-Translator: Constantine E. Kozlov <tempor.demonius@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-29 21:32+0000\n"
-"X-Generator: Launchpad (build 14874)\n"
+"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
+"X-Generator: Launchpad (build 16130)\n"
 
 #: ../gdebi:48
 #, c-format
@@ -69,7 +69,7 @@ msgstr "Використовувати іншу теку даних"
 
 #: ../gdebi-gtk:59
 msgid "Remove package"
-msgstr ""
+msgstr "Вилучення пакунка"
 
 #: ../gdebi-gtk:78
 msgid "Software index is broken"
@@ -173,11 +173,11 @@ msgstr "_Подробиці"
 
 #: ../data/gdebi.ui.h:21
 msgid "_Download Package"
-msgstr ""
+msgstr "_Завантажити пакет"
 
 #: ../data/gdebi.ui.h:22
 msgid "_Edit"
-msgstr ""
+msgstr "_Редагувати"
 
 #: ../data/gdebi.ui.h:23
 msgid "_File"
@@ -196,7 +196,7 @@ msgstr "_Встановити пакунок"
 
 #: ../data/gdebi.ui.h:26
 msgid "_Open…"
-msgstr ""
+msgstr "_Відкрити…"
 
 #: ../data/gdebi.ui.h:27
 msgid "_Refresh"
@@ -204,7 +204,7 @@ msgstr "_Оновити"
 
 #: ../data/gdebi.ui.h:28
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Видалити пакет"
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -223,7 +223,7 @@ msgstr "%s є недоступним"
 
 #: ../GDebi/GDebi.py:92
 msgid "Copy selected text"
-msgstr ""
+msgstr "Копіювати виділений текст"
 
 #: ../GDebi/GDebi.py:103
 msgid "Loading..."
@@ -322,12 +322,13 @@ msgstr "Програмні пакунки"
 
 #: ../GDebi/GDebi.py:495
 msgid "Dependency problems"
-msgstr ""
+msgstr "Проблеми залежностей"
 
 #: ../GDebi/GDebi.py:496
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Пакет \"%s\" вимагається одним або більше пакетами і не може бути видалений."
 
 #: ../GDebi/GDebi.py:504
 msgid "File not found"
@@ -344,7 +345,7 @@ msgstr "Встановлення файла пакунка..."
 
 #: ../GDebi/GDebi.py:518
 msgid "Removing package..."
-msgstr ""
+msgstr "Видалення пакету..."
 
 #: ../GDebi/GDebi.py:521
 msgid "Install unauthenticated software?"
@@ -382,7 +383,7 @@ msgstr ""
 
 #: ../GDebi/GDebi.py:556
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Необхідно надати права адміністрування для видалення пакетів"
 
 #: ../GDebi/GDebi.py:557
 msgid "It is a possible risk to remove packages."
@@ -394,7 +395,7 @@ msgstr "Не вдалося встановити файл пакунка"
 
 #: ../GDebi/GDebi.py:581
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Не вдалось вилучити пакет"
 
 #: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
 msgid "Could not download all required files"
@@ -425,7 +426,7 @@ msgstr "Встановлюю %s"
 #: ../GDebi/GDebi.py:652
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Видаляється %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -437,7 +438,7 @@ msgstr "Встановлення завершено"
 
 #: ../GDebi/GDebi.py:676
 msgid "Removal finished"
-msgstr ""
+msgstr "Видалення завершене"
 
 #: ../GDebi/GDebi.py:679
 #, python-format
@@ -447,7 +448,7 @@ msgstr "Пакунок \"%s\" було встановлено"
 #: ../GDebi/GDebi.py:681
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Пакет \"%s\" було вилучено"
 
 #: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
 #, python-format
@@ -457,7 +458,7 @@ msgstr "Не вдалося встановити пакунок \"%s\""
 #: ../GDebi/GDebi.py:687
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Не вдалось вилучити пакет \"%s\""
 
 #: ../GDebi/GDebi.py:691
 msgid "Installation complete"
@@ -465,7 +466,7 @@ msgstr "Встановлення завершено"
 
 #: ../GDebi/GDebi.py:693
 msgid "Removal complete"
-msgstr ""
+msgstr "Видалення завершене"
 
 #: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
 msgid "Failed to completely install all dependencies"
@@ -473,7 +474,7 @@ msgstr "Не вдалося повністю встановити всі зал�
 
 #: ../GDebi/GDebi.py:703
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Не вдалось повністю видалити пакет"
 
 #: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -489,7 +490,7 @@ msgstr "Встановлення \"%s\"..."
 #: ../GDebi/GDebi.py:826
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Видалення пакету «%s»..."
 
 #: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
 msgid "Installing dependencies..."
@@ -577,7 +578,7 @@ msgstr "&Встановити пакунок"
 
 #: ../GDebi/GDebiKDE.py:139
 msgid "&Download Package"
-msgstr ""
+msgstr "&Завантажити пакет"
 
 #: ../GDebi/GDebiKDE.py:164
 msgid "The package file does not exist"
@@ -779,9 +780,15 @@ msgstr "Зміна Носія"
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
+#~ "  Constantine E. Kozlov https://launchpad.net/~tempor-demonius\n"
+#~ "  Luca Falavigna https://launchpad.net/~dktrkranz\n"
 #~ "  Maks Lyashuk aka Ma)(imuM https://launchpad.net/~probel\n"
+#~ "  Oleg Fedorchuk https://launchpad.net/~enter\n"
+#~ "  atany https://launchpad.net/~ye-gorshkov\n"
 #~ "  kolybasov https://launchpad.net/~kolybasov\n"
-#~ "  Сергій Матрунчик (SkyMan) https://launchpad.net/~skymanphp"
+#~ "  mikhalek https://launchpad.net/~mikhalek\n"
+#~ "  svv https://launchpad.net/~skrypnychuk\n"
+#~ "  Сергій Матрунчик https://launchpad.net/~sergiy.matrunchyk"
 
 #, python-format
 #~ msgid "IOError during filelist read: %s"
