@@ -1,4 +1,4 @@
-gdebi (0.8.6) UNRELEASED; urgency=low
+gdebi (0.8.6) unstable; urgency=low
 
   * gdebi, GDebi/GDebiCli.py:
     - Return dpkg error code (LP: #1033631).
@@ -11,7 +11,7 @@ gdebi (0.8.6) UNRELEASED; urgency=low
   * GDebi/GDebiCli.py, GDebi/GDebiCommon.py:
     - Also handle ValueError exception (LP: #980457).
   * GDebi/GDebiKDE.py:
-    - Fall-back on kdesu if kdesudo is not avaliable (LP: #949869).
+    - Fall-back on kdesu if kdesudo is not available (LP: #949869).
   * debian/control:
     - Add xz-utils to gdebi-core Suggests field (Closes: #685193).
   * po/pt.po:
@@ -20,7 +20,7 @@ gdebi (0.8.6) UNRELEASED; urgency=low
   * po/*.po:
     - Refresh translations exported from Rosetta.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 13 Sep 2012 23:30:32 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 11 Oct 2012 21:56:26 +0200
 
 gdebi (0.8.5) unstable; urgency=low
 
