@@ -35,7 +35,8 @@ import pty
 import select
 
 from apt.progress.base import InstallProgress
-from GDebiCommon import utf8, _
+
+from .GDebiCommon import utf8, _
 
 
 class KDEDpkgInstallProgress(object):
@@ -55,7 +56,7 @@ class KDEDpkgInstallProgress(object):
         self.progress.setValue(0)
 
     def timeoutHandler(self,signum, frame):
-        raise IOError, "Stopped waiting for I/O."
+        raise IOError("Stopped waiting for I/O.")
 
     def commit(self):
         # ui

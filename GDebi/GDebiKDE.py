@@ -33,11 +33,12 @@ from PyQt4.QtGui import *
 from PyQt4 import uic
 
 from apt.cache import Cache
-from DebPackage import DebPackage
 
 import gettext
-from GDebiCommon import GDebiCommon, utf8, _
-from KDEAptDialogs import *
+
+from .DebPackage import DebPackage
+from .GDebiCommon import GDebiCommon, utf8, _
+from .KDEAptDialogs import *
 
 def __(catalog,str):
     return unicode(gettext.dgettext(catalog, str), 'UTF-8')

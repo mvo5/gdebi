@@ -45,11 +45,12 @@ from gi.repository import Pango
 from gi.repository import Vte
 from gi.repository import Gio
 
-from DebPackage import DebPackage
-from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 from apt.progress.base import InstallProgress
-from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
+
+from .DebPackage import DebPackage
+from .SimpleGtkbuilderApp import SimpleGtkbuilderApp
+from .GDebiCommon import GDebiCommon, utf8
 
 # the timeout when the termial is expanded if no activity from dpkg
 # is happening 
@@ -80,8 +81,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
         except Exception as e:
-          print "Error loading logo"
-          pass
+          logging.warn("Error loading logo")
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
@@ -255,7 +255,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         buf = self.textview_description.get_buffer()
         try:
             long_desc = ""
-            raw_desc = string.split(utf8(self._deb["Description"]), "\n")
+            raw_desc = utf8(self._deb["Description"]).split("\n")
             # append a newline to the summary in the first line
             summary = raw_desc[0]
             raw_desc[0] = ""
@@ -307,7 +307,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             for name in self._deb.filelist:
                 store.append(header, [name])
         except Exception as e:
-            print "Exception while reading the filelist: '%s'" % e
+            logging.exception("Exception while reading the filelist: '%s'" % e)
             store.clear()
             store.append(None, [_("Error reading filelist")])
         self.treeview_files.set_model(store)
@@ -324,7 +324,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                 #glib.markup_escape_text(self._deb._failure_string) +
                 self._deb._failure_string + 
                 "</span>")
-	    self.button_install.set_label(_("_Install Package"))
+            self.button_install.set_label(_("_Install Package"))
 
             self.button_install.set_sensitive(False)
             self.button_details.hide()
@@ -477,7 +477,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def on_about_activate(self, widget):
         #print "about"
-        from Version import VERSION
+        from .Version import VERSION
         self.dialog_about.set_version(VERSION)
         self.dialog_about.run()
         self.dialog_about.hide()
@@ -876,13 +876,13 @@ Install software from trustworthy software distributors only.
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
                         if e.errno != EAGAIN:
-                            print e.errstr
+                            logging.warn(e.errstr)
                         break
                     self.time_last_update = time.time()
                     if read.endswith("\n"):
-                        statusl = string.split(read, ":")
+                        statusl = read.split(":")
                         if len(statusl) < 3:
-                            print "got garbage from dpkg: '%s'" % read
+                            logging.warn("got garbage from dpkg: '%s'" % read)
                             read = ""
                             break
                         status = statusl[2].strip()
@@ -1017,18 +1017,19 @@ Install software from trustworthy software distributors only.
                 Gtk.main_iteration()
         def done(self):
             self.progressbar.hide()
-        
+
+
 if __name__ == "__main__":
-    app = GDebi("data/",None)
+    app = GDebiGtk("data/",None)
 
     pkgs = ["cw"]
     for pkg in pkgs:
-        print "installing %s" % pkg
+        print("installing %s" % pkg)
         app._cache[pkg].mark_install()
 
     for pkg in app._cache:
         if pkg.marked_install or pkg.marked_upgrade:
-            print pkg.name
+            print(pkg.name)
 
     apt_pkg.pkgsystem_lock()
     app.dialog_deb_install.set_transient_for(app.window_main)
@@ -1043,6 +1044,6 @@ if __name__ == "__main__":
                                            app.label_action,
                                            app.expander_install)
     res = app._cache.commit(fprogress,iprogress)
-    print "commit retured: %s" % res
+    print("commit retured: %s" % res)
     
     Gtk.main()

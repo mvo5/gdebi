@@ -4,6 +4,7 @@ import os
 import subprocess
 import unittest
 
+
 class GDebiGtkTestCase(unittest.TestCase):
 
     @classmethod

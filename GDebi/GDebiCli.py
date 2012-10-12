@@ -28,11 +28,12 @@ import sys
 
 from gettext import gettext as _
 from re import findall
+from subprocess import PIPE, Popen, call
 
 from apt.cache import Cache
-from DebPackage import DebPackage, DscSrcPackage
 
-from subprocess import PIPE, Popen, call
+from .DebPackage import DebPackage, DscSrcPackage
+
 
 class GDebiCli(object):
 

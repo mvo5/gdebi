@@ -36,6 +36,9 @@ import gettext
 from gi.repository import Gtk
 
 
+from GDebi.GDebiCommon import unicode
+
+
 if __name__ == "__main__":
     data="/usr/share/gdebi"
 
