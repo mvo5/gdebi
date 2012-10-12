@@ -64,7 +64,7 @@ try:
 except Exception as e:
     pass
 
-class GDebi(SimpleGtkbuilderApp, GDebiCommon):
+class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir,options,file)

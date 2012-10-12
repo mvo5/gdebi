@@ -6,7 +6,7 @@ data/gdebi.xml.in
 data/gdebi.desktop.in
 gdebi-gtk
 GDebi/DebPackage.py
-GDebi/GDebi.py
+GDebi/GDebiGtk.py
 GDebi/GDebiCli.py
 GDebi/GDebiKDE.py
 GDebi/GDebiCommon.py
