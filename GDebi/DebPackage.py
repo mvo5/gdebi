@@ -37,3 +37,8 @@ class DebPackage(apt.debfile.DebPackage):
             # e.g. a missing "Maintainer" field
             return _("%s is not available") % item
         return self._sections[item]
+
+
+# just for compatibility
+class DscSrcPackage(apt.debfile.DscSrcPackage):
+    pass
