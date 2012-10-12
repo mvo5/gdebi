@@ -22,6 +22,7 @@
 #
 
 import gettext
+import logging
 import os
 from mimetypes import guess_type
 
@@ -76,6 +77,7 @@ class GDebiCommon(object):
         try:
             self._deb = DebPackage(file, self._cache, downloaded)
         except (IOError, SystemError, ValueError) as e:
+            logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
                 mimetype[0] != "application/x-debian-package"):

@@ -22,14 +22,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import logging
 import os
 import subprocess
+
 import apt
 import apt_pkg
-from PyKDE4.kdecore import *
-from PyKDE4.kdeui import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+
+from PyKDE4.kdeui import (
+    KApplication,
+    KMessageBox,
+    KStandardGuiItem,
+    )
+from PyQt4.QtCore import (
+    QTimer,
+    )
 
 import pty
 import select
@@ -154,7 +161,7 @@ class KDEInstallProgressAdapter(InstallProgress):
                     # nothing happend within the timeout, break
                     break
             except Exception as e:
-                #print "updateInterface: ", e
+                logging.debug("updateInterface: " % e)
                 break
         KApplication.kApplication().processEvents()
 
@@ -173,7 +180,7 @@ class KDEInstallProgressAdapter(InstallProgress):
             try:
                 select.select([self.statusfd],[],[], self.select_timeout)
             except Exception as e:
-                #print "waitChild: ", e
+                logging.debug("waitChild: " % e)
                 pass
             self.updateInterface()
             (pid, res) = os.waitpid(self.child_pid,os.WNOHANG)

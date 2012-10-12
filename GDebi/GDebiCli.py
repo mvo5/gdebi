@@ -23,6 +23,7 @@
 
 import apt
 import apt_pkg
+import logging
 import os
 import sys
 
@@ -75,6 +76,7 @@ class GDebiCli(object):
                 sys.stderr.write(_("Unknown package type '%s', exiting\n") % file)
                 sys.exit(1)
         except (IOError,SystemError,ValueError) as e:
+            logging.debug("error opening: %s" % e)
             sys.stderr.write(_("Failed to open the software package\n"))
             sys.stderr.write(_("The package might be corrupted or you are not "
                            "allowed to open the file. Check the permissions "
@@ -124,6 +126,7 @@ class GDebiCli(object):
             iprogress = apt.progress.base.InstallProgress()
             try:
                 res = self._cache.commit(fprogress,iprogress)
+                logging.debug("commit() returned %s" % res)
             except(apt.cache.FetchFailedException, SystemError) as e:
                 sys.stderr.write(_("Error during install: '%s'") % e)
                 return 1

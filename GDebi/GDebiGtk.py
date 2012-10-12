@@ -69,11 +69,9 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir,options,file)
-        localesApp="gdebi"
-        localesDir="/usr/share/locale"
-
         SimpleGtkbuilderApp.__init__(
-            self, path=datadir+"/gdebi.ui", domain="gdebi")
+            self, path=os.path.join(datadir, "gdebi.ui"), domain="gdebi")
+
         # use a nicer default icon
         icons = Gtk.IconTheme.get_default()
         try:
@@ -81,7 +79,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
         except Exception as e:
-          logging.warn("Error loading logo")
+          logging.warn("Error loading logo %s" % e)
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
@@ -620,12 +618,12 @@ Install software from trustworthy software distributors only.
                                                     self.vte_terminal,
                                                     self.label_action,
                                                     self.expander_install)
-            errMsg = None
+            #errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
             except IOError as msg:
                 res = False
-                errMsg = "%s" % msg
+                #errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                         "installation medium.")
@@ -968,19 +966,19 @@ Install software from trustworthy software distributors only.
         
     class FetchProgressAdapter(apt.progress.base.AcquireProgress):
         def __init__(self,progress,action,main):
-            super(GDebi.FetchProgressAdapter, self).__init__()
+            super(GDebiGtk.FetchProgressAdapter, self).__init__()
             self.progress = progress
             self.action = action
             self.main = main
         def start(self):
-            super(GDebi.FetchProgressAdapter, self).start()
+            super(GDebiGtk.FetchProgressAdapter, self).start()
             self.action.set_markup("<i>"+_("Downloading additional package files...")+"</i>")
             self.progress.set_fraction(0)
         def stop(self):
             #print "stop()"
             pass
         def pulse(self, owner):
-            super(GDebi.FetchProgressAdapter, self).pulse(owner)
+            super(GDebiGtk.FetchProgressAdapter, self).pulse(owner)
             at_item = min(self.current_items + 1, self.total_items)
             if self.current_cps > 0:
                 self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.total_items,apt_pkg.size_to_str(self.current_cps)))
