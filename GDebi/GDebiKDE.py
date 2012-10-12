@@ -339,13 +339,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
+            except IOError as msg:
                 res = False
                 errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                             "installation medium.")
-            except SystemError, msg:
+            except SystemError as msg:
                 res = False
                 header = _("Could not install all dependencies")
                 body = _("Usually this is related to an error of the "

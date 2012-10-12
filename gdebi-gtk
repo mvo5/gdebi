@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     try:
         Gtk.init_check(sys.argv)
-    except RuntimeError, e:
+    except RuntimeError as e:
         sys.stderr.write("Can not start %s: %s. Exiting\n" % (sys.argv[0], e))
         sys.exit(1)
 
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         
     try:
         app = GDebi(datadir=data,options=options,file=afile)
-    except SystemError, e:
+    except SystemError as e:
         err_header = _("Software index is broken")
         err_body = _("This is a major failure of your software " 
                     "management system. Please check for broken packages "

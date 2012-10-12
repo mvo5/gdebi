@@ -31,7 +31,7 @@ import string
 import sys
 import time
 import tempfile
-import thread
+import threading
 import urllib
 
 import gi
@@ -61,7 +61,7 @@ UBUNTU=False
 try:
     import lsb_release
     UBUNTU = lsb_release.get_distro_information()['ID'] == 'Ubuntu'
-except Exception, e:
+except Exception as e:
     pass
 
 class GDebi(SimpleGtkbuilderApp, GDebiCommon):
@@ -79,7 +79,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
           logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
-        except Exception, e:
+        except Exception as e:
           print "Error loading logo"
           pass
 
@@ -193,7 +193,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                              self.gio_progress_callback, 0):
                 file = gio_dest.get_path()
             self.dialog_gio_download.hide()
-        except Exception, e:
+        except Exception as e:
             self.show_alert(Gtk.MessageType.ERROR, 
                             _("Download failed"),
                             _("Downloading the package failed: "
@@ -306,7 +306,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             header = store.append(None, [_("Upstream data")])
             for name in self._deb.filelist:
                 store.append(header, [name])
-        except Exception, e:
+        except Exception as e:
             print "Exception while reading the filelist: '%s'" % e
             store.clear()
             store.append(None, [_("Error reading filelist")])
@@ -404,12 +404,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         elif parent_path == 0:
             try:
                 data = self._deb.control_content(name)
-            except Exception, e:
+            except Exception as e:
                 data = _("Error reading file content '%s'") % e
         elif parent_path == 1:
             try:
                 data = self._deb.data_content(name)
-            except Exception, e:
+            except Exception as e:
                 data = _("Error reading file content '%s'") % e
         else:
             assert False, "NOT REACHED"
@@ -623,13 +623,13 @@ Install software from trustworthy software distributors only.
             errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
+            except IOError as msg:
                 res = False
                 errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                         "installation medium.")
-            except SystemError, msg:
+            except SystemError as msg:
                 res = False
                 header = _("Could not install all dependencies"),
                 body = _("Usually this is related to an error of the "
@@ -817,7 +817,7 @@ Install software from trustworthy software distributors only.
                     logging.exception("lock.release failed")
 
             # get a lock
-            lock = thread.allocate_lock()
+            lock = threading.Lock()
             lock.acquire()
 
             # ui
@@ -872,7 +872,7 @@ Install software from trustworthy software distributors only.
                 while True:
                     try:
                         read += os.read(readfd,1)
-                    except OSError, (errno,errstr):
+                    except OSError as (errno,errstr):
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
                         if errno != EAGAIN:

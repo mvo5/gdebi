@@ -91,7 +91,7 @@ class KDEDpkgInstallProgress(object):
                 if len(rlist) > 0:
                     line = os.read(self.master_fd, 255)
                     self.parent.konsole.insertWithTermCodes(utf8(line))
-            except Exception, e:
+            except Exception as e:
                 #print e
                 from errno import EAGAIN
                 if hasattr(e, "errno") and e.errno == EAGAIN:
@@ -150,7 +150,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         # run the base class
         try:
             InstallProgress.updateInterface(self)
-        except ValueError,e:
+        except ValueError as e:
             pass
         # log the output of dpkg (on the master_fd) to the DumbTerminal
         while True:
@@ -163,7 +163,7 @@ class KDEInstallProgressAdapter(InstallProgress):
                 else:
                     # nothing happend within the timeout, break
                     break
-            except Exception, e:
+            except Exception as e:
                 #print "updateInterface: ", e
                 break
         KApplication.kApplication().processEvents()
@@ -182,7 +182,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         while True:
             try:
                 select.select([self.statusfd],[],[], self.select_timeout)
-            except Exception, e:
+            except Exception as e:
                 #print "waitChild: ", e
                 pass
             self.updateInterface()

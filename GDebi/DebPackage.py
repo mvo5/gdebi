@@ -33,7 +33,7 @@ class DebPackage(apt.debfile.DebPackage):
         self.downloaded = downloaded
 
     def __getitem__(self,item):
-        if not self._sections.has_key(item):
+        if not item in self._sections:
             # Translators: it's for missing entries in the deb package,
             # e.g. a missing "Maintainer" field
             return _("%s is not available") % item
