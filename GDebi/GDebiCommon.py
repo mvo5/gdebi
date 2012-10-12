@@ -22,14 +22,11 @@
 #
 
 
-import sys
 import os
-import string
 import warnings
 warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 from mimetypes import guess_type
 
-import apt
 import apt_pkg
 
 from apt.cache import Cache

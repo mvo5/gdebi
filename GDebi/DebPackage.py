@@ -24,7 +24,6 @@ import apt
 import apt.debfile
 from gettext import gettext as _
 
-from apt.debfile import DscSrcPackage
 
 class DebPackage(apt.debfile.DebPackage):
 

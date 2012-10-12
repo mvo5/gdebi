@@ -23,13 +23,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-import subprocess
 import string
 import re
-import pty
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
-import apt_pkg
 
 from PyKDE4.kdecore import *
 from PyKDE4.kdeui import *

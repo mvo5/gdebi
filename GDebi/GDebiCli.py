@@ -23,12 +23,8 @@
 
 import apt
 import apt_pkg
-import fcntl
 import os
-import string
 import sys
-import time
-import thread
 
 from gettext import gettext as _
 from re import findall

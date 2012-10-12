@@ -22,10 +22,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 import os
 import subprocess
-import string
 import apt
 import apt_pkg
 from PyKDE4.kdecore import *
@@ -33,18 +31,10 @@ from PyKDE4.kdeui import *
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
-import urllib
-import fcntl
-import posix
-import time
-import re
 import pty
 import select
 
-from apt.cache import Cache
-from apt.debfile import DebPackage
 from apt.progress.base import InstallProgress
-from gettext import gettext as gett
 from GDebiCommon import utf8, _
 
 
