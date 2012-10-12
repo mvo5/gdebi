@@ -872,11 +872,11 @@ Install software from trustworthy software distributors only.
                 while True:
                     try:
                         read += os.read(readfd,1)
-                    except OSError as (errno,errstr):
+                    except OSError as e:
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
-                        if errno != EAGAIN:
-                            print errstr
+                        if e.errno != EAGAIN:
+                            print e.errstr
                         break
                     self.time_last_update = time.time()
                     if read.endswith("\n"):

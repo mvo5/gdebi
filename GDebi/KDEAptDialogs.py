@@ -37,7 +37,6 @@ import urllib
 import fcntl
 import posix
 import time
-import thread
 import re
 import pty
 import select
@@ -78,7 +77,7 @@ class KDEDpkgInstallProgress(object):
 
         if self.child_pid == 0:
             os.environ["TERM"] = "dumb"
-            if not os.environ.has_key("DEBIAN_FRONTEND"):
+            if not "DEBIAN_FRONTEND" in os.environ:
                 os.environ["DEBIAN_FRONTEND"] = "noninteractive"
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
             exitstatus = subprocess.call(argv)
@@ -173,7 +172,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         (self.child_pid, self.master_fd) = pty.fork()
         if self.child_pid == 0:
             os.environ["TERM"] = "dumb"
-            if not os.environ.has_key("DEBIAN_FRONTEND"):
+            if not "DEBIAN_FRONTEND" in os.environ:
                 os.environ["DEBIAN_FRONTEND"] = "noninteractive"
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
         return self.child_pid

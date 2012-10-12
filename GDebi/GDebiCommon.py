@@ -78,7 +78,7 @@ class GDebiCommon(object):
         file = os.path.abspath(file)
         try:
             self._deb = DebPackage(file, self._cache, downloaded)
-        except (IOError,SystemError,ValueError),e:
+        except (IOError, SystemError, ValueError) as e:
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
                 mimetype[0] != "application/x-debian-package"):
