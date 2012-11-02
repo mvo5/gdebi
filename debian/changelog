@@ -4,13 +4,17 @@ gdebi (0.8.7) UNRELEASED; urgency=low
   * GDebi/GDebi.py:
     - do not set a busy cursor if there is no X11 window (LP: #1055181).
 
+  [ Jason Conti ]
+  * GDebi/GDebiCommon.py:
+    - Close apt.Cache before creating a new one (LP: #1072799).
+
   [ Luca Falavigna ]
   * GDebi/GDebiCli.py:
     - Improve exception handling.
   * debian/control:
     - Add file to gdebi-core dependencies (LP: #1067306).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Nov 2012 13:29:01 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Nov 2012 13:54:44 +0100
 
 gdebi (0.8.6) unstable; urgency=low
 
