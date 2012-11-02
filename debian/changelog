@@ -7,8 +7,10 @@ gdebi (0.8.7) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * GDebi/GDebiCli.py:
     - Improve exception handling.
+  * debian/control:
+    - Add file to gdebi-core dependencies (LP: #1067306).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 11 Oct 2012 22:09:32 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Nov 2012 13:29:01 +0100
 
 gdebi (0.8.6) unstable; urgency=low
 
