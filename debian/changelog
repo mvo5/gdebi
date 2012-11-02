@@ -9,6 +9,8 @@ gdebi (0.8.7) UNRELEASED; urgency=low
     - Close apt.Cache before creating a new one (LP: #1072799).
 
   [ Luca Falavigna ]
+  * gdebi-kde:
+    - Do not use unicode in help options (Closes: #691998, LP: #1063114).
   * GDebi/GDebiCli.py:
     - Improve exception handling.
   * debian/control:
