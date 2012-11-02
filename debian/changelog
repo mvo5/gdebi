@@ -6,7 +6,7 @@ gdebi (0.8.7) UNRELEASED; urgency=low
 
   [ Jason Conti ]
   * GDebi/GDebiCommon.py:
-    - Close apt.Cache before creating a new one (LP: #1072799).
+    - Define apt.Cache in class initialization (LP: #1072799).
 
   [ Luca Falavigna ]
   * gdebi-kde:
@@ -16,7 +16,7 @@ gdebi (0.8.7) UNRELEASED; urgency=low
   * debian/control:
     - Add file to gdebi-core dependencies (LP: #1067306).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Nov 2012 13:54:44 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Fri, 02 Nov 2012 14:19:16 +0100
 
 gdebi (0.8.6) unstable; urgency=low
 

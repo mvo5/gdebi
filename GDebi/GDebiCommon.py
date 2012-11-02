@@ -63,8 +63,6 @@ class GDebiCommon(object):
         self.unauthenticated = 0
 
     def openCache(self):
-        if self._cache is not None:
-            self._cache.close()
         self._cache = Cache(self.cprogress)
         if self._cache._depcache.broken_count > 0:
                 self.error_header = _("Broken dependencies")
