@@ -91,12 +91,12 @@ class GDebiCli(object):
             
     def show_description(self):
         try:
-            print self._deb["Description"]
+            print(self._deb["Description"])
         except KeyError:
-            print _("No description is available")
+            print(_("No description is available"))
 
     def show_dependencies(self):
-        print self.get_dependencies_info()
+        print(self.get_dependencies_info())
 
     def get_dependencies_info(self):
         s = ""
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     if not app.open(sys.argv[1]):
         sys.exit(1)
     msg =  _("Do you want to install the software package? [y/N]:")
-    print msg,
+    print(msg,)
     sys.stdout.flush()
     res = sys.stdin.readline()
     try:

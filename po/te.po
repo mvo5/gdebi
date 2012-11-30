@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-09-02 22:18+0200\n"
+"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"POT-Creation-Date: 2012-11-30 20:33+0100\n"
 "PO-Revision-Date: 2011-09-14 02:41+0000\n"
 "Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: Telugu <te@li.org>\n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,11 +50,11 @@ msgstr "ప్రత్యామ్నాయ రూట్ డైరెక్ట�
 msgid "gdebi error, file not found: %s\n"
 msgstr "జిడెబి దోషం, ఫైల్ కనపడలేదు: %s\n"
 
-#: ../gdebi:95 ../gdebi:105
+#: ../gdebi:95 ../gdebi:104
 msgid "Need to be root to install packages"
 msgstr "ప్యాకేజీలను స్థాపించాలంటే రూట్ వాడుకరి అయ్యుండాలి"
 
-#: ../gdebi:107 ../GDebi/GDebiCli.py:154
+#: ../gdebi:106 ../GDebi/GDebiCli.py:153
 msgid "Do you want to install the software package? [y/N]:"
 msgstr "సాఫ్ట్‍వేర్ ప్యాకేజీని స్థాపించాలనుకుంటున్నారా? [y/N]:"
 
@@ -81,123 +82,127 @@ msgid ""
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
 
-#: ../data/gdebi.ui.h:1
-msgid "  "
-msgstr "  "
-
-#: ../data/gdebi.ui.h:2
-msgid "<b><big>   </big></b>"
-msgstr "<b><big> </big></b>"
-
-#: ../data/gdebi.ui.h:3 ../GDebi/GDebiKDE.py:141
-msgid "<b>Maintainer:</b>"
-msgstr "<b>నిర్వాహకుడు:</b>"
-
-#: ../data/gdebi.ui.h:4 ../GDebi/GDebiKDE.py:142
-msgid "<b>Priority:</b>"
-msgstr "<b>ప్రాధాన్యత:</b>"
-
-#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:143
-msgid "<b>Section:</b>"
-msgstr "<b>విభాగం:</b>"
-
-#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:144
-msgid "<b>Size:</b>"
-msgstr "<b>పరిమాణం:</b>"
-
-#: ../data/gdebi.ui.h:7 ../GDebi/GDebiKDE.py:295
-msgid "<b>To install the following changes are required:</b>"
-msgstr "<b>స్థాపించడానికి కిందపేర్కొన్న మార్పులు అవసరమవుతాయి:</b>"
-
-#: ../data/gdebi.ui.h:8 ../GDebi/GDebiKDE.py:140
-msgid "<b>Version:</b>"
-msgstr "<b>వెర్షన్:</b>"
-
-#: ../data/gdebi.ui.h:9
-msgid "Automatically close after the changes have been successfully applied"
-msgstr "మార్పులు విజయవంతంగా అనువర్తించిన తరువాత స్వయంచాలకంగా మూసివేయి"
-
-#: ../data/gdebi.ui.h:10 ../GDebi/GDebiKDE.py:134
-msgid "Description"
-msgstr "వివరణ"
-
-#: ../data/gdebi.ui.h:11
-msgid "Description:"
-msgstr "వివరణ:"
-
-#: ../data/gdebi.ui.h:12 ../GDebi/GDebiKDE.py:133 ../GDebi/GDebiKDE.py:135
-#: ../GDebi/GDebiKDE.py:296
-msgid "Details"
-msgstr "వివరాలు"
-
-#: ../data/gdebi.ui.h:13
-msgid "GPL, see /usr/share/common-licenses/GPL"
-msgstr "GPL, చూడండి /usr/share/common-licenses/GPL"
-
-#: ../data/gdebi.ui.h:14
-msgid "Included files"
-msgstr "చేర్చబడిన ఫైళ్ళు"
-
-#: ../data/gdebi.ui.h:15 ../data/gdebi.desktop.in.h:2
+#: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
 msgstr "సాఫ్ట్‍వేర్ ప్యాకేజీలను స్థాపించు మరియు చూడు"
 
-#: ../data/gdebi.ui.h:16 ../data/gdebi.desktop.in.h:3
-msgid "Package Installer"
-msgstr "ప్యాకేజీ స్థాపకం"
+#: ../data/gdebi.ui.h:2
+msgid "GPL, see /usr/share/common-licenses/GPL"
+msgstr "GPL, చూడండి /usr/share/common-licenses/GPL"
 
-#. first, we load all the default descriptions -- pyuic doesn't use
-#. gettext as default (FIXME, copy code from language-selector)
-#: ../data/gdebi.ui.h:17 ../GDebi/GDebiKDE.py:131
-msgid "Package:"
-msgstr "ప్యాకేజీ:"
-
-#: ../data/gdebi.ui.h:18 ../GDebi/GDebiKDE.py:132
-msgid "Status:"
-msgstr "స్థితి:"
-
-#: ../data/gdebi.ui.h:19
+#: ../data/gdebi.ui.h:3
 msgid "Terminal"
 msgstr "టెర్మినల్"
 
-#: ../data/gdebi.ui.h:20
-msgid "_Details"
-msgstr "వివరాలు (_D)"
+#: ../data/gdebi.ui.h:4
+msgid "Automatically close after the changes have been successfully applied"
+msgstr "మార్పులు విజయవంతంగా అనువర్తించిన తరువాత స్వయంచాలకంగా మూసివేయి"
 
-#: ../data/gdebi.ui.h:21
-msgid "_Download Package"
-msgstr "ప్యాకేజీని దింపుకొను (_D)"
+#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
+#: ../GDebi/GDebiKDE.py:321
+msgid "Details"
+msgstr "వివరాలు"
 
-#: ../data/gdebi.ui.h:22
-msgid "_Edit"
-msgstr "సవరణ (_E)"
+#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:320
+msgid "<b>To install the following changes are required:</b>"
+msgstr "<b>స్థాపించడానికి కిందపేర్కొన్న మార్పులు అవసరమవుతాయి:</b>"
 
-#: ../data/gdebi.ui.h:23
+#: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
+msgid "Package Installer"
+msgstr "ప్యాకేజీ స్థాపకం"
+
+#: ../data/gdebi.ui.h:8
 msgid "_File"
 msgstr "ఫైల్ (_F)"
 
-#: ../data/gdebi.ui.h:24
+#: ../data/gdebi.ui.h:9
+msgid "_Open…"
+msgstr "తెరువు...(_O)"
+
+#: ../data/gdebi.ui.h:10
+msgid "_Refresh"
+msgstr "తాజాపరుచు (_R)"
+
+#: ../data/gdebi.ui.h:11
+msgid "_Edit"
+msgstr "సవరణ (_E)"
+
+#: ../data/gdebi.ui.h:12
 msgid "_Help"
 msgstr "సహాయం (_H)"
+
+#. first, we load all the default descriptions -- pyuic doesn't use
+#. gettext as default (FIXME, copy code from language-selector)
+#: ../data/gdebi.ui.h:13 ../GDebi/GDebiKDE.py:155
+msgid "Package:"
+msgstr "ప్యాకేజీ:"
+
+#: ../data/gdebi.ui.h:14
+msgid "<b><big>   </big></b>"
+msgstr "<b><big> </big></b>"
+
+#: ../data/gdebi.ui.h:15
+msgid "_Details"
+msgstr "వివరాలు (_D)"
+
+#: ../data/gdebi.ui.h:16 ../GDebi/GDebiKDE.py:156
+msgid "Status:"
+msgstr "స్థితి:"
+
+#: ../data/gdebi.ui.h:17
+msgid "Description:"
+msgstr "వివరణ:"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:25 ../GDebi/GDebi.py:327 ../GDebi/GDebi.py:384
+#: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:334 ../GDebi/GDebiGtk.py:391
 msgid "_Install Package"
 msgstr "ప్యాకేజీ స్థాపించు (_I)"
 
-#: ../data/gdebi.ui.h:26
-msgid "_Open…"
-msgstr "తెరువు...(_O)"
-
-#: ../data/gdebi.ui.h:27
-msgid "_Refresh"
-msgstr "తాజాపరుచు (_R)"
-
-#: ../data/gdebi.ui.h:28
+#: ../data/gdebi.ui.h:19
 msgid "_Remove Package"
 msgstr "ప్యాకేజీని తీసివేయి (_R)"
+
+#: ../data/gdebi.ui.h:20
+msgid "_Download Package"
+msgstr "ప్యాకేజీని దింపుకొను (_D)"
+
+#: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
+msgid "Description"
+msgstr "వివరణ"
+
+#: ../data/gdebi.ui.h:22 ../GDebi/GDebiKDE.py:164
+msgid "<b>Version:</b>"
+msgstr "<b>వెర్షన్:</b>"
+
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebiKDE.py:165
+msgid "<b>Maintainer:</b>"
+msgstr "<b>నిర్వాహకుడు:</b>"
+
+#: ../data/gdebi.ui.h:24 ../GDebi/GDebiKDE.py:166
+msgid "<b>Priority:</b>"
+msgstr "<b>ప్రాధాన్యత:</b>"
+
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebiKDE.py:167
+msgid "<b>Section:</b>"
+msgstr "<b>విభాగం:</b>"
+
+#: ../data/gdebi.ui.h:26 ../GDebi/GDebiKDE.py:168
+msgid "<b>Size:</b>"
+msgstr "<b>పరిమాణం:</b>"
+
+#: ../data/gdebi.ui.h:27
+msgid "  "
+msgstr "  "
+
+#: ../data/gdebi.ui.h:28
+msgid "Included files"
+msgstr "చేర్చబడిన ఫైళ్ళు"
+
+#: ../data/gdebi.ui.h:29
+msgid "Lintian output"
+msgstr ""
 
 #: ../data/gdebi.xml.in.h:1
 msgid "Software package"
@@ -209,140 +214,157 @@ msgstr "GDebi ప్యాకేజీ స్థాపకం"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
-#: ../GDebi/DebPackage.py:39
+#: ../GDebi/DebPackage.py:38
 #, python-format
 msgid "%s is not available"
 msgstr "%s అందుబాటులోలేదు"
 
-#: ../GDebi/GDebi.py:92
+#: ../GDebi/GDebiGtk.py:93
 msgid "Copy selected text"
 msgstr "ఎంపికచేసిన పాఠ్యాన్ని నకలుతీయి"
 
-#: ../GDebi/GDebi.py:103
+#: ../GDebi/GDebiGtk.py:104
 msgid "Loading..."
 msgstr "నింపుతోంది..."
 
-#: ../GDebi/GDebi.py:175
+#: ../GDebi/GDebiGtk.py:179
 msgid "Can not download as root"
 msgstr "రూట్ వలె డౌన్‌లోడ్ చేయలేదు"
 
-#: ../GDebi/GDebi.py:176
+#: ../GDebi/GDebiGtk.py:180
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
-"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి "
-"సాధారణ వాడుకరిగా మారి మరలా ప్రయత్నించండి."
+"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి సాధారణ వాడుకరిగా మారి మరలా "
+"ప్రయత్నించండి."
 
-#: ../GDebi/GDebi.py:189
+#: ../GDebi/GDebiGtk.py:193
 msgid "Downloading package"
 msgstr "ప్యాకేజీని డౌన్‌లోడ్‌చేస్తోంది"
 
-#: ../GDebi/GDebi.py:196
+#: ../GDebi/GDebiGtk.py:200
 msgid "Download failed"
 msgstr "డౌన్‌లోడ్ విఫలమైంది"
 
-#: ../GDebi/GDebi.py:197
+#: ../GDebi/GDebiGtk.py:201
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
 msgstr "ప్యాకేజీని డౌన్‌లోడ్‌చేయుటలో విఫలమైంది: file '%s' '%s'"
 
 #. set window title
 #. set name
-#: ../GDebi/GDebi.py:246 ../GDebi/GDebiKDE.py:184
+#: ../GDebi/GDebiGtk.py:248 ../GDebi/GDebiKDE.py:208
 #, python-format
 msgid "Package Installer - %s"
 msgstr "ప్యాకేజీ స్థాపకం - %s"
 
-#: ../GDebi/GDebi.py:303
+#: ../GDebi/GDebiGtk.py:305
 msgid "Package control data"
 msgstr "ప్యాకేజీ నియంత్రణ డేటా"
 
-#: ../GDebi/GDebi.py:306
+#: ../GDebi/GDebiGtk.py:308
 msgid "Upstream data"
 msgstr ""
 
-#: ../GDebi/GDebi.py:312
+#: ../GDebi/GDebiGtk.py:314
 msgid "Error reading filelist"
 msgstr ""
 
-#: ../GDebi/GDebi.py:323
+#: ../GDebi/GDebiGtk.py:330
 msgid "Error: "
 msgstr "దోషం: "
 
-#: ../GDebi/GDebi.py:338
+#: ../GDebi/GDebiGtk.py:345
 msgid "Error: no longer provides "
 msgstr ""
 
-#: ../GDebi/GDebi.py:354
+#: ../GDebi/GDebiGtk.py:361
 msgid "Same version is already installed"
 msgstr "ఇదే వెర్షన్ ఇదివరకే స్థాపించబడింది"
 
-#: ../GDebi/GDebi.py:355
+#: ../GDebi/GDebiGtk.py:362
 msgid "_Reinstall Package"
 msgstr "ప్యాకేజీని మళ్ళీస్థాపించు (_R)"
 
-#: ../GDebi/GDebi.py:401
+#: ../GDebi/GDebiGtk.py:400
+msgid ""
+"No lintian available.\n"
+"Please install using sudo apt-get install lintian"
+msgstr ""
+
+#: ../GDebi/GDebiGtk.py:403
+msgid "Running lintian..."
+msgstr ""
+
+#: ../GDebi/GDebiGtk.py:420
+#, python-format
+msgid ""
+"\n"
+"Lintian finished with exit status %s"
+msgstr ""
+
+#: ../GDebi/GDebiGtk.py:448
 msgid "Selection is a directory"
 msgstr ""
 
-#: ../GDebi/GDebi.py:406 ../GDebi/GDebi.py:411
+#: ../GDebi/GDebiGtk.py:453 ../GDebi/GDebiGtk.py:458
 #, python-format
 msgid "Error reading file content '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:415
+#: ../GDebi/GDebiGtk.py:462
 msgid "File content can not be extracted"
 msgstr "ఫైల్ సారము పొందుట వీలుకాదు"
 
-#: ../GDebi/GDebi.py:426
+#: ../GDebi/GDebiGtk.py:473
 #, python-format
 msgid "<b>To be removed: %s</b>"
 msgstr ""
 
-#: ../GDebi/GDebi.py:428 ../GDebi/GDebiKDE.py:290
+#: ../GDebi/GDebiGtk.py:475 ../GDebi/GDebiKDE.py:314
 #, python-format
 msgid "To be installed: %s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:443
+#: ../GDebi/GDebiGtk.py:490
 msgid "Open Software Package"
 msgstr "సాఫ్ట్‍వేర్ ప్యాకేజీని తెరువు"
 
-#: ../GDebi/GDebi.py:448
+#: ../GDebi/GDebiGtk.py:495
 msgid "Software packages"
 msgstr "సాఫ్ట్‍వేర్ ప్యాకేజీలు"
 
-#: ../GDebi/GDebi.py:495
+#: ../GDebi/GDebiGtk.py:542
 msgid "Dependency problems"
 msgstr ""
 
-#: ../GDebi/GDebi.py:496
+#: ../GDebi/GDebiGtk.py:543
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
 
-#: ../GDebi/GDebi.py:504
+#: ../GDebi/GDebiGtk.py:551
 msgid "File not found"
 msgstr "ఫైల్ కనపడలేదు"
 
-#: ../GDebi/GDebi.py:505
+#: ../GDebi/GDebiGtk.py:552
 msgid "You tried to install a file that does not (or no longer) exist. "
 msgstr ""
 
-#: ../GDebi/GDebi.py:516
+#: ../GDebi/GDebiGtk.py:563
 msgid "Installing package file..."
 msgstr "ఫ్యాకేజీ ఫైలును స్థాపిస్తోంది..."
 
-#: ../GDebi/GDebi.py:518
+#: ../GDebi/GDebiGtk.py:565
 msgid "Removing package..."
 msgstr "ప్యాకేజీని తొలగిస్తున్నది..."
 
-#: ../GDebi/GDebi.py:521
+#: ../GDebi/GDebiGtk.py:568
 msgid "Install unauthenticated software?"
 msgstr "ధృవీకరించని సాఫ్ట్‍వేర్‌ని స్థాపించాలా?"
 
-#: ../GDebi/GDebi.py:522
+#: ../GDebi/GDebiGtk.py:569
 msgid ""
 "Malicious software can damage your data and take control of your system.\n"
 "\n"
@@ -350,60 +372,59 @@ msgid ""
 "nature."
 msgstr ""
 
-#: ../GDebi/GDebi.py:550
+#: ../GDebi/GDebiGtk.py:597
 msgid "You need to grant administrative rights to install software"
-msgstr ""
-"సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
+msgstr "సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
 
-#: ../GDebi/GDebi.py:551
+#: ../GDebi/GDebiGtk.py:598
 msgid ""
 "\n"
 "It is a possible security risk to install packages files manually.\n"
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 
-#: ../GDebi/GDebi.py:556
+#: ../GDebi/GDebiGtk.py:603
 msgid "You need to grant administrative rights to remove software"
 msgstr ""
 
-#: ../GDebi/GDebi.py:557
+#: ../GDebi/GDebiGtk.py:604
 msgid "It is a possible risk to remove packages."
 msgstr ""
 
-#: ../GDebi/GDebi.py:579 ../GDebi/GDebi.py:643
+#: ../GDebi/GDebiGtk.py:626 ../GDebi/GDebiGtk.py:690
 msgid "Failed to install package file"
 msgstr "ప్యాకేజీ ఫైలుని స్థాపించుటలో విఫలమైంది"
 
-#: ../GDebi/GDebi.py:581
+#: ../GDebi/GDebiGtk.py:628
 msgid "Failed to remove package"
 msgstr "ప్యాకేజీని తీసివేయుటలో విఫలమైంది"
 
-#: ../GDebi/GDebi.py:627 ../GDebi/GDebiKDE.py:342
+#. errMsg = "%s" % msg
+#: ../GDebi/GDebiGtk.py:674 ../GDebi/GDebiKDE.py:370
 msgid "Could not download all required files"
 msgstr "అవసరమైన అన్ని ఫైళ్ళను డౌన్‌లోడ్ చేయుట వీలుపడదు"
 
-#: ../GDebi/GDebi.py:628 ../GDebi/GDebiKDE.py:343
+#: ../GDebi/GDebiGtk.py:675 ../GDebi/GDebiKDE.py:371
 msgid "Please check your internet connection or installation medium."
 msgstr "దయచేసి మీ అంతర్జాల అనుసంధానాన్ని లేక స్థాపక మాధ్యమాన్ని సరిచూడండి."
 
-#: ../GDebi/GDebi.py:632 ../GDebi/GDebiKDE.py:347
+#: ../GDebi/GDebiGtk.py:679 ../GDebi/GDebiKDE.py:376
 msgid "Could not install all dependencies"
 msgstr "అన్ని ఆధారితత్వాలను స్థాపించుట వీలుకాదు"
 
-#: ../GDebi/GDebi.py:633 ../GDebi/GDebiKDE.py:348
+#: ../GDebi/GDebiGtk.py:680 ../GDebi/GDebiKDE.py:377
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం "
-"టెర్మినల్ విండోను చూడండి."
+"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం టెర్మినల్ విండోను చూడండి."
 
-#: ../GDebi/GDebi.py:649
+#: ../GDebi/GDebiGtk.py:696
 #, python-format
 msgid "Installing %s"
 msgstr "%s స్థాపించబడుతోంది"
 
-#: ../GDebi/GDebi.py:652
+#: ../GDebi/GDebiGtk.py:699
 #, python-format
 msgid "Removing %s"
 msgstr "%s తొలగించబడుతోంది"
@@ -412,177 +433,176 @@ msgstr "%s తొలగించబడుతోంది"
 #. show the button
 #. self.button_deb_install_close.set_sensitive(True)
 #. self.button_deb_install_close.grab_default()
-#: ../GDebi/GDebi.py:674 ../GDebi/GDebiKDE.py:367
+#: ../GDebi/GDebiGtk.py:721 ../GDebi/GDebiKDE.py:396
 msgid "Installation finished"
 msgstr "స్థాపన పూర్తయింది"
 
-#: ../GDebi/GDebi.py:676
+#: ../GDebi/GDebiGtk.py:723
 msgid "Removal finished"
 msgstr "తీసివేయుట పూర్తయినది"
 
-#: ../GDebi/GDebi.py:679
+#: ../GDebi/GDebiGtk.py:726
 #, python-format
 msgid "Package '%s' was installed"
 msgstr "'%s' ప్యాకేజీ స్థాపించబడింది"
 
-#: ../GDebi/GDebi.py:681
+#: ../GDebi/GDebiGtk.py:728
 #, python-format
 msgid "Package '%s' was removed"
 msgstr ""
 
-#: ../GDebi/GDebi.py:684 ../GDebi/GDebiKDE.py:371
+#: ../GDebi/GDebiGtk.py:731 ../GDebi/GDebiKDE.py:400
 #, python-format
 msgid "Failed to install package '%s'"
 msgstr "'%s' ప్యాకేజీని స్థాపించుటలో విఫలమైంది"
 
-#: ../GDebi/GDebi.py:687
+#: ../GDebi/GDebiGtk.py:734
 #, python-format
 msgid "Failed to remove package '%s'"
 msgstr ""
 
-#: ../GDebi/GDebi.py:691
+#: ../GDebi/GDebiGtk.py:738
 msgid "Installation complete"
 msgstr "స్థాపన పూర్తయింది"
 
-#: ../GDebi/GDebi.py:693
+#: ../GDebi/GDebiGtk.py:740
 msgid "Removal complete"
 msgstr ""
 
-#: ../GDebi/GDebi.py:701 ../GDebi/GDebiKDE.py:381
+#: ../GDebi/GDebiGtk.py:748 ../GDebi/GDebiKDE.py:410
 msgid "Failed to completely install all dependencies"
 msgstr "అన్ని ఆధారితత్వాలను పూర్తిగా స్థాపించుటలో విఫలమయ్యింది"
 
-#: ../GDebi/GDebi.py:703
+#: ../GDebi/GDebiGtk.py:750
 msgid "Failed to completely remove package"
 msgstr ""
 
-#: ../GDebi/GDebi.py:704 ../GDebi/GDebiKDE.py:382
+#: ../GDebi/GDebiGtk.py:751 ../GDebi/GDebiKDE.py:411
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
-"దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
+msgstr "దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
 
 #. ui
-#: ../GDebi/GDebi.py:823 ../GDebi/KDEAptDialogs.py:73
+#: ../GDebi/GDebiGtk.py:870 ../GDebi/KDEAptDialogs.py:70
 #, python-format
 msgid "Installing '%s'..."
 msgstr "'%s' స్థాపిస్తోంది..."
 
-#: ../GDebi/GDebi.py:826
+#: ../GDebi/GDebiGtk.py:873
 #, python-format
 msgid "Removing '%s'..."
 msgstr ""
 
-#: ../GDebi/GDebi.py:930 ../GDebi/KDEAptDialogs.py:141
+#: ../GDebi/GDebiGtk.py:977 ../GDebi/KDEAptDialogs.py:138
 msgid "Installing dependencies..."
 msgstr "ఆధారితత్వాలను స్థాపిస్తోంది..."
 
-#: ../GDebi/GDebi.py:975 ../GDebi/KDEAptDialogs.py:204
-#: ../GDebi/KDEAptDialogs.py:217 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebiGtk.py:1022 ../GDebi/KDEAptDialogs.py:201
+#: ../GDebi/KDEAptDialogs.py:214 ../GDebi/KDEAptDialogs.py:216
 msgid "Downloading additional package files..."
 msgstr "అదనపు ప్యాకేజీ ఫైళ్ళను డౌన్‌లోడ్ చేస్తోంది..."
 
-#: ../GDebi/GDebi.py:984 ../GDebi/KDEAptDialogs.py:217
+#: ../GDebi/GDebiGtk.py:1031 ../GDebi/KDEAptDialogs.py:214
 #, python-format
 msgid "File %s of %s at %sB/s"
 msgstr ""
 
-#: ../GDebi/GDebi.py:986 ../GDebi/KDEAptDialogs.py:219
+#: ../GDebi/GDebiGtk.py:1033 ../GDebi/KDEAptDialogs.py:216
 #, python-format
 msgid "File %s of %s"
 msgstr ""
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebi.py:993 ../GDebi/KDEAptDialogs.py:224
+#: ../GDebi/GDebiGtk.py:1040 ../GDebi/KDEAptDialogs.py:221
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:59
+#: ../GDebi/GDebiCli.py:57
 msgid "Configuration items must be specified with a =<value>\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:65
+#: ../GDebi/GDebiCli.py:63
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:78
+#: ../GDebi/GDebiCli.py:76
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:81
+#: ../GDebi/GDebiCli.py:80
 msgid "Failed to open the software package\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:82
+#: ../GDebi/GDebiCli.py:81
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:88
+#: ../GDebi/GDebiCli.py:87
 msgid "This package is uninstallable\n"
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:97 ../GDebi/GDebiKDE.py:220
+#: ../GDebi/GDebiCli.py:96 ../GDebi/GDebiKDE.py:244
 msgid "No description is available"
 msgstr "వివరణ అందుబాటులోలేదు"
 
-#: ../GDebi/GDebiCli.py:103
+#: ../GDebi/GDebiCli.py:106
 msgid "The following packages are UNAUTHENTICATED: "
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:107
+#: ../GDebi/GDebiCli.py:110
 msgid "Requires the REMOVAL of the following packages: "
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:112
+#: ../GDebi/GDebiCli.py:115
 msgid "Requires the installation of the following packages: "
 msgstr ""
 
-#: ../GDebi/GDebiCli.py:126 ../GDebi/GDebiCli.py:129
+#: ../GDebi/GDebiCli.py:131
 #, python-format
 msgid "Error during install: '%s'"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:136
+#: ../GDebi/GDebiKDE.py:160
 msgid "Included Files"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:138 ../GDebi/GDebiKDE.py:278
+#: ../GDebi/GDebiKDE.py:162 ../GDebi/GDebiKDE.py:302
 msgid "&Install Package"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:139
+#: ../GDebi/GDebiKDE.py:163
 msgid "&Download Package"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:164
+#: ../GDebi/GDebiKDE.py:188
 msgid "The package file does not exist"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:165
+#: ../GDebi/GDebiKDE.py:189
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
-#: ../GDebi/GDebiKDE.py:246
+#: ../GDebi/GDebiKDE.py:270
 msgid "&Reinstall Package"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:281
+#: ../GDebi/GDebiKDE.py:305
 msgid "Re&install Package"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:292
+#: ../GDebi/GDebiKDE.py:316
 #, python-format
 msgid "To be removed: %s"
 msgstr ""
 
-#: ../GDebi/GDebiKDE.py:369
+#: ../GDebi/GDebiKDE.py:398
 msgid "<b>"
 msgstr ""
 
@@ -597,83 +617,83 @@ msgid ""
 "in a terminal window."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:84
+#: ../GDebi/GDebiCommon.py:86
 #, python-format
 msgid "'%s' is not a Debian package"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:85
+#: ../GDebi/GDebiCommon.py:87
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:89
+#: ../GDebi/GDebiCommon.py:91
 #, python-format
 msgid "Could not open '%s'"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:90
+#: ../GDebi/GDebiCommon.py:92
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:109
+#: ../GDebi/GDebiCommon.py:111
 msgid "Same version is available in a software channel"
 msgstr "ఇదే వెర్షన్ సాఫ్ట్‍వేర్ ఛానల్‌లో అందుబాటులో ఉంది"
 
-#: ../GDebi/GDebiCommon.py:110
+#: ../GDebi/GDebiCommon.py:112
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:114
+#: ../GDebi/GDebiCommon.py:116
 msgid "An older version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:115
+#: ../GDebi/GDebiCommon.py:117
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:120
+#: ../GDebi/GDebiCommon.py:122
 msgid "A later version is available in a software channel"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:122
+#: ../GDebi/GDebiCommon.py:124
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:164
+#: ../GDebi/GDebiCommon.py:166
 msgid "All dependencies are satisfied"
 msgstr ""
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:167
+#: ../GDebi/GDebiCommon.py:169
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:169
+#: ../GDebi/GDebiCommon.py:171
 #, python-format
 msgid "Requires the installation of %s packages"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:177 ../GDebi/GDebiCommon.py:195
+#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
 msgid "Only one software management tool is allowed to run at the same time"
 msgstr ""
 
-#: ../GDebi/GDebiCommon.py:179 ../GDebi/GDebiCommon.py:197
+#: ../GDebi/GDebiCommon.py:181 ../GDebi/GDebiCommon.py:199
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
-#: ../GDebi/KDEAptDialogs.py:226
+#: ../GDebi/KDEAptDialogs.py:223
 msgid "Media Change"
 msgstr ""
 
