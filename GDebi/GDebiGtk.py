@@ -156,8 +156,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             return
         if show_busy_cursor:
             win.set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-            while Gtk.events_pending(): 
-                Gtk.main_iteration()        
+            while Gtk.events_pending():
+                Gtk.main_iteration()
         else:
             win.set_cursor(None)
 
@@ -196,7 +196,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                 file = gio_dest.get_path()
             self.dialog_gio_download.hide()
         except Exception as e:
-            self.show_alert(Gtk.MessageType.ERROR, 
+            self.show_alert(Gtk.MessageType.ERROR,
                             _("Download failed"),
                             _("Downloading the package failed: "
                               "file '%s' '%s'") % (file, e))
@@ -234,12 +234,13 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             if path.endswith(".deb"):
                 self.open(path)
 
-    def open(self, file, downloaded=False):
+    def open(self, filename, downloaded=False):
         self._show_busy_cursor(True)
-        res = GDebiCommon.open(self, file, downloaded)
+        res = GDebiCommon.open(self, filename, downloaded)
         self._show_busy_cursor(False)
         if res == False:
-            self.show_alert(Gtk.MessageType.ERROR, self.error_header, self.error_body)
+            self.show_alert(
+                Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
 
         self.statusbar_main.push(self.context, "")
@@ -452,10 +453,12 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             except Exception as e:
                 data = _("Error reading file content '%s'") % e
         elif parent_path == 1:
+            self._show_busy_cursor(True)
             try:
                 data = self._deb.data_content(name)
             except Exception as e:
                 data = _("Error reading file content '%s'") % e
+            self._show_busy_cursor(False)
         else:
             assert False, "NOT REACHED"
         if not data:
@@ -496,7 +499,9 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         #fs.add_filter(filter)
         fs.set_filter(filter)
         # run it!
-        if fs.run() == Gtk.ResponseType.OK:
+        res = fs.run()
+        fs.hide()
+        if res == Gtk.ResponseType.OK:
             #print fs.get_filename()
             self.open(fs.get_filename())
         fs.destroy()
