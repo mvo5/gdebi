@@ -1,9 +1,9 @@
-gdebi (0.9~exp1) UNRELEASEDexperimental; urgency=low
+gdebi (0.9~exp1) experimental; urgency=low
 
   * lp:~mvo/gdebi/py3compat:
     - prepare for python3 and start adding tests
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 30 Nov 2012 20:26:48 +0100
+ -- Michael Vogt <mvo@debian.org>  Fri, 30 Nov 2012 20:42:48 +0100
 
 gdebi (0.8.7) unstable; urgency=low
 
