@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     try:
         debi = GDebiCli(options)
-    except SystemError, e:
+    except SystemError as e:
         print "Error opening the cache:\n%s" % e
         sys.exit(1)
     if not debi.open(args[0]):

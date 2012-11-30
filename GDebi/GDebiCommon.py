@@ -21,23 +21,20 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-
-import sys
+import gettext
+import logging
 import os
-import string
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 from mimetypes import guess_type
 
-import apt
 import apt_pkg
-
 from apt.cache import Cache
-from DebPackage import DebPackage
-import gettext
+
+from .DebPackage import DebPackage
+
 
 def _(str):
     return utf8(gettext.gettext(str))
+
 
 def utf8(str):
     if isinstance(str, unicode):
@@ -47,6 +44,7 @@ def utf8(str):
     except:
         # assume latin1 as fallback
         return unicode(str, 'latin1')
+
 	  
 class GDebiCommon(object):
     # cprogress may be different in child classes
@@ -57,7 +55,7 @@ class GDebiCommon(object):
         self.version_info_title = ""
         self.version_info_msg = ""
         self._deb = None
-     	self._options = options
+        self._options = options
         self.install = []
         self.remove = []
         self.unauthenticated = 0
@@ -72,14 +70,15 @@ class GDebiCommon(object):
                              "To fix it run 'gksudo synaptic' or "
                              "'sudo apt-get install -f' "
                              "in a terminal window.")
-		return False
+                return False
         return True
 
     def open(self, file, downloaded=False):
         file = os.path.abspath(file)
         try:
             self._deb = DebPackage(file, self._cache, downloaded)
-        except (IOError,SystemError,ValueError),e:
+        except (IOError, SystemError, ValueError) as e:
+            logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
                 mimetype[0] != "application/x-debian-package"):

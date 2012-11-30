@@ -22,27 +22,47 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import logging
 import os
-import subprocess
-import string
 import re
-import pty
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
-import apt_pkg
+import string
+import sys
 
-from PyKDE4.kdecore import *
-from PyKDE4.kdeui import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+
+from PyKDE4.kdeui import (
+    KApplication,
+    KIcon,
+    KMessageBox,
+    DesktopIcon,
+    )
+from PyQt4.QtCore import (
+    Qt,
+    SIGNAL,
+    QStringList,
+    QTimer,
+    )
+from PyQt4.QtGui import (
+    QDialog,
+    QHBoxLayout,
+    QTextCursor,
+    QTextEdit,
+    QTextOption,
+    )
 from PyQt4 import uic
 
 from apt.cache import Cache
-from DebPackage import DebPackage
 
 import gettext
-from GDebiCommon import GDebiCommon, utf8, _
-from KDEAptDialogs import *
+
+from .DebPackage import DebPackage
+from .GDebiCommon import GDebiCommon, utf8, _
+from .KDEAptDialogs import (
+    CacheProgressAdapter,
+    KDEDpkgInstallProgress,
+    KDEFetchProgressAdapter,
+    KDEInstallProgressAdapter,
+    )
+
 
 def __(catalog,str):
     return unicode(gettext.dgettext(catalog, str), 'UTF-8')
@@ -109,10 +129,11 @@ class DumbTerminal(QTextEdit):
             return
         # block signals so that we do not run into a recursion
         self._block = True
-        para = self.paragraphs() - 1
-        pos = self.paragraphLength(para)
+        #para = self.paragraphs() - 1
+        #pos = self.paragraphLength(para)
         self.moveCursor(QTextCursor.End)
         self._block = False
+
 
 class GDebiKDEDialog(QDialog):
     """Our main user interface, load from UI file"""
@@ -120,8 +141,11 @@ class GDebiKDEDialog(QDialog):
         QDialog.__init__(self, parent)
         loadUi("GDebiKDEDialog.ui", self)
 
+
 class GDebiKDE(GDebiCommon, GDebiKDEDialog):
-    def __init__(self,datadir,options,file="",parent = None,name = None,modal = 0,fl = 0):
+
+    def __init__(self, datadir, options, file="", parent=None, name=None,
+                 modal=0, fl=0):
         GDebiKDEDialog.__init__(self,parent)
         GDebiCommon.__init__(self,datadir,options,file)
         # load the icon
@@ -291,9 +315,10 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         for r in remove:
             changedList.append(_("To be removed: %s") % r)
 
-        infoReport = KMessageBox.informationList(self,
-                      _("<b>To install the following changes are required:</b>"),
-                      changedList, _("Details"))
+        KMessageBox.informationList(
+            self,
+            _("<b>To install the following changes are required:</b>"),
+            changedList, _("Details"))
 
     def installButtonClicked(self):
         # if not root, start a new instance
@@ -336,16 +361,17 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                                                   self.installDialog.installingLabel,
                                                   self.installDialog)
             self.installDialog.konsole.setInstallProgress(iprogress)
-            errMsg = None
+            #errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
+            except IOError as msg:
                 res = False
-                errMsg = "%s" % msg
+                #errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                             "installation medium.")
-            except SystemError, msg:
+            except SystemError as msg:
+                logging.warn("error: %s" % msg)
                 res = False
                 header = _("Could not install all dependencies")
                 body = _("Usually this is related to an error of the "

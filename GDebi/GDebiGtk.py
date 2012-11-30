@@ -31,7 +31,7 @@ import string
 import sys
 import time
 import tempfile
-import thread
+import threading
 import urllib
 
 import gi
@@ -45,11 +45,12 @@ from gi.repository import Pango
 from gi.repository import Vte
 from gi.repository import Gio
 
-from DebPackage import DebPackage
-from SimpleGtkbuilderApp import SimpleGtkbuilderApp
 from apt.progress.base import InstallProgress
-from GDebiCommon import GDebiCommon, utf8
 from gettext import gettext as _
+
+from .DebPackage import DebPackage
+from .SimpleGtkbuilderApp import SimpleGtkbuilderApp
+from .GDebiCommon import GDebiCommon, utf8
 
 # the timeout when the termial is expanded if no activity from dpkg
 # is happening 
@@ -61,27 +62,24 @@ UBUNTU=False
 try:
     import lsb_release
     UBUNTU = lsb_release.get_distro_information()['ID'] == 'Ubuntu'
-except Exception, e:
+except Exception as e:
     pass
 
-class GDebi(SimpleGtkbuilderApp, GDebiCommon):
+class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir,options,file)
-        localesApp="gdebi"
-        localesDir="/usr/share/locale"
-
         SimpleGtkbuilderApp.__init__(
-            self, path=datadir+"/gdebi.ui", domain="gdebi")
+            self, path=os.path.join(datadir, "gdebi.ui"), domain="gdebi")
+
         # use a nicer default icon
         icons = Gtk.IconTheme.get_default()
         try:
           logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
-        except Exception, e:
-          print "Error loading logo"
-          pass
+        except Exception as e:
+          logging.warn("Error loading logo %s" % e)
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
@@ -193,7 +191,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                              self.gio_progress_callback, 0):
                 file = gio_dest.get_path()
             self.dialog_gio_download.hide()
-        except Exception, e:
+        except Exception as e:
             self.show_alert(Gtk.MessageType.ERROR, 
                             _("Download failed"),
                             _("Downloading the package failed: "
@@ -255,7 +253,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         buf = self.textview_description.get_buffer()
         try:
             long_desc = ""
-            raw_desc = string.split(utf8(self._deb["Description"]), "\n")
+            raw_desc = utf8(self._deb["Description"]).split("\n")
             # append a newline to the summary in the first line
             summary = raw_desc[0]
             raw_desc[0] = ""
@@ -306,8 +304,8 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
             header = store.append(None, [_("Upstream data")])
             for name in self._deb.filelist:
                 store.append(header, [name])
-        except Exception, e:
-            print "Exception while reading the filelist: '%s'" % e
+        except Exception as e:
+            logging.exception("Exception while reading the filelist: '%s'" % e)
             store.clear()
             store.append(None, [_("Error reading filelist")])
         self.treeview_files.set_model(store)
@@ -324,7 +322,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
                 #glib.markup_escape_text(self._deb._failure_string) +
                 self._deb._failure_string + 
                 "</span>")
-	    self.button_install.set_label(_("_Install Package"))
+            self.button_install.set_label(_("_Install Package"))
 
             self.button_install.set_sensitive(False)
             self.button_details.hide()
@@ -404,12 +402,12 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
         elif parent_path == 0:
             try:
                 data = self._deb.control_content(name)
-            except Exception, e:
+            except Exception as e:
                 data = _("Error reading file content '%s'") % e
         elif parent_path == 1:
             try:
                 data = self._deb.data_content(name)
-            except Exception, e:
+            except Exception as e:
                 data = _("Error reading file content '%s'") % e
         else:
             assert False, "NOT REACHED"
@@ -477,7 +475,7 @@ class GDebi(SimpleGtkbuilderApp, GDebiCommon):
 
     def on_about_activate(self, widget):
         #print "about"
-        from Version import VERSION
+        from .Version import VERSION
         self.dialog_about.set_version(VERSION)
         self.dialog_about.run()
         self.dialog_about.hide()
@@ -620,16 +618,16 @@ Install software from trustworthy software distributors only.
                                                     self.vte_terminal,
                                                     self.label_action,
                                                     self.expander_install)
-            errMsg = None
+            #errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError, msg:
+            except IOError as msg:
                 res = False
-                errMsg = "%s" % msg
+                #errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                         "installation medium.")
-            except SystemError, msg:
+            except SystemError as msg:
                 res = False
                 header = _("Could not install all dependencies"),
                 body = _("Usually this is related to an error of the "
@@ -817,7 +815,7 @@ Install software from trustworthy software distributors only.
                     logging.exception("lock.release failed")
 
             # get a lock
-            lock = thread.allocate_lock()
+            lock = threading.Lock()
             lock.acquire()
 
             # ui
@@ -872,17 +870,17 @@ Install software from trustworthy software distributors only.
                 while True:
                     try:
                         read += os.read(readfd,1)
-                    except OSError, (errno,errstr):
+                    except OSError as e:
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
-                        if errno != EAGAIN:
-                            print errstr
+                        if e.errno != EAGAIN:
+                            logging.warn(e.errstr)
                         break
                     self.time_last_update = time.time()
                     if read.endswith("\n"):
-                        statusl = string.split(read, ":")
+                        statusl = read.split(":")
                         if len(statusl) < 3:
-                            print "got garbage from dpkg: '%s'" % read
+                            logging.warn("got garbage from dpkg: '%s'" % read)
                             read = ""
                             break
                         status = statusl[2].strip()
@@ -968,19 +966,19 @@ Install software from trustworthy software distributors only.
         
     class FetchProgressAdapter(apt.progress.base.AcquireProgress):
         def __init__(self,progress,action,main):
-            super(GDebi.FetchProgressAdapter, self).__init__()
+            super(GDebiGtk.FetchProgressAdapter, self).__init__()
             self.progress = progress
             self.action = action
             self.main = main
         def start(self):
-            super(GDebi.FetchProgressAdapter, self).start()
+            super(GDebiGtk.FetchProgressAdapter, self).start()
             self.action.set_markup("<i>"+_("Downloading additional package files...")+"</i>")
             self.progress.set_fraction(0)
         def stop(self):
             #print "stop()"
             pass
         def pulse(self, owner):
-            super(GDebi.FetchProgressAdapter, self).pulse(owner)
+            super(GDebiGtk.FetchProgressAdapter, self).pulse(owner)
             at_item = min(self.current_items + 1, self.total_items)
             if self.current_cps > 0:
                 self.progress.set_text(_("File %s of %s at %sB/s") % (at_item,self.total_items,apt_pkg.size_to_str(self.current_cps)))
@@ -1017,18 +1015,19 @@ Install software from trustworthy software distributors only.
                 Gtk.main_iteration()
         def done(self):
             self.progressbar.hide()
-        
+
+
 if __name__ == "__main__":
-    app = GDebi("data/",None)
+    app = GDebiGtk("data/",None)
 
     pkgs = ["cw"]
     for pkg in pkgs:
-        print "installing %s" % pkg
+        print("installing %s" % pkg)
         app._cache[pkg].mark_install()
 
     for pkg in app._cache:
         if pkg.marked_install or pkg.marked_upgrade:
-            print pkg.name
+            print(pkg.name)
 
     apt_pkg.pkgsystem_lock()
     app.dialog_deb_install.set_transient_for(app.window_main)
@@ -1043,6 +1042,6 @@ if __name__ == "__main__":
                                            app.label_action,
                                            app.expander_install)
     res = app._cache.commit(fprogress,iprogress)
-    print "commit retured: %s" % res
+    print("commit retured: %s" % res)
     
     Gtk.main()
