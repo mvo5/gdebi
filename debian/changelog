@@ -2,6 +2,8 @@ gdebi (0.9~exp1) experimental; urgency=low
 
   * lp:~mvo/gdebi/py3compat:
     - prepare for python3 and start adding tests
+  * lp:~mvo/gdebi/add-lintian
+    - add a lintian tab
 
  -- Michael Vogt <mvo@debian.org>  Fri, 30 Nov 2012 20:42:48 +0100
 
