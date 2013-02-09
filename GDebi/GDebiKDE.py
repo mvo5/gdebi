@@ -327,7 +327,6 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                 executable = os.path.curdir + "/gdebi-kde"
             else:
                 executable = "/usr/bin/gdebi-kde"
-            print "executable " + executable
             su_cmd = "/usr/bin/kdesudo"
             if not os.access(su_cmd, os.X_OK):
                 su_cmd = "/usr/lib/kde4/libexec/kdesu"
