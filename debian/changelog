@@ -4,6 +4,8 @@ gdebi (0.9~exp2) UNRELEASED; urgency=low
     - Bump compatibility level to 9.
   * debian/control:
     - Bump Standards-Version to 3.9.4.
+  * debian/copyright:
+    - Update copyright years.
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 09 Feb 2013 04:01:28 +0100
 
