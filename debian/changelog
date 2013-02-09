@@ -1,5 +1,7 @@
 gdebi (0.9~exp2) UNRELEASED; urgency=low
 
+  * debian/compat:
+    - Bump compatibility level to 9.
   * debian/control:
     - Bump Standards-Version to 3.9.4.
 
