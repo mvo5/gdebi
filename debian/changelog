@@ -4,6 +4,8 @@ gdebi (0.9~exp2) UNRELEASED; urgency=low
     - Fix kdesudo invocation (Closes: #694681).
   * data/gdebi.glade, data/gdebi.gladep, data/gdebi.xml.in:
     - Remove unused files.
+  * po/POTFILES.in:
+    - Remove reference to dropped files.
   * debian/compat:
     - Bump compatibility level to 9.
   * debian/control:
