@@ -1,3 +1,10 @@
+gdebi (0.9~exp2) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Bump Standards-Version to 3.9.4.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 09 Feb 2013 04:01:28 +0100
+
 gdebi (0.9~exp1) experimental; urgency=low
 
   * lp:~mvo/gdebi/py3compat:
