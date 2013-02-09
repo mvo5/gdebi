@@ -331,7 +331,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             su_cmd = "/usr/bin/kdesudo"
             if not os.access(su_cmd, os.X_OK):
                 su_cmd = "/usr/lib/kde4/libexec/kdesu"
-            os.execl(su_cmd, os.path.basename(su_cmd), executable, "-n", self._deb.filename)
+            os.execl(su_cmd, os.path.basename(su_cmd), executable, "--", "-n", self._deb.filename)
             self.kapp.exit()
 
         if not self.try_acquire_lock():
