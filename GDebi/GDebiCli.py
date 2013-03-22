@@ -48,7 +48,9 @@ class GDebiCli(object):
         # set architecture to architecture in root-dir
         if options.rootdir and os.path.exists(options.rootdir+"/usr/bin/dpkg"):
             arch = Popen([options.rootdir+"/usr/bin/dpkg",
-                          "--print-architecture"], stdout=PIPE).communicate()[0]
+                          "--print-architecture"],
+                         stdout=PIPE,
+                         universal_newlines=True).communicate()[0]
             if arch:
                 apt_pkg.config.set("APT::Architecture",arch.strip())
         if options.apt_opts:
