@@ -69,8 +69,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir, options, file)
-        localesApp="gdebi"
-        localesDir="/usr/share/locale"
 
         SimpleGtkbuilderApp.__init__(
             self, path=os.path.join(datadir, "gdebi.ui"), domain="gdebi")
