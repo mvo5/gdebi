@@ -27,7 +27,6 @@ import logging
 import os
 import posix
 import re
-import string
 import sys
 import time
 import tempfile
@@ -925,7 +924,7 @@ Install software from trustworthy software distributors only.
             while lock.locked():
                 while True:
                     try:
-                        read += os.read(readfd,1)
+                        read += os.read(readfd,1).decode("utf-8")
                     except OSError as e:
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
