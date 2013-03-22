@@ -267,7 +267,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             raw_desc[0] = ""
             long_desc = "%s\n" % summary
             for line in raw_desc:
-                tmp = string.strip(line)
+                tmp = line.strip()
                 if tmp == ".":
                     long_desc += "\n"
                 else:

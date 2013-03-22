@@ -24,6 +24,7 @@
 import gettext
 import logging
 import os
+import sys
 from mimetypes import guess_type
 
 import apt_pkg
@@ -32,18 +33,25 @@ from apt.cache import Cache
 from .DebPackage import DebPackage
 
 
-def _(str):
-    return utf8(gettext.gettext(str))
+if sys.version_info[0] == 2:
+    def _(str):
+        return utf8(gettext.gettext(str))
 
 
-def utf8(str):
-    if isinstance(str, unicode):
-        return str
-    try:
-        return unicode(str, 'UTF-8')
-    except:
-        # assume latin1 as fallback
-        return unicode(str, 'latin1')
+    def py2utf8(str):
+        if isinstance(str, unicode):
+            return str
+        try:
+            return unicode(str, 'UTF-8')
+        except:
+            # assume latin1 as fallback
+            return unicode(str, 'latin1')
+    utf8 = py2utf8
+else:
+    from gettext import gettext as _
+    def py3utf8(s):
+        return s
+    utf8 = py3utf8
 
 	  
 class GDebiCommon(object):
