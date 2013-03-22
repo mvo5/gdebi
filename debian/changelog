@@ -1,3 +1,11 @@
+gdebi (0.9~exp3) UNRELEASEDexperimental; urgency=low
+
+  * lp:~mvo/gdebi/py3compat2:
+    - more python3 compatbility, gdebi cli and gtk should
+      work on both py2 and py3 now
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 22 Mar 2013 21:10:39 +0100
+
 gdebi (0.9~exp2) experimental; urgency=low
 
   * GDebi/GDebiKDE.py:

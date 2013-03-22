@@ -27,12 +27,16 @@ import logging
 import os
 import posix
 import re
-import string
 import sys
 import time
 import tempfile
 import threading
-import urllib
+# py3 compat
+try:
+    from urllib import url2pathname
+    url2pathname  # pyflakes
+except ImportError:
+    from urllib.request import url2pathname
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -69,8 +73,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
         GDebiCommon.__init__(self,datadir, options, file)
-        localesApp="gdebi"
-        localesDir="/usr/share/locale"
 
         SimpleGtkbuilderApp.__init__(
             self, path=os.path.join(datadir, "gdebi.ui"), domain="gdebi")
@@ -205,7 +207,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
-        path = urllib.url2pathname(uri) # escape special chars
+        path = url2pathname(uri) # escape special chars
         path = path.strip('\r\n\x00') # remove \r\n and NULL
         # get the path to file
         if path.startswith('file:\\\\\\'): # windows
@@ -264,7 +266,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             raw_desc[0] = ""
             long_desc = "%s\n" % summary
             for line in raw_desc:
-                tmp = string.strip(line)
+                tmp = line.strip()
                 if tmp == ".":
                     long_desc += "\n"
                 else:
@@ -425,7 +427,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def _on_lintian_output(self, gio_file, condition):
         if condition & GLib.IOCondition.IN:
-            content = gio_file.read()
+            # we get bytes from gio
+            content = gio_file.read().decode("utf-8")
             if content:
                 self._lintian_output += content
                 buf = self.textview_lintian_output.get_buffer()
@@ -921,7 +924,7 @@ Install software from trustworthy software distributors only.
             while lock.locked():
                 while True:
                     try:
-                        read += os.read(readfd,1)
+                        read += os.read(readfd,1).decode("utf-8")
                     except OSError as e:
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN

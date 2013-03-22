@@ -49,6 +49,7 @@ import gettext
 class OptionParsed:
     non_interactive = False
 
+
 if __name__ == "__main__":
 
     localesApp="gdebi"
