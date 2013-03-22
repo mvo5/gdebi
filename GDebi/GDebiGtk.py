@@ -423,7 +423,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def _on_lintian_output(self, gio_file, condition):
         if condition & GLib.IOCondition.IN:
-            content = gio_file.read()
+            # we get bytes from gio
+            content = gio_file.read().decode("utf-8")
             if content:
                 self._lintian_output += content
                 buf = self.textview_lintian_output.get_buffer()
