@@ -139,7 +139,7 @@ class GDebiCommon(object):
                         provides.add(i[0])
             provides = set(pkg.provides).difference(provides)
             if provides:
-                for package in self._cache.keys():
+                for package in list(self._cache.keys()):
                     if self._cache[package].installed:
                         for dep in self._cache[package].installed.dependencies:
                             for d in dep.or_dependencies:
