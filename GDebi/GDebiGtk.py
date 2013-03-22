@@ -32,7 +32,12 @@ import sys
 import time
 import tempfile
 import threading
-import urllib
+# py3 compat
+try:
+    from urllib import url2pathname
+    url2pathname  # pyflakes
+except ImportError:
+    from urllib.request import url2pathname
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -203,7 +208,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def _get_file_path_from_dnd_dropped_uri(self, uri):
         """ helper to get a useful path from a drop uri"""
-        path = urllib.url2pathname(uri) # escape special chars
+        path = url2pathname(uri) # escape special chars
         path = path.strip('\r\n\x00') # remove \r\n and NULL
         # get the path to file
         if path.startswith('file:\\\\\\'): # windows
