@@ -22,31 +22,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
+import logging
 import os
 import subprocess
-import string
+
 import apt
 import apt_pkg
-from PyKDE4.kdecore import *
-from PyKDE4.kdeui import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 
-import urllib
-import fcntl
-import posix
-import time
-import thread
-import re
+from PyKDE4.kdeui import (
+    KApplication,
+    KMessageBox,
+    KStandardGuiItem,
+    )
+from PyQt4.QtCore import (
+    QTimer,
+    )
+
 import pty
 import select
 
-from apt.cache import Cache
-from apt.debfile import DebPackage
 from apt.progress.base import InstallProgress
-from gettext import gettext as gett
-from GDebiCommon import utf8, _
+
+from .GDebiCommon import utf8, _
 
 
 class KDEDpkgInstallProgress(object):
@@ -66,7 +63,7 @@ class KDEDpkgInstallProgress(object):
         self.progress.setValue(0)
 
     def timeoutHandler(self,signum, frame):
-        raise IOError, "Stopped waiting for I/O."
+        raise IOError("Stopped waiting for I/O.")
 
     def commit(self):
         # ui
@@ -78,7 +75,7 @@ class KDEDpkgInstallProgress(object):
 
         if self.child_pid == 0:
             os.environ["TERM"] = "dumb"
-            if not os.environ.has_key("DEBIAN_FRONTEND"):
+            if not "DEBIAN_FRONTEND" in os.environ:
                 os.environ["DEBIAN_FRONTEND"] = "noninteractive"
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
             exitstatus = subprocess.call(argv)
@@ -91,7 +88,7 @@ class KDEDpkgInstallProgress(object):
                 if len(rlist) > 0:
                     line = os.read(self.master_fd, 255)
                     self.parent.konsole.insertWithTermCodes(utf8(line))
-            except Exception, e:
+            except Exception as e:
                 #print e
                 from errno import EAGAIN
                 if hasattr(e, "errno") and e.errno == EAGAIN:
@@ -150,7 +147,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         # run the base class
         try:
             InstallProgress.updateInterface(self)
-        except ValueError,e:
+        except ValueError as e:
             pass
         # log the output of dpkg (on the master_fd) to the DumbTerminal
         while True:
@@ -163,8 +160,8 @@ class KDEInstallProgressAdapter(InstallProgress):
                 else:
                     # nothing happend within the timeout, break
                     break
-            except Exception, e:
-                #print "updateInterface: ", e
+            except Exception as e:
+                logging.debug("updateInterface: " % e)
                 break
         KApplication.kApplication().processEvents()
 
@@ -173,7 +170,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         (self.child_pid, self.master_fd) = pty.fork()
         if self.child_pid == 0:
             os.environ["TERM"] = "dumb"
-            if not os.environ.has_key("DEBIAN_FRONTEND"):
+            if not "DEBIAN_FRONTEND" in os.environ:
                 os.environ["DEBIAN_FRONTEND"] = "noninteractive"
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
         return self.child_pid
@@ -182,8 +179,8 @@ class KDEInstallProgressAdapter(InstallProgress):
         while True:
             try:
                 select.select([self.statusfd],[],[], self.select_timeout)
-            except Exception, e:
-                #print "waitChild: ", e
+            except Exception as e:
+                logging.debug("waitChild: " % e)
                 pass
             self.updateInterface()
             (pid, res) = os.waitpid(self.child_pid,os.WNOHANG)

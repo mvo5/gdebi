@@ -22,9 +22,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-import warnings
-from warnings import warn
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+# silly py3 compat, py3.3 should make this unneeded
+try:
+	unicode
+except NameError:
+	unicode = lambda *args: args[0]
+
 import sys
 import apt
 import os.path
@@ -78,21 +81,21 @@ if __name__ == "__main__":
 
     try:
         debi = GDebiCli(options)
-    except SystemError, e:
-        print "Error opening the cache:\n%s" % e
+    except SystemError as e:
+        print("Error opening the cache:\n%s" % e)
         sys.exit(1)
     if not debi.open(args[0]):
         sys.exit(1)
 
     if options.apt_line == True:
         (install, remove, unauthenticated) = debi._deb.required_changes
-        print " ".join(install)
-        print " ".join([pkg+"-" for pkg in remove])
+        print(" ".join(install))
+        print(" ".join([pkg+"-" for pkg in remove]))
         sys.exit(0)
 
     if options.non_interactive == True:
         if os.getuid() != 0:
-            print _("Need to be root to install packages")
+            print(_("Need to be root to install packages"))
             sys.exit(1)
         sys.exit(debi.install())
 
@@ -101,10 +104,10 @@ if __name__ == "__main__":
     debi.show_description()
     # check if we actually can install it
     if os.getuid() != 0:
-        print _("Need to be root to install packages")
+        print(_("Need to be root to install packages"))
         sys.exit(1)
     msg =  _("Do you want to install the software package? [y/N]:")
-    print msg,
+    sys.stdout.write(msg)
     sys.stdout.flush()
     res = sys.stdin.readline()
     try:

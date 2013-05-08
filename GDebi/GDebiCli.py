@@ -23,20 +23,18 @@
 
 import apt
 import apt_pkg
-import fcntl
+import logging
 import os
-import string
 import sys
-import time
-import thread
 
 from gettext import gettext as _
 from re import findall
+from subprocess import PIPE, Popen, call
 
 from apt.cache import Cache
-from DebPackage import DebPackage, DscSrcPackage
 
-from subprocess import PIPE, Popen, call
+from .DebPackage import DebPackage, DscSrcPackage
+
 
 class GDebiCli(object):
 
@@ -50,7 +48,9 @@ class GDebiCli(object):
         # set architecture to architecture in root-dir
         if options.rootdir and os.path.exists(options.rootdir+"/usr/bin/dpkg"):
             arch = Popen([options.rootdir+"/usr/bin/dpkg",
-                          "--print-architecture"], stdout=PIPE).communicate()[0]
+                          "--print-architecture"],
+                         stdout=PIPE,
+                         universal_newlines=True).communicate()[0]
             if arch:
                 apt_pkg.config.set("APT::Architecture",arch.strip())
         if options.apt_opts:
@@ -77,7 +77,8 @@ class GDebiCli(object):
             else:
                 sys.stderr.write(_("Unknown package type '%s', exiting\n") % file)
                 sys.exit(1)
-        except (IOError,SystemError,ValueError),e:
+        except (IOError,SystemError,ValueError) as e:
+            logging.debug("error opening: %s" % e)
             sys.stderr.write(_("Failed to open the software package\n"))
             sys.stderr.write(_("The package might be corrupted or you are not "
                            "allowed to open the file. Check the permissions "
@@ -92,27 +93,32 @@ class GDebiCli(object):
             
     def show_description(self):
         try:
-            print self._deb["Description"]
+            print(self._deb["Description"])
         except KeyError:
-            print _("No description is available")
+            print(_("No description is available"))
 
     def show_dependencies(self):
+        print(self.get_dependencies_info())
+
+    def get_dependencies_info(self):
+        s = ""
         # show what changes
         (install, remove, unauthenticated) = self._deb.required_changes
         if len(unauthenticated) > 0:
-            print _("The following packages are UNAUTHENTICATED: ")
+            s += _("The following packages are UNAUTHENTICATED: ")
             for pkgname in unauthenticated:
-                print pkgname + " ",
+                s += pkgname + " "
         if len(remove) > 0:
-            print _("Requires the REMOVAL of the following packages: ")
+            s += _("Requires the REMOVAL of the following packages: ")
             for pkgname in remove:
-                print pkgname + " ",
-        print
+                s += pkgname + " "
+            s += "\n"
         if len(install) > 0:
-            print _("Requires the installation of the following packages: ") 
+            s += _("Requires the installation of the following packages: ") 
             for pkgname in install:
-                print pkgname + " ",
-        print
+                s += pkgname + " "
+            s += "\n"
+        return s
 
     def install(self):
         # install the dependecnies
@@ -122,7 +128,8 @@ class GDebiCli(object):
             iprogress = apt.progress.base.InstallProgress()
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except (apt.cache.FetchFailedException, SystemError), e:
+            except(apt.cache.FetchFailedException, SystemError) as e:
+                logging.debug("commit() returned %s" % res)
                 sys.stderr.write(_("Error during install: '%s'") % e)
                 return 1
 
@@ -146,7 +153,7 @@ if __name__ == "__main__":
     if not app.open(sys.argv[1]):
         sys.exit(1)
     msg =  _("Do you want to install the software package? [y/N]:")
-    print msg,
+    print(msg,)
     sys.stdout.flush()
     res = sys.stdin.readline()
     try:

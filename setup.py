@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-from distutils.core import setup
+from setuptools import setup
 from glob import glob
 from re import compile
 
@@ -26,6 +26,7 @@ for filepath in glob('po/mo/*/LC_MESSAGES/*.mo'):
 
 s = setup(name='gdebi',
           version=version,
+          test_suite="tests",
           packages=['GDebi'],
           scripts=['gdebi', 'gdebi-gtk', 'gdebi-kde'],
           data_files=[('share/gdebi/',

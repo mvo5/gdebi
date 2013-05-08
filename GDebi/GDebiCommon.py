@@ -21,34 +21,41 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-
-import sys
+import gettext
+import logging
 import os
-import string
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
+import sys
 from mimetypes import guess_type
 
-import apt
 import apt_pkg
-
 from apt.cache import Cache
-from DebPackage import DebPackage
-import gettext
 
-def _(str):
-    return utf8(gettext.gettext(str))
+from .DebPackage import DebPackage
 
-def utf8(str):
-    if isinstance(str, unicode):
-        return str
-    try:
-        return unicode(str, 'UTF-8')
-    except:
-        # assume latin1 as fallback
-        return unicode(str, 'latin1')
+
+if sys.version_info[0] == 2:
+    def _(str):
+        return utf8(gettext.gettext(str))
+
+
+    def py2utf8(str):
+        if isinstance(str, unicode):
+            return str
+        try:
+            return unicode(str, 'UTF-8')
+        except:
+            # assume latin1 as fallback
+            return unicode(str, 'latin1')
+    utf8 = py2utf8
+else:
+    from gettext import gettext as _
+    def py3utf8(s):
+        return s
+    utf8 = py3utf8
+
 	  
 class GDebiCommon(object):
+
     # cprogress may be different in child classes
     def __init__(self, datadir, options, file=""):
         self.cprogress = None
@@ -57,7 +64,7 @@ class GDebiCommon(object):
         self.version_info_title = ""
         self.version_info_msg = ""
         self._deb = None
-     	self._options = options
+        self._options = options
         self.install = []
         self.remove = []
         self.unauthenticated = 0
@@ -65,21 +72,22 @@ class GDebiCommon(object):
     def openCache(self):
         self._cache = Cache(self.cprogress)
         if self._cache._depcache.broken_count > 0:
-                self.error_header = _("Broken dependencies")
-                self.error_body = _("Your system has broken dependencies. "
-                             "This application can not continue until "
-                             "this is fixed. "
-                             "To fix it run 'gksudo synaptic' or "
-                             "'sudo apt-get install -f' "
-                             "in a terminal window.")
-		return False
+            self.error_header = _("Broken dependencies")
+            self.error_body = _("Your system has broken dependencies. "
+                                "This application can not continue until "
+                                "this is fixed. "
+                                "To fix it run 'gksudo synaptic' or "
+                                "'sudo apt-get install -f' "
+                                "in a terminal window.")
+            return False
         return True
 
     def open(self, file, downloaded=False):
         file = os.path.abspath(file)
         try:
             self._deb = DebPackage(file, self._cache, downloaded)
-        except (IOError,SystemError,ValueError),e:
+        except (IOError, SystemError, ValueError) as e:
+            logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
             if (mimetype[0] != None and 
                 mimetype[0] != "application/x-debian-package"):
@@ -139,7 +147,7 @@ class GDebiCommon(object):
                         provides.add(i[0])
             provides = set(pkg.provides).difference(provides)
             if provides:
-                for package in self._cache.keys():
+                for package in list(self._cache.keys()):
                     if self._cache[package].installed:
                         for dep in self._cache[package].installed.dependencies:
                             for d in dep.or_dependencies:
