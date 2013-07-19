@@ -30,7 +30,10 @@ from mimetypes import guess_type
 import apt_pkg
 from apt.cache import Cache
 
-from .DebPackage import DebPackage
+from .DebPackage import (
+    ClickPackage,
+    DebPackage,
+)
 
 
 if sys.version_info[0] == 2:
@@ -84,8 +87,11 @@ class GDebiCommon(object):
 
     def open(self, file, downloaded=False):
         file = os.path.abspath(file)
+        klass = DebPackage
+        if file.endswith(".click"):
+            klass = ClickPackage
         try:
-            self._deb = DebPackage(file, self._cache, downloaded)
+            self._deb = klass(file, {}, downloaded)
         except (IOError, SystemError, ValueError) as e:
             logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
