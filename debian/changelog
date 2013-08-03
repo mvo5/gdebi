@@ -1,4 +1,4 @@
-gdebi (0.9.1) UNRELEASED; urgency=low
+gdebi (0.9.1) unstable; urgency=low
 
   * GDebi/KDEAptDialogs.py:
     - Fix progress indicators in gdebi-kde, thanks to Francois Gouget
@@ -20,7 +20,7 @@ gdebi (0.9.1) UNRELEASED; urgency=low
   * po/*.po:
     - Refresh translations exported from Rosetta.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sun, 04 Aug 2013 00:54:18 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 04 Aug 2013 01:07:02 +0200
 
 gdebi (0.9) unstable; urgency=low
 
