@@ -11,3 +11,4 @@ MimeType=application/x-deb;application/x-debian-package;
 OnlyShowIn=KDE;
 InitialPreference=12
 X-Ubuntu-Gettext-Domain=gdebi
+_Keywords=package;apt;dpkg;install

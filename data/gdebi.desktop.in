@@ -11,3 +11,4 @@ MimeType=application/x-deb;application/x-debian-package;
 NotShowIn=KDE;
 X-Ubuntu-Gettext-Domain=gdebi
 StartupNotify=true
+_Keywords=package;apt;dpkg;install

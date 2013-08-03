@@ -9,16 +9,18 @@ gdebi (0.9.1) UNRELEASED; urgency=low
     - Allow to translate 'Installing' window title, thanks to Francois
       Gouget for the patch! (Closes: #712195).
   * GDebi/GDebiCli.py:
-    - Remove logging.debug call (Closes: #717858).
+    - Remove logging.debug call (Closes: #714337).
   * GDebi/GDebiCommon.py, GDebi/GDebiGtk.py:
     - Do not crash if a package is already installed for another
       architecture (Closes: #717858).
   * GDebi/GDebiCommon.py:
     - Also catch TypeError exception (LP: #1094065).
+  * data/gdebi.desktop.in, data/gdebi-kde.desktop.in:
+    - Add Keywords key, as per FreeDesktop spec.
   * po/*.po:
     - Refresh translations exported from Rosetta.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Aug 2013 12:00:48 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 04 Aug 2013 00:54:18 +0200
 
 gdebi (0.9) unstable; urgency=low
 
