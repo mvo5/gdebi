@@ -125,13 +125,11 @@ class KDEInstallProgressAdapter(InstallProgress):
 
     def error(self, pkg, errormsg):
         # FIXME: display a msg
-        #self.term_expander.set_expanded(True) #FIXME show konsole
-        pass
+        self.parent.showTerminal()
 
     def conffile(self, current, new):
         # FIXME: display a msg or expand term
-        #self.term_expander.set_expanded(True) #FIXME show konsole
-        pass
+        self.parent.showTerminal()
 
     def start_update(self):
         apt_pkg.pkgsystem_unlock()
