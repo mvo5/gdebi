@@ -108,7 +108,7 @@ class GDebiCommon(object):
         if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
             try:
                 pkg = self._cache[self._deb.pkgname]
-            except KeyError:
+            except (KeyError, TypeError):
                 return
 
             if self._deb.downloaded:
@@ -141,7 +141,7 @@ class GDebiCommon(object):
         broken_provides = set()
         try:
             pkg = self._cache[self._deb.pkgname].installed
-        except KeyError:
+        except (KeyError, TypeError):
             pkg = None
         if pkg:
             if pkg.provides:

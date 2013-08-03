@@ -13,6 +13,8 @@ gdebi (0.9.1) UNRELEASED; urgency=low
   * GDebi/GDebiCommon.py, GDebi/GDebiGtk.py:
     - Do not crash if a package is already installed for another
       architecture (Closes: #717858).
+  * GDebi/GDebiCommon.py:
+    - Also catch TypeError exception (LP: #1094065).
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Aug 2013 12:00:48 +0200
 
