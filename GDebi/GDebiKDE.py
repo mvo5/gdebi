@@ -420,6 +420,7 @@ class GDebiKDEInstall(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
         loadUi("GDebiKDEInstallDialog.ui", self)
+        self.setWindowTitle(_("Installing"))
         self.showDetailsButton.setText(__("libept","Show Details")) #FIXME check i18n
         self.closeButton.setText(__("kdelibs","&Close"))
         self.showDetailsButton.setIcon(KIcon("utilities-terminal"))

@@ -5,6 +5,9 @@ gdebi (0.9.1) UNRELEASED; urgency=low
       for the patch! (Closes: #712194).
     - Show the console in gdebi-kde when a package asks a question,
       thanks to Francois Gouget for the patch! (Closes: #712199).
+  * GDebi/GDebiKDE.py:
+    - Allow to translate 'Installing' window title, thanks to Francois
+      Gouget for the patch! (Closes: #712195).
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Aug 2013 12:00:48 +0200
 
