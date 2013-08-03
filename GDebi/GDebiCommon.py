@@ -106,7 +106,10 @@ class GDebiCommon(object):
         # check if the package is available in the normal sources as well
         res = self._deb.compare_to_version_in_cache(use_installed=False)
         if not self._options.non_interactive and res != DebPackage.VERSION_NONE:
-            pkg = self._cache[self._deb.pkgname]
+            try:
+                pkg = self._cache[self._deb.pkgname]
+            except KeyError:
+                return
 
             if self._deb.downloaded:
                 self.version_info_title = ""
