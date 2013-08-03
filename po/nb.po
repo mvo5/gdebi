@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-04-04 12:13+0000\n"
 "Last-Translator: Ole Andreas Utstumo <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
-"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -600,14 +599,13 @@ msgid "To be removed: %s"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Pakkeinstallerer"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Installerer %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -703,6 +701,7 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Feil arkitektur «%s»"
 

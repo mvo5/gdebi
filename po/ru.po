@@ -11,12 +11,15 @@ msgstr ""
 "PO-Revision-Date: 2011-10-26 11:17+0000\n"
 "Last-Translator: Nikita Putko <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
+
+#: ../data/gdebi.ui.h:11
+msgid "_Edit"
+msgstr "_Правка"
 
 #: ../gdebi:51
 #, c-format
@@ -129,10 +132,6 @@ msgstr "_Открыть…"
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
 msgstr "_Обновить"
-
-#: ../data/gdebi.ui.h:11
-msgid "_Edit"
-msgstr "_Правка"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
@@ -345,7 +344,8 @@ msgstr "Проблемы зависимостей"
 #: ../GDebi/GDebiGtk.py:552
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr "Пакет «%s» требует один или несколько пакетов и не может быть удалён."
+msgstr ""
+"Пакет «%s» требует один или несколько пакетов и не может быть удалён."
 
 #: ../GDebi/GDebiGtk.py:560
 msgid "File not found"
@@ -622,14 +622,13 @@ msgid "To be removed: %s"
 msgstr "Для удаления: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Пакет «%s» был установлен"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Установка %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -737,18 +736,17 @@ msgstr ""
 msgid "Media Change"
 msgstr "Смена носителя"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Пакет программ"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Зависимость не может быть удовлетворена: %s\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Для пакета '%s' имеются поломанные зависимости %s (%s %s)\n"
 
@@ -758,12 +756,12 @@ msgstr "Смена носителя"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Не удалось удовлетворить все зависимости (нарушен кэш)"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Конфликт с существующим пакетом '%s': %s (%s %s)\n"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Список файлов не может быть прочитан, отправьте отчёт об этой ошибке"
+#~ msgstr "Список файлов не может быть прочитан, отправьте отчёт об этой ошибке"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "В пакете отсутствует поле Architecture"
@@ -771,15 +769,16 @@ msgstr "Смена носителя"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Злонамеренные программы могут повредить ваши данные и захватить контроль "
-#~ "над вашей системой.\n"
+#~ "Злонамеренные программы могут повредить ваши данные и захватить контроль над "
+#~ "вашей системой.\n"
 #~ "\n"
 #~ "Пакеты, перечисленные ниже, не авторизованы и поэтому могут быть "
 #~ "злонамеренными."
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ошибка ввода/вывода при чтении списка файлов: %s"
 
@@ -792,24 +791,27 @@ msgstr "Смена носителя"
 #~ msgid ""
 #~ "Malicious software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicious nature."
+#~ "The packages below are not authenticated and could therefor be of malicious "
+#~ "nature."
 #~ msgstr ""
-#~ "Вредоносные программы могут повредить ваши данные и перехватить контроль "
-#~ "над системой.\n"
+#~ "Вредоносные программы могут повредить ваши данные и перехватить контроль над "
+#~ "системой.\n"
 #~ "\n"
 #~ "Пакеты, которые приведены ниже, не аутентифицированы и теоретически могут "
 #~ "содержать вредоносный код."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Конфликты с установленными пакетами '%s'\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Неверная архитектура «%s»"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Уже установлена более новая версия"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Не удалось установить «%s»"
 
@@ -835,6 +837,7 @@ msgstr "Смена носителя"
 #~ "  Dmitry Kuzmin https://launchpad.net/~dmitry-kuzm-deactivatedaccount\n"
 #~ "  Dmitry Petrov https://launchpad.net/~demon-krasno\n"
 #~ "  Eugene Marshal https://launchpad.net/~lowrider\n"
+#~ "  Eugene Sysmanov https://launchpad.net/~xghpro\n"
 #~ "  Igor Zakharoff https://launchpad.net/~f2404\n"
 #~ "  Igor Zubarev https://launchpad.net/~igor.zubarev\n"
 #~ "  Michael Sinchenko https://launchpad.net/~sinchenko-krvgarm\n"
@@ -847,10 +850,12 @@ msgstr "Смена носителя"
 #~ "  Vadim Rutkovsky https://launchpad.net/~roignac\n"
 #~ "  Vetal https://launchpad.net/~vetal1950\n"
 #~ "  Xamuh https://launchpad.net/~stepan-skrjabin\n"
-#~ "  Yevgeny Sysmanov https://launchpad.net/~xghpro\n"
 #~ "  jmb_kz https://launchpad.net/~jmb-kz\n"
 #~ "  qwa https://launchpad.net/~qwa23\n"
 #~ "  Даниил Рыжков https://launchpad.net/~daniil-r"
+
+#~ msgid "Software package"
+#~ msgstr "Пакет программ"
 
 #~ msgid "_Open..."
 #~ msgstr "_Открыть..."

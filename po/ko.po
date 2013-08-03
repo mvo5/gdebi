@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-03-12 18:24+0000\n"
 "Last-Translator: Kim Boram <boramism@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -81,10 +80,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"이 문제는 소프트웨어 관리 시스템의 중대한 오류입니다. 시냅틱을 이용하여 잘못"
-"된 꾸러미들이 있는지 확인하고, '/etc/apt/sources.list' 파일을 사용할 수 있는 "
-"권한 및 내용을 점검한 뒤 'sudo apt-get update' 그리고 'sudo apt-get install -"
-"f' 명령으로 소프트웨어 정보를 다시 불러오십시오."
+"이 문제는 소프트웨어 관리 시스템의 중대한 오류입니다. 시냅틱을 이용하여 잘못된 꾸러미들이 있는지 확인하고, "
+"'/etc/apt/sources.list' 파일을 사용할 수 있는 권한 및 내용을 점검한 뒤 'sudo apt-get update' "
+"그리고 'sudo apt-get install -f' 명령으로 소프트웨어 정보를 다시 불러오십시오."
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -235,9 +233,7 @@ msgstr "관리자 권한으로 다운로드할 수 없습니다"
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
-msgstr ""
-"관리자 권한으로 실행하고 있을 때는 원격 패키지를 다운로드할 수 없습니다. 일"
-"반 사용자로 다시 시도하십시오."
+msgstr "관리자 권한으로 실행하고 있을 때는 원격 패키지를 다운로드할 수 없습니다. 일반 사용자로 다시 시도하십시오."
 
 #: ../GDebi/GDebiGtk.py:195
 msgid "Downloading package"
@@ -371,8 +367,7 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"악의를 가지고 만든 프로그램이 시스템의 권한을 빼앗고 자료를 파괴할 수 있습니"
-"다.\n"
+"악의를 가지고 만든 프로그램이 시스템의 권한을 빼앗고 자료를 파괴할 수 있습니다.\n"
 "\n"
 "아래의 패키지는 인증되지 않았으며 악의를 가지고 만들어 진 것일 수 있습니다."
 
@@ -423,9 +418,7 @@ msgstr "의존 패키지를 전부 설치할 수 없습니다"
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
-msgstr ""
-"이것은 보통 소프트웨어 배포자의 오류와 관련된 문제입니다. 자세한 내용은 터미"
-"널 창을 참조하십시오."
+msgstr "이것은 보통 소프트웨어 배포자의 오류와 관련된 문제입니다. 자세한 내용은 터미널 창을 참조하십시오."
 
 #: ../GDebi/GDebiGtk.py:705
 #, python-format
@@ -487,8 +480,7 @@ msgstr "패키지를 완전히 제거할 수 없습니다"
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
-"이것을 고치려면 터미널 창에서 'sudo apt-get install -f' 명령을 실행 하십시오."
+msgstr "이것을 고치려면 터미널 창에서 'sudo apt-get install -f' 명령을 실행 하십시오."
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
@@ -548,9 +540,7 @@ msgstr "소프트웨어 패키지를 열 수 없습니다\n"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
-msgstr ""
-"패키지가 망가졌거나, 파일을 열 수 있는 권한이 없는 것 같습니다. 파일의 권한"
-"을 확인하십시오.\n"
+msgstr "패키지가 망가졌거나, 파일을 열 수 있는 권한이 없는 것 같습니다. 파일의 권한을 확인하십시오.\n"
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
@@ -597,9 +587,7 @@ msgstr "패키지 파일이 존재하지 않습니다"
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
-msgstr ""
-"설치할 파일로 존재하지 않는 파일을 선택했습니다. 존재하는 데비안 패키지 파일"
-"을 선택해주십시오."
+msgstr "설치할 파일로 존재하지 않는 파일을 선택했습니다. 존재하는 데비안 패키지 파일을 선택해주십시오."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:270
@@ -616,14 +604,13 @@ msgid "To be removed: %s"
 msgstr "제거함: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "패키지 '%s'을(를) 설치했습니다"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s 설치 중"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -635,9 +622,8 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"시스템 의존성이 망가졌습니다. 이 문제를 해결하기 전에는 프로그램을 계속 사용 "
-"할 수 없습니다. 이 문제를 해결하려면 'gksudo synaptic' 또는 'sudo apt-get "
-"install -f' 명령을 터미널 창에서 실행하십시오."
+"시스템 의존성이 망가졌습니다. 이 문제를 해결하기 전에는 프로그램을 계속 사용 할 수 없습니다. 이 문제를 해결하려면 'gksudo "
+"synaptic' 또는 'sudo apt-get install -f' 명령을 터미널 창에서 실행하십시오."
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
@@ -659,9 +645,7 @@ msgstr "'%s'을(를) 열 수 없습니다"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
-msgstr ""
-"패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한"
-"을 점검 하십시오."
+msgstr "패키지가 잘못 되었거나 파일을 여는 것이 허용되지 않았습니다. 파일의 접근 권한을 점검 하십시오."
 
 #: ../GDebi/GDebiCommon.py:122
 msgid "Same version is available in a software channel"
@@ -679,9 +663,7 @@ msgstr "소프트웨어 보관소에서 이전 버전을 사용할 수 있습니
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
-msgstr ""
-"일반적으로 보다 나은 지원을 받을 수 있는 소프트웨어 보관소에 있는 버전을 설치"
-"하는 것을 권장 합니다."
+msgstr "일반적으로 보다 나은 지원을 받을 수 있는 소프트웨어 보관소에 있는 버전을 설치하는 것을 권장 합니다."
 
 #: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
@@ -691,9 +673,7 @@ msgstr "소프트웨어 보관소에서 새 버전을 사용할 수 있습니다
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
-msgstr ""
-"보다 나은 지원을 받을 수 있는 소프트웨어 보관소에 있는 버전을 설치하는 것을 "
-"강력히 추천 합니다."
+msgstr "보다 나은 지원을 받을 수 있는 소프트웨어 보관소에 있는 버전을 설치하는 것을 강력히 추천 합니다."
 
 #: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
@@ -718,24 +698,17 @@ msgstr "하나의 소프트웨어 관리 도구 만을 실행할 수 있습니�
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
-"먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' 프로"
-"그램을 종료 하십시오."
+msgstr "먼저 다른 프로그램 예를 들어 '업데이트 관리자', 'aptitude' 또는 '시냅틱' 프로그램을 종료 하십시오."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:219
 msgid "Media Change"
 msgstr "미디어 바꾸기"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "소프트웨어 패키지"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "잘못된 아키텍처 '%s'"
 
@@ -745,28 +718,35 @@ msgstr "미디어 바꾸기"
 #~ msgid "Open..."
 #~ msgstr "열기..."
 
+#~ msgid "Software package"
+#~ msgstr "소프트웨어 패키지"
+
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "오동작하는 소프트웨어는 자료를 손실시키거나 시스템을 통제할 수 있습니다.\n"
 #~ "\n"
 #~ "아래의 패키지는 인증되지 않았으며 오동작하는 소프트웨어일 수도 있습니다."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "의존 패키지를 만족 못함: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "설치되어있는 패키지 '%s'와 충돌함\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "패키지에 아키텍쳐 구분 없음"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "이미 존재하는 '%s' 패키지와 충돌: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "이미 존재하는 '%s' 패키지의 의존성 깨짐 %s (%s %s)\n"
 
@@ -776,12 +756,17 @@ msgstr "미디어 바꾸기"
 #~ msgid "A later version is already installed"
 #~ msgstr "새 버전이 이미 설치되어 있습니다"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "파일 목록 읽는 중 I/O 에러: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "파일 목록을 읽을 수 없습니다, 이 문제를 버그 보고 해주십시오."
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' (을)를 설치할 수 없습니다"
 

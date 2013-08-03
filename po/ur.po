@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-06-22 23:52+0000\n"
 "Last-Translator: Shehzad Ashiq Ali <Unknown>\n"
 "Language-Team: Urdu Team of www.urducoder.com <makkiabufaris@aol.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 "X-Poedit-Country: PAKISTAN\n"
 "X-Poedit-Language: Urdu\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -621,14 +620,13 @@ msgid "To be removed: %s"
 msgstr "حذف ہونے کو ہے: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "پیکج '%s' نصب کردیا گیا ہے"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "نصیب کیا جارہا ہے %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -732,12 +730,6 @@ msgstr ""
 msgid "Media Change"
 msgstr "میڈیا کی تبدیلی"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "سوفٹ ویئر پیکج"
-
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
@@ -747,9 +739,14 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgid "_Open..."
 #~ msgstr "_کھولیں..."
 
+#~ msgid "Software package"
+#~ msgstr "سوفٹ ویئر پیکج"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "انحصاری اطمینان بخش نہیں ہے: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "نصب شُدہ پیکج '%s' سے متصادم\n"
 
@@ -761,8 +758,8 @@ msgstr "میڈیا کی تبدیلی"
 #~ "%(depversion)s)"
 
 #~ msgid ""
-#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s "
-#~ "(%(comptype)s %(targetver)s)"
+#~ "Breaks existing package '%(pkgname)s' conflict: %(targetpkg)s (%(comptype)s "
+#~ "%(targetver)s)"
 #~ msgstr ""
 #~ "سابقہ پیکج کو توڑتا ہے '%(pkgname)s' متصادم: %(targetpkg)s (%(comptype)s "
 #~ "%(targetver)s)"
@@ -770,6 +767,7 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "پیکج میں طرزِ تعمیر Architecture کا خانہ نہیں ہے"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "غلط آرکیٹیکچر '%s'"
 
@@ -782,6 +780,7 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "تمام انحصاریوں کو حل کرنے میں ناکامی (بروکن کیشے)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "نصب نہیں کیا جاسکتا '%s'"
 
@@ -799,5 +798,9 @@ msgstr "میڈیا کی تبدیلی"
 #~ msgstr ""
 #~ "فائلوں کی فہرست پڑھی نہیں جاسکتی، ازراہِ کرم اسے بطور غلطی (بگ) رپورٹ کریں"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "فائل فہرست پڑھنے کے دوران IOError: %s"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

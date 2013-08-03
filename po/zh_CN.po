@@ -8,17 +8,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-11-29 04:41+0000\n"
 "Last-Translator: Wylmer Wang <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -43,8 +42,7 @@ msgstr "不显示进度信息"
 
 #: ../gdebi:69
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
-"仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
+msgstr "仅模拟执行并向标准错误（stderr）输出一行与 apt-get install 兼容的信息。"
 
 #: ../gdebi:71
 msgid "Use alternative root dir"
@@ -86,9 +84,8 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/"
-"etc/apt/sources.list' 文件的正确性并使用 'sudo apt-get update' 和 'sudo apt-"
-"get install -f' 重新载入软件信息。"
+"这是您软件管理系统的重大失败。请使用新立得检查损坏的软件包，检查文件权限和 '/etc/apt/sources.list' 文件的正确性并使用 "
+"'sudo apt-get update' 和 'sudo apt-get install -f' 重新载入软件信息。"
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -610,14 +607,13 @@ msgid "To be removed: %s"
 msgstr "要移除的： %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "软件包'%s'已安装"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "正在安装 %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -629,8 +625,8 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运"
-"行 'gksudo synaptic' 或 'sudo apt-get install -f' 。"
+"您的系统中存在损坏的依赖关系。不修复它此程序无法继续。要修复，在终端窗口中运行 'gksudo synaptic' 或 'sudo apt-get "
+"install -f' 。"
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
@@ -712,15 +708,10 @@ msgstr "请先关闭其他应用程序如 'Update Manager'、 'aptitude' 或 'Sy
 msgid "Media Change"
 msgstr "媒介改变"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "软件包"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "错误的架构 '%s'"
 
@@ -747,11 +738,19 @@ msgstr "媒介改变"
 #~ msgid "Open..."
 #~ msgstr "打开..."
 
+#~ msgid "Software package"
+#~ msgstr "软件包"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "依赖关系不满足： %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "与已安装的软件包 '%s' 冲突\n"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "Analysing dependencies"
 #~ msgstr "正在分析依赖关系"
@@ -762,8 +761,8 @@ msgstr "媒介改变"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "恶意软件可能破坏您的数据和控制您的系统。\n"
 #~ "\n"
@@ -772,21 +771,25 @@ msgstr "媒介改变"
 #~ msgid "A later version is already installed"
 #~ msgstr "已经安装了较新的版本"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "无法安装 '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "满足所有依赖关系失败(缓存损坏)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "读取文件列表时发生 IO 错误： %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "无法读取列出的文件，请将这作为错误提交"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 与 %s (%s %s) 冲突\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "残缺：软件包 '%s' 依赖 %s (%s %s)\n"
 

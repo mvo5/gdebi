@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-10-04 16:23+0000\n"
-"Last-Translator: Jochen Skulj <jochen@jochenskulj.de>\n"
+"Last-Translator: Jochen Skulj <Unknown>\n"
 "Language-Team: de <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -87,10 +86,10 @@ msgid ""
 msgstr ""
 "Dies ist ein schwerwiegender Fehler in Ihrem Paketverwaltungssystem. Bitte "
 "prüfen Sie mit Synaptic, ob sich defekte Pakete auf Ihrem System befinden, "
-"überprüfen Sie die Zugriffsberechtigungen und den Inhalt der Datei »/etc/apt/"
-"sources.list« und erstellen Sie die für den Betrieb der Paketverwaltung "
-"notwendigen Informationen mit »sudo apt-get update« und »sudo apt-get "
-"install -f« neu."
+"überprüfen Sie die Zugriffsberechtigungen und den Inhalt der Datei "
+"»/etc/apt/sources.list« und erstellen Sie die für den Betrieb der "
+"Paketverwaltung notwendigen Informationen mit »sudo apt-get update« und "
+"»sudo apt-get install -f« neu."
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -627,14 +626,13 @@ msgid "To be removed: %s"
 msgstr "Zu entfernen: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Das Paket »%s« wurde installiert"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s wird installiert"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -744,12 +742,6 @@ msgstr ""
 msgid "Media Change"
 msgstr "Medienwechsel"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Software-Paket"
-
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Michael Vogt\n"
@@ -787,6 +779,7 @@ msgstr "Medienwechsel"
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Falsche Systemarchitektur »%s«"
 
@@ -796,6 +789,10 @@ msgstr "Medienwechsel"
 #~ msgid "Open..."
 #~ msgstr "Öffnen..."
 
+#~ msgid "Software package"
+#~ msgstr "Software-Paket"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Abhängigkeit kann nicht erfüllt werden: %s\n"
 
@@ -812,37 +809,45 @@ msgstr "Medienwechsel"
 #~ msgstr ""
 #~ "Konnte nicht alle Abhängigkeiten erfüllen (defekter Zwischenspeicher)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Ein/Ausgabefehler beim Einlesen der Dateiliste: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Die Liste der Dateien konnte nicht gelesen werden, bitte melden Sie das "
-#~ "als Fehler"
+#~ "Die Liste der Dateien konnte nicht gelesen werden, bitte melden Sie das als "
+#~ "Fehler"
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' kann nicht installiert werden"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr ""
 #~ "Das bereits installierte Paket '%s' steht im Konflikt mit: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Kollidiert mit dem bereits installierten Paket '%s'\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr ""
-#~ "Eine Abhängigkeit des bereits installierten Pakets '%s', nämlich %s (%s "
-#~ "%s), kann nicht mehr erfüllt werden\n"
+#~ "Eine Abhängigkeit des bereits installierten Pakets '%s', nämlich %s (%s %s), "
+#~ "kann nicht mehr erfüllt werden\n"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Bösartige Software kann Ihre Daten beschädigen oder die Kontrolle über "
-#~ "Ihr System erlangen.\n"
+#~ "Bösartige Software kann Ihre Daten beschädigen oder die Kontrolle über Ihr "
+#~ "System erlangen.\n"
 #~ "\n"
 #~ "Die nachfolgenden Pakete sind nicht beglaubigt und könnten daher von "
 #~ "bösartiger Natur sein."

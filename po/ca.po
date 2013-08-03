@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-03-08 07:07+0000\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <ubuntu-l10n-ca@ubuntu.com>\n"
-"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -625,14 +624,13 @@ msgid "To be removed: %s"
 msgstr "Se suprimirà: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "S'ha instal·lat el paquet «%s»"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "S'està instal·lant %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -738,54 +736,58 @@ msgstr ""
 msgid "Media Change"
 msgstr "Canvi de suport"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Paquet de programari"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errònia «%s»"
 
 #~ msgid "Y"
 #~ msgstr "S"
 
+#~ msgid "Software package"
+#~ msgstr "Paquet de programari"
+
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "El programari maliciós us pot corrompre les dades i prendre el control "
-#~ "del vostre sistema. \n"
+#~ "El programari maliciós us pot corrompre les dades i prendre el control del "
+#~ "vostre sistema. \n"
 #~ "\n"
 #~ "Els paquets llistats no estan autenticats i per tant poden ser maliciosos."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "No es pot satisfer la dependència: %s\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ja hi ha instal·lada una versió posterior"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "No es pot instal·lar «%s»"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest "
-#~ "error"
+#~ "No s'ha pogut llegir la llista de fitxers. Hauríeu d'informar d'aquest error"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr ""
 #~ "S'ha produït un error d'entrada/sortida (IOError) en llegir la llista de "
 #~ "fitxers: %s"
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
 #~ msgid "Open..."
 #~ msgstr "Obre..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Entra amb conflicte amb el paquet instal·lat «%s»\n"
 
@@ -795,13 +797,13 @@ msgstr "Canvi de suport"
 #~ msgid "Analysing dependencies"
 #~ msgstr "S'estan analitzant les dependències"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Conflicte de trencament del paquet existent «%s»: %s (%s %s)\n"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr ""
-#~ "No s'han pogut satisfer totes les dependències (la memòria cau està "
-#~ "trencada)"
+#~ "No s'han pogut satisfer totes les dependències (la memòria cau està trencada)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

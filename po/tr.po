@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2012-09-14 14:33+0000\n"
-"Last-Translator: Emre AYTAÇ <Unknown>\n"
+"PO-Revision-Date: 2013-02-08 18:43+0000\n"
+"Last-Translator: Yiğit Ateş <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -54,7 +53,7 @@ msgstr "gdebi hatası, %s dosyası bulunamadı\n"
 
 #: ../gdebi:98 ../gdebi:107
 msgid "Need to be root to install packages"
-msgstr "Paket kurabilmeniz için root olmanız gerekli"
+msgstr "Paketleri kurabilmeniz için yönetici olmanız gerekli"
 
 #: ../gdebi:109 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
@@ -62,11 +61,11 @@ msgstr "Bu yazılım paketini kurmak istiyor musunuz? [e/H]:"
 
 #: ../gdebi-gtk:60
 msgid "Auto close when the install is finished"
-msgstr ""
+msgstr "Yükleme bittiğinde otomatik kapat"
 
 #: ../gdebi-gtk:62
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "Alternatif veri dizini kullan"
 
 #: ../gdebi-gtk:65
 msgid "Remove package"
@@ -74,7 +73,7 @@ msgstr "Paketi kaldır"
 
 #: ../gdebi-gtk:84
 msgid "Software index is broken"
-msgstr "Yazılım indeksi bozuk"
+msgstr "Yazılım dizini bozuk"
 
 #: ../gdebi-gtk:85
 msgid ""
@@ -102,7 +101,7 @@ msgstr "Uçbirim"
 
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "Değişiklikler başarıyla uygulandıktan sonra otomatik kapat"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
 #: ../GDebi/GDebiKDE.py:321
@@ -124,15 +123,15 @@ msgstr "Do_sya"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
-msgstr ""
+msgstr "_Aç…"
 
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
-msgstr ""
+msgstr "_Yenile"
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
-msgstr ""
+msgstr "_Düzenle"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
@@ -173,7 +172,7 @@ msgstr "Paketi Kaldır"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Download Package"
-msgstr ""
+msgstr "_Paketi İndir"
 
 #: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
 msgid "Description"
@@ -205,7 +204,7 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:28
 msgid "Included files"
-msgstr ""
+msgstr "Dâhilâ dosyalar"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
@@ -224,7 +223,7 @@ msgstr "%s alanı eksik"
 
 #: ../GDebi/GDebiGtk.py:95
 msgid "Copy selected text"
-msgstr ""
+msgstr "Seçili yazıyı kopyala"
 
 #: ../GDebi/GDebiGtk.py:106
 msgid "Loading..."
@@ -264,23 +263,23 @@ msgstr "Paket Kurucu - %s"
 
 #: ../GDebi/GDebiGtk.py:308
 msgid "Package control data"
-msgstr ""
+msgstr "Paket denetim verisi"
 
 #: ../GDebi/GDebiGtk.py:311
 msgid "Upstream data"
-msgstr ""
+msgstr "Güncel veri"
 
 #: ../GDebi/GDebiGtk.py:317
 msgid "Error reading filelist"
-msgstr ""
+msgstr "Dosya listesini okuma hatâsı"
 
 #: ../GDebi/GDebiGtk.py:333
 msgid "Error: "
-msgstr ""
+msgstr "Hatâ: "
 
 #: ../GDebi/GDebiGtk.py:348
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "Hata: artık sağlanamıyor "
 
 #: ../GDebi/GDebiGtk.py:365
 msgid "Same version is already installed"
@@ -309,16 +308,16 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
-msgstr ""
+msgstr "Seçim bir dizindir"
 
 #: ../GDebi/GDebiGtk.py:458 ../GDebi/GDebiGtk.py:464
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "'%s' dosya içeriği okuma hatâsı"
 
 #: ../GDebi/GDebiGtk.py:469
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "Dosya içeriği çıkartılamıyor"
 
 #: ../GDebi/GDebiGtk.py:480
 #, python-format
@@ -340,20 +339,21 @@ msgstr "Yazılım paketleri"
 
 #: ../GDebi/GDebiGtk.py:551
 msgid "Dependency problems"
-msgstr ""
+msgstr "Bağımlılık sorunları"
 
 #: ../GDebi/GDebiGtk.py:552
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
 msgstr ""
+"Bir ya da daha fazla paket %s için gerekli olduğu için yazılım kaldırılamadı."
 
 #: ../GDebi/GDebiGtk.py:560
 msgid "File not found"
-msgstr ""
+msgstr "Dosya bulunamadı"
 
 #: ../GDebi/GDebiGtk.py:561
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
+msgstr "Var olmayan bir dosyayı (ya da artık olmayan) kurmayı denediniz. "
 
 #: ../GDebi/GDebiGtk.py:572
 msgid "Installing package file..."
@@ -361,7 +361,7 @@ msgstr "Paket dosyası kuruluyor..."
 
 #: ../GDebi/GDebiGtk.py:574
 msgid "Removing package..."
-msgstr ""
+msgstr "Paket kaldırılıyor..."
 
 #: ../GDebi/GDebiGtk.py:577
 msgid "Install unauthenticated software?"
@@ -374,6 +374,10 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"Kötü amaçlı yazılımlar verilerinize zarar verebilir ve sistem denetimini ele "
+"geçirebilir.\n"
+"Aşağıdaki paketlerin güvenilirliği doğrulanmadığı için kötü amaçlı yazılım "
+"içerebilirler."
 
 #: ../GDebi/GDebiGtk.py:606
 msgid "You need to grant administrative rights to install software"
@@ -391,11 +395,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:612
 msgid "You need to grant administrative rights to remove software"
-msgstr ""
+msgstr "Yazılımı kaldırmak için yönetici haklarına erişmeniz gerekiyor"
 
 #: ../GDebi/GDebiGtk.py:613
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Paketleri kaldırmak risk oluşturabilir."
 
 #: ../GDebi/GDebiGtk.py:635 ../GDebi/GDebiGtk.py:699
 msgid "Failed to install package file"
@@ -412,7 +416,7 @@ msgstr "Gereken tüm dosyalar indirilemedi"
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
-msgstr "Internet bağlantınızı ya da kurulum ortamını kontrol edin."
+msgstr "Lütfen internet bağlantınızı veya kurulum ortamınızı denetleyin."
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
@@ -434,7 +438,7 @@ msgstr "%s kuruluyor"
 #: ../GDebi/GDebiGtk.py:708
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "%s kaldırılıyor"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -446,7 +450,7 @@ msgstr "Kurulum tamamlandı"
 
 #: ../GDebi/GDebiGtk.py:732
 msgid "Removal finished"
-msgstr ""
+msgstr "Kaldırma bitti"
 
 #: ../GDebi/GDebiGtk.py:735
 #, python-format
@@ -456,7 +460,7 @@ msgstr "'%s' paketi kuruldu"
 #: ../GDebi/GDebiGtk.py:737
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "'%s' paketi kaldırıldı"
 
 #: ../GDebi/GDebiGtk.py:740 ../GDebi/GDebiKDE.py:399
 #, python-format
@@ -474,7 +478,7 @@ msgstr "Kurulum tamamlandı"
 
 #: ../GDebi/GDebiGtk.py:749
 msgid "Removal complete"
-msgstr ""
+msgstr "Kaldırma tamamlandı"
 
 #: ../GDebi/GDebiGtk.py:757 ../GDebi/GDebiKDE.py:409
 msgid "Failed to completely install all dependencies"
@@ -482,7 +486,7 @@ msgstr "Bazı bağımlılıklar kurulamadı"
 
 #: ../GDebi/GDebiGtk.py:759
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Paketin tamâmen kaldırılması başarısız oldu"
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
@@ -499,7 +503,7 @@ msgstr "%s kuruluyor..."
 #: ../GDebi/GDebiGtk.py:882
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "'%s' kaldırılıyor..."
 
 #: ../GDebi/GDebiGtk.py:986 ../GDebi/KDEAptDialogs.py:136
 msgid "Installing dependencies..."
@@ -508,7 +512,7 @@ msgstr "Bağımlılıklar kuruluyor..."
 #: ../GDebi/GDebiGtk.py:1031 ../GDebi/KDEAptDialogs.py:199
 #: ../GDebi/KDEAptDialogs.py:209 ../GDebi/KDEAptDialogs.py:211
 msgid "Downloading additional package files..."
-msgstr "İlâve paket dosyaları indiriliyor..."
+msgstr "Ek paket dosyaları indiriliyor..."
 
 #: ../GDebi/GDebiGtk.py:1040 ../GDebi/KDEAptDialogs.py:209
 #, python-format
@@ -575,7 +579,7 @@ msgstr "Şu paketlerin kurulmasını gerektiriyor: "
 #: ../GDebi/GDebiCli.py:132
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "Yükleme sırasında hatâ: '%s'"
 
 #: ../GDebi/GDebiKDE.py:160
 msgid "Included Files"
@@ -587,7 +591,7 @@ msgstr "Paket K&ur"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid "&Download Package"
-msgstr ""
+msgstr "&Paketi İndir"
 
 #: ../GDebi/GDebiKDE.py:188
 msgid "The package file does not exist"
@@ -616,18 +620,17 @@ msgid "To be removed: %s"
 msgstr "Kaldırılacak: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "'%s' paketi kuruldu"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s kuruluyor"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
-msgstr "Sağlanamayan bağımlılıklar"
+msgstr "Bozuk bağlılıklar"
 
 #: ../GDebi/GDebiCommon.py:76
 msgid ""
@@ -635,17 +638,20 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"Sisteminizde bozuk bağımlılıklar var. Bu uygulama bu sorun düzeltilinceye "
+"kadar devam edemez. Sorunu düzeltmek için uçbirim penceresinde 'gksudo "
+"synaptic' veya 'sudo apt-get install -f'yi çalıştırın."
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "'%s' bir Debian paketi değil"
 
 #: ../GDebi/GDebiCommon.py:95
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr ""
+msgstr "MIME türü '%s' olan bu dosya bu sisteme yüklenemez."
 
 #: ../GDebi/GDebiCommon.py:99
 #, python-format
@@ -716,25 +722,27 @@ msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"Lütfen önce diğer uygulamayı, ör. 'Güncelleme Yöneticisi', 'aptitude' ya da "
-"'Synaptic'i kapatın."
+"Lütfen önce diğer uygulamayı, ör. 'Güncelleştirme Yöneticisi', 'aptitude' ya "
+"da 'Synaptic'i kapatın."
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:219
 msgid "Media Change"
 msgstr "Ortam Değiştirme"
 
-#~ msgid "Software package"
-#~ msgstr "Yazılım paketi"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Hatalı işlemci mimarisi '%s'"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "%s bağımlılığı sağlanamadı\n"
+
+#~ msgid "Software package"
+#~ msgstr "Yazılım paketi"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Bağımlılıkların hepsi sağlanamadı (önbellek bozuk)"
@@ -742,18 +750,19 @@ msgstr "Ortam Değiştirme"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Kötü niyetli yazılımlar verilerinize zarar verebilir ve sisteminizin "
 #~ "denetimini ele \n"
 #~ "\n"
-#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir "
-#~ "içeriğe sahip olabilirler."
+#~ "geçirebilir. Aşağıdaki paketler doğrulanmamıştır ve kötü niyetli bir içeriğe "
+#~ "sahip olabilirler."
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Daha yeni bir sürüm zaten kurulu"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' paketi kurulamadı"
 
@@ -762,6 +771,9 @@ msgstr "Ortam Değiştirme"
 
 #~ msgid "Y"
 #~ msgstr "E"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
@@ -778,8 +790,10 @@ msgstr "Ortam Değiştirme"
 #~ "  Mert Dirik https://launchpad.net/~mertdirik\n"
 #~ "  Murat Gunes https://launchpad.net/~mgunes\n"
 #~ "  Mustafa VELİOĞLU https://launchpad.net/~mustafavelioglu\n"
+#~ "  Volkan Gezer https://launchpad.net/~volkangezer\n"
 #~ "  Yiğit Ateş https://launchpad.net/~yigitates52\n"
 #~ "  kulkke https://launchpad.net/~kulkke\n"
 #~ "  mustafa solum https://launchpad.net/~mustafasolum\n"
 #~ "  ubuntuki https://launchpad.net/~aleverzurumlu\n"
-#~ "  yilomka https://launchpad.net/~yilomka-deactivatedaccount"
+#~ "  yilomka https://launchpad.net/~yilomka-deactivatedaccount\n"
+#~ "  Şâkir Aşçı https://launchpad.net/~sakirasci"

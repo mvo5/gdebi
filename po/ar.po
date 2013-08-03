@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-01-03 18:48+0000\n"
-"Last-Translator: dali--info <Unknown>\n"
+"PO-Revision-Date: 2013-01-12 19:24+0000\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <ar@li.org>\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -33,7 +32,7 @@ msgstr "تشغيل غي تفاعلي (خطر!)"
 
 #: ../gdebi:61
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "حدد أحد خيارات APT"
 
 #: ../gdebi:65
 msgid "Do not show progress information"
@@ -45,12 +44,12 @@ msgstr ""
 
 #: ../gdebi:71
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "استخدم دليل جذري بديل"
 
 #: ../gdebi:79
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr ""
+msgstr "خطأ في gdebi, الملف غير موجود: %s\n"
 
 #: ../gdebi:98 ../gdebi:107
 msgid "Need to be root to install packages"
@@ -66,15 +65,15 @@ msgstr "إغلاق تلقائي لدى الانتهاء من التثبيت."
 
 #: ../gdebi-gtk:62
 msgid "Use alternative datadir"
-msgstr ""
+msgstr "استخدم دليل البيانات البديل"
 
 #: ../gdebi-gtk:65
 msgid "Remove package"
-msgstr ""
+msgstr "حذف الحزمة"
 
 #: ../gdebi-gtk:84
 msgid "Software index is broken"
-msgstr ""
+msgstr "فهرسة البرنامج تالفة"
 
 #: ../gdebi-gtk:85
 msgid ""
@@ -83,6 +82,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"هذا خطأ كبير في مدير برمجياتك. من فضلك ابحث عن الحزم التالفة باسخدام "
+"synaptic، راجع أذون وصحه الملف '/etc/apt/sources.list' و أعد تحميل معلومات "
+"البرامج بـ: 'sudo apt-get update' و 'sudo apt-get install -f'."
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -111,7 +113,7 @@ msgstr "<b>لتطبيق التغيرات التالية يتطلب:</b>"
 
 #: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
 msgid "Package Installer"
-msgstr ""
+msgstr "مثبت الحزم"
 
 #: ../data/gdebi.ui.h:8
 msgid "_File"
@@ -119,15 +121,15 @@ msgstr "_ملف"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
-msgstr ""
+msgstr "ا_فتح…"
 
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
-msgstr ""
+msgstr "_حدِّث"
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
-msgstr ""
+msgstr "ت_حرير"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
@@ -145,7 +147,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:15
 msgid "_Details"
-msgstr ""
+msgstr "ال_تفاصيل"
 
 #: ../data/gdebi.ui.h:16 ../GDebi/GDebiKDE.py:156
 msgid "Status:"
@@ -153,22 +155,22 @@ msgstr "الحالة:"
 
 #: ../data/gdebi.ui.h:17
 msgid "Description:"
-msgstr ""
+msgstr "الوصف:"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:337 ../GDebi/GDebiGtk.py:395
 msgid "_Install Package"
-msgstr ""
+msgstr "_ثبّت الحزمة"
 
 #: ../data/gdebi.ui.h:19
 msgid "_Remove Package"
-msgstr ""
+msgstr "ح_ذف حزمة"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Download Package"
-msgstr ""
+msgstr "تن_زيل الحزمة"
 
 #: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
 msgid "Description"
@@ -176,23 +178,23 @@ msgstr "الوصف"
 
 #: ../data/gdebi.ui.h:22 ../GDebi/GDebiKDE.py:164
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>الإصدار:</b>"
 
 #: ../data/gdebi.ui.h:23 ../GDebi/GDebiKDE.py:165
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>المشرف:</b>"
 
 #: ../data/gdebi.ui.h:24 ../GDebi/GDebiKDE.py:166
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>الأولويّة:</b>"
 
 #: ../data/gdebi.ui.h:25 ../GDebi/GDebiKDE.py:167
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>القسم:</b>"
 
 #: ../data/gdebi.ui.h:26 ../GDebi/GDebiKDE.py:168
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>الحجم:</b>"
 
 #: ../data/gdebi.ui.h:27
 msgid "  "
@@ -200,7 +202,7 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:28
 msgid "Included files"
-msgstr ""
+msgstr "الملفات المضنة"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
@@ -208,7 +210,7 @@ msgstr ""
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "مثبت الحزم GDebi"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -219,57 +221,58 @@ msgstr "%s غير متاح."
 
 #: ../GDebi/GDebiGtk.py:95
 msgid "Copy selected text"
-msgstr ""
+msgstr "انسخ النص المحدد"
 
 #: ../GDebi/GDebiGtk.py:106
 msgid "Loading..."
-msgstr ""
+msgstr "جار التحميل..."
 
 #: ../GDebi/GDebiGtk.py:181
 msgid "Can not download as root"
-msgstr ""
+msgstr "لا يمكن التنزيل كمستخدم فائق"
 
 #: ../GDebi/GDebiGtk.py:182
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
+"الحزم البعيدة لا يمكن تنزيلها كمستخدم فائق، رجاءً حاول مرة أخرى كمستخدم عادي."
 
 #: ../GDebi/GDebiGtk.py:195
 msgid "Downloading package"
-msgstr ""
+msgstr "يجري تنزيل الحزمة"
 
 #: ../GDebi/GDebiGtk.py:202
 msgid "Download failed"
-msgstr ""
+msgstr "فشل التنزيل"
 
 #: ../GDebi/GDebiGtk.py:203
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "فشل تنزيل الحزمة: الملف '%s' '%s'"
 
 #. set window title
 #. set name
 #: ../GDebi/GDebiGtk.py:251 ../GDebi/GDebiKDE.py:208
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "مثبت الحزم - %s"
 
 #: ../GDebi/GDebiGtk.py:308
 msgid "Package control data"
-msgstr ""
+msgstr "بيانات التحكم في الحزمة"
 
 #: ../GDebi/GDebiGtk.py:311
 msgid "Upstream data"
-msgstr ""
+msgstr "بينات المنبع"
 
 #: ../GDebi/GDebiGtk.py:317
 msgid "Error reading filelist"
-msgstr ""
+msgstr "خطأ أثناء قراءة قائمة الملفات"
 
 #: ../GDebi/GDebiGtk.py:333
 msgid "Error: "
-msgstr ""
+msgstr "خطأ: "
 
 #: ../GDebi/GDebiGtk.py:348
 msgid "Error: no longer provides "
@@ -277,11 +280,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:365
 msgid "Same version is already installed"
-msgstr ""
+msgstr "نفس النسخة مثبتة الآن"
 
 #: ../GDebi/GDebiGtk.py:366
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "أ_عِد تثبيت الحزمة"
 
 #: ../GDebi/GDebiGtk.py:404
 msgid ""
@@ -302,12 +305,12 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
-msgstr ""
+msgstr "التحديد مجلد"
 
 #: ../GDebi/GDebiGtk.py:458 ../GDebi/GDebiGtk.py:464
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "خطأ أثناء قراءة محتويات '%s'"
 
 #: ../GDebi/GDebiGtk.py:469
 msgid "File content can not be extracted"
@@ -325,11 +328,11 @@ msgstr "ستُثبّت: %s"
 
 #: ../GDebi/GDebiGtk.py:497
 msgid "Open Software Package"
-msgstr ""
+msgstr "افتح حزمة البرامج"
 
 #: ../GDebi/GDebiGtk.py:502
 msgid "Software packages"
-msgstr ""
+msgstr "حزم البرامج"
 
 #: ../GDebi/GDebiGtk.py:551
 msgid "Dependency problems"
@@ -350,7 +353,7 @@ msgstr "أنت تحاول تثبيت ملف غير موجود. "
 
 #: ../GDebi/GDebiGtk.py:572
 msgid "Installing package file..."
-msgstr ""
+msgstr "جار تثبيت الحزمة..."
 
 #: ../GDebi/GDebiGtk.py:574
 msgid "Removing package..."
@@ -603,14 +606,13 @@ msgid "To be removed: %s"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "الحزمة '%s' تم تثبيتها."
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "جاري تثبيت %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -706,8 +708,12 @@ msgstr ""
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "بنية خاطئة '%s'"
+
+#~ msgid "Software package"
+#~ msgstr "حزمة برمجيات"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
@@ -715,5 +721,6 @@ msgstr ""
 #~ "  Ahmad Tarek https://launchpad.net/~ahmadtarek\n"
 #~ "  Khaled Hosny https://launchpad.net/~khaledhosny\n"
 #~ "  Mohamad Fada'q https://launchpad.net/~m-fadaq\n"
+#~ "  Mohamed Mohsen https://launchpad.net/~linuxer9\n"
 #~ "  abdallah alemran https://launchpad.net/~abukhallad\n"
 #~ "  dali--info https://launchpad.net/~guesmi120"

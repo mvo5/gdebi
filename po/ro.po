@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2009-12-02 12:50+0000\n"
 "Last-Translator: petre <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -414,7 +413,8 @@ msgstr "Nu s-au putut descărca toate fișierele necesare"
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
-msgstr "Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
+msgstr ""
+"Vă rugăm să verificaţi conexiunea la Internet sau sursa de instalare."
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
@@ -617,14 +617,13 @@ msgid "To be removed: %s"
 msgstr "Urmează să fie şters: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Pachetul '%s' a fost instalat"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Se instalează '%s'..."
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -729,24 +728,24 @@ msgstr ""
 msgid "Media Change"
 msgstr ""
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
+#~ msgid "Y"
+#~ msgstr "D"
 
 #~ msgid "Software package"
 #~ msgstr "Pachet software"
 
-#~ msgid "Y"
-#~ msgstr "D"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependenţa nu poate fi satisfăcuta: %s\n"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nu s-a putut instala '%s'"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arhitectură greşită '%s'"
 
@@ -756,13 +755,17 @@ msgstr ""
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Satisfacerea tuturor dependenţelor a eşuat (cache corupt)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Eroare I/O în timpul citirii listei de fişiere: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
-#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru "
-#~ "drept o disfunţionalitate (bug)"
+#~ "Lista fişierelor nu a putut fi citită, vă rugăm raportaţi acest lucru drept "
+#~ "o disfunţionalitate (bug)"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-03-26 16:16+0000\n"
 "Last-Translator: Piotr Sokół <Unknown>\n"
 "Language-Team: polski <>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -90,8 +89,8 @@ msgstr ""
 "Jest to poważny błąd systemu zarządzania pakietami. Proszę poszukać "
 "uszkodzonych pakietów za pomocą programu Synaptic, sprawdzić prawa dostępu "
 "do plików oraz poprawność pliku \"/etc/apt/sources.list\", a następnie "
-"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get update"
-"\" i \"sudo apt-get install -f\"."
+"odświeżyć informacje o pakietach za pomocą polecenia: \"sudo apt-get "
+"update\" i \"sudo apt-get install -f\"."
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -629,14 +628,13 @@ msgid "To be removed: %s"
 msgstr "Do usunięcia: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Zainstalowano pakiet „%s”"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Instalowanie %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -684,7 +682,8 @@ msgstr "Ta sama wersja jest dostępna poprzez jeden z kanałów oprogramowania"
 
 #: ../GDebi/GDebiCommon.py:123
 msgid "You are recommended to install the software from the channel instead."
-msgstr "Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
+msgstr ""
+"Zalecana jest instalacja tego oprogramowania z kanału oprogramowania."
 
 #: ../GDebi/GDebiCommon.py:127
 msgid "An older version is available in a software channel"
@@ -744,23 +743,18 @@ msgstr ""
 msgid "Media Change"
 msgstr "Zmiana nośnika"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Pakiet oprogramowania"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Nieodpowiednia architektura \"%s\""
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Złośliwe oprogramowanie może uszkodzić twoje dane i przejąć kontrolę nad "
 #~ "systemem.\n"
@@ -771,9 +765,13 @@ msgstr "Zmiana nośnika"
 #~ msgid "Y"
 #~ msgstr "t"
 
+#~ msgid "Software package"
+#~ msgstr "Pakiet oprogramowania"
+
 #~ msgid "Open..."
 #~ msgstr "Otwórz..."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Niemożliwe spełnienie zależności: %s\n"
 
@@ -785,25 +783,29 @@ msgstr "Zmiana nośnika"
 #~ "Nie udało się spełnić wszysktkich zależności (uszkodzona pamięć podręczna "
 #~ "instalatora)"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "W konflikcie z zainstalowanym pakietem '%s'\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Nowsza wersja jest już zainstalowana"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nie można zainstalować '%s'"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr "Lista plików nie może być odczytana; proszę zgłosić to jako błąd"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Istniejący pakiet '%s' konfliktuje z: '%s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
-#~ msgstr ""
-#~ "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
+#~ msgstr "Istniejący pakiet '%s' będzie miał uszkodzoną zależność %s (%s %s)\n"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Błąd we/wy podczas czytania listy plików: %s"
 
@@ -829,3 +831,6 @@ msgstr "Zmiana nośnika"
 
 #~ msgid "_Open..."
 #~ msgstr "_Otwórz..."
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

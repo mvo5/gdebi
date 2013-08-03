@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-09-14 02:41+0000\n"
 "Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: Telugu <te@li.org>\n"
-"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -232,8 +231,8 @@ msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
-"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి సాధారణ వాడుకరిగా మారి మరలా "
-"ప్రయత్నించండి."
+"రూట్ వాడుకరిగా ఉన్నపుడు సుదూర ప్యాకేజీలను డౌన్‌లోడ్‌చేయుట వీలుకాదు. దయచేసి "
+"సాధారణ వాడుకరిగా మారి మరలా ప్రయత్నించండి."
 
 #: ../GDebi/GDebiGtk.py:195
 msgid "Downloading package"
@@ -370,7 +369,8 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:606
 msgid "You need to grant administrative rights to install software"
-msgstr "సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
+msgstr ""
+"సాఫ్ట్‍వేర్‌ని స్థాపించుటకు మీరు నిర్వాహక హక్కులను మంజూరుచేయవలసి ఉంటుంది"
 
 #: ../GDebi/GDebiGtk.py:607
 msgid ""
@@ -413,7 +413,8 @@ msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం టెర్మినల్ విండోను చూడండి."
+"ఇది సాధారణంగా సాఫ్ట్‍వేర్ పంపిణీదారుకు సంబంధించిన దోషం. మరిన్ని వివరాల కోసం "
+"టెర్మినల్ విండోను చూడండి."
 
 #: ../GDebi/GDebiGtk.py:705
 #, python-format
@@ -475,7 +476,8 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
+msgstr ""
+"దీనిని పరిష్కరించుటకు టెర్మినల్ విండోలో 'sudo apt-get install -f' నడుపండి"
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
@@ -599,14 +601,13 @@ msgid "To be removed: %s"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "'%s' ప్యాకేజీ స్థాపించబడింది"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s స్థాపించబడుతోంది"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"

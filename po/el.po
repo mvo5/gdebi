@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-01-23 12:01+0000\n"
 "Last-Translator: Christos Spyroglou <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -626,14 +625,13 @@ msgid "To be removed: %s"
 msgstr "Για απομάκρυνση: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Το πακέτο '%s' εγκαταστάθηκε"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Εγκατάσταση του %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -739,23 +737,21 @@ msgstr ""
 msgid "Media Change"
 msgstr "Αλλαγή μέσου"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
+#~ msgid "gdebi"
+#~ msgstr "gdebi"
+
+#, python-format
+#~ msgid "Wrong architecture '%s'"
+#~ msgstr "Λάθος αρχιτεκτονική επεξεργαστή '%s'"
 
 #~ msgid "Software package"
 #~ msgstr "Πακέτο λογισμικού"
 
-#~ msgid "gdebi"
-#~ msgstr "gdebi"
-
-#~ msgid "Wrong architecture '%s'"
-#~ msgstr "Λάθος αρχιτεκτονική επεξεργαστή '%s'"
-
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Κακόβουλο λογισμικό μπορεί να προκαλέσει βλάβες στα δεδομένα σας και να "
 #~ "ελέγξει το σύστημα σας.\n"
@@ -763,24 +759,30 @@ msgstr "Αλλαγή μέσου"
 #~ "Τα παρακάτω πακέτα δεν έχουν πιστοποιηθεί και μπορεί να είναι κακόβουλο "
 #~ "λογισμικό."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Εξάρτηση που δεν ικανοποιήθηκε: %s\n"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Μια επόμενη έκδοση είναι ήδη εγκατεστημένη"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Αδυναμία εγκατάστασης '%s'"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Αδυναμία ικανοποίησης όλων των εξαρτήσεων (κατεστραμμένη cache)"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Σφάλμα εισόδου εξόδου κατά την ανάγνωση της λίστας αρχείων: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
 #~ msgstr ""
 #~ "Λίστα των αρχείων που δεν διαβάστηκαν, παρακαλούμε αναφέρετε το ως σφάλμα"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "Y"
 #~ msgstr "Y"
@@ -791,15 +793,18 @@ msgstr "Αλλαγή μέσου"
 #~ msgid "Open..."
 #~ msgstr "Άνοιγμα..."
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Υπάρχει σύγκρουση με το εγκατεστημένο πακέτο '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Δεν υπάρχει πεδίο αρχιτεκτονικής στο πακέτο"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Το πακέτο '%s' συγκρούεται με την εξάρτηση: %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Το πακέτο '%s' καταστράφηκε από την εξάρτηση %s (%s %s)\n"
 

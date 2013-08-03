@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2009-11-08 06:24+0000\n"
 "Last-Translator: Khandakar Mujahidul Islam <suzan229@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
-"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -83,10 +82,10 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"এটা আপনার সফ্টওয়ার ব্যবস্থাপনা সিস্টেমের বড় ধরণের ব্যর্থতা। অনুগ্রহ করে সিনাপটিকে "
-"ব্রোকেন প্যাকেজ পরীক্ষা, ফাইল '/etc/apt/sources.list' এর অনুমোদন এবং নির্ভুলতা "
-"পরীক্ষা এবং যা দিয়ে সফ্টওয়ার তথ্য রিলোড করা হবে: 'sudo apt-get update' and "
-"'sudo apt-get install -f'।"
+"এটা আপনার সফ্টওয়ার ব্যবস্থাপনা সিস্টেমের বড় ধরণের ব্যর্থতা। অনুগ্রহ করে "
+"সিনাপটিকে ব্রোকেন প্যাকেজ পরীক্ষা, ফাইল '/etc/apt/sources.list' এর অনুমোদন "
+"এবং নির্ভুলতা পরীক্ষা এবং যা দিয়ে সফ্টওয়ার তথ্য রিলোড করা হবে: 'sudo apt-get "
+"update' and 'sudo apt-get install -f'।"
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -373,8 +372,8 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"ত্রুটিযুক্ত সফ্টওয়ার ডাটার ক্ষতি করতে পারে এবং আপনার সিস্টেমের নিয়ন্ত্রন নিয়ে নিতে "
-"পারে।\n"
+"ত্রুটিযুক্ত সফ্টওয়ার ডাটার ক্ষতি করতে পারে এবং আপনার সিস্টেমের নিয়ন্ত্রন "
+"নিয়ে নিতে পারে।\n"
 "\n"
 "প্যাকেজ প্রমানীকৃত নয় এবং তাই ত্রুটিযুক্ত হতে পারে।"
 
@@ -415,7 +414,8 @@ msgstr "সকল প্রয়োজনীয় ফাইল ডাউনলোড
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
-msgstr "দয়াা করে আপনার ইন্টারনেট সংযুক্তি অথবা ইনস্টলেশন মিডিয়াম পরীক্ষা করুন।"
+msgstr ""
+"দয়াা করে আপনার ইন্টারনেট সংযুক্তি অথবা ইনস্টলেশন মিডিয়াম পরীক্ষা করুন।"
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
@@ -426,8 +426,8 @@ msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
-"সাধারণত এটা সফ্টওয়ার ডিসট্রিবিউটর সম্পর্কিত ত্রুটি। আরও বিস্তারিত তথ্যের জন্য "
-"টার্মিনাল উইন্ডো দেখুন।"
+"সাধারণত এটা সফ্টওয়ার ডিসট্রিবিউটর সম্পর্কিত ত্রুটি। আরও বিস্তারিত তথ্যের "
+"জন্য টার্মিনাল উইন্ডো দেখুন।"
 
 #: ../GDebi/GDebiGtk.py:705
 #, python-format
@@ -490,8 +490,8 @@ msgstr ""
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
-"এই সমস্যা নির্দিষ্ট করতে একটি টার্মিনাল উইন্ডোতে 'sudo apt-get install -f' কমান্ড "
-"চালান।"
+"এই সমস্যা নির্দিষ্ট করতে একটি টার্মিনাল উইন্ডোতে 'sudo apt-get install -f' "
+"কমান্ড চালান।"
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
@@ -552,8 +552,8 @@ msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
-"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের অনুমোদন "
-"পরীক্ষা।\n"
+"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের "
+"অনুমোদন পরীক্ষা।\n"
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
@@ -601,8 +601,8 @@ msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
-"যে ফাইল নেই এমন ফাইল ইনস্টলেশনের জন্য নির্বাচিত। অনুগ্রহ করে existing .deb প্যাকেজ "
-"ফাইল নির্বাচন।"
+"যে ফাইল নেই এমন ফাইল ইনস্টলেশনের জন্য নির্বাচিত। অনুগ্রহ করে existing .deb "
+"প্যাকেজ ফাইল নির্বাচন।"
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:270
@@ -619,14 +619,13 @@ msgid "To be removed: %s"
 msgstr "যা অপসারন করা হবে: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "'%s' প্যাকেজ ইনস্টল হয়েছে"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "'%s' ইনস্টল করা হচ্ছে..."
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -638,9 +637,9 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"সিস্টেমে ব্রোকেন ডিপেন্ডেন্সী রয়েছে। টিক না করা পর্যন্ত এ অ্যাপ্লিকেশন চালানো যায় "
-"না। এটা ঠিক করতে টার্মিনাল উইন্ডোতে 'gksudo synaptic' or 'sudo apt-get install "
-"-f' চালান।"
+"সিস্টেমে ব্রোকেন ডিপেন্ডেন্সী রয়েছে। টিক না করা পর্যন্ত এ অ্যাপ্লিকেশন "
+"চালানো যায় না। এটা ঠিক করতে টার্মিনাল উইন্ডোতে 'gksudo synaptic' or 'sudo "
+"apt-get install -f' চালান।"
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
@@ -663,7 +662,8 @@ msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
-"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের অনুমোদন পরীক্ষা।"
+"প্যাকেজ ত্রুটিযুক্ত হতে পারে অথবা আপনি ফাইল খুলতে অনুমোদিত নন। ফাইলের "
+"অনুমোদন পরীক্ষা।"
 
 #: ../GDebi/GDebiCommon.py:122
 msgid "Same version is available in a software channel"
@@ -682,8 +682,8 @@ msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
-"সাধারনত সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, কারণ এর "
-"সমর্থন আরও ভাল।"
+"সাধারনত সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, কারণ "
+"এর সমর্থন আরও ভাল।"
 
 #: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
@@ -694,8 +694,8 @@ msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
-"আপনাকে জোরালোভাবে  সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ করা হয়, "
-"কারণ এর সমর্থন আরও ভাল।"
+"আপনাকে জোরালোভাবে  সফ্টওয়ার চ্যানেল থেকে সংস্করণ ইনস্টল করার জন্য সুপারিশ "
+"করা হয়, কারণ এর সমর্থন আরও ভাল।"
 
 #: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
@@ -721,22 +721,20 @@ msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
-"অনুগ্রহ করে অন্যান্য অ্যাপ্লিকেশন বন্ধ, যেমন, প্রথমে  'Update Manager', 'aptitude' "
-"or 'Synaptic'।"
+"অনুগ্রহ করে অন্যান্য অ্যাপ্লিকেশন বন্ধ, যেমন, প্রথমে  'Update Manager', "
+"'aptitude' or 'Synaptic'।"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:219
 msgid "Media Change"
 msgstr ""
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
+#, python-format
+#~ msgid "Dependency is not satisfiable: %s\n"
+#~ msgstr "নির্বরতা মেটাতে পারে নি: %s\n"
 
 #~ msgid "Software package"
 #~ msgstr "সফটওয়্যার প্যাকেজ"
-
-#~ msgid "Dependency is not satisfiable: %s\n"
-#~ msgstr "নির্বরতা মেটাতে পারে নি: %s\n"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
@@ -747,9 +745,11 @@ msgstr ""
 #~ msgid "A later version is already installed"
 #~ msgstr "ইতিমধ্যেই একটি পরবর্তী সংস্করণ ইনস্টল করা আছে"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "'%s' ইনস্টল করতে পারে নি"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "ভুল আর্কিটেকচার '%s'"
 
@@ -759,8 +759,11 @@ msgstr ""
 #~ "  Israt Jahan https://launchpad.net/~isratjahan-ry\n"
 #~ "  Khandakar Mujahidul Islam https://launchpad.net/~suzan\n"
 #~ "  Md. Feroj Bepari https://launchpad.net/~feroj21\n"
-#~ "  Tushar https://launchpad.net/~tushar\n"
+#~ "  Tushar Roy https://launchpad.net/~tushar\n"
 #~ "  nasir khan saikat https://launchpad.net/~nasir8891"
 
 #~ msgid "_Open..."
 #~ msgstr "খুলুন (_O)..."
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2011-09-06 15:21+0000\n"
-"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Last-Translator: Hideki Yamane <henrich@debian.or.jp>\n"
 "Language-Team: Japanese <ja@li.org>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -41,9 +40,7 @@ msgstr "プログレスバーの情報を表示しない"
 
 #: ../gdebi:69
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
-"シミュレーションのみを行い、apt-get install と互換性のある行を標準エラー出力"
-"に表示する"
+msgstr "シミュレーションのみを行い、apt-get install と互換性のある行を標準エラー出力に表示する"
 
 #: ../gdebi:71
 msgid "Use alternative root dir"
@@ -85,10 +82,9 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
-"ソフトウェア管理システムで重大な問題が起きています。synaptic で破損している"
-"パッケージを確認し、ファイル '/etc/apt/sources.list' のファイル権限と内容の正"
-"確さを確認した上で以下のようにしてソフトウェアの情報を再読み込みしてくださ"
-"い: 'sudo apt-get update' and 'sudo apt-get install -f'"
+"ソフトウェア管理システムで重大な問題が起きています。synaptic で破損しているパッケージを確認し、ファイル "
+"'/etc/apt/sources.list' のファイル権限と内容の正確さを確認した上で以下のようにしてソフトウェアの情報を再読み込みしてください: "
+"'sudo apt-get update' and 'sudo apt-get install -f'"
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
@@ -239,9 +235,7 @@ msgstr "rootではダウンロードができません"
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
-msgstr ""
-"root で実行している間は外部からパッケージをダウンロードできません。一般ユー"
-"ザーで再度試してください。"
+msgstr "root で実行している間は外部からパッケージをダウンロードできません。一般ユーザーで再度試してください。"
 
 #: ../GDebi/GDebiGtk.py:195
 msgid "Downloading package"
@@ -375,16 +369,13 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
-"悪意のあるソフトウェアによって、あなたのデータを破壊したりシステムを乗っ取ら"
-"れることがあります。\n"
+"悪意のあるソフトウェアによって、あなたのデータを破壊したりシステムを乗っ取られることがあります。\n"
 "\n"
-"このパッケージは認証されておらず、悪意のある者が作成したものである可能性があ"
-"ります。"
+"このパッケージは認証されておらず、悪意のある者が作成したものである可能性があります。"
 
 #: ../GDebi/GDebiGtk.py:606
 msgid "You need to grant administrative rights to install software"
-msgstr ""
-"ソフトウェアをインストールするには管理者権限での作業を許可する必要があります"
+msgstr "ソフトウェアをインストールするには管理者権限での作業を許可する必要があります"
 
 #: ../GDebi/GDebiGtk.py:607
 msgid ""
@@ -393,10 +384,8 @@ msgid ""
 "Install software from trustworthy software distributors only.\n"
 msgstr ""
 "\n"
-"パッケージファイルを手動でインストールするのは、セキュリティ上のリスクとなる"
-"可能性があります。\n"
-"十分に信用できるソフトウェアディストリビューターから取得したソフトウェアのみ"
-"をインストールしてください。\n"
+"パッケージファイルを手動でインストールするのは、セキュリティ上のリスクとなる可能性があります。\n"
+"十分に信用できるソフトウェアディストリビューターから取得したソフトウェアのみをインストールしてください。\n"
 
 #: ../GDebi/GDebiGtk.py:612
 msgid "You need to grant administrative rights to remove software"
@@ -431,9 +420,7 @@ msgstr "依存関係をすべてインストールできませんでした"
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
-msgstr ""
-"通常、これはソフトウェアのディストリビューター側の問題によるものです。詳細に"
-"ついては、端末を参照してください。"
+msgstr "通常、これはソフトウェアのディストリビューター側の問題によるものです。詳細については、端末を参照してください。"
 
 #: ../GDebi/GDebiGtk.py:705
 #, python-format
@@ -495,8 +482,7 @@ msgstr "パッケージを完全に削除するのに失敗しました"
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
-"これを修正するには、端末で 'sudo apt-get install -f' を実行してください。"
+msgstr "これを修正するには、端末で 'sudo apt-get install -f' を実行してください。"
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
@@ -556,9 +542,7 @@ msgstr "ソフトウェアパッケージを開くのに失敗しました\n"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
-msgstr ""
-"パッケージが破損しているか、ファイルを開く権限がありません。ファイルの権限を"
-"確認してください。\n"
+msgstr "パッケージが破損しているか、ファイルを開く権限がありません。ファイルの権限を確認してください。\n"
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
@@ -605,9 +589,7 @@ msgstr "パッケージファイルが存在しません"
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
-msgstr ""
-"インストール対象として、存在しないファイルが選択されました。存在する .deb "
-"パッケージファイルを選択してください。"
+msgstr "インストール対象として、存在しないファイルが選択されました。存在する .deb パッケージファイルを選択してください。"
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:270
@@ -624,14 +606,13 @@ msgid "To be removed: %s"
 msgstr "削除されます: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "パッケージ '%s' がインストールされました"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s をインストールしています"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -643,9 +624,8 @@ msgid ""
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
-"システムの依存関係が壊れています。この状態が修正されるまで、このアプリケー"
-"ションは動作を行うことができません。修正するには端末で 'gksudo synaptic' また"
-"は 'sudo apt-get install -f' を実行してください。"
+"システムの依存関係が壊れています。この状態が修正されるまで、このアプリケーションは動作を行うことができません。修正するには端末で 'gksudo "
+"synaptic' または 'sudo apt-get install -f' を実行してください。"
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
@@ -656,9 +636,7 @@ msgstr "'%s' は Debian パッケージではありません"
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr ""
-"このファイルの MIME type は '%s' です。このシステムにはインストールできませ"
-"ん。"
+msgstr "このファイルの MIME type は '%s' です。このシステムにはインストールできません。"
 
 #: ../GDebi/GDebiCommon.py:99
 #, python-format
@@ -669,9 +647,7 @@ msgstr "'%s' を開くことができません"
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
-msgstr ""
-"パッケージが破損しているかファイルを開く権限がありません。ファイルの権限を確"
-"認してください。"
+msgstr "パッケージが破損しているかファイルを開く権限がありません。ファイルの権限を確認してください。"
 
 #: ../GDebi/GDebiCommon.py:122
 msgid "Same version is available in a software channel"
@@ -690,9 +666,8 @@ msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
-"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェ"
-"アチャンネルから利用可能なバージョンをインストールするのが一般的にはお勧めで"
-"す。"
+"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェアチャンネルから利用可能なバージョンをインストールするのが一般的にはお勧めです"
+"。"
 
 #: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
@@ -703,8 +678,7 @@ msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
-"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェ"
-"アチャンネルから利用可能なバージョンをインストールするのを強くお勧めします。"
+"通常はソフトウェアチャンネルの方がきちんとサポートされているので、ソフトウェアチャンネルから利用可能なバージョンをインストールするのを強くお勧めします。"
 
 #: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
@@ -729,29 +703,25 @@ msgstr "ソフトウェア管理ツールは同時に 1 つだけしか実行で
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
-"まず、「アップデートマネージャー」「aptitude」「Synaptic」などの他のアプリ"
-"ケーションを閉じてください。"
+msgstr "まず、「アップデートマネージャー」「aptitude」「Synaptic」などの他のアプリケーションを閉じてください。"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:219
 msgid "Media Change"
 msgstr "メディアを入れ替えてください"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "ソフトウェアパッケージ"
-
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "アーキテクチャ '%s' ではありません"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Fumihito YOSHIDA https://launchpad.net/~hito\n"
-#~ "  Hideki Yamane (Debian-JP) https://launchpad.net/~henrich\n"
+#~ "  Hideki Yamane https://launchpad.net/~henrich\n"
 #~ "  IRIE Shinsuke https://launchpad.net/~irie\n"
 #~ "  Ikuya Awashiro https://launchpad.net/~ikuya-fruitsbasket\n"
 #~ "  Kentaro Kazuhama https://launchpad.net/~kazken3\n"
@@ -761,3 +731,6 @@ msgstr "メディアを入れ替えてください"
 #~ "  Shushi Kurose https://launchpad.net/~kuromabo\n"
 #~ "  Y.Nishiwaki https://launchpad.net/~y.nishiwaki\n"
 #~ "  asaijo https://launchpad.net/~asaijo"
+
+#~ msgid "Software package"
+#~ msgstr "ソフトウェアパッケージ"

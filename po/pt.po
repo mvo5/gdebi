@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-09-13 10:00+0000\n"
 "Last-Translator: Rui Az. <astronomypt@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
-"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -420,7 +419,8 @@ msgstr "Não foi possível descarregar todos os ficheiros necessários"
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
-msgstr "Por favor verifique a sua ligação à Internet ou o meio de instalação."
+msgstr ""
+"Por favor verifique a sua ligação à Internet ou o meio de instalação."
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
@@ -623,14 +623,13 @@ msgid "To be removed: %s"
 msgstr "<b>A ser removido: %s</b>"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Pacote '%s' foi instalado"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "A instalar %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -736,20 +735,22 @@ msgstr ""
 msgid "Media Change"
 msgstr "Alterar Media"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Pacote de software"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Arquitectura errada '%s'"
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Dependência não pode ser satisfeita: %s\n"
+
+#~ msgid "Software package"
+#~ msgstr "Pacote de software"
 
 #~ msgid "Failed to satisfy all dependencies (broken cache)"
 #~ msgstr "Impossível de instalar dependências (cache quebrada)"
@@ -757,8 +758,8 @@ msgstr "Alterar Media"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Software malicioso pode danificar os seus dados e tomar o controlo do seu "
 #~ "sistema.\n"
@@ -769,6 +770,7 @@ msgstr "Alterar Media"
 #~ msgid "A later version is already installed"
 #~ msgstr "Versão mais recente já está instalada"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Impossível de instalar '%s'"
 

@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-09-03 00:17+0000\n"
+"PO-Revision-Date: 2013-08-03 14:07+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: Italian <it@li.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -24,8 +23,8 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
-"Utilizzo: %prog [opzioni] nomefile\n"
-"Per usufruire dell'interfaccia grafica, lancia gdebi-gtk\n"
+"Uso: %prog [opzioni] nome_file\n"
+"Per usufruire dell'interfaccia grafica, eseguire gdebi-gtk\n"
 
 #: ../gdebi:57 ../gdebi-gtk:57
 msgid "Run non-interactive (dangerous!)"
@@ -103,7 +102,8 @@ msgstr "Terminale"
 
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
-msgstr "Chiudere automaticamente una volta applicate con successo le modifiche"
+msgstr ""
+"Chiudere automaticamente una volta applicate con successo le modifiche"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
 #: ../GDebi/GDebiKDE.py:321
@@ -209,7 +209,7 @@ msgstr "File inclusi"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
-msgstr ""
+msgstr "Output di Lintian"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
@@ -295,10 +295,12 @@ msgid ""
 "No lintian available.\n"
 "Please install using sudo apt-get install lintian"
 msgstr ""
+"Lintian non è disponibile.\n"
+"Utilizzare sudo apt-get install lintian per installarlo"
 
 #: ../GDebi/GDebiGtk.py:407
 msgid "Running lintian..."
-msgstr ""
+msgstr "Lintian è in esecuzione..."
 
 #: ../GDebi/GDebiGtk.py:424
 #, python-format
@@ -306,6 +308,8 @@ msgid ""
 "\n"
 "Lintian finished with exit status %s"
 msgstr ""
+"\n"
+"Lintian terminato con codice di uscita %s"
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
@@ -629,14 +633,13 @@ msgid "To be removed: %s"
 msgstr "Da rimuovere: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Il pacchetto «%s» è stato installato"
+msgstr "<b>Il pacchetto '%s' è stato installato</b>"
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Installazione di %s"
+msgstr "Installazione in corso di"
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -744,12 +747,6 @@ msgstr ""
 msgid "Media Change"
 msgstr "Cambio del supporto"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Pacchetto software"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
@@ -759,15 +756,21 @@ msgstr "Cambio del supporto"
 #~ msgid "Open..."
 #~ msgstr "Apri..."
 
+#~ msgid "Software package"
+#~ msgstr "Pacchetto software"
+
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "La dipendenza non può essere soddisfatta: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflitti con il pacchetto «%s» installato\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Nessun campo «Architecture» nel pacchetto"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Architettura «%s» errata"
 
@@ -777,9 +780,11 @@ msgstr "Cambio del supporto"
 #~ msgid "A later version is already installed"
 #~ msgstr "È già installata una versione più recente"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Impossibile installare «%s»"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "Errore di I/O durante la lettura dell'elenco dei file: %s"
 
@@ -787,6 +792,10 @@ msgstr "Cambio del supporto"
 #~ msgstr ""
 #~ "Impossibile leggere l'elenco dei file, segnalare un bug per questo evento"
 
+#~ msgid "<b>"
+#~ msgstr "<b>"
+
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Il pacchetto esistente «%s» viola la dipendenza «%s» (%s %s)\n"
 
@@ -796,8 +805,8 @@ msgstr "Cambio del supporto"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Il software malevolo può danneggiare i dati e prendere il controllo del "
 #~ "sistema.\n"
@@ -805,6 +814,7 @@ msgstr "Cambio del supporto"
 #~ "I seguenti pacchetti non sono autenticati e quindi potrebbero essere di "
 #~ "natura pericolosa."
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr ""
 #~ "Il pacchetto «%s» viola il conflitto del pacchetto esistente: %s (%s %s)\n"
@@ -814,6 +824,7 @@ msgstr "Cambio del supporto"
 #~ "Launchpad Contributions:\n"
 #~ "  Alessandro Bruzzi https://launchpad.net/~blueplatinum\n"
 #~ "  Andrea Amoroso https://launchpad.net/~heiko81\n"
+#~ "  Claudio Arseni https://launchpad.net/~claudio.arseni\n"
 #~ "  Claudio Di Vita https://launchpad.net/~cdivita\n"
 #~ "  Elisa Secci https://launchpad.net/~elisa-secci\n"
 #~ "  Gaetano Ingrasciotta https://launchpad.net/~gaetanoingrasciotta\n"

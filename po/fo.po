@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-12-12 19:11+0000\n"
-"Last-Translator: Gunleif Joensen <Unknown>\n"
+"PO-Revision-Date: 2012-12-16 00:07+0000\n"
+"Last-Translator: Jógvan Olsen <jeggy@jebster.net>\n"
 "Language-Team: Faroese <fo@li.org>\n"
-"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -98,7 +97,7 @@ msgstr "Útstøð"
 
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
-msgstr "Lat vindeygað aftur, ta'broytingarnar eru fullførdar"
+msgstr "Lat vindeygað aftur, tá broytingarnar eru fullførdar"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
 #: ../GDebi/GDebiKDE.py:321
@@ -348,7 +347,8 @@ msgstr "Fíla ei funnin"
 
 #: ../GDebi/GDebiGtk.py:561
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr "Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
+msgstr ""
+"Tú royndi at leggja inn eina fílu ið ikki (ella ikki longur) finnst. "
 
 #: ../GDebi/GDebiGtk.py:572
 msgid "Installing package file..."
@@ -478,7 +478,8 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr "Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
+msgstr ""
+"Til at bøta um hetta, koyr 'sudo apt-get install -f' í einari útstøð."
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
@@ -602,14 +603,13 @@ msgid "To be removed: %s"
 msgstr "Til burturtøku: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Pakki '%s' varð lagdur inn"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Innleggi %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -706,16 +706,11 @@ msgstr ""
 msgid "Media Change"
 msgstr "Miðlabroyting"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Ritbúnaðarpakki"
-
 #~ msgid "translator-credits"
 #~ msgstr ""
 #~ "Launchpad Contributions:\n"
 #~ "  Gunleif Joensen https://launchpad.net/~gunleif\n"
+#~ "  Jógvan Olsen https://launchpad.net/~jeggy\n"
 #~ "  Luca Falavigna https://launchpad.net/~dktrkranz"
 
 #~ msgid "Y"
@@ -724,14 +719,17 @@ msgstr "Miðlabroyting"
 #~ msgid "Open..."
 #~ msgstr "Lat upp..."
 
+#~ msgid "Software package"
+#~ msgstr "Ritbúnaðarpakki"
+
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Óndsinnaður ritbúnaður, kann skaða tínar dátur og taka yvur leiðsluna á "
 #~ "tínum kervi.\n"
@@ -741,18 +739,23 @@ msgstr "Miðlabroyting"
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Eingin byggilagsteigur í pakkanum"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Skeivt byggilag '%s'"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Ein nýggjari útgáva er longu innløgd"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Kann ikki leggja inn '%s'"
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "IOvilla undir lesan av fílulista: %s"
 
 #~ msgid "List of files could not be read, please report this as a bug"
-#~ msgstr ""
-#~ "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"
+#~ msgstr "Fílulistin kundi ikki lestast, vinarliga fráboða hettar sum eina lús"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

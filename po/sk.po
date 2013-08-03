@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2012-01-18 08:37+0000\n"
 "Last-Translator: helix84 <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -621,14 +620,13 @@ msgid "To be removed: %s"
 msgstr "Na odstránenie: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Bol nainštalovaný balík „%s“"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Inštaluje sa %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -733,15 +731,10 @@ msgstr ""
 msgid "Media Change"
 msgstr "Výmena nosiča"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Balík softvéru"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Nesprávna architektúra „%s“"
 
@@ -761,26 +754,33 @@ msgstr "Výmena nosiča"
 #~ "  helix84 https://launchpad.net/~helix84\n"
 #~ "  mehturt https://launchpad.net/~mehturt"
 
+#~ msgid "Software package"
+#~ msgstr "Balík softvéru"
+
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
 #~ "Zákerný softvér môže poškodiť vaše dáta a prebrať kontrolu nad vaším "
 #~ "systémom.\n"
 #~ "\n"
 #~ "Pravosť dolu uvedených balíkov nebola overená a preto môžu byť podvrhnuté."
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Závislosť nemožno uspokojiť: %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Je v konflikte s nainštalovaným  balíkom „%s“\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Porušuje v existujúcom balíku „%s“ závislosť %s (%s %s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Porušuje v existujúcom balíku „%s“ konflikt: %s (%s %s)\n"
 
@@ -797,6 +797,7 @@ msgstr "Výmena nosiča"
 #~ msgstr ""
 #~ "Nepodarilo sa uspokojiť všetky závislosti (poškodená vyrovnávacia pamäť)"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nemožno nainštalovať „%s“"
 
@@ -804,5 +805,9 @@ msgstr "Výmena nosiča"
 #~ msgstr ""
 #~ "Zoznam súborov, ktoré nebolo možné načítať. Ohláste to prosím ako chybu."
 
+#, python-format
 #~ msgid "IOError during filelist read: %s"
 #~ msgstr "V/V chyba počas čítania zoznamu súborov: %s"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

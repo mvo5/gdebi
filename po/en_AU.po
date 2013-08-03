@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-09-03 00:19+0000\n"
+"PO-Revision-Date: 2013-08-03 22:35+0000\n"
 "Last-Translator: Luca Falavigna <dktrkranz@ubuntu.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -208,7 +207,7 @@ msgstr "Included files"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
-msgstr ""
+msgstr "Lintian output"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
@@ -294,10 +293,12 @@ msgid ""
 "No lintian available.\n"
 "Please install using sudo apt-get install lintian"
 msgstr ""
+"No lintian available.\n"
+"Please install using sudo apt-get install lintian"
 
 #: ../GDebi/GDebiGtk.py:407
 msgid "Running lintian..."
-msgstr ""
+msgstr "Running lintian..."
 
 #: ../GDebi/GDebiGtk.py:424
 #, python-format
@@ -305,6 +306,8 @@ msgid ""
 "\n"
 "Lintian finished with exit status %s"
 msgstr ""
+"\n"
+"Lintian finished with exit status %s"
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
@@ -617,14 +620,13 @@ msgid "To be removed: %s"
 msgstr "To be removed: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Package '%s' was installed"
+msgstr "<b>Package '%s' was installed</b>"
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Installing %s"
+msgstr "Installing"
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -671,7 +673,8 @@ msgstr "Same version is available in a software channel"
 
 #: ../GDebi/GDebiCommon.py:123
 msgid "You are recommended to install the software from the channel instead."
-msgstr "You are recommended to install the software from the channel instead."
+msgstr ""
+"You are recommended to install the software from the channel instead."
 
 #: ../GDebi/GDebiCommon.py:127
 msgid "An older version is available in a software channel"
@@ -729,17 +732,15 @@ msgstr ""
 msgid "Media Change"
 msgstr "Media Change"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Software package"
-
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Wrong architecture '%s'"
+
+#~ msgid "Software package"
+#~ msgstr "Software package"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
@@ -752,6 +753,9 @@ msgstr "Media Change"
 #~ "  Stephen Norman https://launchpad.net/~stenorman2001-mac\n"
 #~ "  ZhongHan Cai https://launchpad.net/~caizhonghan\n"
 #~ "  jz https://launchpad.net/~jonzep"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "_Open..."
 #~ msgstr "_Open..."

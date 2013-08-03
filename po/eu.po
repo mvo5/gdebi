@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2010-10-31 21:09+0000\n"
-"Last-Translator: Mendi <arrietaarambarri@hotmail.com>\n"
+"PO-Revision-Date: 2012-12-21 14:02+0000\n"
+"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -24,18 +23,20 @@ msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"erabilera: %prog [aukerak] fitxategia\n"
+"Bertsio grafikorako exekutatu gdebi-gtk\n"
 
 #: ../gdebi:57 ../gdebi-gtk:57
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "Exekutatu ez-interaktiboki (arriskutsua!)"
 
 #: ../gdebi:61
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "Ezarri APT konfigurazio aukera bat"
 
 #: ../gdebi:65
 msgid "Do not show progress information"
-msgstr ""
+msgstr "Ez erakutsi aurrerapenaren informazioa"
 
 #: ../gdebi:69
 msgid "Simulate only and print a apt-get install compatible line to stderr"
@@ -52,15 +53,15 @@ msgstr "gdebi-ren errorea, fitxategia ez da aurkitu: %s\n"
 
 #: ../gdebi:98 ../gdebi:107
 msgid "Need to be root to install packages"
-msgstr "root izan behar da pakete hauek instalatzeko"
+msgstr "root izan behar da paketeak instalatzeko"
 
 #: ../gdebi:109 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr "Software paketeak instalatze nahi al duzu?[b/E]:"
+msgstr "Software paketea instalatu nahi duzu?[b/E]:"
 
 #: ../gdebi-gtk:60
 msgid "Auto close when the install is finished"
-msgstr "Automatikoki itxi instalazioa amaitzean"
+msgstr "Itxi automatikoki instalazioa amaitzean"
 
 #: ../gdebi-gtk:62
 msgid "Use alternative datadir"
@@ -68,11 +69,11 @@ msgstr "datadir alternatiboa erabili"
 
 #: ../gdebi-gtk:65
 msgid "Remove package"
-msgstr ""
+msgstr "Kendu paketea"
 
 #: ../gdebi-gtk:84
 msgid "Software index is broken"
-msgstr ""
+msgstr "Software-indizea hondatuta dago"
 
 #: ../gdebi-gtk:85
 msgid ""
@@ -84,7 +85,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
-msgstr ""
+msgstr "Instalatu eta ikusi software paketeak"
 
 #: ../data/gdebi.ui.h:2
 msgid "GPL, see /usr/share/common-licenses/GPL"
@@ -96,7 +97,7 @@ msgstr "Terminala"
 
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "Itxi automatikoki aldaketak behar bezala aplikatutakoan"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
 #: ../GDebi/GDebiKDE.py:321
@@ -105,11 +106,11 @@ msgstr "Xehetasunak"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:320
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>Ondorengo aldaketak egin behar dira instalatzeko:</b>"
 
 #: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
 msgid "Package Installer"
-msgstr ""
+msgstr "Pakete-instalatzailea"
 
 #: ../data/gdebi.ui.h:8
 msgid "_File"
@@ -117,15 +118,15 @@ msgstr "_Fitxategia"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
-msgstr ""
+msgstr "_Ireki..."
 
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
-msgstr ""
+msgstr "_Freskatu"
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
-msgstr ""
+msgstr "_Editatu"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
@@ -139,11 +140,11 @@ msgstr "Paketea:"
 
 #: ../data/gdebi.ui.h:14
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big> </big></b>"
 
 #: ../data/gdebi.ui.h:15
 msgid "_Details"
-msgstr ""
+msgstr "_Xehetasunak"
 
 #: ../data/gdebi.ui.h:16 ../GDebi/GDebiKDE.py:156
 msgid "Status:"
@@ -151,22 +152,22 @@ msgstr "Egoera:"
 
 #: ../data/gdebi.ui.h:17
 msgid "Description:"
-msgstr ""
+msgstr "Deskribapena:"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:337 ../GDebi/GDebiGtk.py:395
 msgid "_Install Package"
-msgstr ""
+msgstr "_Instalatu paketea"
 
 #: ../data/gdebi.ui.h:19
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Kendu paketea"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Download Package"
-msgstr ""
+msgstr "_Deskargatu paketea"
 
 #: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
 msgid "Description"
@@ -174,11 +175,11 @@ msgstr "Deskribapena"
 
 #: ../data/gdebi.ui.h:22 ../GDebi/GDebiKDE.py:164
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>Bertsioa:</b>"
 
 #: ../data/gdebi.ui.h:23 ../GDebi/GDebiKDE.py:165
 msgid "<b>Maintainer:</b>"
-msgstr "<b>"
+msgstr "<b>Arduraduna:</b>"
 
 #: ../data/gdebi.ui.h:24 ../GDebi/GDebiKDE.py:166
 msgid "<b>Priority:</b>"
@@ -206,7 +207,7 @@ msgstr ""
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr ""
+msgstr "GDebi pakete-instalatzailea"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
@@ -217,15 +218,15 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:95
 msgid "Copy selected text"
-msgstr ""
+msgstr "Kopiatu hautatutako testua"
 
 #: ../GDebi/GDebiGtk.py:106
 msgid "Loading..."
-msgstr ""
+msgstr "Kargatzen..."
 
 #: ../GDebi/GDebiGtk.py:181
 msgid "Can not download as root"
-msgstr ""
+msgstr "Ezin da root bezala deskargatu"
 
 #: ../GDebi/GDebiGtk.py:182
 msgid ""
@@ -235,11 +236,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:195
 msgid "Downloading package"
-msgstr ""
+msgstr "Paketea deskargatzen"
 
 #: ../GDebi/GDebiGtk.py:202
 msgid "Download failed"
-msgstr ""
+msgstr "Deskargak huts egin du"
 
 #: ../GDebi/GDebiGtk.py:203
 #, python-format
@@ -251,11 +252,11 @@ msgstr ""
 #: ../GDebi/GDebiGtk.py:251 ../GDebi/GDebiKDE.py:208
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "Pakete-instalatzailea - %s"
 
 #: ../GDebi/GDebiGtk.py:308
 msgid "Package control data"
-msgstr ""
+msgstr "Paketearen kontrol datuak"
 
 #: ../GDebi/GDebiGtk.py:311
 msgid "Upstream data"
@@ -263,11 +264,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:317
 msgid "Error reading filelist"
-msgstr ""
+msgstr "Errorea fitxategien zerrenda irakurtzean"
 
 #: ../GDebi/GDebiGtk.py:333
 msgid "Error: "
-msgstr ""
+msgstr "Errorea: "
 
 #: ../GDebi/GDebiGtk.py:348
 msgid "Error: no longer provides "
@@ -275,11 +276,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:365
 msgid "Same version is already installed"
-msgstr ""
+msgstr "Bertsio bera instalatuta dago jadanik"
 
 #: ../GDebi/GDebiGtk.py:366
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "_Berrinstalatu paketea"
 
 #: ../GDebi/GDebiGtk.py:404
 msgid ""
@@ -300,21 +301,21 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
-msgstr ""
+msgstr "Hautapena direktorio bat da"
 
 #: ../GDebi/GDebiGtk.py:458 ../GDebi/GDebiGtk.py:464
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "Errorea '%s' fitxategiaren edukia irakurtzean"
 
 #: ../GDebi/GDebiGtk.py:469
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "Fitxategiaren edukia ezin da erauzi"
 
 #: ../GDebi/GDebiGtk.py:480
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>Ezabatzeko: %s</b>"
+msgstr "<b>Kentzeko: %s</b>"
 
 #: ../GDebi/GDebiGtk.py:482 ../GDebi/GDebiKDE.py:314
 #, python-format
@@ -323,15 +324,15 @@ msgstr "Instalatzeko: %s"
 
 #: ../GDebi/GDebiGtk.py:497
 msgid "Open Software Package"
-msgstr ""
+msgstr "Ireki software paketea"
 
 #: ../GDebi/GDebiGtk.py:502
 msgid "Software packages"
-msgstr ""
+msgstr "Software paketeak"
 
 #: ../GDebi/GDebiGtk.py:551
 msgid "Dependency problems"
-msgstr ""
+msgstr "Mendekotasun arazoak"
 
 #: ../GDebi/GDebiGtk.py:552
 #, python-format
@@ -340,7 +341,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:560
 msgid "File not found"
-msgstr ""
+msgstr "Ez da fitxategia aurkitu"
 
 #: ../GDebi/GDebiGtk.py:561
 msgid "You tried to install a file that does not (or no longer) exist. "
@@ -348,15 +349,15 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:572
 msgid "Installing package file..."
-msgstr ""
+msgstr "Pakete-fitxategia instalatzen..."
 
 #: ../GDebi/GDebiGtk.py:574
 msgid "Removing package..."
-msgstr ""
+msgstr "Paketea kentzen..."
 
 #: ../GDebi/GDebiGtk.py:577
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "Egiaztatu gabeko softwarea instalatu?"
 
 #: ../GDebi/GDebiGtk.py:578
 msgid ""
@@ -365,6 +366,10 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"Software maltzurrak zure datuak honda ditzake eta zure sistemaren kontrola "
+"hartu.\n"
+"\n"
+"Beheko paketeak ez daude egiaztatuta eta maltzurrak izan daitezke."
 
 #: ../GDebi/GDebiGtk.py:606
 msgid "You need to grant administrative rights to install software"
@@ -383,34 +388,37 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:613
 msgid "It is a possible risk to remove packages."
-msgstr ""
+msgstr "Paketeak kentzea arriskutsua izan daiteke."
 
 #: ../GDebi/GDebiGtk.py:635 ../GDebi/GDebiGtk.py:699
 msgid "Failed to install package file"
-msgstr ""
+msgstr "Huts egin du pakete-fitxategia instalatzean"
 
 #: ../GDebi/GDebiGtk.py:637
 msgid "Failed to remove package"
-msgstr ""
+msgstr "Huts egin du paketea kentzean"
 
 #. errMsg = "%s" % msg
 #: ../GDebi/GDebiGtk.py:683 ../GDebi/GDebiKDE.py:369
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Ezin izan dira beharrezko fitxategi guztiak deskargatu"
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
 msgstr ""
+"Mesedez, zure interneteko konexioa edo instalatzeko baliabidea egiaztatu."
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "Ezin izan dira mendekotasun guztiak instalatu"
 
 #: ../GDebi/GDebiGtk.py:689 ../GDebi/GDebiKDE.py:376
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"Hau normalean software-banatzailearen errore baten ondorio da. Ikusi "
+"terminalaren leihoa xehetasun gehiagorako."
 
 #: ../GDebi/GDebiGtk.py:705
 #, python-format
@@ -420,7 +428,7 @@ msgstr "%s instalatzen"
 #: ../GDebi/GDebiGtk.py:708
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "%s kentzen"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -428,81 +436,82 @@ msgstr ""
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebiGtk.py:730 ../GDebi/GDebiKDE.py:395
 msgid "Installation finished"
-msgstr ""
+msgstr "Instalazioa amaituta"
 
 #: ../GDebi/GDebiGtk.py:732
 msgid "Removal finished"
-msgstr ""
+msgstr "Kentzea amaituta"
 
 #: ../GDebi/GDebiGtk.py:735
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "'%s' paketea instalatu da"
 
 #: ../GDebi/GDebiGtk.py:737
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "'%s' paketea kendu da"
 
 #: ../GDebi/GDebiGtk.py:740 ../GDebi/GDebiKDE.py:399
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "Ezin izan da '%s' paketea instalatu"
 
 #: ../GDebi/GDebiGtk.py:743
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Ezin izan da '%s' paketea kendu"
 
 #: ../GDebi/GDebiGtk.py:747
 msgid "Installation complete"
-msgstr ""
+msgstr "Instalazioa osatuta"
 
 #: ../GDebi/GDebiGtk.py:749
 msgid "Removal complete"
-msgstr ""
+msgstr "Kentzea osatuta"
 
 #: ../GDebi/GDebiGtk.py:757 ../GDebi/GDebiKDE.py:409
 msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "Ezin izan dira mendekotasun guztiak instalatu"
 
 #: ../GDebi/GDebiGtk.py:759
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "Ezin izan da paketea erabat kendu"
 
 #: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
 msgstr ""
+"Hau konpontzeko, exekutatu 'sudo apt-get install -f' terminal-leiho batean."
 
 #. ui
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "'%s' instalatzen..."
 
 #: ../GDebi/GDebiGtk.py:882
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "'%s' kentzen..."
 
 #: ../GDebi/GDebiGtk.py:986 ../GDebi/KDEAptDialogs.py:136
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "Mendekotasunak instalatzen..."
 
 #: ../GDebi/GDebiGtk.py:1031 ../GDebi/KDEAptDialogs.py:199
 #: ../GDebi/KDEAptDialogs.py:209 ../GDebi/KDEAptDialogs.py:211
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "Pakete-fitxategi gehigarriak deskargatzen..."
 
 #: ../GDebi/GDebiGtk.py:1040 ../GDebi/KDEAptDialogs.py:209
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr ""
+msgstr "%s. fitxategia %s(e)tik %s B/s-ko abiaduran"
 
 #: ../GDebi/GDebiGtk.py:1042 ../GDebi/KDEAptDialogs.py:211
 #, python-format
 msgid "File %s of %s"
-msgstr ""
+msgstr "%s. fitxategia %s(e)tik"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebiGtk.py:1049 ../GDebi/KDEAptDialogs.py:217
@@ -512,52 +521,54 @@ msgstr "Mesedez, '%s' sartu ezazu '%s' unitatean"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
+msgstr "Konfigurazio-tresnak a =<balioa> batekin zehaztu behar dira\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr ""
+msgstr "Ezin izan da ezarri APT %s aukera %s bezala\n"
 
 #: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr ""
+msgstr "'%s' pakete-mota ezezaguna, irteten\n"
 
 #: ../GDebi/GDebiCli.py:82
 msgid "Failed to open the software package\n"
-msgstr ""
+msgstr "Huts egin du software-paketea irekitzean\n"
 
 #: ../GDebi/GDebiCli.py:83
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
 msgstr ""
+"Paketea hondatuta egon daiteke edo ez zaude baimenduta fitxategia "
+"irekitzeko. Begiratu fitxategiaren baimenak.\n"
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
-msgstr ""
+msgstr "Pakete hau ezin da instalatu\n"
 
 #: ../GDebi/GDebiCli.py:98 ../GDebi/GDebiKDE.py:244
 msgid "No description is available"
-msgstr ""
+msgstr "Ez dago deskribapenik erabilgarri"
 
 #: ../GDebi/GDebiCli.py:108
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "Ondorengo paketeak EGIAZTATU GABEAK dira: "
 
 #: ../GDebi/GDebiCli.py:112
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "Ondorengo paketeak KENTZEA eskatzen du: "
 
 #: ../GDebi/GDebiCli.py:117
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Ondorengo paketeak instalatzea eskatzen du: "
 
 #: ../GDebi/GDebiCli.py:132
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "Errorea instalatzean: '%s'"
 
 #: ../GDebi/GDebiKDE.py:160
 msgid "Included Files"
@@ -565,35 +576,37 @@ msgstr ""
 
 #: ../GDebi/GDebiKDE.py:162 ../GDebi/GDebiKDE.py:302
 msgid "&Install Package"
-msgstr ""
+msgstr "&Instalatu paketea"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid "&Download Package"
-msgstr ""
+msgstr "&Deskargatu paketea"
 
 #: ../GDebi/GDebiKDE.py:188
 msgid "The package file does not exist"
-msgstr ""
+msgstr "Pakete-fitxategia ez da existitzen"
 
 #: ../GDebi/GDebiKDE.py:189
 msgid ""
 "A nonexistent file has been selected for installation. Please select an "
 "existing .deb package file."
 msgstr ""
+"Existitzen ez den fitxategi bat hautatu da instalatzeko. Mesedez, hautatu "
+"existitzen den .deb pakete-fitxategi bat."
 
 #. self.textLabel1_3_2.setText(_("Same version is already installed"))
 #: ../GDebi/GDebiKDE.py:270
 msgid "&Reinstall Package"
-msgstr ""
+msgstr "Instalatu &berriro paketea"
 
 #: ../GDebi/GDebiKDE.py:305
 msgid "Re&install Package"
-msgstr ""
+msgstr "&Instalatu berriro paketea"
 
 #: ../GDebi/GDebiKDE.py:316
 #, python-format
 msgid "To be removed: %s"
-msgstr ""
+msgstr "Kentzeko: %s"
 
 #: ../GDebi/GDebiKDE.py:397
 #, python-format
@@ -601,13 +614,12 @@ msgid "<b>Package '%s' was installed</b>"
 msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "%s instalatzen"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
-msgstr ""
+msgstr "Hautsitako mendekotasunak"
 
 #: ../GDebi/GDebiCommon.py:76
 msgid ""
@@ -619,88 +631,101 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "'%s' ez da Debian pakete bat"
 
 #: ../GDebi/GDebiCommon.py:95
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
 msgstr ""
+"Fitxategi honen MIME mota '%s' da eta ezin da sistema honetan instalatu"
 
 #: ../GDebi/GDebiCommon.py:99
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Ezin izan da '%s' ireki"
 
 #: ../GDebi/GDebiCommon.py:100
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
 msgstr ""
+"Baliteke paketea hondatuta egotea, edo zuk fitxategia irekitzeko baimenik ez "
+"izatea. Fitxategiaren baimenak egiazta itzazu."
 
 #: ../GDebi/GDebiCommon.py:122
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "Bertsio bera eskura dezakezu software-kanal batean"
 
 #: ../GDebi/GDebiCommon.py:123
 msgid "You are recommended to install the software from the channel instead."
-msgstr ""
+msgstr "Softwarea kanaletik instalatzea gomendatzen da."
 
 #: ../GDebi/GDebiCommon.py:127
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "Bertsio zaharrago bat eskura dezakezu software-kanal batean"
 
 #: ../GDebi/GDebiCommon.py:128
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Orokorrean, software-kanaleko bertsioa instalatzea gomendatzen da, euskarri "
+"hobea izan ohi duelako."
 
 #: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "Bertsio berriago bat eskura dezakezu software-kanal batean"
 
 #: ../GDebi/GDebiCommon.py:135
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"Erabat gomendagarria da software-kanaleko bertsioa instalatzea, euskarri "
+"hobea izan ohi duelako.."
 
 #: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "Mendekotasun guztiak betetzen dira"
 
 #. FIXME: use ngettext here
 #: ../GDebi/GDebiCommon.py:180
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "%s pakete <b>kentzea</b> eskatzen du\n"
 
 #: ../GDebi/GDebiCommon.py:182
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "%s pakete instalatzea eskatzen du"
 
 #: ../GDebi/GDebiCommon.py:190 ../GDebi/GDebiCommon.py:208
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "Softwarea kudeatzeko tresna bakarra erabil daiteke aldi berean"
 
 #: ../GDebi/GDebiCommon.py:192 ../GDebi/GDebiCommon.py:210
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
 msgstr ""
+"Mesedez, itxi beste aplikazioa (adb: 'Eguneraketa-kudeatzailea', 'aptitude' "
+"edo 'Synaptic') lehenik"
 
 #. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
 #: ../GDebi/KDEAptDialogs.py:219
 msgid "Media Change"
-msgstr ""
+msgstr "Euskarri aldaketa"
 
 #~ msgid "gdebi"
 #~ msgstr "gdebi"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Okerreko arkitektura '%s'"
+
+#~ msgid "Software package"
+#~ msgstr "Software paketea"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
@@ -708,7 +733,11 @@ msgstr ""
 #~ "  3ARRANO.com https://launchpad.net/~3arrano-3arrano\n"
 #~ "  Aitor gara https://launchpad.net/~aitorgara\n"
 #~ "  Ander González https://launchpad.net/~andergd\n"
+#~ "  Asier Iturralde Sarasola https://launchpad.net/~asier-iturralde\n"
 #~ "  Joseba Oses https://launchpad.net/~sdsoldi-gmail\n"
 #~ "  Mendi https://launchpad.net/~benatmendi\n"
 #~ "  Mikel Pascual Aldabaldetreku https://launchpad.net/~mpascual\n"
 #~ "  Oier Mees https://launchpad.net/~oier"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"

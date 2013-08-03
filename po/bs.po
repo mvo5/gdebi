@@ -6,17 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
-"Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
 "PO-Revision-Date: 2009-12-04 00:05+0000\n"
 "Last-Translator: Miro Glavić <glavicmiro@gmail.com>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
-"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-11 19:24+0000\n"
-"X-Generator: Launchpad (build 16130)\n"
+"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -615,14 +614,13 @@ msgid "To be removed: %s"
 msgstr "Za uklanjanje: %s"
 
 #: ../GDebi/GDebiKDE.py:397
-#, fuzzy, python-format
+#, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr "Paket '%s' je instaliran"
+msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
-#, fuzzy
 msgid "Installing"
-msgstr "Instaliranje %s"
+msgstr ""
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -725,12 +723,6 @@ msgstr ""
 msgid "Media Change"
 msgstr "Izmjena Medija"
 
-#~ msgid "<b>"
-#~ msgstr "<b>"
-
-#~ msgid "Software package"
-#~ msgstr "Softverski paket"
-
 #~ msgid "Y"
 #~ msgstr "Y"
 
@@ -743,33 +735,42 @@ msgstr "Izmjena Medija"
 #~ msgid ""
 #~ "Malicous software can damage your data and take control of your system.\n"
 #~ "\n"
-#~ "The packages below are not authenticated and could therefor be of "
-#~ "malicous nature."
+#~ "The packages below are not authenticated and could therefor be of malicous "
+#~ "nature."
 #~ msgstr ""
-#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad "
-#~ "vašim sustavom\n"
+#~ "Malicijozni softveri mogu ošteti vaše podatke i preuzeti kontrolu nad vašim "
+#~ "sustavom\n"
 #~ "U nastavku paketi nisu ovjerena i to bi moglo biti od malijiciozne prirode"
 
+#, python-format
 #~ msgid "Dependency is not satisfiable: %s\n"
 #~ msgstr "Ovisni paketi nisu zadovoljeni %s\n"
 
+#, python-format
 #~ msgid "Conflicts with the installed package '%s'\n"
 #~ msgstr "Conflicts with the installed package '%s'\n"
 
 #~ msgid "No Architecture field in the package"
 #~ msgstr "Ne Arhitektura polje u paketu"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' conflict: %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' sukob:% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Breaks exisiting package '%s' dependency %s (%s %s)\n"
 #~ msgstr "Narušava postojeći paket '% s' ovisnost% s (% s% s)\n"
 
+#, python-format
 #~ msgid "Wrong architecture '%s'"
 #~ msgstr "Pogrešna arhitektura '%s'"
 
+#, python-format
 #~ msgid "Cannot install '%s'"
 #~ msgstr "Nemoguće instalirati '%s'"
+
+#~ msgid "<b>"
+#~ msgstr "<b>"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
@@ -778,6 +779,9 @@ msgstr "Izmjena Medija"
 #~ "  Miro Glavić https://launchpad.net/~klek\n"
 #~ "  Samir Ribić https://launchpad.net/~megaribi\n"
 #~ "  ivan https://launchpad.net/~ivannenadic"
+
+#~ msgid "Software package"
+#~ msgstr "Softverski paket"
 
 #~ msgid "A later version is already installed"
 #~ msgstr "Najnovija verzija je već instalirana"
