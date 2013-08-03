@@ -8,6 +8,8 @@ gdebi (0.9.1) UNRELEASED; urgency=low
   * GDebi/GDebiKDE.py:
     - Allow to translate 'Installing' window title, thanks to Francois
       Gouget for the patch! (Closes: #712195).
+  * GDebi/GDebiCli.py:
+    - Remove logging.debug call (Closes: #717858).
 
  -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Aug 2013 12:00:48 +0200
 
