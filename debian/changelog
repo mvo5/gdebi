@@ -1,3 +1,11 @@
+gdebi (0.9.1) UNRELEASED; urgency=low
+
+  * GDebi/KDEAptDialogs.py:
+    - Fix progress indicators in gdebi-kde, thanks to Francois Gouget
+      for the patch! (Closes: #712194).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 03 Aug 2013 12:00:48 +0200
+
 gdebi (0.9) unstable; urgency=low
 
   * lp:~mvo/gdebi/py3compat2:

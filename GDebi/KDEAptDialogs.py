@@ -133,20 +133,20 @@ class KDEInstallProgressAdapter(InstallProgress):
         #self.term_expander.set_expanded(True) #FIXME show konsole
         pass
 
-    def startUpdate(self):
+    def start_update(self):
         apt_pkg.pkgsystem_unlock()
         self.action.setText(_("Installing dependencies..."))
         self.progress.setValue(0)
 
-    def statusChange(self, pkg, percent, status):
+    def status_change(self, pkg, percent, status):
         self.progress.setValue(percent)
         #print status # mhb debug
         #self.progress.setText(status) #FIXME set text
 
-    def updateInterface(self):
+    def update_interface(self):
         # run the base class
         try:
-            InstallProgress.updateInterface(self)
+            InstallProgress.update_interface(self)
         except ValueError as e:
             pass
         # log the output of dpkg (on the master_fd) to the DumbTerminal
@@ -161,7 +161,7 @@ class KDEInstallProgressAdapter(InstallProgress):
                     # nothing happend within the timeout, break
                     break
             except Exception as e:
-                logging.debug("updateInterface: " % e)
+                logging.debug("update_interface: %s" % e)
                 break
         KApplication.kApplication().processEvents()
 
@@ -175,14 +175,14 @@ class KDEInstallProgressAdapter(InstallProgress):
             os.environ["APT_LISTCHANGES_FRONTEND"] = "none"
         return self.child_pid
 
-    def waitChild(self):
+    def wait_child(self):
         while True:
             try:
                 select.select([self.statusfd],[],[], self.select_timeout)
             except Exception as e:
-                logging.debug("waitChild: " % e)
+                logging.debug("wait_child: %s" % e)
                 pass
-            self.updateInterface()
+            self.update_interface()
             (pid, res) = os.waitpid(self.child_pid,os.WNOHANG)
             if pid == self.child_pid:
                 #print "child exited: ", pid, os.WEXITSTATUS(res)
@@ -204,16 +204,14 @@ class KDEFetchProgressAdapter(apt.progress.base.AcquireProgress):
     def stop(self):
         pass
 
-    def pulse(self):
-        super(KDEFetchProgressAdapter, self).pulse()
-        self.progress.setValue(self.percent)
-        currentItem = self.currentItems + 1
-        if currentItem > self.totalItems:
-            currentItem = self.totalItems
-        if self.currentCPS > 0:
-            self.label.setText(_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (self.currentItems,self.totalItems,apt_pkg.size_to_str(self.currentCPS))))
+    def pulse(self, owner):
+        super(KDEFetchProgressAdapter, self).pulse(owner)
+        at_item = min(self.current_items + 1, self.total_items)
+        if self.current_cps > 0:
+            self.label.setText(_("Downloading additional package files...") + _("File %s of %s at %sB/s" % (at_item, self.total_items, apt_pkg.size_to_str(self.current_cps))))
         else:
-            self.label.setText(_("Downloading additional package files...") + _("File %s of %s" % (self.currentItems,self.totalItems)))
+            self.label.setText(_("Downloading additional package files...") + _("File %s of %s" % (at_item, self.total_items)))
+        self.progress.setValue(100 * self.current_bytes / self.total_bytes)
         KApplication.kApplication().processEvents()
         return True
 
