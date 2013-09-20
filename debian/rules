@@ -7,6 +7,9 @@ clean:
 	dh $@
 	rm -rf build GDebi/Version.py po/mo
 
+override_dh_auto_test:
+	xvfb-run nosetests
+
 override_dh_auto_install:
 	dh_auto_install -- --install-scripts=/usr/share/gdebi \
 		--install-lib=/usr/share/gdebi
