@@ -414,7 +414,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         for fd in [stdout, stderr]:
             channel = GLib.IOChannel(filedes=fd)
             channel.set_flags(GLib.IOFlags.NONBLOCK)
-            channel.add_watch(GLib.IOCondition.IN, self._on_lintian_output)
+            channel.add_watch(GLib.IOCondition.IN | GLib.IO_ERR | GLib.IO_HUP,
+                              self._on_lintian_output)
         GObject.child_watch_add(
             pid, self._on_lintian_finished)
 
@@ -434,7 +435,9 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                 self._lintian_output += content
                 buf = self.textview_lintian_output.get_buffer()
                 buf.set_text(self._lintian_output)
-        return True
+            return True
+        gio_file.close()
+        return False
 
     def on_treeview_files_cursor_changed(self, treeview):
         " the selection in the files list chanaged "

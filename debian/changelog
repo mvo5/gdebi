@@ -2,8 +2,9 @@ gdebi (0.9.2) unstable; urgency=low
 
   * lp:~mterry/gdebi/enable-tests:
     - run tests during build, thanks to Michael Terry
+  * fix infinite loop when lintian is finished
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 20 Sep 2013 18:49:14 +0200
+ -- Michael Vogt <mvo@debian.org>  Sun, 15 Dec 2013 15:52:12 +0100
 
 gdebi (0.9.1) unstable; urgency=low
 
