@@ -1,5 +1,8 @@
 gdebi (0.9.3) UNRELEASED; urgency=medium
 
+  * GDebi/GDebiGtk.py, GDebi/GDebiKDE.py:
+    - Expand description advising to refresh APT cache when packages
+      cannot be downloaded (Closes: #712200).
   * debian/control:
     - Add xauto to Build-Depends field (Closes: #733420).
     - Bump Standards-Version to 3.9.5.

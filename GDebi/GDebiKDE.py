@@ -368,7 +368,8 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                 #errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
-                            "installation medium.")
+                            "installation medium, or make sure your "
+                            "APT cache is up-to-date.")
             except SystemError as msg:
                 logging.warn("error: %s" % msg)
                 res = False

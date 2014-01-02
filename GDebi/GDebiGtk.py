@@ -685,7 +685,8 @@ Install software from trustworthy software distributors only.
                 #errMsg = "%s" % msg
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
-                        "installation medium.")
+                        "installation medium, and make sure your "
+                        "APT cache is up-to-date.")
             except SystemError as msg:
                 res = False
                 header = _("Could not install all dependencies"),
