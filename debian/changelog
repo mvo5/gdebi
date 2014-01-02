@@ -1,4 +1,4 @@
-gdebi (0.9.3) UNRELEASED; urgency=medium
+gdebi (0.9.3) unstable; urgency=medium
 
   * GDebi/GDebiGtk.py, GDebi/GDebiKDE.py:
     - Expand description advising to refresh APT cache when packages
@@ -7,7 +7,7 @@ gdebi (0.9.3) UNRELEASED; urgency=medium
     - Add xauto to Build-Depends field (Closes: #733420).
     - Bump Standards-Version to 3.9.5.
 
- -- Luca Falavigna <dktrkranz@debian.org>  Thu, 02 Jan 2014 14:33:15 +0100
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 02 Jan 2014 15:05:08 +0100
 
 gdebi (0.9.2) unstable; urgency=low
 
