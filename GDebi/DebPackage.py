@@ -42,3 +42,12 @@ class DebPackage(apt.debfile.DebPackage):
 # just for compatibility
 class DscSrcPackage(apt.debfile.DscSrcPackage):
     pass
+
+
+class ClickPackage(DebPackage):
+    """Basic support to view the new ubuntu click packages, more to come"""
+
+    def check(self):
+        self._failure_string = _(
+            "Click packages can currently only be inspected with this tool")
+        return False
