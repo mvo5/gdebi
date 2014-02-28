@@ -5,6 +5,8 @@ gdebi (0.9.4) UNRELEASED; urgency=medium
 
   [ Dimitri John Ledkov ]
   * Auto-allocate Xserver to run tests under xvfb-run.
+  * Add top-level executable scripts to pyflakes test.
+  * Check using both pyflakes and pyflakes3.
 
  -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 28 Feb 2014 22:10:48 +0000
 

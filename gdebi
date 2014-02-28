@@ -29,7 +29,6 @@ except NameError:
 	unicode = lambda *args: args[0]
 
 import sys
-import apt
 import os.path
 import gettext
 from gettext import gettext as _
