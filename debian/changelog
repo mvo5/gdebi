@@ -3,6 +3,9 @@ gdebi (0.9.4) UNRELEASED; urgency=medium
   [ Michael Vogt ]
   * Add basic support to view click packages.
 
+  [ Dimitri John Ledkov ]
+  * Auto-allocate Xserver to run tests under xvfb-run.
+
  -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 28 Feb 2014 22:10:48 +0000
 
 gdebi (0.9.3) unstable; urgency=medium

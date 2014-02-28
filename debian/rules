@@ -8,7 +8,7 @@ clean:
 	rm -rf build GDebi/Version.py po/mo
 
 override_dh_auto_test:
-	xvfb-run nosetests
+	xvfb-run -a nosetests
 
 override_dh_auto_install:
 	dh_auto_install -- --install-scripts=/usr/share/gdebi \
