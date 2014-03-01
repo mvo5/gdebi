@@ -23,23 +23,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
-import os
-import subprocess
-import string
-import apt
-import apt_pkg
-import os.path
-from PyKDE4.kdecore import *
-from PyKDE4.kdeui import *
-
-import urllib
-import fcntl
-import posix
-import time
-import thread
-import re
-import pty
-import select
+from PyKDE4.kdecore import KCmdLineArgs, KAboutData, KCmdLineOptions
+from PyKDE4.kdeui import KApplication, KMessageBox, ki18n
 
 from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE

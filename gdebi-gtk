@@ -29,9 +29,6 @@ except NameError:
 	unicode = lambda *args: args[0]
 
 import sys
-import apt
-import os.path
-
 
 from optparse import OptionParser
 from GDebi.GDebiGtk import GDebiGtk
