@@ -2,6 +2,7 @@ gdebi (0.9.4) UNRELEASED; urgency=medium
 
   [ Michael Vogt ]
   * Add basic support to view click packages.
+  * fix test failure, use "python setup.py test" to run the tests
 
   [ Dimitri John Ledkov ]
   * Auto-allocate Xserver to run tests under xvfb-run.

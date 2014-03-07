@@ -15,7 +15,8 @@ Build-Depends: debhelper (>= 9),
                python-setuptools,
                intltool,
                xvfb,
-               xauth
+               xauth,
+               pyflakes
 X-Python-Version: >= 2.6
 Standards-Version: 3.9.5
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk

@@ -36,7 +36,13 @@ from .DebPackage import (
 )
 
 
-if sys.version_info[0] == 2:
+if sys.version_info[0] == 3:
+    from gettext import gettext as _
+    def py3utf8(s):
+        return s
+    utf8 = py3utf8
+    unicode = str
+else:
     def _(str):
         return utf8(gettext.gettext(str))
 
@@ -50,11 +56,6 @@ if sys.version_info[0] == 2:
             # assume latin1 as fallback
             return unicode(str, 'latin1')
     utf8 = py2utf8
-else:
-    from gettext import gettext as _
-    def py3utf8(s):
-        return s
-    utf8 = py3utf8
 
 	  
 class GDebiCommon(object):

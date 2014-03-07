@@ -65,7 +65,7 @@ from .KDEAptDialogs import (
 
 
 def __(catalog,str):
-    return unicode(gettext.dgettext(catalog, str), 'UTF-8')
+    return utf8(gettext.dgettext(catalog, str))
 
 def loadUi(file, parent):
     """load local file if possible else use installed file"""

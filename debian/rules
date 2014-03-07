@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+PYTHON=python2
+
 %:
 	dh $@ --with python2
 
@@ -8,7 +10,7 @@ clean:
 	rm -rf build GDebi/Version.py po/mo
 
 override_dh_auto_test:
-	xvfb-run -a nosetests
+	xvfb-run -a $(PYTHON) setup.py test
 
 override_dh_auto_install:
 	dh_auto_install -- --install-scripts=/usr/share/gdebi \

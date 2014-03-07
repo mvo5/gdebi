@@ -10,7 +10,8 @@ from mock import patch
 from GDebi.GDebiGtk import GDebiGtk
 from GDebi.GDebiCommon import GDebiCommon
 
-EXPECTED_LINTIAN_OUTPUT = """E: error-package: file-in-etc-not-marked-as-conffile etc/foo
+EXPECTED_LINTIAN_OUTPUT = """E: error-package: changelog-file-missing-in-native-package
+E: error-package: file-in-etc-not-marked-as-conffile etc/foo
 E: error-package: control-file-has-bad-owner postinst egon/egon != root/root
 E: error-package: no-copyright-file
 E: error-package: package-has-no-description
@@ -56,7 +57,8 @@ class GDebiGtkTestCase(unittest.TestCase):
         start = buf.get_start_iter()
         end = buf.get_end_iter()
         lintian_output = buf.get_text(start, end, False)
-        self.assertEqual(lintian_output.strip(), EXPECTED_LINTIAN_OUTPUT)
+        self.maxDiff = None
+        self.assertMultiLineEqual(lintian_output.strip(), EXPECTED_LINTIAN_OUTPUT)
 
 
 if __name__ == "__main__":
