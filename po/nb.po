@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-04-04 12:13+0000\n"
-"Last-Translator: Ole Andreas Utstumo <Unknown>\n"
+"PO-Revision-Date: 2014-01-04 13:02+0000\n"
+"Last-Translator: Anders Aase Martinsen <anders@aasemartinsen.net>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -118,7 +118,7 @@ msgstr "_Fil"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
-msgstr ""
+msgstr "_Åpne…"
 
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
-msgstr ""
+msgstr "_Rediger"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
@@ -144,7 +144,7 @@ msgstr "<b><big> </big></b>"
 
 #: ../data/gdebi.ui.h:15
 msgid "_Details"
-msgstr ""
+msgstr "_Detaljer"
 
 #: ../data/gdebi.ui.h:16 ../GDebi/GDebiKDE.py:156
 msgid "Status:"
@@ -159,15 +159,15 @@ msgstr "Beskrivelse:"
 #. self.button_install.set_image(img)
 #: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:337 ../GDebi/GDebiGtk.py:395
 msgid "_Install Package"
-msgstr ""
+msgstr "_Installer pakke"
 
 #: ../data/gdebi.ui.h:19
 msgid "_Remove Package"
-msgstr ""
+msgstr "_Fjern pakke"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Download Package"
-msgstr ""
+msgstr "_Last ned pakke"
 
 #: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
 msgid "Description"
@@ -214,7 +214,7 @@ msgstr "GDebi pakkeinstallerer"
 #: ../GDebi/DebPackage.py:38
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s er ikke tilgjengelig"
 
 #: ../GDebi/GDebiGtk.py:95
 msgid "Copy selected text"
@@ -222,7 +222,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:106
 msgid "Loading..."
-msgstr ""
+msgstr "Laster..."
 
 #: ../GDebi/GDebiGtk.py:181
 msgid "Can not download as root"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:333
 msgid "Error: "
-msgstr ""
+msgstr "Feil: "
 
 #: ../GDebi/GDebiGtk.py:348
 msgid "Error: no longer provides "
@@ -278,7 +278,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:365
 msgid "Same version is already installed"
-msgstr ""
+msgstr "Samme versjon er allerede installert"
 
 #: ../GDebi/GDebiGtk.py:366
 msgid "_Reinstall Package"
@@ -330,11 +330,11 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:502
 msgid "Software packages"
-msgstr ""
+msgstr "Programpakker"
 
 #: ../GDebi/GDebiGtk.py:551
 msgid "Dependency problems"
-msgstr ""
+msgstr "Avhengighetsproblemer"
 
 #: ../GDebi/GDebiGtk.py:552
 #, python-format
@@ -355,7 +355,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:574
 msgid "Removing package..."
-msgstr ""
+msgstr "Fjerner pakke..."
 
 #: ../GDebi/GDebiGtk.py:577
 msgid "Install unauthenticated software?"
@@ -399,7 +399,7 @@ msgstr ""
 #. errMsg = "%s" % msg
 #: ../GDebi/GDebiGtk.py:683 ../GDebi/GDebiKDE.py:369
 msgid "Could not download all required files"
-msgstr ""
+msgstr "Kunne ikke laste ned alle nødvendige filer"
 
 #: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
 msgid "Please check your internet connection or installation medium."
@@ -407,7 +407,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "Kunne ikke installere alle avhengighetene"
 
 #: ../GDebi/GDebiGtk.py:689 ../GDebi/GDebiKDE.py:376
 msgid ""
@@ -423,7 +423,7 @@ msgstr "Installerer %s"
 #: ../GDebi/GDebiGtk.py:708
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "Fjerner %s"
 
 #. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
 #. show the button
@@ -431,7 +431,7 @@ msgstr ""
 #. self.button_deb_install_close.grab_default()
 #: ../GDebi/GDebiGtk.py:730 ../GDebi/GDebiKDE.py:395
 msgid "Installation finished"
-msgstr ""
+msgstr "Installasjonen er fullført"
 
 #: ../GDebi/GDebiGtk.py:732
 msgid "Removal finished"
@@ -440,22 +440,22 @@ msgstr ""
 #: ../GDebi/GDebiGtk.py:735
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "Pakken «%s» ble installert"
 
 #: ../GDebi/GDebiGtk.py:737
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "Pakken «%s» ble fjernet"
 
 #: ../GDebi/GDebiGtk.py:740 ../GDebi/GDebiKDE.py:399
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
+msgstr "Klarte ikke å installere pakken «%s»"
 
 #: ../GDebi/GDebiGtk.py:743
 #, python-format
 msgid "Failed to remove package '%s'"
-msgstr ""
+msgstr "Klarte ikke å fjerne pakken «%s»"
 
 #: ../GDebi/GDebiGtk.py:747
 msgid "Installation complete"
@@ -481,16 +481,16 @@ msgstr ""
 #: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "Installerer «%s»..."
 
 #: ../GDebi/GDebiGtk.py:882
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Fjerner «%s»..."
 
 #: ../GDebi/GDebiGtk.py:986 ../GDebi/KDEAptDialogs.py:136
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "Installerer avhengigheter..."
 
 #: ../GDebi/GDebiGtk.py:1031 ../GDebi/KDEAptDialogs.py:199
 #: ../GDebi/KDEAptDialogs.py:209 ../GDebi/KDEAptDialogs.py:211
@@ -505,7 +505,7 @@ msgstr ""
 #: ../GDebi/GDebiGtk.py:1042 ../GDebi/KDEAptDialogs.py:211
 #, python-format
 msgid "File %s of %s"
-msgstr ""
+msgstr "Fil %s av %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
 #: ../GDebi/GDebiGtk.py:1049 ../GDebi/KDEAptDialogs.py:217
@@ -539,11 +539,11 @@ msgstr ""
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
-msgstr ""
+msgstr "Denne pakken er ikke installerbar\n"
 
 #: ../GDebi/GDebiCli.py:98 ../GDebi/GDebiKDE.py:244
 msgid "No description is available"
-msgstr ""
+msgstr "Ingen beskrivelse er tilgjengelig"
 
 #: ../GDebi/GDebiCli.py:108
 msgid "The following packages are UNAUTHENTICATED: "
@@ -555,12 +555,12 @@ msgstr ""
 
 #: ../GDebi/GDebiCli.py:117
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "Krever installasjon av følgende pakker: "
 
 #: ../GDebi/GDebiCli.py:132
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "Feil under installasjon: «%s»"
 
 #: ../GDebi/GDebiKDE.py:160
 msgid "Included Files"
@@ -568,11 +568,11 @@ msgstr "Inkluderte filer"
 
 #: ../GDebi/GDebiKDE.py:162 ../GDebi/GDebiKDE.py:302
 msgid "&Install Package"
-msgstr ""
+msgstr "&Installer pakke"
 
 #: ../GDebi/GDebiKDE.py:163
 msgid "&Download Package"
-msgstr ""
+msgstr "&Last ned pakke"
 
 #: ../GDebi/GDebiKDE.py:188
 msgid "The package file does not exist"
@@ -605,7 +605,7 @@ msgstr ""
 
 #: ../GDebi/GDebiKDE.py:423
 msgid "Installing"
-msgstr ""
+msgstr "Installerer"
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -621,7 +621,7 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "«%s» er ikke en Debian-pakke"
 
 #: ../GDebi/GDebiCommon.py:95
 #, python-format
@@ -632,7 +632,7 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:99
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "Kunne ikke åpne «%s»"
 
 #: ../GDebi/GDebiCommon.py:100
 msgid ""
@@ -642,31 +642,36 @@ msgstr ""
 
 #: ../GDebi/GDebiCommon.py:122
 msgid "Same version is available in a software channel"
-msgstr ""
+msgstr "Samme versjon er tilgjengelig i en programvarekanal"
 
 #: ../GDebi/GDebiCommon.py:123
 msgid "You are recommended to install the software from the channel instead."
 msgstr ""
+"Det anbefales å installere programvaren fra programvarekanaler istedenfor."
 
 #: ../GDebi/GDebiCommon.py:127
 msgid "An older version is available in a software channel"
-msgstr ""
+msgstr "En eldre versjon er tilgjengelig i en programvarekanal"
 
 #: ../GDebi/GDebiCommon.py:128
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
 msgstr ""
+"Normalt anbefales det at du installerer versjonen fra programvarekanalen, "
+"siden denne ofte er bedre støttet."
 
 #: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "En nyere versjon er tilgjengelig i en programvarekanal"
 
 #: ../GDebi/GDebiCommon.py:135
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
 msgstr ""
+"Det anbefales at du installerer versjonen i programvarekanalen, siden denne "
+"ofte er bedre støttet."
 
 #: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
@@ -681,7 +686,7 @@ msgstr ""
 #: ../GDebi/GDebiCommon.py:182
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "Krever installasjon av %s pakker"
 
 #: ../GDebi/GDebiCommon.py:190 ../GDebi/GDebiCommon.py:208
 msgid "Only one software management tool is allowed to run at the same time"
@@ -719,6 +724,7 @@ msgstr ""
 #~ "  Eirik Fikkan https://launchpad.net/~efikkan\n"
 #~ "  Fredrik Sudmann https://launchpad.net/~fsudmann\n"
 #~ "  Geir Hauge https://launchpad.net/~geir-hauge\n"
+#~ "  Hans Joachim Desserud https://launchpad.net/~hjd\n"
 #~ "  Håvar Nielsen https://launchpad.net/~havar\n"
 #~ "  Kjetil Birkeland Moe https://launchpad.net/~kjetilbmoe\n"
 #~ "  Kjetil Rydland https://launchpad.net/~kjetilrydl\n"

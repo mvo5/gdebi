@@ -8,14 +8,26 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2010-01-30 08:02+0000\n"
-"Last-Translator: Iwan Setiawan <Unknown>\n"
+"PO-Revision-Date: 2013-09-11 10:55+0000\n"
+"Last-Translator: Iwan <iwan.nts@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
+
+#: ../gdebi-gtk:84
+msgid "Software index is broken"
+msgstr "Indeks perangkat lunak rusak"
+
+#: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
+msgid "Package Installer"
+msgstr "Pemasang Paket"
+
+#: ../data/gdebi.ui.h:8
+msgid "_File"
+msgstr "_Berkas"
 
 #: ../gdebi:51
 #, c-format
@@ -69,10 +81,6 @@ msgstr ""
 msgid "Remove package"
 msgstr ""
 
-#: ../gdebi-gtk:84
-msgid "Software index is broken"
-msgstr "Indeks perangkat lunak rusak"
-
 #: ../gdebi-gtk:85
 msgid ""
 "This is a major failure of your software management system. Please check for "
@@ -80,10 +88,14 @@ msgid ""
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"Ini adalah kegagalan utama dari sistem manajemen piranti lunak anda. Mohon "
+"periksa paket-paket yang rusak dengan synaptic, periksa ijin-ijin berkas dan "
+"kebenaran dari berkas '/etc/apt/sources.list' dan muat ulang informasi "
+"piranti lunak dengan : 'sudo apt-get update' dan 'sudo apt-get install -f'"
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
-msgstr "Instal dan tilik paket perangkat lunak"
+msgstr "Pasang dan tinjau paket-paket piranti lunak"
 
 #: ../data/gdebi.ui.h:2
 msgid "GPL, see /usr/share/common-licenses/GPL"
@@ -96,6 +108,7 @@ msgstr "Terminal"
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
 msgstr ""
+"Menutup secara otomatis setelah perubahan-perubahan telah berhasil diterapkan"
 
 #: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
 #: ../GDebi/GDebiKDE.py:321
@@ -104,15 +117,7 @@ msgstr "Rincian"
 
 #: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:320
 msgid "<b>To install the following changes are required:</b>"
-msgstr "<b>Untuk menginstal diperlukan perubahan berikut:</b>"
-
-#: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
-msgid "Package Installer"
-msgstr "Pemasang Paket"
-
-#: ../data/gdebi.ui.h:8
-msgid "_File"
-msgstr "_Berkas"
+msgstr "<b>Untuk memasang dibutuhkan perubahan-perubahan berikut ini:</b>"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
@@ -746,6 +751,7 @@ msgstr ""
 #~ "  Andy Apdhani https://launchpad.net/~imtheface\n"
 #~ "  Arief Setiadi Wibowo https://launchpad.net/~q-thrynx\n"
 #~ "  Cecep Mahbub https://launchpad.net/~cecepm\n"
+#~ "  Iwan https://launchpad.net/~iwan-nts\n"
 #~ "  Iwan Setiawan https://launchpad.net/~stwn\n"
 #~ "  Muhammad Riza https://launchpad.net/~muhammadriza\n"
 #~ "  Rahman Yusri Aftian https://launchpad.net/~aftian\n"

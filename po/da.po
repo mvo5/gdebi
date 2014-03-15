@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -639,13 +639,13 @@ msgid ""
 "in a terminal window."
 msgstr ""
 "Dit system har ødelagte afhængigheder. Dette program kan ikke fortsætte, "
-"indtil disse er ordnet. Køre \"gksudo synaptic\" eller \"sudo apt-get "
-"install -f\" i et terminalvindue, for at ordne det."
+"indtil disse er ordnet. Kør \"gksudo synaptic\" eller \"sudo apt-get install "
+"-f\" i et terminalvindue, for at ordne det."
 
 #: ../GDebi/GDebiCommon.py:94
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr "\"%s\" er ikke en Debian pakke"
+msgstr "\"%s\" er ikke en Debianpakke"
 
 #: ../GDebi/GDebiCommon.py:95
 #, python-format
@@ -716,7 +716,8 @@ msgstr "Kræver installation af %s pakker"
 
 #: ../GDebi/GDebiCommon.py:190 ../GDebi/GDebiCommon.py:208
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr "Det er kun tilladt at have et softwarehåndteringsværktøj kørende."
+msgstr ""
+"Det er kun tilladt at have et softwarestyringsværktøj kørende ad gangen."
 
 #: ../GDebi/GDebiCommon.py:192 ../GDebi/GDebiCommon.py:210
 msgid ""

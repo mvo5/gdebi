@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2011-10-26 11:17+0000\n"
-"Last-Translator: Nikita Putko <Unknown>\n"
+"PO-Revision-Date: 2013-09-16 09:51+0000\n"
+"Last-Translator: Aleksey Kabanov <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
@@ -208,7 +208,7 @@ msgstr "Файлы"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
-msgstr ""
+msgstr "Вывод Lintian"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
@@ -294,10 +294,12 @@ msgid ""
 "No lintian available.\n"
 "Please install using sudo apt-get install lintian"
 msgstr ""
+"Lintian недоступен.\n"
+"Установите его с помощью sudo apt-get install lintian"
 
 #: ../GDebi/GDebiGtk.py:407
 msgid "Running lintian..."
-msgstr ""
+msgstr "Запуск lintian..."
 
 #: ../GDebi/GDebiGtk.py:424
 #, python-format
@@ -624,11 +626,11 @@ msgstr "Для удаления: %s"
 #: ../GDebi/GDebiKDE.py:397
 #, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr ""
+msgstr "<b>Пакет '%s' был установлен</b>"
 
 #: ../GDebi/GDebiKDE.py:423
 msgid "Installing"
-msgstr ""
+msgstr "Установка"
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -830,6 +832,7 @@ msgstr "Смена носителя"
 #~ "Dmitry Petrov\n"
 #~ "\n"
 #~ "Launchpad Contributions:\n"
+#~ "  Aleksey Kabanov https://launchpad.net/~ak099\n"
 #~ "  Alexander Ilyashov https://launchpad.net/~ilyashov\n"
 #~ "  Andrey Barilov https://launchpad.net/~andreybarilov\n"
 #~ "  Anton Shestakov https://launchpad.net/~engored\n"

@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -745,7 +745,7 @@ msgstr "Media Change"
 #~ "  Itai Molenaar https://launchpad.net/~imolenaar-deactivatedaccount\n"
 #~ "  Luca Falavigna https://launchpad.net/~dktrkranz\n"
 #~ "  Wade https://launchpad.net/~starcraftguy40\n"
-#~ "  jz https://launchpad.net/~jonzep\n"
+#~ "  jz https://launchpad.net/~jz+\n"
 #~ "  mike mcneely https://launchpad.net/~mikemcneely"
 
 #~ msgid "Y"

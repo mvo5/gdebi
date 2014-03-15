@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-03 15:11+0200\n"
-"PO-Revision-Date: 2012-09-13 06:49+0000\n"
-"Last-Translator: Igor Santos <igorsantos07@gmail.com>\n"
+"PO-Revision-Date: 2013-10-30 17:04+0000\n"
+"Last-Translator: Rodrigo Zimmermann <bilufe@yahoo.com.br>\n"
 "Language-Team: Portuguese (Brazil) <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-03 22:48+0000\n"
-"X-Generator: Launchpad (build 16718)\n"
+"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
+"X-Generator: Launchpad (build 16963)\n"
 
 #: ../gdebi:51
 #, c-format
@@ -622,11 +622,11 @@ msgstr "A ser removido: %s"
 #: ../GDebi/GDebiKDE.py:397
 #, python-format
 msgid "<b>Package '%s' was installed</b>"
-msgstr ""
+msgstr "<b>Pacote '%s' foi instalado</b>"
 
 #: ../GDebi/GDebiKDE.py:423
 msgid "Installing"
-msgstr ""
+msgstr "Instalando"
 
 #: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
@@ -785,6 +785,7 @@ msgstr "Trocar Mídia"
 #~ "  Gerson \"fserve\" Barreiros https://launchpad.net/~fserve\n"
 #~ "  Gustavo Franco https://launchpad.net/~stratus\n"
 #~ "  Henrique P. Machado https://launchpad.net/~zehrique\n"
+#~ "  Higor Bigotto https://launchpad.net/~higor-bigotto\n"
 #~ "  Igor Santos https://launchpad.net/~igorsantos07\n"
 #~ "  José Geraldo Gouvêa https://launchpad.net/~jggouvea\n"
 #~ "  LC всадник cbet https://launchpad.net/~lc1884\n"
@@ -793,6 +794,7 @@ msgstr "Trocar Mídia"
 #~ "  Marcelo Pires https://launchpad.net/~marcelo-pires-silva\n"
 #~ "  Mário Meyer https://launchpad.net/~mariomeyer\n"
 #~ "  Otto Robba https://launchpad.net/~otto-ottorobba\n"
+#~ "  Rodrigo Zimmermann https://launchpad.net/~bilufe\n"
 #~ "  Rogênio Belém https://launchpad.net/~rogeniobelem\n"
 #~ "  Teylo Laundos Aguiar https://launchpad.net/~teylo.aguiar\n"
 #~ "  Tiago Hillebrandt https://launchpad.net/~tiagohillebrandt\n"
