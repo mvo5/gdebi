@@ -1,4 +1,4 @@
-gdebi (0.9.4) UNRELEASED; urgency=medium
+gdebi (0.9.4) unstable; urgency=medium
 
   [ Michael Vogt ]
   * Add basic support to view click packages.
@@ -12,7 +12,7 @@ gdebi (0.9.4) UNRELEASED; urgency=medium
   * Check using both pyflakes and pyflakes3.
   * Add lintian build-dependency.
 
- -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 28 Feb 2014 22:10:48 +0000
+ -- Michael Vogt <mvo@debian.org>  Tue, 18 Mar 2014 20:59:24 +0100
 
 gdebi (0.9.3) unstable; urgency=medium
 
