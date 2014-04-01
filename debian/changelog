@@ -5,6 +5,7 @@ gdebi (0.9.5) UNRELEASED; urgency=medium
     on Python 3.  (LP: #1283574)
   * Some whitespace cleanup.
   * Removed some unnecessary shebang lines.
+  * Set the dpkg child process write file descriptor to 'inheritable'.
 
  -- Barry Warsaw <barry@ubuntu.com>  Mon, 31 Mar 2014 17:44:18 -0400
 
