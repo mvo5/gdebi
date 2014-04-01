@@ -1,11 +1,6 @@
 import os
-import locale
 import subprocess
 import unittest
-
-# LP: #1299169
-IN_UTF8 = 'utf-8' in locale.getpreferredencoding().lower()
-
 
 class TestPyflakesClean(unittest.TestCase):
     """ ensure that the tree is pyflakes clean """
@@ -21,7 +16,6 @@ class TestPyflakesClean(unittest.TestCase):
     def test_pyflakes_clean(self):
         self.assertEqual(subprocess.check_call(['pyflakes'] + self.paths), 0)
 
-    @unittest.skipUnless(IN_UTF8, 'LP: #1299169')
     def test_pyflakes3_clean(self):
         self.assertEqual(subprocess.check_call(['pyflakes3'] +  self.paths), 0)
 
