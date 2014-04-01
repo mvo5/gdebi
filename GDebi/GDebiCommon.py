@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Copyright (c) 2005-2009 Canonical Ltd
 #
 # AUTHOR:
@@ -57,7 +56,7 @@ else:
             return unicode(str, 'latin1')
     utf8 = py2utf8
 
-	  
+
 class GDebiCommon(object):
 
     # cprogress may be different in child classes
@@ -92,16 +91,16 @@ class GDebiCommon(object):
         if file.endswith(".click"):
             klass = ClickPackage
         try:
-            self._deb = klass(file, {}, downloaded)
+            self._deb = klass(file, Cache(), downloaded)
         except (IOError, SystemError, ValueError) as e:
             logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
-            if (mimetype[0] != None and 
+            if (mimetype[0] != None and
                 mimetype[0] != "application/x-debian-package"):
                 self.error_header = _("'%s' is not a Debian package") % os.path.basename(file)
                 self.error_body = _("The MIME type of this file is '%s' "
                              "and can not be installed on this system.") % mimetype[0]
-                return False    
+                return False
             else:
                 self.error_header = _("Could not open '%s'") % os.path.basename(file)
                 self.error_body = _("The package might be corrupted or you are not "
@@ -122,7 +121,7 @@ class GDebiCommon(object):
                 self.version_info_title = ""
                 self.version_info_msg = ""
                 return
-            
+
             # FIXME: make this strs better
             if res == DebPackage.VERSION_SAME:
                 if pkg.candidate and pkg.candidate.downloadable:
@@ -223,4 +222,3 @@ class GDebiCommon(object):
         " release the pkgsystem lock "
         apt_pkg.pkgsystem_lock()
         return True
-    
