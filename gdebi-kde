@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2005-2007 Martin Böhm
@@ -52,7 +52,7 @@ if __name__ == "__main__":
                       default=False,
                       help=_("Run non-interactive (dangerous!)"))
     (options, args) = parser.parse_args()
-    
+
     try:
         #Don't edit from this point
         appName     = "gdebi-kde"
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         app.exec_()
     except SystemError as e:
         err_header = _("Software index is broken")
-        err_body = _("This is a major failure of your software " 
+        err_body = _("This is a major failure of your software "
                     "management system. Please check for broken packages "
                     "with synaptic, check the file permissions and "
                     "correctness of the file '/etc/apt/sources.list' and "
