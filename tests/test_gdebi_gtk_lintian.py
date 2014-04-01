@@ -5,7 +5,7 @@ import time
 import unittest
 
 from gi.repository import GObject
-from mock import patch
+from unittest.mock import patch
 
 from GDebi.GDebiGtk import GDebiGtk
 from GDebi.GDebiCommon import GDebiCommon

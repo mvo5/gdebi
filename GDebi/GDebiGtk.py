@@ -891,8 +891,13 @@ Install software from trustworthy software distributors only.
 
             # prepare reading the pipe
             (readfd, writefd) = os.pipe()
+            # File descriptors are not inheritable by child processes by
+            # default in Python 3.4.  We need the dpkg child to inherit the
+            # write file descriptor.
+            if hasattr(os, 'set_inheritable'):
+                os.set_inheritable(writefd, True)
             fcntl.fcntl(readfd, fcntl.F_SETFL,os.O_NONBLOCK)
-            #print "fds (%i,%i)" % (readfd,writefd)
+            #print("fds (%i,%i)" % (readfd,writefd))
 
             # the command
             argv = ["/usr/bin/dpkg", "--auto-deconfigure"]
