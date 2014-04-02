@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 9),
                xauth,
                pyflakes,
                lintian,
-X-Python3-Version: >= 3.4
+X-Python3-Version: >= 3.3
 Standards-Version: 3.9.5
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 
