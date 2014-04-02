@@ -1,4 +1,4 @@
-gdebi (0.9.5) UNRELEASED; urgency=medium
+gdebi (0.9.5) unstable; urgency=medium
 
   [ Barry Warsaw ]
   * New upstream release.
@@ -11,7 +11,7 @@ gdebi (0.9.5) UNRELEASED; urgency=medium
   [ Dimitri John Ledkov ]
   * Process all packages with dh_python3, to get correct dependencies.
 
- -- Barry Warsaw <barry@ubuntu.com>  Mon, 31 Mar 2014 17:44:18 -0400
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 02 Apr 2014 00:18:33 +0100
 
 gdebi (0.9.4) unstable; urgency=medium
 
