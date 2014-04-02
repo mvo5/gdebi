@@ -1,9 +1,9 @@
-gdebi (0.9.5.1) UNRELEASED; urgency=medium
+gdebi (0.9.5.1) unstable; urgency=medium
 
   * Lower required python3 version to 3.3. As 3.4 is not needed, and
     Debian's default is still 3.3.
 
- -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 02 Apr 2014 10:51:48 +0100
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 02 Apr 2014 10:52:31 +0100
 
 gdebi (0.9.5) unstable; urgency=medium
 
