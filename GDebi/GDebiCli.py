@@ -68,8 +68,8 @@ class GDebiCli(object):
 
     def open(self, file):
         try:
-            if (file.endswith(".deb") or 
-                "Debian binary package" in Popen(["file", file], stdout=PIPE).communicate()[0]):
+            if (file.endswith(".deb") or
+                "Debian binary package" in Popen(["file", file], stdout=PIPE, universal_newlines=True).communicate()[0]):
                 self._deb = DebPackage(file, self._cache)
             elif (file.endswith(".dsc") or
                   os.path.basename(file) == "control"):
@@ -90,7 +90,7 @@ class GDebiCli(object):
             sys.stderr.write(self._deb._failure_string + "\n")
             return False
         return True
-            
+
     def show_description(self):
         try:
             print(self._deb["Description"])
@@ -114,7 +114,7 @@ class GDebiCli(object):
                 s += pkgname + " "
             s += "\n"
         if len(install) > 0:
-            s += _("Requires the installation of the following packages: ") 
+            s += _("Requires the installation of the following packages: ")
             for pkgname in install:
                 s += pkgname + " "
             s += "\n"
@@ -133,7 +133,7 @@ class GDebiCli(object):
                 return 1
 
         # install the package itself
-        if self._deb.filename.endswith(".dsc"): 
+        if self._deb.filename.endswith(".dsc"):
             # FIXME: add option to only install build-dependencies
             #        (or build+install the deb) and then enable
             #        this code
@@ -145,7 +145,7 @@ class GDebiCli(object):
             return 0
         else:
             return call(["dpkg","--auto-deconfigure", "-i",self._deb.filename])
-        
+
 
 if __name__ == "__main__":
     app = GDebiCli()
