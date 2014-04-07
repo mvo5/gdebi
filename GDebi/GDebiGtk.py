@@ -930,11 +930,11 @@ Install software from trustworthy software distributors only.
                 )
             #print "fork_command_full: ", res, pid
 
-            read = ""
+            raw_read = b""
             while lock.locked():
                 while True:
                     try:
-                        read += os.read(readfd,1).decode("utf-8")
+                        raw_read += os.read(readfd,1)
                     except OSError as e:
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
@@ -942,17 +942,18 @@ Install software from trustworthy software distributors only.
                             logging.warn(e.errstr)
                         break
                     self.time_last_update = time.time()
-                    if read.endswith("\n"):
+                    if raw_read[-1] == ord("\n"):
+                        read = raw_read.decode("utf-8")
                         statusl = read.split(":")
                         if len(statusl) < 3:
                             logging.warn("got garbage from dpkg: '%s'" % read)
-                            read = ""
+                            raw_read = ""
                             break
                         status = statusl[2].strip()
                         #print status
                         if status == "error" or status == "conffile-prompt":
                             self.term_expander.set_expanded(True)
-                        read = ""
+                        raw_read = b""
                 self.progress.pulse()
                 while Gtk.events_pending():
                     Gtk.main_iteration()

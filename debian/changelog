@@ -1,3 +1,9 @@
+gdebi (0.9.5.3) unstable; urgency=low
+
+  * convert only full lines from dpkg-statusfd into utf8 (LP: #1301857)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 07 Apr 2014 10:12:02 +0200
+
 gdebi (0.9.5.2) unstable; urgency=medium
 
   * Add a universal_newlines=True to Popen command to get a proper unicode
