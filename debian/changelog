@@ -1,3 +1,9 @@
+gdebi (0.9.5.4) UNRELEASED; urgency=medium
+
+  * Fix exceptions going out of scope. (LP: #1304274)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 10 Apr 2014 10:02:26 +0100
+
 gdebi (0.9.5.3) unstable; urgency=low
 
   * convert only full lines from dpkg-statusfd into utf8 (LP: #1301857)

@@ -677,18 +677,18 @@ Install software from trustworthy software distributors only.
                                                     self.vte_terminal,
                                                     self.label_action,
                                                     self.expander_install)
-            #errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError as msg:
+            except IOError as e:
                 res = False
-                #errMsg = "%s" % msg
+                msg = e
                 header = _("Could not download all required files")
                 body = _("Please check your internet connection or "
                         "installation medium, and make sure your "
                         "APT cache is up-to-date.")
-            except SystemError as msg:
+            except SystemError as e:
                 res = False
+                msg = e
                 header = _("Could not install all dependencies"),
                 body = _("Usually this is related to an error of the "
                         "software distributor. See the terminal window for "
