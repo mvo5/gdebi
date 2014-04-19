@@ -1,3 +1,11 @@
+gdebi (0.9.5.4) UNRELEASED; urgency=medium
+
+  [ Michael Werle ]
+  * gdebi-kde, GDebi/GDebiKDE.py:
+    - Fix python3 internatlization bugs (Closes: #743756) (LP: #1304143).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Apr 2014 15:24:50 +0200
+
 gdebi (0.9.5.3) unstable; urgency=low
 
   * convert only full lines from dpkg-statusfd into utf8 (LP: #1301857)

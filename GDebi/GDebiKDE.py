@@ -24,7 +24,6 @@
 import logging
 import os
 import re
-import string
 import sys
 
 
@@ -37,7 +36,6 @@ from PyKDE4.kdeui import (
 from PyQt4.QtCore import (
     Qt,
     SIGNAL,
-    QStringList,
     QTimer,
     )
 from PyQt4.QtGui import (
@@ -211,13 +209,13 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         buf = self.DecriptionEdit
         try:
             long_desc = ""
-            raw_desc = string.split(utf8(self._deb["Description"]), "\n")
+            raw_desc = str.splitlines(utf8(self._deb["Description"]))
             # append a newline to the summary in the first line
             summary = raw_desc[0]
             raw_desc[0] = ""
             long_desc = "%s\n" % summary
             for line in raw_desc:
-                tmp = string.strip(line)
+                tmp = str.strip(line)
                 if tmp == ".":
                     long_desc += "\n"
                 else:
@@ -307,7 +305,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
         self.close()
 
     def detailsButtonClicked(self):
-        changedList = QStringList()
+        changedList = list()
         (install, remove, unauthenticated) = self._deb.required_changes
         for i in install:
             changedList.append(_("To be installed: %s") % i)

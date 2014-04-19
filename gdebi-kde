@@ -23,8 +23,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
-from PyKDE4.kdecore import KCmdLineArgs, KAboutData, KCmdLineOptions
-from PyKDE4.kdeui import KApplication, KMessageBox, ki18n
+from PyKDE4.kdecore import KCmdLineArgs, KAboutData, KCmdLineOptions, ki18n
+from PyKDE4.kdeui import KApplication, KMessageBox
 
 from optparse import OptionParser
 from GDebi.GDebiKDE import GDebiKDE
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
     t = gettext.translation(localesApp, localesDir, fallback=True)
-    _ = t.ugettext
+    _ = t.gettext
     data="/usr/share/gdebi"
 
 
@@ -57,12 +57,12 @@ if __name__ == "__main__":
         #Don't edit from this point
         appName     = "gdebi-kde"
         catalog     = ""
-        programName = ki18n ("GDebi")
+        programName = ki18n (bytes("GDebi", 'utf-8'))
         version     = "1.0"
-        description = ki18n (".deb Package Installer")
+        description = ki18n (bytes(".deb Package Installer", 'utf-8'))
         license     = KAboutData.License_GPL
-        copyright   = ki18n ("(c) 2005-2007 Martin Böhm, 2008 Canonical Ltd")
-        text        = ki18n ("none")
+        copyright   = ki18n (bytes("(c) 2005-2007 Martin Böhm, 2008 Canonical Ltd", 'utf-8'))
+        text        = ki18n (bytes("none", 'utf-8'))
         homePage    = "launchpad.net/gdebi"
         bugEmail    = ""
 
@@ -75,8 +75,8 @@ if __name__ == "__main__":
         # bug #190907
         opts = KCmdLineOptions()
         opts.add("n")
-        opts.add("dont-interactive", ki18n("Run non-interactive (dangerous!)"))
-        opts.add("+[File]", ki18n("File to open"))
+        opts.add("dont-interactive", ki18n(bytes("Run non-interactive (dangerous!)", 'utf-8')))
+        opts.add("+[File]", ki18n(bytes("File to open", 'utf-8')))
         KCmdLineArgs.addCmdLineOptions(opts)
 
         app = KApplication()
