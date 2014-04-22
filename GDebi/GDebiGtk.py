@@ -84,7 +84,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
         except Exception as e:
-          logging.warn("Error loading logo %s" % e)
+          logging.warning("Error loading logo %s" % e)
 
         # create terminal
         self.vte_terminal = Vte.Terminal()
@@ -98,7 +98,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         menu_items.show()
         self.vte_terminal.connect_object("event", self.vte_event, menu)
         self.hbox_install_terminal.pack_start(self.vte_terminal, True, True, 0)
-        scrollbar = Gtk.VScrollbar.new(self.vte_terminal.get_vadjustment())
+        scrollbar = Gtk.VScrollbar(adjustment=self.vte_terminal.get_vadjustment())
         self.hbox_install_terminal.pack_start(scrollbar, False, False, 0)
 
         # setup status
@@ -414,10 +414,11 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         for fd in [stdout, stderr]:
             channel = GLib.IOChannel(filedes=fd)
             channel.set_flags(GLib.IOFlags.NONBLOCK)
-            channel.add_watch(GLib.IOCondition.IN | GLib.IO_ERR | GLib.IO_HUP,
+            GLib.io_add_watch(channel, GLib.PRIORITY_DEFAULT,
+                              GLib.IOCondition.IN | GLib.IO_ERR | GLib.IO_HUP,
                               self._on_lintian_output)
-        GObject.child_watch_add(
-            pid, self._on_lintian_finished)
+            GLib.child_watch_add(priority=GLib.PRIORITY_DEFAULT,
+                                 pid=pid, function=self._on_lintian_finished)
 
     def _on_lintian_finished(self, pid, condition):
         exit_status = os.WEXITSTATUS(condition)
@@ -939,14 +940,14 @@ Install software from trustworthy software distributors only.
                         # resource temporarly unavailable is ignored
                         from errno import EAGAIN
                         if e.errno != EAGAIN:
-                            logging.warn(e.errstr)
+                            logging.warning(e.errstr)
                         break
                     self.time_last_update = time.time()
                     if raw_read[-1] == ord("\n"):
                         read = raw_read.decode("utf-8")
                         statusl = read.split(":")
                         if len(statusl) < 3:
-                            logging.warn("got garbage from dpkg: '%s'" % read)
+                            logging.warning("got garbage from dpkg: '%s'" % read)
                             raw_read = ""
                             break
                         status = statusl[2].strip()

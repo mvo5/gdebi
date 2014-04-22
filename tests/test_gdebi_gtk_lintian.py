@@ -4,7 +4,7 @@ import os
 import time
 import unittest
 
-from gi.repository import GObject
+from gi.repository import GLib
 from unittest.mock import patch
 
 from GDebi.GDebiGtk import GDebiGtk
@@ -26,7 +26,7 @@ Lintian finished with exit status 1"""
 
 
 def do_events():
-    context = GObject.main_context_default()
+    context = GLib.main_context_default()
     while context.pending():
         context.iteration()
 

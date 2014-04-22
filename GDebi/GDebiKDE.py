@@ -368,7 +368,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
                             "installation medium, or make sure your "
                             "APT cache is up-to-date.")
             except SystemError as msg:
-                logging.warn("error: %s" % msg)
+                logging.warning("error: %s" % msg)
                 res = False
                 header = _("Could not install all dependencies")
                 body = _("Usually this is related to an error of the "
