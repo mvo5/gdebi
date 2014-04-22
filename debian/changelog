@@ -1,10 +1,14 @@
-gdebi (0.9.5.4) UNRELEASED; urgency=medium
+gdebi (0.9.5.4) UNRELEASED; urgency=low
+
+  [ Luca Falavigna ]
+  * fix installing of dependency packages when called with sudo
+    (LP: #1309387)
 
   [ Michael Werle ]
   * gdebi-kde, GDebi/GDebiKDE.py:
     - Fix python3 internatlization bugs (Closes: #743756) (LP: #1304143).
 
- -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Apr 2014 15:24:50 +0200
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 22 Apr 2014 09:43:49 +0200
 
 gdebi (0.9.5.3) unstable; urgency=low
 

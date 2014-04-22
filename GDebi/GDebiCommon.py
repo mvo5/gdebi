@@ -91,7 +91,7 @@ class GDebiCommon(object):
         if file.endswith(".click"):
             klass = ClickPackage
         try:
-            self._deb = klass(file, Cache(), downloaded)
+            self._deb = klass(file, self._cache, downloaded)
         except (IOError, SystemError, ValueError) as e:
             logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
