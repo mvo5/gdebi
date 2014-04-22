@@ -407,6 +407,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         buf.set_text(_("Running lintian..."))
         self._lintian_output = ""
         self._lintian_exit_status = None
+        self._lintian_exit_status_gathered = None
         cmd = ["/usr/bin/lintian", filename]
         (pid, stdin, stdout, stderr) = GLib.spawn_async(
             cmd, flags=GObject.SPAWN_DO_NOT_REAP_CHILD,
@@ -417,14 +418,16 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             GLib.io_add_watch(channel, GLib.PRIORITY_DEFAULT,
                               GLib.IOCondition.IN | GLib.IO_ERR | GLib.IO_HUP,
                               self._on_lintian_output)
-            GLib.child_watch_add(priority=GLib.PRIORITY_DEFAULT,
-                                 pid=pid, function=self._on_lintian_finished)
+            GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid,
+                                 self._on_lintian_finished)
 
     def _on_lintian_finished(self, pid, condition):
         exit_status = os.WEXITSTATUS(condition)
         self._lintian_exit_status = exit_status
-        text = _("\nLintian finished with exit status %s") % exit_status
-        self._lintian_output += text
+        if not self._lintian_exit_status_gathered:
+            self._lintian_exit_status_gathered = True
+            text = _("\nLintian finished with exit status %s") % exit_status
+            self._lintian_output += text
         buf = self.textview_lintian_output.get_buffer()
         buf.set_text(self._lintian_output)
 

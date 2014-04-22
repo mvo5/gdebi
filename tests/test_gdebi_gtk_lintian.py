@@ -46,7 +46,7 @@ class GDebiGtkTestCase(unittest.TestCase):
             os.path.join(self.testsdir, "error-package_1.0_all.deb"))
         # wait for lintian to finish
         for i in range(25):
-            time.sleep(0.2)
+            time.sleep(1)
             do_events()
             if gdebi._lintian_exit_status is not None:
                 break

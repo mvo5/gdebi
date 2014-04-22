@@ -8,6 +8,9 @@ gdebi (0.9.5.4) UNRELEASED; urgency=low
   * gdebi-kde, GDebi/GDebiKDE.py:
     - Fix python3 internatlization bugs (Closes: #743756) (LP: #1304143).
 
+  [ Luca Falavigna ]
+  * Fix tests at build time (Closes: #743091).
+
  -- Luca Falavigna <dktrkranz@debian.org>  Tue, 22 Apr 2014 10:54:48 +0200
 
 gdebi (0.9.5.3) unstable; urgency=low
