@@ -1,4 +1,4 @@
-gdebi (0.9.5.4) UNRELEASED; urgency=low
+gdebi (0.9.5.4) unstable; urgency=low
 
   [ Michael Vogt ]
   * fix installing of dependency packages when called with sudo
