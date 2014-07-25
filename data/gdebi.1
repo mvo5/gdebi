@@ -7,7 +7,7 @@ gdebi \- Simple tool to install deb files
 .SH DESCRIPTION
 gdebi lets you install local deb packages resolving and installing its
 dependencies. apt does the same, but only for remote (http, ftp) located
-packages.
+packages. It can also resolve build-depends of debian/control files.
 .SH OPTIONS
 .TP
 \fB\-\-version\fR
@@ -30,7 +30,13 @@ Simulate only and print a apt-get install compatible line to stderr.
 .TP
 \fB\-\-root=\fIROOTDIR\fR
 Use alternative root dir.
-.TP
+.SH EXAMPLES
+.nf
+.RS
+gdebi foo_1.0_all.deb
+gdebi foo-1.0/debian/control
+.RE
+.fi
 .SH SEE ALSO
 Homepage: <https://launchpad.net/gdebi/>
 .SH AUTHOR
