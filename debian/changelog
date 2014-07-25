@@ -2,6 +2,8 @@ gdebi (0.9.5.5) UNRELEASED; urgency=low
 
   * mention ability to resolve build-dependencies from a debian/control
     file, thanks to Axel Beckert
+  * improve description for gdebi-gtk to include information about
+    lintian and the ability to inspect deb packages
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Sat, 26 Jul 2014 00:05:07 +0200
 
