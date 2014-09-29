@@ -3,6 +3,7 @@
 import os
 import unittest
 
+from locale import setlocale, LC_ALL
 from unittest.mock import Mock
 
 from GDebi.GDebiCli import GDebiCli
@@ -21,6 +22,7 @@ class GDebiCliTestCase(unittest.TestCase):
         cls.cli = GDebiCli(options=mock_options)
 
     def test_against_deb_with_conflict_against_apt(self):
+        setlocale(LC_ALL, "C")
         res = self.cli.open(os.path.join(self.testdir, "gdebi-test1.deb"))
         self.assertFalse(res)
         self.assertEqual(

@@ -9,6 +9,8 @@ gdebi (0.9.5.5) UNRELEASED; urgency=low
   [ Luca Falavigna ]
   * debian/control:
     - Add lintian to gdebi's Recommends field (Closes: #755812).
+  * tests/test_gdebi_cli.py:
+    - Fix FTBFS with non en_US locales (Closes: #757078).
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Sat, 26 Jul 2014 00:05:07 +0200
 
