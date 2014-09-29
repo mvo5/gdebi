@@ -48,7 +48,7 @@ Depends: ${python3:Depends},
          python3-gi,
          gksu,
          gnome-icon-theme
-Recommends: libgtk2-perl, shared-mime-info
+Recommends: libgtk2-perl, shared-mime-info, lintian
 Description: simple tool to view and install deb files - GNOME GUI
  gdebi lets you install local deb packages resolving and installing
  its dependencies. apt does the same, but only for remote (http, ftp)
