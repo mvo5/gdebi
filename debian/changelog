@@ -1,4 +1,6 @@
-gdebi (0.9.5.5) UNRELEASED; urgency=low
+gdebi (0.9.5.5) unstable; urgency=medium
+
+  * Team upload.
 
   [ Michael Vogt ]
   * mention ability to resolve build-dependencies from a debian/control
@@ -13,7 +15,7 @@ gdebi (0.9.5.5) UNRELEASED; urgency=low
   * tests/test_gdebi_cli.py:
     - Fix FTBFS with non en_US locales (Closes: #757078).
 
- -- Michael Vogt <michael.vogt@ubuntu.com>  Sat, 26 Jul 2014 00:05:07 +0200
+ -- Luca Falavigna <dktrkranz@debian.org>  Mon, 29 Sep 2014 09:07:38 +0200
 
 gdebi (0.9.5.4) unstable; urgency=low
 
