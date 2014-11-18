@@ -1,3 +1,9 @@
+gdebi (0.9.5.6) UNRELEASED; urgency=medium
+
+  * Use vte 2.91
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Tue, 18 Nov 2014 10:54:30 +0000
+
 gdebi (0.9.5.5) unstable; urgency=medium
 
   * Team upload.

@@ -40,7 +40,7 @@ except ImportError:
 
 import gi
 gi.require_version("Gtk", "3.0")
-gi.require_version("Vte", "2.90")
+gi.require_version("Vte", "2.91")
 from gi.repository import Gtk
 from gi.repository import GObject
 from gi.repository import GLib
@@ -866,9 +866,8 @@ Install software from trustworthy software distributors only.
             self.term_expander.set_expanded(False)
             self.install = install
         def commit(self):
-            def finish_dpkg(term, lock):
+            def finish_dpkg(term, status, lock):
                 """ helper that is run when dpkg finishes """
-                status = term.get_child_exit_status()
                 self.exitstatus = posix.WEXITSTATUS(status)
                 #print "dpkg finished %s %s" % (pid,status)
                 #print "exit status: %s" % self.exitstatus
@@ -922,7 +921,7 @@ Install software from trustworthy software distributors only.
 
             # prepare for the fork
             self.term.connect("child-exited", finish_dpkg, lock)
-            (res, pid) =self.term.fork_command_full(
+            (res, pid) =self.term.spawn_sync(
                 Vte.PtyFlags.DEFAULT,
                 "/",
                 argv,
@@ -931,6 +930,7 @@ Install software from trustworthy software distributors only.
                 # FIXME: add setup_func that closes all fds excpet for writefd
                 None, #setup_func
                 None, #setup_data
+                None, #cancellable
                 )
             #print "fork_command_full: ", res, pid
 
@@ -1015,7 +1015,7 @@ Install software from trustworthy software distributors only.
             # sleep just long enough to not create a busy loop
             time.sleep(0.01)
         def fork(self):
-            pty = Vte.Pty.new(Vte.PtyFlags.DEFAULT)
+            pty = Vte.Pty.new_sync(Vte.PtyFlags.DEFAULT)
             pid = os.fork()
             if pid == 0:
                 # *grumpf* workaround bug in vte here (gnome bug #588871)
@@ -1026,7 +1026,7 @@ Install software from trustworthy software distributors only.
                 pty.child_setup()
                 # FIXME: close all fds expect for self.writefd
             else:
-                self.term.set_pty_object(pty)
+                self.term.set_pty(pty)
                 self.term.watch_child(pid)
             return pid
         def wait_child(self):
