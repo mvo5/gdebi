@@ -9,6 +9,16 @@ gdebi (0.9.5.6) UNRELEASED; urgency=medium
 
  -- Iain Lane <iain@orangesquash.org.uk>  Tue, 18 Nov 2014 10:54:30 +0000
 
+gdebi (0.9.5.5+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Make sure the watcher for the lintian exit code is added only once. It was
+    added twice by mistake (with both IO watchers), causing a race condition
+    when checking the exit code. This fixes the lintian test during the build.
+    (Closes: #765151).
+
+ -- Ivo De Decker <ivodd@debian.org>  Tue, 11 Nov 2014 17:53:51 +0100
+
 gdebi (0.9.5.5) unstable; urgency=medium
 
   * Team upload.

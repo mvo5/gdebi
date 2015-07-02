@@ -418,8 +418,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             GLib.io_add_watch(channel, GLib.PRIORITY_DEFAULT,
                               GLib.IOCondition.IN | GLib.IO_ERR | GLib.IO_HUP,
                               self._on_lintian_output)
-            GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid,
-                                 self._on_lintian_finished)
+        GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid,
+                             self._on_lintian_finished)
 
     def _on_lintian_finished(self, pid, condition):
         exit_status = os.WEXITSTATUS(condition)
