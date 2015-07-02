@@ -1,4 +1,4 @@
-gdebi (0.9.5.6) UNRELEASED; urgency=medium
+gdebi (0.9.5.6) unstable; urgency=medium
 
   [ Iain Lane ]
   * Use vte 2.91
@@ -7,7 +7,7 @@ gdebi (0.9.5.6) UNRELEASED; urgency=medium
   * Use standard MIME type vnd.debian.binary-package so that xdg-open
     foo.deb will use gdebi
 
- -- Iain Lane <iain@orangesquash.org.uk>  Tue, 18 Nov 2014 10:54:30 +0000
+ -- Michael Vogt <mvo@debian.org>  Thu, 02 Jul 2015 09:18:36 +0200
 
 gdebi (0.9.5.5+nmu1) unstable; urgency=medium
 
