@@ -96,7 +96,7 @@ class GDebiCommon(object):
             logging.debug("open failed with %s" % e)
             mimetype=guess_type(file)
             if (mimetype[0] != None and
-                mimetype[0] != "application/x-debian-package"):
+                mimetype[0] != "application/vnd.debian.binary-package"):
                 self.error_header = _("'%s' is not a Debian package") % os.path.basename(file)
                 self.error_body = _("The MIME type of this file is '%s' "
                              "and can not be installed on this system.") % mimetype[0]

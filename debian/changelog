@@ -1,6 +1,11 @@
 gdebi (0.9.5.6) UNRELEASED; urgency=medium
 
+  [ Iain Lane ]
   * Use vte 2.91
+
+  [ Alex Henrie ]
+  * Use standard MIME type vnd.debian.binary-package so that xdg-open
+    foo.deb will use gdebi
 
  -- Iain Lane <iain@orangesquash.org.uk>  Tue, 18 Nov 2014 10:54:30 +0000
 
