@@ -981,8 +981,7 @@ Install software from trustworthy software distributors only.
             self.env = ["VTE_PTY_KEEP_FD=%s"% self.writefd,
                         "DEBIAN_FRONTEND=gnome",
                         "APT_LISTCHANGES_FRONTEND=gtk"]
-        def child_exited(self,term):
-            status = term.get_child_exit_status()
+        def child_exited(self, term, status):
             #print "apt finished %s" % status
             #print "exit status: %s" % posix.WEXITSTATUS(status)
             #print "was signaled %s" % posix.WIFSIGNALED(status)
