@@ -1,7 +1,11 @@
 gdebi (0.9.5.7) UNRELEASED; urgency=medium
 
+  [ Michael Vogt ]
   * GDebi/GDebiGtk.py:
     - fix child_exited() change for vte 2.91 (LP: #1472618)
+
+  [ Dimitri John Ledkov ]
+  * Fix exceptions going out of scope. (LP: #1304274)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 08 Jul 2015 15:24:36 +0200
 
