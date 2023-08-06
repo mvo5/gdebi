@@ -10,13 +10,11 @@ Build-Depends: debhelper (>= 9),
                python3-all,
                python3-apt,
                python3-gi,
-               python3-nose,
                python3-setuptools,
                intltool,
                xvfb,
                xauth,
                lintian,
-X-Python3-Version: >= 3.3
 Standards-Version: 3.9.6
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 
@@ -45,8 +43,7 @@ Depends: ${python3:Depends},
          gir1.2-gtk-3.0,
          gir1.2-vte-2.91,
          python3-gi,
-         policykit-1,
-         gnome-icon-theme
+         pkexec
 Recommends: libgtk2-perl, shared-mime-info, lintian
 Description: simple tool to view and install deb files - GNOME GUI
  gdebi lets you install local deb packages resolving and installing
@@ -57,18 +54,3 @@ Description: simple tool to view and install deb files - GNOME GUI
  possible to inspect the control and data members of the packages.
  .
  This package contains the graphical user interface.
-
-#Package: gdebi-kde
-#Architecture: all
-#Depends: ${python3:Depends},
-#         ${misc:Depends},
-#         gdebi-core (= ${source:Version}),
-#         python3-pykde4,
-#         kdebase-runtime | kde-runtime | kdesudo
-#Recommends: shared-mime-info
-#Description: simple tool to install deb files - KDE GUI
-# gdebi lets you install local deb packages resolving and installing
-# its dependencies. apt does the same, but only for remote (http, ftp)
-# located packages.
-# .
-# This package contains the KDE user interface.
