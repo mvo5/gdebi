@@ -1,3 +1,9 @@
+gdebi (0.9.6) UNRELEASED; urgency=medium
+
+  * merge all NMUs, many thanks
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 07 Oct 2024 20:04:00 +0200
+
 gdebi (0.9.5.7+nmu10) unstable; urgency=medium
 
   * Non-maintainer upload.
