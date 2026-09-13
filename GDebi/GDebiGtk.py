@@ -611,7 +611,14 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             self.window_main.close()
             while Gtk.events_pending():
                 Gtk.main_iteration()
-            sys.exit(subprocess.call([pkexec_cmd]+gdebi_args))
+            pkexec_env = [pkexec_cmd, "env"]
+            display = os.environ.get("DISPLAY", "")
+            if display:
+                pkexec_env.append("DISPLAY=" + display)
+            xauthority = os.environ.get("XAUTHORITY", "")
+            if xauthority:
+                pkexec_env.append("XAUTHORITY=" + xauthority)
+            sys.exit(subprocess.call(pkexec_env + gdebi_args))
 
         if not self.try_acquire_lock():
             if install:
